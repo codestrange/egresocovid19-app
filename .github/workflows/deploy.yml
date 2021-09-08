@@ -1,0 +1,20 @@
+name: deploy-pro
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  deploy-pro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: find . -name "*.dart" ! -name "*.g.dart" ! -name "*.config.dart" ! -name "*.freezed.dart" ! -name "generated_plugin_registrant.dart" ! -path "*/i18n/*" ! -path "*/generated/*" ! -path "./proto/*" | tr "\n" " " | xargs flutter format --set-exit-if-changed
+      - run: flutter analyze --fatal-infos
+      - run: flutter test
+      - uses: erickzanardo/flutter-gh-pages@v6
+        with:
+          targetBranch: deploy-pro
