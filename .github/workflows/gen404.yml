@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
   push:
     branches: [ deploy ]
+  workflow_run:
+    workflows: [ deploy ]
+    types:
+      - completed
 jobs:
   gen404:
     runs-on: ubuntu-latest
