@@ -7,18 +7,27 @@ Color cardColor = Colors.white;
 
 final ThemeData lightTheme = ThemeData(
   primaryColor: primaryColor,
-  accentColor: accentColor,
-  textTheme: selectByBrightness(canvasColor, lightTextTheme, darkTextTheme),
+  textTheme: selectByBrightness(
+    canvasColor,
+    lightTextTheme,
+    darkTextTheme,
+  ),
   canvasColor: canvasColor,
-  primaryTextTheme:
-      selectByBrightness(primaryColor, lightTextTheme, darkTextTheme),
-  accentTextTheme:
-      selectByBrightness(accentColor, lightTextTheme, darkTextTheme),
+  primaryTextTheme: selectByBrightness(
+    primaryColor,
+    lightTextTheme,
+    darkTextTheme,
+  ),
   scaffoldBackgroundColor: canvasColor,
   iconTheme: const IconThemeData(size: 35, color: Colors.black),
   primaryIconTheme: IconThemeData(
-      size: 35,
-      color: selectByBrightness(primaryColor, Colors.white, Colors.black)),
+    size: 35,
+    color: selectByBrightness(
+      primaryColor,
+      Colors.white,
+      Colors.black,
+    ),
+  ),
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
@@ -44,4 +53,5 @@ final ThemeData lightTheme = ThemeData(
     shadowColor: Colors.transparent,
     color: canvasColor,
   ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor),
 );

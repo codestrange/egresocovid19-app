@@ -12,23 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ErrorEntity _$ErrorEntityFromJson(Map<String, dynamic> json) {
-  return _ErrorBaseEntity.fromJson(json);
-}
-
 /// @nodoc
 class _$ErrorEntityTearOff {
   const _$ErrorEntityTearOff();
 
-  _ErrorBaseEntity call({required String errorCode, required String message}) {
-    return _ErrorBaseEntity(
+  _BaseErrorEntity call({required String errorCode, required String message}) {
+    return _BaseErrorEntity(
       errorCode: errorCode,
       message: message,
     );
-  }
-
-  ErrorEntity fromJson(Map<String, Object> json) {
-    return ErrorEntity.fromJson(json);
   }
 }
 
@@ -40,7 +32,6 @@ mixin _$ErrorEntity {
   String get errorCode => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ErrorEntityCopyWith<ErrorEntity> get copyWith =>
       throw _privateConstructorUsedError;
@@ -81,32 +72,32 @@ class _$ErrorEntityCopyWithImpl<$Res> implements $ErrorEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ErrorBaseEntityCopyWith<$Res>
+abstract class _$BaseErrorEntityCopyWith<$Res>
     implements $ErrorEntityCopyWith<$Res> {
-  factory _$ErrorBaseEntityCopyWith(
-          _ErrorBaseEntity value, $Res Function(_ErrorBaseEntity) then) =
-      __$ErrorBaseEntityCopyWithImpl<$Res>;
+  factory _$BaseErrorEntityCopyWith(
+          _BaseErrorEntity value, $Res Function(_BaseErrorEntity) then) =
+      __$BaseErrorEntityCopyWithImpl<$Res>;
   @override
   $Res call({String errorCode, String message});
 }
 
 /// @nodoc
-class __$ErrorBaseEntityCopyWithImpl<$Res>
+class __$BaseErrorEntityCopyWithImpl<$Res>
     extends _$ErrorEntityCopyWithImpl<$Res>
-    implements _$ErrorBaseEntityCopyWith<$Res> {
-  __$ErrorBaseEntityCopyWithImpl(
-      _ErrorBaseEntity _value, $Res Function(_ErrorBaseEntity) _then)
-      : super(_value, (v) => _then(v as _ErrorBaseEntity));
+    implements _$BaseErrorEntityCopyWith<$Res> {
+  __$BaseErrorEntityCopyWithImpl(
+      _BaseErrorEntity _value, $Res Function(_BaseErrorEntity) _then)
+      : super(_value, (v) => _then(v as _BaseErrorEntity));
 
   @override
-  _ErrorBaseEntity get _value => super._value as _ErrorBaseEntity;
+  _BaseErrorEntity get _value => super._value as _BaseErrorEntity;
 
   @override
   $Res call({
     Object? errorCode = freezed,
     Object? message = freezed,
   }) {
-    return _then(_ErrorBaseEntity(
+    return _then(_BaseErrorEntity(
       errorCode: errorCode == freezed
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
@@ -120,12 +111,9 @@ class __$ErrorBaseEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_ErrorBaseEntity implements _ErrorBaseEntity {
-  const _$_ErrorBaseEntity({required this.errorCode, required this.message});
 
-  factory _$_ErrorBaseEntity.fromJson(Map<String, dynamic> json) =>
-      _$_$_ErrorBaseEntityFromJson(json);
+class _$_BaseErrorEntity implements _BaseErrorEntity {
+  const _$_BaseErrorEntity({required this.errorCode, required this.message});
 
   @override
   final String errorCode;
@@ -140,7 +128,7 @@ class _$_ErrorBaseEntity implements _ErrorBaseEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ErrorBaseEntity &&
+        (other is _BaseErrorEntity &&
             (identical(other.errorCode, errorCode) ||
                 const DeepCollectionEquality()
                     .equals(other.errorCode, errorCode)) &&
@@ -156,22 +144,14 @@ class _$_ErrorBaseEntity implements _ErrorBaseEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorBaseEntityCopyWith<_ErrorBaseEntity> get copyWith =>
-      __$ErrorBaseEntityCopyWithImpl<_ErrorBaseEntity>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_ErrorBaseEntityToJson(this);
-  }
+  _$BaseErrorEntityCopyWith<_BaseErrorEntity> get copyWith =>
+      __$BaseErrorEntityCopyWithImpl<_BaseErrorEntity>(this, _$identity);
 }
 
-abstract class _ErrorBaseEntity implements ErrorEntity {
-  const factory _ErrorBaseEntity(
+abstract class _BaseErrorEntity implements ErrorEntity {
+  const factory _BaseErrorEntity(
       {required String errorCode,
-      required String message}) = _$_ErrorBaseEntity;
-
-  factory _ErrorBaseEntity.fromJson(Map<String, dynamic> json) =
-      _$_ErrorBaseEntity.fromJson;
+      required String message}) = _$_BaseErrorEntity;
 
   @override
   String get errorCode => throw _privateConstructorUsedError;
@@ -179,6 +159,6 @@ abstract class _ErrorBaseEntity implements ErrorEntity {
   String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ErrorBaseEntityCopyWith<_ErrorBaseEntity> get copyWith =>
+  _$BaseErrorEntityCopyWith<_BaseErrorEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

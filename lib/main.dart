@@ -2,8 +2,9 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:beamer/beamer.dart';
-import 'package:egresocovid19/src/core/app.dart';
-import 'package:egresocovid19/src/core/dependencies/dependencies.dart';
+import 'package:egresocovid19/src/dependencies.dart';
+import 'package:egresocovid19/src/domain/services/services.dart';
+import 'package:egresocovid19/src/presentation/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -17,9 +18,9 @@ Future<void> main() async {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
       Beamer.setPathUrlStrategy();
-      // await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
       await Hive.initFlutter();
       await configureDependencies();
+      await GetIt.I<IAuthService>().recoverSession();
       Bloc.observer = GetIt.I();
       runApp(App());
     },

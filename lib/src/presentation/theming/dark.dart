@@ -7,14 +7,18 @@ Color cardColor = const Color(0xFF17202b); // Colors.grey[900]!;
 
 final ThemeData darkTheme = ThemeData.dark().copyWith(
   primaryColor: primaryColor,
-  accentColor: accentColor,
-  textTheme: selectByBrightness(canvasColor, lightTextTheme, darkTextTheme),
+  textTheme: selectByBrightness(
+    canvasColor,
+    lightTextTheme,
+    darkTextTheme,
+  ),
   canvasColor: canvasColor,
   cardColor: cardColor,
-  primaryTextTheme:
-      selectByBrightness(primaryColor, lightTextTheme, darkTextTheme),
-  accentTextTheme:
-      selectByBrightness(accentColor, lightTextTheme, darkTextTheme),
+  primaryTextTheme: selectByBrightness(
+    primaryColor,
+    lightTextTheme,
+    darkTextTheme,
+  ),
   scaffoldBackgroundColor: canvasColor,
   iconTheme: const IconThemeData(size: 35, color: Colors.white),
   inputDecorationTheme: InputDecorationTheme(
@@ -42,4 +46,5 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
     shadowColor: Colors.transparent,
     color: canvasColor,
   ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor),
 );

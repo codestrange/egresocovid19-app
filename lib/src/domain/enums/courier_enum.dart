@@ -1,1 +1,0 @@
-enum Courier { Telegram, Whatsapp }
