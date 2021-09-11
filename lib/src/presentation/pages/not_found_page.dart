@@ -1,11 +1,12 @@
 import 'package:beamer/beamer.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class NotFoundPage extends StatelessWidget {
-  static BeamPage getPage() {
+  static BeamPage getPage(BuildContext context) {
     return BeamPage(
       key: const ValueKey('notfound'),
-      title: 'Not Found',
+      title: getTitle(context, 'Página desconocida'),
       type: BeamPageType.fadeTransition,
       child: NotFoundPage(),
     );

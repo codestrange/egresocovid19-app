@@ -12,7 +12,7 @@ class AuthLocation extends BeamLocation {
     RouteInformationSerializable state,
   ) {
     return [
-      LoginPage.getPage(),
+      LoginPage.getPage(context),
     ];
   }
 }
@@ -27,7 +27,7 @@ class CheckingLocation extends BeamLocation {
     RouteInformationSerializable state,
   ) {
     return [
-      CheckingPage.getPage(),
+      CheckingPage.getPage(context),
     ];
   }
 }
@@ -42,7 +42,7 @@ class HomeLocation extends BeamLocation {
     RouteInformationSerializable state,
   ) {
     return [
-      HomePage.getPage(),
+      HomePage.getPage(context),
     ];
   }
 }
@@ -57,7 +57,7 @@ class NotFoundLocation extends BeamLocation {
     RouteInformationSerializable state,
   ) {
     return [
-      NotFoundPage.getPage(),
+      NotFoundPage.getPage(context),
     ];
   }
 }

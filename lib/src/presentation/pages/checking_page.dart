@@ -1,11 +1,12 @@
 import 'package:beamer/beamer.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class CheckingPage extends StatelessWidget {
-  static BeamPage getPage() {
+  static BeamPage getPage(BuildContext context) {
     return BeamPage(
       key: const ValueKey('checking'),
-      title: 'Checking',
+      title: getTitle(context, 'Comprobando'),
       type: BeamPageType.fadeTransition,
       child: CheckingPage(),
     );

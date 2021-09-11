@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/services/auth_service.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/buttons/main_button_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -11,22 +12,25 @@ import 'package:get_it/get_it.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static BeamPage getPage() {
-    return const BeamPage(
-      key: ValueKey('home'),
-      title: 'Egreso COVID-19 - Inicio',
+  static BeamPage getPage(BuildContext context) {
+    return BeamPage(
+      key: const ValueKey('home'),
+      title: getTitle(context, 'Inicio'),
       type: kIsWeb ? BeamPageType.fadeTransition : BeamPageType.material,
-      child: HomePage(),
+      child: const HomePage(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         title: Text(
           Messages.of(context)!.helloWorld,
+          style: Theme.of(context).textTheme.headline6,
         ),
+        iconTheme: Theme.of(context).iconTheme,
       ),
       drawer: Drawer(
         child: SafeArea(
@@ -70,6 +74,19 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Divider(height: 1),
+              ListTile(
+                leading: Icon(
+                  Icons.logout,
+                  size: Theme.of(context).iconTheme.size,
+                  color: Theme.of(context).iconTheme.color,
+                ),
+                title: const Text('Cerrar Sesión'),
+                onTap: () {
+                  GetIt.I<IAuthService>()
+                      .logOut()
+                      .then((_) => context.beamToNamed('/login'));
+                },
+              ),
             ],
           ),
         ),

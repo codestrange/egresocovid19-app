@@ -1,5 +1,4 @@
 import 'package:beamer/beamer.dart';
-import 'package:egresocovid19/src/constants.dart';
 import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
@@ -27,7 +26,9 @@ class App extends StatelessWidget {
                   builder: (context, state) {
                     return MaterialApp.router(
                       debugShowCheckedModeBanner: false,
-                      title: Constants.appName,
+                      onGenerateTitle: (context) {
+                        return Messages.of(context)!.helloWorld;
+                      },
                       theme: light,
                       darkTheme: dark,
                       themeMode: mode,

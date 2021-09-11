@@ -10,10 +10,10 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
-  static BeamPage getPage() {
+  static BeamPage getPage(BuildContext context) {
     return BeamPage(
       key: const ValueKey('login'),
-      title: 'Login',
+      title: getTitle(context, 'Iniciar Sesión'),
       type: BeamPageType.fadeTransition,
       child: LoginPage(),
     );
@@ -78,7 +78,7 @@ class _LoginForm extends StatelessWidget {
                 child: _PasswordField(),
               ),
               SizedBox(height: 10),
-              SubmmitButton<ILoginBloc>('Iniciar'),
+              SubmmitButton<ILoginBloc>('Iniciar Sesión'),
               SizedBox(height: 10),
             ],
           ),
