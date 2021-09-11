@@ -20,3 +20,17 @@ jobs:
           targetBranch: deploy
           webRenderer: html
           customArgs: --base-href="/${{ github.event.repository.name }}/"
+  gen404:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: deploy
+      - uses: canastro/copy-file-action@master
+        with:
+          source: index.html
+          target: 404.html
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: deploy
