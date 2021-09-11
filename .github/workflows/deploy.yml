@@ -18,3 +18,5 @@ jobs:
       - uses: erickzanardo/flutter-gh-pages@v6
         with:
           targetBranch: deploy
+          webRenderer: html
+          customArgs: --base-href="/${{ github.event.repository.name }}/"
