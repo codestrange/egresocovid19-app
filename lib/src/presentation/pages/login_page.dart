@@ -78,7 +78,8 @@ class _LoginForm extends StatelessWidget {
                 child: _PasswordField(),
               ),
               SizedBox(height: 10),
-              SubmmitButton<ILoginBloc>('Iniciar')
+              SubmmitButton<ILoginBloc>('Iniciar'),
+              SizedBox(height: 10),
             ],
           ),
         );
