@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:egresocovid19/src/dependencies.config.dart';
@@ -14,7 +15,11 @@ Future<void> configureDependencies() async => $initGetIt(GetIt.I);
 @module
 abstract class RegisterModule {
   @lazySingleton
-  Dio get dio => Dio()..interceptors.add(PrettyDioLogger());
+  Dio get dio => Dio()
+    ..interceptors.add(PrettyDioLogger(
+      compact: false,
+      logPrint: (e) => log(e.toString()),
+    ));
 
   @lazySingleton
   OAuth oauth(
