@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 
 abstract class IThemeService {
   ThemeMode getThemeMode();
-  Future<Either<void, ErrorEntity>> setThemeMode(ThemeMode themeMode);
+  Future<Either<ErrorEntity, Unit>> setThemeMode(ThemeMode themeMode);
 }
 
 @Injectable(as: IThemeService)
@@ -28,7 +28,7 @@ class ThemeService implements IThemeService {
   }
 
   @override
-  Future<Either<void, ErrorEntity>> setThemeMode(ThemeMode themeMode) {
+  Future<Either<ErrorEntity, Unit>> setThemeMode(ThemeMode themeMode) {
     return themeRepository.setThemeMode(themeMode);
   }
 }

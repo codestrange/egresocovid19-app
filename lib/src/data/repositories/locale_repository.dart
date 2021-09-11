@@ -11,18 +11,18 @@ class LocaleRepository implements ILocaleRepository {
   final Box<String> box;
 
   @override
-  Either<String, ErrorEntity> getLocale() {
+  Either<ErrorEntity, String> getLocale() {
     return box.containsKey('lang')
-        ? Left(box.get('lang')!)
-        : const Right(ErrorEntity(
+        ? Right(box.get('lang')!)
+        : const Left(ErrorEntity(
             errorCode: '0',
             message: 'Language not found.',
           ));
   }
 
   @override
-  Future<Either<void, ErrorEntity>> setLocale(String locale) async {
+  Future<Either<ErrorEntity, Unit>> setLocale(String locale) async {
     await box.put('lang', locale);
-    return const Left(null);
+    return const Right(unit);
   }
 }

@@ -27,7 +27,7 @@ class AuthRepository implements IAuthRepository {
   bool get isLoggedIn => _isLoggedIn;
 
   @override
-  Future<Either<void, ErrorEntity>> logIn({
+  Future<Either<ErrorEntity, Unit>> logIn({
     required UserPostEntity user,
   }) async {
     try {
@@ -37,7 +37,7 @@ class AuthRepository implements IAuthRepository {
       ));
       _controller.add(const AuthStatusEntity.authenticated());
       _isLoggedIn = true;
-      return const Left(null);
+      return const Right(unit);
     } catch (e) {
       _isLoggedIn = false;
       return catchMethod(e);

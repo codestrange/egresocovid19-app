@@ -24,8 +24,8 @@ class ThemeRepository implements IThemeRepository {
   }
 
   @override
-  Future<Either<void, ErrorEntity>> setThemeMode(ThemeMode themeMode) async {
+  Future<Either<ErrorEntity, Unit>> setThemeMode(ThemeMode themeMode) async {
     await box.put('mode', themeMode.index);
-    return const Left(null);
+    return const Right(unit);
   }
 }

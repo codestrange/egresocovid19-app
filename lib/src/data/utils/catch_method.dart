@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 
-Right<T, ErrorEntity> catchMethod<T>(Object e) {
+Left<ErrorEntity, T> catchMethod<T>(Object e) {
   var error = ErrorEntity(
     errorCode: '0',
     message: e.toString(),
@@ -20,5 +20,5 @@ Right<T, ErrorEntity> catchMethod<T>(Object e) {
       }
   }
   log('errorCode: ${error.errorCode}, message: ${error.message}');
-  return Right(error);
+  return Left(error);
 }

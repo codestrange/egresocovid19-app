@@ -4,7 +4,7 @@ import 'package:egresocovid19/src/domain/repositories/repositories.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IAuthService {
-  Future<Either<void, ErrorEntity>> logIn({
+  Future<Either<ErrorEntity, Unit>> logIn({
     required UserPostEntity user,
   });
   bool get isLoggedIn;
@@ -23,7 +23,7 @@ class AuthService implements IAuthService {
   final IAuthRepository authRepository;
 
   @override
-  Future<Either<void, ErrorEntity>> logIn({required UserPostEntity user}) =>
+  Future<Either<ErrorEntity, Unit>> logIn({required UserPostEntity user}) =>
       authRepository.logIn(user: user);
 
   @override

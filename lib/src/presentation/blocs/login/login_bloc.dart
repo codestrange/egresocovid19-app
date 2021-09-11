@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/utils/input_errors.dart';
@@ -41,7 +42,7 @@ class LoginBloc extends ILoginBloc {
   );
 
   @override
-  Future<FormBlocState<void, ErrorEntity>> onSubmmit() async {
+  Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
     final response = await authService.logIn(
       user: UserPostEntity(
         email: email.state.value,
@@ -49,8 +50,8 @@ class LoginBloc extends ILoginBloc {
       ),
     );
     return response.fold(
-      (_) => const FormSuccessState(null),
       (error) => FormErrorState(error),
+      (_) => const FormSuccessState(unit),
     );
   }
 }

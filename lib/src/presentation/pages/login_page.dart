@@ -29,39 +29,28 @@ class LoginPage extends StatelessWidget {
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text(error.message))),
-          child: const _PortaitWidget(),
-        ),
-      ),
-    );
-  }
-}
-
-class _PortaitWidget extends StatelessWidget {
-  const _PortaitWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Flexible(child: PlaceholderOfIllustration()),
-          const SizedBox(height: 20),
-          Flexible(
-            child: Container(
-              alignment: Alignment.topCenter,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ConstrainedBox(
-                constraints: BoxConstraints.loose(
-                  const Size.fromWidth(400),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Flexible(child: PlaceholderOfIllustration()),
+                const SizedBox(height: 20),
+                Flexible(
+                  child: Container(
+                    alignment: Alignment.topCenter,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints.loose(
+                        const Size.fromWidth(400),
+                      ),
+                      child: const _LoginForm(),
+                    ),
+                  ),
                 ),
-                child: const _LoginForm(),
-              ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
@@ -74,10 +63,10 @@ class _LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutofillGroup(
-      child: Builder(
-        builder: (context) {
-          return Column(
+    return Builder(
+      builder: (context) {
+        return AutofillGroup(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
@@ -91,9 +80,9 @@ class _LoginForm extends StatelessWidget {
               SizedBox(height: 10),
               SubmmitButton<ILoginBloc>('Iniciar')
             ],
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

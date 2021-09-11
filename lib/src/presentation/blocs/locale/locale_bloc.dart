@@ -19,12 +19,12 @@ class LocaleBloc extends ILocaleBloc {
       : super(
           LocaleState.changed(
             locale: localeService.getLocale().fold(
-                  (l) =>
+                  (l) => Messages.supportedLocales.first,
+                  (r) =>
                       Messages.supportedLocales
-                          .where((e) => e.languageCode == l)
+                          .where((e) => e.languageCode == r)
                           .firstOrNull ??
                       Messages.supportedLocales.first,
-                  (r) => Messages.supportedLocales.first,
                 ),
           ),
         );

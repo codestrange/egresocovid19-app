@@ -4,5 +4,5 @@ import 'package:flutter/material.dart';
 
 abstract class IThemeRepository {
   ThemeMode getThemeMode();
-  Future<Either<void, ErrorEntity>> setThemeMode(ThemeMode themeMode);
+  Future<Either<ErrorEntity, Unit>> setThemeMode(ThemeMode themeMode);
 }
