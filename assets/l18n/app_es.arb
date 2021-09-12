@@ -1,6 +1,3 @@
 {
-    "helloWorld": "Hola Mundo!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
-    }
+    "appName": "Egreso COVID-19"
 }

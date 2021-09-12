@@ -92,11 +92,11 @@ abstract class Messages {
     Locale('es')
   ];
 
-  /// The conventional newborn programmer greeting
+  /// No description provided for @appName.
   ///
   /// In es, this message translates to:
-  /// **'Hola Mundo!'**
-  String get helloWorld;
+  /// **'Egreso COVID-19'**
+  String get appName;
 }
 
 class _MessagesDelegate extends LocalizationsDelegate<Messages> {

@@ -8,5 +8,5 @@ class MessagesEs extends Messages {
   MessagesEs([String locale = 'es']) : super(locale);
 
   @override
-  String get helloWorld => 'Hola Mundo!';
+  String get appName => 'Egreso COVID-19';
 }

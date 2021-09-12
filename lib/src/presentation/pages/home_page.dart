@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         title: Text(
-          Messages.of(context)!.helloWorld,
+          Messages.of(context)!.appName,
           style: Theme.of(context).textTheme.headline6,
         ),
         iconTheme: Theme.of(context).iconTheme,
@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                Messages.of(context)!.helloWorld,
+                Messages.of(context)!.appName,
               ),
               const SizedBox(height: 10),
               MainButton(
