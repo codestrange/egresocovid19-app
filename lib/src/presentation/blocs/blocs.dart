@@ -1,5 +1,10 @@
 export 'auth/auth_bloc.dart';
+export 'home/home_bloc.dart';
 export 'locale/locale_bloc.dart';
 export 'login/login_bloc.dart';
+export 'patient_basic_edit/patient_basic_edit_bloc.dart';
+export 'patient_create/patient_create_bloc.dart';
+export 'patient_egreso_edit/patient_egreso_edit_bloc.dart';
+export 'patient_view/patient_view_bloc.dart';
 export 'theme/theme_bloc.dart';
 export 'utils/input_errors.dart';

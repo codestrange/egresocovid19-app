@@ -22,6 +22,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider<IHomeBloc>(
+      create: (_) => GetIt.I(),
+      child: const _HomePageInternal(),
+    );
+  }
+}
+
+class _HomePageInternal extends StatelessWidget {
+  const _HomePageInternal({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(

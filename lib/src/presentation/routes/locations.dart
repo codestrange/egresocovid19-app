@@ -63,13 +63,13 @@ class HomeLocation extends BeamLocation<BeamState> {
     return [
       HomePage.getPage(context),
       if (state.contains(0, 'patients')) ...[
-        if (state.contains(1, 'new')) PatienCreatePage.getPage(context),
+        if (state.contains(1, 'new')) PatientCreatePage.getPage(context),
         if (state.contains(2, 'view'))
-          PatienDetailViewPage.getPage(context, state.patientId),
+          PatientViewPage.getPage(context, state.patientId),
         if (state.contains(2, 'basic-edit'))
-          PatienDetailBasicEditPage.getPage(context, state.patientId),
+          PatientBasicEditPage.getPage(context, state.patientId),
         if (state.contains(2, 'egreso-edit'))
-          PatienDetailEgresoEditPage.getPage(context, state.patientId),
+          PatientEgresoEditPage.getPage(context, state.patientId),
       ]
     ];
   }
