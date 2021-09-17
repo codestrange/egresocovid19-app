@@ -14,7 +14,6 @@ class LoginPage extends StatelessWidget {
     return BeamPage(
       key: const ValueKey('login'),
       title: getTitle(context, 'Iniciar Sesión'),
-      type: BeamPageType.fadeTransition,
       child: LoginPage(),
     );
   }

@@ -16,7 +16,6 @@ class HomePage extends StatelessWidget {
     return BeamPage(
       key: const ValueKey('home'),
       title: getTitle(context, 'Inicio'),
-      type: kIsWeb ? BeamPageType.fadeTransition : BeamPageType.material,
       child: const HomePage(),
     );
   }
