@@ -1,9 +1,0 @@
-import 'package:egresocovid19/src/domain/enums/enums.dart';
-
-extension SkinColorEnumExtension on Sex {
-  static SkinColor fromString(String value) =>
-    SkinColor.values
-        .where((element) => element.toString() == value)
-        .first;
-  
-}
