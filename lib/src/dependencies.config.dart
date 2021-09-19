@@ -7,16 +7,18 @@
 import 'package:dio/dio.dart' as _i6;
 import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i24;
 import 'package:egresocovid19/src/data/repositories/auth_repository.dart'
-    as _i25;
+    as _i26;
 import 'package:egresocovid19/src/data/repositories/locale_repository.dart'
     as _i12;
+import 'package:egresocovid19/src/data/repositories/patient_repository.dart'
+    as _i25;
 import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
     as _i20;
 import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i23;
-import 'package:egresocovid19/src/dependencies.dart' as _i27;
+import 'package:egresocovid19/src/dependencies.dart' as _i28;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i11;
-import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i26;
+import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i27;
 import 'package:egresocovid19/src/domain/services/locale_service.dart' as _i13;
 import 'package:egresocovid19/src/domain/services/services.dart' as _i8;
 import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i21;
@@ -86,15 +88,17 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<String>(() => registerModule.baseUrl, instanceName: 'baseUrl');
   gh.lazySingleton<_i24.ClientApi>(() => _i24.ClientApi(get<_i6.Dio>(),
       baseUrl: get<String>(instanceName: 'baseUrl')));
+  gh.lazySingleton<_i11.IPatientRepository>(
+      () => _i25.PatientRepository(get<_i24.ClientApi>()));
   gh.lazySingleton<_i22.OAuth>(() => registerModule.oauth(
       get<String>(instanceName: 'baseUrl'),
       get<_i6.Dio>(),
       get<_i22.OAuthStorage>()));
   gh.lazySingleton<_i11.IAuthRepository>(
-      () => _i25.AuthRepository(get<_i22.OAuth>()));
-  gh.lazySingleton<_i26.IAuthService>(
-      () => _i26.AuthService(authRepository: get<_i11.IAuthRepository>()));
+      () => _i26.AuthRepository(get<_i22.OAuth>()));
+  gh.lazySingleton<_i27.IAuthService>(
+      () => _i27.AuthService(authRepository: get<_i11.IAuthRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i27.RegisterModule {}
+class _$RegisterModule extends _i28.RegisterModule {}
