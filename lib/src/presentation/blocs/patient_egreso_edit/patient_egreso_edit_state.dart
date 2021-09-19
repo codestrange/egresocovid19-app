@@ -17,8 +17,10 @@ class PatientEgresoEditState with _$PatientEgresoEditState {
     DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
   ) = _UpdateInProgress;
 
-  const factory PatientEgresoEditState.updateFailure(String errorMessage) =
-      _UpdateFailure;
+  const factory PatientEgresoEditState.updateFailure(
+    String errorMessage,
+    DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
+  ) = _UpdateFailure;
 
   const factory PatientEgresoEditState.updateSuccess(
     DischargeOfPositiveCasesOfCovid19Entity newDischargeData,

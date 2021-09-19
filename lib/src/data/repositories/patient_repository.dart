@@ -16,10 +16,10 @@ class PatientRepository extends IPatientRepository {
   ClientApi clientApi;
 
   @override
-  Future<Either<ErrorEntity, void>> updateDischargeData(
-    String patientId,
-    DischargeOfPositiveCasesOfCovid19Entity dischargeData,
-  ) {
+  Future<Either<ErrorEntity, void>> updateDischargeData({
+    required String patientId,
+    required DischargeOfPositiveCasesOfCovid19Entity dischargeData,
+  }) {
     return clientApi
         .putDischargeData(
           patientId,

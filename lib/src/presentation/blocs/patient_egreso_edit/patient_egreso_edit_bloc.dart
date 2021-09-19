@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/domain/repositories/repositories.dart';
+import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -18,7 +18,7 @@ abstract class IPatientEgresoEditBloc
 @Injectable(as: IPatientEgresoEditBloc)
 class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
   PatientEgresoEditBloc(
-    this.patientRepository,
+    this.patientService,
   ) : super(const PatientEgresoEditState.initial()) {
     on<PatientEgresoEditEvent>((event, emit) {
       event.when(
@@ -37,17 +37,20 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
         update: (patientId, newDischargeData) async {
           emit(PatientEgresoEditState.updateInProgress(newDischargeData));
 
-          final result = await patientRepository.updateDischargeData(
-              patientId, newDischargeData);
+          final result = await patientService.updatePatientDischargeData(
+            patientId: patientId,
+            dischargeData: newDischargeData,
+          );
 
           result.fold(
-            (l) => emit(PatientEgresoEditState.updateFailure(l.message)),
-            (r) => emit(PatientEgresoEditState.updateSuccess(newDischargeData)),
+            (l) => emit(PatientEgresoEditState.updateFailure(
+                l.message, newDischargeData)),
+            (_) => emit(PatientEgresoEditState.updateSuccess(newDischargeData)),
           );
         },
       );
     });
   }
 
-  IPatientRepository patientRepository;
+  IPatientService patientService;
 }
