@@ -1,0 +1,17 @@
+enum Prophylaxis {
+  Prevengovir,
+  Vimang,
+  Moringa,
+  BiomodulinT,
+  VitaminC,
+  Polivit,
+  Turmeric,
+  Soverana2AndPlus,
+  Honey,
+  VitaminA,
+  Ginger,
+  SoveranaPlus,
+  Abdala,
+  Covid19Previously,
+  AnotherVaccineAgainstCovid,
+}

@@ -1,0 +1,16 @@
+enum Aftermath {
+  Fatigue,
+  Headache,
+  Alopecia,
+  RespiratorySymptoms,
+  MuscleBoneNeuropathicPain,
+  PsychologicalPsychiatricDisorders,
+  SexualDisorders,
+  SleepDisorder,
+  PersistenceOfLossOfSmell,
+  PersistenceOfLossOfAppetite,
+  GastrointestinalSymptoms,
+  Dizziness,
+  DesiresToVomit,
+  Others,
+}

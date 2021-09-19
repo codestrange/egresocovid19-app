@@ -1,7 +1,14 @@
 export 'buttons/main_button_widget.dart';
 export 'buttons/submmit_button_widget.dart';
 export 'placeholder_illustration_dart.dart';
+export 'text_fields/autocomplete_input_widget.dart';
 export 'text_fields/input_email_widget.dart';
 export 'text_fields/input_password_widget.dart';
 export 'text_fields/input_widget.dart';
+export 'text_fields/patient_fields/input_address_widget.dart';
+export 'text_fields/patient_fields/input_bloodtype_widget.dart';
+export 'text_fields/patient_fields/input_fullname_widget.dart';
+export 'text_fields/patient_fields/input_identitynumber_widget.dart';
+export 'text_fields/patient_fields/input_sex_widget.dart';
+export 'text_fields/patient_fields/input_skincolor_widget.dart';
 export 'text_fields/utils.dart';
