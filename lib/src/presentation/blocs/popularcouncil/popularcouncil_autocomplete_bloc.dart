@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_bloc.dart';
 import 'package:injectable/injectable.dart';
+
+import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_bloc.dart';
 
 @injectable
 class PopularCouncilAutoCompleteBloc extends AutoCompleteBloc<String> {
