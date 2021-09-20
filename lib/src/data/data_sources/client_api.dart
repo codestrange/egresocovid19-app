@@ -35,4 +35,7 @@ abstract class ClientApi {
     @Path() String patientId,
     @Body() DischargeOfPositiveCasesOfCovid19Model discharge,
   );
+
+  @GET('/provinces')
+  Future<List<ProvinceModel>> getProvinces();
 }
