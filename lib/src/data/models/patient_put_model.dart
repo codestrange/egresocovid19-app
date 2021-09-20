@@ -7,7 +7,6 @@ part 'patient_put_model.g.dart';
 @JsonSerializable()
 class PatientPutModel {
   const PatientPutModel({
-    required this.id,
     required this.firstname,
     required this.lastname,
     required this.ci,
@@ -25,7 +24,6 @@ class PatientPutModel {
     required this.familyPathologicalHistory,
   });
 
-  final String? id;
   final String? firstname;
   final String? lastname;
   final String? ci;

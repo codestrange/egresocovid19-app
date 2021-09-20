@@ -47,7 +47,6 @@ class PatientEntity with _$PatientEntity {
         dischargeOfPositiveCasesOfCovid19,
   }) = PatientGetDetailEntity;
   const factory PatientEntity.post({
-    required String id,
     required String firstname,
     required String lastname,
     required String ci,
@@ -65,7 +64,7 @@ class PatientEntity with _$PatientEntity {
     required List<PathologicalEntity> familyPathologicalHistory,
   }) = PatientPostEntity;
   const factory PatientEntity.put({
-    required String? id,
+    required String id,
     required String? firstname,
     required String? lastname,
     required String? ci,

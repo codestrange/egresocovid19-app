@@ -21,7 +21,7 @@ class PatientRepository extends IPatientRepository {
     required DischargeOfPositiveCasesOfCovid19Entity dischargeData,
   }) {
     return clientApi
-        .putDischargeData(
+        .putPatientEgreso(
           patientId,
           dischargeData.toModel(),
         )

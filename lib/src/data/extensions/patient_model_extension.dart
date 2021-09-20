@@ -59,7 +59,6 @@ extension PatientGetDetailModelExtension on PatientGetDetailModel {
 extension PatientPostEntityExtension on PatientPostEntity {
   PatientPostModel toModel() {
     return PatientPostModel(
-      id: id,
       firstname: firstname,
       lastname: lastname,
       ci: ci,
@@ -84,7 +83,6 @@ extension PatientPostEntityExtension on PatientPostEntity {
 extension PatientPutEntityExtension on PatientPutEntity {
   PatientPutModel toModel() {
     return PatientPutModel(
-      id: id,
       firstname: firstname,
       lastname: lastname,
       ci: ci,

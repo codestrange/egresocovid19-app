@@ -8,7 +8,6 @@ part of 'patient_post_model.dart';
 
 PatientPostModel _$PatientPostModelFromJson(Map<String, dynamic> json) {
   return PatientPostModel(
-    id: json['id'] as String,
     firstname: json['firstname'] as String,
     lastname: json['lastname'] as String,
     ci: json['ci'] as String,
@@ -35,7 +34,6 @@ PatientPostModel _$PatientPostModelFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$PatientPostModelToJson(PatientPostModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'firstname': instance.firstname,
       'lastname': instance.lastname,
       'ci': instance.ci,

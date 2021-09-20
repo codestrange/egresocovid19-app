@@ -98,8 +98,7 @@ class _$PatientEntityTearOff {
   }
 
   PatientPostEntity post(
-      {required String id,
-      required String firstname,
+      {required String firstname,
       required String lastname,
       required String ci,
       required String municipalityCode,
@@ -115,7 +114,6 @@ class _$PatientEntityTearOff {
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
     return PatientPostEntity(
-      id: id,
       firstname: firstname,
       lastname: lastname,
       ci: ci,
@@ -135,7 +133,7 @@ class _$PatientEntityTearOff {
   }
 
   PatientPutEntity put(
-      {required String? id,
+      {required String id,
       required String? firstname,
       required String? lastname,
       required String? ci,
@@ -222,7 +220,6 @@ mixin _$PatientEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -240,7 +237,7 @@ mixin _$PatientEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -302,7 +299,6 @@ mixin _$PatientEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -320,7 +316,7 @@ mixin _$PatientEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -714,7 +710,6 @@ class _$PatientGetEntity implements PatientGetEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -732,7 +727,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -814,7 +809,6 @@ class _$PatientGetEntity implements PatientGetEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -832,7 +826,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -1298,7 +1292,6 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -1316,7 +1309,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -1399,7 +1392,6 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -1417,7 +1409,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -1546,8 +1538,7 @@ abstract class $PatientPostEntityCopyWith<$Res>
       _$PatientPostEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String firstname,
+      {String firstname,
       String lastname,
       String ci,
       String municipalityCode,
@@ -1577,7 +1568,6 @@ class _$PatientPostEntityCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? firstname = freezed,
     Object? lastname = freezed,
     Object? ci = freezed,
@@ -1595,10 +1585,6 @@ class _$PatientPostEntityCopyWithImpl<$Res>
     Object? familyPathologicalHistory = freezed,
   }) {
     return _then(PatientPostEntity(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       firstname: firstname == freezed
           ? _value.firstname
           : firstname // ignore: cast_nullable_to_non_nullable
@@ -1667,8 +1653,7 @@ class _$PatientPostEntityCopyWithImpl<$Res>
 
 class _$PatientPostEntity implements PatientPostEntity {
   const _$PatientPostEntity(
-      {required this.id,
-      required this.firstname,
+      {required this.firstname,
       required this.lastname,
       required this.ci,
       required this.municipalityCode,
@@ -1684,8 +1669,6 @@ class _$PatientPostEntity implements PatientPostEntity {
       required this.personalPathologicalHistory,
       required this.familyPathologicalHistory});
 
-  @override
-  final String id;
   @override
   final String firstname;
   @override
@@ -1719,15 +1702,13 @@ class _$PatientPostEntity implements PatientPostEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.post(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.post(firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is PatientPostEntity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
                 const DeepCollectionEquality()
                     .equals(other.firstname, firstname)) &&
@@ -1780,7 +1761,6 @@ class _$PatientPostEntity implements PatientPostEntity {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(firstname) ^
       const DeepCollectionEquality().hash(lastname) ^
       const DeepCollectionEquality().hash(ci) ^
@@ -1846,7 +1826,6 @@ class _$PatientPostEntity implements PatientPostEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -1864,7 +1843,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -1883,7 +1862,6 @@ class _$PatientPostEntity implements PatientPostEntity {
         put,
   }) {
     return post(
-        id,
         firstname,
         lastname,
         ci,
@@ -1945,7 +1923,6 @@ class _$PatientPostEntity implements PatientPostEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -1963,7 +1940,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -1984,7 +1961,6 @@ class _$PatientPostEntity implements PatientPostEntity {
   }) {
     if (post != null) {
       return post(
-          id,
           firstname,
           lastname,
           ci,
@@ -2033,8 +2009,7 @@ class _$PatientPostEntity implements PatientPostEntity {
 
 abstract class PatientPostEntity implements PatientEntity {
   const factory PatientPostEntity(
-          {required String id,
-          required String firstname,
+          {required String firstname,
           required String lastname,
           required String ci,
           required String municipalityCode,
@@ -2051,7 +2026,6 @@ abstract class PatientPostEntity implements PatientEntity {
           required List<PathologicalEntity> familyPathologicalHistory}) =
       _$PatientPostEntity;
 
-  String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
   String get lastname => throw _privateConstructorUsedError;
   String get ci => throw _privateConstructorUsedError;
@@ -2084,7 +2058,7 @@ abstract class $PatientPutEntityCopyWith<$Res>
       _$PatientPutEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
+      {String id,
       String? firstname,
       String? lastname,
       String? ci,
@@ -2136,7 +2110,7 @@ class _$PatientPutEntityCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firstname: firstname == freezed
           ? _value.firstname
           : firstname // ignore: cast_nullable_to_non_nullable
@@ -2223,7 +2197,7 @@ class _$PatientPutEntity implements PatientPutEntity {
       required this.familyPathologicalHistory});
 
   @override
-  final String? id;
+  final String id;
   @override
   final String? firstname;
   @override
@@ -2384,7 +2358,6 @@ class _$PatientPutEntity implements PatientPutEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -2402,7 +2375,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -2483,7 +2456,6 @@ class _$PatientPutEntity implements PatientPutEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
@@ -2501,7 +2473,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
@@ -2571,7 +2543,7 @@ class _$PatientPutEntity implements PatientPutEntity {
 
 abstract class PatientPutEntity implements PatientEntity {
   const factory PatientPutEntity(
-          {required String? id,
+          {required String id,
           required String? firstname,
           required String? lastname,
           required String? ci,
@@ -2589,7 +2561,7 @@ abstract class PatientPutEntity implements PatientEntity {
           required List<PathologicalEntity>? familyPathologicalHistory}) =
       _$PatientPutEntity;
 
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String? get firstname => throw _privateConstructorUsedError;
   String? get lastname => throw _privateConstructorUsedError;
   String? get ci => throw _privateConstructorUsedError;
