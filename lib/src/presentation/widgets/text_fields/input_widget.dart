@@ -1,5 +1,6 @@
-import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
+
+import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 
 class TextInputWidget extends StatelessWidget {
   const TextInputWidget({
@@ -26,6 +27,7 @@ class TextInputWidget extends StatelessWidget {
     return TextField(
       controller: controller,
       keyboardType: keyboardType,
+      maxLines: keyboardType == TextInputType.multiline ? null : 1,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
       decoration: TextFieldDecorations.decoration(
