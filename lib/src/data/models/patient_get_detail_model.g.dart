@@ -15,10 +15,10 @@ PatientGetDetailModel _$PatientGetDetailModelFromJson(
     ci: json['ci'] as String,
     province: json['province'] as String,
     municipality: json['municipality'] as String,
-    sex: _$enumDecode(_$SexEnumMap, json['sex']),
+    sex: sexFromInt(json['sex'] as int),
     age: json['age'] as int,
-    skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
-    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
+    skinColor: skinColorFromInt(json['skinColor'] as int),
+    bloodType: bloodTypeFromInt(json['bloodType'] as int?),
     address: json['address'] as String,
     polyclinic: json['polyclinic'] as String,
     surgery: json['surgery'] as String,
@@ -48,78 +48,20 @@ Map<String, dynamic> _$PatientGetDetailModelToJson(
       'ci': instance.ci,
       'province': instance.province,
       'municipality': instance.municipality,
-      'sex': _$SexEnumMap[instance.sex],
+      'sex': sexToInt(instance.sex),
       'age': instance.age,
-      'skinColor': _$SkinColorEnumMap[instance.skinColor],
-      'bloodType': _$BloodTypeEnumMap[instance.bloodType],
+      'skinColor': skinColorToInt(instance.skinColor),
+      'bloodType': bloodTypeToInt(instance.bloodType),
       'address': instance.address,
       'polyclinic': instance.polyclinic,
       'surgery': instance.surgery,
       'popularCouncil': instance.popularCouncil,
       'neighborhood': instance.neighborhood,
       'blockNumber': instance.blockNumber,
-      'personalPathologicalHistory': instance.personalPathologicalHistory,
-      'familyPathologicalHistory': instance.familyPathologicalHistory,
+      'personalPathologicalHistory':
+          instance.personalPathologicalHistory.map((e) => e.toJson()).toList(),
+      'familyPathologicalHistory':
+          instance.familyPathologicalHistory.map((e) => e.toJson()).toList(),
       'dischargeOfPositiveCasesOfCovid19':
-          instance.dischargeOfPositiveCasesOfCovid19,
+          instance.dischargeOfPositiveCasesOfCovid19.toJson(),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$SexEnumMap = {
-  Sex.Female: 'Female',
-  Sex.Male: 'Male',
-  Sex.Other: 'Other',
-};
-
-const _$SkinColorEnumMap = {
-  SkinColor.White: 'White',
-  SkinColor.Black: 'Black',
-  SkinColor.Other: 'Other',
-};
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$BloodTypeEnumMap = {
-  BloodType.Aplus: 'Aplus',
-  BloodType.Bplus: 'Bplus',
-  BloodType.ABplus: 'ABplus',
-  BloodType.Oplus: 'Oplus',
-  BloodType.Aminus: 'Aminus',
-  BloodType.Bminus: 'Bminus',
-  BloodType.ABminus: 'ABminus',
-  BloodType.Ominus: 'Ominus',
-};

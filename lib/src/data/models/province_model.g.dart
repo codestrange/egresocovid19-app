@@ -20,5 +20,5 @@ Map<String, dynamic> _$ProvinceModelToJson(ProvinceModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'code': instance.code,
-      'municipalities': instance.municipalities,
+      'municipalities': instance.municipalities.map((e) => e.toJson()).toList(),
     };

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'pathological_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class PathologicalModel {
   const PathologicalModel({
     required this.name,
