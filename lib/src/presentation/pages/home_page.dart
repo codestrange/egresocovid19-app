@@ -89,6 +89,19 @@ class _HomePageInternal extends StatelessWidget {
               const Divider(height: 1),
               ListTile(
                 leading: Icon(
+                  Icons.person_add_alt_rounded,
+                  size: Theme.of(context).iconTheme.size,
+                  color: Theme.of(context).iconTheme.color,
+                ),
+                title: const Text('Añadir Paciente'),
+                onTap: () {
+                  context.beamToNamed('/patients/new');
+                },
+              ),
+              const SizedBox(height: 20),
+              const Divider(height: 1),
+              ListTile(
+                leading: Icon(
                   Icons.logout,
                   size: Theme.of(context).iconTheme.size,
                   color: Theme.of(context).iconTheme.color,
