@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PatientEntityTearOff {
   const _$PatientEntityTearOff();
 
-  _PatientGetEntity get(
+  PatientGetEntity get(
       {required String id,
       required String firstname,
       required String lastname,
@@ -24,6 +24,7 @@ class _$PatientEntityTearOff {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -34,7 +35,7 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
-    return _PatientGetEntity(
+    return PatientGetEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -42,6 +43,7 @@ class _$PatientEntityTearOff {
       province: province,
       municipality: municipality,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -55,7 +57,7 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientGetDetailEntity getDetail(
+  PatientGetDetailEntity getDetail(
       {required String id,
       required String firstname,
       required String lastname,
@@ -63,6 +65,7 @@ class _$PatientEntityTearOff {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -75,7 +78,7 @@ class _$PatientEntityTearOff {
       required List<PathologicalEntity> familyPathologicalHistory,
       required DischargeOfPositiveCasesOfCovid19Entity
           dischargeOfPositiveCasesOfCovid19}) {
-    return _PatientGetDetailEntity(
+    return PatientGetDetailEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -83,6 +86,7 @@ class _$PatientEntityTearOff {
       province: province,
       municipality: municipality,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -97,13 +101,13 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientPostEntity post(
-      {required String id,
-      required String firstname,
+  PatientPostEntity post(
+      {required String firstname,
       required String lastname,
       required String ci,
       required String municipalityCode,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -114,13 +118,13 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
-    return _PatientPostEntity(
-      id: id,
+    return PatientPostEntity(
       firstname: firstname,
       lastname: lastname,
       ci: ci,
       municipalityCode: municipalityCode,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -134,13 +138,14 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientPutEntity put(
-      {required String? id,
+  PatientPutEntity put(
+      {required String id,
       required String? firstname,
       required String? lastname,
       required String? ci,
       required String? municipalityCode,
       required Sex? sex,
+      required int? age,
       required SkinColor? skinColor,
       required BloodType? bloodType,
       required String? address,
@@ -151,13 +156,14 @@ class _$PatientEntityTearOff {
       required int? blockNumber,
       required List<PathologicalEntity>? personalPathologicalHistory,
       required List<PathologicalEntity>? familyPathologicalHistory}) {
-    return _PatientPutEntity(
+    return PatientPutEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
       ci: ci,
       municipalityCode: municipalityCode,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -189,6 +195,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -208,6 +215,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -222,12 +230,12 @@ mixin _$PatientEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -240,12 +248,13 @@ mixin _$PatientEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -269,6 +278,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -288,6 +298,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -302,12 +313,12 @@ mixin _$PatientEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -320,12 +331,13 @@ mixin _$PatientEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -342,18 +354,18 @@ mixin _$PatientEntity {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -394,11 +406,11 @@ class _$PatientEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PatientGetEntityCopyWith<$Res>
+abstract class $PatientGetEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientGetEntityCopyWith(
-          _PatientGetEntity value, $Res Function(_PatientGetEntity) then) =
-      __$PatientGetEntityCopyWithImpl<$Res>;
+  factory $PatientGetEntityCopyWith(
+          PatientGetEntity value, $Res Function(PatientGetEntity) then) =
+      _$PatientGetEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -408,6 +420,7 @@ abstract class _$PatientGetEntityCopyWith<$Res>
       String province,
       String municipality,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -421,15 +434,15 @@ abstract class _$PatientGetEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientGetEntityCopyWithImpl<$Res>
+class _$PatientGetEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientGetEntityCopyWith<$Res> {
-  __$PatientGetEntityCopyWithImpl(
-      _PatientGetEntity _value, $Res Function(_PatientGetEntity) _then)
-      : super(_value, (v) => _then(v as _PatientGetEntity));
+    implements $PatientGetEntityCopyWith<$Res> {
+  _$PatientGetEntityCopyWithImpl(
+      PatientGetEntity _value, $Res Function(PatientGetEntity) _then)
+      : super(_value, (v) => _then(v as PatientGetEntity));
 
   @override
-  _PatientGetEntity get _value => super._value as _PatientGetEntity;
+  PatientGetEntity get _value => super._value as PatientGetEntity;
 
   @override
   $Res call({
@@ -440,6 +453,7 @@ class __$PatientGetEntityCopyWithImpl<$Res>
     Object? province = freezed,
     Object? municipality = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -451,7 +465,7 @@ class __$PatientGetEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientGetEntity(
+    return _then(PatientGetEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -480,6 +494,10 @@ class __$PatientGetEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -526,8 +544,8 @@ class __$PatientGetEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientGetEntity implements _PatientGetEntity {
-  const _$_PatientGetEntity(
+class _$PatientGetEntity implements PatientGetEntity {
+  const _$PatientGetEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -535,6 +553,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
       required this.province,
       required this.municipality,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -561,6 +580,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   final Sex sex;
   @override
+  final int age;
+  @override
   final SkinColor skinColor;
   @override
   final BloodType? bloodType;
@@ -583,13 +604,13 @@ class _$_PatientGetEntity implements _PatientGetEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.get(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.get(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientGetEntity &&
+        (other is PatientGetEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -608,6 +629,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
                     .equals(other.municipality, municipality)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -654,6 +677,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
       const DeepCollectionEquality().hash(province) ^
       const DeepCollectionEquality().hash(municipality) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -667,8 +691,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
-      __$PatientGetEntityCopyWithImpl<_PatientGetEntity>(this, _$identity);
+  $PatientGetEntityCopyWith<PatientGetEntity> get copyWith =>
+      _$PatientGetEntityCopyWithImpl<PatientGetEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -681,6 +705,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -700,6 +725,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -714,12 +740,12 @@ class _$_PatientGetEntity implements _PatientGetEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -732,12 +758,13 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -758,6 +785,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
         province,
         municipality,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -781,6 +809,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -800,6 +829,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -814,12 +844,12 @@ class _$_PatientGetEntity implements _PatientGetEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -832,12 +862,13 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -860,6 +891,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
           province,
           municipality,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -877,10 +909,10 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return get(this);
   }
@@ -888,10 +920,10 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (get != null) {
@@ -901,8 +933,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   }
 }
 
-abstract class _PatientGetEntity implements PatientEntity {
-  const factory _PatientGetEntity(
+abstract class PatientGetEntity implements PatientEntity {
+  const factory PatientGetEntity(
           {required String id,
           required String firstname,
           required String lastname,
@@ -910,6 +942,7 @@ abstract class _PatientGetEntity implements PatientEntity {
           required String province,
           required String municipality,
           required Sex sex,
+          required int age,
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
@@ -920,7 +953,7 @@ abstract class _PatientGetEntity implements PatientEntity {
           required int blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
-      _$_PatientGetEntity;
+      _$PatientGetEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -929,6 +962,7 @@ abstract class _PatientGetEntity implements PatientEntity {
   String get province => throw _privateConstructorUsedError;
   String get municipality => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -944,16 +978,16 @@ abstract class _PatientGetEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
+  $PatientGetEntityCopyWith<PatientGetEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientGetDetailEntityCopyWith<$Res>
+abstract class $PatientGetDetailEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientGetDetailEntityCopyWith(_PatientGetDetailEntity value,
-          $Res Function(_PatientGetDetailEntity) then) =
-      __$PatientGetDetailEntityCopyWithImpl<$Res>;
+  factory $PatientGetDetailEntityCopyWith(PatientGetDetailEntity value,
+          $Res Function(PatientGetDetailEntity) then) =
+      _$PatientGetDetailEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -963,6 +997,7 @@ abstract class _$PatientGetDetailEntityCopyWith<$Res>
       String province,
       String municipality,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -981,15 +1016,15 @@ abstract class _$PatientGetDetailEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientGetDetailEntityCopyWithImpl<$Res>
+class _$PatientGetDetailEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientGetDetailEntityCopyWith<$Res> {
-  __$PatientGetDetailEntityCopyWithImpl(_PatientGetDetailEntity _value,
-      $Res Function(_PatientGetDetailEntity) _then)
-      : super(_value, (v) => _then(v as _PatientGetDetailEntity));
+    implements $PatientGetDetailEntityCopyWith<$Res> {
+  _$PatientGetDetailEntityCopyWithImpl(PatientGetDetailEntity _value,
+      $Res Function(PatientGetDetailEntity) _then)
+      : super(_value, (v) => _then(v as PatientGetDetailEntity));
 
   @override
-  _PatientGetDetailEntity get _value => super._value as _PatientGetDetailEntity;
+  PatientGetDetailEntity get _value => super._value as PatientGetDetailEntity;
 
   @override
   $Res call({
@@ -1000,6 +1035,7 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
     Object? province = freezed,
     Object? municipality = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -1012,7 +1048,7 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
     Object? familyPathologicalHistory = freezed,
     Object? dischargeOfPositiveCasesOfCovid19 = freezed,
   }) {
-    return _then(_PatientGetDetailEntity(
+    return _then(PatientGetDetailEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1041,6 +1077,10 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -1101,8 +1141,8 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
-  const _$_PatientGetDetailEntity(
+class _$PatientGetDetailEntity implements PatientGetDetailEntity {
+  const _$PatientGetDetailEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -1110,6 +1150,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
       required this.province,
       required this.municipality,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -1137,6 +1178,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   final Sex sex;
   @override
+  final int age;
+  @override
   final SkinColor skinColor;
   @override
   final BloodType? bloodType;
@@ -1162,13 +1205,13 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.getDetail(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19: $dischargeOfPositiveCasesOfCovid19)';
+    return 'PatientEntity.getDetail(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19: $dischargeOfPositiveCasesOfCovid19)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientGetDetailEntity &&
+        (other is PatientGetDetailEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -1187,6 +1230,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
                     .equals(other.municipality, municipality)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -1236,6 +1281,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
       const DeepCollectionEquality().hash(province) ^
       const DeepCollectionEquality().hash(municipality) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -1250,8 +1296,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
-      __$PatientGetDetailEntityCopyWithImpl<_PatientGetDetailEntity>(
+  $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
+      _$PatientGetDetailEntityCopyWithImpl<PatientGetDetailEntity>(
           this, _$identity);
 
   @override
@@ -1265,6 +1311,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1284,6 +1331,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1298,12 +1346,12 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1316,12 +1364,13 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1342,6 +1391,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
         province,
         municipality,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -1366,6 +1416,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1385,6 +1436,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1399,12 +1451,12 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1417,12 +1469,13 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1445,6 +1498,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
           province,
           municipality,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -1463,10 +1517,10 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return getDetail(this);
   }
@@ -1474,10 +1528,10 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (getDetail != null) {
@@ -1487,8 +1541,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   }
 }
 
-abstract class _PatientGetDetailEntity implements PatientEntity {
-  const factory _PatientGetDetailEntity(
+abstract class PatientGetDetailEntity implements PatientEntity {
+  const factory PatientGetDetailEntity(
       {required String id,
       required String firstname,
       required String lastname,
@@ -1496,6 +1550,7 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -1507,7 +1562,7 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
       required DischargeOfPositiveCasesOfCovid19Entity
-          dischargeOfPositiveCasesOfCovid19}) = _$_PatientGetDetailEntity;
+          dischargeOfPositiveCasesOfCovid19}) = _$PatientGetDetailEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -1516,6 +1571,7 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
   String get province => throw _privateConstructorUsedError;
   String get municipality => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -1534,24 +1590,24 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
           throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
+  $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientPostEntityCopyWith<$Res>
+abstract class $PatientPostEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientPostEntityCopyWith(
-          _PatientPostEntity value, $Res Function(_PatientPostEntity) then) =
-      __$PatientPostEntityCopyWithImpl<$Res>;
+  factory $PatientPostEntityCopyWith(
+          PatientPostEntity value, $Res Function(PatientPostEntity) then) =
+      _$PatientPostEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String firstname,
+      {String firstname,
       String lastname,
       String ci,
       String municipalityCode,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -1565,24 +1621,24 @@ abstract class _$PatientPostEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientPostEntityCopyWithImpl<$Res>
+class _$PatientPostEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientPostEntityCopyWith<$Res> {
-  __$PatientPostEntityCopyWithImpl(
-      _PatientPostEntity _value, $Res Function(_PatientPostEntity) _then)
-      : super(_value, (v) => _then(v as _PatientPostEntity));
+    implements $PatientPostEntityCopyWith<$Res> {
+  _$PatientPostEntityCopyWithImpl(
+      PatientPostEntity _value, $Res Function(PatientPostEntity) _then)
+      : super(_value, (v) => _then(v as PatientPostEntity));
 
   @override
-  _PatientPostEntity get _value => super._value as _PatientPostEntity;
+  PatientPostEntity get _value => super._value as PatientPostEntity;
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? firstname = freezed,
     Object? lastname = freezed,
     Object? ci = freezed,
     Object? municipalityCode = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -1594,11 +1650,7 @@ class __$PatientPostEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientPostEntity(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(PatientPostEntity(
       firstname: firstname == freezed
           ? _value.firstname
           : firstname // ignore: cast_nullable_to_non_nullable
@@ -1619,6 +1671,10 @@ class __$PatientPostEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -1665,14 +1721,14 @@ class __$PatientPostEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientPostEntity implements _PatientPostEntity {
-  const _$_PatientPostEntity(
-      {required this.id,
-      required this.firstname,
+class _$PatientPostEntity implements PatientPostEntity {
+  const _$PatientPostEntity(
+      {required this.firstname,
       required this.lastname,
       required this.ci,
       required this.municipalityCode,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -1685,8 +1741,6 @@ class _$_PatientPostEntity implements _PatientPostEntity {
       required this.familyPathologicalHistory});
 
   @override
-  final String id;
-  @override
   final String firstname;
   @override
   final String lastname;
@@ -1696,6 +1750,8 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   final String municipalityCode;
   @override
   final Sex sex;
+  @override
+  final int age;
   @override
   final SkinColor skinColor;
   @override
@@ -1719,15 +1775,13 @@ class _$_PatientPostEntity implements _PatientPostEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.post(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.post(firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientPostEntity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other is PatientPostEntity &&
             (identical(other.firstname, firstname) ||
                 const DeepCollectionEquality()
                     .equals(other.firstname, firstname)) &&
@@ -1741,6 +1795,8 @@ class _$_PatientPostEntity implements _PatientPostEntity {
                     .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -1780,12 +1836,12 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(firstname) ^
       const DeepCollectionEquality().hash(lastname) ^
       const DeepCollectionEquality().hash(ci) ^
       const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -1799,8 +1855,8 @@ class _$_PatientPostEntity implements _PatientPostEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
-      __$PatientPostEntityCopyWithImpl<_PatientPostEntity>(this, _$identity);
+  $PatientPostEntityCopyWith<PatientPostEntity> get copyWith =>
+      _$PatientPostEntityCopyWithImpl<PatientPostEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1813,6 +1869,7 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1832,6 +1889,7 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1846,12 +1904,12 @@ class _$_PatientPostEntity implements _PatientPostEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1864,12 +1922,13 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1883,12 +1942,12 @@ class _$_PatientPostEntity implements _PatientPostEntity {
         put,
   }) {
     return post(
-        id,
         firstname,
         lastname,
         ci,
         municipalityCode,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -1912,6 +1971,7 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1931,6 +1991,7 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1945,12 +2006,12 @@ class _$_PatientPostEntity implements _PatientPostEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1963,12 +2024,13 @@ class _$_PatientPostEntity implements _PatientPostEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1984,12 +2046,12 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   }) {
     if (post != null) {
       return post(
-          id,
           firstname,
           lastname,
           ci,
           municipalityCode,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -2007,10 +2069,10 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return post(this);
   }
@@ -2018,10 +2080,10 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (post != null) {
@@ -2031,14 +2093,14 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   }
 }
 
-abstract class _PatientPostEntity implements PatientEntity {
-  const factory _PatientPostEntity(
-          {required String id,
-          required String firstname,
+abstract class PatientPostEntity implements PatientEntity {
+  const factory PatientPostEntity(
+          {required String firstname,
           required String lastname,
           required String ci,
           required String municipalityCode,
           required Sex sex,
+          required int age,
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
@@ -2049,14 +2111,14 @@ abstract class _PatientPostEntity implements PatientEntity {
           required int blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
-      _$_PatientPostEntity;
+      _$PatientPostEntity;
 
-  String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
   String get lastname => throw _privateConstructorUsedError;
   String get ci => throw _privateConstructorUsedError;
   String get municipalityCode => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -2072,24 +2134,25 @@ abstract class _PatientPostEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
+  $PatientPostEntityCopyWith<PatientPostEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientPutEntityCopyWith<$Res>
+abstract class $PatientPutEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientPutEntityCopyWith(
-          _PatientPutEntity value, $Res Function(_PatientPutEntity) then) =
-      __$PatientPutEntityCopyWithImpl<$Res>;
+  factory $PatientPutEntityCopyWith(
+          PatientPutEntity value, $Res Function(PatientPutEntity) then) =
+      _$PatientPutEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
+      {String id,
       String? firstname,
       String? lastname,
       String? ci,
       String? municipalityCode,
       Sex? sex,
+      int? age,
       SkinColor? skinColor,
       BloodType? bloodType,
       String? address,
@@ -2103,15 +2166,15 @@ abstract class _$PatientPutEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientPutEntityCopyWithImpl<$Res>
+class _$PatientPutEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientPutEntityCopyWith<$Res> {
-  __$PatientPutEntityCopyWithImpl(
-      _PatientPutEntity _value, $Res Function(_PatientPutEntity) _then)
-      : super(_value, (v) => _then(v as _PatientPutEntity));
+    implements $PatientPutEntityCopyWith<$Res> {
+  _$PatientPutEntityCopyWithImpl(
+      PatientPutEntity _value, $Res Function(PatientPutEntity) _then)
+      : super(_value, (v) => _then(v as PatientPutEntity));
 
   @override
-  _PatientPutEntity get _value => super._value as _PatientPutEntity;
+  PatientPutEntity get _value => super._value as PatientPutEntity;
 
   @override
   $Res call({
@@ -2121,6 +2184,7 @@ class __$PatientPutEntityCopyWithImpl<$Res>
     Object? ci = freezed,
     Object? municipalityCode = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -2132,11 +2196,11 @@ class __$PatientPutEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientPutEntity(
+    return _then(PatientPutEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firstname: firstname == freezed
           ? _value.firstname
           : firstname // ignore: cast_nullable_to_non_nullable
@@ -2157,6 +2221,10 @@ class __$PatientPutEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex?,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int?,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -2203,14 +2271,15 @@ class __$PatientPutEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientPutEntity implements _PatientPutEntity {
-  const _$_PatientPutEntity(
+class _$PatientPutEntity implements PatientPutEntity {
+  const _$PatientPutEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
       required this.ci,
       required this.municipalityCode,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -2223,7 +2292,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
       required this.familyPathologicalHistory});
 
   @override
-  final String? id;
+  final String id;
   @override
   final String? firstname;
   @override
@@ -2234,6 +2303,8 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   final String? municipalityCode;
   @override
   final Sex? sex;
+  @override
+  final int? age;
   @override
   final SkinColor? skinColor;
   @override
@@ -2257,13 +2328,13 @@ class _$_PatientPutEntity implements _PatientPutEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.put(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.put(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientPutEntity &&
+        (other is PatientPutEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -2279,6 +2350,8 @@ class _$_PatientPutEntity implements _PatientPutEntity {
                     .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -2324,6 +2397,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
       const DeepCollectionEquality().hash(ci) ^
       const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -2337,8 +2411,8 @@ class _$_PatientPutEntity implements _PatientPutEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientPutEntityCopyWith<_PatientPutEntity> get copyWith =>
-      __$PatientPutEntityCopyWithImpl<_PatientPutEntity>(this, _$identity);
+  $PatientPutEntityCopyWith<PatientPutEntity> get copyWith =>
+      _$PatientPutEntityCopyWithImpl<PatientPutEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2351,6 +2425,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2370,6 +2445,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2384,12 +2460,12 @@ class _$_PatientPutEntity implements _PatientPutEntity {
                 dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2402,12 +2478,13 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             List<PathologicalEntity> familyPathologicalHistory)
         post,
     required TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -2427,6 +2504,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
         ci,
         municipalityCode,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -2450,6 +2528,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2469,6 +2548,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2483,12 +2563,12 @@ class _$_PatientPutEntity implements _PatientPutEntity {
                 dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
-            String id,
             String firstname,
             String lastname,
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2501,12 +2581,13 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
     TResult Function(
-            String? id,
+            String id,
             String? firstname,
             String? lastname,
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -2528,6 +2609,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
           ci,
           municipalityCode,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -2545,10 +2627,10 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return put(this);
   }
@@ -2556,10 +2638,10 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (put != null) {
@@ -2569,14 +2651,15 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   }
 }
 
-abstract class _PatientPutEntity implements PatientEntity {
-  const factory _PatientPutEntity(
-          {required String? id,
+abstract class PatientPutEntity implements PatientEntity {
+  const factory PatientPutEntity(
+          {required String id,
           required String? firstname,
           required String? lastname,
           required String? ci,
           required String? municipalityCode,
           required Sex? sex,
+          required int? age,
           required SkinColor? skinColor,
           required BloodType? bloodType,
           required String? address,
@@ -2587,14 +2670,15 @@ abstract class _PatientPutEntity implements PatientEntity {
           required int? blockNumber,
           required List<PathologicalEntity>? personalPathologicalHistory,
           required List<PathologicalEntity>? familyPathologicalHistory}) =
-      _$_PatientPutEntity;
+      _$PatientPutEntity;
 
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String? get firstname => throw _privateConstructorUsedError;
   String? get lastname => throw _privateConstructorUsedError;
   String? get ci => throw _privateConstructorUsedError;
   String? get municipalityCode => throw _privateConstructorUsedError;
   Sex? get sex => throw _privateConstructorUsedError;
+  int? get age => throw _privateConstructorUsedError;
   SkinColor? get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -2610,6 +2694,6 @@ abstract class _PatientPutEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientPutEntityCopyWith<_PatientPutEntity> get copyWith =>
+  $PatientPutEntityCopyWith<PatientPutEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

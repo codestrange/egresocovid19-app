@@ -8,23 +8,77 @@ import 'package:egresocovid19/src/domain/repositories/repositories.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IPatientRepository)
-class PatientRepository extends IPatientRepository {
-  PatientRepository(
+class PatientRepository implements IPatientRepository {
+  const PatientRepository(
     this.clientApi,
   );
 
-  ClientApi clientApi;
+  final ClientApi clientApi;
 
   @override
-  Future<Either<ErrorEntity, void>> updateDischargeData({
+  Future<Either<ErrorEntity, List<PatientGetEntity>>> getPatients({
+    required String query,
+  }) async {
+    try {
+      final response = await clientApi.getPatients(query);
+      return Right(response.map((e) => e.toEntity()).toList());
+    } catch (e) {
+      return catchMethod(e);
+    }
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> getPatient({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity dischargeData,
-  }) {
-    return clientApi
-        .putDischargeData(
-          patientId,
-          dischargeData.toModel(),
-        )
-        .then((_) => Right(() {}()), onError: catchMethod);
+  }) async {
+    try {
+      final response = await clientApi.getPatient(patientId);
+      return Right(response.toEntity());
+    } catch (e) {
+      return catchMethod(e);
+    }
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetEntity>> postPatient({
+    required PatientPostEntity patient,
+  }) async {
+    try {
+      final response = await clientApi.postPatient(patient.toModel());
+      return Right(response.toEntity());
+    } catch (e) {
+      return catchMethod(e);
+    }
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatient({
+    required PatientPutEntity patient,
+  }) async {
+    try {
+      final response = await clientApi.putPatient(
+        patient.id,
+        patient.toModel(),
+      );
+      return Right(response.toEntity());
+    } catch (e) {
+      return catchMethod(e);
+    }
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
+    required String patientId,
+    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+  }) async {
+    try {
+      final response = await clientApi.putPatientEgreso(
+        patientId,
+        discharge.toModel(),
+      );
+      return Right(response.toEntity());
+    } catch (e) {
+      return catchMethod(e);
+    }
   }
 }

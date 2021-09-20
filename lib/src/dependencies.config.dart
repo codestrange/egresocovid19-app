@@ -7,20 +7,28 @@
 import 'package:dio/dio.dart' as _i6;
 import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i27;
 import 'package:egresocovid19/src/data/repositories/auth_repository.dart'
-    as _i30;
+    as _i34;
+import 'package:egresocovid19/src/data/repositories/autocomplete_repository.dart'
+    as _i28;
 import 'package:egresocovid19/src/data/repositories/locale_repository.dart'
     as _i12;
 import 'package:egresocovid19/src/data/repositories/patient_repository.dart'
-    as _i28;
+    as _i30;
+import 'package:egresocovid19/src/data/repositories/province_repository.dart'
+    as _i32;
 import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
     as _i20;
 import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i23;
-import 'package:egresocovid19/src/dependencies.dart' as _i32;
+import 'package:egresocovid19/src/dependencies.dart' as _i36;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i11;
-import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i31;
+import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i35;
+import 'package:egresocovid19/src/domain/services/autocomplete_service.dart'
+    as _i29;
 import 'package:egresocovid19/src/domain/services/locale_service.dart' as _i13;
-import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i29;
+import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i31;
+import 'package:egresocovid19/src/domain/services/province_service.dart'
+    as _i33;
 import 'package:egresocovid19/src/domain/services/services.dart' as _i8;
 import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i21;
 import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart'
@@ -101,19 +109,27 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<String>(() => registerModule.baseUrl, instanceName: 'baseUrl');
   gh.lazySingleton<_i27.ClientApi>(() => _i27.ClientApi(get<_i6.Dio>(),
       baseUrl: get<String>(instanceName: 'baseUrl')));
+  gh.lazySingleton<_i11.IAutoCompleteRepository>(
+      () => _i28.AutoCompleteRepository(get<_i27.ClientApi>()));
+  gh.factory<_i29.IAutoCompleteService>(
+      () => _i29.AutoCompleteService(get<_i11.IAutoCompleteRepository>()));
   gh.lazySingleton<_i11.IPatientRepository>(
-      () => _i28.PatientRepository(get<_i27.ClientApi>()));
-  gh.factory<_i29.IPatientService>(
-      () => _i29.PatientService(get<_i11.IPatientRepository>()));
+      () => _i30.PatientRepository(get<_i27.ClientApi>()));
+  gh.factory<_i31.IPatientService>(
+      () => _i31.PatientService(get<_i11.IPatientRepository>()));
+  gh.lazySingleton<_i11.IProvinceRepository>(
+      () => _i32.ProvinceRepository(get<_i27.ClientApi>()));
+  gh.factory<_i33.IProvinceService>(
+      () => _i33.ProvinceService(get<_i11.IProvinceRepository>()));
   gh.lazySingleton<_i22.OAuth>(() => registerModule.oauth(
       get<String>(instanceName: 'baseUrl'),
       get<_i6.Dio>(),
       get<_i22.OAuthStorage>()));
   gh.lazySingleton<_i11.IAuthRepository>(
-      () => _i30.AuthRepository(get<_i22.OAuth>()));
-  gh.lazySingleton<_i31.IAuthService>(
-      () => _i31.AuthService(authRepository: get<_i11.IAuthRepository>()));
+      () => _i34.AuthRepository(get<_i22.OAuth>()));
+  gh.lazySingleton<_i35.IAuthService>(
+      () => _i35.AuthService(authRepository: get<_i11.IAuthRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i32.RegisterModule {}
+class _$RegisterModule extends _i36.RegisterModule {}

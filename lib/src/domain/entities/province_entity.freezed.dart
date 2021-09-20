@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProvinceEntityTearOff {
   const _$ProvinceEntityTearOff();
 
-  _ProvinceEntity get(
+  _ProvinceEntity call(
       {required String name,
       required String code,
       required List<MunicipalityEntity> municipalities}) {
@@ -36,33 +36,6 @@ mixin _$ProvinceEntity {
   String get name => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   List<MunicipalityEntity> get municipalities =>
-      throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String name, String code, List<MunicipalityEntity> municipalities)
-        get,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String name, String code, List<MunicipalityEntity> municipalities)?
-        get,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ProvinceEntity value) get,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProvinceEntity value)? get,
-    required TResult orElse(),
-  }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -171,7 +144,7 @@ class _$_ProvinceEntity implements _ProvinceEntity {
 
   @override
   String toString() {
-    return 'ProvinceEntity.get(name: $name, code: $code, municipalities: $municipalities)';
+    return 'ProvinceEntity(name: $name, code: $code, municipalities: $municipalities)';
   }
 
   @override
@@ -198,50 +171,6 @@ class _$_ProvinceEntity implements _ProvinceEntity {
   @override
   _$ProvinceEntityCopyWith<_ProvinceEntity> get copyWith =>
       __$ProvinceEntityCopyWithImpl<_ProvinceEntity>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String name, String code, List<MunicipalityEntity> municipalities)
-        get,
-  }) {
-    return get(name, code, municipalities);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String name, String code, List<MunicipalityEntity> municipalities)?
-        get,
-    required TResult orElse(),
-  }) {
-    if (get != null) {
-      return get(name, code, municipalities);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ProvinceEntity value) get,
-  }) {
-    return get(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ProvinceEntity value)? get,
-    required TResult orElse(),
-  }) {
-    if (get != null) {
-      return get(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _ProvinceEntity implements ProvinceEntity {
