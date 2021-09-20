@@ -12,7 +12,7 @@ abstract class ClientApi {
   factory ClientApi(Dio dio, {@Named('baseUrl') String baseUrl}) = _ClientApi;
 
   @GET('/patients/search/{query}')
-  Future<List<PatientGetModel>> getPatients(@Path('query') String query);
+  Future<List<PatientGetModel>> getPatients(@Path() String query);
 
   @GET('/patients/{patientId}')
   Future<PatientGetDetailModel> getPatient(
@@ -38,4 +38,34 @@ abstract class ClientApi {
 
   @GET('/provinces')
   Future<List<ProvinceModel>> getProvinces();
+
+  @GET('/autocomplete/polyclinics/{query}')
+  Future<List<String>> getPolyclinics(@Path() String query);
+
+  @GET('/autocomplete/surgeries/{query}')
+  Future<List<String>> getSurgeries(@Path() String query);
+
+  @GET('/autocomplete/popular_councils/{query}')
+  Future<List<String>> getPopularCouncils(@Path() String query);
+
+  @GET('/autocomplete/neighborhoods/{query}')
+  Future<List<String>> getNeighborhoods(@Path() String query);
+
+  @GET('/autocomplete/default_pathologicals')
+  Future<List<String>> getDefaultPathologicals();
+
+  @GET('/autocomplete/antibiotics/{query}')
+  Future<List<String>> getAntibiotics(@Path() String query);
+
+  @GET('/autocomplete/another_vaccines_against_covid/{query}')
+  Future<List<String>> getAnotherVaccinesAgainstCovid(@Path() String query);
+
+  @GET('/autocomplete/others_aftermaths/{query}')
+  Future<List<String>> getOthersAftermaths(@Path() String query);
+
+  @GET('/autocomplete/symptoms/{query}')
+  Future<List<String>> getSymptoms(@Path() String query);
+
+  @GET('/autocomplete/default_symptoms')
+  Future<List<String>> getDefaultSymptoms();
 }
