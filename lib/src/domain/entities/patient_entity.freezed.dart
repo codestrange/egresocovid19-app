@@ -16,33 +16,35 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PatientEntityTearOff {
   const _$PatientEntityTearOff();
 
-  _PatientPostEntity post(
-      {required String fullName,
+  _PatientGetEntity get(
+      {required String id,
+      required String firstname,
+      required String lastname,
       required String ci,
+      required String province,
+      required String municipality,
       required Sex sex,
       required SkinColor skinColor,
-      BloodType? bloodType,
+      required BloodType? bloodType,
       required String address,
-      required String municipalityName,
-      required String provinceName,
       required String polyclinic,
       required String surgery,
       required String popularCouncil,
       required String neighborhood,
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
-      required List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) {
-    return _PatientPostEntity(
-      fullName: fullName,
+      required List<PathologicalEntity> familyPathologicalHistory}) {
+    return _PatientGetEntity(
+      id: id,
+      firstname: firstname,
+      lastname: lastname,
       ci: ci,
+      province: province,
+      municipality: municipality,
       sex: sex,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
-      municipalityName: municipalityName,
-      provinceName: provinceName,
       polyclinic: polyclinic,
       surgery: surgery,
       popularCouncil: popularCouncil,
@@ -50,19 +52,20 @@ class _$PatientEntityTearOff {
       blockNumber: blockNumber,
       personalPathologicalHistory: personalPathologicalHistory,
       familyPathologicalHistory: familyPathologicalHistory,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity,
     );
   }
 
-  _PatientGetEntity get(
-      {required String fullName,
+  _PatientGetDetailEntity getDetail(
+      {required String id,
+      required String firstname,
+      required String lastname,
       required String ci,
+      required String province,
+      required String municipality,
       required Sex sex,
       required SkinColor skinColor,
-      BloodType? bloodType,
+      required BloodType? bloodType,
       required String address,
-      required String municipalityCode,
       required String polyclinic,
       required String surgery,
       required String popularCouncil,
@@ -70,16 +73,19 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) {
-    return _PatientGetEntity(
-      fullName: fullName,
+      required DischargeOfPositiveCasesOfCovid19Entity
+          dischargeOfPositiveCasesOfCovid19}) {
+    return _PatientGetDetailEntity(
+      id: id,
+      firstname: firstname,
+      lastname: lastname,
       ci: ci,
+      province: province,
+      municipality: municipality,
       sex: sex,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
-      municipalityCode: municipalityCode,
       polyclinic: polyclinic,
       surgery: surgery,
       popularCouncil: popularCouncil,
@@ -87,38 +93,74 @@ class _$PatientEntityTearOff {
       blockNumber: blockNumber,
       personalPathologicalHistory: personalPathologicalHistory,
       familyPathologicalHistory: familyPathologicalHistory,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity,
+      dischargeOfPositiveCasesOfCovid19: dischargeOfPositiveCasesOfCovid19,
+    );
+  }
+
+  _PatientPostEntity post(
+      {required String id,
+      required String firstname,
+      required String lastname,
+      required String ci,
+      required String municipalityCode,
+      required Sex sex,
+      required SkinColor skinColor,
+      required BloodType? bloodType,
+      required String address,
+      required String polyclinic,
+      required String surgery,
+      required String popularCouncil,
+      required String neighborhood,
+      required int blockNumber,
+      required List<PathologicalEntity> personalPathologicalHistory,
+      required List<PathologicalEntity> familyPathologicalHistory}) {
+    return _PatientPostEntity(
+      id: id,
+      firstname: firstname,
+      lastname: lastname,
+      ci: ci,
+      municipalityCode: municipalityCode,
+      sex: sex,
+      skinColor: skinColor,
+      bloodType: bloodType,
+      address: address,
+      polyclinic: polyclinic,
+      surgery: surgery,
+      popularCouncil: popularCouncil,
+      neighborhood: neighborhood,
+      blockNumber: blockNumber,
+      personalPathologicalHistory: personalPathologicalHistory,
+      familyPathologicalHistory: familyPathologicalHistory,
     );
   }
 
   _PatientPutEntity put(
-      {String? fullName,
-      String? ci,
-      Sex? sex,
-      SkinColor? skinColor,
-      BloodType? bloodType,
-      String? address,
-      String? municipalityName,
-      String? provinceName,
-      String? polyclinic,
-      String? surgery,
-      String? popularCouncil,
-      String? neighborhood,
-      int? blockNumber,
-      List<PathologicalEntity>? personalPathologicalHistory,
-      List<PathologicalEntity>? familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) {
+      {required String? id,
+      required String? firstname,
+      required String? lastname,
+      required String? ci,
+      required String? municipalityCode,
+      required Sex? sex,
+      required SkinColor? skinColor,
+      required BloodType? bloodType,
+      required String? address,
+      required String? polyclinic,
+      required String? surgery,
+      required String? popularCouncil,
+      required String? neighborhood,
+      required int? blockNumber,
+      required List<PathologicalEntity>? personalPathologicalHistory,
+      required List<PathologicalEntity>? familyPathologicalHistory}) {
     return _PatientPutEntity(
-      fullName: fullName,
+      id: id,
+      firstname: firstname,
+      lastname: lastname,
       ci: ci,
+      municipalityCode: municipalityCode,
       sex: sex,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
-      municipalityName: municipalityName,
-      provinceName: provinceName,
       polyclinic: polyclinic,
       surgery: surgery,
       popularCouncil: popularCouncil,
@@ -126,8 +168,6 @@ class _$PatientEntityTearOff {
       blockNumber: blockNumber,
       personalPathologicalHistory: personalPathologicalHistory,
       familyPathologicalHistory: familyPathologicalHistory,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity,
     );
   }
 }
@@ -138,142 +178,181 @@ const $PatientEntity = _$PatientEntityTearOff();
 /// @nodoc
 mixin _$PatientEntity {
   BloodType? get bloodType => throw _privateConstructorUsedError;
-  DischargeOfPositiveCasesOfCovid19Entity?
-      get dischargeOfPositiveCasesOfCovid19Entity =>
-          throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        post,
-    required TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity> familyPathologicalHistory)
         get,
     required TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)
+        getDetail,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        post,
+    required TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity>? familyPathologicalHistory)
         put,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        post,
-    TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity> familyPathologicalHistory)?
         get,
     TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity>? familyPathologicalHistory)?
         put,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientGetEntity value) get,
+    required TResult Function(_PatientGetDetailEntity value) getDetail,
+    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientPutEntity value) put,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientGetEntity value)? get,
+    TResult Function(_PatientGetDetailEntity value)? getDetail,
+    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientPutEntity value)? put,
     required TResult orElse(),
   }) =>
@@ -289,13 +368,7 @@ abstract class $PatientEntityCopyWith<$Res> {
   factory $PatientEntityCopyWith(
           PatientEntity value, $Res Function(PatientEntity) then) =
       _$PatientEntityCopyWithImpl<$Res>;
-  $Res call(
-      {BloodType? bloodType,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity});
-
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>?
-      get dischargeOfPositiveCasesOfCovid19Entity;
+  $Res call({BloodType? bloodType});
 }
 
 /// @nodoc
@@ -310,543 +383,14 @@ class _$PatientEntityCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bloodType = freezed,
-    Object? dischargeOfPositiveCasesOfCovid19Entity = freezed,
   }) {
     return _then(_value.copyWith(
       bloodType: bloodType == freezed
           ? _value.bloodType
           : bloodType // ignore: cast_nullable_to_non_nullable
               as BloodType?,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity == freezed
-              ? _value.dischargeOfPositiveCasesOfCovid19Entity
-              : dischargeOfPositiveCasesOfCovid19Entity // ignore: cast_nullable_to_non_nullable
-                  as DischargeOfPositiveCasesOfCovid19Entity?,
     ));
   }
-
-  @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>?
-      get dischargeOfPositiveCasesOfCovid19Entity {
-    if (_value.dischargeOfPositiveCasesOfCovid19Entity == null) {
-      return null;
-    }
-
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.dischargeOfPositiveCasesOfCovid19Entity!, (value) {
-      return _then(
-          _value.copyWith(dischargeOfPositiveCasesOfCovid19Entity: value));
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$PatientPostEntityCopyWith<$Res>
-    implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientPostEntityCopyWith(
-          _PatientPostEntity value, $Res Function(_PatientPostEntity) then) =
-      __$PatientPostEntityCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {String fullName,
-      String ci,
-      Sex sex,
-      SkinColor skinColor,
-      BloodType? bloodType,
-      String address,
-      String municipalityName,
-      String provinceName,
-      String polyclinic,
-      String surgery,
-      String popularCouncil,
-      String neighborhood,
-      int blockNumber,
-      List<PathologicalEntity> personalPathologicalHistory,
-      List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity});
-
-  @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>?
-      get dischargeOfPositiveCasesOfCovid19Entity;
-}
-
-/// @nodoc
-class __$PatientPostEntityCopyWithImpl<$Res>
-    extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientPostEntityCopyWith<$Res> {
-  __$PatientPostEntityCopyWithImpl(
-      _PatientPostEntity _value, $Res Function(_PatientPostEntity) _then)
-      : super(_value, (v) => _then(v as _PatientPostEntity));
-
-  @override
-  _PatientPostEntity get _value => super._value as _PatientPostEntity;
-
-  @override
-  $Res call({
-    Object? fullName = freezed,
-    Object? ci = freezed,
-    Object? sex = freezed,
-    Object? skinColor = freezed,
-    Object? bloodType = freezed,
-    Object? address = freezed,
-    Object? municipalityName = freezed,
-    Object? provinceName = freezed,
-    Object? polyclinic = freezed,
-    Object? surgery = freezed,
-    Object? popularCouncil = freezed,
-    Object? neighborhood = freezed,
-    Object? blockNumber = freezed,
-    Object? personalPathologicalHistory = freezed,
-    Object? familyPathologicalHistory = freezed,
-    Object? dischargeOfPositiveCasesOfCovid19Entity = freezed,
-  }) {
-    return _then(_PatientPostEntity(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
-      ci: ci == freezed
-          ? _value.ci
-          : ci // ignore: cast_nullable_to_non_nullable
-              as String,
-      sex: sex == freezed
-          ? _value.sex
-          : sex // ignore: cast_nullable_to_non_nullable
-              as Sex,
-      skinColor: skinColor == freezed
-          ? _value.skinColor
-          : skinColor // ignore: cast_nullable_to_non_nullable
-              as SkinColor,
-      bloodType: bloodType == freezed
-          ? _value.bloodType
-          : bloodType // ignore: cast_nullable_to_non_nullable
-              as BloodType?,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      municipalityName: municipalityName == freezed
-          ? _value.municipalityName
-          : municipalityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      provinceName: provinceName == freezed
-          ? _value.provinceName
-          : provinceName // ignore: cast_nullable_to_non_nullable
-              as String,
-      polyclinic: polyclinic == freezed
-          ? _value.polyclinic
-          : polyclinic // ignore: cast_nullable_to_non_nullable
-              as String,
-      surgery: surgery == freezed
-          ? _value.surgery
-          : surgery // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularCouncil: popularCouncil == freezed
-          ? _value.popularCouncil
-          : popularCouncil // ignore: cast_nullable_to_non_nullable
-              as String,
-      neighborhood: neighborhood == freezed
-          ? _value.neighborhood
-          : neighborhood // ignore: cast_nullable_to_non_nullable
-              as String,
-      blockNumber: blockNumber == freezed
-          ? _value.blockNumber
-          : blockNumber // ignore: cast_nullable_to_non_nullable
-              as int,
-      personalPathologicalHistory: personalPathologicalHistory == freezed
-          ? _value.personalPathologicalHistory
-          : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
-              as List<PathologicalEntity>,
-      familyPathologicalHistory: familyPathologicalHistory == freezed
-          ? _value.familyPathologicalHistory
-          : familyPathologicalHistory // ignore: cast_nullable_to_non_nullable
-              as List<PathologicalEntity>,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity == freezed
-              ? _value.dischargeOfPositiveCasesOfCovid19Entity
-              : dischargeOfPositiveCasesOfCovid19Entity // ignore: cast_nullable_to_non_nullable
-                  as DischargeOfPositiveCasesOfCovid19Entity?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_PatientPostEntity implements _PatientPostEntity {
-  const _$_PatientPostEntity(
-      {required this.fullName,
-      required this.ci,
-      required this.sex,
-      required this.skinColor,
-      this.bloodType,
-      required this.address,
-      required this.municipalityName,
-      required this.provinceName,
-      required this.polyclinic,
-      required this.surgery,
-      required this.popularCouncil,
-      required this.neighborhood,
-      required this.blockNumber,
-      required this.personalPathologicalHistory,
-      required this.familyPathologicalHistory,
-      this.dischargeOfPositiveCasesOfCovid19Entity});
-
-  @override
-  final String fullName;
-  @override
-  final String ci;
-  @override
-  final Sex sex;
-  @override
-  final SkinColor skinColor;
-  @override
-  final BloodType? bloodType;
-  @override
-  final String address;
-  @override
-  final String municipalityName;
-  @override
-  final String provinceName;
-  @override
-  final String polyclinic;
-  @override
-  final String surgery;
-  @override
-  final String popularCouncil;
-  @override
-  final String neighborhood;
-  @override
-  final int blockNumber;
-  @override
-  final List<PathologicalEntity> personalPathologicalHistory;
-  @override
-  final List<PathologicalEntity> familyPathologicalHistory;
-  @override
-  final DischargeOfPositiveCasesOfCovid19Entity?
-      dischargeOfPositiveCasesOfCovid19Entity;
-
-  @override
-  String toString() {
-    return 'PatientEntity.post(fullName: $fullName, ci: $ci, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, municipalityName: $municipalityName, provinceName: $provinceName, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19Entity: $dischargeOfPositiveCasesOfCovid19Entity)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _PatientPostEntity &&
-            (identical(other.fullName, fullName) ||
-                const DeepCollectionEquality()
-                    .equals(other.fullName, fullName)) &&
-            (identical(other.ci, ci) ||
-                const DeepCollectionEquality().equals(other.ci, ci)) &&
-            (identical(other.sex, sex) ||
-                const DeepCollectionEquality().equals(other.sex, sex)) &&
-            (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)) &&
-            (identical(other.bloodType, bloodType) ||
-                const DeepCollectionEquality()
-                    .equals(other.bloodType, bloodType)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.municipalityName, municipalityName) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalityName, municipalityName)) &&
-            (identical(other.provinceName, provinceName) ||
-                const DeepCollectionEquality()
-                    .equals(other.provinceName, provinceName)) &&
-            (identical(other.polyclinic, polyclinic) ||
-                const DeepCollectionEquality()
-                    .equals(other.polyclinic, polyclinic)) &&
-            (identical(other.surgery, surgery) ||
-                const DeepCollectionEquality()
-                    .equals(other.surgery, surgery)) &&
-            (identical(other.popularCouncil, popularCouncil) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularCouncil, popularCouncil)) &&
-            (identical(other.neighborhood, neighborhood) ||
-                const DeepCollectionEquality()
-                    .equals(other.neighborhood, neighborhood)) &&
-            (identical(other.blockNumber, blockNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockNumber, blockNumber)) &&
-            (identical(other.personalPathologicalHistory,
-                    personalPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.personalPathologicalHistory,
-                    personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory, familyPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.familyPathologicalHistory,
-                    familyPathologicalHistory)) &&
-            (identical(other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity) ||
-                const DeepCollectionEquality().equals(
-                    other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullName) ^
-      const DeepCollectionEquality().hash(ci) ^
-      const DeepCollectionEquality().hash(sex) ^
-      const DeepCollectionEquality().hash(skinColor) ^
-      const DeepCollectionEquality().hash(bloodType) ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(municipalityName) ^
-      const DeepCollectionEquality().hash(provinceName) ^
-      const DeepCollectionEquality().hash(polyclinic) ^
-      const DeepCollectionEquality().hash(surgery) ^
-      const DeepCollectionEquality().hash(popularCouncil) ^
-      const DeepCollectionEquality().hash(neighborhood) ^
-      const DeepCollectionEquality().hash(blockNumber) ^
-      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory) ^
-      const DeepCollectionEquality()
-          .hash(dischargeOfPositiveCasesOfCovid19Entity);
-
-  @JsonKey(ignore: true)
-  @override
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
-      __$PatientPostEntityCopyWithImpl<_PatientPostEntity>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityName,
-            String provinceName,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        post,
-    required TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        get,
-    required TResult Function(
-            String? fullName,
-            String? ci,
-            Sex? sex,
-            SkinColor? skinColor,
-            BloodType? bloodType,
-            String? address,
-            String? municipalityName,
-            String? provinceName,
-            String? polyclinic,
-            String? surgery,
-            String? popularCouncil,
-            String? neighborhood,
-            int? blockNumber,
-            List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        put,
-  }) {
-    return post(
-        fullName,
-        ci,
-        sex,
-        skinColor,
-        bloodType,
-        address,
-        municipalityName,
-        provinceName,
-        polyclinic,
-        surgery,
-        popularCouncil,
-        neighborhood,
-        blockNumber,
-        personalPathologicalHistory,
-        familyPathologicalHistory,
-        dischargeOfPositiveCasesOfCovid19Entity);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityName,
-            String provinceName,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        post,
-    TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        get,
-    TResult Function(
-            String? fullName,
-            String? ci,
-            Sex? sex,
-            SkinColor? skinColor,
-            BloodType? bloodType,
-            String? address,
-            String? municipalityName,
-            String? provinceName,
-            String? polyclinic,
-            String? surgery,
-            String? popularCouncil,
-            String? neighborhood,
-            int? blockNumber,
-            List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        put,
-    required TResult orElse(),
-  }) {
-    if (post != null) {
-      return post(
-          fullName,
-          ci,
-          sex,
-          skinColor,
-          bloodType,
-          address,
-          municipalityName,
-          provinceName,
-          polyclinic,
-          surgery,
-          popularCouncil,
-          neighborhood,
-          blockNumber,
-          personalPathologicalHistory,
-          familyPathologicalHistory,
-          dischargeOfPositiveCasesOfCovid19Entity);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientPutEntity value) put,
-  }) {
-    return post(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientPutEntity value)? put,
-    required TResult orElse(),
-  }) {
-    if (post != null) {
-      return post(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PatientPostEntity implements PatientEntity {
-  const factory _PatientPostEntity(
-      {required String fullName,
-      required String ci,
-      required Sex sex,
-      required SkinColor skinColor,
-      BloodType? bloodType,
-      required String address,
-      required String municipalityName,
-      required String provinceName,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
-      required int blockNumber,
-      required List<PathologicalEntity> personalPathologicalHistory,
-      required List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) = _$_PatientPostEntity;
-
-  String get fullName => throw _privateConstructorUsedError;
-  String get ci => throw _privateConstructorUsedError;
-  Sex get sex => throw _privateConstructorUsedError;
-  SkinColor get skinColor => throw _privateConstructorUsedError;
-  @override
-  BloodType? get bloodType => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get municipalityName => throw _privateConstructorUsedError;
-  String get provinceName => throw _privateConstructorUsedError;
-  String get polyclinic => throw _privateConstructorUsedError;
-  String get surgery => throw _privateConstructorUsedError;
-  String get popularCouncil => throw _privateConstructorUsedError;
-  String get neighborhood => throw _privateConstructorUsedError;
-  int get blockNumber => throw _privateConstructorUsedError;
-  List<PathologicalEntity> get personalPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  List<PathologicalEntity> get familyPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  @override
-  DischargeOfPositiveCasesOfCovid19Entity?
-      get dischargeOfPositiveCasesOfCovid19Entity =>
-          throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -857,26 +401,23 @@ abstract class _$PatientGetEntityCopyWith<$Res>
       __$PatientGetEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String fullName,
+      {String id,
+      String firstname,
+      String lastname,
       String ci,
+      String province,
+      String municipality,
       Sex sex,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
-      String municipalityCode,
       String polyclinic,
       String surgery,
       String popularCouncil,
       String neighborhood,
       int blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
-      List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity});
-
-  @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>?
-      get dischargeOfPositiveCasesOfCovid19Entity;
+      List<PathologicalEntity> familyPathologicalHistory});
 }
 
 /// @nodoc
@@ -892,13 +433,16 @@ class __$PatientGetEntityCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? id = freezed,
+    Object? firstname = freezed,
+    Object? lastname = freezed,
     Object? ci = freezed,
+    Object? province = freezed,
+    Object? municipality = freezed,
     Object? sex = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
-    Object? municipalityCode = freezed,
     Object? polyclinic = freezed,
     Object? surgery = freezed,
     Object? popularCouncil = freezed,
@@ -906,16 +450,31 @@ class __$PatientGetEntityCopyWithImpl<$Res>
     Object? blockNumber = freezed,
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
-    Object? dischargeOfPositiveCasesOfCovid19Entity = freezed,
   }) {
     return _then(_PatientGetEntity(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstname: firstname == freezed
+          ? _value.firstname
+          : firstname // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastname: lastname == freezed
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
               as String,
       ci: ci == freezed
           ? _value.ci
           : ci // ignore: cast_nullable_to_non_nullable
+              as String,
+      province: province == freezed
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
+              as String,
+      municipality: municipality == freezed
+          ? _value.municipality
+          : municipality // ignore: cast_nullable_to_non_nullable
               as String,
       sex: sex == freezed
           ? _value.sex
@@ -932,10 +491,6 @@ class __$PatientGetEntityCopyWithImpl<$Res>
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      municipalityCode: municipalityCode == freezed
-          ? _value.municipalityCode
-          : municipalityCode // ignore: cast_nullable_to_non_nullable
               as String,
       polyclinic: polyclinic == freezed
           ? _value.polyclinic
@@ -965,11 +520,6 @@ class __$PatientGetEntityCopyWithImpl<$Res>
           ? _value.familyPathologicalHistory
           : familyPathologicalHistory // ignore: cast_nullable_to_non_nullable
               as List<PathologicalEntity>,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity == freezed
-              ? _value.dischargeOfPositiveCasesOfCovid19Entity
-              : dischargeOfPositiveCasesOfCovid19Entity // ignore: cast_nullable_to_non_nullable
-                  as DischargeOfPositiveCasesOfCovid19Entity?,
     ));
   }
 }
@@ -978,26 +528,36 @@ class __$PatientGetEntityCopyWithImpl<$Res>
 
 class _$_PatientGetEntity implements _PatientGetEntity {
   const _$_PatientGetEntity(
-      {required this.fullName,
+      {required this.id,
+      required this.firstname,
+      required this.lastname,
       required this.ci,
+      required this.province,
+      required this.municipality,
       required this.sex,
       required this.skinColor,
-      this.bloodType,
+      required this.bloodType,
       required this.address,
-      required this.municipalityCode,
       required this.polyclinic,
       required this.surgery,
       required this.popularCouncil,
       required this.neighborhood,
       required this.blockNumber,
       required this.personalPathologicalHistory,
-      required this.familyPathologicalHistory,
-      this.dischargeOfPositiveCasesOfCovid19Entity});
+      required this.familyPathologicalHistory});
 
   @override
-  final String fullName;
+  final String id;
+  @override
+  final String firstname;
+  @override
+  final String lastname;
   @override
   final String ci;
+  @override
+  final String province;
+  @override
+  final String municipality;
   @override
   final Sex sex;
   @override
@@ -1006,8 +566,6 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   final BloodType? bloodType;
   @override
   final String address;
-  @override
-  final String municipalityCode;
   @override
   final String polyclinic;
   @override
@@ -1022,24 +580,32 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   final List<PathologicalEntity> personalPathologicalHistory;
   @override
   final List<PathologicalEntity> familyPathologicalHistory;
-  @override
-  final DischargeOfPositiveCasesOfCovid19Entity?
-      dischargeOfPositiveCasesOfCovid19Entity;
 
   @override
   String toString() {
-    return 'PatientEntity.get(fullName: $fullName, ci: $ci, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, municipalityCode: $municipalityCode, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19Entity: $dischargeOfPositiveCasesOfCovid19Entity)';
+    return 'PatientEntity.get(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PatientGetEntity &&
-            (identical(other.fullName, fullName) ||
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.firstname, firstname) ||
                 const DeepCollectionEquality()
-                    .equals(other.fullName, fullName)) &&
+                    .equals(other.firstname, firstname)) &&
+            (identical(other.lastname, lastname) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastname, lastname)) &&
             (identical(other.ci, ci) ||
                 const DeepCollectionEquality().equals(other.ci, ci)) &&
+            (identical(other.province, province) ||
+                const DeepCollectionEquality()
+                    .equals(other.province, province)) &&
+            (identical(other.municipality, municipality) ||
+                const DeepCollectionEquality()
+                    .equals(other.municipality, municipality)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
             (identical(other.skinColor, skinColor) ||
@@ -1051,9 +617,6 @@ class _$_PatientGetEntity implements _PatientGetEntity {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.municipalityCode, municipalityCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.polyclinic, polyclinic) ||
                 const DeepCollectionEquality()
                     .equals(other.polyclinic, polyclinic)) &&
@@ -1078,33 +641,29 @@ class _$_PatientGetEntity implements _PatientGetEntity {
                     familyPathologicalHistory) ||
                 const DeepCollectionEquality().equals(
                     other.familyPathologicalHistory,
-                    familyPathologicalHistory)) &&
-            (identical(other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity) ||
-                const DeepCollectionEquality().equals(
-                    other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity)));
+                    familyPathologicalHistory)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullName) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(firstname) ^
+      const DeepCollectionEquality().hash(lastname) ^
       const DeepCollectionEquality().hash(ci) ^
+      const DeepCollectionEquality().hash(province) ^
+      const DeepCollectionEquality().hash(municipality) ^
       const DeepCollectionEquality().hash(sex) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(polyclinic) ^
       const DeepCollectionEquality().hash(surgery) ^
       const DeepCollectionEquality().hash(popularCouncil) ^
       const DeepCollectionEquality().hash(neighborhood) ^
       const DeepCollectionEquality().hash(blockNumber) ^
       const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory) ^
-      const DeepCollectionEquality()
-          .hash(dischargeOfPositiveCasesOfCovid19Entity);
+      const DeepCollectionEquality().hash(familyPathologicalHistory);
 
   @JsonKey(ignore: true)
   @override
@@ -1115,158 +674,202 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        post,
-    required TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity> familyPathologicalHistory)
         get,
     required TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)
+        getDetail,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        post,
+    required TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity>? familyPathologicalHistory)
         put,
   }) {
     return get(
-        fullName,
+        id,
+        firstname,
+        lastname,
         ci,
+        province,
+        municipality,
         sex,
         skinColor,
         bloodType,
         address,
-        municipalityCode,
         polyclinic,
         surgery,
         popularCouncil,
         neighborhood,
         blockNumber,
         personalPathologicalHistory,
-        familyPathologicalHistory,
-        dischargeOfPositiveCasesOfCovid19Entity);
+        familyPathologicalHistory);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        post,
-    TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity> familyPathologicalHistory)?
         get,
     TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity>? familyPathologicalHistory)?
         put,
     required TResult orElse(),
   }) {
     if (get != null) {
       return get(
-          fullName,
+          id,
+          firstname,
+          lastname,
           ci,
+          province,
+          municipality,
           sex,
           skinColor,
           bloodType,
           address,
-          municipalityCode,
           polyclinic,
           surgery,
           popularCouncil,
           neighborhood,
           blockNumber,
           personalPathologicalHistory,
-          familyPathologicalHistory,
-          dischargeOfPositiveCasesOfCovid19Entity);
+          familyPathologicalHistory);
     }
     return orElse();
   }
@@ -1274,8 +877,9 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientGetEntity value) get,
+    required TResult Function(_PatientGetDetailEntity value) getDetail,
+    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientPutEntity value) put,
   }) {
     return get(this);
@@ -1284,8 +888,9 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientGetEntity value)? get,
+    TResult Function(_PatientGetDetailEntity value)? getDetail,
+    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
@@ -1298,31 +903,36 @@ class _$_PatientGetEntity implements _PatientGetEntity {
 
 abstract class _PatientGetEntity implements PatientEntity {
   const factory _PatientGetEntity(
-      {required String fullName,
-      required String ci,
-      required Sex sex,
-      required SkinColor skinColor,
-      BloodType? bloodType,
-      required String address,
-      required String municipalityCode,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
-      required int blockNumber,
-      required List<PathologicalEntity> personalPathologicalHistory,
-      required List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) = _$_PatientGetEntity;
+          {required String id,
+          required String firstname,
+          required String lastname,
+          required String ci,
+          required String province,
+          required String municipality,
+          required Sex sex,
+          required SkinColor skinColor,
+          required BloodType? bloodType,
+          required String address,
+          required String polyclinic,
+          required String surgery,
+          required String popularCouncil,
+          required String neighborhood,
+          required int blockNumber,
+          required List<PathologicalEntity> personalPathologicalHistory,
+          required List<PathologicalEntity> familyPathologicalHistory}) =
+      _$_PatientGetEntity;
 
-  String get fullName => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get firstname => throw _privateConstructorUsedError;
+  String get lastname => throw _privateConstructorUsedError;
   String get ci => throw _privateConstructorUsedError;
+  String get province => throw _privateConstructorUsedError;
+  String get municipality => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  String get municipalityCode => throw _privateConstructorUsedError;
   String get polyclinic => throw _privateConstructorUsedError;
   String get surgery => throw _privateConstructorUsedError;
   String get popularCouncil => throw _privateConstructorUsedError;
@@ -1333,12 +943,1136 @@ abstract class _PatientGetEntity implements PatientEntity {
   List<PathologicalEntity> get familyPathologicalHistory =>
       throw _privateConstructorUsedError;
   @override
-  DischargeOfPositiveCasesOfCovid19Entity?
-      get dischargeOfPositiveCasesOfCovid19Entity =>
+  @JsonKey(ignore: true)
+  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PatientGetDetailEntityCopyWith<$Res>
+    implements $PatientEntityCopyWith<$Res> {
+  factory _$PatientGetDetailEntityCopyWith(_PatientGetDetailEntity value,
+          $Res Function(_PatientGetDetailEntity) then) =
+      __$PatientGetDetailEntityCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String id,
+      String firstname,
+      String lastname,
+      String ci,
+      String province,
+      String municipality,
+      Sex sex,
+      SkinColor skinColor,
+      BloodType? bloodType,
+      String address,
+      String polyclinic,
+      String surgery,
+      String popularCouncil,
+      String neighborhood,
+      int blockNumber,
+      List<PathologicalEntity> personalPathologicalHistory,
+      List<PathologicalEntity> familyPathologicalHistory,
+      DischargeOfPositiveCasesOfCovid19Entity
+          dischargeOfPositiveCasesOfCovid19});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
+      get dischargeOfPositiveCasesOfCovid19;
+}
+
+/// @nodoc
+class __$PatientGetDetailEntityCopyWithImpl<$Res>
+    extends _$PatientEntityCopyWithImpl<$Res>
+    implements _$PatientGetDetailEntityCopyWith<$Res> {
+  __$PatientGetDetailEntityCopyWithImpl(_PatientGetDetailEntity _value,
+      $Res Function(_PatientGetDetailEntity) _then)
+      : super(_value, (v) => _then(v as _PatientGetDetailEntity));
+
+  @override
+  _PatientGetDetailEntity get _value => super._value as _PatientGetDetailEntity;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? firstname = freezed,
+    Object? lastname = freezed,
+    Object? ci = freezed,
+    Object? province = freezed,
+    Object? municipality = freezed,
+    Object? sex = freezed,
+    Object? skinColor = freezed,
+    Object? bloodType = freezed,
+    Object? address = freezed,
+    Object? polyclinic = freezed,
+    Object? surgery = freezed,
+    Object? popularCouncil = freezed,
+    Object? neighborhood = freezed,
+    Object? blockNumber = freezed,
+    Object? personalPathologicalHistory = freezed,
+    Object? familyPathologicalHistory = freezed,
+    Object? dischargeOfPositiveCasesOfCovid19 = freezed,
+  }) {
+    return _then(_PatientGetDetailEntity(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstname: firstname == freezed
+          ? _value.firstname
+          : firstname // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastname: lastname == freezed
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
+              as String,
+      ci: ci == freezed
+          ? _value.ci
+          : ci // ignore: cast_nullable_to_non_nullable
+              as String,
+      province: province == freezed
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
+              as String,
+      municipality: municipality == freezed
+          ? _value.municipality
+          : municipality // ignore: cast_nullable_to_non_nullable
+              as String,
+      sex: sex == freezed
+          ? _value.sex
+          : sex // ignore: cast_nullable_to_non_nullable
+              as Sex,
+      skinColor: skinColor == freezed
+          ? _value.skinColor
+          : skinColor // ignore: cast_nullable_to_non_nullable
+              as SkinColor,
+      bloodType: bloodType == freezed
+          ? _value.bloodType
+          : bloodType // ignore: cast_nullable_to_non_nullable
+              as BloodType?,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      polyclinic: polyclinic == freezed
+          ? _value.polyclinic
+          : polyclinic // ignore: cast_nullable_to_non_nullable
+              as String,
+      surgery: surgery == freezed
+          ? _value.surgery
+          : surgery // ignore: cast_nullable_to_non_nullable
+              as String,
+      popularCouncil: popularCouncil == freezed
+          ? _value.popularCouncil
+          : popularCouncil // ignore: cast_nullable_to_non_nullable
+              as String,
+      neighborhood: neighborhood == freezed
+          ? _value.neighborhood
+          : neighborhood // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockNumber: blockNumber == freezed
+          ? _value.blockNumber
+          : blockNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      personalPathologicalHistory: personalPathologicalHistory == freezed
+          ? _value.personalPathologicalHistory
+          : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
+              as List<PathologicalEntity>,
+      familyPathologicalHistory: familyPathologicalHistory == freezed
+          ? _value.familyPathologicalHistory
+          : familyPathologicalHistory // ignore: cast_nullable_to_non_nullable
+              as List<PathologicalEntity>,
+      dischargeOfPositiveCasesOfCovid19: dischargeOfPositiveCasesOfCovid19 ==
+              freezed
+          ? _value.dischargeOfPositiveCasesOfCovid19
+          : dischargeOfPositiveCasesOfCovid19 // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
+      get dischargeOfPositiveCasesOfCovid19 {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.dischargeOfPositiveCasesOfCovid19, (value) {
+      return _then(_value.copyWith(dischargeOfPositiveCasesOfCovid19: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
+  const _$_PatientGetDetailEntity(
+      {required this.id,
+      required this.firstname,
+      required this.lastname,
+      required this.ci,
+      required this.province,
+      required this.municipality,
+      required this.sex,
+      required this.skinColor,
+      required this.bloodType,
+      required this.address,
+      required this.polyclinic,
+      required this.surgery,
+      required this.popularCouncil,
+      required this.neighborhood,
+      required this.blockNumber,
+      required this.personalPathologicalHistory,
+      required this.familyPathologicalHistory,
+      required this.dischargeOfPositiveCasesOfCovid19});
+
+  @override
+  final String id;
+  @override
+  final String firstname;
+  @override
+  final String lastname;
+  @override
+  final String ci;
+  @override
+  final String province;
+  @override
+  final String municipality;
+  @override
+  final Sex sex;
+  @override
+  final SkinColor skinColor;
+  @override
+  final BloodType? bloodType;
+  @override
+  final String address;
+  @override
+  final String polyclinic;
+  @override
+  final String surgery;
+  @override
+  final String popularCouncil;
+  @override
+  final String neighborhood;
+  @override
+  final int blockNumber;
+  @override
+  final List<PathologicalEntity> personalPathologicalHistory;
+  @override
+  final List<PathologicalEntity> familyPathologicalHistory;
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity
+      dischargeOfPositiveCasesOfCovid19;
+
+  @override
+  String toString() {
+    return 'PatientEntity.getDetail(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19: $dischargeOfPositiveCasesOfCovid19)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PatientGetDetailEntity &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.firstname, firstname) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstname, firstname)) &&
+            (identical(other.lastname, lastname) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastname, lastname)) &&
+            (identical(other.ci, ci) ||
+                const DeepCollectionEquality().equals(other.ci, ci)) &&
+            (identical(other.province, province) ||
+                const DeepCollectionEquality()
+                    .equals(other.province, province)) &&
+            (identical(other.municipality, municipality) ||
+                const DeepCollectionEquality()
+                    .equals(other.municipality, municipality)) &&
+            (identical(other.sex, sex) ||
+                const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.skinColor, skinColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.skinColor, skinColor)) &&
+            (identical(other.bloodType, bloodType) ||
+                const DeepCollectionEquality()
+                    .equals(other.bloodType, bloodType)) &&
+            (identical(other.address, address) ||
+                const DeepCollectionEquality()
+                    .equals(other.address, address)) &&
+            (identical(other.polyclinic, polyclinic) ||
+                const DeepCollectionEquality()
+                    .equals(other.polyclinic, polyclinic)) &&
+            (identical(other.surgery, surgery) ||
+                const DeepCollectionEquality()
+                    .equals(other.surgery, surgery)) &&
+            (identical(other.popularCouncil, popularCouncil) ||
+                const DeepCollectionEquality()
+                    .equals(other.popularCouncil, popularCouncil)) &&
+            (identical(other.neighborhood, neighborhood) ||
+                const DeepCollectionEquality()
+                    .equals(other.neighborhood, neighborhood)) &&
+            (identical(other.blockNumber, blockNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockNumber, blockNumber)) &&
+            (identical(other.personalPathologicalHistory, personalPathologicalHistory) ||
+                const DeepCollectionEquality().equals(
+                    other.personalPathologicalHistory,
+                    personalPathologicalHistory)) &&
+            (identical(other.familyPathologicalHistory, familyPathologicalHistory) ||
+                const DeepCollectionEquality().equals(
+                    other.familyPathologicalHistory,
+                    familyPathologicalHistory)) &&
+            (identical(other.dischargeOfPositiveCasesOfCovid19,
+                    dischargeOfPositiveCasesOfCovid19) ||
+                const DeepCollectionEquality().equals(
+                    other.dischargeOfPositiveCasesOfCovid19,
+                    dischargeOfPositiveCasesOfCovid19)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(firstname) ^
+      const DeepCollectionEquality().hash(lastname) ^
+      const DeepCollectionEquality().hash(ci) ^
+      const DeepCollectionEquality().hash(province) ^
+      const DeepCollectionEquality().hash(municipality) ^
+      const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(skinColor) ^
+      const DeepCollectionEquality().hash(bloodType) ^
+      const DeepCollectionEquality().hash(address) ^
+      const DeepCollectionEquality().hash(polyclinic) ^
+      const DeepCollectionEquality().hash(surgery) ^
+      const DeepCollectionEquality().hash(popularCouncil) ^
+      const DeepCollectionEquality().hash(neighborhood) ^
+      const DeepCollectionEquality().hash(blockNumber) ^
+      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
+      const DeepCollectionEquality().hash(familyPathologicalHistory) ^
+      const DeepCollectionEquality().hash(dischargeOfPositiveCasesOfCovid19);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
+      __$PatientGetDetailEntityCopyWithImpl<_PatientGetDetailEntity>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        get,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)
+        getDetail,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        post,
+    required TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)
+        put,
+  }) {
+    return getDetail(
+        id,
+        firstname,
+        lastname,
+        ci,
+        province,
+        municipality,
+        sex,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory,
+        dischargeOfPositiveCasesOfCovid19);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+    required TResult orElse(),
+  }) {
+    if (getDetail != null) {
+      return getDetail(
+          id,
+          firstname,
+          lastname,
+          ci,
+          province,
+          municipality,
+          sex,
+          skinColor,
+          bloodType,
+          address,
+          polyclinic,
+          surgery,
+          popularCouncil,
+          neighborhood,
+          blockNumber,
+          personalPathologicalHistory,
+          familyPathologicalHistory,
+          dischargeOfPositiveCasesOfCovid19);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PatientGetEntity value) get,
+    required TResult Function(_PatientGetDetailEntity value) getDetail,
+    required TResult Function(_PatientPostEntity value) post,
+    required TResult Function(_PatientPutEntity value) put,
+  }) {
+    return getDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PatientGetEntity value)? get,
+    TResult Function(_PatientGetDetailEntity value)? getDetail,
+    TResult Function(_PatientPostEntity value)? post,
+    TResult Function(_PatientPutEntity value)? put,
+    required TResult orElse(),
+  }) {
+    if (getDetail != null) {
+      return getDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PatientGetDetailEntity implements PatientEntity {
+  const factory _PatientGetDetailEntity(
+      {required String id,
+      required String firstname,
+      required String lastname,
+      required String ci,
+      required String province,
+      required String municipality,
+      required Sex sex,
+      required SkinColor skinColor,
+      required BloodType? bloodType,
+      required String address,
+      required String polyclinic,
+      required String surgery,
+      required String popularCouncil,
+      required String neighborhood,
+      required int blockNumber,
+      required List<PathologicalEntity> personalPathologicalHistory,
+      required List<PathologicalEntity> familyPathologicalHistory,
+      required DischargeOfPositiveCasesOfCovid19Entity
+          dischargeOfPositiveCasesOfCovid19}) = _$_PatientGetDetailEntity;
+
+  String get id => throw _privateConstructorUsedError;
+  String get firstname => throw _privateConstructorUsedError;
+  String get lastname => throw _privateConstructorUsedError;
+  String get ci => throw _privateConstructorUsedError;
+  String get province => throw _privateConstructorUsedError;
+  String get municipality => throw _privateConstructorUsedError;
+  Sex get sex => throw _privateConstructorUsedError;
+  SkinColor get skinColor => throw _privateConstructorUsedError;
+  @override
+  BloodType? get bloodType => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get polyclinic => throw _privateConstructorUsedError;
+  String get surgery => throw _privateConstructorUsedError;
+  String get popularCouncil => throw _privateConstructorUsedError;
+  String get neighborhood => throw _privateConstructorUsedError;
+  int get blockNumber => throw _privateConstructorUsedError;
+  List<PathologicalEntity> get personalPathologicalHistory =>
+      throw _privateConstructorUsedError;
+  List<PathologicalEntity> get familyPathologicalHistory =>
+      throw _privateConstructorUsedError;
+  DischargeOfPositiveCasesOfCovid19Entity
+      get dischargeOfPositiveCasesOfCovid19 =>
           throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
+  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PatientPostEntityCopyWith<$Res>
+    implements $PatientEntityCopyWith<$Res> {
+  factory _$PatientPostEntityCopyWith(
+          _PatientPostEntity value, $Res Function(_PatientPostEntity) then) =
+      __$PatientPostEntityCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String id,
+      String firstname,
+      String lastname,
+      String ci,
+      String municipalityCode,
+      Sex sex,
+      SkinColor skinColor,
+      BloodType? bloodType,
+      String address,
+      String polyclinic,
+      String surgery,
+      String popularCouncil,
+      String neighborhood,
+      int blockNumber,
+      List<PathologicalEntity> personalPathologicalHistory,
+      List<PathologicalEntity> familyPathologicalHistory});
+}
+
+/// @nodoc
+class __$PatientPostEntityCopyWithImpl<$Res>
+    extends _$PatientEntityCopyWithImpl<$Res>
+    implements _$PatientPostEntityCopyWith<$Res> {
+  __$PatientPostEntityCopyWithImpl(
+      _PatientPostEntity _value, $Res Function(_PatientPostEntity) _then)
+      : super(_value, (v) => _then(v as _PatientPostEntity));
+
+  @override
+  _PatientPostEntity get _value => super._value as _PatientPostEntity;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? firstname = freezed,
+    Object? lastname = freezed,
+    Object? ci = freezed,
+    Object? municipalityCode = freezed,
+    Object? sex = freezed,
+    Object? skinColor = freezed,
+    Object? bloodType = freezed,
+    Object? address = freezed,
+    Object? polyclinic = freezed,
+    Object? surgery = freezed,
+    Object? popularCouncil = freezed,
+    Object? neighborhood = freezed,
+    Object? blockNumber = freezed,
+    Object? personalPathologicalHistory = freezed,
+    Object? familyPathologicalHistory = freezed,
+  }) {
+    return _then(_PatientPostEntity(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstname: firstname == freezed
+          ? _value.firstname
+          : firstname // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastname: lastname == freezed
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
+              as String,
+      ci: ci == freezed
+          ? _value.ci
+          : ci // ignore: cast_nullable_to_non_nullable
+              as String,
+      municipalityCode: municipalityCode == freezed
+          ? _value.municipalityCode
+          : municipalityCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      sex: sex == freezed
+          ? _value.sex
+          : sex // ignore: cast_nullable_to_non_nullable
+              as Sex,
+      skinColor: skinColor == freezed
+          ? _value.skinColor
+          : skinColor // ignore: cast_nullable_to_non_nullable
+              as SkinColor,
+      bloodType: bloodType == freezed
+          ? _value.bloodType
+          : bloodType // ignore: cast_nullable_to_non_nullable
+              as BloodType?,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      polyclinic: polyclinic == freezed
+          ? _value.polyclinic
+          : polyclinic // ignore: cast_nullable_to_non_nullable
+              as String,
+      surgery: surgery == freezed
+          ? _value.surgery
+          : surgery // ignore: cast_nullable_to_non_nullable
+              as String,
+      popularCouncil: popularCouncil == freezed
+          ? _value.popularCouncil
+          : popularCouncil // ignore: cast_nullable_to_non_nullable
+              as String,
+      neighborhood: neighborhood == freezed
+          ? _value.neighborhood
+          : neighborhood // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockNumber: blockNumber == freezed
+          ? _value.blockNumber
+          : blockNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      personalPathologicalHistory: personalPathologicalHistory == freezed
+          ? _value.personalPathologicalHistory
+          : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
+              as List<PathologicalEntity>,
+      familyPathologicalHistory: familyPathologicalHistory == freezed
+          ? _value.familyPathologicalHistory
+          : familyPathologicalHistory // ignore: cast_nullable_to_non_nullable
+              as List<PathologicalEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PatientPostEntity implements _PatientPostEntity {
+  const _$_PatientPostEntity(
+      {required this.id,
+      required this.firstname,
+      required this.lastname,
+      required this.ci,
+      required this.municipalityCode,
+      required this.sex,
+      required this.skinColor,
+      required this.bloodType,
+      required this.address,
+      required this.polyclinic,
+      required this.surgery,
+      required this.popularCouncil,
+      required this.neighborhood,
+      required this.blockNumber,
+      required this.personalPathologicalHistory,
+      required this.familyPathologicalHistory});
+
+  @override
+  final String id;
+  @override
+  final String firstname;
+  @override
+  final String lastname;
+  @override
+  final String ci;
+  @override
+  final String municipalityCode;
+  @override
+  final Sex sex;
+  @override
+  final SkinColor skinColor;
+  @override
+  final BloodType? bloodType;
+  @override
+  final String address;
+  @override
+  final String polyclinic;
+  @override
+  final String surgery;
+  @override
+  final String popularCouncil;
+  @override
+  final String neighborhood;
+  @override
+  final int blockNumber;
+  @override
+  final List<PathologicalEntity> personalPathologicalHistory;
+  @override
+  final List<PathologicalEntity> familyPathologicalHistory;
+
+  @override
+  String toString() {
+    return 'PatientEntity.post(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PatientPostEntity &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.firstname, firstname) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstname, firstname)) &&
+            (identical(other.lastname, lastname) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastname, lastname)) &&
+            (identical(other.ci, ci) ||
+                const DeepCollectionEquality().equals(other.ci, ci)) &&
+            (identical(other.municipalityCode, municipalityCode) ||
+                const DeepCollectionEquality()
+                    .equals(other.municipalityCode, municipalityCode)) &&
+            (identical(other.sex, sex) ||
+                const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.skinColor, skinColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.skinColor, skinColor)) &&
+            (identical(other.bloodType, bloodType) ||
+                const DeepCollectionEquality()
+                    .equals(other.bloodType, bloodType)) &&
+            (identical(other.address, address) ||
+                const DeepCollectionEquality()
+                    .equals(other.address, address)) &&
+            (identical(other.polyclinic, polyclinic) ||
+                const DeepCollectionEquality()
+                    .equals(other.polyclinic, polyclinic)) &&
+            (identical(other.surgery, surgery) ||
+                const DeepCollectionEquality()
+                    .equals(other.surgery, surgery)) &&
+            (identical(other.popularCouncil, popularCouncil) ||
+                const DeepCollectionEquality()
+                    .equals(other.popularCouncil, popularCouncil)) &&
+            (identical(other.neighborhood, neighborhood) ||
+                const DeepCollectionEquality()
+                    .equals(other.neighborhood, neighborhood)) &&
+            (identical(other.blockNumber, blockNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockNumber, blockNumber)) &&
+            (identical(other.personalPathologicalHistory,
+                    personalPathologicalHistory) ||
+                const DeepCollectionEquality().equals(
+                    other.personalPathologicalHistory,
+                    personalPathologicalHistory)) &&
+            (identical(other.familyPathologicalHistory,
+                    familyPathologicalHistory) ||
+                const DeepCollectionEquality().equals(
+                    other.familyPathologicalHistory,
+                    familyPathologicalHistory)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(firstname) ^
+      const DeepCollectionEquality().hash(lastname) ^
+      const DeepCollectionEquality().hash(ci) ^
+      const DeepCollectionEquality().hash(municipalityCode) ^
+      const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(skinColor) ^
+      const DeepCollectionEquality().hash(bloodType) ^
+      const DeepCollectionEquality().hash(address) ^
+      const DeepCollectionEquality().hash(polyclinic) ^
+      const DeepCollectionEquality().hash(surgery) ^
+      const DeepCollectionEquality().hash(popularCouncil) ^
+      const DeepCollectionEquality().hash(neighborhood) ^
+      const DeepCollectionEquality().hash(blockNumber) ^
+      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
+      const DeepCollectionEquality().hash(familyPathologicalHistory);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
+      __$PatientPostEntityCopyWithImpl<_PatientPostEntity>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        get,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)
+        getDetail,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        post,
+    required TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)
+        put,
+  }) {
+    return post(
+        id,
+        firstname,
+        lastname,
+        ci,
+        municipalityCode,
+        sex,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+    required TResult orElse(),
+  }) {
+    if (post != null) {
+      return post(
+          id,
+          firstname,
+          lastname,
+          ci,
+          municipalityCode,
+          sex,
+          skinColor,
+          bloodType,
+          address,
+          polyclinic,
+          surgery,
+          popularCouncil,
+          neighborhood,
+          blockNumber,
+          personalPathologicalHistory,
+          familyPathologicalHistory);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PatientGetEntity value) get,
+    required TResult Function(_PatientGetDetailEntity value) getDetail,
+    required TResult Function(_PatientPostEntity value) post,
+    required TResult Function(_PatientPutEntity value) put,
+  }) {
+    return post(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PatientGetEntity value)? get,
+    TResult Function(_PatientGetDetailEntity value)? getDetail,
+    TResult Function(_PatientPostEntity value)? post,
+    TResult Function(_PatientPutEntity value)? put,
+    required TResult orElse(),
+  }) {
+    if (post != null) {
+      return post(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PatientPostEntity implements PatientEntity {
+  const factory _PatientPostEntity(
+          {required String id,
+          required String firstname,
+          required String lastname,
+          required String ci,
+          required String municipalityCode,
+          required Sex sex,
+          required SkinColor skinColor,
+          required BloodType? bloodType,
+          required String address,
+          required String polyclinic,
+          required String surgery,
+          required String popularCouncil,
+          required String neighborhood,
+          required int blockNumber,
+          required List<PathologicalEntity> personalPathologicalHistory,
+          required List<PathologicalEntity> familyPathologicalHistory}) =
+      _$_PatientPostEntity;
+
+  String get id => throw _privateConstructorUsedError;
+  String get firstname => throw _privateConstructorUsedError;
+  String get lastname => throw _privateConstructorUsedError;
+  String get ci => throw _privateConstructorUsedError;
+  String get municipalityCode => throw _privateConstructorUsedError;
+  Sex get sex => throw _privateConstructorUsedError;
+  SkinColor get skinColor => throw _privateConstructorUsedError;
+  @override
+  BloodType? get bloodType => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get polyclinic => throw _privateConstructorUsedError;
+  String get surgery => throw _privateConstructorUsedError;
+  String get popularCouncil => throw _privateConstructorUsedError;
+  String get neighborhood => throw _privateConstructorUsedError;
+  int get blockNumber => throw _privateConstructorUsedError;
+  List<PathologicalEntity> get personalPathologicalHistory =>
+      throw _privateConstructorUsedError;
+  List<PathologicalEntity> get familyPathologicalHistory =>
+      throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1350,27 +2084,22 @@ abstract class _$PatientPutEntityCopyWith<$Res>
       __$PatientPutEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? fullName,
+      {String? id,
+      String? firstname,
+      String? lastname,
       String? ci,
+      String? municipalityCode,
       Sex? sex,
       SkinColor? skinColor,
       BloodType? bloodType,
       String? address,
-      String? municipalityName,
-      String? provinceName,
       String? polyclinic,
       String? surgery,
       String? popularCouncil,
       String? neighborhood,
       int? blockNumber,
       List<PathologicalEntity>? personalPathologicalHistory,
-      List<PathologicalEntity>? familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity});
-
-  @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>?
-      get dischargeOfPositiveCasesOfCovid19Entity;
+      List<PathologicalEntity>? familyPathologicalHistory});
 }
 
 /// @nodoc
@@ -1386,14 +2115,15 @@ class __$PatientPutEntityCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? fullName = freezed,
+    Object? id = freezed,
+    Object? firstname = freezed,
+    Object? lastname = freezed,
     Object? ci = freezed,
+    Object? municipalityCode = freezed,
     Object? sex = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
-    Object? municipalityName = freezed,
-    Object? provinceName = freezed,
     Object? polyclinic = freezed,
     Object? surgery = freezed,
     Object? popularCouncil = freezed,
@@ -1401,16 +2131,27 @@ class __$PatientPutEntityCopyWithImpl<$Res>
     Object? blockNumber = freezed,
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
-    Object? dischargeOfPositiveCasesOfCovid19Entity = freezed,
   }) {
     return _then(_PatientPutEntity(
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstname: firstname == freezed
+          ? _value.firstname
+          : firstname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastname: lastname == freezed
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
               as String?,
       ci: ci == freezed
           ? _value.ci
           : ci // ignore: cast_nullable_to_non_nullable
+              as String?,
+      municipalityCode: municipalityCode == freezed
+          ? _value.municipalityCode
+          : municipalityCode // ignore: cast_nullable_to_non_nullable
               as String?,
       sex: sex == freezed
           ? _value.sex
@@ -1427,14 +2168,6 @@ class __$PatientPutEntityCopyWithImpl<$Res>
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      municipalityName: municipalityName == freezed
-          ? _value.municipalityName
-          : municipalityName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      provinceName: provinceName == freezed
-          ? _value.provinceName
-          : provinceName // ignore: cast_nullable_to_non_nullable
               as String?,
       polyclinic: polyclinic == freezed
           ? _value.polyclinic
@@ -1464,11 +2197,6 @@ class __$PatientPutEntityCopyWithImpl<$Res>
           ? _value.familyPathologicalHistory
           : familyPathologicalHistory // ignore: cast_nullable_to_non_nullable
               as List<PathologicalEntity>?,
-      dischargeOfPositiveCasesOfCovid19Entity:
-          dischargeOfPositiveCasesOfCovid19Entity == freezed
-              ? _value.dischargeOfPositiveCasesOfCovid19Entity
-              : dischargeOfPositiveCasesOfCovid19Entity // ignore: cast_nullable_to_non_nullable
-                  as DischargeOfPositiveCasesOfCovid19Entity?,
     ));
   }
 }
@@ -1477,27 +2205,33 @@ class __$PatientPutEntityCopyWithImpl<$Res>
 
 class _$_PatientPutEntity implements _PatientPutEntity {
   const _$_PatientPutEntity(
-      {this.fullName,
-      this.ci,
-      this.sex,
-      this.skinColor,
-      this.bloodType,
-      this.address,
-      this.municipalityName,
-      this.provinceName,
-      this.polyclinic,
-      this.surgery,
-      this.popularCouncil,
-      this.neighborhood,
-      this.blockNumber,
-      this.personalPathologicalHistory,
-      this.familyPathologicalHistory,
-      this.dischargeOfPositiveCasesOfCovid19Entity});
+      {required this.id,
+      required this.firstname,
+      required this.lastname,
+      required this.ci,
+      required this.municipalityCode,
+      required this.sex,
+      required this.skinColor,
+      required this.bloodType,
+      required this.address,
+      required this.polyclinic,
+      required this.surgery,
+      required this.popularCouncil,
+      required this.neighborhood,
+      required this.blockNumber,
+      required this.personalPathologicalHistory,
+      required this.familyPathologicalHistory});
 
   @override
-  final String? fullName;
+  final String? id;
+  @override
+  final String? firstname;
+  @override
+  final String? lastname;
   @override
   final String? ci;
+  @override
+  final String? municipalityCode;
   @override
   final Sex? sex;
   @override
@@ -1506,10 +2240,6 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   final BloodType? bloodType;
   @override
   final String? address;
-  @override
-  final String? municipalityName;
-  @override
-  final String? provinceName;
   @override
   final String? polyclinic;
   @override
@@ -1524,24 +2254,29 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   final List<PathologicalEntity>? personalPathologicalHistory;
   @override
   final List<PathologicalEntity>? familyPathologicalHistory;
-  @override
-  final DischargeOfPositiveCasesOfCovid19Entity?
-      dischargeOfPositiveCasesOfCovid19Entity;
 
   @override
   String toString() {
-    return 'PatientEntity.put(fullName: $fullName, ci: $ci, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, municipalityName: $municipalityName, provinceName: $provinceName, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19Entity: $dischargeOfPositiveCasesOfCovid19Entity)';
+    return 'PatientEntity.put(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PatientPutEntity &&
-            (identical(other.fullName, fullName) ||
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.firstname, firstname) ||
                 const DeepCollectionEquality()
-                    .equals(other.fullName, fullName)) &&
+                    .equals(other.firstname, firstname)) &&
+            (identical(other.lastname, lastname) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastname, lastname)) &&
             (identical(other.ci, ci) ||
                 const DeepCollectionEquality().equals(other.ci, ci)) &&
+            (identical(other.municipalityCode, municipalityCode) ||
+                const DeepCollectionEquality()
+                    .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
             (identical(other.skinColor, skinColor) ||
@@ -1553,12 +2288,6 @@ class _$_PatientPutEntity implements _PatientPutEntity {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.municipalityName, municipalityName) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalityName, municipalityName)) &&
-            (identical(other.provinceName, provinceName) ||
-                const DeepCollectionEquality()
-                    .equals(other.provinceName, provinceName)) &&
             (identical(other.polyclinic, polyclinic) ||
                 const DeepCollectionEquality()
                     .equals(other.polyclinic, polyclinic)) &&
@@ -1579,37 +2308,32 @@ class _$_PatientPutEntity implements _PatientPutEntity {
                 const DeepCollectionEquality().equals(
                     other.personalPathologicalHistory,
                     personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory, familyPathologicalHistory) ||
+            (identical(other.familyPathologicalHistory,
+                    familyPathologicalHistory) ||
                 const DeepCollectionEquality().equals(
                     other.familyPathologicalHistory,
-                    familyPathologicalHistory)) &&
-            (identical(other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity) ||
-                const DeepCollectionEquality().equals(
-                    other.dischargeOfPositiveCasesOfCovid19Entity,
-                    dischargeOfPositiveCasesOfCovid19Entity)));
+                    familyPathologicalHistory)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullName) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(firstname) ^
+      const DeepCollectionEquality().hash(lastname) ^
       const DeepCollectionEquality().hash(ci) ^
+      const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(sex) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(municipalityName) ^
-      const DeepCollectionEquality().hash(provinceName) ^
       const DeepCollectionEquality().hash(polyclinic) ^
       const DeepCollectionEquality().hash(surgery) ^
       const DeepCollectionEquality().hash(popularCouncil) ^
       const DeepCollectionEquality().hash(neighborhood) ^
       const DeepCollectionEquality().hash(blockNumber) ^
       const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory) ^
-      const DeepCollectionEquality()
-          .hash(dischargeOfPositiveCasesOfCovid19Entity);
+      const DeepCollectionEquality().hash(familyPathologicalHistory);
 
   @JsonKey(ignore: true)
   @override
@@ -1620,160 +2344,200 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
-        post,
-    required TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity> familyPathologicalHistory)
         get,
     required TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)
+        getDetail,
+    required TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)
+        post,
+    required TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)
+            List<PathologicalEntity>? familyPathologicalHistory)
         put,
   }) {
     return put(
-        fullName,
+        id,
+        firstname,
+        lastname,
         ci,
+        municipalityCode,
         sex,
         skinColor,
         bloodType,
         address,
-        municipalityName,
-        provinceName,
         polyclinic,
         surgery,
         popularCouncil,
         neighborhood,
         blockNumber,
         personalPathologicalHistory,
-        familyPathologicalHistory,
-        dischargeOfPositiveCasesOfCovid19Entity);
+        familyPathologicalHistory);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            String fullName,
+            String id,
+            String firstname,
+            String lastname,
             String ci,
+            String province,
+            String municipality,
             Sex sex,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String municipalityName,
-            String provinceName,
             String polyclinic,
             String surgery,
             String popularCouncil,
             String neighborhood,
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
-        post,
-    TResult Function(
-            String fullName,
-            String ci,
-            Sex sex,
-            SkinColor skinColor,
-            BloodType? bloodType,
-            String address,
-            String municipalityCode,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
-            int blockNumber,
-            List<PathologicalEntity> personalPathologicalHistory,
-            List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity> familyPathologicalHistory)?
         get,
     TResult Function(
-            String? fullName,
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeOfPositiveCasesOfCovid19Entity
+                dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String? id,
+            String? firstname,
+            String? lastname,
             String? ci,
+            String? municipalityCode,
             Sex? sex,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
-            String? municipalityName,
-            String? provinceName,
             String? polyclinic,
             String? surgery,
             String? popularCouncil,
             String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity>? personalPathologicalHistory,
-            List<PathologicalEntity>? familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity?
-                dischargeOfPositiveCasesOfCovid19Entity)?
+            List<PathologicalEntity>? familyPathologicalHistory)?
         put,
     required TResult orElse(),
   }) {
     if (put != null) {
       return put(
-          fullName,
+          id,
+          firstname,
+          lastname,
           ci,
+          municipalityCode,
           sex,
           skinColor,
           bloodType,
           address,
-          municipalityName,
-          provinceName,
           polyclinic,
           surgery,
           popularCouncil,
           neighborhood,
           blockNumber,
           personalPathologicalHistory,
-          familyPathologicalHistory,
-          dischargeOfPositiveCasesOfCovid19Entity);
+          familyPathologicalHistory);
     }
     return orElse();
   }
@@ -1781,8 +2545,9 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientGetEntity value) get,
+    required TResult Function(_PatientGetDetailEntity value) getDetail,
+    required TResult Function(_PatientPostEntity value) post,
     required TResult Function(_PatientPutEntity value) put,
   }) {
     return put(this);
@@ -1791,8 +2556,9 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientGetEntity value)? get,
+    TResult Function(_PatientGetDetailEntity value)? getDetail,
+    TResult Function(_PatientPostEntity value)? post,
     TResult Function(_PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
@@ -1805,33 +2571,34 @@ class _$_PatientPutEntity implements _PatientPutEntity {
 
 abstract class _PatientPutEntity implements PatientEntity {
   const factory _PatientPutEntity(
-      {String? fullName,
-      String? ci,
-      Sex? sex,
-      SkinColor? skinColor,
-      BloodType? bloodType,
-      String? address,
-      String? municipalityName,
-      String? provinceName,
-      String? polyclinic,
-      String? surgery,
-      String? popularCouncil,
-      String? neighborhood,
-      int? blockNumber,
-      List<PathologicalEntity>? personalPathologicalHistory,
-      List<PathologicalEntity>? familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity?
-          dischargeOfPositiveCasesOfCovid19Entity}) = _$_PatientPutEntity;
+          {required String? id,
+          required String? firstname,
+          required String? lastname,
+          required String? ci,
+          required String? municipalityCode,
+          required Sex? sex,
+          required SkinColor? skinColor,
+          required BloodType? bloodType,
+          required String? address,
+          required String? polyclinic,
+          required String? surgery,
+          required String? popularCouncil,
+          required String? neighborhood,
+          required int? blockNumber,
+          required List<PathologicalEntity>? personalPathologicalHistory,
+          required List<PathologicalEntity>? familyPathologicalHistory}) =
+      _$_PatientPutEntity;
 
-  String? get fullName => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get firstname => throw _privateConstructorUsedError;
+  String? get lastname => throw _privateConstructorUsedError;
   String? get ci => throw _privateConstructorUsedError;
+  String? get municipalityCode => throw _privateConstructorUsedError;
   Sex? get sex => throw _privateConstructorUsedError;
   SkinColor? get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
-  String? get municipalityName => throw _privateConstructorUsedError;
-  String? get provinceName => throw _privateConstructorUsedError;
   String? get polyclinic => throw _privateConstructorUsedError;
   String? get surgery => throw _privateConstructorUsedError;
   String? get popularCouncil => throw _privateConstructorUsedError;
@@ -1841,10 +2608,6 @@ abstract class _PatientPutEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   List<PathologicalEntity>? get familyPathologicalHistory =>
       throw _privateConstructorUsedError;
-  @override
-  DischargeOfPositiveCasesOfCovid19Entity?
-      get dischargeOfPositiveCasesOfCovid19Entity =>
-          throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PatientPutEntityCopyWith<_PatientPutEntity> get copyWith =>

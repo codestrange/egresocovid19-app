@@ -10,35 +10,36 @@ DischargeOfPositiveCasesOfCovid19Model
     _$DischargeOfPositiveCasesOfCovid19ModelFromJson(
         Map<String, dynamic> json) {
   return DischargeOfPositiveCasesOfCovid19Model(
-    detectionDate: json['detection_date'] == null
+    detectionDate: json['detectionDate'] == null
         ? null
-        : DateTime.parse(json['detection_date'] as String),
+        : DateTime.parse(json['detectionDate'] as String),
     symptoms:
         (json['symptoms'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    durationOfSymptoms: json['duration_of_symptoms'] as int?,
+    durationOfSymptoms: json['durationOfSymptoms'] as int?,
     diagnosisWay:
-        _$enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosis_way']),
+        _$enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosisWay']),
     testUsedInDiagnosis: _$enumDecodeNullable(
-        _$TestDiagnosisEnumMap, json['test_used_in_diagnosis']),
-    daysFromSymptomsToDiagnosis:
-        json['days_from_symptoms_to_diagnosis'] as int?,
-    numberPcrPerformed: json['number_pcr_performed'] as int?,
+        _$TestDiagnosisEnumMap, json['testUsedInDiagnosis']),
+    daysFromSymptomsToDiagnosis: json['daysFromSymptomsToDiagnosis'] as int?,
+    numberPcrPerformed: json['numberPcrPerformed'] as int?,
     timeFromDiagnosisToNegativeOrDischarge:
-        json['time_from_diagnosis_to_negative_or_discharge'] as int?,
+        json['timeFromDiagnosisToNegativeOrDischarge'] as int?,
     formOfContagion:
-        _$enumDecodeNullable(_$ContagionEnumMap, json['form_of_contagion']),
-    wasHePartOfAnEvent: json['was_he_part_of_an_event'] as bool?,
+        _$enumDecodeNullable(_$ContagionEnumMap, json['formOfContagion']),
+    wasHePartOfAnEvent: json['wasHePartOfAnEvent'] as bool?,
     didHeWorkInTheAttentionToPositiveCases:
-        json['did_he_work_in_the_attention_to_positive_cases'] as bool?,
-    hospitalizationTime: json['hospitalization_time'] as String?,
-    contactsFirstLevel: json['contacts_first_level'] as int?,
-    contactsFirstLevelPositives: json['contacts_first_level_positives'] as int?,
-    contactsSecondLevel: json['contacts_second_level'] as int?,
-    contactsSecondLevelPositives:
-        json['contacts_second_level_positives'] as int?,
-    contactsThirdLevel: json['contacts_third_level'] as int?,
-    contactsThirdLevelPositives: json['contacts_third_level_positives'] as int?,
-    treatmentsReceived: (json['treatments_received'] as List<dynamic>?)
+        json['didHeWorkInTheAttentionToPositiveCases'] as bool?,
+    hospitalizationTime: json['hospitalizationTime'] as String?,
+    incomes: (json['incomes'] as List<dynamic>?)
+        ?.map((e) => IncomeModel.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    contactsFirstLevel: json['contactsFirstLevel'] as int?,
+    contactsFirstLevelPositives: json['contactsFirstLevelPositives'] as int?,
+    contactsSecondLevel: json['contactsSecondLevel'] as int?,
+    contactsSecondLevelPositives: json['contactsSecondLevelPositives'] as int?,
+    contactsThirdLevel: json['contactsThirdLevel'] as int?,
+    contactsThirdLevelPositives: json['contactsThirdLevelPositives'] as int?,
+    treatmentsReceived: (json['treatmentsReceived'] as List<dynamic>?)
         ?.map((e) => _$enumDecode(_$TreatmentEnumMap, e))
         .toList(),
     antibiotics: (json['antibiotics'] as List<dynamic>?)
@@ -47,54 +48,51 @@ DischargeOfPositiveCasesOfCovid19Model
     prophylaxis: (json['prophylaxis'] as List<dynamic>?)
         ?.map((e) => _$enumDecode(_$ProphylaxisEnumMap, e))
         .toList(),
-    anotherVaccineAgainstCovid:
-        json['another_vaccine_against_covid'] as String?,
+    anotherVaccineAgainstCovid: json['anotherVaccineAgainstCovid'] as String?,
     aftermath: (json['aftermath'] as List<dynamic>?)
         ?.map((e) => _$enumDecode(_$AftermathEnumMap, e))
         .toList(),
-    othersAftermath: (json['others_aftermath'] as List<dynamic>?)
+    othersAftermath: (json['othersAftermath'] as List<dynamic>?)
         ?.map((e) => e as String)
         .toList(),
-  )..incomes = (json['incomes'] as List<dynamic>?)
-      ?.map((e) => IncomeModel.fromJson(e as Map<String, dynamic>))
-      .toList();
+  );
 }
 
 Map<String, dynamic> _$DischargeOfPositiveCasesOfCovid19ModelToJson(
         DischargeOfPositiveCasesOfCovid19Model instance) =>
     <String, dynamic>{
-      'detection_date': instance.detectionDate?.toIso8601String(),
+      'detectionDate': instance.detectionDate?.toIso8601String(),
       'symptoms': instance.symptoms,
-      'duration_of_symptoms': instance.durationOfSymptoms,
-      'diagnosis_way': _$DiagnosisWayEnumMap[instance.diagnosisWay],
-      'test_used_in_diagnosis':
+      'durationOfSymptoms': instance.durationOfSymptoms,
+      'diagnosisWay': _$DiagnosisWayEnumMap[instance.diagnosisWay],
+      'testUsedInDiagnosis':
           _$TestDiagnosisEnumMap[instance.testUsedInDiagnosis],
-      'days_from_symptoms_to_diagnosis': instance.daysFromSymptomsToDiagnosis,
-      'number_pcr_performed': instance.numberPcrPerformed,
-      'time_from_diagnosis_to_negative_or_discharge':
+      'daysFromSymptomsToDiagnosis': instance.daysFromSymptomsToDiagnosis,
+      'numberPcrPerformed': instance.numberPcrPerformed,
+      'timeFromDiagnosisToNegativeOrDischarge':
           instance.timeFromDiagnosisToNegativeOrDischarge,
-      'form_of_contagion': _$ContagionEnumMap[instance.formOfContagion],
-      'was_he_part_of_an_event': instance.wasHePartOfAnEvent,
-      'did_he_work_in_the_attention_to_positive_cases':
+      'formOfContagion': _$ContagionEnumMap[instance.formOfContagion],
+      'wasHePartOfAnEvent': instance.wasHePartOfAnEvent,
+      'didHeWorkInTheAttentionToPositiveCases':
           instance.didHeWorkInTheAttentionToPositiveCases,
-      'hospitalization_time': instance.hospitalizationTime,
+      'hospitalizationTime': instance.hospitalizationTime,
       'incomes': instance.incomes?.map((e) => e.toJson()).toList(),
-      'contacts_first_level': instance.contactsFirstLevel,
-      'contacts_first_level_positives': instance.contactsFirstLevelPositives,
-      'contacts_second_level': instance.contactsSecondLevel,
-      'contacts_second_level_positives': instance.contactsSecondLevelPositives,
-      'contacts_third_level': instance.contactsThirdLevel,
-      'contacts_third_level_positives': instance.contactsThirdLevelPositives,
-      'treatments_received': instance.treatmentsReceived
+      'contactsFirstLevel': instance.contactsFirstLevel,
+      'contactsFirstLevelPositives': instance.contactsFirstLevelPositives,
+      'contactsSecondLevel': instance.contactsSecondLevel,
+      'contactsSecondLevelPositives': instance.contactsSecondLevelPositives,
+      'contactsThirdLevel': instance.contactsThirdLevel,
+      'contactsThirdLevelPositives': instance.contactsThirdLevelPositives,
+      'treatmentsReceived': instance.treatmentsReceived
           ?.map((e) => _$TreatmentEnumMap[e])
           .toList(),
       'antibiotics': instance.antibiotics,
       'prophylaxis':
           instance.prophylaxis?.map((e) => _$ProphylaxisEnumMap[e]).toList(),
-      'another_vaccine_against_covid': instance.anotherVaccineAgainstCovid,
+      'anotherVaccineAgainstCovid': instance.anotherVaccineAgainstCovid,
       'aftermath':
           instance.aftermath?.map((e) => _$AftermathEnumMap[e]).toList(),
-      'others_aftermath': instance.othersAftermath,
+      'othersAftermath': instance.othersAftermath,
     };
 
 K _$enumDecode<K, V>(

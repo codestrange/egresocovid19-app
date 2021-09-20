@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
-
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
 
 class BlockNumberInputWidget extends StatelessWidget {
   const BlockNumberInputWidget({

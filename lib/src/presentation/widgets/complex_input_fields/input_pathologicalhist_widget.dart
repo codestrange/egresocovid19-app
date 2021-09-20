@@ -1,12 +1,11 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:egresocovid19/src/presentation/blocs/pathological_hist/pathologicalhistory_bloc.dart';
 import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart';
 import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart';
 import 'package:egresocovid19/src/presentation/widgets/patient_fields/input_pathology_widget.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PathologicalHistoryInputWidget extends StatelessWidget {
   const PathologicalHistoryInputWidget({

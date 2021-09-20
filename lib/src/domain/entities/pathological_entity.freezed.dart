@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PathologicalEntityTearOff {
   const _$PathologicalEntityTearOff();
 
-  _PathologicalEntity call({required String name, String? treatments}) {
+  _PathologicalEntity call({required String name, required String treatments}) {
     return _PathologicalEntity(
       name: name,
       treatments: treatments,
@@ -30,7 +30,7 @@ const $PathologicalEntity = _$PathologicalEntityTearOff();
 /// @nodoc
 mixin _$PathologicalEntity {
   String get name => throw _privateConstructorUsedError;
-  String? get treatments => throw _privateConstructorUsedError;
+  String get treatments => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PathologicalEntityCopyWith<PathologicalEntity> get copyWith =>
@@ -42,7 +42,7 @@ abstract class $PathologicalEntityCopyWith<$Res> {
   factory $PathologicalEntityCopyWith(
           PathologicalEntity value, $Res Function(PathologicalEntity) then) =
       _$PathologicalEntityCopyWithImpl<$Res>;
-  $Res call({String name, String? treatments});
+  $Res call({String name, String treatments});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$PathologicalEntityCopyWithImpl<$Res>
       treatments: treatments == freezed
           ? _value.treatments
           : treatments // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -79,7 +79,7 @@ abstract class _$PathologicalEntityCopyWith<$Res>
           _PathologicalEntity value, $Res Function(_PathologicalEntity) then) =
       __$PathologicalEntityCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String? treatments});
+  $Res call({String name, String treatments});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$PathologicalEntityCopyWithImpl<$Res>
       treatments: treatments == freezed
           ? _value.treatments
           : treatments // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -114,12 +114,12 @@ class __$PathologicalEntityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PathologicalEntity implements _PathologicalEntity {
-  const _$_PathologicalEntity({required this.name, this.treatments});
+  const _$_PathologicalEntity({required this.name, required this.treatments});
 
   @override
   final String name;
   @override
-  final String? treatments;
+  final String treatments;
 
   @override
   String toString() {
@@ -151,12 +151,13 @@ class _$_PathologicalEntity implements _PathologicalEntity {
 
 abstract class _PathologicalEntity implements PathologicalEntity {
   const factory _PathologicalEntity(
-      {required String name, String? treatments}) = _$_PathologicalEntity;
+      {required String name,
+      required String treatments}) = _$_PathologicalEntity;
 
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String? get treatments => throw _privateConstructorUsedError;
+  String get treatments => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PathologicalEntityCopyWith<_PathologicalEntity> get copyWith =>

@@ -2,17 +2,17 @@ part of 'autocomplete_bloc.dart';
 
 @immutable
 class AutocompleteState<T> {
+  const AutocompleteState({
+    required this.input,
+    required this.value,
+    required this.suggestions,
+  });
+
   final String input;
 
   final T? value;
 
   final List<T> suggestions;
-
-  AutocompleteState({
-    required this.input,
-    required this.value,
-    required this.suggestions,
-  });
 
   @override
   bool operator ==(Object other) {

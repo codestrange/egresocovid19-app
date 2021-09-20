@@ -3,8 +3,8 @@ enum BloodType {
   Bplus,
   ABplus,
   Oplus,
-  Bminus,
   Aminus,
+  Bminus,
   ABminus,
   Ominus,
 }

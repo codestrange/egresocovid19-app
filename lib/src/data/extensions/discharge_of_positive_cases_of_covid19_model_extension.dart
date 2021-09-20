@@ -1,3 +1,4 @@
+import 'package:egresocovid19/src/data/extensions/extensions.dart';
 import 'package:egresocovid19/src/data/models/models.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 
@@ -31,6 +32,7 @@ extension DischargeOfPositiveCasesOfCovid19ModelExtension
           timeFromDiagnosisToNegativeOrDischarge,
       treatmentsReceived: treatmentsReceived,
       wasHePartOfAnEvent: wasHePartOfAnEvent,
+      incomes: incomes?.map((e) => e.toEntity()).toList(),
     );
   }
 }
@@ -65,6 +67,7 @@ extension DischargeOfPositiveCasesOfCovid19EntityExtension
           timeFromDiagnosisToNegativeOrDischarge,
       treatmentsReceived: treatmentsReceived,
       wasHePartOfAnEvent: wasHePartOfAnEvent,
+      incomes: incomes?.map((e) => e.toModel()).toList(),
     );
   }
 }
