@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -25,46 +24,21 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
         fetch: (patientId) async {
           emit(const PatientEgresoEditState.fetchInProgress());
 
-          //TODO: Load actual patient discharge data
-          final result = const Right(DischargeOfPositiveCasesOfCovid19Entity(
-            detectionDate: null,
-            symptoms: null,
-            durationOfSymptoms: null,
-            diagnosisWay: null,
-            testUsedInDiagnosis: null,
-            daysFromSymptomsToDiagnosis: null,
-            numberPcrPerformed: null,
-            timeFromDiagnosisToNegativeOrDischarge: null,
-            formOfContagion: null,
-            wasHePartOfAnEvent: null,
-            didHeWorkInTheAttentionToPositiveCases: null,
-            hospitalizationTime: null,
-            incomes: null,
-            contactsFirstLevel: null,
-            contactsFirstLevelPositives: null,
-            contactsSecondLevel: null,
-            contactsSecondLevelPositives: null,
-            contactsThirdLevel: null,
-            contactsThirdLevelPositives: null,
-            treatmentsReceived: null,
-            antibiotics: null,
-            prophylaxis: null,
-            anotherVaccineAgainstCovid: null,
-            aftermath: null,
-            othersAftermath: null,
-          )) as Either<ErrorEntity, DischargeOfPositiveCasesOfCovid19Entity>;
+          final result = await patientService.getPatient(patientId: patientId);
 
           result.fold(
             (l) => emit(PatientEgresoEditState.fetchFailure(l.message)),
-            (r) => emit(PatientEgresoEditState.fetchSuccess(r)),
+            (r) => emit(PatientEgresoEditState.fetchSuccess(
+              r.dischargeOfPositiveCasesOfCovid19,
+            )),
           );
         },
         update: (patientId, newDischargeData) async {
           emit(PatientEgresoEditState.updateInProgress(newDischargeData));
 
-          final result = await patientService.updatePatientDischargeData(
+          final result = await patientService.putPatientEgreso(
             patientId: patientId,
-            dischargeData: newDischargeData,
+            discharge: newDischargeData,
           );
 
           result.fold(
@@ -77,5 +51,5 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
     });
   }
 
-  IPatientService patientService;
+  final IPatientService patientService;
 }

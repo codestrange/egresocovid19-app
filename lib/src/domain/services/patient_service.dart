@@ -4,25 +4,70 @@ import 'package:egresocovid19/src/domain/repositories/repositories.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IPatientService {
-  Future<Either<ErrorEntity, void>> updatePatientDischargeData({
+  Future<Either<ErrorEntity, List<PatientGetEntity>>> getPatients({
+    required String query,
+  });
+
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> getPatient({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity dischargeData,
+  });
+
+  Future<Either<ErrorEntity, PatientGetEntity>> postPatient({
+    required PatientPostEntity patient,
+  });
+
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatient({
+    required PatientPutEntity patient,
+  });
+
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
+    required String patientId,
+    required DischargeOfPositiveCasesOfCovid19Entity discharge,
   });
 }
 
 @Injectable(as: IPatientService)
-class PatientService extends IPatientService {
-  PatientService(this.patientRepository);
+class PatientService implements IPatientService {
+  const PatientService(this.patientRepository);
 
-  IPatientRepository patientRepository;
+  final IPatientRepository patientRepository;
 
   @override
-  Future<Either<ErrorEntity, void>> updatePatientDischargeData({
+  Future<Either<ErrorEntity, List<PatientGetEntity>>> getPatients({
+    required String query,
+  }) {
+    return patientRepository.getPatients(query: query);
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> getPatient({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity dischargeData,
-  }) =>
-      patientRepository.updateDischargeData(
-        patientId: patientId,
-        dischargeData: dischargeData,
-      );
+  }) {
+    return patientRepository.getPatient(patientId: patientId);
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetEntity>> postPatient({
+    required PatientPostEntity patient,
+  }) {
+    return patientRepository.postPatient(patient: patient);
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatient({
+    required PatientPutEntity patient,
+  }) {
+    return patientRepository.putPatient(patient: patient);
+  }
+
+  @override
+  Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
+    required String patientId,
+    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+  }) {
+    return patientRepository.putPatientEgreso(
+      patientId: patientId,
+      discharge: discharge,
+    );
+  }
 }
