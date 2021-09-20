@@ -6,7 +6,7 @@ import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_b
 
 @injectable
 class PathologyAutoCompleteBloc extends AutoCompleteBloc<String> {
-  PathologyAutoCompleteBloc([String? initialValue]) : super(initialValue);
+  PathologyAutoCompleteBloc() : super('');
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {

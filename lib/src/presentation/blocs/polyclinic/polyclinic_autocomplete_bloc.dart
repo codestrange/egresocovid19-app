@@ -6,7 +6,7 @@ import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_b
 
 @injectable
 class PolyclinicAutoCompleteBloc extends AutoCompleteBloc<String> {
-  PolyclinicAutoCompleteBloc([String? initialValue]) : super(initialValue);
+  PolyclinicAutoCompleteBloc() : super('');
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {

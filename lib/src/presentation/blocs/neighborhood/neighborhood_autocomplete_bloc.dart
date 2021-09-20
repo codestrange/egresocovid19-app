@@ -6,7 +6,7 @@ import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_b
 
 @injectable
 class NeighborhoodAutoCompleteBloc extends AutoCompleteBloc<String> {
-  NeighborhoodAutoCompleteBloc([String? initialValue]) : super(initialValue);
+  NeighborhoodAutoCompleteBloc() : super('');
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {

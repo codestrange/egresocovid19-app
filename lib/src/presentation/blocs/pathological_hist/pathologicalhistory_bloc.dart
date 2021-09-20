@@ -23,7 +23,7 @@ class PathologicalhistoryBloc
         ..removeWhere((element) => element.name == event.pathologicalName);
       emit(state.copyWith(pathologicalHistory: newHistory));
     });
-    on<PathologyInfoRemoved>((event, emit) {
+    on<PathologyInfoCleared>((event, emit) {
       emit(state.copyWith(pathologicalHistory: []));
     });
   }
