@@ -16,33 +16,33 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DischargeOfPositiveCasesOfCovid19EntityTearOff {
   const _$DischargeOfPositiveCasesOfCovid19EntityTearOff();
 
-  _BaseDischargeOfPositiveCasesOfCovid19Entity call(
-      {DateTime? detectionDate,
-      List<String>? symptoms,
-      int? durationOfSymptoms,
-      DiagnosisWay? diagnosisWay,
-      TestDiagnosis? testUsedInDiagnosis,
-      int? daysFromSymptomsToDiagnosis,
-      int? numberPcrPerformed,
-      int? timeFromDiagnosisToNegativeOrDischarge,
-      Contagion? formOfContagion,
-      bool? wasHePartOfAnEvent,
-      bool? didHeWorkInTheAttentionToPositiveCases,
-      String? hospitalizationTime,
-      List<IncomeEntity>? incomes,
-      int? contactsFirstLevel,
-      int? contactsFirstLevelPositives,
-      int? contactsSecondLevel,
-      int? contactsSecondLevelPositives,
-      int? contactsThirdLevel,
-      int? contactsThirdLevelPositives,
-      List<Treatment>? treatmentsReceived,
-      List<String>? antibiotics,
-      List<Prophylaxis>? prophylaxis,
-      String? anotherVaccineAgainstCovid,
-      List<Aftermath>? aftermath,
-      List<String>? othersAftermath}) {
-    return _BaseDischargeOfPositiveCasesOfCovid19Entity(
+  _DischargeOfPositiveCasesOfCovid19Entity call(
+      {required DateTime? detectionDate,
+      required List<String>? symptoms,
+      required int? durationOfSymptoms,
+      required DiagnosisWay? diagnosisWay,
+      required TestDiagnosis? testUsedInDiagnosis,
+      required int? daysFromSymptomsToDiagnosis,
+      required int? numberPcrPerformed,
+      required int? timeFromDiagnosisToNegativeOrDischarge,
+      required Contagion? formOfContagion,
+      required bool? wasHePartOfAnEvent,
+      required bool? didHeWorkInTheAttentionToPositiveCases,
+      required String? hospitalizationTime,
+      required List<IncomeEntity>? incomes,
+      required int? contactsFirstLevel,
+      required int? contactsFirstLevelPositives,
+      required int? contactsSecondLevel,
+      required int? contactsSecondLevelPositives,
+      required int? contactsThirdLevel,
+      required int? contactsThirdLevelPositives,
+      required List<Treatment>? treatmentsReceived,
+      required List<String>? antibiotics,
+      required List<Prophylaxis>? prophylaxis,
+      required String? anotherVaccineAgainstCovid,
+      required List<Aftermath>? aftermath,
+      required List<String>? othersAftermath}) {
+    return _DischargeOfPositiveCasesOfCovid19Entity(
       detectionDate: detectionDate,
       symptoms: symptoms,
       durationOfSymptoms: durationOfSymptoms,
@@ -294,12 +294,12 @@ class _$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
+abstract class _$DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
     implements $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> {
-  factory _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith(
-          _BaseDischargeOfPositiveCasesOfCovid19Entity value,
-          $Res Function(_BaseDischargeOfPositiveCasesOfCovid19Entity) then) =
-      __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>;
+  factory _$DischargeOfPositiveCasesOfCovid19EntityCopyWith(
+          _DischargeOfPositiveCasesOfCovid19Entity value,
+          $Res Function(_DischargeOfPositiveCasesOfCovid19Entity) then) =
+      __$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {DateTime? detectionDate,
@@ -330,18 +330,18 @@ abstract class _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
+class __$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
     extends _$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
-    implements _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> {
-  __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl(
-      _BaseDischargeOfPositiveCasesOfCovid19Entity _value,
-      $Res Function(_BaseDischargeOfPositiveCasesOfCovid19Entity) _then)
+    implements _$DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> {
+  __$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl(
+      _DischargeOfPositiveCasesOfCovid19Entity _value,
+      $Res Function(_DischargeOfPositiveCasesOfCovid19Entity) _then)
       : super(_value,
-            (v) => _then(v as _BaseDischargeOfPositiveCasesOfCovid19Entity));
+            (v) => _then(v as _DischargeOfPositiveCasesOfCovid19Entity));
 
   @override
-  _BaseDischargeOfPositiveCasesOfCovid19Entity get _value =>
-      super._value as _BaseDischargeOfPositiveCasesOfCovid19Entity;
+  _DischargeOfPositiveCasesOfCovid19Entity get _value =>
+      super._value as _DischargeOfPositiveCasesOfCovid19Entity;
 
   @override
   $Res call({
@@ -371,7 +371,7 @@ class __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
     Object? aftermath = freezed,
     Object? othersAftermath = freezed,
   }) {
-    return _then(_BaseDischargeOfPositiveCasesOfCovid19Entity(
+    return _then(_DischargeOfPositiveCasesOfCovid19Entity(
       detectionDate: detectionDate == freezed
           ? _value.detectionDate
           : detectionDate // ignore: cast_nullable_to_non_nullable
@@ -480,34 +480,34 @@ class __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BaseDischargeOfPositiveCasesOfCovid19Entity
-    implements _BaseDischargeOfPositiveCasesOfCovid19Entity {
-  const _$_BaseDischargeOfPositiveCasesOfCovid19Entity(
-      {this.detectionDate,
-      this.symptoms,
-      this.durationOfSymptoms,
-      this.diagnosisWay,
-      this.testUsedInDiagnosis,
-      this.daysFromSymptomsToDiagnosis,
-      this.numberPcrPerformed,
-      this.timeFromDiagnosisToNegativeOrDischarge,
-      this.formOfContagion,
-      this.wasHePartOfAnEvent,
-      this.didHeWorkInTheAttentionToPositiveCases,
-      this.hospitalizationTime,
-      this.incomes,
-      this.contactsFirstLevel,
-      this.contactsFirstLevelPositives,
-      this.contactsSecondLevel,
-      this.contactsSecondLevelPositives,
-      this.contactsThirdLevel,
-      this.contactsThirdLevelPositives,
-      this.treatmentsReceived,
-      this.antibiotics,
-      this.prophylaxis,
-      this.anotherVaccineAgainstCovid,
-      this.aftermath,
-      this.othersAftermath});
+class _$_DischargeOfPositiveCasesOfCovid19Entity
+    implements _DischargeOfPositiveCasesOfCovid19Entity {
+  const _$_DischargeOfPositiveCasesOfCovid19Entity(
+      {required this.detectionDate,
+      required this.symptoms,
+      required this.durationOfSymptoms,
+      required this.diagnosisWay,
+      required this.testUsedInDiagnosis,
+      required this.daysFromSymptomsToDiagnosis,
+      required this.numberPcrPerformed,
+      required this.timeFromDiagnosisToNegativeOrDischarge,
+      required this.formOfContagion,
+      required this.wasHePartOfAnEvent,
+      required this.didHeWorkInTheAttentionToPositiveCases,
+      required this.hospitalizationTime,
+      required this.incomes,
+      required this.contactsFirstLevel,
+      required this.contactsFirstLevelPositives,
+      required this.contactsSecondLevel,
+      required this.contactsSecondLevelPositives,
+      required this.contactsThirdLevel,
+      required this.contactsThirdLevelPositives,
+      required this.treatmentsReceived,
+      required this.antibiotics,
+      required this.prophylaxis,
+      required this.anotherVaccineAgainstCovid,
+      required this.aftermath,
+      required this.othersAftermath});
 
   @override
   final DateTime? detectionDate;
@@ -568,7 +568,7 @@ class _$_BaseDischargeOfPositiveCasesOfCovid19Entity
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BaseDischargeOfPositiveCasesOfCovid19Entity &&
+        (other is _DischargeOfPositiveCasesOfCovid19Entity &&
             (identical(other.detectionDate, detectionDate) ||
                 const DeepCollectionEquality()
                     .equals(other.detectionDate, detectionDate)) &&
@@ -661,42 +661,41 @@ class _$_BaseDischargeOfPositiveCasesOfCovid19Entity
 
   @JsonKey(ignore: true)
   @override
-  _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith<
-          _BaseDischargeOfPositiveCasesOfCovid19Entity>
-      get copyWith =>
-          __$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<
-              _BaseDischargeOfPositiveCasesOfCovid19Entity>(this, _$identity);
+  _$DischargeOfPositiveCasesOfCovid19EntityCopyWith<
+          _DischargeOfPositiveCasesOfCovid19Entity>
+      get copyWith => __$DischargeOfPositiveCasesOfCovid19EntityCopyWithImpl<
+          _DischargeOfPositiveCasesOfCovid19Entity>(this, _$identity);
 }
 
-abstract class _BaseDischargeOfPositiveCasesOfCovid19Entity
+abstract class _DischargeOfPositiveCasesOfCovid19Entity
     implements DischargeOfPositiveCasesOfCovid19Entity {
-  const factory _BaseDischargeOfPositiveCasesOfCovid19Entity(
-          {DateTime? detectionDate,
-          List<String>? symptoms,
-          int? durationOfSymptoms,
-          DiagnosisWay? diagnosisWay,
-          TestDiagnosis? testUsedInDiagnosis,
-          int? daysFromSymptomsToDiagnosis,
-          int? numberPcrPerformed,
-          int? timeFromDiagnosisToNegativeOrDischarge,
-          Contagion? formOfContagion,
-          bool? wasHePartOfAnEvent,
-          bool? didHeWorkInTheAttentionToPositiveCases,
-          String? hospitalizationTime,
-          List<IncomeEntity>? incomes,
-          int? contactsFirstLevel,
-          int? contactsFirstLevelPositives,
-          int? contactsSecondLevel,
-          int? contactsSecondLevelPositives,
-          int? contactsThirdLevel,
-          int? contactsThirdLevelPositives,
-          List<Treatment>? treatmentsReceived,
-          List<String>? antibiotics,
-          List<Prophylaxis>? prophylaxis,
-          String? anotherVaccineAgainstCovid,
-          List<Aftermath>? aftermath,
-          List<String>? othersAftermath}) =
-      _$_BaseDischargeOfPositiveCasesOfCovid19Entity;
+  const factory _DischargeOfPositiveCasesOfCovid19Entity(
+          {required DateTime? detectionDate,
+          required List<String>? symptoms,
+          required int? durationOfSymptoms,
+          required DiagnosisWay? diagnosisWay,
+          required TestDiagnosis? testUsedInDiagnosis,
+          required int? daysFromSymptomsToDiagnosis,
+          required int? numberPcrPerformed,
+          required int? timeFromDiagnosisToNegativeOrDischarge,
+          required Contagion? formOfContagion,
+          required bool? wasHePartOfAnEvent,
+          required bool? didHeWorkInTheAttentionToPositiveCases,
+          required String? hospitalizationTime,
+          required List<IncomeEntity>? incomes,
+          required int? contactsFirstLevel,
+          required int? contactsFirstLevelPositives,
+          required int? contactsSecondLevel,
+          required int? contactsSecondLevelPositives,
+          required int? contactsThirdLevel,
+          required int? contactsThirdLevelPositives,
+          required List<Treatment>? treatmentsReceived,
+          required List<String>? antibiotics,
+          required List<Prophylaxis>? prophylaxis,
+          required String? anotherVaccineAgainstCovid,
+          required List<Aftermath>? aftermath,
+          required List<String>? othersAftermath}) =
+      _$_DischargeOfPositiveCasesOfCovid19Entity;
 
   @override
   DateTime? get detectionDate => throw _privateConstructorUsedError;
@@ -752,7 +751,7 @@ abstract class _BaseDischargeOfPositiveCasesOfCovid19Entity
   List<String>? get othersAftermath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BaseDischargeOfPositiveCasesOfCovid19EntityCopyWith<
-          _BaseDischargeOfPositiveCasesOfCovid19Entity>
+  _$DischargeOfPositiveCasesOfCovid19EntityCopyWith<
+          _DischargeOfPositiveCasesOfCovid19Entity>
       get copyWith => throw _privateConstructorUsedError;
 }

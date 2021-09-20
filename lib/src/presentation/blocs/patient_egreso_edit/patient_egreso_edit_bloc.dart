@@ -26,8 +26,33 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
           emit(const PatientEgresoEditState.fetchInProgress());
 
           //TODO: Load actual patient discharge data
-          const Either<ErrorEntity, DischargeOfPositiveCasesOfCovid19Entity>
-              result = Right(DischargeOfPositiveCasesOfCovid19Entity());
+          final result = const Right(DischargeOfPositiveCasesOfCovid19Entity(
+            detectionDate: null,
+            symptoms: null,
+            durationOfSymptoms: null,
+            diagnosisWay: null,
+            testUsedInDiagnosis: null,
+            daysFromSymptomsToDiagnosis: null,
+            numberPcrPerformed: null,
+            timeFromDiagnosisToNegativeOrDischarge: null,
+            formOfContagion: null,
+            wasHePartOfAnEvent: null,
+            didHeWorkInTheAttentionToPositiveCases: null,
+            hospitalizationTime: null,
+            incomes: null,
+            contactsFirstLevel: null,
+            contactsFirstLevelPositives: null,
+            contactsSecondLevel: null,
+            contactsSecondLevelPositives: null,
+            contactsThirdLevel: null,
+            contactsThirdLevelPositives: null,
+            treatmentsReceived: null,
+            antibiotics: null,
+            prophylaxis: null,
+            anotherVaccineAgainstCovid: null,
+            aftermath: null,
+            othersAftermath: null,
+          )) as Either<ErrorEntity, DischargeOfPositiveCasesOfCovid19Entity>;
 
           result.fold(
             (l) => emit(PatientEgresoEditState.fetchFailure(l.message)),
