@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BloodTypeInputWidget extends StatelessWidget {
   const BloodTypeInputWidget({

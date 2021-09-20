@@ -4,12 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-typedef Widget AutoCompleteOverlayItemBuilder(
+typedef AutoCompleteOverlayItemBuilder = Widget Function(
     BuildContext context, dynamic suggestion);
 
-typedef InputEventCallback<T>(T data);
+typedef InputEventCallback<T> = Function(T data);
 
-typedef StringCallback(String data);
+typedef StringCallback = Function(String data);
 
 class AutoCompleteTextField<T> extends StatefulWidget {
   AutoCompleteTextField({

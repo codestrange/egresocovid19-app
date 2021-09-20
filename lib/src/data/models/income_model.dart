@@ -1,6 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'income_model.g.dart';
 

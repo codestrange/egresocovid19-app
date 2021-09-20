@@ -4,11 +4,11 @@ part of 'autocomplete_bloc.dart';
 abstract class AutocompleteEvent {}
 
 class AutocompleteValueChanged extends AutocompleteEvent {
-  final String input;
-
   AutocompleteValueChanged(
     this.input,
   ) : super();
+
+  final String input;
 
   @override
   bool operator ==(Object other) {
@@ -22,9 +22,9 @@ class AutocompleteValueChanged extends AutocompleteEvent {
 }
 
 class AutocompleteSuggestionSelected<T> extends AutocompleteEvent {
-  final T value;
-
   AutocompleteSuggestionSelected(this.value) : super();
+
+  final T value;
 
   @override
   bool operator ==(Object other) {
