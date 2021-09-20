@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PatientEntityTearOff {
   const _$PatientEntityTearOff();
 
-  _PatientGetEntity get(
+  PatientGetEntity get(
       {required String id,
       required String firstname,
       required String lastname,
@@ -34,7 +34,7 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
-    return _PatientGetEntity(
+    return PatientGetEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -55,7 +55,7 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientGetDetailEntity getDetail(
+  PatientGetDetailEntity getDetail(
       {required String id,
       required String firstname,
       required String lastname,
@@ -75,7 +75,7 @@ class _$PatientEntityTearOff {
       required List<PathologicalEntity> familyPathologicalHistory,
       required DischargeOfPositiveCasesOfCovid19Entity
           dischargeOfPositiveCasesOfCovid19}) {
-    return _PatientGetDetailEntity(
+    return PatientGetDetailEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -97,7 +97,7 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientPostEntity post(
+  PatientPostEntity post(
       {required String id,
       required String firstname,
       required String lastname,
@@ -114,7 +114,7 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
-    return _PatientPostEntity(
+    return PatientPostEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -134,7 +134,7 @@ class _$PatientEntityTearOff {
     );
   }
 
-  _PatientPutEntity put(
+  PatientPutEntity put(
       {required String? id,
       required String? firstname,
       required String? lastname,
@@ -151,7 +151,7 @@ class _$PatientEntityTearOff {
       required int? blockNumber,
       required List<PathologicalEntity>? personalPathologicalHistory,
       required List<PathologicalEntity>? familyPathologicalHistory}) {
-    return _PatientPutEntity(
+    return PatientPutEntity(
       id: id,
       firstname: firstname,
       lastname: lastname,
@@ -342,18 +342,18 @@ mixin _$PatientEntity {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -394,11 +394,11 @@ class _$PatientEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PatientGetEntityCopyWith<$Res>
+abstract class $PatientGetEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientGetEntityCopyWith(
-          _PatientGetEntity value, $Res Function(_PatientGetEntity) then) =
-      __$PatientGetEntityCopyWithImpl<$Res>;
+  factory $PatientGetEntityCopyWith(
+          PatientGetEntity value, $Res Function(PatientGetEntity) then) =
+      _$PatientGetEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -421,15 +421,15 @@ abstract class _$PatientGetEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientGetEntityCopyWithImpl<$Res>
+class _$PatientGetEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientGetEntityCopyWith<$Res> {
-  __$PatientGetEntityCopyWithImpl(
-      _PatientGetEntity _value, $Res Function(_PatientGetEntity) _then)
-      : super(_value, (v) => _then(v as _PatientGetEntity));
+    implements $PatientGetEntityCopyWith<$Res> {
+  _$PatientGetEntityCopyWithImpl(
+      PatientGetEntity _value, $Res Function(PatientGetEntity) _then)
+      : super(_value, (v) => _then(v as PatientGetEntity));
 
   @override
-  _PatientGetEntity get _value => super._value as _PatientGetEntity;
+  PatientGetEntity get _value => super._value as PatientGetEntity;
 
   @override
   $Res call({
@@ -451,7 +451,7 @@ class __$PatientGetEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientGetEntity(
+    return _then(PatientGetEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -526,8 +526,8 @@ class __$PatientGetEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientGetEntity implements _PatientGetEntity {
-  const _$_PatientGetEntity(
+class _$PatientGetEntity implements PatientGetEntity {
+  const _$PatientGetEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -589,7 +589,7 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientGetEntity &&
+        (other is PatientGetEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -667,8 +667,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
-      __$PatientGetEntityCopyWithImpl<_PatientGetEntity>(this, _$identity);
+  $PatientGetEntityCopyWith<PatientGetEntity> get copyWith =>
+      _$PatientGetEntityCopyWithImpl<PatientGetEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -877,10 +877,10 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return get(this);
   }
@@ -888,10 +888,10 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (get != null) {
@@ -901,8 +901,8 @@ class _$_PatientGetEntity implements _PatientGetEntity {
   }
 }
 
-abstract class _PatientGetEntity implements PatientEntity {
-  const factory _PatientGetEntity(
+abstract class PatientGetEntity implements PatientEntity {
+  const factory PatientGetEntity(
           {required String id,
           required String firstname,
           required String lastname,
@@ -920,7 +920,7 @@ abstract class _PatientGetEntity implements PatientEntity {
           required int blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
-      _$_PatientGetEntity;
+      _$PatientGetEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -944,16 +944,16 @@ abstract class _PatientGetEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientGetEntityCopyWith<_PatientGetEntity> get copyWith =>
+  $PatientGetEntityCopyWith<PatientGetEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientGetDetailEntityCopyWith<$Res>
+abstract class $PatientGetDetailEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientGetDetailEntityCopyWith(_PatientGetDetailEntity value,
-          $Res Function(_PatientGetDetailEntity) then) =
-      __$PatientGetDetailEntityCopyWithImpl<$Res>;
+  factory $PatientGetDetailEntityCopyWith(PatientGetDetailEntity value,
+          $Res Function(PatientGetDetailEntity) then) =
+      _$PatientGetDetailEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -981,15 +981,15 @@ abstract class _$PatientGetDetailEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientGetDetailEntityCopyWithImpl<$Res>
+class _$PatientGetDetailEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientGetDetailEntityCopyWith<$Res> {
-  __$PatientGetDetailEntityCopyWithImpl(_PatientGetDetailEntity _value,
-      $Res Function(_PatientGetDetailEntity) _then)
-      : super(_value, (v) => _then(v as _PatientGetDetailEntity));
+    implements $PatientGetDetailEntityCopyWith<$Res> {
+  _$PatientGetDetailEntityCopyWithImpl(PatientGetDetailEntity _value,
+      $Res Function(PatientGetDetailEntity) _then)
+      : super(_value, (v) => _then(v as PatientGetDetailEntity));
 
   @override
-  _PatientGetDetailEntity get _value => super._value as _PatientGetDetailEntity;
+  PatientGetDetailEntity get _value => super._value as PatientGetDetailEntity;
 
   @override
   $Res call({
@@ -1012,7 +1012,7 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
     Object? familyPathologicalHistory = freezed,
     Object? dischargeOfPositiveCasesOfCovid19 = freezed,
   }) {
-    return _then(_PatientGetDetailEntity(
+    return _then(PatientGetDetailEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1101,8 +1101,8 @@ class __$PatientGetDetailEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
-  const _$_PatientGetDetailEntity(
+class _$PatientGetDetailEntity implements PatientGetDetailEntity {
+  const _$PatientGetDetailEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -1168,7 +1168,7 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientGetDetailEntity &&
+        (other is PatientGetDetailEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -1250,8 +1250,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
-      __$PatientGetDetailEntityCopyWithImpl<_PatientGetDetailEntity>(
+  $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
+      _$PatientGetDetailEntityCopyWithImpl<PatientGetDetailEntity>(
           this, _$identity);
 
   @override
@@ -1463,10 +1463,10 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return getDetail(this);
   }
@@ -1474,10 +1474,10 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (getDetail != null) {
@@ -1487,8 +1487,8 @@ class _$_PatientGetDetailEntity implements _PatientGetDetailEntity {
   }
 }
 
-abstract class _PatientGetDetailEntity implements PatientEntity {
-  const factory _PatientGetDetailEntity(
+abstract class PatientGetDetailEntity implements PatientEntity {
+  const factory PatientGetDetailEntity(
       {required String id,
       required String firstname,
       required String lastname,
@@ -1507,7 +1507,7 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
       required DischargeOfPositiveCasesOfCovid19Entity
-          dischargeOfPositiveCasesOfCovid19}) = _$_PatientGetDetailEntity;
+          dischargeOfPositiveCasesOfCovid19}) = _$PatientGetDetailEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -1534,16 +1534,16 @@ abstract class _PatientGetDetailEntity implements PatientEntity {
           throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientGetDetailEntityCopyWith<_PatientGetDetailEntity> get copyWith =>
+  $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientPostEntityCopyWith<$Res>
+abstract class $PatientPostEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientPostEntityCopyWith(
-          _PatientPostEntity value, $Res Function(_PatientPostEntity) then) =
-      __$PatientPostEntityCopyWithImpl<$Res>;
+  factory $PatientPostEntityCopyWith(
+          PatientPostEntity value, $Res Function(PatientPostEntity) then) =
+      _$PatientPostEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1565,15 +1565,15 @@ abstract class _$PatientPostEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientPostEntityCopyWithImpl<$Res>
+class _$PatientPostEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientPostEntityCopyWith<$Res> {
-  __$PatientPostEntityCopyWithImpl(
-      _PatientPostEntity _value, $Res Function(_PatientPostEntity) _then)
-      : super(_value, (v) => _then(v as _PatientPostEntity));
+    implements $PatientPostEntityCopyWith<$Res> {
+  _$PatientPostEntityCopyWithImpl(
+      PatientPostEntity _value, $Res Function(PatientPostEntity) _then)
+      : super(_value, (v) => _then(v as PatientPostEntity));
 
   @override
-  _PatientPostEntity get _value => super._value as _PatientPostEntity;
+  PatientPostEntity get _value => super._value as PatientPostEntity;
 
   @override
   $Res call({
@@ -1594,7 +1594,7 @@ class __$PatientPostEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientPostEntity(
+    return _then(PatientPostEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1665,8 +1665,8 @@ class __$PatientPostEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientPostEntity implements _PatientPostEntity {
-  const _$_PatientPostEntity(
+class _$PatientPostEntity implements PatientPostEntity {
+  const _$PatientPostEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -1725,7 +1725,7 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientPostEntity &&
+        (other is PatientPostEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -1799,8 +1799,8 @@ class _$_PatientPostEntity implements _PatientPostEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
-      __$PatientPostEntityCopyWithImpl<_PatientPostEntity>(this, _$identity);
+  $PatientPostEntityCopyWith<PatientPostEntity> get copyWith =>
+      _$PatientPostEntityCopyWithImpl<PatientPostEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2007,10 +2007,10 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return post(this);
   }
@@ -2018,10 +2018,10 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (post != null) {
@@ -2031,8 +2031,8 @@ class _$_PatientPostEntity implements _PatientPostEntity {
   }
 }
 
-abstract class _PatientPostEntity implements PatientEntity {
-  const factory _PatientPostEntity(
+abstract class PatientPostEntity implements PatientEntity {
+  const factory PatientPostEntity(
           {required String id,
           required String firstname,
           required String lastname,
@@ -2049,7 +2049,7 @@ abstract class _PatientPostEntity implements PatientEntity {
           required int blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
-      _$_PatientPostEntity;
+      _$PatientPostEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -2072,16 +2072,16 @@ abstract class _PatientPostEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientPostEntityCopyWith<_PatientPostEntity> get copyWith =>
+  $PatientPostEntityCopyWith<PatientPostEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PatientPutEntityCopyWith<$Res>
+abstract class $PatientPutEntityCopyWith<$Res>
     implements $PatientEntityCopyWith<$Res> {
-  factory _$PatientPutEntityCopyWith(
-          _PatientPutEntity value, $Res Function(_PatientPutEntity) then) =
-      __$PatientPutEntityCopyWithImpl<$Res>;
+  factory $PatientPutEntityCopyWith(
+          PatientPutEntity value, $Res Function(PatientPutEntity) then) =
+      _$PatientPutEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? id,
@@ -2103,15 +2103,15 @@ abstract class _$PatientPutEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PatientPutEntityCopyWithImpl<$Res>
+class _$PatientPutEntityCopyWithImpl<$Res>
     extends _$PatientEntityCopyWithImpl<$Res>
-    implements _$PatientPutEntityCopyWith<$Res> {
-  __$PatientPutEntityCopyWithImpl(
-      _PatientPutEntity _value, $Res Function(_PatientPutEntity) _then)
-      : super(_value, (v) => _then(v as _PatientPutEntity));
+    implements $PatientPutEntityCopyWith<$Res> {
+  _$PatientPutEntityCopyWithImpl(
+      PatientPutEntity _value, $Res Function(PatientPutEntity) _then)
+      : super(_value, (v) => _then(v as PatientPutEntity));
 
   @override
-  _PatientPutEntity get _value => super._value as _PatientPutEntity;
+  PatientPutEntity get _value => super._value as PatientPutEntity;
 
   @override
   $Res call({
@@ -2132,7 +2132,7 @@ class __$PatientPutEntityCopyWithImpl<$Res>
     Object? personalPathologicalHistory = freezed,
     Object? familyPathologicalHistory = freezed,
   }) {
-    return _then(_PatientPutEntity(
+    return _then(PatientPutEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2203,8 +2203,8 @@ class __$PatientPutEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatientPutEntity implements _PatientPutEntity {
-  const _$_PatientPutEntity(
+class _$PatientPutEntity implements PatientPutEntity {
+  const _$PatientPutEntity(
       {required this.id,
       required this.firstname,
       required this.lastname,
@@ -2263,7 +2263,7 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientPutEntity &&
+        (other is PatientPutEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.firstname, firstname) ||
@@ -2337,8 +2337,8 @@ class _$_PatientPutEntity implements _PatientPutEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$PatientPutEntityCopyWith<_PatientPutEntity> get copyWith =>
-      __$PatientPutEntityCopyWithImpl<_PatientPutEntity>(this, _$identity);
+  $PatientPutEntityCopyWith<PatientPutEntity> get copyWith =>
+      _$PatientPutEntityCopyWithImpl<PatientPutEntity>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2545,10 +2545,10 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PatientGetEntity value) get,
-    required TResult Function(_PatientGetDetailEntity value) getDetail,
-    required TResult Function(_PatientPostEntity value) post,
-    required TResult Function(_PatientPutEntity value) put,
+    required TResult Function(PatientGetEntity value) get,
+    required TResult Function(PatientGetDetailEntity value) getDetail,
+    required TResult Function(PatientPostEntity value) post,
+    required TResult Function(PatientPutEntity value) put,
   }) {
     return put(this);
   }
@@ -2556,10 +2556,10 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PatientGetEntity value)? get,
-    TResult Function(_PatientGetDetailEntity value)? getDetail,
-    TResult Function(_PatientPostEntity value)? post,
-    TResult Function(_PatientPutEntity value)? put,
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
     required TResult orElse(),
   }) {
     if (put != null) {
@@ -2569,8 +2569,8 @@ class _$_PatientPutEntity implements _PatientPutEntity {
   }
 }
 
-abstract class _PatientPutEntity implements PatientEntity {
-  const factory _PatientPutEntity(
+abstract class PatientPutEntity implements PatientEntity {
+  const factory PatientPutEntity(
           {required String? id,
           required String? firstname,
           required String? lastname,
@@ -2587,7 +2587,7 @@ abstract class _PatientPutEntity implements PatientEntity {
           required int? blockNumber,
           required List<PathologicalEntity>? personalPathologicalHistory,
           required List<PathologicalEntity>? familyPathologicalHistory}) =
-      _$_PatientPutEntity;
+      _$PatientPutEntity;
 
   String? get id => throw _privateConstructorUsedError;
   String? get firstname => throw _privateConstructorUsedError;
@@ -2610,6 +2610,6 @@ abstract class _PatientPutEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PatientPutEntityCopyWith<_PatientPutEntity> get copyWith =>
+  $PatientPutEntityCopyWith<PatientPutEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

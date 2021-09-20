@@ -1,5 +1,4 @@
-import 'package:egresocovid19/src/domain/entities/discharge_of_positive_cases_of_covid19_entity.dart';
-import 'package:egresocovid19/src/domain/entities/pathological_entity.dart';
+import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -25,7 +24,7 @@ class PatientEntity with _$PatientEntity {
     required int blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
-  }) = _PatientGetEntity;
+  }) = PatientGetEntity;
   const factory PatientEntity.getDetail({
     required String id,
     required String firstname,
@@ -46,7 +45,7 @@ class PatientEntity with _$PatientEntity {
     required List<PathologicalEntity> familyPathologicalHistory,
     required DischargeOfPositiveCasesOfCovid19Entity
         dischargeOfPositiveCasesOfCovid19,
-  }) = _PatientGetDetailEntity;
+  }) = PatientGetDetailEntity;
   const factory PatientEntity.post({
     required String id,
     required String firstname,
@@ -64,7 +63,7 @@ class PatientEntity with _$PatientEntity {
     required int blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
-  }) = _PatientPostEntity;
+  }) = PatientPostEntity;
   const factory PatientEntity.put({
     required String? id,
     required String? firstname,
@@ -82,5 +81,5 @@ class PatientEntity with _$PatientEntity {
     required int? blockNumber,
     required List<PathologicalEntity>? personalPathologicalHistory,
     required List<PathologicalEntity>? familyPathologicalHistory,
-  }) = _PatientPutEntity;
+  }) = PatientPutEntity;
 }

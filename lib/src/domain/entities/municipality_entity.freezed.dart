@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MunicipalityEntityTearOff {
   const _$MunicipalityEntityTearOff();
 
-  _MunicipalityEntity get({required String name, required String code}) {
+  _MunicipalityEntity call({required String name, required String code}) {
     return _MunicipalityEntity(
       name: name,
       code: code,
@@ -31,29 +31,6 @@ const $MunicipalityEntity = _$MunicipalityEntityTearOff();
 mixin _$MunicipalityEntity {
   String get name => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String name, String code) get,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name, String code)? get,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MunicipalityEntity value) get,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MunicipalityEntity value)? get,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MunicipalityEntityCopyWith<MunicipalityEntity> get copyWith =>
@@ -146,7 +123,7 @@ class _$_MunicipalityEntity implements _MunicipalityEntity {
 
   @override
   String toString() {
-    return 'MunicipalityEntity.get(name: $name, code: $code)';
+    return 'MunicipalityEntity(name: $name, code: $code)';
   }
 
   @override
@@ -169,46 +146,6 @@ class _$_MunicipalityEntity implements _MunicipalityEntity {
   @override
   _$MunicipalityEntityCopyWith<_MunicipalityEntity> get copyWith =>
       __$MunicipalityEntityCopyWithImpl<_MunicipalityEntity>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String name, String code) get,
-  }) {
-    return get(name, code);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name, String code)? get,
-    required TResult orElse(),
-  }) {
-    if (get != null) {
-      return get(name, code);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MunicipalityEntity value) get,
-  }) {
-    return get(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MunicipalityEntity value)? get,
-    required TResult orElse(),
-  }) {
-    if (get != null) {
-      return get(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _MunicipalityEntity implements MunicipalityEntity {

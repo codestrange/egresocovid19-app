@@ -4,7 +4,7 @@ part 'municipality_entity.freezed.dart';
 
 @freezed
 class MunicipalityEntity with _$MunicipalityEntity {
-  const factory MunicipalityEntity.get({
+  const factory MunicipalityEntity({
     required String name,
     required String code,
   }) = _MunicipalityEntity;

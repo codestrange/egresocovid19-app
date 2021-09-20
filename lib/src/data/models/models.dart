@@ -1,2 +1,9 @@
 export 'discharge_of_positive_cases_of_covid19.dart';
 export 'income_model.dart';
+export 'municipality_model.dart';
+export 'pathological_model.dart';
+export 'patient_get_detail_model.dart';
+export 'patient_get_model.dart';
+export 'patient_post_model.dart';
+export 'patient_put_model.dart';
+export 'province_model.dart';
