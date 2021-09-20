@@ -24,6 +24,7 @@ class _$PatientEntityTearOff {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -42,6 +43,7 @@ class _$PatientEntityTearOff {
       province: province,
       municipality: municipality,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -63,6 +65,7 @@ class _$PatientEntityTearOff {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -83,6 +86,7 @@ class _$PatientEntityTearOff {
       province: province,
       municipality: municipality,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -103,6 +107,7 @@ class _$PatientEntityTearOff {
       required String ci,
       required String municipalityCode,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -119,6 +124,7 @@ class _$PatientEntityTearOff {
       ci: ci,
       municipalityCode: municipalityCode,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -139,6 +145,7 @@ class _$PatientEntityTearOff {
       required String? ci,
       required String? municipalityCode,
       required Sex? sex,
+      required int? age,
       required SkinColor? skinColor,
       required BloodType? bloodType,
       required String? address,
@@ -156,6 +163,7 @@ class _$PatientEntityTearOff {
       ci: ci,
       municipalityCode: municipalityCode,
       sex: sex,
+      age: age,
       skinColor: skinColor,
       bloodType: bloodType,
       address: address,
@@ -187,6 +195,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -206,6 +215,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -225,6 +235,7 @@ mixin _$PatientEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -243,6 +254,7 @@ mixin _$PatientEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -266,6 +278,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -285,6 +298,7 @@ mixin _$PatientEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -304,6 +318,7 @@ mixin _$PatientEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -322,6 +337,7 @@ mixin _$PatientEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -404,6 +420,7 @@ abstract class $PatientGetEntityCopyWith<$Res>
       String province,
       String municipality,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -436,6 +453,7 @@ class _$PatientGetEntityCopyWithImpl<$Res>
     Object? province = freezed,
     Object? municipality = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -476,6 +494,10 @@ class _$PatientGetEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -531,6 +553,7 @@ class _$PatientGetEntity implements PatientGetEntity {
       required this.province,
       required this.municipality,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -557,6 +580,8 @@ class _$PatientGetEntity implements PatientGetEntity {
   @override
   final Sex sex;
   @override
+  final int age;
+  @override
   final SkinColor skinColor;
   @override
   final BloodType? bloodType;
@@ -579,7 +604,7 @@ class _$PatientGetEntity implements PatientGetEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.get(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.get(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
@@ -604,6 +629,8 @@ class _$PatientGetEntity implements PatientGetEntity {
                     .equals(other.municipality, municipality)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -650,6 +677,7 @@ class _$PatientGetEntity implements PatientGetEntity {
       const DeepCollectionEquality().hash(province) ^
       const DeepCollectionEquality().hash(municipality) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -677,6 +705,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -696,6 +725,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -715,6 +745,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -733,6 +764,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -753,6 +785,7 @@ class _$PatientGetEntity implements PatientGetEntity {
         province,
         municipality,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -776,6 +809,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -795,6 +829,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -814,6 +849,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -832,6 +868,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -854,6 +891,7 @@ class _$PatientGetEntity implements PatientGetEntity {
           province,
           municipality,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -904,6 +942,7 @@ abstract class PatientGetEntity implements PatientEntity {
           required String province,
           required String municipality,
           required Sex sex,
+          required int age,
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
@@ -923,6 +962,7 @@ abstract class PatientGetEntity implements PatientEntity {
   String get province => throw _privateConstructorUsedError;
   String get municipality => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -957,6 +997,7 @@ abstract class $PatientGetDetailEntityCopyWith<$Res>
       String province,
       String municipality,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -994,6 +1035,7 @@ class _$PatientGetDetailEntityCopyWithImpl<$Res>
     Object? province = freezed,
     Object? municipality = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -1035,6 +1077,10 @@ class _$PatientGetDetailEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -1104,6 +1150,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
       required this.province,
       required this.municipality,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -1131,6 +1178,8 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
   @override
   final Sex sex;
   @override
+  final int age;
+  @override
   final SkinColor skinColor;
   @override
   final BloodType? bloodType;
@@ -1156,7 +1205,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.getDetail(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19: $dischargeOfPositiveCasesOfCovid19)';
+    return 'PatientEntity.getDetail(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, province: $province, municipality: $municipality, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory, dischargeOfPositiveCasesOfCovid19: $dischargeOfPositiveCasesOfCovid19)';
   }
 
   @override
@@ -1181,6 +1230,8 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
                     .equals(other.municipality, municipality)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -1230,6 +1281,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
       const DeepCollectionEquality().hash(province) ^
       const DeepCollectionEquality().hash(municipality) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -1259,6 +1311,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1278,6 +1331,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1297,6 +1351,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1315,6 +1370,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1335,6 +1391,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
         province,
         municipality,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -1359,6 +1416,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1378,6 +1436,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1397,6 +1456,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1415,6 +1475,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1437,6 +1498,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
           province,
           municipality,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -1488,6 +1550,7 @@ abstract class PatientGetDetailEntity implements PatientEntity {
       required String province,
       required String municipality,
       required Sex sex,
+      required int age,
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
@@ -1508,6 +1571,7 @@ abstract class PatientGetDetailEntity implements PatientEntity {
   String get province => throw _privateConstructorUsedError;
   String get municipality => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -1543,6 +1607,7 @@ abstract class $PatientPostEntityCopyWith<$Res>
       String ci,
       String municipalityCode,
       Sex sex,
+      int age,
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
@@ -1573,6 +1638,7 @@ class _$PatientPostEntityCopyWithImpl<$Res>
     Object? ci = freezed,
     Object? municipalityCode = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -1605,6 +1671,10 @@ class _$PatientPostEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -1658,6 +1728,7 @@ class _$PatientPostEntity implements PatientPostEntity {
       required this.ci,
       required this.municipalityCode,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -1679,6 +1750,8 @@ class _$PatientPostEntity implements PatientPostEntity {
   final String municipalityCode;
   @override
   final Sex sex;
+  @override
+  final int age;
   @override
   final SkinColor skinColor;
   @override
@@ -1702,7 +1775,7 @@ class _$PatientPostEntity implements PatientPostEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.post(firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.post(firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
@@ -1722,6 +1795,8 @@ class _$PatientPostEntity implements PatientPostEntity {
                     .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -1766,6 +1841,7 @@ class _$PatientPostEntity implements PatientPostEntity {
       const DeepCollectionEquality().hash(ci) ^
       const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -1793,6 +1869,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1812,6 +1889,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1831,6 +1909,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1849,6 +1928,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1867,6 +1947,7 @@ class _$PatientPostEntity implements PatientPostEntity {
         ci,
         municipalityCode,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -1890,6 +1971,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1909,6 +1991,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1928,6 +2011,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -1946,6 +2030,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -1966,6 +2051,7 @@ class _$PatientPostEntity implements PatientPostEntity {
           ci,
           municipalityCode,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -2014,6 +2100,7 @@ abstract class PatientPostEntity implements PatientEntity {
           required String ci,
           required String municipalityCode,
           required Sex sex,
+          required int age,
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
@@ -2031,6 +2118,7 @@ abstract class PatientPostEntity implements PatientEntity {
   String get ci => throw _privateConstructorUsedError;
   String get municipalityCode => throw _privateConstructorUsedError;
   Sex get sex => throw _privateConstructorUsedError;
+  int get age => throw _privateConstructorUsedError;
   SkinColor get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;
@@ -2064,6 +2152,7 @@ abstract class $PatientPutEntityCopyWith<$Res>
       String? ci,
       String? municipalityCode,
       Sex? sex,
+      int? age,
       SkinColor? skinColor,
       BloodType? bloodType,
       String? address,
@@ -2095,6 +2184,7 @@ class _$PatientPutEntityCopyWithImpl<$Res>
     Object? ci = freezed,
     Object? municipalityCode = freezed,
     Object? sex = freezed,
+    Object? age = freezed,
     Object? skinColor = freezed,
     Object? bloodType = freezed,
     Object? address = freezed,
@@ -2131,6 +2221,10 @@ class _$PatientPutEntityCopyWithImpl<$Res>
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
               as Sex?,
+      age: age == freezed
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int?,
       skinColor: skinColor == freezed
           ? _value.skinColor
           : skinColor // ignore: cast_nullable_to_non_nullable
@@ -2185,6 +2279,7 @@ class _$PatientPutEntity implements PatientPutEntity {
       required this.ci,
       required this.municipalityCode,
       required this.sex,
+      required this.age,
       required this.skinColor,
       required this.bloodType,
       required this.address,
@@ -2209,6 +2304,8 @@ class _$PatientPutEntity implements PatientPutEntity {
   @override
   final Sex? sex;
   @override
+  final int? age;
+  @override
   final SkinColor? skinColor;
   @override
   final BloodType? bloodType;
@@ -2231,7 +2328,7 @@ class _$PatientPutEntity implements PatientPutEntity {
 
   @override
   String toString() {
-    return 'PatientEntity.put(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
+    return 'PatientEntity.put(id: $id, firstname: $firstname, lastname: $lastname, ci: $ci, municipalityCode: $municipalityCode, sex: $sex, age: $age, skinColor: $skinColor, bloodType: $bloodType, address: $address, polyclinic: $polyclinic, surgery: $surgery, popularCouncil: $popularCouncil, neighborhood: $neighborhood, blockNumber: $blockNumber, personalPathologicalHistory: $personalPathologicalHistory, familyPathologicalHistory: $familyPathologicalHistory)';
   }
 
   @override
@@ -2253,6 +2350,8 @@ class _$PatientPutEntity implements PatientPutEntity {
                     .equals(other.municipalityCode, municipalityCode)) &&
             (identical(other.sex, sex) ||
                 const DeepCollectionEquality().equals(other.sex, sex)) &&
+            (identical(other.age, age) ||
+                const DeepCollectionEquality().equals(other.age, age)) &&
             (identical(other.skinColor, skinColor) ||
                 const DeepCollectionEquality()
                     .equals(other.skinColor, skinColor)) &&
@@ -2298,6 +2397,7 @@ class _$PatientPutEntity implements PatientPutEntity {
       const DeepCollectionEquality().hash(ci) ^
       const DeepCollectionEquality().hash(municipalityCode) ^
       const DeepCollectionEquality().hash(sex) ^
+      const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(skinColor) ^
       const DeepCollectionEquality().hash(bloodType) ^
       const DeepCollectionEquality().hash(address) ^
@@ -2325,6 +2425,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2344,6 +2445,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2363,6 +2465,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2381,6 +2484,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -2400,6 +2504,7 @@ class _$PatientPutEntity implements PatientPutEntity {
         ci,
         municipalityCode,
         sex,
+        age,
         skinColor,
         bloodType,
         address,
@@ -2423,6 +2528,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2442,6 +2548,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String province,
             String municipality,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2461,6 +2568,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String ci,
             String municipalityCode,
             Sex sex,
+            int age,
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
@@ -2479,6 +2587,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String? ci,
             String? municipalityCode,
             Sex? sex,
+            int? age,
             SkinColor? skinColor,
             BloodType? bloodType,
             String? address,
@@ -2500,6 +2609,7 @@ class _$PatientPutEntity implements PatientPutEntity {
           ci,
           municipalityCode,
           sex,
+          age,
           skinColor,
           bloodType,
           address,
@@ -2549,6 +2659,7 @@ abstract class PatientPutEntity implements PatientEntity {
           required String? ci,
           required String? municipalityCode,
           required Sex? sex,
+          required int? age,
           required SkinColor? skinColor,
           required BloodType? bloodType,
           required String? address,
@@ -2567,6 +2678,7 @@ abstract class PatientPutEntity implements PatientEntity {
   String? get ci => throw _privateConstructorUsedError;
   String? get municipalityCode => throw _privateConstructorUsedError;
   Sex? get sex => throw _privateConstructorUsedError;
+  int? get age => throw _privateConstructorUsedError;
   SkinColor? get skinColor => throw _privateConstructorUsedError;
   @override
   BloodType? get bloodType => throw _privateConstructorUsedError;

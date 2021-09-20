@@ -12,6 +12,7 @@ class PatientPostModel {
     required this.ci,
     required this.municipalityCode,
     required this.sex,
+    required this.age,
     required this.skinColor,
     required this.bloodType,
     required this.address,
@@ -29,6 +30,7 @@ class PatientPostModel {
   final String ci;
   final String municipalityCode;
   final Sex sex;
+  final int age;
   final SkinColor skinColor;
   final BloodType? bloodType;
   final String address;

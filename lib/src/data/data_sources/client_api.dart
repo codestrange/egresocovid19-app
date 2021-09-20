@@ -19,9 +19,20 @@ abstract class ClientApi {
     @Path() String patientId,
   );
 
-  @PUT('/patients/{patientId}/egreso')
-  Future<void> putPatientEgreso(
+  @POST('/patients')
+  Future<PatientGetModel> postPatient(
+    @Body() PatientPostModel patient,
+  );
+
+  @PUT('/patients/{patientId}')
+  Future<PatientGetDetailModel> putPatient(
     @Path() String patientId,
-    @Body() DischargeOfPositiveCasesOfCovid19Model dischargeModel,
+    @Body() PatientPutModel patient,
+  );
+
+  @PUT('/patients/{patientId}/egreso')
+  Future<PatientGetDetailModel> putPatientEgreso(
+    @Path() String patientId,
+    @Body() DischargeOfPositiveCasesOfCovid19Model discharge,
   );
 }

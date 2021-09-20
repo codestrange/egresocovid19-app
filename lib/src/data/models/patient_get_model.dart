@@ -14,6 +14,7 @@ class PatientGetModel {
     required this.province,
     required this.municipality,
     required this.sex,
+    required this.age,
     required this.skinColor,
     required this.bloodType,
     required this.address,
@@ -33,6 +34,7 @@ class PatientGetModel {
   final String province;
   final String municipality;
   final Sex sex;
+  final int age;
   final SkinColor skinColor;
   final BloodType? bloodType;
   final String address;

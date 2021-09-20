@@ -46,17 +46,51 @@ class _ClientApi implements ClientApi {
   }
 
   @override
-  Future<void> putPatientEgreso(patientId, dischargeModel) async {
+  Future<PatientGetModel> postPatient(patient) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(dischargeModel.toJson());
-    await _dio.fetch<void>(_setStreamType<void>(
-        Options(method: 'PUT', headers: <String, dynamic>{}, extra: _extra)
-            .compose(_dio.options, '/patients/$patientId/egreso',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    return null;
+    _data.addAll(patient.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PatientGetModel>(
+            Options(method: 'POST', headers: <String, dynamic>{}, extra: _extra)
+                .compose(_dio.options, '/patients',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PatientGetModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PatientGetDetailModel> putPatient(patientId, patient) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(patient.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PatientGetDetailModel>(
+            Options(method: 'PUT', headers: <String, dynamic>{}, extra: _extra)
+                .compose(_dio.options, '/patients/$patientId',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PatientGetDetailModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PatientGetDetailModel> putPatientEgreso(patientId, discharge) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(discharge.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PatientGetDetailModel>(
+            Options(method: 'PUT', headers: <String, dynamic>{}, extra: _extra)
+                .compose(_dio.options, '/patients/$patientId/egreso',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PatientGetDetailModel.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
