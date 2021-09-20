@@ -21,6 +21,14 @@ class _$PatientEgresoEditEventTearOff {
       patientId,
     );
   }
+
+  _Update update(String patientId,
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+    return _Update(
+      patientId,
+      newDischargeData,
+    );
+  }
 }
 
 /// @nodoc
@@ -33,22 +41,30 @@ mixin _$PatientEgresoEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String patientId) fetch,
+    required TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
+    TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        update,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+    required TResult Function(_Update value) update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +171,9 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String patientId) fetch,
+    required TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        update,
   }) {
     return fetch(patientId);
   }
@@ -163,6 +182,9 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
+    TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        update,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -175,6 +197,7 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+    required TResult Function(_Update value) update,
   }) {
     return fetch(this);
   }
@@ -183,6 +206,7 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -203,11 +227,199 @@ abstract class _Fetch implements PatientEgresoEditEvent {
 }
 
 /// @nodoc
+abstract class _$UpdateCopyWith<$Res>
+    implements $PatientEgresoEditEventCopyWith<$Res> {
+  factory _$UpdateCopyWith(_Update value, $Res Function(_Update) then) =
+      __$UpdateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String patientId,
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+}
+
+/// @nodoc
+class __$UpdateCopyWithImpl<$Res>
+    extends _$PatientEgresoEditEventCopyWithImpl<$Res>
+    implements _$UpdateCopyWith<$Res> {
+  __$UpdateCopyWithImpl(_Update _value, $Res Function(_Update) _then)
+      : super(_value, (v) => _then(v as _Update));
+
+  @override
+  _Update get _value => super._value as _Update;
+
+  @override
+  $Res call({
+    Object? patientId = freezed,
+    Object? newDischargeData = freezed,
+  }) {
+    return _then(_Update(
+      patientId == freezed
+          ? _value.patientId
+          : patientId // ignore: cast_nullable_to_non_nullable
+              as String,
+      newDischargeData == freezed
+          ? _value.newDischargeData
+          : newDischargeData // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.newDischargeData, (value) {
+      return _then(_value.copyWith(newDischargeData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Update implements _Update {
+  const _$_Update(this.patientId, this.newDischargeData);
+
+  @override
+  final String patientId;
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditEvent.update(patientId: $patientId, newDischargeData: $newDischargeData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Update &&
+            (identical(other.patientId, patientId) ||
+                const DeepCollectionEquality()
+                    .equals(other.patientId, patientId)) &&
+            (identical(other.newDischargeData, newDischargeData) ||
+                const DeepCollectionEquality()
+                    .equals(other.newDischargeData, newDischargeData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(patientId) ^
+      const DeepCollectionEquality().hash(newDischargeData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateCopyWith<_Update> get copyWith =>
+      __$UpdateCopyWithImpl<_Update>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String patientId) fetch,
+    required TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        update,
+  }) {
+    return update(patientId, newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+    TResult Function(String patientId,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        update,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(patientId, newDischargeData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Fetch value) fetch,
+    required TResult Function(_Update value) update,
+  }) {
+    return update(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Update implements PatientEgresoEditEvent {
+  const factory _Update(String patientId,
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) = _$_Update;
+
+  @override
+  String get patientId => throw _privateConstructorUsedError;
+  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+      throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$UpdateCopyWith<_Update> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$PatientEgresoEditStateTearOff {
   const _$PatientEgresoEditStateTearOff();
 
   _Initial initial() {
     return const _Initial();
+  }
+
+  _FetchInProgress fetchInProgress() {
+    return const _FetchInProgress();
+  }
+
+  _FetchFailure fetchFailure(String errorMessage) {
+    return _FetchFailure(
+      errorMessage,
+    );
+  }
+
+  _FetchSuccess fetchSuccess(
+      DischargeOfPositiveCasesOfCovid19Entity actualDischargeData) {
+    return _FetchSuccess(
+      actualDischargeData,
+    );
+  }
+
+  _UpdateInProgress updateInProgress(
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+    return _UpdateInProgress(
+      newDischargeData,
+    );
+  }
+
+  _UpdateFailure updateFailure(String errorMessage,
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+    return _UpdateFailure(
+      errorMessage,
+      newDischargeData,
+    );
+  }
+
+  _UpdateSuccess updateSuccess(
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+    return _UpdateSuccess(
+      newDischargeData,
+    );
   }
 }
 
@@ -219,22 +431,60 @@ mixin _$PatientEgresoEditState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -296,6 +546,20 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
   }) {
     return initial();
   }
@@ -304,6 +568,18 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -316,6 +592,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return initial(this);
   }
@@ -324,6 +606,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -335,4 +623,951 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements PatientEgresoEditState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$FetchInProgressCopyWith<$Res> {
+  factory _$FetchInProgressCopyWith(
+          _FetchInProgress value, $Res Function(_FetchInProgress) then) =
+      __$FetchInProgressCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FetchInProgressCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$FetchInProgressCopyWith<$Res> {
+  __$FetchInProgressCopyWithImpl(
+      _FetchInProgress _value, $Res Function(_FetchInProgress) _then)
+      : super(_value, (v) => _then(v as _FetchInProgress));
+
+  @override
+  _FetchInProgress get _value => super._value as _FetchInProgress;
+}
+
+/// @nodoc
+
+class _$_FetchInProgress implements _FetchInProgress {
+  const _$_FetchInProgress();
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.fetchInProgress()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _FetchInProgress);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return fetchInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchInProgress != null) {
+      return fetchInProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return fetchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchInProgress != null) {
+      return fetchInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchInProgress implements PatientEgresoEditState {
+  const factory _FetchInProgress() = _$_FetchInProgress;
+}
+
+/// @nodoc
+abstract class _$FetchFailureCopyWith<$Res> {
+  factory _$FetchFailureCopyWith(
+          _FetchFailure value, $Res Function(_FetchFailure) then) =
+      __$FetchFailureCopyWithImpl<$Res>;
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$FetchFailureCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$FetchFailureCopyWith<$Res> {
+  __$FetchFailureCopyWithImpl(
+      _FetchFailure _value, $Res Function(_FetchFailure) _then)
+      : super(_value, (v) => _then(v as _FetchFailure));
+
+  @override
+  _FetchFailure get _value => super._value as _FetchFailure;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_FetchFailure(
+      errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FetchFailure implements _FetchFailure {
+  const _$_FetchFailure(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.fetchFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FetchFailure &&
+            (identical(other.errorMessage, errorMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMessage, errorMessage)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+      __$FetchFailureCopyWithImpl<_FetchFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return fetchFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchFailure != null) {
+      return fetchFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return fetchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchFailure != null) {
+      return fetchFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchFailure implements PatientEgresoEditState {
+  const factory _FetchFailure(String errorMessage) = _$_FetchFailure;
+
+  String get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$FetchSuccessCopyWith<$Res> {
+  factory _$FetchSuccessCopyWith(
+          _FetchSuccess value, $Res Function(_FetchSuccess) then) =
+      __$FetchSuccessCopyWithImpl<$Res>;
+  $Res call({DischargeOfPositiveCasesOfCovid19Entity actualDischargeData});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
+      get actualDischargeData;
+}
+
+/// @nodoc
+class __$FetchSuccessCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$FetchSuccessCopyWith<$Res> {
+  __$FetchSuccessCopyWithImpl(
+      _FetchSuccess _value, $Res Function(_FetchSuccess) _then)
+      : super(_value, (v) => _then(v as _FetchSuccess));
+
+  @override
+  _FetchSuccess get _value => super._value as _FetchSuccess;
+
+  @override
+  $Res call({
+    Object? actualDischargeData = freezed,
+  }) {
+    return _then(_FetchSuccess(
+      actualDischargeData == freezed
+          ? _value.actualDischargeData
+          : actualDischargeData // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
+      get actualDischargeData {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.actualDischargeData, (value) {
+      return _then(_value.copyWith(actualDischargeData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_FetchSuccess implements _FetchSuccess {
+  const _$_FetchSuccess(this.actualDischargeData);
+
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity actualDischargeData;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.fetchSuccess(actualDischargeData: $actualDischargeData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FetchSuccess &&
+            (identical(other.actualDischargeData, actualDischargeData) ||
+                const DeepCollectionEquality()
+                    .equals(other.actualDischargeData, actualDischargeData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(actualDischargeData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+      __$FetchSuccessCopyWithImpl<_FetchSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return fetchSuccess(actualDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchSuccess != null) {
+      return fetchSuccess(actualDischargeData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return fetchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (fetchSuccess != null) {
+      return fetchSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchSuccess implements PatientEgresoEditState {
+  const factory _FetchSuccess(
+          DischargeOfPositiveCasesOfCovid19Entity actualDischargeData) =
+      _$_FetchSuccess;
+
+  DischargeOfPositiveCasesOfCovid19Entity get actualDischargeData =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UpdateInProgressCopyWith<$Res> {
+  factory _$UpdateInProgressCopyWith(
+          _UpdateInProgress value, $Res Function(_UpdateInProgress) then) =
+      __$UpdateInProgressCopyWithImpl<$Res>;
+  $Res call({DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+}
+
+/// @nodoc
+class __$UpdateInProgressCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$UpdateInProgressCopyWith<$Res> {
+  __$UpdateInProgressCopyWithImpl(
+      _UpdateInProgress _value, $Res Function(_UpdateInProgress) _then)
+      : super(_value, (v) => _then(v as _UpdateInProgress));
+
+  @override
+  _UpdateInProgress get _value => super._value as _UpdateInProgress;
+
+  @override
+  $Res call({
+    Object? newDischargeData = freezed,
+  }) {
+    return _then(_UpdateInProgress(
+      newDischargeData == freezed
+          ? _value.newDischargeData
+          : newDischargeData // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.newDischargeData, (value) {
+      return _then(_value.copyWith(newDischargeData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateInProgress implements _UpdateInProgress {
+  const _$_UpdateInProgress(this.newDischargeData);
+
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.updateInProgress(newDischargeData: $newDischargeData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UpdateInProgress &&
+            (identical(other.newDischargeData, newDischargeData) ||
+                const DeepCollectionEquality()
+                    .equals(other.newDischargeData, newDischargeData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(newDischargeData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateInProgressCopyWith<_UpdateInProgress> get copyWith =>
+      __$UpdateInProgressCopyWithImpl<_UpdateInProgress>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return updateInProgress(newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateInProgress != null) {
+      return updateInProgress(newDischargeData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return updateInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateInProgress != null) {
+      return updateInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateInProgress implements PatientEgresoEditState {
+  const factory _UpdateInProgress(
+          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+      _$_UpdateInProgress;
+
+  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UpdateInProgressCopyWith<_UpdateInProgress> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UpdateFailureCopyWith<$Res> {
+  factory _$UpdateFailureCopyWith(
+          _UpdateFailure value, $Res Function(_UpdateFailure) then) =
+      __$UpdateFailureCopyWithImpl<$Res>;
+  $Res call(
+      {String errorMessage,
+      DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+}
+
+/// @nodoc
+class __$UpdateFailureCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$UpdateFailureCopyWith<$Res> {
+  __$UpdateFailureCopyWithImpl(
+      _UpdateFailure _value, $Res Function(_UpdateFailure) _then)
+      : super(_value, (v) => _then(v as _UpdateFailure));
+
+  @override
+  _UpdateFailure get _value => super._value as _UpdateFailure;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+    Object? newDischargeData = freezed,
+  }) {
+    return _then(_UpdateFailure(
+      errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      newDischargeData == freezed
+          ? _value.newDischargeData
+          : newDischargeData // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.newDischargeData, (value) {
+      return _then(_value.copyWith(newDischargeData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateFailure implements _UpdateFailure {
+  const _$_UpdateFailure(this.errorMessage, this.newDischargeData);
+
+  @override
+  final String errorMessage;
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.updateFailure(errorMessage: $errorMessage, newDischargeData: $newDischargeData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UpdateFailure &&
+            (identical(other.errorMessage, errorMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMessage, errorMessage)) &&
+            (identical(other.newDischargeData, newDischargeData) ||
+                const DeepCollectionEquality()
+                    .equals(other.newDischargeData, newDischargeData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(errorMessage) ^
+      const DeepCollectionEquality().hash(newDischargeData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
+      __$UpdateFailureCopyWithImpl<_UpdateFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return updateFailure(errorMessage, newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateFailure != null) {
+      return updateFailure(errorMessage, newDischargeData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return updateFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateFailure != null) {
+      return updateFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateFailure implements PatientEgresoEditState {
+  const factory _UpdateFailure(String errorMessage,
+          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+      _$_UpdateFailure;
+
+  String get errorMessage => throw _privateConstructorUsedError;
+  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UpdateSuccessCopyWith<$Res> {
+  factory _$UpdateSuccessCopyWith(
+          _UpdateSuccess value, $Res Function(_UpdateSuccess) then) =
+      __$UpdateSuccessCopyWithImpl<$Res>;
+  $Res call({DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+}
+
+/// @nodoc
+class __$UpdateSuccessCopyWithImpl<$Res>
+    extends _$PatientEgresoEditStateCopyWithImpl<$Res>
+    implements _$UpdateSuccessCopyWith<$Res> {
+  __$UpdateSuccessCopyWithImpl(
+      _UpdateSuccess _value, $Res Function(_UpdateSuccess) _then)
+      : super(_value, (v) => _then(v as _UpdateSuccess));
+
+  @override
+  _UpdateSuccess get _value => super._value as _UpdateSuccess;
+
+  @override
+  $Res call({
+    Object? newDischargeData = freezed,
+  }) {
+    return _then(_UpdateSuccess(
+      newDischargeData == freezed
+          ? _value.newDischargeData
+          : newDischargeData // ignore: cast_nullable_to_non_nullable
+              as DischargeOfPositiveCasesOfCovid19Entity,
+    ));
+  }
+
+  @override
+  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
+    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+        _value.newDischargeData, (value) {
+      return _then(_value.copyWith(newDischargeData: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateSuccess implements _UpdateSuccess {
+  const _$_UpdateSuccess(this.newDischargeData);
+
+  @override
+  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+
+  @override
+  String toString() {
+    return 'PatientEgresoEditState.updateSuccess(newDischargeData: $newDischargeData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UpdateSuccess &&
+            (identical(other.newDischargeData, newDischargeData) ||
+                const DeepCollectionEquality()
+                    .equals(other.newDischargeData, newDischargeData)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(newDischargeData);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateSuccessCopyWith<_UpdateSuccess> get copyWith =>
+      __$UpdateSuccessCopyWithImpl<_UpdateSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(String errorMessage) fetchFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+        fetchSuccess,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateInProgress,
+    required TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateFailure,
+    required TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+        updateSuccess,
+  }) {
+    return updateSuccess(newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(
+            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
+        fetchSuccess,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateInProgress,
+    TResult Function(String errorMessage,
+            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+        updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateSuccess != null) {
+      return updateSuccess(newDischargeData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchFailure value) fetchFailure,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_UpdateInProgress value) updateInProgress,
+    required TResult Function(_UpdateFailure value) updateFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) {
+    return updateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateSuccess != null) {
+      return updateSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSuccess implements PatientEgresoEditState {
+  const factory _UpdateSuccess(
+          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+      _$_UpdateSuccess;
+
+  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UpdateSuccessCopyWith<_UpdateSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
