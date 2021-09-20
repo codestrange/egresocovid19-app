@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'patient_post_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class PatientPostModel {
   const PatientPostModel({
     required this.firstname,
@@ -29,9 +29,12 @@ class PatientPostModel {
   final String lastname;
   final String ci;
   final String municipalityCode;
+  @JsonKey(fromJson: sexFromInt, toJson: sexToInt)
   final Sex sex;
   final int age;
+  @JsonKey(fromJson: skinColorFromInt, toJson: skinColorToInt)
   final SkinColor skinColor;
+  @JsonKey(fromJson: bloodTypeFromInt, toJson: bloodTypeToInt)
   final BloodType? bloodType;
   final String address;
   final String polyclinic;

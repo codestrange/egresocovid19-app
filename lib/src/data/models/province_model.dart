@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'province_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class ProvinceModel {
   const ProvinceModel({
     required this.name,
