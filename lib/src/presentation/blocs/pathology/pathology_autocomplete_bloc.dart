@@ -4,8 +4,8 @@ import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_b
 import 'package:injectable/injectable.dart';
 
 @injectable
-class PathologyAutocompleteBloc extends AutoCompleteBloc<String> {
-  PathologyAutocompleteBloc([String? initialValue]) : super(initialValue);
+class PathologyAutoCompleteBloc extends AutoCompleteBloc<String> {
+  PathologyAutoCompleteBloc([String? initialValue]) : super(initialValue);
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {

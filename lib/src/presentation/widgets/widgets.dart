@@ -1,5 +1,8 @@
 export 'buttons/main_button_widget.dart';
 export 'buttons/submmit_button_widget.dart';
+export 'complex_input_fields/input_municipality_widget.dart';
+export 'complex_input_fields/input_pathologicalhist_widget.dart';
+export 'patient_fields/input_blocknumber_widget.dart';
 export 'patient_fields/input_bloodtype_widget.dart';
 export 'patient_fields/input_neighborhood_widget.dart';
 export 'patient_fields/input_pathology_widget.dart';

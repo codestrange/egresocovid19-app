@@ -1,33 +1,36 @@
-import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathological_hist/pathologicalhistory_bloc.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart';
-import 'package:egresocovid19/src/presentation/widgets/patient_fields/input_pathology_widget.dart';
-import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 
 class PathologicalHistoryInputWidget extends StatelessWidget {
   const PathologicalHistoryInputWidget({
     Key? key,
     required this.headerText,
-    this.onSubmitted,
     this.onChanged,
+    this.errorText,
   }) : super(key: key);
 
   final String headerText;
 
-  ///on suggestion selected or submit
-  final dynamic Function(List<String>)? onSubmitted;
+  final String? errorText;
+  //TODO: SHOW THIS ERROR TEXT SOME WHERE
 
-  ///on text changed
-  final dynamic Function(List<String>)? onChanged;
+  ///on list changed
+  final dynamic Function(List<PathologicalEntity>)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    final autocompleter = PathologyAutocompleteBloc();
+    final autocompleter = PathologyAutoCompleteBloc();
     final pathologyInputBloc = PathologyBloc();
-    final pathologicalHistBloc = PathologicalhistoryBloc();
+    final pathologicalHistBloc = PathologicalhistoryBloc()
+      ..stream.listen((state) {
+        if (onChanged != null) {
+          onChanged!(state.pathologicalHistory);
+        }
+      });
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
