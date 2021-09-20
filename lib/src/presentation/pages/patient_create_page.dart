@@ -149,7 +149,7 @@ class _LastNameInput extends StatelessWidget {
       bloc: form.lastName,
       builder: (context, state) => TextInputWidget(
         controller: TextEditing.fromValue(state.value),
-        labelText: 'Apellidos',
+        labelText: 'Apellido(s)',
         errorText: state.error,
         onChanged: (value) => form.lastName.dirty(
           value.trim(),
@@ -316,7 +316,7 @@ class _SurgeryInput extends StatelessWidget {
       bloc: form.surgery,
       builder: (context, state) => SurgeryInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Cirugía',
+        labelText: 'Consultorio',
         errorText: state.error,
         onChanged: (value) => form.surgery.dirty(value.trim()),
         onSelected: (value) => form.surgery.dirty((value as String).trim()),
