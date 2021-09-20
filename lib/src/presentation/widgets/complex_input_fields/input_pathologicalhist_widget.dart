@@ -38,46 +38,43 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
+
         // new Pathology Input
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // Text Inputs
-            Column(
-              children: [
-                PathologyNameInputWidget(
-                  suggestionsStream: autocompleter.suggestionsStream,
-                  onChanged: (input) {
-                    autocompleter.changed(input);
-                    pathologyInputBloc
-                        .add(PathologyEvent.pathologyNameChanged(input));
-                  },
-                  onSelected: (input) {
-                    autocompleter.selected(input as String);
-                    pathologyInputBloc
-                        .add(PathologyEvent.pathologyNameChanged(input));
-                  },
-                ),
-                _PathologyTreatmentInputWidget(
-                  onChanged: (input) => pathologyInputBloc
-                      .add(PathologyEvent.treatmentChanged(input)),
-                ),
-              ],
-            ),
-            // Add Button
-            IconButton(
-                onPressed: pathologyInputBloc.state.pathology.isNotEmpty
+        PathologyNameInputWidget(
+          suggestionsStream: autocompleter.suggestionsStream,
+          onChanged: (input) {
+            autocompleter.changed(input);
+            pathologyInputBloc.add(PathologyEvent.pathologyNameChanged(input));
+          },
+          onSelected: (input) {
+            autocompleter.selected(input as String);
+            pathologyInputBloc.add(PathologyEvent.pathologyNameChanged(input));
+          },
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+        _PathologyTreatmentInputWidget(
+          onChanged: (input) =>
+              pathologyInputBloc.add(PathologyEvent.treatmentChanged(input)),
+        ),
+
+        // Add Button
+        BlocBuilder<PathologyBloc, PathologyState>(
+          bloc: pathologyInputBloc,
+          builder: (context, state) {
+            return IconButton(
+                onPressed: state.pathology.isNotEmpty
                     ? () {
                         final pathological = PathologicalEntity(
-                            name: pathologyInputBloc.state.pathology,
-                            treatments: pathologyInputBloc.state.treatment);
+                            name: state.pathology, treatments: state.treatment);
 
                         pathologicalHistBloc
                             .add(PathologicalHistoryEvent.added(pathological));
                       }
                     : null,
-                icon: const Icon(Icons.add))
-          ],
+                icon: const Icon(Icons.add));
+          },
         ),
         BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
           bloc: pathologicalHistBloc,

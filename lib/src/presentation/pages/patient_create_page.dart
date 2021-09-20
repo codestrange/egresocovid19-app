@@ -56,10 +56,11 @@ class _PatientCreatePageInternal extends StatelessWidget {
         onError: (error) => ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
           ..showSnackBar(SnackBar(content: Text(error.message))),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: const _PatientCreateForm(),
-        ),
+        child: const SingleChildScrollView(
+            child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: _PatientCreateForm(),
+        )),
       ),
     );
   }
@@ -74,7 +75,6 @@ class _PatientCreateForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(height: 10),
         const Flexible(child: _FirstNameInput()),
@@ -83,18 +83,19 @@ class _PatientCreateForm extends StatelessWidget {
         const SizedBox(height: 8),
         const Flexible(child: _IdentityNumberInput()),
         const SizedBox(height: 8),
-        Wrap(
+        Row(
           children: const [
             Flexible(child: _AgeInput()),
             SizedBox(width: 10),
             Flexible(child: _SexInput()),
             SizedBox(width: 10),
-            Flexible(child: _SkinColorInput()),
-            SizedBox(width: 10),
-            Flexible(child: _BloodTypeInput()),
           ],
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 8),
+        const Flexible(child: _SkinColorInput()),
+        const SizedBox(height: 8),
+        const Flexible(child: _BloodTypeInput()),
+        const Divider(height: 16),
         const Flexible(child: _MunicipalityInput()),
         const SizedBox(height: 8),
         const Flexible(child: _AddressInput()),
@@ -108,7 +109,7 @@ class _PatientCreateForm extends StatelessWidget {
         const Flexible(child: _NeighborhoodInput()),
         const SizedBox(height: 8),
         const Flexible(child: _BlockNumberInput()),
-        const SizedBox(height: 12),
+        const Divider(height: 16),
         const Flexible(child: _PersonalPathologicalHistoryInput()),
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
