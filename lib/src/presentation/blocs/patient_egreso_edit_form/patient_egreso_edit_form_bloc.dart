@@ -64,30 +64,36 @@ abstract class IPatientEgresoEditFormBloc
 
 @Injectable(as: IPatientEgresoEditFormBloc)
 class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
+  PatientEgresoEditFormBloc(
+    @factoryParam this.initialDischargeData,
+  );
+
+  final DischargeDataEntity? initialDischargeData;
+
   @override
   InputBloc<List<Aftermath>?> get aftermath => InputBloc(
-        pureValue: [],
+        pureValue: initialDischargeData?.aftermath,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<String?> get anotherVaccineAgainstCovid => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.anotherVaccineAgainstCovid,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<List<String>?> get antibiotics => InputBloc(
-        pureValue: [],
+        pureValue: initialDischargeData?.antibiotics,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<int?> get contactsFirstLevel => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsFirstLevel,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -96,7 +102,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get contactsFirstLevelPositives => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsFirstLevelPositives,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -105,7 +111,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get contactsSecondLevel => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsSecondLevel,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -114,7 +120,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get contactsSecondLevelPositives => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsSecondLevelPositives,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -123,7 +129,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get contactsThirdLevel => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsThirdLevel,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -132,7 +138,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get contactsThirdLevelPositives => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.contactsThirdLevelPositives,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -141,7 +147,7 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<int?> get daysFromSymptomsToDiagnosis => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.daysFromSymptomsToDiagnosis,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -150,28 +156,28 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<DateTime?> get detectionDate => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.detectionDate,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<DiagnosisWay?> get diagnosisWay => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.diagnosisWay,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<bool?> get didHeWorkInTheAttentionToPositiveCases => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.didHeWorkInTheAttentionToPositiveCases,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<int?> get durationOfSymptoms => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.durationOfSymptoms,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -180,28 +186,28 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<Contagion?> get formOfContagion => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.formOfContagion,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<String?> get hospitalizationTime => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.hospitalizationTime,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<List<IncomeEntity>?> get incomes => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.incomes,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<int?> get numberPcrPerformed => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.numberPcrPerformed,
         validators: [],
         validationType: ValidationType.explicit,
       );
@@ -243,35 +249,35 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<List<String>?> get othersAftermath => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.othersAftermath,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<List<Prophylaxis>?> get prophylaxis => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.prophylaxis,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<List<String>?> get symptoms => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.symptoms,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<TestDiagnosis?> get testUsedInDiagnosis => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.testUsedInDiagnosis,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<int?> get timeFromDiagnosisToNegativeOrDischarge => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.timeFromDiagnosisToNegativeOrDischarge,
         validators: [
           IntValidator.nonNegative,
         ],
@@ -280,14 +286,14 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
 
   @override
   InputBloc<List<Treatment>?> get treatmentsReceived => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.treatmentsReceived,
         validators: [],
         validationType: ValidationType.explicit,
       );
 
   @override
   InputBloc<bool?> get wasHePartOfAnEvent => InputBloc(
-        pureValue: null,
+        pureValue: initialDischargeData?.wasHePartOfAnEvent,
         validators: [],
         validationType: ValidationType.explicit,
       );

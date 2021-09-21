@@ -5,32 +5,33 @@
 // **************************************************************************
 
 import 'package:dio/dio.dart' as _i6;
-import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i28;
+import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i29;
 import 'package:egresocovid19/src/data/repositories/auth_repository.dart'
-    as _i35;
+    as _i36;
 import 'package:egresocovid19/src/data/repositories/autocomplete_repository.dart'
-    as _i29;
+    as _i30;
 import 'package:egresocovid19/src/data/repositories/locale_repository.dart'
     as _i12;
 import 'package:egresocovid19/src/data/repositories/patient_repository.dart'
-    as _i31;
+    as _i32;
 import 'package:egresocovid19/src/data/repositories/province_repository.dart'
-    as _i33;
+    as _i34;
 import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
-    as _i21;
-import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i24;
-import 'package:egresocovid19/src/dependencies.dart' as _i37;
+    as _i22;
+import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i25;
+import 'package:egresocovid19/src/dependencies.dart' as _i38;
+import 'package:egresocovid19/src/domain/entities/entities.dart' as _i19;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i11;
-import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i36;
+import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i37;
 import 'package:egresocovid19/src/domain/services/autocomplete_service.dart'
-    as _i30;
+    as _i31;
 import 'package:egresocovid19/src/domain/services/locale_service.dart' as _i13;
-import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i32;
+import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i33;
 import 'package:egresocovid19/src/domain/services/province_service.dart'
-    as _i34;
+    as _i35;
 import 'package:egresocovid19/src/domain/services/services.dart' as _i8;
-import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i22;
+import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i23;
 import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart'
     as _i7;
 import 'package:egresocovid19/src/presentation/blocs/home/home_bloc.dart'
@@ -40,11 +41,11 @@ import 'package:egresocovid19/src/presentation/blocs/locale/locale_bloc.dart'
 import 'package:egresocovid19/src/presentation/blocs/login/login_bloc.dart'
     as _i14;
 import 'package:egresocovid19/src/presentation/blocs/pathological_hist/pathologicalhistory_bloc.dart'
-    as _i25;
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart'
     as _i26;
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart'
+import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart'
     as _i27;
+import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart'
+    as _i28;
 import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit/patient_basic_edit_bloc.dart'
     as _i15;
 import 'package:egresocovid19/src/presentation/blocs/patient_create/patient_create_bloc.dart'
@@ -54,9 +55,9 @@ import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit/patient
 import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart'
     as _i18;
 import 'package:egresocovid19/src/presentation/blocs/patient_view/patient_view_bloc.dart'
-    as _i19;
-import 'package:egresocovid19/src/presentation/blocs/theme/theme_bloc.dart'
     as _i20;
+import 'package:egresocovid19/src/presentation/blocs/theme/theme_bloc.dart'
+    as _i21;
 import 'package:egresocovid19/src/presentation/utils/app_bloc_observer.dart'
     as _i4;
 import 'package:flutter_bloc/flutter_bloc.dart' as _i3;
@@ -64,7 +65,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:hive/hive.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:oauth_dio/oauth_dio.dart'
-    as _i23; // ignore_for_file: unnecessary_lambdas
+    as _i24; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -95,45 +96,47 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<_i16.IPatientCreateBloc>(() => _i16.PatientCreateBloc());
   gh.factory<_i17.IPatientEgresoEditBloc>(
       () => _i17.PatientEgresoEditBloc(get<_i8.IPatientService>()));
-  gh.factory<_i18.IPatientEgresoEditFormBloc>(
-      () => _i18.PatientEgresoEditFormBloc());
-  gh.factory<_i19.IPatientViewBloc>(() => _i19.PatientViewBloc());
-  gh.factory<_i20.IThemeBloc>(() => _i20.ThemeBloc(get<_i8.IThemeService>()));
+  gh.factoryParam<_i18.IPatientEgresoEditFormBloc, _i19.DischargeDataEntity?,
+          dynamic>(
+      (initialDischargeData, _) =>
+          _i18.PatientEgresoEditFormBloc(initialDischargeData));
+  gh.factory<_i20.IPatientViewBloc>(() => _i20.PatientViewBloc());
+  gh.factory<_i21.IThemeBloc>(() => _i21.ThemeBloc(get<_i8.IThemeService>()));
   gh.factory<_i11.IThemeRepository>(
-      () => _i21.ThemeRepository(get<_i5.Box<int>>(instanceName: 'theme')));
-  gh.factory<_i22.IThemeService>(
-      () => _i22.ThemeService(get<_i11.IThemeRepository>()));
-  gh.lazySingleton<_i23.OAuthStorage>(
-      () => _i24.HiveOauthStorage(get<_i5.Box<String>>(instanceName: 'oauth')));
-  gh.factory<_i25.PathologicalhistoryBloc>(
-      () => _i25.PathologicalhistoryBloc());
-  gh.factory<_i26.PathologyAutocompleteBloc>(
-      () => _i26.PathologyAutocompleteBloc(get<String>()));
-  gh.factory<_i27.PathologyBloc>(() => _i27.PathologyBloc());
+      () => _i22.ThemeRepository(get<_i5.Box<int>>(instanceName: 'theme')));
+  gh.factory<_i23.IThemeService>(
+      () => _i23.ThemeService(get<_i11.IThemeRepository>()));
+  gh.lazySingleton<_i24.OAuthStorage>(
+      () => _i25.HiveOauthStorage(get<_i5.Box<String>>(instanceName: 'oauth')));
+  gh.factory<_i26.PathologicalhistoryBloc>(
+      () => _i26.PathologicalhistoryBloc());
+  gh.factory<_i27.PathologyAutocompleteBloc>(
+      () => _i27.PathologyAutocompleteBloc(get<String>()));
+  gh.factory<_i28.PathologyBloc>(() => _i28.PathologyBloc());
   gh.factory<String>(() => registerModule.baseUrl, instanceName: 'baseUrl');
-  gh.lazySingleton<_i28.ClientApi>(() => _i28.ClientApi(get<_i6.Dio>(),
+  gh.lazySingleton<_i29.ClientApi>(() => _i29.ClientApi(get<_i6.Dio>(),
       baseUrl: get<String>(instanceName: 'baseUrl')));
   gh.lazySingleton<_i11.IAutoCompleteRepository>(
-      () => _i29.AutoCompleteRepository(get<_i28.ClientApi>()));
-  gh.factory<_i30.IAutoCompleteService>(
-      () => _i30.AutoCompleteService(get<_i11.IAutoCompleteRepository>()));
+      () => _i30.AutoCompleteRepository(get<_i29.ClientApi>()));
+  gh.factory<_i31.IAutoCompleteService>(
+      () => _i31.AutoCompleteService(get<_i11.IAutoCompleteRepository>()));
   gh.lazySingleton<_i11.IPatientRepository>(
-      () => _i31.PatientRepository(get<_i28.ClientApi>()));
-  gh.factory<_i32.IPatientService>(
-      () => _i32.PatientService(get<_i11.IPatientRepository>()));
+      () => _i32.PatientRepository(get<_i29.ClientApi>()));
+  gh.factory<_i33.IPatientService>(
+      () => _i33.PatientService(get<_i11.IPatientRepository>()));
   gh.lazySingleton<_i11.IProvinceRepository>(
-      () => _i33.ProvinceRepository(get<_i28.ClientApi>()));
-  gh.factory<_i34.IProvinceService>(
-      () => _i34.ProvinceService(get<_i11.IProvinceRepository>()));
-  gh.lazySingleton<_i23.OAuth>(() => registerModule.oauth(
+      () => _i34.ProvinceRepository(get<_i29.ClientApi>()));
+  gh.factory<_i35.IProvinceService>(
+      () => _i35.ProvinceService(get<_i11.IProvinceRepository>()));
+  gh.lazySingleton<_i24.OAuth>(() => registerModule.oauth(
       get<String>(instanceName: 'baseUrl'),
       get<_i6.Dio>(),
-      get<_i23.OAuthStorage>()));
+      get<_i24.OAuthStorage>()));
   gh.lazySingleton<_i11.IAuthRepository>(
-      () => _i35.AuthRepository(get<_i23.OAuth>()));
-  gh.lazySingleton<_i36.IAuthService>(
-      () => _i36.AuthService(authRepository: get<_i11.IAuthRepository>()));
+      () => _i36.AuthRepository(get<_i24.OAuth>()));
+  gh.lazySingleton<_i37.IAuthService>(
+      () => _i37.AuthService(authRepository: get<_i11.IAuthRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i37.RegisterModule {}
+class _$RegisterModule extends _i38.RegisterModule {}
