@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.1.0
+  flutter_datetime_picker: ^1.5.1
   flutter_localizations:
     sdk: flutter
   flutter_lyform: ^0.1.0+12
