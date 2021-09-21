@@ -169,7 +169,10 @@ class _MessagesDelegate extends LocalizationsDelegate<Messages> {
 }
 
 Messages lookupMessages(Locale locale) {
-
+// Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'es':
+      return MessagesEs();
   }
 
   throw FlutterError(

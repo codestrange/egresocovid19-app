@@ -262,10 +262,10 @@ class _MunicipalityInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.municipalityCode,
       builder: (context, state) => MunicipalityInputWidget(
-        labelProvinceText: 'Provincia*',
-        labelMunicipalityText: 'Municipio*',
+        provinceLabel: 'Provincia*',
+        municipalityLabel: 'Municipio*',
         errorText: state.error,
-        onChanged: (value) => form.municipalityCode.dirty(value.trim()),
+        onChanged: (value) => form.municipalityCode.dirty(value),
       ),
     );
   }
