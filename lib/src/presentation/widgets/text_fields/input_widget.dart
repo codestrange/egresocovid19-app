@@ -1,5 +1,6 @@
-import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
+
+import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 
 class TextInputWidget extends StatelessWidget {
   const TextInputWidget({

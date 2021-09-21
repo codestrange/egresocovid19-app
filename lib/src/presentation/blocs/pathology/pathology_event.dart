@@ -6,4 +6,6 @@ class PathologyEvent with _$PathologyEvent {
       TreatmentPathologyChanged;
   const factory PathologyEvent.pathologyNameChanged(String pathology) =
       PathologyNameChanged;
+
+  const factory PathologyEvent.cleared() = PathologyCleared;
 }

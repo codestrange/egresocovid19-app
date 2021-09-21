@@ -30,13 +30,13 @@ class AutoCompleteTextField<T> extends StatefulWidget {
     this.unfocusOnSuggestionTap = true,
     this.controller,
     this.focusNode,
-    this.initalInput,
+    this.initialInput,
     this.onTextFieldTapped,
     this.textFromSuggestion,
     // required this.suggestionFromName,
   }) : super(key: key) {
-    if (controller != null && initalInput != null) {
-      controller!.text = initalInput!;
+    if (controller != null && initialInput != null) {
+      controller!.text = initialInput!;
       //Fixme...
     }
   }
@@ -60,7 +60,7 @@ class AutoCompleteTextField<T> extends StatefulWidget {
   final TextInputAction textInputAction;
   final TextCapitalization textCapitalization;
   final TextEditingController? controller;
-  final String? initalInput;
+  final String? initialInput;
   //
   final FocusNode? focusNode;
 
@@ -83,7 +83,7 @@ class _AutoCompleteTextFieldState<T> extends State<AutoCompleteTextField> {
     hideOverlay = true;
     layerLink = LayerLink();
     controller = widget.controller ??
-        TextEditingController(text: widget.initalInput ?? '');
+        TextEditingController(text: widget.initialInput ?? '');
     focusNode = widget.focusNode ?? FocusNode();
     focusNode.addListener(() {
       if (widget.onFocusChanged != null) {
@@ -273,7 +273,7 @@ class SimpleAutoCompleteTextField extends StatelessWidget {
       unfocusOnSuggestionTap: unfocusOnSuggestionTap,
       controller: controller,
       focusNode: focusNode,
-      initalInput: initalInput,
+      initialInput: initalInput,
       onTextFieldTapped: onTextFieldTapped,
     );
   }
