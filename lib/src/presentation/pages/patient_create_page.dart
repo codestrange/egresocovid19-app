@@ -1,17 +1,14 @@
-import 'dart:developer';
-
 import 'package:beamer/beamer.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_lyform/flutter_lyform.dart';
-import 'package:get_it/get_it.dart';
-
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_lyform/flutter_lyform.dart';
+import 'package:get_it/get_it.dart';
 
 class PatientCreatePage extends StatelessWidget {
   const PatientCreatePage({
@@ -379,16 +376,15 @@ class _BlockNumberInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
-    final autocompleter = GetIt.I<BlockNumberAutoCompleteBloc>();
     return InputBlocBuilder<String>(
       bloc: form.blockNumber,
-      builder: (context, state) => BlockNumberInputWidget(
-        suggestionsStream: autocompleter.suggestionsStream,
+      builder: (context, state) => TextInputWidget(
+        controller: TextEditing.fromValue(state.value),
         labelText: 'No. de Manzana*',
         errorText: state.error,
-        onChanged: (value) => form.neighborhood.dirty(value.trim()),
-        onSelected: (value) =>
-            form.neighborhood.dirty((value as String).trim()),
+        onChanged: (value) => form.blockNumber.dirty(
+          value.trim(),
+        ),
       ),
     );
   }

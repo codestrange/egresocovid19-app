@@ -16,13 +16,15 @@ abstract class AutoCompleteBloc<T>
           value: initialValue,
           suggestions: const [],
         )) {
-    on<AutocompleteSuggestionSelected>((event, emit) async {
-      final List<T> suggestions = await getSuggestions(state.input);
-      emit(state.copyWith(
-          value: event.value,
-          input: event.value.toString(),
-          suggestions: suggestions));
-    });
+    on<AutocompleteSuggestionSelected>(
+      (event, emit) async {
+        final List<T> suggestions = await getSuggestions(state.input);
+        emit(state.copyWith(
+            value: event.value,
+            input: event.value.toString(),
+            suggestions: suggestions));
+      },
+    );
     on<AutocompleteValueChanged>((event, emit) async {
       final suggestions = await getSuggestions(event.input);
       emit(state.copyWith(

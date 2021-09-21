@@ -104,7 +104,7 @@ class _MessagesDelegate extends LocalizationsDelegate<Messages> {
 
   @override
   Future<Messages> load(Locale locale) {
-    return SynchronousFuture<Messages>(_lookupMessages(locale));
+    return SynchronousFuture<Messages>(lookupMessages(locale));
   }
 
   @override
@@ -114,15 +114,13 @@ class _MessagesDelegate extends LocalizationsDelegate<Messages> {
   bool shouldReload(_MessagesDelegate old) => false;
 }
 
-Messages _lookupMessages(Locale locale) {
-  
+Messages lookupMessages(Locale locale) {
 
 
-// Lookup logic when only language code is specified.
-switch (locale.languageCode) {
-  case 'es': return MessagesEs();
-}
-
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'es': return MessagesEs();
+  }
 
   throw FlutterError(
     'Messages.delegate failed to load unsupported locale "$locale". This is likely '

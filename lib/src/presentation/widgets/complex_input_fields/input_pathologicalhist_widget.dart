@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 class PathologicalHistoryInputWidget extends StatelessWidget {
   const PathologicalHistoryInputWidget({
@@ -24,9 +24,9 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final autocompleter = PathologyAutoCompleteBloc();
-    final pathologyInputBloc = PathologyBloc();
-    final pathologicalHistBloc = PathologicalhistoryBloc()
+    final autocompleter = GetIt.I<PathologyAutoCompleteBloc>();
+    final pathologyInputBloc = GetIt.I<PathologyBloc>();
+    final pathologicalHistBloc = GetIt.I<PathologicalhistoryBloc>()
       ..stream.listen((state) {
         if (onChanged != null) {
           onChanged!(state.pathologicalHistory);
