@@ -27,6 +27,10 @@ class _$PathologyEventTearOff {
       pathology,
     );
   }
+
+  PathologyCleared cleared() {
+    return const PathologyCleared();
+  }
 }
 
 /// @nodoc
@@ -38,12 +42,14 @@ mixin _$PathologyEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String treatment) treatmentChanged,
     required TResult Function(String pathology) pathologyNameChanged,
+    required TResult Function() cleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String treatment)? treatmentChanged,
     TResult Function(String pathology)? pathologyNameChanged,
+    TResult Function()? cleared,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,12 +57,14 @@ mixin _$PathologyEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(TreatmentPathologyChanged value) treatmentChanged,
     required TResult Function(PathologyNameChanged value) pathologyNameChanged,
+    required TResult Function(PathologyCleared value) cleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TreatmentPathologyChanged value)? treatmentChanged,
     TResult Function(PathologyNameChanged value)? pathologyNameChanged,
+    TResult Function(PathologyCleared value)? cleared,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +157,7 @@ class _$TreatmentPathologyChanged implements TreatmentPathologyChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String treatment) treatmentChanged,
     required TResult Function(String pathology) pathologyNameChanged,
+    required TResult Function() cleared,
   }) {
     return treatmentChanged(treatment);
   }
@@ -158,6 +167,7 @@ class _$TreatmentPathologyChanged implements TreatmentPathologyChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String treatment)? treatmentChanged,
     TResult Function(String pathology)? pathologyNameChanged,
+    TResult Function()? cleared,
     required TResult orElse(),
   }) {
     if (treatmentChanged != null) {
@@ -171,6 +181,7 @@ class _$TreatmentPathologyChanged implements TreatmentPathologyChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(TreatmentPathologyChanged value) treatmentChanged,
     required TResult Function(PathologyNameChanged value) pathologyNameChanged,
+    required TResult Function(PathologyCleared value) cleared,
   }) {
     return treatmentChanged(this);
   }
@@ -180,6 +191,7 @@ class _$TreatmentPathologyChanged implements TreatmentPathologyChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TreatmentPathologyChanged value)? treatmentChanged,
     TResult Function(PathologyNameChanged value)? pathologyNameChanged,
+    TResult Function(PathologyCleared value)? cleared,
     required TResult orElse(),
   }) {
     if (treatmentChanged != null) {
@@ -268,6 +280,7 @@ class _$PathologyNameChanged implements PathologyNameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String treatment) treatmentChanged,
     required TResult Function(String pathology) pathologyNameChanged,
+    required TResult Function() cleared,
   }) {
     return pathologyNameChanged(pathology);
   }
@@ -277,6 +290,7 @@ class _$PathologyNameChanged implements PathologyNameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String treatment)? treatmentChanged,
     TResult Function(String pathology)? pathologyNameChanged,
+    TResult Function()? cleared,
     required TResult orElse(),
   }) {
     if (pathologyNameChanged != null) {
@@ -290,6 +304,7 @@ class _$PathologyNameChanged implements PathologyNameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(TreatmentPathologyChanged value) treatmentChanged,
     required TResult Function(PathologyNameChanged value) pathologyNameChanged,
+    required TResult Function(PathologyCleared value) cleared,
   }) {
     return pathologyNameChanged(this);
   }
@@ -299,6 +314,7 @@ class _$PathologyNameChanged implements PathologyNameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TreatmentPathologyChanged value)? treatmentChanged,
     TResult Function(PathologyNameChanged value)? pathologyNameChanged,
+    TResult Function(PathologyCleared value)? cleared,
     required TResult orElse(),
   }) {
     if (pathologyNameChanged != null) {
@@ -315,6 +331,96 @@ abstract class PathologyNameChanged implements PathologyEvent {
   @JsonKey(ignore: true)
   $PathologyNameChangedCopyWith<PathologyNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PathologyClearedCopyWith<$Res> {
+  factory $PathologyClearedCopyWith(
+          PathologyCleared value, $Res Function(PathologyCleared) then) =
+      _$PathologyClearedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PathologyClearedCopyWithImpl<$Res>
+    extends _$PathologyEventCopyWithImpl<$Res>
+    implements $PathologyClearedCopyWith<$Res> {
+  _$PathologyClearedCopyWithImpl(
+      PathologyCleared _value, $Res Function(PathologyCleared) _then)
+      : super(_value, (v) => _then(v as PathologyCleared));
+
+  @override
+  PathologyCleared get _value => super._value as PathologyCleared;
+}
+
+/// @nodoc
+
+class _$PathologyCleared implements PathologyCleared {
+  const _$PathologyCleared();
+
+  @override
+  String toString() {
+    return 'PathologyEvent.cleared()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is PathologyCleared);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String treatment) treatmentChanged,
+    required TResult Function(String pathology) pathologyNameChanged,
+    required TResult Function() cleared,
+  }) {
+    return cleared();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String treatment)? treatmentChanged,
+    TResult Function(String pathology)? pathologyNameChanged,
+    TResult Function()? cleared,
+    required TResult orElse(),
+  }) {
+    if (cleared != null) {
+      return cleared();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TreatmentPathologyChanged value) treatmentChanged,
+    required TResult Function(PathologyNameChanged value) pathologyNameChanged,
+    required TResult Function(PathologyCleared value) cleared,
+  }) {
+    return cleared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TreatmentPathologyChanged value)? treatmentChanged,
+    TResult Function(PathologyNameChanged value)? pathologyNameChanged,
+    TResult Function(PathologyCleared value)? cleared,
+    required TResult orElse(),
+  }) {
+    if (cleared != null) {
+      return cleared(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PathologyCleared implements PathologyEvent {
+  const factory PathologyCleared() = _$PathologyCleared;
 }
 
 /// @nodoc

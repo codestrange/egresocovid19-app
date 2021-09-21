@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:egresocovid19/src/domain/entities/pathological_entity.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -22,7 +22,7 @@ class PathologicalhistoryBloc
         ..removeWhere((element) => element.name == event.pathologicalName);
       emit(state.copyWith(pathologicalHistory: newHistory));
     });
-    on<PathologyInfoRemoved>((event, emit) {
+    on<PathologyInfoCleared>((event, emit) {
       emit(state.copyWith(pathologicalHistory: []));
     });
   }

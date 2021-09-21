@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
-  const MainButton(
-      {Key? key,
-      this.child,
-      this.text,
-      required this.onPressed,
-      this.color,
-      this.side})
-      : assert(child != null || text != null),
+  const MainButton({
+    Key? key,
+    this.child,
+    this.text,
+    required this.onPressed,
+    this.color,
+    this.side,
+  })  : assert(child != null || text != null),
         super(key: key);
 
-  const MainButton.danger(
-      {Key? key, this.child, this.text, required this.onPressed, this.side})
-      : color = Colors.red,
+  const MainButton.danger({
+    Key? key,
+    this.child,
+    this.text,
+    required this.onPressed,
+    this.side,
+  })  : color = Colors.red,
         assert(child != null || text != null),
         super(key: key);
 

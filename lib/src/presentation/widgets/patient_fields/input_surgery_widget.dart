@@ -39,12 +39,13 @@ class SurgeryInputWidget extends StatelessWidget {
       onTextSubmitted: onSubmitted,
       onItemSelected: onSelected ?? id,
       itemBuilder: (context, suggestion) => Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Text(suggestion.toString())),
+        padding: const EdgeInsets.all(10.0),
+        child: Text(suggestion.toString()),
+      ),
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,
-        labelText: labelText ?? 'Cirugía',
+        labelText: labelText ?? 'Consultorio',
       ),
     );
   }

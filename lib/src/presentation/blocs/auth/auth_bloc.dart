@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -25,15 +25,19 @@ class AuthBloc extends IAuthBloc {
     on<AuthEvent>((event, emit) {
       event.when(
         start: () {
-          emit(authService.isLoggedIn
-              ? const AuthState.authenticated()
-              : const AuthState.unauthenticated());
+          emit(
+            authService.isLoggedIn
+                ? const AuthState.authenticated()
+                : const AuthState.unauthenticated(),
+          );
         },
         statusChanged: (status) {
-          emit(status.when(
-            authenticated: () => const AuthState.authenticated(),
-            unauthenticated: () => const AuthState.unauthenticated(),
-          ));
+          emit(
+            status.when(
+              authenticated: () => const AuthState.authenticated(),
+              unauthenticated: () => const AuthState.unauthenticated(),
+            ),
+          );
         },
         signOut: () async* {
           await authService.logOut();

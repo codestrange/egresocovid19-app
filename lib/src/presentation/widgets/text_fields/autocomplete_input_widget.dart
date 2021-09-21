@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 typedef AutoCompleteOverlayItemBuilder = Widget Function(
-    BuildContext context, dynamic suggestion);
+  BuildContext context,
+  dynamic suggestion,
+);
 
 typedef InputEventCallback<T> = Function(T data);
 
@@ -30,13 +32,13 @@ class AutoCompleteTextField<T> extends StatefulWidget {
     this.unfocusOnSuggestionTap = true,
     this.controller,
     this.focusNode,
-    this.initalInput,
+    this.initialInput,
     this.onTextFieldTapped,
     this.textFromSuggestion,
     // required this.suggestionFromName,
   }) : super(key: key) {
-    if (controller != null && initalInput != null) {
-      controller!.text = initalInput!;
+    if (controller != null && initialInput != null) {
+      controller!.text = initialInput!;
       //Fixme...
     }
   }
@@ -60,7 +62,7 @@ class AutoCompleteTextField<T> extends StatefulWidget {
   final TextInputAction textInputAction;
   final TextCapitalization textCapitalization;
   final TextEditingController? controller;
-  final String? initalInput;
+  final String? initialInput;
   //
   final FocusNode? focusNode;
 
@@ -83,13 +85,10 @@ class _AutoCompleteTextFieldState<T> extends State<AutoCompleteTextField> {
     hideOverlay = true;
     layerLink = LayerLink();
     controller = widget.controller ??
-        TextEditingController(text: widget.initalInput ?? '');
+        TextEditingController(text: widget.initialInput ?? '');
     focusNode = widget.focusNode ?? FocusNode();
     focusNode.addListener(() {
-      if (widget.onFocusChanged != null) {
-        widget.onFocusChanged!(focusNode.hasFocus);
-      }
-
+      widget.onFocusChanged?.call(focusNode.hasFocus);
       if (!focusNode.hasFocus) {
         hideOverlay = true;
         handleSuggestionsChange(
@@ -134,22 +133,15 @@ class _AutoCompleteTextFieldState<T> extends State<AutoCompleteTextField> {
       onChanged: (newText) {
         hideOverlay = false;
         handleSuggestionsChange(currentSuggestions);
-
-        if (widget.onTextChanged != null) {
-          widget.onTextChanged!(newText);
-        }
+        widget.onTextChanged?.call(newText);
       },
       onTap: () {
-        if (widget.onTextFieldTapped != null) {
-          widget.onTextFieldTapped!();
-        }
+        widget.onTextFieldTapped?.call();
         // hideOverlay = false;
         handleSuggestionsChange(currentSuggestions);
       },
       onSubmitted: (submittedText) {
-        if (widget.onTextSubmitted != null) {
-          widget.onTextSubmitted!(submittedText);
-        }
+        widget.onTextSubmitted?.call(submittedText);
         hideOverlay = true;
         handleSuggestionsChange(currentSuggestions);
       },
@@ -165,44 +157,52 @@ class _AutoCompleteTextFieldState<T> extends State<AutoCompleteTextField> {
           (context.findRenderObject() as RenderBox?)!.size;
       final width = textFieldSize.width;
       final height = textFieldSize.height;
-      listSuggestionsEntry = OverlayEntry(builder: (context) {
-        return Positioned(
+      listSuggestionsEntry = OverlayEntry(
+        builder: (context) {
+          return Positioned(
             width: width,
             child: CompositedTransformFollower(
-                link: layerLink,
-                showWhenUnlinked: false,
-                offset: Offset(0.0, height),
-                child: SizedBox(
-                    width: width,
-                    child: Card(
-                        child: Column(
-                      children: currentSuggestions.map((suggestion) {
-                        return Row(children: [
+              link: layerLink,
+              showWhenUnlinked: false,
+              offset: Offset(0.0, height),
+              child: SizedBox(
+                width: width,
+                child: Card(
+                  child: Column(
+                    children: currentSuggestions.map((suggestion) {
+                      return Row(
+                        children: [
                           Expanded(
-                              child: InkWell(
-                            onTap: () {
-                              setState(() {
-                                final String newText =
-                                    widget.textFromSuggestion != null
-                                        ? widget.textFromSuggestion!(suggestion)
-                                        : suggestion.toString();
-                                controller.text = newText;
-                                if (widget.unfocusOnSuggestionTap) {
-                                  focusNode.unfocus();
-                                  widget.onItemSelected(suggestion);
-                                } else {
-                                  if (widget.onTextChanged != null) {
-                                    widget.onTextChanged!(newText);
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  final String newText = widget
+                                              .textFromSuggestion !=
+                                          null
+                                      ? widget.textFromSuggestion!(suggestion)
+                                      : suggestion.toString();
+                                  controller.text = newText;
+                                  if (widget.unfocusOnSuggestionTap) {
+                                    focusNode.unfocus();
+                                    widget.onItemSelected(suggestion);
+                                  } else {
+                                    widget.onTextChanged?.call(newText);
                                   }
-                                }
-                              });
-                            },
-                            child: widget.itemBuilder(context, suggestion),
-                          ))
-                        ]);
-                      }).toList(),
-                    )))));
-      });
+                                });
+                              },
+                              child: widget.itemBuilder(context, suggestion),
+                            ),
+                          )
+                        ],
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      );
       Overlay.of(context)?.insert(listSuggestionsEntry!);
     }
     listSuggestionsEntry!.markNeedsBuild();
@@ -273,7 +273,7 @@ class SimpleAutoCompleteTextField extends StatelessWidget {
       unfocusOnSuggestionTap: unfocusOnSuggestionTap,
       controller: controller,
       focusNode: focusNode,
-      initalInput: initalInput,
+      initialInput: initalInput,
       onTextFieldTapped: onTextFieldTapped,
     );
   }

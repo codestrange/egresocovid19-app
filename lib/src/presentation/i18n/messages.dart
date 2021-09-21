@@ -1,3 +1,4 @@
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -59,8 +60,7 @@ import 'messages_es.dart';
 /// be consistent with the languages listed in the Messages.supportedLocales
 /// property.
 abstract class Messages {
-  Messages(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  Messages(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -80,8 +80,7 @@ abstract class Messages {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -89,13 +88,69 @@ abstract class Messages {
   ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('es')];
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('es')
+  ];
 
   /// No description provided for @appName.
   ///
   /// In es, this message translates to:
   /// **'Egreso COVID-19'**
   String get appName;
+
+  /// No description provided for @homePageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Inicio'**
+  String get homePageTitle;
+
+  /// No description provided for @homeDrawerTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Egreso\nCOVID-19'**
+  String get homeDrawerTitle;
+
+  /// No description provided for @homeWelcomeMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.'**
+  String get homeWelcomeMessage;
+
+  /// No description provided for @homeNotFoundMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'No se encontraron pacientes'**
+  String get homeNotFoundMessage;
+
+  /// No description provided for @homeErrorMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar los pacientes'**
+  String get homeErrorMessage;
+
+  /// No description provided for @homeTooltipDetail.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver detalles del paciente'**
+  String get homeTooltipDetail;
+
+  /// No description provided for @homeTooltipAdd.
+  ///
+  /// In es, this message translates to:
+  /// **'Agregar paciente'**
+  String get homeTooltipAdd;
+
+  /// No description provided for @homeCloseSession.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar sesión'**
+  String get homeCloseSession;
+
+  /// No description provided for @homeSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar por nombre o carnet'**
+  String get homeSearchHint;
 }
 
 class _MessagesDelegate extends LocalizationsDelegate<Messages> {
@@ -107,23 +162,24 @@ class _MessagesDelegate extends LocalizationsDelegate<Messages> {
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['es'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_MessagesDelegate old) => false;
 }
 
 Messages lookupMessages(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'es':
-      return MessagesEs();
+    case 'es': return MessagesEs();
   }
 
   throw FlutterError(
-      'Messages.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'Messages.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.'
+  );
 }

@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -28,9 +28,11 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
 
           result.fold(
             (l) => emit(PatientEgresoEditState.fetchFailure(l.message)),
-            (r) => emit(PatientEgresoEditState.fetchSuccess(
-              r.dischargeOfPositiveCasesOfCovid19,
-            )),
+            (r) => emit(
+              PatientEgresoEditState.fetchSuccess(
+                r.dischargeOfPositiveCasesOfCovid19,
+              ),
+            ),
           );
         },
         update: (patientId, newDischargeData) async {
@@ -42,8 +44,12 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
           );
 
           result.fold(
-            (l) => emit(PatientEgresoEditState.updateFailure(
-                l.message, newDischargeData)),
+            (l) => emit(
+              PatientEgresoEditState.updateFailure(
+                l.message,
+                newDischargeData,
+              ),
+            ),
             (_) => emit(PatientEgresoEditState.updateSuccess(newDischargeData)),
           );
         },
