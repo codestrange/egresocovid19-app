@@ -301,8 +301,14 @@ class _PolyclinicInput extends StatelessWidget {
         suggestionsStream: autocompleter.suggestionsStream,
         labelText: 'Policlínico*',
         errorText: state.error,
-        onChanged: (value) => form.polyclinic.dirty(value.trim()),
-        onSelected: (value) => form.polyclinic.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.polyclinic.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.polyclinic.dirty(value.trim());
+        },
       ),
     );
   }
@@ -321,8 +327,14 @@ class _SurgeryInput extends StatelessWidget {
         suggestionsStream: autocompleter.suggestionsStream,
         labelText: 'Consultorio*',
         errorText: state.error,
-        onChanged: (value) => form.surgery.dirty(value.trim()),
-        onSelected: (value) => form.surgery.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.surgery.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.surgery.dirty(value.trim());
+        },
       ),
     );
   }
@@ -341,9 +353,14 @@ class _PopularCouncilInput extends StatelessWidget {
         suggestionsStream: autocompleter.suggestionsStream,
         labelText: 'Consejo Popular*',
         errorText: state.error,
-        onChanged: (value) => form.popularCouncil.dirty(value.trim()),
-        onSelected: (value) =>
-            form.popularCouncil.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value.trim());
+          form.popularCouncil.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.popularCouncil.dirty(value.trim());
+        },
       ),
     );
   }
@@ -362,9 +379,14 @@ class _NeighborhoodInput extends StatelessWidget {
         suggestionsStream: autocompleter.suggestionsStream,
         labelText: 'Reparto*',
         errorText: state.error,
-        onChanged: (value) => form.neighborhood.dirty(value.trim()),
-        onSelected: (value) =>
-            form.neighborhood.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.neighborhood.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.neighborhood.dirty(value.trim());
+        },
       ),
     );
   }
