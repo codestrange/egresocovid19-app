@@ -24,12 +24,13 @@ class SkinColorInputWidget extends StatelessWidget {
     return DropdownButtonFormField<SkinColor>(
       items: SkinColor.values.map((SkinColor skinColor) {
         return DropdownMenuItem(
-            value: skinColor,
-            child: Row(
-              children: <Widget>[
-                Text(skinColor.toString()), //TODO: Localization
-              ],
-            ));
+          value: skinColor,
+          child: Row(
+            children: <Widget>[
+              Text(skinColor.toString()), //TODO: Localization
+            ],
+          ),
+        );
       }).toList(),
       onChanged: onChanged,
       onSaved: onSubmitted,

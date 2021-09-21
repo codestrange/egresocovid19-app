@@ -12,7 +12,9 @@ Left<ErrorEntity, T> catchMethod<T>(Object e) {
   switch (e.runtimeType) {
     case DioError:
       final resp = (e as DioError).response;
-      if (resp != null) {
+      if (resp != null &&
+          resp.statusCode != null &&
+          resp.statusMessage != null) {
         error = ErrorEntity(
           errorCode: resp.statusCode.toString(),
           message: resp.statusMessage!,

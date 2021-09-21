@@ -65,8 +65,9 @@ class _PathologyNameInputWidgetState extends State<PathologyNameInputWidget> {
       onTextSubmitted: widget.onSubmitted,
       onItemSelected: widget.onSelected ?? id,
       itemBuilder: (context, suggestion) => Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Text(suggestion.toString())),
+        padding: const EdgeInsets.all(10.0),
+        child: Text(suggestion.toString()),
+      ),
       decoration: TextFieldDecorations.decoration(
         hintText: widget.hintText,
         errorText: widget.errorText,

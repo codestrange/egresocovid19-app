@@ -16,10 +16,13 @@ Future<void> configureDependencies() async => $initGetIt(GetIt.I);
 abstract class RegisterModule {
   @lazySingleton
   Dio get dio => Dio()
-    ..interceptors.add(PrettyDioLogger(
-      compact: false,
-      logPrint: (e) => log(e.toString()),
-    ));
+    ..interceptors.add(
+      PrettyDioLogger(
+        responseBody: false,
+        compact: false,
+        logPrint: (e) => log(e.toString()),
+      ),
+    );
 
   @lazySingleton
   OAuth oauth(

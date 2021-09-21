@@ -28,9 +28,7 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
     final pathologyInputBloc = GetIt.I<PathologyBloc>();
     final pathologicalHistBloc = GetIt.I<PathologicalhistoryBloc>()
       ..stream.listen((state) {
-        if (onChanged != null) {
-          onChanged!(state.pathologicalHistory);
-        }
+        onChanged?.call(state.pathologicalHistory);
       });
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -98,12 +96,14 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
             return Wrap(
               spacing: 3,
               children: pathologicalHistBloc.state.pathologicalHistory
-                  .map((e) => Chip(
-                        padding: const EdgeInsets.all(3),
-                        label: Text(e.name),
-                        onDeleted: () => pathologicalHistBloc
-                            .add(PathologicalHistoryEvent.removed(e.name)),
-                      ))
+                  .map(
+                    (e) => Chip(
+                      padding: const EdgeInsets.all(3),
+                      label: Text(e.name),
+                      onDeleted: () => pathologicalHistBloc
+                          .add(PathologicalHistoryEvent.removed(e.name)),
+                    ),
+                  )
                   .toList(),
             );
           },

@@ -24,12 +24,13 @@ class BloodTypeInputWidget extends StatelessWidget {
     return DropdownButtonFormField<BloodType>(
       items: BloodType.values.map((BloodType bloodType) {
         return DropdownMenuItem(
-            value: bloodType,
-            child: Row(
-              children: <Widget>[
-                Text(bloodType.toString()), //TODO: Localization
-              ],
-            ));
+          value: bloodType,
+          child: Row(
+            children: <Widget>[
+              Text(bloodType.toString()), //TODO: Localization
+            ],
+          ),
+        );
       }).toList(),
       onChanged: onChanged,
       onSaved: onSubmitted,

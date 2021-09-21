@@ -1,9 +1,8 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'autocomplete_event.dart';
 part 'autocomplete_state.dart';
@@ -27,8 +26,13 @@ abstract class AutoCompleteBloc<T>
     );
     on<AutocompleteValueChanged>((event, emit) async {
       final suggestions = await getSuggestions(event.input);
-      emit(state.copyWith(
-          value: null, input: event.input, suggestions: suggestions));
+      emit(
+        state.copyWith(
+          value: null,
+          input: event.input,
+          suggestions: suggestions,
+        ),
+      );
     });
   }
 

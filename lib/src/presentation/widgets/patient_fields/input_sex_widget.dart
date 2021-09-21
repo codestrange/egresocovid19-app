@@ -25,12 +25,13 @@ class SexInputWidget extends StatelessWidget {
     return DropdownButtonFormField<Sex>(
       items: Sex.values.map((Sex sex) {
         return DropdownMenuItem(
-            value: sex,
-            child: Row(
-              children: <Widget>[
-                Text(sex.toString()), //TODO: Localization
-              ],
-            ));
+          value: sex,
+          child: Row(
+            children: <Widget>[
+              Text(sex.toString()), //TODO: Localization
+            ],
+          ),
+        );
       }).toList(),
       onChanged: onChanged,
       onSaved: onSubmitted,
