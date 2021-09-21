@@ -460,12 +460,28 @@ class _PersonalPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<PathologicalhistoryBloc>()
+      ..stream.listen((state) {
+        form.personalPathologicalHistory.dirty(state.pathologicalHistory);
+      });
     return InputBlocBuilder<List<PathologicalEntity>>(
       bloc: form.personalPathologicalHistory,
-      builder: (context, state) => PathologicalHistoryInputWidget(
-        headerText: 'Antecedentes Patológicos*',
-        errorText: state.error,
-        onChanged: (value) => form.personalPathologicalHistory.dirty(value),
+      builder: (context, state) =>
+          BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
+        bloc: bloc,
+        builder: (context, _state) {
+          return PathologicalHistoryInputWidget(
+            headerText: 'Antecedentes Patológicos*',
+            errorText: state.error,
+            pathologicalHist: _state.pathologicalHistory,
+            addPathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.added(ph)),
+            removePathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.removed(ph)),
+            clearPathologicalHist: () =>
+                bloc.add(const PathologicalHistoryEvent.cleared()),
+          );
+        },
       ),
     );
   }
@@ -477,12 +493,28 @@ class _FamilyPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<PathologicalhistoryBloc>()
+      ..stream.listen((state) {
+        form.familyPathologicalHistory.dirty(state.pathologicalHistory);
+      });
     return InputBlocBuilder<List<PathologicalEntity>>(
-      bloc: form.familyPathologicalHistory,
-      builder: (context, state) => PathologicalHistoryInputWidget(
-        headerText: 'Antecedentes Patológicos Familiares*',
-        errorText: state.error,
-        onChanged: (value) => form.familyPathologicalHistory.dirty(value),
+      bloc: form.personalPathologicalHistory,
+      builder: (context, state) =>
+          BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
+        bloc: bloc,
+        builder: (context, _state) {
+          return PathologicalHistoryInputWidget(
+            headerText: 'Antecedentes Patológicos Familiares*',
+            errorText: state.error,
+            pathologicalHist: _state.pathologicalHistory,
+            addPathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.added(ph)),
+            removePathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.removed(ph)),
+            clearPathologicalHist: () =>
+                bloc.add(const PathologicalHistoryEvent.cleared()),
+          );
+        },
       ),
     );
   }
