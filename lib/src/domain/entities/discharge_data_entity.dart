@@ -2,12 +2,11 @@ import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'discharge_of_positive_cases_of_covid19_entity.freezed.dart';
+part 'discharge_data_entity.freezed.dart';
 
 @freezed
-class DischargeOfPositiveCasesOfCovid19Entity
-    with _$DischargeOfPositiveCasesOfCovid19Entity {
-  const factory DischargeOfPositiveCasesOfCovid19Entity({
+class DischargeDataEntity with _$DischargeDataEntity {
+  const factory DischargeDataEntity({
     required DateTime? detectionDate,
     required List<String>? symptoms,
     required int? durationOfSymptoms,
@@ -33,5 +32,5 @@ class DischargeOfPositiveCasesOfCovid19Entity
     required String? anotherVaccineAgainstCovid,
     required List<Aftermath>? aftermath,
     required List<String>? othersAftermath,
-  }) = _DischargeOfPositiveCasesOfCovid19Entity;
+  }) = _DischargeDataEntity;
 }

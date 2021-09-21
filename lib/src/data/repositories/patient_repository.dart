@@ -69,7 +69,7 @@ class PatientRepository implements IPatientRepository {
   @override
   Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+    required DischargeDataEntity discharge,
   }) async {
     try {
       final response = await clientApi.putPatientEgreso(
