@@ -123,6 +123,7 @@ class _MunicipalitySelector extends StatelessWidget {
               .toList() ??
           const <DropdownMenuItem<MunicipalityEntity>>[],
       value: selectedMunicipality,
+      onChanged: (value) => onMunicipalitySelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
         labelText: municipalityLabel ?? 'Municipio',
         errorText: errorText,
@@ -161,6 +162,7 @@ class _ProvinceSelector extends StatelessWidget {
               .toList() ??
           const <DropdownMenuItem<ProvinceEntity>>[],
       value: selectedProvince,
+      onChanged: (value) => onProvinceSelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
         labelText: provinceLabel ?? 'Provincia',
         errorText: selectedProvince == null ? errorText : null,
