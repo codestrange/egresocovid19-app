@@ -1,10 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:injectable/injectable.dart';
 
-abstract class IPatientCreateBloc extends FormBloc<void, ErrorEntity> {
+abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get firstName;
   InputBloc<String> get lastName;
   InputBloc<String> get ci;
@@ -45,6 +47,10 @@ abstract class IPatientCreateBloc extends FormBloc<void, ErrorEntity> {
 
 @Injectable(as: IPatientCreateBloc)
 class PatientCreateBloc extends IPatientCreateBloc {
+  PatientCreateBloc({
+    required this.patientService,
+  }) : super();
+
   @override
   InputBloc<String> get address => InputBloc<String>(
         pureValue: '',
@@ -180,9 +186,33 @@ class PatientCreateBloc extends IPatientCreateBloc {
         ],
       );
 
+  final IPatientService patientService;
+
   @override
-  Future<FormBlocState<void, ErrorEntity>> onSubmmit() {
-    // TODO: implement onSubmmit
-    throw UnimplementedError();
+  Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
+    final response = await patientService.postPatient(
+      patient: PatientPostEntity(
+        firstname: firstName.state.value,
+        lastname: lastName.state.value,
+        ci: ci.state.value,
+        municipalityCode: municipalityCode.state.value,
+        sex: sex.state.value!,
+        age: int.parse(age.state.value),
+        skinColor: skinColor.state.value!,
+        bloodType: bloodType.state.value,
+        address: address.state.value,
+        polyclinic: polyclinic.state.value,
+        surgery: surgery.state.value,
+        popularCouncil: popularCouncil.state.value,
+        neighborhood: neighborhood.state.value,
+        blockNumber: int.parse(blockNumber.state.value),
+        personalPathologicalHistory: personalPathologicalHistory.state.value,
+        familyPathologicalHistory: familyPathologicalHistory.state.value,
+      ),
+    );
+    return response.fold(
+      (error) => FormErrorState(error),
+      (_) => const FormSuccessState(unit),
+    );
   }
 }
