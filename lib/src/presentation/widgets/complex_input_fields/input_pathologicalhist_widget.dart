@@ -1,8 +1,5 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathological_hist/pathologicalhistory_bloc.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart';
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart';
-import 'package:egresocovid19/src/presentation/widgets/patient_fields/input_pathology_widget.dart';
+import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,23 +8,26 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
   const PathologicalHistoryInputWidget({
     Key? key,
     required this.headerText,
-    this.onSubmitted,
     this.onChanged,
+    this.errorText,
   }) : super(key: key);
 
   final String headerText;
 
-  ///on suggestion selected or submit
-  final dynamic Function(List<String>)? onSubmitted;
+  final String? errorText;
+  //TODO: SHOW THIS ERROR TEXT SOME WHERE
 
-  ///on text changed
-  final dynamic Function(List<String>)? onChanged;
+  ///on list changed
+  final dynamic Function(List<PathologicalEntity>)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    final autocompleter = PathologyAutocompleteBloc();
+    final autocompleter = PathologyAutoCompleteBloc();
     final pathologyInputBloc = PathologyBloc();
-    final pathologicalHistBloc = PathologicalhistoryBloc();
+    final pathologicalHistBloc = PathologicalhistoryBloc()
+      ..stream.listen((state) {
+        onChanged?.call(state.pathologicalHistory);
+      });
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -35,46 +35,45 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        // new Pathology Input
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // Text Inputs
-            Column(
-              children: [
-                PathologyNameInputWidget(
-                  suggestionsStream: autocompleter.suggestionsStream,
-                  onChanged: (input) {
-                    autocompleter.changed(input);
-                    pathologyInputBloc
-                        .add(PathologyEvent.pathologyNameChanged(input));
-                  },
-                  onSelected: (input) {
-                    autocompleter.selected(input as String);
-                    pathologyInputBloc
-                        .add(PathologyEvent.pathologyNameChanged(input));
-                  },
-                ),
-                _PathologyTreatmentInputWidget(
-                  onChanged: (input) => pathologyInputBloc
-                      .add(PathologyEvent.treatmentChanged(input)),
-                ),
-              ],
-            ),
-            // Add Button
-            IconButton(
-                onPressed: pathologyInputBloc.state.pathology.isNotEmpty
-                    ? () {
-                        final pathological = PathologicalEntity(
-                            name: pathologyInputBloc.state.pathology,
-                            treatments: pathologyInputBloc.state.treatment);
 
-                        pathologicalHistBloc
-                            .add(PathologicalHistoryEvent.added(pathological));
-                      }
-                    : null,
-                icon: const Icon(Icons.add))
-          ],
+        // new Pathology Input
+        PathologyNameInputWidget(
+          suggestionsStream: autocompleter.suggestionsStream,
+          onChanged: (input) {
+            autocompleter.changed(input);
+            pathologyInputBloc.add(PathologyEvent.pathologyNameChanged(input));
+          },
+          onSelected: (input) {
+            autocompleter.selected(input as String);
+            pathologyInputBloc.add(PathologyEvent.pathologyNameChanged(input));
+          },
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+        _PathologyTreatmentInputWidget(
+          onChanged: (input) =>
+              pathologyInputBloc.add(PathologyEvent.treatmentChanged(input)),
+        ),
+
+        // Add Button
+        BlocBuilder<PathologyBloc, PathologyState>(
+          bloc: pathologyInputBloc,
+          builder: (context, state) {
+            return IconButton(
+              onPressed: state.pathology.isNotEmpty
+                  ? () {
+                      final pathological = PathologicalEntity(
+                        name: state.pathology,
+                        treatments: state.treatment,
+                      );
+                      pathologicalHistBloc
+                          .add(PathologicalHistoryEvent.added(pathological));
+                    }
+                  : null,
+              icon: const Icon(Icons.add),
+            );
+          },
         ),
         BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
           bloc: pathologicalHistBloc,
@@ -82,12 +81,14 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
             return Wrap(
               spacing: 3,
               children: pathologicalHistBloc.state.pathologicalHistory
-                  .map((e) => Chip(
-                        padding: const EdgeInsets.all(3),
-                        label: Text(e.name),
-                        onDeleted: () => pathologicalHistBloc
-                            .add(PathologicalHistoryEvent.removed(e.name)),
-                      ))
+                  .map(
+                    (e) => Chip(
+                      padding: const EdgeInsets.all(3),
+                      label: Text(e.name),
+                      onDeleted: () => pathologicalHistBloc
+                          .add(PathologicalHistoryEvent.removed(e.name)),
+                    ),
+                  )
                   .toList(),
             );
           },

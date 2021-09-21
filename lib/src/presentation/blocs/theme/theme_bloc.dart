@@ -1,8 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/theming/dark.dart';
 import 'package:egresocovid19/src/presentation/theming/light.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,11 +17,13 @@ abstract class IThemeBloc extends Bloc<ThemeEvent, ThemeState> {
 @Injectable(as: IThemeBloc)
 class ThemeBloc extends IThemeBloc {
   ThemeBloc(this.themeService)
-      : super(ThemeState.changed(
-          mode: themeService.getThemeMode(),
-          light: lightTheme,
-          dark: darkTheme,
-        ));
+      : super(
+          ThemeState.changed(
+            mode: themeService.getThemeMode(),
+            light: lightTheme,
+            dark: darkTheme,
+          ),
+        );
 
   final IThemeService themeService;
 

@@ -99,7 +99,8 @@ class _Drawer extends StatelessWidget {
                         onPressed: () {
                           final i = state.mode.index == 1 ? 2 : 1;
                           context.read<IThemeBloc>().add(
-                              ThemeEvent.change(mode: ThemeMode.values[i]));
+                                ThemeEvent.change(mode: ThemeMode.values[i]),
+                              );
                         },
                       );
                     },

@@ -4,11 +4,15 @@ import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_b
 import 'package:injectable/injectable.dart';
 
 @injectable
-class PathologyAutoCompleteBloc extends AutoCompleteBloc<String> {
-  PathologyAutoCompleteBloc() : super('');
+class PolyclinicAutoCompleteBloc extends AutoCompleteBloc<String> {
+  PolyclinicAutoCompleteBloc() : super('');
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
-    return ['HTA', 'Diabetes']; //TODO: Mocked data.
+    return [
+      'Turcios Lima',
+      'Luis De la Puente Uceda',
+      'C.Q. Diez de Octubre',
+    ]; //TODO: Mocked data.
   }
 }

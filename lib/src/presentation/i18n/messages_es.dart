@@ -1,6 +1,3 @@
-
-
-
 import 'messages.dart';
 
 /// The translations for Spanish Castilian (`es`).
@@ -17,7 +14,8 @@ class MessagesEs extends Messages {
   String get homeDrawerTitle => 'Egreso\nCOVID-19';
 
   @override
-  String get homeWelcomeMessage => 'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.';
+  String get homeWelcomeMessage =>
+      'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.';
 
   @override
   String get homeNotFoundMessage => 'No se encontraron pacientes';

@@ -61,7 +61,8 @@ class DischargeOfPositiveCasesOfCovid19Model {
   final List<String>? othersAftermath;
 
   static DischargeOfPositiveCasesOfCovid19Model fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$DischargeOfPositiveCasesOfCovid19ModelFromJson(json);
 
   Map<String, dynamic> toJson() =>
