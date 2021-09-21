@@ -1,94 +1,83 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
-
 import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/presentation/blocs/municipality/municipality_bloc.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
 
-class MunicipalityInputWidget extends StatelessWidget {
+class MunicipalityInputWidget extends StatefulWidget {
   const MunicipalityInputWidget({
     Key? key,
-    this.onChanged,
+    required this.provinces,
+    this.provinceSelected,
+    this.municipalitySelected,
+    this.onProvinceChanged,
+    this.onMunicipalityChanged,
     this.provinceLabel,
     this.municipalityLabel,
     this.errorText,
     this.separatorWidget,
   }) : super(key: key);
 
-  final dynamic Function(String)? onChanged;
+  final List<ProvinceEntity> provinces;
+  final ProvinceEntity? provinceSelected;
+  final MunicipalityEntity? municipalitySelected;
+
+  //
+  final dynamic Function(ProvinceEntity)? onProvinceChanged;
+  final dynamic Function(MunicipalityEntity)? onMunicipalityChanged;
   //
   final String? provinceLabel;
   final String? municipalityLabel;
   final String? errorText;
-
   //
   final Widget? separatorWidget;
 
   @override
+  State<MunicipalityInputWidget> createState() =>
+      _MunicipalityInputWidgetState();
+}
+
+class _MunicipalityInputWidgetState extends State<MunicipalityInputWidget> {
+  ProvinceEntity? provinceSelected;
+  MunicipalityEntity? municipalitySelected;
+  @override
+  void initState() {
+    provinceSelected = widget.provinceSelected;
+    municipalitySelected = widget.municipalitySelected;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final bloc = GetIt.I<MunicipalityBloc>();
-    return BlocBuilder<MunicipalityBloc, MunicipalityState>(
-      bloc: bloc..add(const MunicipalityEvent.provincesRequested()),
-      builder: (context, state) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: state.map(
-          initial: (_) => [],
-          inProgress: (_) => [],
-          provinceSelection: (state) => [
-            _ProvinceSelector(
-              provinces: state.provinces,
-              onProvinceSelected: (prov) =>
-                  bloc.add(MunicipalityEvent.provinceSelected(prov)),
-              provinceLabel: provinceLabel,
-              selectedProvince: null,
-              errorText: errorText,
-            ),
-          ],
-          municipalitySelection: (state) => [
-            _ProvinceSelector(
-              provinces: state.provinces,
-              onProvinceSelected: (prov) =>
-                  bloc.add(MunicipalityEvent.provinceSelected(prov)),
-              provinceLabel: provinceLabel,
-              selectedProvince: state.provinceSelected,
-              errorText: null,
-            ),
-            separatorWidget ?? const SizedBox(height: 8),
-            _MunicipalitySelector(
-              municipalities: state.provinceSelected.municipalities,
-              onMunicipalitySelected: (mun) {
-                onChanged?.call(mun.code);
-                bloc.add(MunicipalityEvent.municipalitySelected(mun));
-              },
-              municipalityLabel: municipalityLabel,
-              selectedMunicipality: null,
-              errorText: errorText,
-            ),
-          ],
-          municipalityCodeReady: (state) => [
-            _ProvinceSelector(
-              provinces: state.provinces,
-              onProvinceSelected: (prov) =>
-                  bloc.add(MunicipalityEvent.provinceSelected(prov)),
-              provinceLabel: provinceLabel,
-              selectedProvince: state.provinceSelected,
-              errorText: null,
-            ),
-            separatorWidget ?? const SizedBox(height: 8),
-            _MunicipalitySelector(
-              municipalities: state.provinceSelected.municipalities,
-              onMunicipalitySelected: (mun) {
-                onChanged?.call(mun.code);
-                bloc.add(MunicipalityEvent.municipalitySelected(mun));
-              },
-              municipalityLabel: municipalityLabel,
-              selectedMunicipality: state.municipalitySelected,
-              errorText: errorText,
-            ),
-          ],
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _ProvinceSelector(
+          provinces: widget.provinces,
+          onProvinceSelected: (prov) {
+            widget.onProvinceChanged?.call(prov);
+            setState(() {
+              provinceSelected = prov;
+            });
+          },
+          provinceLabel: widget.provinceLabel,
+          selectedProvince: provinceSelected,
+          errorText: provinceSelected != null ? null : widget.errorText,
         ),
-      ),
+        if (provinceSelected != null) ...[
+          widget.separatorWidget ?? const SizedBox(height: 8),
+          _MunicipalitySelector(
+            municipalities: provinceSelected!.municipalities,
+            onMunicipalitySelected: (mun) {
+              widget.onMunicipalityChanged?.call(mun);
+              setState(() {
+                municipalitySelected = mun;
+              });
+            },
+            municipalityLabel: widget.municipalityLabel,
+            selectedMunicipality: municipalitySelected,
+            errorText: widget.errorText,
+          ),
+        ]
+      ],
     );
   }
 }

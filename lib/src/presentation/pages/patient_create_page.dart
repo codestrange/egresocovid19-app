@@ -260,13 +260,54 @@ class _MunicipalityInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<MunicipalityBloc>();
+    const provinceLabel = 'Provincia*';
+    const municipalityLabel = 'Municipio*';
+    final onProvinceChanged = (ProvinceEntity prv) {
+      bloc.add(MunicipalityEvent.provinceSelected(prv));
+      form.municipalityCode.pure('');
+    };
+    final onMunicipalityChanged = (MunicipalityEntity mun) {
+      bloc.add(MunicipalityEvent.municipalitySelected(mun));
+      form.municipalityCode.dirty(mun.code);
+    };
+
     return InputBlocBuilder<String>(
       bloc: form.municipalityCode,
-      builder: (context, state) => MunicipalityInputWidget(
-        provinceLabel: 'Provincia*',
-        municipalityLabel: 'Municipio*',
-        errorText: state.error,
-        onChanged: (value) => form.municipalityCode.dirty(value),
+      builder: (context, state) =>
+          BlocBuilder<MunicipalityBloc, MunicipalityState>(
+        bloc: bloc..add(const MunicipalityEvent.provincesRequested()),
+        builder: (context, _state) {
+          return _state.maybeMap(
+            provinceSelection: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              onProvinceChanged: onProvinceChanged,
+              errorText: state.error,
+            ),
+            municipalitySelection: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              provinceSelected: _state.provinceSelected,
+              onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
+              errorText: state.error,
+            ),
+            municipalityCodeReady: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              provinceSelected: _state.provinceSelected,
+              municipalitySelected: _state.municipalitySelected,
+              onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
+              errorText: state.error,
+            ),
+            orElse: () => Container(),
+          );
+        },
       ),
     );
   }
