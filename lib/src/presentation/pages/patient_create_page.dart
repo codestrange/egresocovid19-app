@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/blocs/municipality/municipality_bloc.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
@@ -45,8 +46,7 @@ class _PatientCreatePageInternal extends StatelessWidget {
         backgroundColor: Theme.of(context).canvasColor,
         appBar: AppBar(
           title: Text(
-            Messages.of(context)!
-                .appName, //TODO: PUT 'ADD PATIENT' CORRESPONDING TEXT
+            'Nuevo Paciente', //TODO: PUT 'ADD PATIENT' CORRESPONDING TEXT
             style: Theme.of(context).textTheme.headline6,
           ),
           iconTheme: Theme.of(context).iconTheme,
@@ -58,10 +58,11 @@ class _PatientCreatePageInternal extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text(error.message))),
           child: const SingleChildScrollView(
-              child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: _PatientCreateForm(),
-          )),
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: _PatientCreateForm(),
+            ),
+          ),
         ),
       ),
     );
