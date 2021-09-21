@@ -15,5 +15,8 @@ class PathologyBloc extends Bloc<PathologyEvent, PathologyState> {
     on<PathologyNameChanged>(
       (event, emit) => emit(state.copyWith(pathology: event.pathology)),
     );
+    on<PathologyCleared>(
+      (event, emit) => emit(state.copyWith(pathology: '', treatment: '')),
+    );
   }
 }

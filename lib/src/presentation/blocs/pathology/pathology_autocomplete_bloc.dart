@@ -1,14 +1,23 @@
 import 'dart:async';
 
+import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class PathologyAutoCompleteBloc extends AutoCompleteBloc<String> {
-  PathologyAutoCompleteBloc() : super('');
+  PathologyAutoCompleteBloc(
+    this.autoCompleteService,
+  ) : super('');
+
+  final IAutoCompleteService autoCompleteService;
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
-    return ['HTA', 'Diabetes']; //TODO: Mocked data.
+    final either = await autoCompleteService.getDefaultPathologicals();
+    final defaults = either.getOrElse(() => []);
+    return defaults
+        .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
+        .toList();
   }
 }

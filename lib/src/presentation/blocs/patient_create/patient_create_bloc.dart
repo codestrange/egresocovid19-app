@@ -1,10 +1,12 @@
+import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:injectable/injectable.dart';
 
-abstract class IPatientCreateBloc extends FormBloc<void, ErrorEntity> {
+abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get firstName;
   InputBloc<String> get lastName;
   InputBloc<String> get ci;
@@ -45,144 +47,172 @@ abstract class IPatientCreateBloc extends FormBloc<void, ErrorEntity> {
 
 @Injectable(as: IPatientCreateBloc)
 class PatientCreateBloc extends IPatientCreateBloc {
-  @override
-  InputBloc<String> get address => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  PatientCreateBloc({
+    required this.patientService,
+  }) : super();
 
   @override
-  InputBloc<String> get age => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-          StringValidator.number,
-        ],
-      );
+  InputBloc<String> address = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<String> get blockNumber => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-          StringValidator.integer,
-        ],
-      );
+  InputBloc<String> age = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+      StringValidator.number,
+    ],
+  );
 
   @override
-  InputBloc<BloodType?> get bloodType => InputBloc<BloodType?>(
-        pureValue: null,
-      );
+  InputBloc<String> blockNumber = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+      StringValidator.integer,
+    ],
+  );
 
   @override
-  InputBloc<String> get ci => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-          StringValidator.integer,
-          StringValidator.lengthGreaterThan(11),
-          StringValidator.lengthLowerThan(11)
-        ],
-      );
+  InputBloc<BloodType?> bloodType = InputBloc<BloodType?>(
+    pureValue: null,
+  );
 
   @override
-  InputBloc<List<PathologicalEntity>> get familyPathologicalHistory =>
+  InputBloc<String> ci = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+      StringValidator.integer,
+      StringValidator.lengthGreaterThan(11),
+      StringValidator.lengthLowerThan(11)
+    ],
+  );
+
+  @override
+  InputBloc<List<PathologicalEntity>> familyPathologicalHistory =
       InputBloc<List<PathologicalEntity>>(
-        pureValue: [],
-      );
+    pureValue: [],
+  );
 
   @override
-  InputBloc<String> get municipalityCode => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> municipalityCode = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<String> get neighborhood => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> neighborhood = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<List<PathologicalEntity>> get personalPathologicalHistory =>
+  InputBloc<List<PathologicalEntity>> personalPathologicalHistory =
       InputBloc<List<PathologicalEntity>>(
-        pureValue: [],
-      );
+    pureValue: [],
+  );
 
   @override
-  InputBloc<String> get polyclinic => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> polyclinic = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<String> get popularCouncil => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> popularCouncil = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<Sex?> get sex => InputBloc(
-        pureValue: null,
-        validationType: ValidationType.explicit,
-        validators: [Validator.required],
-      );
+  InputBloc<Sex?> sex = InputBloc(
+    pureValue: null,
+    validationType: ValidationType.explicit,
+    validators: [Validator.required],
+  );
 
   @override
-  InputBloc<SkinColor?> get skinColor => InputBloc(
-        pureValue: null,
-        validationType: ValidationType.explicit,
-        validators: [Validator.required],
-      );
+  InputBloc<SkinColor?> skinColor = InputBloc(
+    pureValue: null,
+    validationType: ValidationType.explicit,
+    validators: [Validator.required],
+  );
 
   @override
-  InputBloc<String> get surgery => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> surgery = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<String> get firstName => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> firstName = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
 
   @override
-  InputBloc<String> get lastName => InputBloc<String>(
-        pureValue: '',
-        validationType: ValidationType.explicit,
-        validators: [
-          StringValidator.required,
-        ],
-      );
+  InputBloc<String> lastName = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required,
+    ],
+  );
+
+  final IPatientService patientService;
 
   @override
-  Future<FormBlocState<void, ErrorEntity>> onSubmmit() {
-    // TODO: implement onSubmmit
-    throw UnimplementedError();
+  Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
+    final response = await patientService.postPatient(
+      patient: PatientPostEntity(
+        firstname: firstName.state.value,
+        lastname: lastName.state.value,
+        ci: ci.state.value,
+        municipalityCode: municipalityCode.state.value,
+        sex: sex.state.value!,
+        age: int.parse(age.state.value),
+        skinColor: skinColor.state.value!,
+        bloodType: bloodType.state.value,
+        address: address.state.value,
+        polyclinic: polyclinic.state.value,
+        surgery: surgery.state.value,
+        popularCouncil: popularCouncil.state.value,
+        neighborhood: neighborhood.state.value,
+        blockNumber: int.parse(blockNumber.state.value),
+        personalPathologicalHistory: personalPathologicalHistory.state.value,
+        familyPathologicalHistory: familyPathologicalHistory.state.value,
+      ),
+    );
+    return response.fold(
+      (error) => FormErrorState(error),
+      (_) => const FormSuccessState(unit),
+    );
   }
 }

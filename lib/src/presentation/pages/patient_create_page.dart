@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/blocs/municipality/municipality_bloc.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
@@ -39,26 +40,28 @@ class _PatientCreatePageInternal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).canvasColor,
-      appBar: AppBar(
-        title: Text(
-          Messages.of(context)!
-              .appName, //TODO: PUT 'ADD PATIENT' CORRESPONDING TEXT
-          style: Theme.of(context).textTheme.headline6,
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        backgroundColor: Theme.of(context).canvasColor,
+        appBar: AppBar(
+          title: Text(
+            'Nuevo Paciente', //TODO: PUT 'ADD PATIENT' CORRESPONDING TEXT
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          iconTheme: Theme.of(context).iconTheme,
         ),
-        iconTheme: Theme.of(context).iconTheme,
-      ),
-      body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
-        bloc: context.read(),
-        onSuccess: (_) => context.beamToNamed('/'),
-        onError: (error) => ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(content: Text(error.message))),
-        child: const SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: _PatientCreateForm(),
+        body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
+          bloc: context.read(),
+          onSuccess: (_) => context.beamToNamed('/'),
+          onError: (error) => ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(SnackBar(content: Text(error.message))),
+          child: const SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: _PatientCreateForm(),
+            ),
           ),
         ),
       ),
@@ -130,7 +133,7 @@ class _FirstNameInput extends StatelessWidget {
       bloc: form.firstName,
       builder: (context, state) => TextInputWidget(
         controller: TextEditing.fromValue(state.value),
-        labelText: 'Nombre(s)',
+        labelText: 'Nombre(s)*',
         errorText: state.error,
         onChanged: (value) => form.firstName.dirty(
           value.trim(),
@@ -150,7 +153,7 @@ class _LastNameInput extends StatelessWidget {
       bloc: form.lastName,
       builder: (context, state) => TextInputWidget(
         controller: TextEditing.fromValue(state.value),
-        labelText: 'Apellido(s)',
+        labelText: 'Apellido(s)*',
         errorText: state.error,
         onChanged: (value) => form.lastName.dirty(
           value.trim(),
@@ -170,7 +173,7 @@ class _IdentityNumberInput extends StatelessWidget {
       bloc: form.ci,
       builder: (context, state) => TextInputWidget(
         controller: TextEditing.fromValue(state.value),
-        labelText: 'CI',
+        labelText: 'CI*',
         errorText: state.error,
         onChanged: (value) => form.ci.dirty(
           value.trim(),
@@ -190,7 +193,7 @@ class _AgeInput extends StatelessWidget {
       bloc: form.age,
       builder: (context, state) => TextInputWidget(
         controller: TextEditing.fromValue(state.value),
-        labelText: 'Edad',
+        labelText: 'Edad*',
         errorText: state.error,
         onChanged: (value) => form.age.dirty(
           value.trim(),
@@ -209,7 +212,7 @@ class _SexInput extends StatelessWidget {
     return InputBlocBuilder<Sex?>(
       bloc: form.sex,
       builder: (context, state) => SexInputWidget(
-        labelText: 'Sexo',
+        labelText: 'Sexo*',
         errorText: state.error,
         onChanged: (value) => form.sex.dirty(value),
       ),
@@ -226,7 +229,7 @@ class _SkinColorInput extends StatelessWidget {
     return InputBlocBuilder<SkinColor?>(
       bloc: form.skinColor,
       builder: (context, state) => SkinColorInputWidget(
-        labelText: 'Color de Piel',
+        labelText: 'Color de Piel*',
         errorText: state.error,
         onChanged: (value) => form.skinColor.dirty(value),
       ),
@@ -257,13 +260,54 @@ class _MunicipalityInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<MunicipalityBloc>();
+    const provinceLabel = 'Provincia*';
+    const municipalityLabel = 'Municipio*';
+    final onProvinceChanged = (ProvinceEntity prv) {
+      bloc.add(MunicipalityEvent.provinceSelected(prv));
+      form.municipalityCode.pure('');
+    };
+    final onMunicipalityChanged = (MunicipalityEntity mun) {
+      bloc.add(MunicipalityEvent.municipalitySelected(mun));
+      form.municipalityCode.dirty(mun.code);
+    };
+
     return InputBlocBuilder<String>(
       bloc: form.municipalityCode,
-      builder: (context, state) => MunicipalityInputWidget(
-        labelProvinceText: 'Provincia',
-        labelMunicipalityText: 'Municipio',
-        errorText: state.error,
-        onChanged: (value) => form.municipalityCode.dirty(value.trim()),
+      builder: (context, state) =>
+          BlocBuilder<MunicipalityBloc, MunicipalityState>(
+        bloc: bloc..add(const MunicipalityEvent.provincesRequested()),
+        builder: (context, _state) {
+          return _state.maybeMap(
+            provinceSelection: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              onProvinceChanged: onProvinceChanged,
+              errorText: state.error,
+            ),
+            municipalitySelection: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              provinceSelected: _state.provinceSelected,
+              onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
+              errorText: state.error,
+            ),
+            municipalityCodeReady: (_state) => MunicipalityInputWidget(
+              provinces: _state.provinces,
+              provinceLabel: provinceLabel,
+              municipalityLabel: municipalityLabel,
+              provinceSelected: _state.provinceSelected,
+              municipalitySelected: _state.municipalitySelected,
+              onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
+              errorText: state.error,
+            ),
+            orElse: () => Container(),
+          );
+        },
       ),
     );
   }
@@ -278,7 +322,7 @@ class _AddressInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.address,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Dirección Particular',
+        labelText: 'Dirección Particular*',
         errorText: state.error,
         onChanged: (value) => form.address.dirty(value.trim()),
       ),
@@ -297,10 +341,16 @@ class _PolyclinicInput extends StatelessWidget {
       bloc: form.polyclinic,
       builder: (context, state) => PolyclinicInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Policlínico',
+        labelText: 'Policlínico*',
         errorText: state.error,
-        onChanged: (value) => form.polyclinic.dirty(value.trim()),
-        onSelected: (value) => form.polyclinic.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.polyclinic.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.polyclinic.dirty(value.trim());
+        },
       ),
     );
   }
@@ -317,10 +367,16 @@ class _SurgeryInput extends StatelessWidget {
       bloc: form.surgery,
       builder: (context, state) => SurgeryInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Consultorio',
+        labelText: 'Consultorio*',
         errorText: state.error,
-        onChanged: (value) => form.surgery.dirty(value.trim()),
-        onSelected: (value) => form.surgery.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.surgery.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.surgery.dirty(value.trim());
+        },
       ),
     );
   }
@@ -337,11 +393,16 @@ class _PopularCouncilInput extends StatelessWidget {
       bloc: form.popularCouncil,
       builder: (context, state) => PopularCouncilInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Consejo Popular',
+        labelText: 'Consejo Popular*',
         errorText: state.error,
-        onChanged: (value) => form.popularCouncil.dirty(value.trim()),
-        onSelected: (value) =>
-            form.popularCouncil.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value.trim());
+          form.popularCouncil.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.popularCouncil.dirty(value.trim());
+        },
       ),
     );
   }
@@ -358,11 +419,16 @@ class _NeighborhoodInput extends StatelessWidget {
       bloc: form.neighborhood,
       builder: (context, state) => NeighborhoodInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Reparto',
+        labelText: 'Reparto*',
         errorText: state.error,
-        onChanged: (value) => form.neighborhood.dirty(value.trim()),
-        onSelected: (value) =>
-            form.neighborhood.dirty((value as String).trim()),
+        onChanged: (value) {
+          autocompleter.changed(value);
+          form.neighborhood.dirty(value.trim());
+        },
+        onSelected: (value) {
+          autocompleter.changed((value as String).trim());
+          form.neighborhood.dirty(value.trim());
+        },
       ),
     );
   }
@@ -374,16 +440,15 @@ class _BlockNumberInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
-    final autocompleter = GetIt.I<BlockNumberAutoCompleteBloc>();
     return InputBlocBuilder<String>(
       bloc: form.blockNumber,
-      builder: (context, state) => BlockNumberInputWidget(
-        suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'No. de Manzana',
+      builder: (context, state) => TextInputWidget(
+        controller: TextEditing.fromValue(state.value),
+        labelText: 'No. de Manzana*',
         errorText: state.error,
-        onChanged: (value) => form.neighborhood.dirty(value.trim()),
-        onSelected: (value) =>
-            form.neighborhood.dirty((value as String).trim()),
+        onChanged: (value) => form.blockNumber.dirty(
+          value.trim(),
+        ),
       ),
     );
   }
@@ -395,12 +460,28 @@ class _PersonalPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<PathologicalhistoryBloc>()
+      ..stream.listen((state) {
+        form.personalPathologicalHistory.dirty(state.pathologicalHistory);
+      });
     return InputBlocBuilder<List<PathologicalEntity>>(
       bloc: form.personalPathologicalHistory,
-      builder: (context, state) => PathologicalHistoryInputWidget(
-        headerText: 'Antecedentes Patológicos',
-        errorText: state.error,
-        onChanged: (value) => form.personalPathologicalHistory.dirty(value),
+      builder: (context, state) =>
+          BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
+        bloc: bloc,
+        builder: (context, _state) {
+          return PathologicalHistoryInputWidget(
+            headerText: 'Antecedentes Patológicos*',
+            errorText: state.error,
+            pathologicalHist: _state.pathologicalHistory,
+            addPathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.added(ph)),
+            removePathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.removed(ph)),
+            clearPathologicalHist: () =>
+                bloc.add(const PathologicalHistoryEvent.cleared()),
+          );
+        },
       ),
     );
   }
@@ -412,12 +493,28 @@ class _FamilyPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
+    final bloc = GetIt.I<PathologicalhistoryBloc>()
+      ..stream.listen((state) {
+        form.familyPathologicalHistory.dirty(state.pathologicalHistory);
+      });
     return InputBlocBuilder<List<PathologicalEntity>>(
-      bloc: form.familyPathologicalHistory,
-      builder: (context, state) => PathologicalHistoryInputWidget(
-        headerText: 'Antecedentes Patológicos Familiares',
-        errorText: state.error,
-        onChanged: (value) => form.familyPathologicalHistory.dirty(value),
+      bloc: form.personalPathologicalHistory,
+      builder: (context, state) =>
+          BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
+        bloc: bloc,
+        builder: (context, _state) {
+          return PathologicalHistoryInputWidget(
+            headerText: 'Antecedentes Patológicos Familiares*',
+            errorText: state.error,
+            pathologicalHist: _state.pathologicalHistory,
+            addPathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.added(ph)),
+            removePathologicalEntity: (ph) =>
+                bloc.add(PathologicalHistoryEvent.removed(ph)),
+            clearPathologicalHist: () =>
+                bloc.add(const PathologicalHistoryEvent.cleared()),
+          );
+        },
       ),
     );
   }

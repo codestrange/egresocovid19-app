@@ -1,18 +1,20 @@
 import 'dart:async';
 
+import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class PolyclinicAutoCompleteBloc extends AutoCompleteBloc<String> {
-  PolyclinicAutoCompleteBloc() : super('');
+  PolyclinicAutoCompleteBloc(
+    this.autoCompleteService,
+  ) : super('');
+
+  final IAutoCompleteService autoCompleteService;
 
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
-    return [
-      'Turcios Lima',
-      'Luis De la Puente Uceda',
-      'C.Q. Diez de Octubre',
-    ]; //TODO: Mocked data.
+    final either = await autoCompleteService.getPolyclinics(changedValue);
+    return either.getOrElse(() => []);
   }
 }
