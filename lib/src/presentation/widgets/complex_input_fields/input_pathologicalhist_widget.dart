@@ -77,17 +77,20 @@ class PathologicalHistoryInputWidget extends StatelessWidget {
           bloc: pathologyInputBloc,
           builder: (context, state) {
             return IconButton(
-                onPressed: state.pathology.isNotEmpty
-                    ? () {
-                        final pathological = PathologicalEntity(
-                            name: state.pathology, treatments: state.treatment);
+              onPressed: state.pathology.isNotEmpty
+                  ? () {
+                      final pathological = PathologicalEntity(
+                        name: state.pathology,
+                        treatments: state.treatment,
+                      );
 
-                        pathologicalHistBloc
-                            .add(PathologicalHistoryEvent.added(pathological));
-                        pathologyInputBloc.add(const PathologyEvent.cleared());
-                      }
-                    : null,
-                icon: const Icon(Icons.add));
+                      pathologicalHistBloc
+                          .add(PathologicalHistoryEvent.added(pathological));
+                      pathologyInputBloc.add(const PathologyEvent.cleared());
+                    }
+                  : null,
+              icon: const Icon(Icons.add),
+            );
           },
         ),
         BlocBuilder<PathologicalhistoryBloc, PathologicalHistoryState>(
