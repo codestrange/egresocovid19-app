@@ -33,9 +33,8 @@ PatientGetDetailModel _$PatientGetDetailModelFromJson(
         (json['familyPathologicalHistory'] as List<dynamic>)
             .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
             .toList(),
-    dischargeOfPositiveCasesOfCovid19:
-        DischargeOfPositiveCasesOfCovid19Model.fromJson(
-            json['dischargeOfPositiveCasesOfCovid19'] as Map<String, dynamic>),
+    dischargeOfPositiveCasesOfCovid19: DischargeDataGetModel.fromJson(
+        json['dischargeOfPositiveCasesOfCovid19'] as Map<String, dynamic>),
   );
 }
 

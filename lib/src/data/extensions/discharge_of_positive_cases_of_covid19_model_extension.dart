@@ -2,8 +2,7 @@ import 'package:egresocovid19/src/data/extensions/extensions.dart';
 import 'package:egresocovid19/src/data/models/models.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 
-extension DischargeOfPositiveCasesOfCovid19ModelExtension
-    on DischargeOfPositiveCasesOfCovid19Model {
+extension DischargeDataGetModelExtension on DischargeDataGetModel {
   DischargeOfPositiveCasesOfCovid19Entity toEntity() {
     return DischargeOfPositiveCasesOfCovid19Entity(
       aftermath: aftermath,
@@ -39,8 +38,8 @@ extension DischargeOfPositiveCasesOfCovid19ModelExtension
 
 extension DischargeOfPositiveCasesOfCovid19EntityExtension
     on DischargeOfPositiveCasesOfCovid19Entity {
-  DischargeOfPositiveCasesOfCovid19Model toModel() {
-    return DischargeOfPositiveCasesOfCovid19Model(
+  DischargeDataPutModel toModel() {
+    return DischargeDataPutModel(
       aftermath: aftermath,
       anotherVaccineAgainstCovid: anotherVaccineAgainstCovid,
       antibiotics: antibiotics,

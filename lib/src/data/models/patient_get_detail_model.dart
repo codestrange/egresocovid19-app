@@ -49,8 +49,7 @@ class PatientGetDetailModel {
   final int blockNumber;
   final List<PathologicalModel> personalPathologicalHistory;
   final List<PathologicalModel> familyPathologicalHistory;
-  final DischargeOfPositiveCasesOfCovid19Model
-      dischargeOfPositiveCasesOfCovid19;
+  final DischargeDataGetModel dischargeOfPositiveCasesOfCovid19;
 
   static PatientGetDetailModel fromJson(Map<String, dynamic> json) =>
       _$PatientGetDetailModelFromJson(json);

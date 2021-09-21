@@ -1,4 +1,5 @@
-export 'discharge_of_positive_cases_of_covid19.dart';
+export 'discharge_data_get_model.dart';
+export 'discharge_data_put_model.dart';
 export 'income_model.dart';
 export 'municipality_model.dart';
 export 'pathological_model.dart';

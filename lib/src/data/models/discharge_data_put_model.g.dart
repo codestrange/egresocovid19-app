@@ -1,15 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'discharge_of_positive_cases_of_covid19.dart';
+part of 'discharge_data_put_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DischargeOfPositiveCasesOfCovid19Model
-    _$DischargeOfPositiveCasesOfCovid19ModelFromJson(
-        Map<String, dynamic> json) {
-  return DischargeOfPositiveCasesOfCovid19Model(
+DischargeDataPutModel _$DischargeDataPutModelFromJson(
+    Map<String, dynamic> json) {
+  return DischargeDataPutModel(
     detectionDate: json['detectionDate'] == null
         ? null
         : DateTime.parse(json['detectionDate'] as String),
@@ -58,8 +57,8 @@ DischargeOfPositiveCasesOfCovid19Model
   );
 }
 
-Map<String, dynamic> _$DischargeOfPositiveCasesOfCovid19ModelToJson(
-        DischargeOfPositiveCasesOfCovid19Model instance) =>
+Map<String, dynamic> _$DischargeDataPutModelToJson(
+        DischargeDataPutModel instance) =>
     <String, dynamic>{
       'detectionDate': instance.detectionDate?.toIso8601String(),
       'symptoms': instance.symptoms,

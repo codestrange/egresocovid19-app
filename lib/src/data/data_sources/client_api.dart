@@ -33,7 +33,7 @@ abstract class ClientApi {
   @PUT('/patients/{patientId}/egreso')
   Future<PatientGetDetailModel> putPatientEgreso(
     @Path() String patientId,
-    @Body() DischargeOfPositiveCasesOfCovid19Model discharge,
+    @Body() DischargeDataPutModel discharge,
   );
 
   @GET('/provinces')
