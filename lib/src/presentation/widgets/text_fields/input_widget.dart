@@ -10,6 +10,7 @@ class TextInputWidget extends StatelessWidget {
     this.hintText,
     this.onSubmitted,
     this.labelText,
+    this.focusNode,
     this.keyboardType = TextInputType.text,
   }) : super(key: key);
 
@@ -20,6 +21,7 @@ class TextInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class TextInputWidget extends StatelessWidget {
       maxLines: keyboardType == TextInputType.multiline ? null : 1,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
+      focusNode: focusNode,
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,

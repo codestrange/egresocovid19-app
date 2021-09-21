@@ -17,6 +17,7 @@ abstract class RegisterModule {
   @lazySingleton
   Dio get dio => Dio()
     ..interceptors.add(PrettyDioLogger(
+      responseBody: false,
       compact: false,
       logPrint: (e) => log(e.toString()),
     ));
