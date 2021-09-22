@@ -55,10 +55,9 @@ class _StringListInputState extends State<StringListInputWidget> {
           onSelected: (input) =>
               widget.autoCompleteBloc?.selected(input as String),
           onAdd: (input) {
-            widget.addString?.call(input);
-            setState(() {
-              actualList!.add(input);
-            });
+            if (actualList != null && !actualList!.contains(input)) {
+              addItem(input);
+            }
           },
           labelText: widget.labelText,
           errorText: widget.errorText,
@@ -71,8 +70,9 @@ class _StringListInputState extends State<StringListInputWidget> {
                   padding: const EdgeInsets.all(3),
                   label: Text(e),
                   onDeleted: () {
-                    widget.removeString?.call(e);
-                    addItem(e);
+                    if (actualList != null && actualList!.contains(e)) {
+                      removeItem(e);
+                    }
                   },
                 ),
               )
@@ -82,10 +82,24 @@ class _StringListInputState extends State<StringListInputWidget> {
     );
   }
 
-  void addItem(String value) => setState(() {
-        actualList!.add(value);
-      });
-  void removeItem(String value) => setState(() {
-        actualList!.remove(value);
-      });
+  void addItem(String value) {
+    widget.addString?.call(value);
+    setState(() {
+      actualList!.add(value);
+    });
+  }
+
+  void removeItem(String value) {
+    widget.removeString?.call(value);
+    setState(() {
+      actualList!.remove(value);
+    });
+  }
+
+  void clearList() {
+    widget.clearList?.call();
+    setState(() {
+      actualList!.clear();
+    });
+  }
 }
