@@ -3,6 +3,7 @@ export 'buttons/submmit_button_widget.dart';
 export 'complex_input_fields/input_municipality_widget.dart';
 export 'complex_input_fields/input_pathologicalhist_widget.dart';
 export 'patient_egreso_fields/input_datetime_widget.dart';
+export 'patient_egreso_fields/input_test_diagnosis_widget.dart';
 export 'patient_fields/input_bloodtype_widget.dart';
 export 'patient_fields/input_neighborhood_widget.dart';
 export 'patient_fields/input_pathology_widget.dart';
