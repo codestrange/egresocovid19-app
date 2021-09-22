@@ -38,9 +38,7 @@ class HomeBloc extends IHomeBloc {
         );
       },
       transformer: (events, mapper) {
-        return events
-            .debounceTime(const Duration(seconds: 1))
-            .switchMap(mapper);
+        return events.debounceTime(const Duration(seconds: 1)).flatMap(mapper);
       },
     );
   }

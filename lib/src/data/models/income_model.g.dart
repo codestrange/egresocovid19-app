@@ -46,9 +46,9 @@ K _$enumDecode<K, V>(
 }
 
 const _$IncomeEnumMap = {
-  Income.Home: 'Home',
-  Income.IsolationCenter: 'IsolationCenter',
-  Income.HospitalRoom: 'HospitalRoom',
-  Income.IntermediateTherapy: 'IntermediateTherapy',
-  Income.IntensiveTherapy: 'IntensiveTherapy',
+  Income.Home: 0,
+  Income.IsolationCenter: 1,
+  Income.HospitalRoom: 2,
+  Income.IntermediateTherapy: 3,
+  Income.IntensiveTherapy: 4,
 };
