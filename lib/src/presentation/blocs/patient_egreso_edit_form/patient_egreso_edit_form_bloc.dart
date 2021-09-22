@@ -71,146 +71,147 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
   final DischargeDataEntity? initialDischargeData;
 
   @override
-  InputBloc<List<Aftermath>?> get aftermath => InputBloc(
-        pureValue: initialDischargeData?.aftermath,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<Aftermath>?> aftermath = InputBloc(
+    pureValue: initialDischargeData?.aftermath,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<String?> get anotherVaccineAgainstCovid => InputBloc(
-        pureValue: initialDischargeData?.anotherVaccineAgainstCovid,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<String?> anotherVaccineAgainstCovid = InputBloc(
+    pureValue: initialDischargeData?.anotherVaccineAgainstCovid,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<List<String>?> get antibiotics => InputBloc(
-        pureValue: initialDischargeData?.antibiotics,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<String>?> antibiotics = InputBloc(
+    pureValue: initialDischargeData?.antibiotics,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsFirstLevel => InputBloc(
-        pureValue: initialDischargeData?.contactsFirstLevel,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsFirstLevel = InputBloc(
+    pureValue: initialDischargeData?.contactsFirstLevel,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsFirstLevelPositives => InputBloc(
-        pureValue: initialDischargeData?.contactsFirstLevelPositives,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsFirstLevelPositives = InputBloc(
+    pureValue: initialDischargeData?.contactsFirstLevelPositives,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsSecondLevel => InputBloc(
-        pureValue: initialDischargeData?.contactsSecondLevel,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsSecondLevel = InputBloc(
+    pureValue: initialDischargeData?.contactsSecondLevel,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsSecondLevelPositives => InputBloc(
-        pureValue: initialDischargeData?.contactsSecondLevelPositives,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsSecondLevelPositives = InputBloc(
+    pureValue: initialDischargeData?.contactsSecondLevelPositives,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsThirdLevel => InputBloc(
-        pureValue: initialDischargeData?.contactsThirdLevel,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsThirdLevel = InputBloc(
+    pureValue: initialDischargeData?.contactsThirdLevel,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get contactsThirdLevelPositives => InputBloc(
-        pureValue: initialDischargeData?.contactsThirdLevelPositives,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> contactsThirdLevelPositives = InputBloc(
+    pureValue: initialDischargeData?.contactsThirdLevelPositives,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get daysFromSymptomsToDiagnosis => InputBloc(
-        pureValue: initialDischargeData?.daysFromSymptomsToDiagnosis,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> daysFromSymptomsToDiagnosis = InputBloc(
+    pureValue: initialDischargeData?.daysFromSymptomsToDiagnosis,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<DateTime?> get detectionDate => InputBloc(
-        pureValue: initialDischargeData?.detectionDate,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<DateTime?> detectionDate = InputBloc(
+    pureValue: initialDischargeData?.detectionDate,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<DiagnosisWay?> get diagnosisWay => InputBloc(
-        pureValue: initialDischargeData?.diagnosisWay,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<DiagnosisWay?> diagnosisWay = InputBloc(
+    pureValue: initialDischargeData?.diagnosisWay,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<bool?> get didHeWorkInTheAttentionToPositiveCases => InputBloc(
-        pureValue: initialDischargeData?.didHeWorkInTheAttentionToPositiveCases,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<bool?> didHeWorkInTheAttentionToPositiveCases =
+      InputBloc(
+    pureValue: initialDischargeData?.didHeWorkInTheAttentionToPositiveCases,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get durationOfSymptoms => InputBloc(
-        pureValue: initialDischargeData?.durationOfSymptoms,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> durationOfSymptoms = InputBloc(
+    pureValue: initialDischargeData?.durationOfSymptoms,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<Contagion?> get formOfContagion => InputBloc(
-        pureValue: initialDischargeData?.formOfContagion,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<Contagion?> formOfContagion = InputBloc(
+    pureValue: initialDischargeData?.formOfContagion,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<String?> get hospitalizationTime => InputBloc(
-        pureValue: initialDischargeData?.hospitalizationTime,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<String?> hospitalizationTime = InputBloc(
+    pureValue: initialDischargeData?.hospitalizationTime,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<List<IncomeEntity>?> get incomes => InputBloc(
-        pureValue: initialDischargeData?.incomes,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<IncomeEntity>?> incomes = InputBloc(
+    pureValue: initialDischargeData?.incomes,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get numberPcrPerformed => InputBloc(
-        pureValue: initialDischargeData?.numberPcrPerformed,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> numberPcrPerformed = InputBloc(
+    pureValue: initialDischargeData?.numberPcrPerformed,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
   Future<FormBlocState<DischargeDataEntity, ErrorEntity>> onSubmmit() async {
@@ -248,53 +249,53 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
   }
 
   @override
-  InputBloc<List<String>?> get othersAftermath => InputBloc(
-        pureValue: initialDischargeData?.othersAftermath,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<String>?> othersAftermath = InputBloc(
+    pureValue: initialDischargeData?.othersAftermath,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<List<Prophylaxis>?> get prophylaxis => InputBloc(
-        pureValue: initialDischargeData?.prophylaxis,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<Prophylaxis>?> prophylaxis = InputBloc(
+    pureValue: initialDischargeData?.prophylaxis,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<List<String>?> get symptoms => InputBloc(
-        pureValue: initialDischargeData?.symptoms,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<String>?> symptoms = InputBloc(
+    pureValue: initialDischargeData?.symptoms,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<TestDiagnosis?> get testUsedInDiagnosis => InputBloc(
-        pureValue: initialDischargeData?.testUsedInDiagnosis,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<TestDiagnosis?> testUsedInDiagnosis = InputBloc(
+    pureValue: initialDischargeData?.testUsedInDiagnosis,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<int?> get timeFromDiagnosisToNegativeOrDischarge => InputBloc(
-        pureValue: initialDischargeData?.timeFromDiagnosisToNegativeOrDischarge,
-        validators: [
-          IntValidator.nonNegative,
-        ],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<int?> timeFromDiagnosisToNegativeOrDischarge = InputBloc(
+    pureValue: initialDischargeData?.timeFromDiagnosisToNegativeOrDischarge,
+    validators: [
+      IntValidator.nonNegative,
+    ],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<List<Treatment>?> get treatmentsReceived => InputBloc(
-        pureValue: initialDischargeData?.treatmentsReceived,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<List<Treatment>?> treatmentsReceived = InputBloc(
+    pureValue: initialDischargeData?.treatmentsReceived,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 
   @override
-  InputBloc<bool?> get wasHePartOfAnEvent => InputBloc(
-        pureValue: initialDischargeData?.wasHePartOfAnEvent,
-        validators: [],
-        validationType: ValidationType.explicit,
-      );
+  late final InputBloc<bool?> wasHePartOfAnEvent = InputBloc(
+    pureValue: initialDischargeData?.wasHePartOfAnEvent,
+    validators: [],
+    validationType: ValidationType.explicit,
+  );
 }
