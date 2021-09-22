@@ -2,6 +2,7 @@ export 'buttons/main_button_widget.dart';
 export 'buttons/submmit_button_widget.dart';
 export 'complex_input_fields/input_municipality_widget.dart';
 export 'complex_input_fields/input_pathologicalhist_widget.dart';
+export 'patient_egreso_fields/input_bool_widget.dart';
 export 'patient_egreso_fields/input_contagion_widget.dart';
 export 'patient_egreso_fields/input_datetime_widget.dart';
 export 'patient_egreso_fields/input_diagnosis_way_widget.dart';
