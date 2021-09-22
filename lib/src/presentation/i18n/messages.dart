@@ -151,6 +151,90 @@ abstract class Messages {
   /// In es, this message translates to:
   /// **'Buscar por nombre o carnet'**
   String get homeSearchHint;
+
+  /// No description provided for @enumSexMale.
+  ///
+  /// In es, this message translates to:
+  /// **'Masculino'**
+  String get enumSexMale;
+
+  /// No description provided for @enumSexFemale.
+  ///
+  /// In es, this message translates to:
+  /// **'Femenino'**
+  String get enumSexFemale;
+
+  /// No description provided for @enumSexOther.
+  ///
+  /// In es, this message translates to:
+  /// **'Otro'**
+  String get enumSexOther;
+
+  /// No description provided for @enumBloodTypeABminus.
+  ///
+  /// In es, this message translates to:
+  /// **'AB-'**
+  String get enumBloodTypeABminus;
+
+  /// No description provided for @enumBloodTypeABplus.
+  ///
+  /// In es, this message translates to:
+  /// **'AB+'**
+  String get enumBloodTypeABplus;
+
+  /// No description provided for @enumBloodTypeAminus.
+  ///
+  /// In es, this message translates to:
+  /// **'A-'**
+  String get enumBloodTypeAminus;
+
+  /// No description provided for @enumBloodTypeAplus.
+  ///
+  /// In es, this message translates to:
+  /// **'A+'**
+  String get enumBloodTypeAplus;
+
+  /// No description provided for @enumBloodTypeBminus.
+  ///
+  /// In es, this message translates to:
+  /// **'B-'**
+  String get enumBloodTypeBminus;
+
+  /// No description provided for @enumBloodTypeBplus.
+  ///
+  /// In es, this message translates to:
+  /// **'B+'**
+  String get enumBloodTypeBplus;
+
+  /// No description provided for @enumBloodTypeOminus.
+  ///
+  /// In es, this message translates to:
+  /// **'O-'**
+  String get enumBloodTypeOminus;
+
+  /// No description provided for @enumBloodTypeOplus.
+  ///
+  /// In es, this message translates to:
+  /// **'O+'**
+  String get enumBloodTypeOplus;
+
+  /// No description provided for @enumSkinColorWhite.
+  ///
+  /// In es, this message translates to:
+  /// **'Blanco'**
+  String get enumSkinColorWhite;
+
+  /// No description provided for @enumSkinColorBlack.
+  ///
+  /// In es, this message translates to:
+  /// **'Negro'**
+  String get enumSkinColorBlack;
+
+  /// No description provided for @enumSkinColorOther.
+  ///
+  /// In es, this message translates to:
+  /// **'Otro'**
+  String get enumSkinColorOther;
 }
 
 class _MessagesDelegate extends LocalizationsDelegate<Messages> {

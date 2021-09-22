@@ -88,15 +88,20 @@ class _PatientCreateForm extends StatelessWidget {
         Row(
           children: const [
             Flexible(child: _AgeInput()),
-            SizedBox(width: 10),
+            SizedBox(width: 8),
             Flexible(child: _SexInput()),
-            SizedBox(width: 10),
+            SizedBox(width: 8),
           ],
         ),
         const SizedBox(height: 8),
-        const Flexible(child: _SkinColorInput()),
-        const SizedBox(height: 8),
-        const Flexible(child: _BloodTypeInput()),
+        Row(
+          children: const [
+            Flexible(child: _SkinColorInput()),
+            SizedBox(width: 8),
+            Flexible(child: _BloodTypeInput()),
+            SizedBox(width: 8),
+          ],
+        ),
         const Divider(height: 16),
         const Flexible(child: _MunicipalityInput()),
         const SizedBox(height: 8),
@@ -283,6 +288,7 @@ class _MunicipalityInput extends StatelessWidget {
               provinceLabel: provinceLabel,
               municipalityLabel: municipalityLabel,
               onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
               errorText: state.error,
             ),
             municipalitySelection: (_state) => MunicipalityInputWidget(

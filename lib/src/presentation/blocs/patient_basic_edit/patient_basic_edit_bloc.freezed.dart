@@ -209,6 +209,18 @@ class _$PatientBasicEditStateTearOff {
   _Initial initial() {
     return const _Initial();
   }
+
+  _PatientEditingState patientEdit({required PatientEntity patient}) {
+    return _PatientEditingState(
+      patient: patient,
+    );
+  }
+
+  _PatientErrorState failure({required ErrorEntity error}) {
+    return _PatientErrorState(
+      error: error,
+    );
+  }
 }
 
 /// @nodoc
@@ -219,22 +231,30 @@ mixin _$PatientBasicEditState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(PatientEntity patient) patientEdit,
+    required TResult Function(ErrorEntity error) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(PatientEntity patient)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_PatientEditingState value) patientEdit,
+    required TResult Function(_PatientErrorState value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -296,6 +316,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(PatientEntity patient) patientEdit,
+    required TResult Function(ErrorEntity error) failure,
   }) {
     return initial();
   }
@@ -304,6 +326,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(PatientEntity patient)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -316,6 +340,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_PatientEditingState value) patientEdit,
+    required TResult Function(_PatientErrorState value) failure,
   }) {
     return initial(this);
   }
@@ -324,6 +350,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -335,4 +363,265 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements PatientBasicEditState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$PatientEditingStateCopyWith<$Res> {
+  factory _$PatientEditingStateCopyWith(_PatientEditingState value,
+          $Res Function(_PatientEditingState) then) =
+      __$PatientEditingStateCopyWithImpl<$Res>;
+  $Res call({PatientEntity patient});
+
+  $PatientEntityCopyWith<$Res> get patient;
+}
+
+/// @nodoc
+class __$PatientEditingStateCopyWithImpl<$Res>
+    extends _$PatientBasicEditStateCopyWithImpl<$Res>
+    implements _$PatientEditingStateCopyWith<$Res> {
+  __$PatientEditingStateCopyWithImpl(
+      _PatientEditingState _value, $Res Function(_PatientEditingState) _then)
+      : super(_value, (v) => _then(v as _PatientEditingState));
+
+  @override
+  _PatientEditingState get _value => super._value as _PatientEditingState;
+
+  @override
+  $Res call({
+    Object? patient = freezed,
+  }) {
+    return _then(_PatientEditingState(
+      patient: patient == freezed
+          ? _value.patient
+          : patient // ignore: cast_nullable_to_non_nullable
+              as PatientEntity,
+    ));
+  }
+
+  @override
+  $PatientEntityCopyWith<$Res> get patient {
+    return $PatientEntityCopyWith<$Res>(_value.patient, (value) {
+      return _then(_value.copyWith(patient: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PatientEditingState implements _PatientEditingState {
+  const _$_PatientEditingState({required this.patient});
+
+  @override
+  final PatientEntity patient;
+
+  @override
+  String toString() {
+    return 'PatientBasicEditState.patientEdit(patient: $patient)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PatientEditingState &&
+            (identical(other.patient, patient) ||
+                const DeepCollectionEquality().equals(other.patient, patient)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patient);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PatientEditingStateCopyWith<_PatientEditingState> get copyWith =>
+      __$PatientEditingStateCopyWithImpl<_PatientEditingState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(PatientEntity patient) patientEdit,
+    required TResult Function(ErrorEntity error) failure,
+  }) {
+    return patientEdit(patient);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEntity patient)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+    required TResult orElse(),
+  }) {
+    if (patientEdit != null) {
+      return patientEdit(patient);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_PatientEditingState value) patientEdit,
+    required TResult Function(_PatientErrorState value) failure,
+  }) {
+    return patientEdit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
+    required TResult orElse(),
+  }) {
+    if (patientEdit != null) {
+      return patientEdit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PatientEditingState implements PatientBasicEditState {
+  const factory _PatientEditingState({required PatientEntity patient}) =
+      _$_PatientEditingState;
+
+  PatientEntity get patient => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PatientEditingStateCopyWith<_PatientEditingState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PatientErrorStateCopyWith<$Res> {
+  factory _$PatientErrorStateCopyWith(
+          _PatientErrorState value, $Res Function(_PatientErrorState) then) =
+      __$PatientErrorStateCopyWithImpl<$Res>;
+  $Res call({ErrorEntity error});
+
+  $ErrorEntityCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$PatientErrorStateCopyWithImpl<$Res>
+    extends _$PatientBasicEditStateCopyWithImpl<$Res>
+    implements _$PatientErrorStateCopyWith<$Res> {
+  __$PatientErrorStateCopyWithImpl(
+      _PatientErrorState _value, $Res Function(_PatientErrorState) _then)
+      : super(_value, (v) => _then(v as _PatientErrorState));
+
+  @override
+  _PatientErrorState get _value => super._value as _PatientErrorState;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_PatientErrorState(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorEntity,
+    ));
+  }
+
+  @override
+  $ErrorEntityCopyWith<$Res> get error {
+    return $ErrorEntityCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PatientErrorState implements _PatientErrorState {
+  const _$_PatientErrorState({required this.error});
+
+  @override
+  final ErrorEntity error;
+
+  @override
+  String toString() {
+    return 'PatientBasicEditState.failure(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PatientErrorState &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PatientErrorStateCopyWith<_PatientErrorState> get copyWith =>
+      __$PatientErrorStateCopyWithImpl<_PatientErrorState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(PatientEntity patient) patientEdit,
+    required TResult Function(ErrorEntity error) failure,
+  }) {
+    return failure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEntity patient)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_PatientEditingState value) patientEdit,
+    required TResult Function(_PatientErrorState value) failure,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PatientErrorState implements PatientBasicEditState {
+  const factory _PatientErrorState({required ErrorEntity error}) =
+      _$_PatientErrorState;
+
+  ErrorEntity get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PatientErrorStateCopyWith<_PatientErrorState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

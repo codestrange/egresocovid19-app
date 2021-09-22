@@ -36,4 +36,46 @@ class MessagesEs extends Messages {
 
   @override
   String get homeSearchHint => 'Buscar por nombre o carnet';
+
+  @override
+  String get enumSexMale => 'Masculino';
+
+  @override
+  String get enumSexFemale => 'Femenino';
+
+  @override
+  String get enumSexOther => 'Otro';
+
+  @override
+  String get enumBloodTypeABminus => 'AB-';
+
+  @override
+  String get enumBloodTypeABplus => 'AB+';
+
+  @override
+  String get enumBloodTypeAminus => 'A-';
+
+  @override
+  String get enumBloodTypeAplus => 'A+';
+
+  @override
+  String get enumBloodTypeBminus => 'B-';
+
+  @override
+  String get enumBloodTypeBplus => 'B+';
+
+  @override
+  String get enumBloodTypeOminus => 'O-';
+
+  @override
+  String get enumBloodTypeOplus => 'O+';
+
+  @override
+  String get enumSkinColorWhite => 'Blanco';
+
+  @override
+  String get enumSkinColorBlack => 'Negro';
+
+  @override
+  String get enumSkinColorOther => 'Otro';
 }
