@@ -27,10 +27,9 @@ class _BoolInputWidgetState extends State<BoolInputWidget> {
     return Row(
       children: [
         Expanded(
-          child: Row(
-            children: [
-              Text(widget.labelText),
-            ],
+          child: Text(
+            widget.labelText,
+            textAlign: TextAlign.center,
           ),
         ),
         const SizedBox(
