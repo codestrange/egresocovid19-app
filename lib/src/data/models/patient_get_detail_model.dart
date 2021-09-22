@@ -34,12 +34,9 @@ class PatientGetDetailModel {
   final String ci;
   final String province;
   final String municipality;
-  @JsonKey(fromJson: sexFromInt, toJson: sexToInt)
   final Sex sex;
   final int age;
-  @JsonKey(fromJson: skinColorFromInt, toJson: skinColorToInt)
   final SkinColor skinColor;
-  @JsonKey(fromJson: bloodTypeFromInt, toJson: bloodTypeToInt)
   final BloodType? bloodType;
   final String address;
   final String polyclinic;

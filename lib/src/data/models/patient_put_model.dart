@@ -29,12 +29,9 @@ class PatientPutModel {
   final String? lastname;
   final String? ci;
   final String? municipalityCode;
-  @JsonKey(fromJson: sexNullableFromInt, toJson: sexNullableToInt)
   final Sex? sex;
   final int? age;
-  @JsonKey(fromJson: skinColorNullableFromInt, toJson: skinColorNullableToInt)
   final SkinColor? skinColor;
-  @JsonKey(fromJson: bloodTypeFromInt, toJson: bloodTypeToInt)
   final BloodType? bloodType;
   final String? address;
   final String? polyclinic;

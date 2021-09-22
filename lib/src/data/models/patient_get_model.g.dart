@@ -14,10 +14,10 @@ PatientGetModel _$PatientGetModelFromJson(Map<String, dynamic> json) {
     ci: json['ci'] as String,
     province: json['province'] as String,
     municipality: json['municipality'] as String,
-    sex: sexFromInt(json['sex'] as int),
+    sex: _$enumDecode(_$SexEnumMap, json['sex']),
     age: json['age'] as int,
-    skinColor: skinColorFromInt(json['skinColor'] as int),
-    bloodType: bloodTypeFromInt(json['bloodType'] as int?),
+    skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
+    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
     address: json['address'] as String,
     polyclinic: json['polyclinic'] as String,
     surgery: json['surgery'] as String,
@@ -43,10 +43,10 @@ Map<String, dynamic> _$PatientGetModelToJson(PatientGetModel instance) =>
       'ci': instance.ci,
       'province': instance.province,
       'municipality': instance.municipality,
-      'sex': sexToInt(instance.sex),
+      'sex': _$SexEnumMap[instance.sex],
       'age': instance.age,
-      'skinColor': skinColorToInt(instance.skinColor),
-      'bloodType': bloodTypeToInt(instance.bloodType),
+      'skinColor': _$SkinColorEnumMap[instance.skinColor],
+      'bloodType': _$BloodTypeEnumMap[instance.bloodType],
       'address': instance.address,
       'polyclinic': instance.polyclinic,
       'surgery': instance.surgery,
@@ -58,3 +58,63 @@ Map<String, dynamic> _$PatientGetModelToJson(PatientGetModel instance) =>
       'familyPathologicalHistory':
           instance.familyPathologicalHistory.map((e) => e.toJson()).toList(),
     };
+
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
+  }
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
+}
+
+const _$SexEnumMap = {
+  Sex.Female: 0,
+  Sex.Male: 1,
+  Sex.Other: 2,
+};
+
+const _$SkinColorEnumMap = {
+  SkinColor.White: 0,
+  SkinColor.Black: 1,
+  SkinColor.Other: 2,
+};
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$BloodTypeEnumMap = {
+  BloodType.Aplus: 0,
+  BloodType.Bplus: 1,
+  BloodType.ABplus: 2,
+  BloodType.Oplus: 3,
+  BloodType.Aminus: 4,
+  BloodType.Bminus: 5,
+  BloodType.ABminus: 6,
+  BloodType.Ominus: 7,
+};
