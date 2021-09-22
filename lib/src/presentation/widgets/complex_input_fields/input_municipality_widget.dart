@@ -56,6 +56,7 @@ class _MunicipalityInputWidgetState extends State<MunicipalityInputWidget> {
             widget.onProvinceChanged?.call(prov);
             setState(() {
               provinceSelected = prov;
+              municipalitySelected = null;
             });
           },
           provinceLabel: widget.provinceLabel,

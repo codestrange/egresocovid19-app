@@ -1,12 +1,12 @@
 name: egresocovid19
 description: Aplicación para la gestión de la información de las personas que han sufrido la pandemia del COVID-19.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 0.0.1+1
 
 environment:
-  sdk: '>=2.14.0 <3.0.0'
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   beamer:
@@ -55,8 +55,8 @@ flutter:
   uses-material-design: true
 
 flutter_icons:
-  android: 'launcher_icon'
-  adaptive_icon_background: 'assets/icon/background.png'
-  adaptive_icon_foreground: 'assets/icon/foreground.png'
+  android: "launcher_icon"
+  adaptive_icon_background: "assets/icon/background.png"
+  adaptive_icon_foreground: "assets/icon/foreground.png"
   ios: false
-  image_path: 'assets/icon/icon.jpg'
+  image_path: "assets/icon/icon.jpg"
