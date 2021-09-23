@@ -366,7 +366,9 @@ class _PatientEgresoEditForm extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const SubmmitButton<IPatientEgresoEditFormBloc>('Editar'),
+          const SubmmitButton<IPatientEgresoEditFormBloc>(
+            label: 'Editar',
+          ),
         ],
       ),
     );
