@@ -1,4 +1,9 @@
 import 'package:beamer/beamer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_lyform/flutter_lyform.dart';
+import 'package:get_it/get_it.dart';
+
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/diagnosis_way_enum.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
@@ -6,10 +11,6 @@ import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_lyform/flutter_lyform.dart';
-import 'package:get_it/get_it.dart';
 
 class PatientEgresoEditPage extends StatelessWidget {
   const PatientEgresoEditPage({
@@ -183,104 +184,185 @@ class _PatientEgresoEditForm extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Flexible(
-            child: _DetectionDateField(),
+          Section(
+            sectionTitle: 'Síntomas',
+            children: [
+              Flexible(
+                child: _SymptomsField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _DurationOfSymptomsField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _SymptomsField(),
+          Section(
+            sectionTitle: 'Diagnóstico',
+            children: [
+              Flexible(
+                child: _DetectionDateField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _DiagnosisWayField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _TestUsedInDiagnosisField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _DaysFromSymptomsToDiagnosisField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _NumberPcrPerformedField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _TimeFromDiagnosisToNegativeOrDischargeField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _DurationOfSymptomsField(),
+          Section(
+            sectionTitle: 'Forma de Contagio',
+            children: [
+              Flexible(
+                child: _FormOfContagionField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _WasHePartOfAnEventField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _DidHeWorkInTheAttentionToPositiveCasesField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _DiagnosisWayField(),
+          Section(
+            sectionTitle: 'Tiempo de Hospitalización',
+            sectionDescription:
+                'Para el tiempo de hospitalización se recomienda la forma '
+                'compacta número inicial del servicio. '
+                'Ejemplo:\n'
+                'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
+                'critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\n'
+                'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
+                'critico, y falleció - 2C3G1CrF.',
+            children: [
+              Flexible(
+                child: _HospitalizationTimeField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _TestUsedInDiagnosisField(),
+          Section(
+            sectionTitle: 'Ingreso',
+            children: [
+              Flexible(
+                child: _IncomesField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _DaysFromSymptomsToDiagnosisField(),
+          Section(
+            sectionTitle: 'Contactos',
+            children: [
+              Row(
+                children: const [
+                  SizedBox(width: 10),
+                  Expanded(
+                    flex: 35,
+                    child: Text('Anillo'),
+                  ),
+                  SizedBox(width: 5),
+                  Expanded(
+                    flex: 65,
+                    child: Text('¿Cuántos enfermaron?'),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 35,
+                    child: _ContactsFirstLevelField(),
+                  ),
+                  const SizedBox(width: 5),
+                  Flexible(
+                    flex: 65,
+                    child: _ContactsFirstLevelPositivesField(),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 35,
+                    child: _ContactsSecondLevelField(),
+                  ),
+                  const SizedBox(width: 5),
+                  Flexible(
+                    flex: 65,
+                    child: _ContactsSecondLevelPositivesField(),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Flexible(
+                    flex: 35,
+                    child: _ContactsThirdLevelField(),
+                  ),
+                  const SizedBox(width: 5),
+                  Flexible(
+                    flex: 65,
+                    child: _ContactsThirdLevelPositivesField(),
+                  ),
+                ],
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _NumberPcrPerformedField(),
+          Section(
+            sectionTitle: 'Tratamiento Recibido',
+            children: [
+              Flexible(
+                child: _TreatmentsReceivedField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _AntibioticsField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _TimeFromDiagnosisToNegativeOrDischargeField(),
+          Section(
+            sectionTitle: 'Profilaxis',
+            children: [
+              Flexible(
+                child: _ProphylaxisField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _AnotherVaccineAgainstCovidField(),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _FormOfContagionField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _WasHePartOfAnEventField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _DidHeWorkInTheAttentionToPositiveCasesField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _HospitalizationTimeField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _IncomesField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsFirstLevelField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsFirstLevelPositivesField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsSecondLevelField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsSecondLevelPositivesField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsThirdLevelField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ContactsThirdLevelPositivesField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _TreatmentsReceivedField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _AntibioticsField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _ProphylaxisField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _AnotherVaccineAgainstCovidField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _AftermathField(),
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: _OthersAftermathField(),
+          Section(
+            sectionTitle: 'Secuelas',
+            children: [
+              const SizedBox(height: 8),
+              Flexible(
+                child: _AftermathField(),
+              ),
+              const SizedBox(height: 8),
+              Flexible(
+                child: _OthersAftermathField(),
+              ),
+            ],
           ),
           const SizedBox(
             height: 10,
@@ -288,6 +370,56 @@ class _PatientEgresoEditForm extends StatelessWidget {
           const SubmmitButton<IPatientEgresoEditFormBloc>('Editar'),
         ],
       ),
+    );
+  }
+}
+
+class Section extends StatelessWidget {
+  const Section({
+    Key? key,
+    required this.sectionTitle,
+    this.sectionDescription,
+    required this.children,
+  }) : super(key: key);
+  final String sectionTitle;
+  final String? sectionDescription;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          sectionTitle,
+          style: Theme.of(context).textTheme.subtitle1,
+        ),
+        Row(
+          children: const [
+            Expanded(
+              child: Divider(),
+            ),
+          ],
+        ),
+        if (sectionDescription != null) ...[
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            sectionDescription!,
+            textAlign: TextAlign.justify,
+            style: Theme.of(context).textTheme.bodyText2,
+          )
+        ],
+        const SizedBox(
+          height: 8,
+        ),
+        ...children,
+        const SizedBox(
+          height: 10,
+        ),
+      ],
     );
   }
 }
@@ -300,7 +432,7 @@ class _OthersAftermathField extends StatelessWidget {
       bloc: form.othersAftermath,
       builder: (context, state) => StringListInputWidget(
         stringList: state.value ?? [],
-        labelText: 'Otras Secuelas',
+        labelText: 'Otras secuelas',
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -354,7 +486,7 @@ class _AnotherVaccineAgainstCovidField extends StatelessWidget {
     return InputBlocBuilder<String?>(
       bloc: form.anotherVaccineAgainstCovid,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Otras vacunas usadas contra la Covid19',
+        labelText: 'Otras vacunas usadas',
         errorText: state.error,
         controller: TextEditing.fromValue(state.value ?? ''),
         onChanged: (value) => form.anotherVaccineAgainstCovid.dirty(
@@ -451,7 +583,7 @@ class _ContactsThirdLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a tercer nivel positivos',
+        labelText: 'Cantidad',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -474,7 +606,7 @@ class _ContactsThirdLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a tercer nivel',
+        labelText: 'Tercero',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -497,7 +629,7 @@ class _ContactsSecondLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a segundo nivel positivos',
+        labelText: 'Cantidad',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -520,7 +652,7 @@ class _ContactsSecondLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a segundo nivel',
+        labelText: 'Segundo',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -543,7 +675,7 @@ class _ContactsFirstLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a primer nivel positivos',
+        labelText: 'Cantidad',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -566,7 +698,7 @@ class _ContactsFirstLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de contactos a primer nivel',
+        labelText: 'Primero',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -619,7 +751,7 @@ class _HospitalizationTimeField extends StatelessWidget {
     return InputBlocBuilder<String?>(
       bloc: form.hospitalizationTime,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Tiempo de Hospitalización (Forma Compacta)',
+        labelText: 'Forma Compacta',
         errorText: state.error,
         controller: TextEditing.fromValue(state.value ?? ''),
         onChanged: (value) => form.hospitalizationTime.dirty(
@@ -683,19 +815,29 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
     final form = context.read<IPatientEgresoEditFormBloc>();
     return InputBlocBuilder<int?>(
       bloc: form.timeFromDiagnosisToNegativeOrDischarge,
-      builder: (context, state) => TextInputWidget(
-        labelText: 'Tiempo tardado en negativizar o en recibir'
-            ' el alta clínica a partir del diagnóstico (días)',
-        keyboardType: TextInputType.number,
-        errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
-        onChanged: (value) => form.timeFromDiagnosisToNegativeOrDischarge.dirty(
-          int.tryParse(
-            value.trim(),
+      builder: (context, state) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
-        ),
+          TextInputWidget(
+            labelText: 'Cant. de días',
+            keyboardType: TextInputType.number,
+            errorText: state.error,
+            controller: TextEditing.fromValue(
+              state.value == null ? '' : state.value.toString(),
+            ),
+            onChanged: (value) =>
+                form.timeFromDiagnosisToNegativeOrDischarge.dirty(
+              int.tryParse(
+                value.trim(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -731,7 +873,7 @@ class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.daysFromSymptomsToDiagnosis,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad de días con síntomas hasta el diagnostico',
+        labelText: 'Días con síntomas hasta diagnóstico',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -784,7 +926,7 @@ class _DurationOfSymptomsField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.durationOfSymptoms,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Duración de los Síntomas (días)',
+        labelText: 'Duración de los síntomas (en días)',
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -808,7 +950,7 @@ class _SymptomsField extends StatelessWidget {
       bloc: form.symptoms,
       builder: (context, state) => StringListInputWidget(
         stringList: state.value ?? [],
-        labelText: 'Síntomas',
+        labelText: 'Síntoma',
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
