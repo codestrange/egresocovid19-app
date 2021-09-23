@@ -15,62 +15,28 @@ part 'municipality_state.dart';
 class MunicipalityBloc extends Bloc<MunicipalityEvent, MunicipalityState> {
   MunicipalityBloc({
     required this.provinceService,
-  }) : super(const MunicipalityState.initial()) {
+  }) : super(const MunicipalityState.municipalityState()) {
     on<ProvincesRequested>((event, emit) async {
-      await state.maybeMap(
-        municipalityCodeReady: (state) async => emit(
-          MunicipalityState.provinceSelection(provinces: state.provinces),
-        ),
-        municipalitySelection: (state) async => emit(
-          MunicipalityState.provinceSelection(provinces: state.provinces),
-        ),
-        initial: (_) async {
-          emit(const MunicipalityState.inProgress());
-          final either = await provinceService.getProvinces();
-          await either.fold(
-            (error) async {
-              return Future.delayed(
-                const Duration(seconds: 2),
-                () => add(const MunicipalityEvent.provincesRequested()),
-              );
-            },
-            (entity) async {
-              emit(MunicipalityState.provinceSelection(provinces: entity));
-            },
+      final either = await provinceService.getProvinces();
+      await either.fold(
+        (error) async {
+          return Future.delayed(
+            const Duration(seconds: 3),
+            () => add(const MunicipalityEvent.provincesRequested()),
           );
         },
-        orElse: () {},
-      );
-    });
-    on<ProvinceSelected>((event, emit) async {
-      state.maybeMap(
-        municipalityCodeReady: (state) => emit(
-          MunicipalityState.municipalitySelection(
-            provinces: state.provinces,
-            provinceSelected: state.provinceSelected,
+        (entity) async => emit(
+          MunicipalityState.municipalityState(
+            provinces: entity,
           ),
         ),
-        provinceSelection: (state) => emit(
-          MunicipalityState.municipalitySelection(
-            provinces: state.provinces,
-            provinceSelected: event.entity,
-          ),
-        ),
-        orElse: () async {},
       );
     });
-    on<MunicipalitySelected>((event, emit) async {
-      state.maybeMap(
-        municipalityCodeReady: (state) => emit(
-          MunicipalityState.municipalityCodeReady(
-            provinces: state.provinces,
-            provinceSelected: state.provinceSelected,
-            municipalitySelected: event.entity,
-          ),
-        ),
-        orElse: () {},
-      );
-    });
+    on<MunicipalityRebuild>(
+      (event, emit) {
+        emit(state.copyWith(rebuildTrueOrFalse: !state.rebuildTrueOrFalse));
+      },
+    );
   }
 
   final IProvinceService provinceService;
