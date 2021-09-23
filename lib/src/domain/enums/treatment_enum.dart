@@ -21,8 +21,6 @@ enum Treatment {
   Betamethasone,
   @JsonValue(9)
   Italizumab,
-  @JsonValue(10)
-  Antibiotics,
 }
 
 Treatment treatmentFromInt(int value) {

@@ -1,4 +1,5 @@
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -27,7 +28,7 @@ class ContagionInputWidget extends StatelessWidget {
           value: contagion,
           child: Row(
             children: <Widget>[
-              Text(contagion.toString()), //TODO: Localization
+              Text(contagion.visualName()),
             ],
           ),
         );

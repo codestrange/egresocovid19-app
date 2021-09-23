@@ -160,7 +160,6 @@ const _$TreatmentEnumMap = {
   Treatment.Prevengovir: 7,
   Treatment.Betamethasone: 8,
   Treatment.Italizumab: 9,
-  Treatment.Antibiotics: 10,
 };
 
 const _$ProphylaxisEnumMap = {
@@ -178,7 +177,6 @@ const _$ProphylaxisEnumMap = {
   Prophylaxis.SoveranaPlus: 11,
   Prophylaxis.Abdala: 12,
   Prophylaxis.Covid19Previously: 13,
-  Prophylaxis.AnotherVaccineAgainstCovid: 14,
 };
 
 const _$AftermathEnumMap = {

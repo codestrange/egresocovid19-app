@@ -342,7 +342,7 @@ class _AftermathField extends StatelessWidget {
           }
           form.aftermath.dirty(newList);
         },
-        itemToString: (item) => item.toString(),
+        itemToString: (item) => item.visualName(),
       ),
     );
   }
@@ -384,7 +384,7 @@ class _ProphylaxisField extends StatelessWidget {
           }
           form.prophylaxis.dirty(newList);
         },
-        itemToString: (item) => item.toString(),
+        itemToString: (item) => item.visualName(),
       ),
     );
   }
@@ -439,7 +439,7 @@ class _TreatmentsReceivedField extends StatelessWidget {
           }
           form.treatmentsReceived.dirty(newList);
         },
-        itemToString: (item) => item.toString(),
+        itemToString: (item) => item.visualName(),
       ),
     );
   }

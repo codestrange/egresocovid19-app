@@ -29,8 +29,6 @@ enum Prophylaxis {
   Abdala,
   @JsonValue(13)
   Covid19Previously,
-  @JsonValue(14)
-  AnotherVaccineAgainstCovid,
 }
 
 Prophylaxis prophylaxisFromInt(int value) {

@@ -55,7 +55,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
                   value: income,
                   child: Row(
                     children: <Widget>[
-                      Text(income.toString()), //TODO: Localization
+                      Text(income.visualName()),
                     ],
                   ),
                 );
