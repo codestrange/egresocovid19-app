@@ -51,8 +51,8 @@ class HomeLocation extends BeamLocation<BeamState> {
         '/patients',
         '/patients/new',
         '/patients/:$PATIENT_ID/view',
-        '/patients/:$PATIENT_ID/basic-edit',
-        '/patients/:$PATIENT_ID/egreso-edit',
+        '/patients/:$PATIENT_ID/edit',
+        '/patients/:$PATIENT_ID/edit/egreso',
       ];
 
   @override
@@ -66,10 +66,12 @@ class HomeLocation extends BeamLocation<BeamState> {
         if (state.contains(1, 'new')) PatientCreatePage.getPage(context),
         if (state.contains(2, 'view'))
           PatientViewPage.getPage(context, state.patientId),
-        if (state.contains(2, 'basic-edit'))
-          PatientBasicEditPage.getPage(context, state.patientId),
-        if (state.contains(2, 'egreso-edit'))
-          PatientEgresoEditPage.getPage(context, state.patientId),
+        if (state.contains(2, 'edit')) ...[
+          if (state.contains(3, 'egreso'))
+            PatientEgresoEditPage.getPage(context, state.patientId)
+          else
+            PatientBasicEditPage.getPage(context, state.patientId),
+        ]
       ]
     ];
   }
