@@ -92,8 +92,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
     validators: [
       StringValidator.required,
       StringValidator.integer,
-      StringValidator.lengthGreaterThan(11),
-      StringValidator.lengthLowerThan(11)
+      StringValidator.lengthGreaterThan(10),
+      StringValidator.lengthLowerThan(12)
     ],
   );
 
