@@ -1,20 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum Income {
+  @JsonValue(0)
   Home,
+  @JsonValue(1)
   IsolationCenter,
+  @JsonValue(2)
   HospitalRoom,
+  @JsonValue(3)
   IntermediateTherapy,
+  @JsonValue(4)
   IntensiveTherapy,
-}
-
-Income incomeFromInt(int value) {
-  if (value >= Income.values.length) {
-    throw Exception(
-      'Try to convert $value to Income enum when max value of Income is ${Income.values.length - 1}',
-    );
-  }
-  return Income.values[value];
-}
-
-int incomeToInt(Income value) {
-  return value.index;
 }

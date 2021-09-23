@@ -15,7 +15,7 @@ PatientPutModel _$PatientPutModelFromJson(Map<String, dynamic> json) {
     sex: sexNullableFromInt(json['sex'] as int?),
     age: json['age'] as int?,
     skinColor: skinColorNullableFromInt(json['skinColor'] as int?),
-    bloodType: bloodTypeFromInt(json['bloodType'] as int?),
+    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
     address: json['address'] as String?,
     polyclinic: json['polyclinic'] as String?,
     surgery: json['surgery'] as String?,
@@ -42,7 +42,7 @@ Map<String, dynamic> _$PatientPutModelToJson(PatientPutModel instance) =>
       'sex': sexNullableToInt(instance.sex),
       'age': instance.age,
       'skinColor': skinColorNullableToInt(instance.skinColor),
-      'bloodType': bloodTypeToInt(instance.bloodType),
+      'bloodType': _$BloodTypeEnumMap[instance.bloodType],
       'address': instance.address,
       'polyclinic': instance.polyclinic,
       'surgery': instance.surgery,
@@ -54,3 +54,51 @@ Map<String, dynamic> _$PatientPutModelToJson(PatientPutModel instance) =>
       'familyPathologicalHistory':
           instance.familyPathologicalHistory?.map((e) => e.toJson()).toList(),
     };
+
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
+  }
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
+}
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$BloodTypeEnumMap = {
+  BloodType.Aplus: 0,
+  BloodType.Bplus: 1,
+  BloodType.ABplus: 2,
+  BloodType.Oplus: 3,
+  BloodType.Aminus: 4,
+  BloodType.Bminus: 5,
+  BloodType.ABminus: 6,
+  BloodType.Ominus: 7,
+};

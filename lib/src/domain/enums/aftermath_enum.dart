@@ -1,29 +1,32 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum Aftermath {
+  @JsonValue(0)
   Fatigue,
+  @JsonValue(1)
   Headache,
+  @JsonValue(2)
   Alopecia,
+  @JsonValue(3)
   RespiratorySymptoms,
+  @JsonValue(4)
   MuscleBoneNeuropathicPain,
+  @JsonValue(5)
   PsychologicalPsychiatricDisorders,
+  @JsonValue(6)
   SexualDisorders,
+  @JsonValue(7)
   SleepDisorder,
+  @JsonValue(8)
   PersistenceOfLossOfSmell,
+  @JsonValue(9)
   PersistenceOfLossOfAppetite,
+  @JsonValue(10)
   GastrointestinalSymptoms,
+  @JsonValue(11)
   Dizziness,
+  @JsonValue(12)
   DesiresToVomit,
+  @JsonValue(13)
   Others,
-}
-
-Aftermath aftermathFromInt(int value) {
-  if (value >= Aftermath.values.length) {
-    throw Exception(
-      'Try to convert $value to Aftermath enum when max value of Aftermath is ${Aftermath.values.length - 1}',
-    );
-  }
-  return Aftermath.values[value];
-}
-
-int aftermathToInt(Aftermath value) {
-  return value.index;
 }
