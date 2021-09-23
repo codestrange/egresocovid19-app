@@ -11,6 +11,8 @@ export 'patient_basic_edit/patient_basic_edit_bloc.dart';
 export 'patient_create/patient_create_bloc.dart';
 export 'patient_create/patient_create_bloc.dart';
 export 'patient_egreso_edit/patient_egreso_edit_bloc.dart';
+export 'patient_egreso_edit_form/patient_egres_edit_form_autocomplete_bloc.dart';
+export 'patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart';
 export 'patient_view/patient_view_bloc.dart';
 export 'polyclinic/polyclinic_autocomplete_bloc.dart';
 export 'popularcouncil/popularcouncil_autocomplete_bloc.dart';

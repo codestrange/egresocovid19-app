@@ -430,6 +430,7 @@ class _OthersAftermathField extends StatelessWidget {
     return InputBlocBuilder<List<String>?>(
       bloc: form.othersAftermath,
       builder: (context, state) => StringListInputWidget(
+        autoCompleteBloc: GetIt.I.get<OtherAftermathAutoCompleteBloc>(),
         stringList: state.value ?? [],
         labelText: 'Otras secuelas',
         addString: (value) {
@@ -482,15 +483,25 @@ class _AnotherVaccineAgainstCovidField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
+    final autocomplete = GetIt.I.get<AnotherVaccinesAutoCompleteBloc>();
     return InputBlocBuilder<String?>(
       bloc: form.anotherVaccineAgainstCovid,
-      builder: (context, state) => TextInputWidget(
+      builder: (context, state) => AutoCompleteInputWidget(
+        suggestionsStream: autocomplete.suggestionsStream,
         labelText: 'Otras vacunas usadas',
         errorText: state.error,
-        controller: TextEditing.fromValue(state.value ?? ''),
-        onChanged: (value) => form.anotherVaccineAgainstCovid.dirty(
-          value.trim(),
-        ),
+        initialInput: state.value ?? '',
+        onChanged: (value) {
+          autocomplete.changed(value);
+          form.anotherVaccineAgainstCovid.dirty(
+            value.trim(),
+          );
+        },
+        onSelected: (value) {
+          form.anotherVaccineAgainstCovid.dirty(
+            (value as String).trim(),
+          );
+        },
       ),
     );
   }
@@ -527,6 +538,7 @@ class _AntibioticsField extends StatelessWidget {
     return InputBlocBuilder<List<String>?>(
       bloc: form.antibiotics,
       builder: (context, state) => StringListInputWidget(
+        autoCompleteBloc: GetIt.I.get<AntibioticsAutoCompleteBloc>(),
         stringList: state.value ?? [],
         labelText: 'Antibióticos',
         addString: (value) {
@@ -950,6 +962,7 @@ class _SymptomsField extends StatelessWidget {
     return InputBlocBuilder<List<String>?>(
       bloc: form.symptoms,
       builder: (context, state) => StringListInputWidget(
+        autoCompleteBloc: GetIt.I.get<SymptompsAutoCompleteBloc>(),
         stringList: state.value ?? [],
         labelText: 'Síntoma',
         addString: (value) {
