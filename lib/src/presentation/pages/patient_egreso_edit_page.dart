@@ -725,14 +725,16 @@ class _IncomesField extends StatelessWidget {
         errorText: state.error,
         incomes: state.value ?? [],
         addIncomeEntity: (value) {
-          if (state.value == null ||
-              state.value!.any((e) => e.income == value.income)) return;
-          final newIncomes = state.value! + [value];
+          var newIncomes = <IncomeEntity>[];
+          if (state.value == null) {
+            newIncomes = [value];
+          } else {
+            newIncomes = state.value! + [value];
+          }
           form.incomes.dirty(newIncomes);
         },
         removeIncomeEntity: (value) {
-          if (state.value == null ||
-              !state.value!.any((e) => e.income == value)) return;
+          if (state.value == null) return;
           final newIncomes = <IncomeEntity>[];
           state.value!.removeWhere((e) => e.income == value);
           newIncomes.addAll(state.value!);

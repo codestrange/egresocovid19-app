@@ -44,7 +44,6 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
         const SizedBox(
           height: 10,
         ),
-
         // new Income Input
         BlocBuilder<IncomeBloc, IncomeState>(
           bloc: incomeInputBloc,
@@ -61,9 +60,9 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
                 );
               }).toList(),
               onChanged: (value) {
-                if (value != null) return;
+                if (value == null) return;
                 incomeInputBloc.add(
-                  IncomeEvent.incomeChanged(value!),
+                  IncomeEvent.incomeChanged(value),
                 );
               },
               decoration: TextFieldDecorations.decoration(
@@ -74,13 +73,13 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
           },
         ),
         const SizedBox(
-          height: 4,
+          height: 6,
         ),
         BlocBuilder<IncomeBloc, IncomeState>(
           bloc: incomeInputBloc,
           builder: (context, state) {
-            return _IncomeTreatmentInputWidget(
-              initialValue: state.days != 0 ? state.days.toString() : null,
+            return _IncomeDaysInputWidget(
+              initialValue: state.days != 0 ? state.days.toString() : '',
               onChanged: (input) =>
                   incomeInputBloc.add(IncomeEvent.daysChanged(input)),
             );
@@ -92,14 +91,19 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
           bloc: incomeInputBloc,
           builder: (context, state) {
             return ElevatedButton(
-              onPressed: state.income != null
+              onPressed: state.income != null && state.days > 0
                   ? () {
                       final income = IncomeEntity(
                         income: state.income!,
                         days: state.days,
                       );
+                      if (widget.incomes
+                          .any((e) => e.income == income.income)) {
+                        return;
+                      }
                       widget.addIncomeEntity?.call(income);
                       incomeInputBloc.add(const IncomeEvent.cleared());
+                      setState(() {});
                     }
                   : null,
               style: ElevatedButton.styleFrom(
@@ -119,8 +123,14 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
               .map(
                 (e) => Chip(
                   padding: const EdgeInsets.all(3),
-                  label: Text(e.income.toString()),
-                  onDeleted: () => widget.removeIncomeEntity?.call(e.income),
+                  label: Text('${e.income.visualName()} - ${e.days} días'),
+                  onDeleted: () {
+                    if (!widget.incomes.any((o) => o.income == e.income)) {
+                      return;
+                    }
+                    widget.removeIncomeEntity?.call(e.income);
+                    setState(() {});
+                  },
                 ),
               )
               .toList(),
@@ -130,8 +140,8 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
   }
 }
 
-class _IncomeTreatmentInputWidget extends StatefulWidget {
-  const _IncomeTreatmentInputWidget({
+class _IncomeDaysInputWidget extends StatefulWidget {
+  const _IncomeDaysInputWidget({
     Key? key,
     this.initialValue,
     this.onChanged,
@@ -145,12 +155,10 @@ class _IncomeTreatmentInputWidget extends StatefulWidget {
   final String? hintText;
 
   @override
-  State<_IncomeTreatmentInputWidget> createState() =>
-      _IncomeTreatmentInputWidgetState();
+  State<_IncomeDaysInputWidget> createState() => _IncomeDaysInputWidgetState();
 }
 
-class _IncomeTreatmentInputWidgetState
-    extends State<_IncomeTreatmentInputWidget> {
+class _IncomeDaysInputWidgetState extends State<_IncomeDaysInputWidget> {
   String? errorText;
 
   @override
@@ -164,7 +172,11 @@ class _IncomeTreatmentInputWidgetState
         final int? number = int.tryParse(value);
         if (number == null) {
           setState(() {
-            errorText = 'La cantidad de días debe ser un entero';
+            errorText = 'La cantidad de días debe ser un número';
+          });
+        } else if (number <= 0) {
+          setState(() {
+            errorText = 'La cantidad de días debe ser mayor que 0';
           });
         } else {
           widget.onChanged?.call(number);
