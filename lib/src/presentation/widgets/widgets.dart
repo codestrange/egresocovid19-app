@@ -9,6 +9,7 @@ export 'patient_egreso_fields/input_datetime_widget.dart';
 export 'patient_egreso_fields/input_diagnosis_way_widget.dart';
 export 'patient_egreso_fields/input_string_list_widget.dart';
 export 'patient_egreso_fields/input_test_diagnosis_widget.dart';
+export 'patient_egreso_fields/multi_select_dropdown_widget.dart';
 export 'patient_fields/input_bloodtype_widget.dart';
 export 'patient_fields/input_neighborhood_widget.dart';
 export 'patient_fields/input_pathology_widget.dart';
