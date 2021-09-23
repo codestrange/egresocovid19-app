@@ -16,8 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MunicipalityEventTearOff {
   const _$MunicipalityEventTearOff();
 
-  ProvincesRequested provincesRequested() {
-    return const ProvincesRequested();
+  ProvincesRequested provincesRequested(
+      {ProvinceEntity? provSelected, MunicipalityEntity? muncSelected}) {
+    return ProvincesRequested(
+      provSelected: provSelected,
+      muncSelected: muncSelected,
+    );
   }
 
   ProvinceSelected provinceSelected(ProvinceEntity entity) {
@@ -40,14 +44,18 @@ const $MunicipalityEvent = _$MunicipalityEventTearOff();
 mixin _$MunicipalityEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() provincesRequested,
+    required TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)
+        provincesRequested,
     required TResult Function(ProvinceEntity entity) provinceSelected,
     required TResult Function(MunicipalityEntity entity) municipalitySelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? provincesRequested,
+    TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)?
+        provincesRequested,
     TResult Function(ProvinceEntity entity)? provinceSelected,
     TResult Function(MunicipalityEntity entity)? municipalitySelected,
     required TResult orElse(),
@@ -92,6 +100,10 @@ abstract class $ProvincesRequestedCopyWith<$Res> {
   factory $ProvincesRequestedCopyWith(
           ProvincesRequested value, $Res Function(ProvincesRequested) then) =
       _$ProvincesRequestedCopyWithImpl<$Res>;
+  $Res call({ProvinceEntity? provSelected, MunicipalityEntity? muncSelected});
+
+  $ProvinceEntityCopyWith<$Res>? get provSelected;
+  $MunicipalityEntityCopyWith<$Res>? get muncSelected;
 }
 
 /// @nodoc
@@ -104,6 +116,45 @@ class _$ProvincesRequestedCopyWithImpl<$Res>
 
   @override
   ProvincesRequested get _value => super._value as ProvincesRequested;
+
+  @override
+  $Res call({
+    Object? provSelected = freezed,
+    Object? muncSelected = freezed,
+  }) {
+    return _then(ProvincesRequested(
+      provSelected: provSelected == freezed
+          ? _value.provSelected
+          : provSelected // ignore: cast_nullable_to_non_nullable
+              as ProvinceEntity?,
+      muncSelected: muncSelected == freezed
+          ? _value.muncSelected
+          : muncSelected // ignore: cast_nullable_to_non_nullable
+              as MunicipalityEntity?,
+    ));
+  }
+
+  @override
+  $ProvinceEntityCopyWith<$Res>? get provSelected {
+    if (_value.provSelected == null) {
+      return null;
+    }
+
+    return $ProvinceEntityCopyWith<$Res>(_value.provSelected!, (value) {
+      return _then(_value.copyWith(provSelected: value));
+    });
+  }
+
+  @override
+  $MunicipalityEntityCopyWith<$Res>? get muncSelected {
+    if (_value.muncSelected == null) {
+      return null;
+    }
+
+    return $MunicipalityEntityCopyWith<$Res>(_value.muncSelected!, (value) {
+      return _then(_value.copyWith(muncSelected: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -111,49 +162,74 @@ class _$ProvincesRequestedCopyWithImpl<$Res>
 class _$ProvincesRequested
     with DiagnosticableTreeMixin
     implements ProvincesRequested {
-  const _$ProvincesRequested();
+  const _$ProvincesRequested({this.provSelected, this.muncSelected});
+
+  @override
+  final ProvinceEntity? provSelected;
+  @override
+  final MunicipalityEntity? muncSelected;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MunicipalityEvent.provincesRequested()';
+    return 'MunicipalityEvent.provincesRequested(provSelected: $provSelected, muncSelected: $muncSelected)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(
-          DiagnosticsProperty('type', 'MunicipalityEvent.provincesRequested'));
+      ..add(DiagnosticsProperty('type', 'MunicipalityEvent.provincesRequested'))
+      ..add(DiagnosticsProperty('provSelected', provSelected))
+      ..add(DiagnosticsProperty('muncSelected', muncSelected));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ProvincesRequested);
+    return identical(this, other) ||
+        (other is ProvincesRequested &&
+            (identical(other.provSelected, provSelected) ||
+                const DeepCollectionEquality()
+                    .equals(other.provSelected, provSelected)) &&
+            (identical(other.muncSelected, muncSelected) ||
+                const DeepCollectionEquality()
+                    .equals(other.muncSelected, muncSelected)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(provSelected) ^
+      const DeepCollectionEquality().hash(muncSelected);
+
+  @JsonKey(ignore: true)
+  @override
+  $ProvincesRequestedCopyWith<ProvincesRequested> get copyWith =>
+      _$ProvincesRequestedCopyWithImpl<ProvincesRequested>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() provincesRequested,
+    required TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)
+        provincesRequested,
     required TResult Function(ProvinceEntity entity) provinceSelected,
     required TResult Function(MunicipalityEntity entity) municipalitySelected,
   }) {
-    return provincesRequested();
+    return provincesRequested(provSelected, muncSelected);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? provincesRequested,
+    TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)?
+        provincesRequested,
     TResult Function(ProvinceEntity entity)? provinceSelected,
     TResult Function(MunicipalityEntity entity)? municipalitySelected,
     required TResult orElse(),
   }) {
     if (provincesRequested != null) {
-      return provincesRequested();
+      return provincesRequested(provSelected, muncSelected);
     }
     return orElse();
   }
@@ -184,7 +260,15 @@ class _$ProvincesRequested
 }
 
 abstract class ProvincesRequested implements MunicipalityEvent {
-  const factory ProvincesRequested() = _$ProvincesRequested;
+  const factory ProvincesRequested(
+      {ProvinceEntity? provSelected,
+      MunicipalityEntity? muncSelected}) = _$ProvincesRequested;
+
+  ProvinceEntity? get provSelected => throw _privateConstructorUsedError;
+  MunicipalityEntity? get muncSelected => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ProvincesRequestedCopyWith<ProvincesRequested> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -271,7 +355,9 @@ class _$ProvinceSelected
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() provincesRequested,
+    required TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)
+        provincesRequested,
     required TResult Function(ProvinceEntity entity) provinceSelected,
     required TResult Function(MunicipalityEntity entity) municipalitySelected,
   }) {
@@ -281,7 +367,9 @@ class _$ProvinceSelected
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? provincesRequested,
+    TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)?
+        provincesRequested,
     TResult Function(ProvinceEntity entity)? provinceSelected,
     TResult Function(MunicipalityEntity entity)? municipalitySelected,
     required TResult orElse(),
@@ -412,7 +500,9 @@ class _$MunicipalitySelected
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() provincesRequested,
+    required TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)
+        provincesRequested,
     required TResult Function(ProvinceEntity entity) provinceSelected,
     required TResult Function(MunicipalityEntity entity) municipalitySelected,
   }) {
@@ -422,7 +512,9 @@ class _$MunicipalitySelected
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? provincesRequested,
+    TResult Function(
+            ProvinceEntity? provSelected, MunicipalityEntity? muncSelected)?
+        provincesRequested,
     TResult Function(ProvinceEntity entity)? provinceSelected,
     TResult Function(MunicipalityEntity entity)? municipalitySelected,
     required TResult orElse(),
