@@ -1,6 +1,17 @@
 export 'buttons/main_button_widget.dart';
 export 'buttons/submmit_button_widget.dart';
+export 'complex_input_fields/input_municipality_widget.dart';
+export 'complex_input_fields/input_pathologicalhist_widget.dart';
+export 'patient_fields/input_bloodtype_widget.dart';
+export 'patient_fields/input_neighborhood_widget.dart';
+export 'patient_fields/input_pathology_widget.dart';
+export 'patient_fields/input_polyclinic_widget.dart';
+export 'patient_fields/input_popularcouncil_widget.dart';
+export 'patient_fields/input_sex_widget.dart';
+export 'patient_fields/input_skincolor_widget.dart';
+export 'patient_fields/input_surgery_widget.dart';
 export 'placeholder_illustration_dart.dart';
+export 'text_fields/autocomplete_input_widget.dart';
 export 'text_fields/input_email_widget.dart';
 export 'text_fields/input_password_widget.dart';
 export 'text_fields/input_widget.dart';

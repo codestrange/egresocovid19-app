@@ -92,11 +92,149 @@ abstract class Messages {
     Locale('es')
   ];
 
-  /// The conventional newborn programmer greeting
+  /// No description provided for @appName.
   ///
   /// In es, this message translates to:
-  /// **'Hola Mundo!'**
-  String get helloWorld;
+  /// **'Egreso COVID-19'**
+  String get appName;
+
+  /// No description provided for @homePageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Inicio'**
+  String get homePageTitle;
+
+  /// No description provided for @homeDrawerTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Egreso\nCOVID-19'**
+  String get homeDrawerTitle;
+
+  /// No description provided for @homeWelcomeMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.'**
+  String get homeWelcomeMessage;
+
+  /// No description provided for @homeNotFoundMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'No se encontraron pacientes'**
+  String get homeNotFoundMessage;
+
+  /// No description provided for @homeErrorMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar los pacientes'**
+  String get homeErrorMessage;
+
+  /// No description provided for @homeTooltipDetail.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver detalles del paciente'**
+  String get homeTooltipDetail;
+
+  /// No description provided for @homeTooltipAdd.
+  ///
+  /// In es, this message translates to:
+  /// **'Agregar paciente'**
+  String get homeTooltipAdd;
+
+  /// No description provided for @homeCloseSession.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar sesión'**
+  String get homeCloseSession;
+
+  /// No description provided for @homeSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar por nombre o carnet'**
+  String get homeSearchHint;
+
+  /// No description provided for @enumSexMale.
+  ///
+  /// In es, this message translates to:
+  /// **'Masculino'**
+  String get enumSexMale;
+
+  /// No description provided for @enumSexFemale.
+  ///
+  /// In es, this message translates to:
+  /// **'Femenino'**
+  String get enumSexFemale;
+
+  /// No description provided for @enumSexOther.
+  ///
+  /// In es, this message translates to:
+  /// **'Otro'**
+  String get enumSexOther;
+
+  /// No description provided for @enumBloodTypeABminus.
+  ///
+  /// In es, this message translates to:
+  /// **'AB-'**
+  String get enumBloodTypeABminus;
+
+  /// No description provided for @enumBloodTypeABplus.
+  ///
+  /// In es, this message translates to:
+  /// **'AB+'**
+  String get enumBloodTypeABplus;
+
+  /// No description provided for @enumBloodTypeAminus.
+  ///
+  /// In es, this message translates to:
+  /// **'A-'**
+  String get enumBloodTypeAminus;
+
+  /// No description provided for @enumBloodTypeAplus.
+  ///
+  /// In es, this message translates to:
+  /// **'A+'**
+  String get enumBloodTypeAplus;
+
+  /// No description provided for @enumBloodTypeBminus.
+  ///
+  /// In es, this message translates to:
+  /// **'B-'**
+  String get enumBloodTypeBminus;
+
+  /// No description provided for @enumBloodTypeBplus.
+  ///
+  /// In es, this message translates to:
+  /// **'B+'**
+  String get enumBloodTypeBplus;
+
+  /// No description provided for @enumBloodTypeOminus.
+  ///
+  /// In es, this message translates to:
+  /// **'O-'**
+  String get enumBloodTypeOminus;
+
+  /// No description provided for @enumBloodTypeOplus.
+  ///
+  /// In es, this message translates to:
+  /// **'O+'**
+  String get enumBloodTypeOplus;
+
+  /// No description provided for @enumSkinColorWhite.
+  ///
+  /// In es, this message translates to:
+  /// **'Blanco'**
+  String get enumSkinColorWhite;
+
+  /// No description provided for @enumSkinColorBlack.
+  ///
+  /// In es, this message translates to:
+  /// **'Negro'**
+  String get enumSkinColorBlack;
+
+  /// No description provided for @enumSkinColorOther.
+  ///
+  /// In es, this message translates to:
+  /// **'Otro'**
+  String get enumSkinColorOther;
 }
 
 class _MessagesDelegate extends LocalizationsDelegate<Messages> {

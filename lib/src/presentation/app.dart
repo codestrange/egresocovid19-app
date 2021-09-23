@@ -26,9 +26,7 @@ class App extends StatelessWidget {
                   builder: (context, state) {
                     return MaterialApp.router(
                       debugShowCheckedModeBanner: false,
-                      onGenerateTitle: (context) {
-                        return Messages.of(context)!.helloWorld;
-                      },
+                      onGenerateTitle: (ctx) => Messages.of(ctx)!.appName,
                       theme: light,
                       darkTheme: dark,
                       themeMode: mode,

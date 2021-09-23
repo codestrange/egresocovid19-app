@@ -14,10 +14,12 @@ class LocaleRepository implements ILocaleRepository {
   Either<ErrorEntity, String> getLocale() {
     return box.containsKey('lang')
         ? Right(box.get('lang')!)
-        : const Left(ErrorEntity(
-            errorCode: '0',
-            message: 'Language not found.',
-          ));
+        : const Left(
+            ErrorEntity(
+              errorCode: '0',
+              message: 'Language not found.',
+            ),
+          );
   }
 
   @override

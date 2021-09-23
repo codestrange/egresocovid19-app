@@ -7,7 +7,6 @@ class CheckingPage extends StatelessWidget {
     return BeamPage(
       key: const ValueKey('checking'),
       title: getTitle(context, 'Comprobando'),
-      type: BeamPageType.fadeTransition,
       child: CheckingPage(),
     );
   }

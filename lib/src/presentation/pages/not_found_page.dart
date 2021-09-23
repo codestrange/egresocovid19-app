@@ -7,7 +7,6 @@ class NotFoundPage extends StatelessWidget {
     return BeamPage(
       key: const ValueKey('notfound'),
       title: getTitle(context, 'Página desconocida'),
-      type: BeamPageType.fadeTransition,
       child: NotFoundPage(),
     );
   }

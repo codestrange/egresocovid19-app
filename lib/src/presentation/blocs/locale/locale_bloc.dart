@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 

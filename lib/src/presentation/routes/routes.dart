@@ -11,13 +11,13 @@ class Routes {
     guards: [
       BeamGuard(
         pathPatterns: ['/login', '/checking'],
-        check: (context, location) => GetIt.I<IAuthService>().isLoggedIn,
+        check: (_, __) => GetIt.I<IAuthService>().isLoggedIn,
         beamToNamed: '/login',
         guardNonMatching: true,
       ),
       BeamGuard(
         pathPatterns: ['/login', '/checking'],
-        check: (context, location) => !GetIt.I<IAuthService>().isLoggedIn,
+        check: (_, __) => !GetIt.I<IAuthService>().isLoggedIn,
         beamToNamed: '/',
       ),
     ],

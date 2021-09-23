@@ -12,10 +12,14 @@ import 'package:oauth_dio/oauth_dio.dart';
 class AuthRepository implements IAuthRepository {
   AuthRepository(this.oauth) {
     oauth.dio.interceptors
-      ..add(ForbiddenInterceptor(action: () async {
-        _controller.add(const AuthStatusEntity.unauthenticated());
-        _isLoggedIn = false;
-      }))
+      ..add(
+        ForbiddenInterceptor(
+          action: () async {
+            _controller.add(const AuthStatusEntity.unauthenticated());
+            _isLoggedIn = false;
+          },
+        ),
+      )
       ..add(BearerInterceptor(oauth));
   }
 
@@ -31,10 +35,12 @@ class AuthRepository implements IAuthRepository {
     required UserPostEntity user,
   }) async {
     try {
-      await oauth.requestTokenAndSave(PasswordGrant(
-        username: user.email,
-        password: user.password,
-      ));
+      await oauth.requestTokenAndSave(
+        PasswordGrant(
+          username: user.email,
+          password: user.password,
+        ),
+      );
       _controller.add(const AuthStatusEntity.authenticated());
       _isLoggedIn = true;
       return const Right(unit);

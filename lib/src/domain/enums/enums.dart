@@ -1,1 +1,11 @@
+export 'aftermath_enum.dart';
+export 'blood_type_enum.dart';
 export 'cache_behavior_enum.dart';
+export 'contagion_enum.dart';
+export 'diagnosis_way_enum.dart';
+export 'income_enum.dart';
+export 'prophylaxis_enum.dart';
+export 'sex_enum.dart';
+export 'skin_color_enum.dart';
+export 'test_diagnosis_enum.dart';
+export 'treatment_enum.dart';
