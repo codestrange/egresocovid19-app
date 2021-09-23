@@ -15,7 +15,8 @@ abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<SkinColor?> get skinColor;
   InputBloc<BloodType?> get bloodType;
   InputBloc<String> get address;
-  InputBloc<String> get municipalityCode;
+  InputBloc<ProvinceEntity?> get province;
+  InputBloc<MunicipalityEntity?> get municipality;
   InputBloc<String> get polyclinic;
   InputBloc<String> get surgery;
   InputBloc<String> get popularCouncil;
@@ -34,7 +35,8 @@ abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
         skinColor,
         bloodType,
         address,
-        municipalityCode,
+        province,
+        municipality,
         polyclinic,
         surgery,
         popularCouncil,
@@ -92,8 +94,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
     validators: [
       StringValidator.required,
       StringValidator.integer,
-      StringValidator.lengthGreaterThan(11),
-      StringValidator.lengthLowerThan(11)
+      StringValidator.lengthGreaterThan(10),
+      StringValidator.lengthLowerThan(12)
     ],
   );
 
@@ -104,11 +106,20 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  InputBloc<String> municipalityCode = InputBloc<String>(
-    pureValue: '',
+  InputBloc<ProvinceEntity?> province = InputBloc<ProvinceEntity?>(
+    pureValue: null,
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      Validator.required,
+    ],
+  );
+
+  @override
+  InputBloc<MunicipalityEntity?> municipality = InputBloc<MunicipalityEntity?>(
+    pureValue: null,
+    validationType: ValidationType.explicit,
+    validators: [
+      Validator.required,
     ],
   );
 
@@ -195,7 +206,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
         firstname: firstName.state.value,
         lastname: lastName.state.value,
         ci: ci.state.value,
-        municipalityCode: municipalityCode.state.value,
+        municipalityCode: municipality.state.value!.code,
         sex: sex.state.value!,
         age: int.parse(age.state.value),
         skinColor: skinColor.state.value!,
