@@ -74,9 +74,13 @@ class _AutoCompleteInputWidgetState extends State<AutoCompleteInputWidget> {
                 icon: const Icon(
                   Icons.add,
                 ),
-                onPressed: () => widget.onAdd?.call(
-                  _controller.text,
-                ),
+                onPressed: () {
+                  if (_controller.text.isNotEmpty) {
+                    widget.onAdd?.call(
+                      _controller.text,
+                    );
+                  }
+                },
               )
             : null,
       ),
