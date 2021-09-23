@@ -1,5 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:egresocovid19/src/domain/enums/diagnosis_way_enum.dart';
+import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
@@ -8,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:get_it/get_it.dart';
+import 'package:intl/intl.dart';
 
 class PatientEgresoEditPage extends StatelessWidget {
   const PatientEgresoEditPage({
@@ -48,12 +51,11 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Editar información de Egreso',
-            style: Theme.of(context).textTheme.headline1,
-          ),
+        title: Text(
+          'Información de Egreso',
+          style: Theme.of(context).textTheme.headline6,
         ),
+        iconTheme: Theme.of(context).iconTheme,
       ),
       body: BlocConsumer<IPatientEgresoEditBloc, PatientEgresoEditState>(
         listener: (context, state) => state.when(
@@ -105,10 +107,13 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
   }
 
   Widget buildLoading(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Center(
+          child: CircularProgressIndicator(),
+        ),
+      ],
     );
   }
 
@@ -144,8 +149,11 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
         create: (context) => GetIt.I.get(
           param1: actualDischargeData,
         ),
-        child: _PatientEgresoEditForm(
-          patientId: patientId,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: _PatientEgresoEditForm(
+            patientId: patientId,
+          ),
         ),
       ),
     );
@@ -275,6 +283,9 @@ class _PatientEgresoEditForm extends StatelessWidget {
           Flexible(
             child: _OthersAftermathField(),
           ),
+          const SizedBox(
+            height: 10,
+          ),
           const SubmmitButton<IPatientEgresoEditFormBloc>('Editar'),
         ],
       ),
@@ -285,199 +296,554 @@ class _PatientEgresoEditForm extends StatelessWidget {
 class _OthersAftermathField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<String>?>(
+      bloc: form.othersAftermath,
+      builder: (context, state) => StringListInputWidget(
+        stringList: state.value ?? [],
+        labelText: 'Otras Secuelas',
+        addString: (value) {
+          var newList = [value];
+          if (state.value != null) {
+            newList = state.value! + newList;
+          }
+          form.othersAftermath.dirty(newList);
+        },
+        removeString: (value) {
+          var newList = <String>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.othersAftermath.dirty(newList);
+        },
+        clearList: () => form.othersAftermath.pure([]),
+        errorText: state.error,
+      ),
+    );
   }
 }
 
 class _AftermathField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<Aftermath>?>(
+      bloc: form.aftermath,
+      builder: (context, state) => MultiSelectDropDown<Aftermath>(
+        labelText: 'Secuelas',
+        items: Aftermath.values,
+        onSelect: (values) => form.aftermath.dirty(values),
+        onRemove: (value) {
+          var newList = <Aftermath>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.aftermath.dirty(newList);
+        },
+        itemToString: (item) => item.toString(),
+      ),
+    );
   }
 }
 
 class _AnotherVaccineAgainstCovidField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<String?>(
+      bloc: form.anotherVaccineAgainstCovid,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Otras vacunas usadas contra la Covid19',
+        errorText: state.error,
+        controller: TextEditing.fromValue(state.value ?? ''),
+        onChanged: (value) => form.anotherVaccineAgainstCovid.dirty(
+          value.trim(),
+        ),
+      ),
+    );
   }
 }
 
 class _ProphylaxisField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<Prophylaxis>?>(
+      bloc: form.prophylaxis,
+      builder: (context, state) => MultiSelectDropDown<Prophylaxis>(
+        labelText: 'Realizó profilaxis con',
+        items: Prophylaxis.values,
+        onSelect: (values) => form.prophylaxis.dirty(values),
+        onRemove: (value) {
+          var newList = <Prophylaxis>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.prophylaxis.dirty(newList);
+        },
+        itemToString: (item) => item.toString(),
+      ),
+    );
   }
 }
 
 class _AntibioticsField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<String>?>(
+      bloc: form.antibiotics,
+      builder: (context, state) => StringListInputWidget(
+        stringList: state.value ?? [],
+        labelText: 'Antibióticos',
+        addString: (value) {
+          var newList = [value];
+          if (state.value != null) {
+            newList = state.value! + newList;
+          }
+          form.antibiotics.dirty(newList);
+        },
+        removeString: (value) {
+          var newList = <String>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.antibiotics.dirty(newList);
+        },
+        clearList: () => form.antibiotics.pure([]),
+        errorText: state.error,
+      ),
+    );
   }
 }
 
 class _TreatmentsReceivedField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<Treatment>?>(
+      bloc: form.treatmentsReceived,
+      builder: (context, state) => MultiSelectDropDown<Treatment>(
+        labelText: 'Tratamientos',
+        items: Treatment.values,
+        onSelect: (values) => form.treatmentsReceived.dirty(values),
+        onRemove: (value) {
+          var newList = <Treatment>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.treatmentsReceived.dirty(newList);
+        },
+        itemToString: (item) => item.toString(),
+      ),
+    );
   }
 }
 
 class _ContactsThirdLevelPositivesField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsThirdLevelPositives,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a tercer nivel positivos',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsThirdLevelPositives.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _ContactsThirdLevelField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsThirdLevel,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a tercer nivel',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsThirdLevel.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _ContactsSecondLevelPositivesField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsSecondLevelPositives,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a segundo nivel positivos',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsSecondLevelPositives.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _ContactsSecondLevelField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsSecondLevel,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a segundo nivel',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsSecondLevel.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _ContactsFirstLevelPositivesField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsFirstLevelPositives,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a primer nivel positivos',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsFirstLevelPositives.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _ContactsFirstLevelField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.contactsFirstLevel,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de contactos a primer nivel',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.contactsFirstLevel.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _IncomesField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<IncomeEntity>?>(
+      bloc: form.incomes,
+      builder: (context, state) => IncomesInputWidget(
+        headerText: 'Detalles de Ingreso',
+        errorText: state.error,
+        incomes: state.value ?? [],
+        addIncomeEntity: (value) {
+          if (state.value == null ||
+              state.value!.any((e) => e.income == value.income)) return;
+          final newIncomes = state.value! + [value];
+          form.incomes.dirty(newIncomes);
+        },
+        removeIncomeEntity: (value) {
+          if (state.value == null ||
+              !state.value!.any((e) => e.income == value)) return;
+          final newIncomes = <IncomeEntity>[];
+          state.value!.removeWhere((e) => e.income == value);
+          newIncomes.addAll(state.value!);
+          form.incomes.dirty(newIncomes);
+        },
+        clearIncomes: () => form.incomes.pure([]),
+      ),
+    );
   }
 }
 
 class _HospitalizationTimeField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<String?>(
+      bloc: form.hospitalizationTime,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Tiempo de Hospitalización (Forma Compacta)',
+        errorText: state.error,
+        controller: TextEditing.fromValue(state.value ?? ''),
+        onChanged: (value) => form.hospitalizationTime.dirty(
+          value.trim(),
+        ),
+      ),
+    );
   }
 }
 
 class _DidHeWorkInTheAttentionToPositiveCasesField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<bool?>(
+      bloc: form.didHeWorkInTheAttentionToPositiveCases,
+      builder: (context, state) => BoolInputWidget(
+        labelText: '¿Trabajó en la atención de casos positivos?',
+        initialValue: state.value,
+        onChanged: (value) =>
+            form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
+      ),
+    );
   }
 }
 
 class _WasHePartOfAnEventField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<bool?>(
+      bloc: form.didHeWorkInTheAttentionToPositiveCases,
+      builder: (context, state) => BoolInputWidget(
+        labelText: '¿Fué parte de un evento de transmición?',
+        initialValue: state.value,
+        onChanged: (value) =>
+            form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
+      ),
+    );
   }
 }
 
 class _FormOfContagionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder(
+      bloc: form.formOfContagion,
+      builder: (context, state) => ContagionInputWidget(
+        labelText: 'Forma de Contagio',
+        errorText: state.error,
+        onChanged: (value) => form.formOfContagion.dirty(value),
+      ),
+    );
   }
 }
 
 class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.timeFromDiagnosisToNegativeOrDischarge,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Tiempo tardado en negativizar o en recibir'
+            ' el alta clínica a partir del diagnóstico (días)',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.timeFromDiagnosisToNegativeOrDischarge.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _NumberPcrPerformedField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.numberPcrPerformed,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Número de Tests/Pcr realizados',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.numberPcrPerformed.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.daysFromSymptomsToDiagnosis,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Cantidad de días con síntomas hasta el diagnostico',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.daysFromSymptomsToDiagnosis.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _TestUsedInDiagnosisField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder(
+      bloc: form.testUsedInDiagnosis,
+      builder: (context, state) => TestDiagnosisInputWidget(
+        labelText: 'Test usado en el Diagnóstico',
+        errorText: state.error,
+        onChanged: (value) => form.testUsedInDiagnosis.dirty(value),
+      ),
+    );
   }
 }
 
 class _DiagnosisWayField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<DiagnosisWay?>(
+      bloc: form.diagnosisWay,
+      builder: (context, state) => DiagnosisWayInputWidget(
+        labelText: 'Forma de diagnóstico',
+        errorText: state.error,
+        onChanged: (value) => form.diagnosisWay.dirty(value),
+      ),
+    );
   }
 }
 
 class _DurationOfSymptomsField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<int?>(
+      bloc: form.durationOfSymptoms,
+      builder: (context, state) => TextInputWidget(
+        labelText: 'Duración de los Síntomas (días)',
+        keyboardType: TextInputType.number,
+        errorText: state.error,
+        controller: TextEditing.fromValue(
+          state.value == null ? '' : state.value.toString(),
+        ),
+        onChanged: (value) => form.durationOfSymptoms.dirty(
+          int.tryParse(
+            value.trim(),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _SymptomsField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<List<String>?>(
+      bloc: form.symptoms,
+      builder: (context, state) => StringListInputWidget(
+        stringList: state.value ?? [],
+        labelText: 'Síntomas',
+        addString: (value) {
+          var newList = [value];
+          if (state.value != null) {
+            newList = state.value! + newList;
+          }
+          form.symptoms.dirty(newList);
+        },
+        removeString: (value) {
+          var newList = <String>[];
+          if (state.value != null) {
+            state.value!.remove(value);
+            newList = state.value!;
+          }
+          form.symptoms.dirty(newList);
+        },
+        clearList: () => form.symptoms.pure([]),
+        errorText: state.error,
+      ),
+    );
   }
 }
 
 class _DetectionDateField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    final form = context.read<IPatientEgresoEditFormBloc>();
+    return InputBlocBuilder<DateTime?>(
+      bloc: form.detectionDate,
+      builder: (context, state) => DateTimeInputWidget(
+        hintText: 'Fecha de detección',
+        initialDate: state.value,
+        errorText: state.error,
+        onChanged: (value) => form.detectionDate.dirty(value),
+      ),
+    );
   }
 }
