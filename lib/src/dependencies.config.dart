@@ -20,7 +20,6 @@ import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
     as _i20;
 import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i24;
 import 'package:egresocovid19/src/dependencies.dart' as _i43;
-import 'package:egresocovid19/src/domain/entities/entities.dart' as _i15;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i10;
 import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i40;
@@ -34,6 +33,7 @@ import 'package:egresocovid19/src/domain/services/services.dart' as _i8;
 import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i21;
 import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart'
     as _i7;
+import 'package:egresocovid19/src/presentation/blocs/blocs.dart' as _i15;
 import 'package:egresocovid19/src/presentation/blocs/home/home_bloc.dart'
     as _i41;
 import 'package:egresocovid19/src/presentation/blocs/locale/locale_bloc.dart'
@@ -100,11 +100,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i12.LocaleService(get<_i10.ILocaleRepository>()));
   gh.factory<_i13.ILoginBloc>(
       () => _i13.LoginBloc(authService: get<_i8.IAuthService>()));
-  gh.factoryParam<_i14.IPatientBasicEditFormBloc, _i15.PatientGetEntity?,
+  gh.factoryParam<_i14.IPatientBasicEditFormBloc, _i15.PatientEditFetchData?,
           dynamic>(
-      (patientGetEntity, _) => _i14.PatientBasicEditFormBloc(
+      (patientEditFetchData, _) => _i14.PatientBasicEditFormBloc(
           patientService: get<_i8.IPatientService>(),
-          patientGetEntity: patientGetEntity));
+          patientEditFetchData: patientEditFetchData));
   gh.factory<_i16.IPatientCreateBloc>(
       () => _i16.PatientCreateBloc(patientService: get<_i8.IPatientService>()));
   gh.factory<_i17.IPatientEgresoEditBloc>(
@@ -156,8 +156,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i40.IAuthService>(
       () => _i40.AuthService(authRepository: get<_i10.IAuthRepository>()));
   gh.factory<_i41.IHomeBloc>(() => _i41.HomeBloc(get<_i35.IPatientService>()));
-  gh.factory<_i42.IPatientBasicEditBloc>(() =>
-      _i42.PatientBasicEditBloc(patientService: get<_i35.IPatientService>()));
+  gh.factory<_i42.IPatientBasicEditBloc>(() => _i42.PatientBasicEditBloc(
+      patientService: get<_i35.IPatientService>(),
+      provinceService: get<_i37.IProvinceService>()));
   return get;
 }
 

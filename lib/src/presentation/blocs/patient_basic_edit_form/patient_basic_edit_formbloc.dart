@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter_lyform/flutter_lyform.dart';
+import 'package:injectable/injectable.dart';
+
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
-import 'package:flutter_lyform/flutter_lyform.dart';
-import 'package:injectable/injectable.dart';
 
 abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get id;
@@ -16,7 +17,8 @@ abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<SkinColor?> get skinColor;
   InputBloc<BloodType?> get bloodType;
   InputBloc<String?> get address;
-  InputBloc<String?> get municipalityCode;
+  InputBloc<ProvinceEntity?> get province;
+  InputBloc<MunicipalityEntity?> get municipality;
   InputBloc<String?> get polyclinic;
   InputBloc<String?> get surgery;
   InputBloc<String?> get popularCouncil;
@@ -36,7 +38,8 @@ abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
         skinColor,
         bloodType,
         address,
-        municipalityCode,
+        province,
+        municipality,
         polyclinic,
         surgery,
         popularCouncil,
@@ -51,11 +54,13 @@ abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
 class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   PatientBasicEditFormBloc({
     required this.patientService,
-    @factoryParam PatientGetEntity? patientGetEntity,
-  })  : patientEntity = patientGetEntity!,
+    @factoryParam PatientEditFetchData? patientEditFetchData,
+  })  : patientFetchData = patientEditFetchData!,
         super();
 
-  final PatientGetEntity patientEntity;
+  final PatientEditFetchData patientFetchData;
+  PatientGetDetailEntity get patientEntity =>
+      patientFetchData.patientGetDetailEntity;
 
   @override
   late final InputBloc<String> id = InputBloc<String>(
@@ -67,12 +72,12 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> address = InputBloc<String>(
+  late final InputBloc<String?> address = InputBloc<String?>(
     pureValue: patientEntity.address,
   );
 
   @override
-  late final InputBloc<String?> age = InputBloc<String>(
+  late final InputBloc<String?> age = InputBloc<String?>(
     pureValue: patientEntity.age.toString(),
     validationType: ValidationType.explicit,
     validators: [
@@ -112,8 +117,14 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> municipalityCode = InputBloc<String>(
-    pureValue: patientEntity.municipality, //TODO: fix this...
+  late final InputBloc<ProvinceEntity?> province = InputBloc<ProvinceEntity?>(
+    pureValue: patientFetchData.province,
+  );
+
+  @override
+  late final InputBloc<MunicipalityEntity?> municipality =
+      InputBloc<MunicipalityEntity?>(
+    pureValue: patientFetchData.municipality,
   );
 
   @override
@@ -138,12 +149,12 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<Sex?> sex = InputBloc(
+  late final InputBloc<Sex?> sex = InputBloc<Sex?>(
     pureValue: patientEntity.sex,
   );
 
   @override
-  late final InputBloc<SkinColor?> skinColor = InputBloc(
+  late final InputBloc<SkinColor?> skinColor = InputBloc<SkinColor?>(
     pureValue: patientEntity.skinColor,
   );
 
@@ -172,7 +183,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
         firstname: firstName.state.value,
         lastname: lastName.state.value,
         ci: ci.state.value,
-        municipalityCode: municipalityCode.state.value, //TODO: FIX THIS...
+        municipalityCode: municipality.state.value?.code,
         sex: sex.state.value,
         age: age.state.value == null ? null : int.tryParse(age.state.value!),
         skinColor: skinColor.state.value,
