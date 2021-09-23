@@ -7,6 +7,7 @@ export 'patient_egreso_fields/input_bool_widget.dart';
 export 'patient_egreso_fields/input_contagion_widget.dart';
 export 'patient_egreso_fields/input_datetime_widget.dart';
 export 'patient_egreso_fields/input_diagnosis_way_widget.dart';
+export 'patient_egreso_fields/input_incomes_widget.dart';
 export 'patient_egreso_fields/input_string_list_widget.dart';
 export 'patient_egreso_fields/input_test_diagnosis_widget.dart';
 export 'patient_egreso_fields/multi_select_dropdown_widget.dart';

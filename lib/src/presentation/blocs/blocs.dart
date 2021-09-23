@@ -1,5 +1,6 @@
 export 'auth/auth_bloc.dart';
 export 'home/home_bloc.dart';
+export 'income/income_bloc.dart';
 export 'locale/locale_bloc.dart';
 export 'login/login_bloc.dart';
 export 'neighborhood/neighborhood_autocomplete_bloc.dart';
