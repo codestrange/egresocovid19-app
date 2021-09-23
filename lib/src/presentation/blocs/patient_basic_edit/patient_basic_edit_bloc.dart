@@ -1,10 +1,8 @@
-import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:egresocovid19/src/domain/services/patient_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/domain/services/patient_service.dart';
 
 part 'patient_basic_edit_bloc.freezed.dart';
 part 'patient_basic_edit_event.dart';
