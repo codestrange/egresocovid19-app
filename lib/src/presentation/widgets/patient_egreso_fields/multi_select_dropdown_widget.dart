@@ -40,25 +40,38 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MultiSelectDialogField<T?>(
-          items: widget.items
-              .map(
-                (e) => MultiSelectItem(
-                  e,
-                  widget.itemToString(e),
-                ),
-              )
-              .toList(),
-          initialValue: _selectedValues,
-          listType: MultiSelectListType.LIST,
-          onConfirm: selectAll,
-          buttonText: Text(widget.labelText),
-          buttonIcon: const Icon(
-            Icons.arrow_downward,
-            size: 24,
+        Container(
+          padding: const EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            border: Border.all(width: 0.65),
           ),
-          selectedColor: Colors.black,
-          chipDisplay: MultiSelectChipDisplay.none(),
+          child: MultiSelectDialogField<T?>(
+            items: widget.items
+                .map(
+                  (e) => MultiSelectItem(
+                    e,
+                    widget.itemToString(e),
+                  ),
+                )
+                .toList(),
+            initialValue: _selectedValues,
+            listType: MultiSelectListType.LIST,
+            onConfirm: selectAll,
+            buttonText: Text(
+              widget.labelText,
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    color: Colors.grey[600],
+                  ),
+            ),
+            buttonIcon: const Icon(
+              Icons.arrow_drop_down,
+              size: 24,
+            ),
+            selectedColor: Colors.black,
+            chipDisplay: MultiSelectChipDisplay.none(),
+            decoration: const BoxDecoration(),
+          ),
         ),
         const SizedBox(
           height: 10,
@@ -72,9 +85,6 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
                   label: Text(
                     widget.itemToString(e),
                   ),
-                  // onDeleted: () {
-                  //   remove(e);
-                  // },
                 ),
               )
               .toList(),
