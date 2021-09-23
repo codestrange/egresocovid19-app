@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -27,26 +28,33 @@ class LoginPage extends StatelessWidget {
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text(error.message))),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Flexible(child: PlaceholderOfIllustration()),
-                const SizedBox(height: 20),
-                Flexible(
-                  child: Container(
-                    alignment: Alignment.topCenter,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints.loose(
-                        const Size.fromWidth(400),
-                      ),
-                      child: const _LoginForm(),
-                    ),
+          child: Column(
+            children: [
+              Flexible(
+                flex: 2,
+                child: Center(
+                  child: Text(
+                    Messages.of(context)!.homeDrawerTitle,
+                    style: Theme.of(context).textTheme.headline4,
+                    textAlign: TextAlign.center,
                   ),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 20),
+              Flexible(
+                flex: 3,
+                child: Container(
+                  alignment: Alignment.topCenter,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints.loose(
+                      const Size.fromWidth(400),
+                    ),
+                    child: const _LoginForm(),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

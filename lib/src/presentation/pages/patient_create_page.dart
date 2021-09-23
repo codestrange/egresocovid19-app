@@ -3,7 +3,6 @@ import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/blocs/municipality/municipality_bloc.dart';
-import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -89,15 +88,20 @@ class _PatientCreateForm extends StatelessWidget {
         Row(
           children: const [
             Flexible(child: _AgeInput()),
-            SizedBox(width: 10),
+            SizedBox(width: 8),
             Flexible(child: _SexInput()),
-            SizedBox(width: 10),
+            SizedBox(width: 8),
           ],
         ),
         const SizedBox(height: 8),
-        const Flexible(child: _SkinColorInput()),
-        const SizedBox(height: 8),
-        const Flexible(child: _BloodTypeInput()),
+        Row(
+          children: const [
+            Flexible(child: _SkinColorInput()),
+            SizedBox(width: 8),
+            Flexible(child: _BloodTypeInput()),
+            SizedBox(width: 8),
+          ],
+        ),
         const Divider(height: 16),
         const Flexible(child: _MunicipalityInput()),
         const SizedBox(height: 8),
@@ -284,6 +288,7 @@ class _MunicipalityInput extends StatelessWidget {
               provinceLabel: provinceLabel,
               municipalityLabel: municipalityLabel,
               onProvinceChanged: onProvinceChanged,
+              onMunicipalityChanged: onMunicipalityChanged,
               errorText: state.error,
             ),
             municipalitySelection: (_state) => MunicipalityInputWidget(

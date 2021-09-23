@@ -19,7 +19,7 @@ import 'package:egresocovid19/src/data/repositories/province_repository.dart'
 import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
     as _i21;
 import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i26;
-import 'package:egresocovid19/src/dependencies.dart' as _i44;
+import 'package:egresocovid19/src/dependencies.dart' as _i45;
 import 'package:egresocovid19/src/domain/entities/entities.dart' as _i18;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i10;
@@ -53,6 +53,8 @@ import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocom
 import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart'
     as _i29;
 import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit/patient_basic_edit_bloc.dart'
+    as _i44;
+import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit_form/patient_basic_edit_formbloc.dart'
     as _i14;
 import 'package:egresocovid19/src/presentation/blocs/patient_create/patient_create_bloc.dart'
     as _i15;
@@ -102,7 +104,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i12.LocaleService(get<_i10.ILocaleRepository>()));
   gh.factory<_i13.ILoginBloc>(
       () => _i13.LoginBloc(authService: get<_i8.IAuthService>()));
-  gh.factory<_i14.IPatientBasicEditBloc>(() => _i14.PatientBasicEditBloc());
+  gh.factory<_i14.IPatientBasicEditFormBloc>(() =>
+      _i14.PatientBasicEditFormBloc(
+          patientService: get<_i8.IPatientService>()));
   gh.factory<_i15.IPatientCreateBloc>(
       () => _i15.PatientCreateBloc(patientService: get<_i8.IPatientService>()));
   gh.factory<_i16.IPatientEgresoEditBloc>(
@@ -159,7 +163,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i42.IAuthService>(
       () => _i42.AuthService(authRepository: get<_i10.IAuthRepository>()));
   gh.factory<_i43.IHomeBloc>(() => _i43.HomeBloc(get<_i37.IPatientService>()));
+  gh.factory<_i44.IPatientBasicEditBloc>(() =>
+      _i44.PatientBasicEditBloc(patientService: get<_i37.IPatientService>()));
   return get;
 }
 
-class _$RegisterModule extends _i44.RegisterModule {}
+class _$RegisterModule extends _i45.RegisterModule {}

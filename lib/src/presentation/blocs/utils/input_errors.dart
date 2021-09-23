@@ -16,17 +16,31 @@ class StringValidator {
   static String? required(String value) =>
       value.isEmpty ? 'error_empty_input' : null;
 
-  static String? number(String value) =>
-      double.tryParse(value) == null ? 'error_invalid_number_input' : null;
+  static String? number(String? value) => value == null
+      ? null
+      : double.tryParse(value) == null
+          ? 'error_invalid_number_input'
+          : null;
 
-  static String? integer(String value) =>
-      int.tryParse(value) == null ? 'error_invalid_number_input' : null;
+  static String? integer(String? value) => value == null
+      ? null
+      : int.tryParse(value) == null
+          ? 'error_invalid_number_input'
+          : null;
 
   static InputValidator<String> lengthGreaterThan(int len) =>
-      (String value) => value.length > len ? null : 'error_too_short_input';
+      (String? value) => value == null
+          ? null
+          : value.length > len
+              ? null
+              : 'error_too_short_input';
 
   static InputValidator<String> lengthLowerThan(int len) =>
-      (String value) => value.length < len ? null : 'error_too_long_input';
+      (String? value) => value == null
+          ? null
+          : value.length < len
+              ? null
+              : 'error_too_long_input';
 
   static String? email(String value) =>
       EmailValidator.validate(value) ? null : 'error_invalid_email_input';
