@@ -76,8 +76,7 @@ class _$PatientEntityTearOff {
       required int blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
-      required DischargeOfPositiveCasesOfCovid19Entity
-          dischargeOfPositiveCasesOfCovid19}) {
+      required DischargeDataEntity dischargeOfPositiveCasesOfCovid19}) {
     return PatientGetDetailEntity(
       id: id,
       firstname: firstname,
@@ -226,8 +225,7 @@ mixin _$PatientEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
             String firstname,
@@ -309,8 +307,7 @@ mixin _$PatientEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)?
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
             String firstname,
@@ -736,8 +733,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
             String firstname,
@@ -840,8 +836,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)?
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
             String firstname,
@@ -1008,11 +1003,9 @@ abstract class $PatientGetDetailEntityCopyWith<$Res>
       int blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory,
-      DischargeOfPositiveCasesOfCovid19Entity
-          dischargeOfPositiveCasesOfCovid19});
+      DischargeDataEntity dischargeOfPositiveCasesOfCovid19});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
-      get dischargeOfPositiveCasesOfCovid19;
+  $DischargeDataEntityCopyWith<$Res> get dischargeOfPositiveCasesOfCovid19;
 }
 
 /// @nodoc
@@ -1125,14 +1118,13 @@ class _$PatientGetDetailEntityCopyWithImpl<$Res>
               freezed
           ? _value.dischargeOfPositiveCasesOfCovid19
           : dischargeOfPositiveCasesOfCovid19 // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
-      get dischargeOfPositiveCasesOfCovid19 {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
+  $DischargeDataEntityCopyWith<$Res> get dischargeOfPositiveCasesOfCovid19 {
+    return $DischargeDataEntityCopyWith<$Res>(
         _value.dischargeOfPositiveCasesOfCovid19, (value) {
       return _then(_value.copyWith(dischargeOfPositiveCasesOfCovid19: value));
     });
@@ -1200,8 +1192,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
   @override
   final List<PathologicalEntity> familyPathologicalHistory;
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity
-      dischargeOfPositiveCasesOfCovid19;
+  final DischargeDataEntity dischargeOfPositiveCasesOfCovid19;
 
   @override
   String toString() {
@@ -1342,8 +1333,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
             String firstname,
@@ -1447,8 +1437,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)?
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
             String firstname,
@@ -1543,26 +1532,26 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
 
 abstract class PatientGetDetailEntity implements PatientEntity {
   const factory PatientGetDetailEntity(
-      {required String id,
-      required String firstname,
-      required String lastname,
-      required String ci,
-      required String province,
-      required String municipality,
-      required Sex sex,
-      required int age,
-      required SkinColor skinColor,
-      required BloodType? bloodType,
-      required String address,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
-      required int blockNumber,
-      required List<PathologicalEntity> personalPathologicalHistory,
-      required List<PathologicalEntity> familyPathologicalHistory,
-      required DischargeOfPositiveCasesOfCovid19Entity
-          dischargeOfPositiveCasesOfCovid19}) = _$PatientGetDetailEntity;
+          {required String id,
+          required String firstname,
+          required String lastname,
+          required String ci,
+          required String province,
+          required String municipality,
+          required Sex sex,
+          required int age,
+          required SkinColor skinColor,
+          required BloodType? bloodType,
+          required String address,
+          required String polyclinic,
+          required String surgery,
+          required String popularCouncil,
+          required String neighborhood,
+          required int blockNumber,
+          required List<PathologicalEntity> personalPathologicalHistory,
+          required List<PathologicalEntity> familyPathologicalHistory,
+          required DischargeDataEntity dischargeOfPositiveCasesOfCovid19}) =
+      _$PatientGetDetailEntity;
 
   String get id => throw _privateConstructorUsedError;
   String get firstname => throw _privateConstructorUsedError;
@@ -1585,9 +1574,8 @@ abstract class PatientGetDetailEntity implements PatientEntity {
       throw _privateConstructorUsedError;
   List<PathologicalEntity> get familyPathologicalHistory =>
       throw _privateConstructorUsedError;
-  DischargeOfPositiveCasesOfCovid19Entity
-      get dischargeOfPositiveCasesOfCovid19 =>
-          throw _privateConstructorUsedError;
+  DischargeDataEntity get dischargeOfPositiveCasesOfCovid19 =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
@@ -1900,8 +1888,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
             String firstname,
@@ -2002,8 +1989,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)?
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
             String firstname,
@@ -2456,8 +2442,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
         getDetail,
     required TResult Function(
             String firstname,
@@ -2559,8 +2544,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             int blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
-            DischargeOfPositiveCasesOfCovid19Entity
-                dischargeOfPositiveCasesOfCovid19)?
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
         getDetail,
     TResult Function(
             String firstname,

@@ -1,4 +1,4 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum Prophylaxis {
   @JsonValue(0)
@@ -29,6 +29,17 @@ enum Prophylaxis {
   Abdala,
   @JsonValue(13)
   Covid19Previously,
-  @JsonValue(14)
-  AnotherVaccineAgainstCovid,
+}
+
+Prophylaxis prophylaxisFromInt(int value) {
+  if (value >= Prophylaxis.values.length) {
+    throw Exception(
+      'Try to convert $value to Prophylaxis enum when max value of Prophylaxis is ${Prophylaxis.values.length - 1}',
+    );
+  }
+  return Prophylaxis.values[value];
+}
+
+int prophylaxisToInt(Prophylaxis value) {
+  return value.index;
 }

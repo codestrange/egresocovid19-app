@@ -20,6 +20,6 @@ abstract class IPatientRepository {
 
   Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+    required DischargeDataEntity discharge,
   });
 }

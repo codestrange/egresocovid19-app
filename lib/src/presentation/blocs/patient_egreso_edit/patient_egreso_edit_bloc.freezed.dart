@@ -22,8 +22,7 @@ class _$PatientEgresoEditEventTearOff {
     );
   }
 
-  _Update update(String patientId,
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+  _Update update(String patientId, DischargeDataEntity newDischargeData) {
     return _Update(
       patientId,
       newDischargeData,
@@ -41,16 +40,15 @@ mixin _$PatientEgresoEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String patientId) fetch,
-    required TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(
+            String patientId, DischargeDataEntity newDischargeData)
         update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
-    TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
         update,
     required TResult orElse(),
   }) =>
@@ -171,8 +169,8 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String patientId) fetch,
-    required TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(
+            String patientId, DischargeDataEntity newDischargeData)
         update,
   }) {
     return fetch(patientId);
@@ -182,8 +180,7 @@ class _$_Fetch implements _Fetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
-    TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
         update,
     required TResult orElse(),
   }) {
@@ -232,11 +229,9 @@ abstract class _$UpdateCopyWith<$Res>
   factory _$UpdateCopyWith(_Update value, $Res Function(_Update) then) =
       __$UpdateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String patientId,
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+  $Res call({String patientId, DischargeDataEntity newDischargeData});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData;
 }
 
 /// @nodoc
@@ -262,14 +257,13 @@ class __$UpdateCopyWithImpl<$Res>
       newDischargeData == freezed
           ? _value.newDischargeData
           : newDischargeData // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.newDischargeData, (value) {
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData {
+    return $DischargeDataEntityCopyWith<$Res>(_value.newDischargeData, (value) {
       return _then(_value.copyWith(newDischargeData: value));
     });
   }
@@ -283,7 +277,7 @@ class _$_Update implements _Update {
   @override
   final String patientId;
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+  final DischargeDataEntity newDischargeData;
 
   @override
   String toString() {
@@ -317,8 +311,8 @@ class _$_Update implements _Update {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String patientId) fetch,
-    required TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(
+            String patientId, DischargeDataEntity newDischargeData)
         update,
   }) {
     return update(patientId, newDischargeData);
@@ -328,8 +322,7 @@ class _$_Update implements _Update {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
-    TResult Function(String patientId,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
         update,
     required TResult orElse(),
   }) {
@@ -363,12 +356,12 @@ class _$_Update implements _Update {
 }
 
 abstract class _Update implements PatientEgresoEditEvent {
-  const factory _Update(String patientId,
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) = _$_Update;
+  const factory _Update(
+      String patientId, DischargeDataEntity newDischargeData) = _$_Update;
 
   @override
   String get patientId => throw _privateConstructorUsedError;
-  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+  DischargeDataEntity get newDischargeData =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -393,30 +386,27 @@ class _$PatientEgresoEditStateTearOff {
     );
   }
 
-  _FetchSuccess fetchSuccess(
-      DischargeOfPositiveCasesOfCovid19Entity actualDischargeData) {
+  _FetchSuccess fetchSuccess(DischargeDataEntity actualDischargeData) {
     return _FetchSuccess(
       actualDischargeData,
     );
   }
 
-  _UpdateInProgress updateInProgress(
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+  _UpdateInProgress updateInProgress(DischargeDataEntity newDischargeData) {
     return _UpdateInProgress(
       newDischargeData,
     );
   }
 
-  _UpdateFailure updateFailure(String errorMessage,
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+  _UpdateFailure updateFailure(
+      String errorMessage, DischargeDataEntity newDischargeData) {
     return _UpdateFailure(
       errorMessage,
       newDischargeData,
     );
   }
 
-  _UpdateSuccess updateSuccess(
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData) {
+  _UpdateSuccess updateSuccess(DischargeDataEntity newDischargeData) {
     return _UpdateSuccess(
       newDischargeData,
     );
@@ -433,17 +423,14 @@ mixin _$PatientEgresoEditState {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -452,16 +439,11 @@ mixin _$PatientEgresoEditState {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -548,17 +530,14 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return initial();
@@ -570,16 +549,11 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -668,17 +642,14 @@ class _$_FetchInProgress implements _FetchInProgress {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return fetchInProgress();
@@ -690,16 +661,11 @@ class _$_FetchInProgress implements _FetchInProgress {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (fetchInProgress != null) {
@@ -814,17 +780,14 @@ class _$_FetchFailure implements _FetchFailure {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return fetchFailure(errorMessage);
@@ -836,16 +799,11 @@ class _$_FetchFailure implements _FetchFailure {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (fetchFailure != null) {
@@ -901,10 +859,9 @@ abstract class _$FetchSuccessCopyWith<$Res> {
   factory _$FetchSuccessCopyWith(
           _FetchSuccess value, $Res Function(_FetchSuccess) then) =
       __$FetchSuccessCopyWithImpl<$Res>;
-  $Res call({DischargeOfPositiveCasesOfCovid19Entity actualDischargeData});
+  $Res call({DischargeDataEntity actualDischargeData});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
-      get actualDischargeData;
+  $DischargeDataEntityCopyWith<$Res> get actualDischargeData;
 }
 
 /// @nodoc
@@ -926,15 +883,14 @@ class __$FetchSuccessCopyWithImpl<$Res>
       actualDischargeData == freezed
           ? _value.actualDischargeData
           : actualDischargeData // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>
-      get actualDischargeData {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.actualDischargeData, (value) {
+  $DischargeDataEntityCopyWith<$Res> get actualDischargeData {
+    return $DischargeDataEntityCopyWith<$Res>(_value.actualDischargeData,
+        (value) {
       return _then(_value.copyWith(actualDischargeData: value));
     });
   }
@@ -946,7 +902,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   const _$_FetchSuccess(this.actualDischargeData);
 
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity actualDischargeData;
+  final DischargeDataEntity actualDischargeData;
 
   @override
   String toString() {
@@ -978,17 +934,14 @@ class _$_FetchSuccess implements _FetchSuccess {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return fetchSuccess(actualDischargeData);
@@ -1000,16 +953,11 @@ class _$_FetchSuccess implements _FetchSuccess {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (fetchSuccess != null) {
@@ -1052,11 +1000,10 @@ class _$_FetchSuccess implements _FetchSuccess {
 }
 
 abstract class _FetchSuccess implements PatientEgresoEditState {
-  const factory _FetchSuccess(
-          DischargeOfPositiveCasesOfCovid19Entity actualDischargeData) =
+  const factory _FetchSuccess(DischargeDataEntity actualDischargeData) =
       _$_FetchSuccess;
 
-  DischargeOfPositiveCasesOfCovid19Entity get actualDischargeData =>
+  DischargeDataEntity get actualDischargeData =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
@@ -1068,9 +1015,9 @@ abstract class _$UpdateInProgressCopyWith<$Res> {
   factory _$UpdateInProgressCopyWith(
           _UpdateInProgress value, $Res Function(_UpdateInProgress) then) =
       __$UpdateInProgressCopyWithImpl<$Res>;
-  $Res call({DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+  $Res call({DischargeDataEntity newDischargeData});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData;
 }
 
 /// @nodoc
@@ -1092,14 +1039,13 @@ class __$UpdateInProgressCopyWithImpl<$Res>
       newDischargeData == freezed
           ? _value.newDischargeData
           : newDischargeData // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.newDischargeData, (value) {
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData {
+    return $DischargeDataEntityCopyWith<$Res>(_value.newDischargeData, (value) {
       return _then(_value.copyWith(newDischargeData: value));
     });
   }
@@ -1111,7 +1057,7 @@ class _$_UpdateInProgress implements _UpdateInProgress {
   const _$_UpdateInProgress(this.newDischargeData);
 
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+  final DischargeDataEntity newDischargeData;
 
   @override
   String toString() {
@@ -1143,17 +1089,14 @@ class _$_UpdateInProgress implements _UpdateInProgress {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return updateInProgress(newDischargeData);
@@ -1165,16 +1108,11 @@ class _$_UpdateInProgress implements _UpdateInProgress {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (updateInProgress != null) {
@@ -1217,11 +1155,10 @@ class _$_UpdateInProgress implements _UpdateInProgress {
 }
 
 abstract class _UpdateInProgress implements PatientEgresoEditState {
-  const factory _UpdateInProgress(
-          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+  const factory _UpdateInProgress(DischargeDataEntity newDischargeData) =
       _$_UpdateInProgress;
 
-  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+  DischargeDataEntity get newDischargeData =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UpdateInProgressCopyWith<_UpdateInProgress> get copyWith =>
@@ -1233,11 +1170,9 @@ abstract class _$UpdateFailureCopyWith<$Res> {
   factory _$UpdateFailureCopyWith(
           _UpdateFailure value, $Res Function(_UpdateFailure) then) =
       __$UpdateFailureCopyWithImpl<$Res>;
-  $Res call(
-      {String errorMessage,
-      DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+  $Res call({String errorMessage, DischargeDataEntity newDischargeData});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData;
 }
 
 /// @nodoc
@@ -1264,14 +1199,13 @@ class __$UpdateFailureCopyWithImpl<$Res>
       newDischargeData == freezed
           ? _value.newDischargeData
           : newDischargeData // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.newDischargeData, (value) {
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData {
+    return $DischargeDataEntityCopyWith<$Res>(_value.newDischargeData, (value) {
       return _then(_value.copyWith(newDischargeData: value));
     });
   }
@@ -1285,7 +1219,7 @@ class _$_UpdateFailure implements _UpdateFailure {
   @override
   final String errorMessage;
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+  final DischargeDataEntity newDischargeData;
 
   @override
   String toString() {
@@ -1321,17 +1255,14 @@ class _$_UpdateFailure implements _UpdateFailure {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return updateFailure(errorMessage, newDischargeData);
@@ -1343,16 +1274,11 @@ class _$_UpdateFailure implements _UpdateFailure {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (updateFailure != null) {
@@ -1395,12 +1321,12 @@ class _$_UpdateFailure implements _UpdateFailure {
 }
 
 abstract class _UpdateFailure implements PatientEgresoEditState {
-  const factory _UpdateFailure(String errorMessage,
-          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+  const factory _UpdateFailure(
+          String errorMessage, DischargeDataEntity newDischargeData) =
       _$_UpdateFailure;
 
   String get errorMessage => throw _privateConstructorUsedError;
-  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+  DischargeDataEntity get newDischargeData =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
@@ -1412,9 +1338,9 @@ abstract class _$UpdateSuccessCopyWith<$Res> {
   factory _$UpdateSuccessCopyWith(
           _UpdateSuccess value, $Res Function(_UpdateSuccess) then) =
       __$UpdateSuccessCopyWithImpl<$Res>;
-  $Res call({DischargeOfPositiveCasesOfCovid19Entity newDischargeData});
+  $Res call({DischargeDataEntity newDischargeData});
 
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData;
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData;
 }
 
 /// @nodoc
@@ -1436,14 +1362,13 @@ class __$UpdateSuccessCopyWithImpl<$Res>
       newDischargeData == freezed
           ? _value.newDischargeData
           : newDischargeData // ignore: cast_nullable_to_non_nullable
-              as DischargeOfPositiveCasesOfCovid19Entity,
+              as DischargeDataEntity,
     ));
   }
 
   @override
-  $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res> get newDischargeData {
-    return $DischargeOfPositiveCasesOfCovid19EntityCopyWith<$Res>(
-        _value.newDischargeData, (value) {
+  $DischargeDataEntityCopyWith<$Res> get newDischargeData {
+    return $DischargeDataEntityCopyWith<$Res>(_value.newDischargeData, (value) {
       return _then(_value.copyWith(newDischargeData: value));
     });
   }
@@ -1455,7 +1380,7 @@ class _$_UpdateSuccess implements _UpdateSuccess {
   const _$_UpdateSuccess(this.newDischargeData);
 
   @override
-  final DischargeOfPositiveCasesOfCovid19Entity newDischargeData;
+  final DischargeDataEntity newDischargeData;
 
   @override
   String toString() {
@@ -1487,17 +1412,14 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     required TResult Function() initial,
     required TResult Function() fetchInProgress,
     required TResult Function(String errorMessage) fetchFailure,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)
+    required TResult Function(DischargeDataEntity actualDischargeData)
         fetchSuccess,
-    required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateInProgress,
-    required TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
-        updateFailure,
     required TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)
+            String errorMessage, DischargeDataEntity newDischargeData)
+        updateFailure,
+    required TResult Function(DischargeDataEntity newDischargeData)
         updateSuccess,
   }) {
     return updateSuccess(newDischargeData);
@@ -1509,16 +1431,11 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
     TResult Function(String errorMessage)? fetchFailure,
-    TResult Function(
-            DischargeOfPositiveCasesOfCovid19Entity actualDischargeData)?
-        fetchSuccess,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateInProgress,
-    TResult Function(String errorMessage,
-            DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
         updateFailure,
-    TResult Function(DischargeOfPositiveCasesOfCovid19Entity newDischargeData)?
-        updateSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
     required TResult orElse(),
   }) {
     if (updateSuccess != null) {
@@ -1561,11 +1478,10 @@ class _$_UpdateSuccess implements _UpdateSuccess {
 }
 
 abstract class _UpdateSuccess implements PatientEgresoEditState {
-  const factory _UpdateSuccess(
-          DischargeOfPositiveCasesOfCovid19Entity newDischargeData) =
+  const factory _UpdateSuccess(DischargeDataEntity newDischargeData) =
       _$_UpdateSuccess;
 
-  DischargeOfPositiveCasesOfCovid19Entity get newDischargeData =>
+  DischargeDataEntity get newDischargeData =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UpdateSuccessCopyWith<_UpdateSuccess> get copyWith =>
