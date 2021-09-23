@@ -45,8 +45,7 @@ class PatientEntity with _$PatientEntity {
     required int blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
-    required DischargeOfPositiveCasesOfCovid19Entity
-        dischargeOfPositiveCasesOfCovid19,
+    required DischargeDataEntity dischargeOfPositiveCasesOfCovid19,
   }) = PatientGetDetailEntity;
   const factory PatientEntity.post({
     required String firstname,

@@ -3,9 +3,21 @@ import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/routes/routes.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.stylus,
+        PointerDeviceKind.invertedStylus,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.unknown,
+      };
+}
 
 class App extends StatelessWidget {
   @override
@@ -33,6 +45,7 @@ class App extends StatelessWidget {
                       localizationsDelegates: Messages.localizationsDelegates,
                       supportedLocales: Messages.supportedLocales,
                       locale: state.locale,
+                      scrollBehavior: CustomScrollBehavior(),
                       backButtonDispatcher: Routes.backButtonDispatcher,
                       routerDelegate: Routes.routerDelegate,
                       routeInformationParser: Routes.routeInformationParser,

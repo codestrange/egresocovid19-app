@@ -2,11 +2,11 @@ import 'package:egresocovid19/src/data/models/models.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'discharge_of_positive_cases_of_covid19.g.dart';
+part 'discharge_data_put_model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class DischargeOfPositiveCasesOfCovid19Model {
-  const DischargeOfPositiveCasesOfCovid19Model({
+class DischargeDataPutModel {
+  const DischargeDataPutModel({
     required this.detectionDate,
     required this.symptoms,
     required this.durationOfSymptoms,
@@ -60,11 +60,8 @@ class DischargeOfPositiveCasesOfCovid19Model {
   final List<Aftermath>? aftermath;
   final List<String>? othersAftermath;
 
-  static DischargeOfPositiveCasesOfCovid19Model fromJson(
-    Map<String, dynamic> json,
-  ) =>
-      _$DischargeOfPositiveCasesOfCovid19ModelFromJson(json);
+  static DischargeDataPutModel fromJson(Map<String, dynamic> json) =>
+      _$DischargeDataPutModelFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$DischargeOfPositiveCasesOfCovid19ModelToJson(this);
+  Map<String, dynamic> toJson() => _$DischargeDataPutModelToJson(this);
 }
