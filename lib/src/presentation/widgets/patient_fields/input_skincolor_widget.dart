@@ -28,7 +28,7 @@ class SkinColorInputWidget extends StatelessWidget {
           value: skinColor,
           child: Row(
             children: <Widget>[
-              Text(_getTextByEnum(context, skinColor)), //TODO: Localization
+              Text(_getTextByEnum(context, skinColor)),
             ],
           ),
         );

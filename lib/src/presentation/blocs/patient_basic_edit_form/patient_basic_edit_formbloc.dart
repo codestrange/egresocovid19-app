@@ -45,19 +45,21 @@ abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
         personalPathologicalHistory,
         familyPathologicalHistory
       ];
-
-  void updateInputsWithEntity(PatientGetEntity entity);
 }
 
 @Injectable(as: IPatientBasicEditFormBloc)
 class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   PatientBasicEditFormBloc({
     required this.patientService,
-  }) : super();
+    @factoryParam PatientGetEntity? patientGetEntity,
+  })  : patientEntity = patientGetEntity!,
+        super();
+
+  final PatientGetEntity patientEntity;
 
   @override
-  InputBloc<String> id = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String> id = InputBloc<String>(
+    pureValue: patientEntity.id,
     validationType: ValidationType.explicit,
     validators: [
       StringValidator.required,
@@ -65,13 +67,13 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  InputBloc<String?> address = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> address = InputBloc<String>(
+    pureValue: patientEntity.address,
   );
 
   @override
-  InputBloc<String?> age = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> age = InputBloc<String>(
+    pureValue: patientEntity.age.toString(),
     validationType: ValidationType.explicit,
     validators: [
       StringValidator.number,
@@ -79,8 +81,8 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  InputBloc<String?> blockNumber = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> blockNumber = InputBloc<String>(
+    pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
     validators: [
       StringValidator.integer,
@@ -88,13 +90,13 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  InputBloc<BloodType?> bloodType = InputBloc<BloodType?>(
-    pureValue: null,
+  late final InputBloc<BloodType?> bloodType = InputBloc<BloodType?>(
+    pureValue: patientEntity.bloodType,
   );
 
   @override
-  InputBloc<String?> ci = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> ci = InputBloc<String>(
+    pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
     validators: [
       StringValidator.integer,
@@ -104,82 +106,63 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  InputBloc<List<PathologicalEntity>> familyPathologicalHistory =
+  late final InputBloc<List<PathologicalEntity>> familyPathologicalHistory =
       InputBloc<List<PathologicalEntity>>(
-    pureValue: [],
+    pureValue: patientEntity.familyPathologicalHistory,
   );
 
   @override
-  InputBloc<String?> municipalityCode = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> municipalityCode = InputBloc<String>(
+    pureValue: patientEntity.municipality, //TODO: fix this...
   );
 
   @override
-  InputBloc<String?> neighborhood = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> neighborhood = InputBloc<String>(
+    pureValue: patientEntity.neighborhood,
   );
 
   @override
-  InputBloc<List<PathologicalEntity>> personalPathologicalHistory =
+  late final InputBloc<List<PathologicalEntity>> personalPathologicalHistory =
       InputBloc<List<PathologicalEntity>>(
-    pureValue: [],
+    pureValue: patientEntity.personalPathologicalHistory,
   );
 
   @override
-  InputBloc<String?> polyclinic = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> polyclinic = InputBloc<String>(
+    pureValue: patientEntity.polyclinic,
   );
 
   @override
-  InputBloc<String?> popularCouncil = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> popularCouncil = InputBloc<String>(
+    pureValue: patientEntity.popularCouncil,
   );
 
   @override
-  InputBloc<Sex?> sex = InputBloc(
-    pureValue: null,
+  late final InputBloc<Sex?> sex = InputBloc(
+    pureValue: patientEntity.sex,
   );
 
   @override
-  InputBloc<SkinColor?> skinColor = InputBloc(
-    pureValue: null,
+  late final InputBloc<SkinColor?> skinColor = InputBloc(
+    pureValue: patientEntity.skinColor,
   );
 
   @override
-  InputBloc<String?> surgery = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> surgery = InputBloc<String>(
+    pureValue: patientEntity.surgery,
   );
 
   @override
-  InputBloc<String?> firstName = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> firstName = InputBloc<String>(
+    pureValue: patientEntity.firstname,
   );
 
   @override
-  InputBloc<String?> lastName = InputBloc<String>(
-    pureValue: '',
+  late final InputBloc<String?> lastName = InputBloc<String>(
+    pureValue: patientEntity.lastname,
   );
 
   final IPatientService patientService;
-
-  @override
-  void updateInputsWithEntity(PatientGetEntity entity) {
-    id.pure(entity.id);
-    firstName.pure(entity.firstname);
-    lastName.pure(entity.lastname);
-    ci.pure(entity.ci);
-    // municipalityCode.pure(entity.);
-    neighborhood.pure(entity.neighborhood);
-    polyclinic.pure(entity.polyclinic);
-    popularCouncil.pure(entity.popularCouncil);
-    surgery.pure(entity.surgery);
-    age.pure(entity.age.toString());
-    blockNumber.pure(entity.blockNumber.toString());
-    bloodType.pure(entity.bloodType);
-    sex.pure(entity.sex);
-    skinColor.pure(entity.skinColor);
-    change();
-  }
 
   @override
   Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
@@ -189,7 +172,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
         firstname: firstName.state.value,
         lastname: lastName.state.value,
         ci: ci.state.value,
-        municipalityCode: municipalityCode.state.value,
+        municipalityCode: municipalityCode.state.value, //TODO: FIX THIS...
         sex: sex.state.value,
         age: age.state.value == null ? null : int.tryParse(age.state.value!),
         skinColor: skinColor.state.value,
