@@ -152,6 +152,24 @@ abstract class Messages {
   /// **'Buscar por nombre o carnet'**
   String get homeSearchHint;
 
+  /// No description provided for @loginPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar Sesión'**
+  String get loginPageTitle;
+
+  /// No description provided for @loginSubmitButton.
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar Sesión'**
+  String get loginSubmitButton;
+
+  /// No description provided for @loginError.
+  ///
+  /// In es, this message translates to:
+  /// **'Correo o contraseña incorrectos'**
+  String get loginError;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:

@@ -13,7 +13,10 @@ class LoginPage extends StatelessWidget {
   static BeamPage getPage(BuildContext context) {
     return BeamPage(
       key: const ValueKey('login'),
-      title: getTitle(context, 'Iniciar Sesión'),
+      title: getTitle(
+        context,
+        Messages.of(context)!.loginPageTitle,
+      ),
       child: LoginPage(),
     );
   }
@@ -27,7 +30,13 @@ class LoginPage extends StatelessWidget {
           onSuccess: (user) => context.beamToNamed('/'),
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(content: Text(error.message))),
+            ..showSnackBar(
+              SnackBar(
+                content: Text(
+                  Messages.of(context)!.loginError,
+                ),
+              ),
+            ),
           child: Column(
             children: [
               Flexible(
@@ -75,17 +84,19 @@ class _LoginForm extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Flexible(
+            children: [
+              const Flexible(
                 child: _EmailField(),
               ),
-              SizedBox(height: 10),
-              Flexible(
+              const SizedBox(height: 10),
+              const Flexible(
                 child: _PasswordField(),
               ),
-              SizedBox(height: 10),
-              SubmmitButton<ILoginBloc>('Iniciar Sesión'),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
+              SubmmitButton<ILoginBloc>(
+                label: Messages.of(context)!.loginSubmitButton,
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         );

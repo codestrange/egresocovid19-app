@@ -38,6 +38,15 @@ class MessagesEs extends Messages {
   String get homeSearchHint => 'Buscar por nombre o carnet';
 
   @override
+  String get loginPageTitle => 'Iniciar Sesión';
+
+  @override
+  String get loginSubmitButton => 'Iniciar Sesión';
+
+  @override
+  String get loginError => 'Correo o contraseña incorrectos';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override
