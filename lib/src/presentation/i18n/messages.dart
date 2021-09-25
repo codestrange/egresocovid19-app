@@ -176,6 +176,24 @@ abstract class Messages {
   /// **'Comprobando'**
   String get checkingPageTitle;
 
+  /// No description provided for @notFoundPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Página desconocida'**
+  String get notFoundPageTitle;
+
+  /// No description provided for @notFoundMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Página desconocida, si considera que es un error contacte con el equipo de soporte.'**
+  String get notFoundMessage;
+
+  /// No description provided for @notFoundButtonText.
+  ///
+  /// In es, this message translates to:
+  /// **'Ir a la página inicial'**
+  String get notFoundButtonText;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:

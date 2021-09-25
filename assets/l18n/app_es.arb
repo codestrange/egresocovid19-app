@@ -17,6 +17,10 @@
 
     "checkingPageTitle": "Comprobando",
 
+    "notFoundPageTitle": "Página desconocida",
+    "notFoundMessage": "Página desconocida, si considera que es un error contacte con el equipo de soporte.",
+    "notFoundButtonText": "Ir a la página inicial",
+
     "enumSexMale": "Masculino",
     "enumSexFemale": "Femenino",
     "enumSexOther": "Otro",

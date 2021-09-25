@@ -50,6 +50,15 @@ class MessagesEs extends Messages {
   String get checkingPageTitle => 'Comprobando';
 
   @override
+  String get notFoundPageTitle => 'Página desconocida';
+
+  @override
+  String get notFoundMessage => 'Página desconocida, si considera que es un error contacte con el equipo de soporte.';
+
+  @override
+  String get notFoundButtonText => 'Ir a la página inicial';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override
