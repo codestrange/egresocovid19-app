@@ -19,8 +19,8 @@ class PatientEgresoEditBloc extends IPatientEgresoEditBloc {
   PatientEgresoEditBloc(
     this.patientService,
   ) : super(const PatientEgresoEditState.initial()) {
-    on<PatientEgresoEditEvent>((event, emit) {
-      event.when(
+    on<PatientEgresoEditEvent>((event, emit) async {
+      await event.when(
         fetch: (patientId) async {
           emit(const PatientEgresoEditState.fetchInProgress());
 

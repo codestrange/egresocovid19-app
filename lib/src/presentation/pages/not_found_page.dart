@@ -18,7 +18,7 @@ class NotFoundPage extends StatelessWidget {
         child: Center(
           child: TextButton(
             onPressed: () {
-              context.beamToNamed('/');
+              context.beamToNamed('/patients');
             },
             child: const Text('Not found, go to home.'),
           ),

@@ -9,6 +9,9 @@
     "homeTooltipAdd": "Agregar paciente",
     "homeCloseSession": "Cerrar sesión",
     "homeSearchHint": "Buscar por nombre o carnet",
+    "loginPageTitle": "Iniciar Sesión",
+    "loginSubmitButton": "Iniciar Sesión",
+    "loginError": "Correo o contraseña incorrectos",
     "enumSexMale": "Masculino",
     "enumSexFemale": "Femenino",
     "enumSexOther": "Otro",
@@ -23,5 +26,4 @@
     "enumSkinColorWhite": "Blanco",
     "enumSkinColorBlack": "Negro",
     "enumSkinColorOther": "Otro"
-
 }

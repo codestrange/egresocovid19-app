@@ -6,6 +6,6 @@ class PatientEgresoEditEvent with _$PatientEgresoEditEvent {
 
   const factory PatientEgresoEditEvent.update(
     String patientId,
-    DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
+    DischargeDataEntity newDischargeData,
   ) = _Update;
 }

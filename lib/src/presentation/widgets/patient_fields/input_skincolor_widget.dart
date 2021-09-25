@@ -1,5 +1,5 @@
 import 'package:egresocovid19/src/domain/enums/enums.dart';
-import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -28,7 +28,7 @@ class SkinColorInputWidget extends StatelessWidget {
           value: skinColor,
           child: Row(
             children: <Widget>[
-              Text(_getTextByEnum(context, skinColor)),
+              Text(skinColor.visualName(context)),
             ],
           ),
         );
@@ -41,18 +41,5 @@ class SkinColorInputWidget extends StatelessWidget {
         labelText: labelText,
       ),
     );
-  }
-
-  String _getTextByEnum(BuildContext context, SkinColor skinColor) {
-    switch (skinColor) {
-      case SkinColor.Black:
-        return Messages.of(context)!.enumSkinColorBlack;
-      case SkinColor.White:
-        return Messages.of(context)!.enumSkinColorWhite;
-      case SkinColor.Other:
-        return Messages.of(context)!.enumSkinColorOther;
-      default:
-        return skinColor.toString();
-    }
   }
 }

@@ -22,7 +22,7 @@ abstract class IPatientService {
 
   Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+    required DischargeDataEntity discharge,
   });
 }
 
@@ -63,7 +63,7 @@ class PatientService implements IPatientService {
   @override
   Future<Either<ErrorEntity, PatientGetDetailEntity>> putPatientEgreso({
     required String patientId,
-    required DischargeOfPositiveCasesOfCovid19Entity discharge,
+    required DischargeDataEntity discharge,
   }) {
     return patientRepository.putPatientEgreso(
       patientId: patientId,

@@ -52,7 +52,7 @@ class _PatientCreatePageInternal extends StatelessWidget {
         ),
         body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
           bloc: context.read(),
-          onSuccess: (_) => context.beamToNamed('/'),
+          onSuccess: (_) => context.beamToNamed('/patients'),
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text(error.message))),
@@ -123,7 +123,9 @@ class _PatientCreateForm extends StatelessWidget {
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
-        const SubmmitButton<IPatientCreateBloc>('Añadir Paciente'),
+        const SubmmitButton<IPatientCreateBloc>(
+          label: 'Añadir Paciente',
+        ),
       ],
     );
   }

@@ -12,6 +12,8 @@ extension _BeamStateParams on BeamState {
 
     return uri.pathSegments[index] == match;
   }
+
+  bool lenGreaterThan(int len) => uri.pathSegments.length > len;
 }
 
 class AuthLocation extends BeamLocation {
@@ -50,10 +52,19 @@ class HomeLocation extends BeamLocation<BeamState> {
         '/',
         '/patients',
         '/patients/new',
-        '/patients/:$PATIENT_ID/view',
-        '/patients/:$PATIENT_ID/basic-edit',
-        '/patients/:$PATIENT_ID/egreso-edit',
+        '/patients/:$PATIENT_ID',
+        '/patients/:$PATIENT_ID/edit',
+        '/patients/:$PATIENT_ID/editegreso',
       ];
+
+  // @override
+  // List<BeamGuard> get guards => [
+  //       BeamGuard(
+  //         pathPatterns: ['/'],
+  //         check: (_, __) => false,
+  //         beamToNamed: '/patients',
+  //       ),
+  //     ];
 
   @override
   List<BeamPage> buildPages(
@@ -62,14 +73,15 @@ class HomeLocation extends BeamLocation<BeamState> {
   ) {
     return [
       HomePage.getPage(context),
-      if (state.contains(0, 'patients')) ...[
-        if (state.contains(1, 'new')) PatientCreatePage.getPage(context),
-        if (state.contains(2, 'view'))
+      if (state.contains(0, 'patients') && state.lenGreaterThan(1)) ...[
+        if (state.contains(1, 'new'))
+          PatientCreatePage.getPage(context)
+        else
           PatientViewPage.getPage(context, state.patientId),
-        if (state.contains(2, 'basic-edit'))
+        if (state.contains(2, 'edit'))
           PatientBasicEditPage.getPage(context, state.patientId),
-        if (state.contains(2, 'egreso-edit'))
-          PatientEgresoEditPage.getPage(context, state.patientId),
+        if (state.contains(2, 'editegreso'))
+          PatientEgresoEditPage.getPage(context, state.patientId)
       ]
     ];
   }

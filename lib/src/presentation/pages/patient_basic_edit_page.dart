@@ -181,7 +181,9 @@ class _PatientEditForm extends StatelessWidget {
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
-        const SubmmitButton<IPatientBasicEditFormBloc>('Aplicar Cambios'),
+        const SubmmitButton<IPatientBasicEditFormBloc>(
+          label: 'Aplicar Cambios',
+        ),
       ],
     );
   }
