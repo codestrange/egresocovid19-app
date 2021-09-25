@@ -60,17 +60,20 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
             onConfirm: selectAll,
             buttonText: Text(
               widget.labelText,
-              // style: Theme.of(context).textTheme.subtitle1!.copyWith(
-              //       color: Colors.grey[600],
-              //     ),
             ),
             buttonIcon: const Icon(
               Icons.arrow_drop_down,
               size: 24,
             ),
-            // selectedColor: Colors.black,
             chipDisplay: MultiSelectChipDisplay.none(),
             decoration: const BoxDecoration(),
+            title: const Text('Seleccione una o varias opciones'), // TODO
+            cancelText: const Text('Cancelar'), // TODO
+            confirmText: const Text('Aceptar'), // TODO
+            itemsTextStyle: Theme.of(context).textTheme.bodyText2,
+            selectedItemsTextStyle: Theme.of(context).textTheme.bodyText2,
+            unselectedColor: Theme.of(context).colorScheme.secondary,
+            selectedColor: Theme.of(context).colorScheme.secondary,
           ),
         ),
         const SizedBox(
