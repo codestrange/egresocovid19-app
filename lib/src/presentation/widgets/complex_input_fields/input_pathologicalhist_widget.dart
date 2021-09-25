@@ -44,10 +44,7 @@ class _PathologicalHistoryInputWidgetState
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(widget.headerText),
-        const SizedBox(
-          height: 10,
-        ),
-
+        const SizedBox(height: 10),
         // new Pathology Input
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
@@ -68,9 +65,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
-        const SizedBox(
-          height: 4,
-        ),
+        const SizedBox(height: 10),
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
           builder: (context, state) {
@@ -81,7 +76,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
-
+        const SizedBox(height: 10),
         // Add Button
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
@@ -108,6 +103,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
+        const SizedBox(height: 10),
         Wrap(
           spacing: 3,
           children: widget.pathologicalHist
