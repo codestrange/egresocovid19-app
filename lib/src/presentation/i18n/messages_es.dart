@@ -275,6 +275,129 @@ class MessagesEs extends Messages {
   String get patientViewErrorRetry => 'Reintentar';
 
   @override
+  String get patientEditEgresoPageTitle => 'Editar';
+
+  @override
+  String get patientEditEgresoAppBarTitle => 'Editar Información de Egreso';
+
+  @override
+  String get patientEditEgresoErrorSaveMessage => 'Ocurrio un error al guardar los datos.';
+
+  @override
+  String get patientEditEgresoErrorFetchMessage => 'Ha ocurrido un error al cargar los datos.';
+
+  @override
+  String get patientEditEgresoSuccessMessage => 'Datos guardados satisfactoriamente.';
+
+  @override
+  String get patientEditEgresoRetry => 'Reintentar';
+
+  @override
+  String get patientEditEgresoSymptons => 'Síntomas';
+
+  @override
+  String get patientEditEgresoDiagnosis => 'Diagnóstico';
+
+  @override
+  String get patientEditEgresoFormOfContagion => 'Forma de Contagio';
+
+  @override
+  String get patientEditEgresoHospitalizationTime => 'Tiempo de Hospitalización';
+
+  @override
+  String get patientEditEgresoHospitalizationTimeDesc => 'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, y falleció - 2C3G1CrF.';
+
+  @override
+  String get patientEditEgresoIncomes => 'Ingreso';
+
+  @override
+  String get patientEditEgresoContacts => 'Contactos';
+
+  @override
+  String get patientEditEgresoRing => 'Anillo';
+
+  @override
+  String get patientEditEgresoRingPositives => '¿Cuántos enfermaron?';
+
+  @override
+  String get patientEditEgresoTreatmentsReceived => 'Tratamiento Recibido';
+
+  @override
+  String get patientEditEgresoProphylaxis => 'Profilaxis';
+
+  @override
+  String get patientEditEgresoAftermath => 'Secuelas';
+
+  @override
+  String get patientEditEgresoEdit => 'Editar';
+
+  @override
+  String get patientEditEgresoOtherAftermath => 'Otras secuelas';
+
+  @override
+  String get patientEditEgresoAnotherVaccines => 'Otras vacunas usadas';
+
+  @override
+  String get patientEditEgresoProphylaxisWith => 'Realizó profilaxis con';
+
+  @override
+  String get patientEditEgresoAntibiotics => 'Antibióticos';
+
+  @override
+  String get patientEditEgresoTreatments => 'Tratamientos';
+
+  @override
+  String get patientEditEgresoCount => 'Cantidad';
+
+  @override
+  String get patientEditEgresoThirdLevel => 'Tercero';
+
+  @override
+  String get patientEditEgresoSecondLevel => 'Segundo';
+
+  @override
+  String get patientEditEgresoFirstLevel => 'Primero';
+
+  @override
+  String get patientEditEgresoIncomesDetails => 'Detalles de Ingreso';
+
+  @override
+  String get patientEditEgresoCompactForm => 'Forma Compacta';
+
+  @override
+  String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases => '¿Trabajó en la atención de casos positivos?';
+
+  @override
+  String get patientEditEgresoWasHePartOfAnEvent => '¿Fué parte de un evento de transmición?';
+
+  @override
+  String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge => 'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
+
+  @override
+  String get patientEditEgresoDaysCount => 'Cant. de días';
+
+  @override
+  String get patientEditEgresoNumberPcrPerformed => 'Número de Tests/Pcr realizados';
+
+  @override
+  String get patientEditEgresoDaysFromSymptomsToDiagnosis => 'Días con síntomas hasta diagnóstico';
+
+  @override
+  String get patientEditEgresoTestUsedInDiagnosis => 'Test usado en el Diagnóstico';
+
+  @override
+  String get patientEditEgresoDiagnosisWay => 'Forma de diagnóstico';
+
+  @override
+  String get patientEditEgresoDurationOfSymptoms => 'Duración de los síntomas (en días)';
+
+  @override
+  String get patientEditEgresoSymptomp => 'Síntoma';
+
+  @override
+  String get patientEditEgresoDetectionDate => 'Fecha de detección';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override

@@ -72,9 +72,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
             );
           },
         ),
-        const SizedBox(
-          height: 6,
-        ),
+        const SizedBox(height: 10),
         BlocBuilder<IncomeBloc, IncomeState>(
           bloc: incomeInputBloc,
           builder: (context, state) {
@@ -85,7 +83,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
             );
           },
         ),
-
+        const SizedBox(height: 10),
         // Add Button
         BlocBuilder<IncomeBloc, IncomeState>(
           bloc: incomeInputBloc,
@@ -117,6 +115,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
             );
           },
         ),
+        const SizedBox(height: 10),
         Wrap(
           spacing: 3,
           children: widget.incomes
@@ -124,8 +123,8 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
                 (e) => Chip(
                   padding: const EdgeInsets.all(3),
                   label: Text(
-                    '${e.income.visualName(context)} - ${e.days} días',
-                  ), // TODO
+                    '${e.income.visualName(context)} - ${e.days} días', // TODO
+                  ),
                   onDeleted: () {
                     if (!widget.incomes.any((o) => o.income == e.income)) {
                       return;

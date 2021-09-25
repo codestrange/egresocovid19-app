@@ -626,6 +626,252 @@ abstract class Messages {
   /// **'Reintentar'**
   String get patientViewErrorRetry;
 
+  /// No description provided for @patientEditEgresoPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar'**
+  String get patientEditEgresoPageTitle;
+
+  /// No description provided for @patientEditEgresoAppBarTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Información de Egreso'**
+  String get patientEditEgresoAppBarTitle;
+
+  /// No description provided for @patientEditEgresoErrorSaveMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Ocurrio un error al guardar los datos.'**
+  String get patientEditEgresoErrorSaveMessage;
+
+  /// No description provided for @patientEditEgresoErrorFetchMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Ha ocurrido un error al cargar los datos.'**
+  String get patientEditEgresoErrorFetchMessage;
+
+  /// No description provided for @patientEditEgresoSuccessMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Datos guardados satisfactoriamente.'**
+  String get patientEditEgresoSuccessMessage;
+
+  /// No description provided for @patientEditEgresoRetry.
+  ///
+  /// In es, this message translates to:
+  /// **'Reintentar'**
+  String get patientEditEgresoRetry;
+
+  /// No description provided for @patientEditEgresoSymptons.
+  ///
+  /// In es, this message translates to:
+  /// **'Síntomas'**
+  String get patientEditEgresoSymptons;
+
+  /// No description provided for @patientEditEgresoDiagnosis.
+  ///
+  /// In es, this message translates to:
+  /// **'Diagnóstico'**
+  String get patientEditEgresoDiagnosis;
+
+  /// No description provided for @patientEditEgresoFormOfContagion.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma de Contagio'**
+  String get patientEditEgresoFormOfContagion;
+
+  /// No description provided for @patientEditEgresoHospitalizationTime.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo de Hospitalización'**
+  String get patientEditEgresoHospitalizationTime;
+
+  /// No description provided for @patientEditEgresoHospitalizationTimeDesc.
+  ///
+  /// In es, this message translates to:
+  /// **'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, y falleció - 2C3G1CrF.'**
+  String get patientEditEgresoHospitalizationTimeDesc;
+
+  /// No description provided for @patientEditEgresoIncomes.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingreso'**
+  String get patientEditEgresoIncomes;
+
+  /// No description provided for @patientEditEgresoContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos'**
+  String get patientEditEgresoContacts;
+
+  /// No description provided for @patientEditEgresoRing.
+  ///
+  /// In es, this message translates to:
+  /// **'Anillo'**
+  String get patientEditEgresoRing;
+
+  /// No description provided for @patientEditEgresoRingPositives.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Cuántos enfermaron?'**
+  String get patientEditEgresoRingPositives;
+
+  /// No description provided for @patientEditEgresoTreatmentsReceived.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamiento Recibido'**
+  String get patientEditEgresoTreatmentsReceived;
+
+  /// No description provided for @patientEditEgresoProphylaxis.
+  ///
+  /// In es, this message translates to:
+  /// **'Profilaxis'**
+  String get patientEditEgresoProphylaxis;
+
+  /// No description provided for @patientEditEgresoAftermath.
+  ///
+  /// In es, this message translates to:
+  /// **'Secuelas'**
+  String get patientEditEgresoAftermath;
+
+  /// No description provided for @patientEditEgresoEdit.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar'**
+  String get patientEditEgresoEdit;
+
+  /// No description provided for @patientEditEgresoOtherAftermath.
+  ///
+  /// In es, this message translates to:
+  /// **'Otras secuelas'**
+  String get patientEditEgresoOtherAftermath;
+
+  /// No description provided for @patientEditEgresoAnotherVaccines.
+  ///
+  /// In es, this message translates to:
+  /// **'Otras vacunas usadas'**
+  String get patientEditEgresoAnotherVaccines;
+
+  /// No description provided for @patientEditEgresoProphylaxisWith.
+  ///
+  /// In es, this message translates to:
+  /// **'Realizó profilaxis con'**
+  String get patientEditEgresoProphylaxisWith;
+
+  /// No description provided for @patientEditEgresoAntibiotics.
+  ///
+  /// In es, this message translates to:
+  /// **'Antibióticos'**
+  String get patientEditEgresoAntibiotics;
+
+  /// No description provided for @patientEditEgresoTreatments.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamientos'**
+  String get patientEditEgresoTreatments;
+
+  /// No description provided for @patientEditEgresoCount.
+  ///
+  /// In es, this message translates to:
+  /// **'Cantidad'**
+  String get patientEditEgresoCount;
+
+  /// No description provided for @patientEditEgresoThirdLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Tercero'**
+  String get patientEditEgresoThirdLevel;
+
+  /// No description provided for @patientEditEgresoSecondLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Segundo'**
+  String get patientEditEgresoSecondLevel;
+
+  /// No description provided for @patientEditEgresoFirstLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Primero'**
+  String get patientEditEgresoFirstLevel;
+
+  /// No description provided for @patientEditEgresoIncomesDetails.
+  ///
+  /// In es, this message translates to:
+  /// **'Detalles de Ingreso'**
+  String get patientEditEgresoIncomesDetails;
+
+  /// No description provided for @patientEditEgresoCompactForm.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma Compacta'**
+  String get patientEditEgresoCompactForm;
+
+  /// No description provided for @patientEditEgresoDidHeWorkInTheAttentionToPositiveCases.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Trabajó en la atención de casos positivos?'**
+  String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases;
+
+  /// No description provided for @patientEditEgresoWasHePartOfAnEvent.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Fué parte de un evento de transmición?'**
+  String get patientEditEgresoWasHePartOfAnEvent;
+
+  /// No description provided for @patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico'**
+  String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge;
+
+  /// No description provided for @patientEditEgresoDaysCount.
+  ///
+  /// In es, this message translates to:
+  /// **'Cant. de días'**
+  String get patientEditEgresoDaysCount;
+
+  /// No description provided for @patientEditEgresoNumberPcrPerformed.
+  ///
+  /// In es, this message translates to:
+  /// **'Número de Tests/Pcr realizados'**
+  String get patientEditEgresoNumberPcrPerformed;
+
+  /// No description provided for @patientEditEgresoDaysFromSymptomsToDiagnosis.
+  ///
+  /// In es, this message translates to:
+  /// **'Días con síntomas hasta diagnóstico'**
+  String get patientEditEgresoDaysFromSymptomsToDiagnosis;
+
+  /// No description provided for @patientEditEgresoTestUsedInDiagnosis.
+  ///
+  /// In es, this message translates to:
+  /// **'Test usado en el Diagnóstico'**
+  String get patientEditEgresoTestUsedInDiagnosis;
+
+  /// No description provided for @patientEditEgresoDiagnosisWay.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma de diagnóstico'**
+  String get patientEditEgresoDiagnosisWay;
+
+  /// No description provided for @patientEditEgresoDurationOfSymptoms.
+  ///
+  /// In es, this message translates to:
+  /// **'Duración de los síntomas (en días)'**
+  String get patientEditEgresoDurationOfSymptoms;
+
+  /// No description provided for @patientEditEgresoSymptomp.
+  ///
+  /// In es, this message translates to:
+  /// **'Síntoma'**
+  String get patientEditEgresoSymptomp;
+
+  /// No description provided for @patientEditEgresoDetectionDate.
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha de detección'**
+  String get patientEditEgresoDetectionDate;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:
