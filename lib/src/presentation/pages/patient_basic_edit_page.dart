@@ -66,7 +66,7 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
               child: const _PatientBasicForm(),
             ),
             failure: (state) => _ReloadBasicEditPage(
-              errorText: state.error.message,
+              errorText: 'Error', // TODO
               onPressed: () => context.currentBeamLocation.update(),
             ),
             orElse: () => const SizedBox(),
