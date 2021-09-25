@@ -1,17 +1,16 @@
 # Egreso COVID-19 Aplicación
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![deploy](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![deploy](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml)
 
 Aplicación para la gestión de la información de las personas que han sufrido la pandemia del COVID-19.
 
 Esta aplicación está desarrollada en [Flutter](https://flutter.dev) del lado del cliente y [FastAPI](https://fastapi.tiangolo.com) del lado del servidor, la base de datos utilizada es [MongoDB](https://www.mongodb.com/).
 
-## Contributors ✨
+## Contribuidores ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Gracias a estas personas maravillosas ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -29,4 +28,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+Este proyecto sigue la especificación [all-contributors](https://github.com/all-contributors/all-contributors). ¡Las contribuciones de cualquier tipo son bienvenidas!
