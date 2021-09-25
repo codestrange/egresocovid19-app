@@ -30,7 +30,7 @@ class ContagionInputWidget extends StatelessWidget {
           value: contagion,
           child: Row(
             children: <Widget>[
-              Text(contagion.visualName()),
+              Text(contagion.visualName(context)),
             ],
           ),
         );

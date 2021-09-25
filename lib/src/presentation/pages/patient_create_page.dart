@@ -52,7 +52,7 @@ class _PatientCreatePageInternal extends StatelessWidget {
         ),
         body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
           bloc: context.read(),
-          onSuccess: (_) => context.beamToNamed('/'),
+          onSuccess: (_) => context.beamToNamed('/patients'),
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text(error.message))),

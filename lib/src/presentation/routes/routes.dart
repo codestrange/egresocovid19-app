@@ -18,7 +18,7 @@ class Routes {
       BeamGuard(
         pathPatterns: ['/login', '/checking'],
         check: (_, __) => !GetIt.I<IAuthService>().isLoggedIn,
-        beamToNamed: '/',
+        beamToNamed: '/patients',
       ),
     ],
     routeListener: _listener,
@@ -30,6 +30,7 @@ class Routes {
         NotFoundLocation(),
       ],
     ),
+    initialPath: '/patients',
   );
 
   static void _listener(

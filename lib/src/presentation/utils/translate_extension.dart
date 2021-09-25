@@ -1,11 +1,15 @@
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
+import 'package:flutter/material.dart';
 
-//TODO: use context for localization
+// TODO: use localization
+
+extension EnumExtension on Enum {
+  String get name => toString().split('.').last;
+}
 
 extension ContagionExtension on Contagion {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case Contagion.Traveler:
         return 'Viajero';
@@ -14,30 +18,26 @@ extension ContagionExtension on Contagion {
       case Contagion.Inderterminate:
         return 'Indeterminada';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension DiagnosisWayExtension on DiagnosisWay {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case DiagnosisWay.GuardCorps:
         return 'Cuerpo de Guardia';
       case DiagnosisWay.FocusControl:
         return 'Control de Foco';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension IncomeExtension on Income {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case Income.Home:
         return 'Hogar';
@@ -50,15 +50,13 @@ extension IncomeExtension on Income {
       case Income.IntensiveTherapy:
         return 'Terapia Intensiva';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension TestDiagnosisExtension on TestDiagnosis {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case TestDiagnosis.AntigenTest:
         return 'Test de Antígenos';
@@ -69,15 +67,13 @@ extension TestDiagnosisExtension on TestDiagnosis {
       case TestDiagnosis.IgMIgGAntibodyTest:
         return 'Test de anticuerpo IgM/IgG';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension AftermathExtension on Aftermath {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case Aftermath.Fatigue:
         return 'Fatiga';
@@ -108,15 +104,13 @@ extension AftermathExtension on Aftermath {
       case Aftermath.Others:
         return 'Otros';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension TreatmentExtension on Treatment {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case Treatment.Herferon:
         return 'Herferón';
@@ -139,15 +133,13 @@ extension TreatmentExtension on Treatment {
       case Treatment.Italizumab:
         return 'Italizumab';
       default:
-        return name();
+        return name;
     }
   }
 }
 
 extension ProphylaxisExtension on Prophylaxis {
-  String name() => toString().split('.').last;
-
-  String visualName() {
+  String visualName(BuildContext context) {
     switch (this) {
       case Prophylaxis.Prevengovir:
         return 'Prevengovir';
@@ -178,7 +170,68 @@ extension ProphylaxisExtension on Prophylaxis {
       case Prophylaxis.Covid19Previously:
         return 'Ya tuvo COVID-19 previamente';
       default:
-        return name();
+        return name;
     }
+  }
+}
+
+extension SexExtention on Sex {
+  String visualName(BuildContext context) {
+    switch (this) {
+      case Sex.Female:
+        return Messages.of(context)!.enumSexFemale;
+      case Sex.Male:
+        return Messages.of(context)!.enumSexMale;
+      case Sex.Other:
+        return Messages.of(context)!.enumSexOther;
+      default:
+        return name;
+    }
+  }
+}
+
+extension SkinColorExtension on SkinColor {
+  String visualName(BuildContext context) {
+    switch (this) {
+      case SkinColor.Black:
+        return Messages.of(context)!.enumSkinColorBlack;
+      case SkinColor.White:
+        return Messages.of(context)!.enumSkinColorWhite;
+      case SkinColor.Other:
+        return Messages.of(context)!.enumSkinColorOther;
+      default:
+        return name;
+    }
+  }
+}
+
+extension BloodTypeExtention on BloodType {
+  String visualName(BuildContext context) {
+    switch (this) {
+      case BloodType.ABminus:
+        return Messages.of(context)!.enumBloodTypeABminus;
+      case BloodType.ABplus:
+        return Messages.of(context)!.enumBloodTypeABplus;
+      case BloodType.Aplus:
+        return Messages.of(context)!.enumBloodTypeAplus;
+      case BloodType.Aminus:
+        return Messages.of(context)!.enumBloodTypeAminus;
+      case BloodType.Bplus:
+        return Messages.of(context)!.enumBloodTypeBplus;
+      case BloodType.Bminus:
+        return Messages.of(context)!.enumBloodTypeBminus;
+      case BloodType.Oplus:
+        return Messages.of(context)!.enumBloodTypeOplus;
+      case BloodType.Ominus:
+        return Messages.of(context)!.enumBloodTypeOminus;
+      default:
+        return name;
+    }
+  }
+}
+
+extension BoolExtention on bool {
+  String yesOrNo(BuildContext context) {
+    return this ? 'Si' : 'No';
   }
 }

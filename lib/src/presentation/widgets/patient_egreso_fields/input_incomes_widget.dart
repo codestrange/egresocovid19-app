@@ -54,7 +54,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
                   value: income,
                   child: Row(
                     children: <Widget>[
-                      Text(income.visualName()),
+                      Text(income.visualName(context)),
                     ],
                   ),
                 );
@@ -123,7 +123,8 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
               .map(
                 (e) => Chip(
                   padding: const EdgeInsets.all(3),
-                  label: Text('${e.income.visualName()} - ${e.days} días'),
+                  label:
+                      Text('${e.income.visualName(context)} - ${e.days} días'),
                   onDeleted: () {
                     if (!widget.incomes.any((o) => o.income == e.income)) {
                       return;

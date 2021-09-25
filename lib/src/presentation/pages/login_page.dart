@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
       create: (context) => GetIt.I(),
       child: Scaffold(
         body: FormBlocListener<ILoginBloc, void, ErrorEntity>(
-          onSuccess: (user) => context.beamToNamed('/'),
+          onSuccess: (user) => context.beamToNamed('/patients'),
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(

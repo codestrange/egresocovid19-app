@@ -30,7 +30,7 @@ class DiagnosisWayInputWidget extends StatelessWidget {
           value: diagnosisWay,
           child: Row(
             children: <Widget>[
-              Text(diagnosisWay.visualName()),
+              Text(diagnosisWay.visualName(context)),
             ],
           ),
         );
