@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "lagcleaner",
+      "name": "Leonel Alejandro García López",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45600122?v=4",
+      "profile": "https://github.com/lagcleaner",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "egresocovid19-app",
+  "projectOwner": "codestrange",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
