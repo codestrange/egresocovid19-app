@@ -1,6 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 
+// TODO: Localization
+
 class Validator {
   static String? required(dynamic value) =>
       value == null ? 'error_empty_input' : null;

@@ -70,7 +70,7 @@ class _PathologyNameInputWidgetState extends State<PathologyNameInputWidget> {
       decoration: TextFieldDecorations.decoration(
         hintText: widget.hintText,
         errorText: widget.errorText,
-        labelText: widget.labelText ?? 'Patología',
+        labelText: widget.labelText ?? 'Patología', // TODO
       ),
     );
   }

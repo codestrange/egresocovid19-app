@@ -59,6 +59,69 @@ class MessagesEs extends Messages {
   String get notFoundButtonText => 'Ir a la página inicial';
 
   @override
+  String get patientCreatePageTitle => 'Nuevo';
+
+  @override
+  String get patientCreateAppBarTitle => 'Nuevo Paciente';
+
+  @override
+  String get patientCreateSubmitText => 'Añadir Paciente';
+
+  @override
+  String get patientCreateFieldFirstname => 'Nombre(s)';
+
+  @override
+  String get patientCreateFieldLastname => 'Apellido(s)';
+
+  @override
+  String get patientCreateFieldCI => 'Carnet de identidad';
+
+  @override
+  String get patientCreateFieldSex => 'Sexo';
+
+  @override
+  String get patientCreateFieldAge => 'Edad';
+
+  @override
+  String get patientCreateFieldSkinColor => 'Color de Piel';
+
+  @override
+  String get patientCreateFieldBloodType => 'Tipo de Sangre';
+
+  @override
+  String get patientCreateFieldBloodTypeUnknow => 'Desconocido';
+
+  @override
+  String get patientCreateFieldProvince => 'Provincia';
+
+  @override
+  String get patientCreateFieldMunicipality => 'Municipio';
+
+  @override
+  String get patientCreateFieldAddress => 'Dirección';
+
+  @override
+  String get patientCreateFieldPolyclinic => 'Policlinico';
+
+  @override
+  String get patientCreateFieldSurgery => 'Consultorio';
+
+  @override
+  String get patientCreateFieldPopularCouncil => 'Consejo Popular';
+
+  @override
+  String get patientCreateFieldNeighborhood => 'Reparto';
+
+  @override
+  String get patientCreateFieldBlockNumber => 'No. Manzana';
+
+  @override
+  String get patientCreateFieldPersonalPathologicalHistory => 'Patologías Personales';
+
+  @override
+  String get patientCreateFieldFamilyPathologicalHistory => 'Patologías Familiares';
+
+  @override
   String get patientViewPageTitle => 'Detalles';
 
   @override
@@ -104,7 +167,7 @@ class MessagesEs extends Messages {
   String get patientViewFieldPopularCouncil => 'Consejo Popular';
 
   @override
-  String get patientViewFieldNeighborhood => 'Barrio';
+  String get patientViewFieldNeighborhood => 'Reparto';
 
   @override
   String get patientViewFieldBlockNumber => 'No. Manzana';

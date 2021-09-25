@@ -67,7 +67,7 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
               },
               decoration: TextFieldDecorations.decoration(
                 errorText: widget.errorText,
-                labelText: 'Ingreso en',
+                labelText: 'Ingreso en', // TODO
               ),
             );
           },
@@ -123,8 +123,9 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
               .map(
                 (e) => Chip(
                   padding: const EdgeInsets.all(3),
-                  label:
-                      Text('${e.income.visualName(context)} - ${e.days} días'),
+                  label: Text(
+                    '${e.income.visualName(context)} - ${e.days} días',
+                  ), // TODO
                   onDeleted: () {
                     if (!widget.incomes.any((o) => o.income == e.income)) {
                       return;
@@ -173,11 +174,11 @@ class _IncomeDaysInputWidgetState extends State<_IncomeDaysInputWidget> {
         final int? number = int.tryParse(value);
         if (number == null) {
           setState(() {
-            errorText = 'La cantidad de días debe ser un número';
+            errorText = 'La cantidad de días debe ser un número'; // TODO
           });
         } else if (number <= 0) {
           setState(() {
-            errorText = 'La cantidad de días debe ser mayor que 0';
+            errorText = 'La cantidad de días debe ser mayor que 0'; // TODO
           });
         } else {
           widget.onChanged?.call(number);
@@ -185,7 +186,7 @@ class _IncomeDaysInputWidgetState extends State<_IncomeDaysInputWidget> {
       },
       hintText: widget.hintText,
       errorText: errorText,
-      labelText: widget.labelText ?? 'Cant. de días',
+      labelText: widget.labelText ?? 'Cant. de días', // TODO
     );
   }
 }

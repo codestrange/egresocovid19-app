@@ -50,7 +50,7 @@ class _PasswordInputWidgetState extends State<PasswordInputWidget> {
           },
         ),
         prefixIcon: Icons.lock_rounded,
-        hintText: widget.hintText ?? 'Contraseña',
+        hintText: widget.hintText ?? 'Contraseña', // TODO
         errorText: widget.errorText,
       ),
     );

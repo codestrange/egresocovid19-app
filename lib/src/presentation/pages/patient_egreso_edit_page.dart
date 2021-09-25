@@ -22,7 +22,7 @@ class PatientEgresoEditPage extends StatelessWidget {
   static BeamPage getPage(BuildContext context, String patientId) {
     return BeamPage(
       key: ValueKey('patient-egreso-edit-$patientId'),
-      title: getTitle(context, 'Editar'),
+      title: getTitle(context, 'Editar'), // TODO
       child: PatientEgresoEditPage(patientId: patientId),
     );
   }
@@ -51,7 +51,7 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Información de Egreso',
+          'Información de Egreso', // TODO
           style: Theme.of(context).textTheme.headline6,
         ),
         iconTheme: Theme.of(context).iconTheme,
@@ -67,14 +67,14 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
-                'Ocurrio un error al guardar los datos. Error: $errorMessage',
+                'Ocurrio un error al guardar los datos. Error: $errorMessage', // TODO
               ),
             ),
           ),
           updateSuccess: (newDischargeData) =>
               ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Datos guardados satisfactoriamente.'),
+              content: Text('Datos guardados satisfactoriamente.'), // TODO
             ),
           ),
         ),
@@ -121,7 +121,9 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Ha ocurrido un error al cargar los datos: $errorMessage'),
+          Text(
+            'Ha ocurrido un error al cargar los datos: $errorMessage',
+          ), // TODO
           const SizedBox(
             height: 20,
           ),
@@ -131,7 +133,7 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
                     patientId,
                   ),
                 ),
-            child: const Text('Reintentar'),
+            child: const Text('Reintentar'), // TODO
           ),
         ],
       ),
@@ -184,7 +186,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Section(
-            sectionTitle: 'Síntomas',
+            sectionTitle: 'Síntomas', // TODO
             children: [
               Flexible(
                 child: _SymptomsField(),
@@ -196,7 +198,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Diagnóstico',
+            sectionTitle: 'Diagnóstico', // TODO
             children: [
               Flexible(
                 child: _DetectionDateField(),
@@ -224,7 +226,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Forma de Contagio',
+            sectionTitle: 'Forma de Contagio', // TODO
             children: [
               Flexible(
                 child: _FormOfContagionField(),
@@ -240,7 +242,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Tiempo de Hospitalización',
+            sectionTitle: 'Tiempo de Hospitalización', // TODO
             sectionDescription:
                 'Para el tiempo de hospitalización se recomienda la forma '
                 'compacta número inicial del servicio. '
@@ -248,7 +250,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
                 'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
                 'critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\n'
                 'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
-                'critico, y falleció - 2C3G1CrF.',
+                'critico, y falleció - 2C3G1CrF.', // TODO
             children: [
               Flexible(
                 child: _HospitalizationTimeField(),
@@ -256,7 +258,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Ingreso',
+            sectionTitle: 'Ingreso', // TODO
             children: [
               Flexible(
                 child: _IncomesField(),
@@ -264,19 +266,19 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Contactos',
+            sectionTitle: 'Contactos', // TODO
             children: [
               Row(
                 children: const [
                   SizedBox(width: 10),
                   Expanded(
                     flex: 35,
-                    child: Text('Anillo'),
+                    child: Text('Anillo'), // TODO
                   ),
                   SizedBox(width: 5),
                   Expanded(
                     flex: 65,
-                    child: Text('¿Cuántos enfermaron?'),
+                    child: Text('¿Cuántos enfermaron?'), // TODO
                   ),
                 ],
               ),
@@ -327,7 +329,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Tratamiento Recibido',
+            sectionTitle: 'Tratamiento Recibido', // TODO
             children: [
               Flexible(
                 child: _TreatmentsReceivedField(),
@@ -339,7 +341,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Profilaxis',
+            sectionTitle: 'Profilaxis', // TODO
             children: [
               Flexible(
                 child: _ProphylaxisField(),
@@ -351,7 +353,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Secuelas',
+            sectionTitle: 'Secuelas', // TODO
             children: [
               const SizedBox(height: 8),
               Flexible(
@@ -367,7 +369,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             height: 10,
           ),
           const SubmmitButton<IPatientEgresoEditFormBloc>(
-            label: 'Editar',
+            label: 'Editar', // TODO
           ),
         ],
       ),
@@ -434,7 +436,7 @@ class _OthersAftermathField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<OtherAftermathAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Otras secuelas',
+        labelText: 'Otras secuelas', // TODO
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -464,7 +466,7 @@ class _AftermathField extends StatelessWidget {
     return InputBlocBuilder<List<Aftermath>?>(
       bloc: form.aftermath,
       builder: (context, state) => MultiSelectDropDown<Aftermath>(
-        labelText: 'Secuelas',
+        labelText: 'Secuelas', // TODO
         items: Aftermath.values,
         onSelect: (values) => form.aftermath.dirty(values),
         onRemove: (value) {
@@ -491,7 +493,7 @@ class _AnotherVaccineAgainstCovidField extends StatelessWidget {
       bloc: form.anotherVaccineAgainstCovid,
       builder: (context, state) => AutoCompleteInputWidget(
         suggestionsStream: autocomplete.suggestionsStream,
-        labelText: 'Otras vacunas usadas',
+        labelText: 'Otras vacunas usadas', // TODO
         errorText: state.error,
         initialInput: state.value ?? '',
         onChanged: (value) {
@@ -517,7 +519,7 @@ class _ProphylaxisField extends StatelessWidget {
     return InputBlocBuilder<List<Prophylaxis>?>(
       bloc: form.prophylaxis,
       builder: (context, state) => MultiSelectDropDown<Prophylaxis>(
-        labelText: 'Realizó profilaxis con',
+        labelText: 'Realizó profilaxis con', // TODO
         items: Prophylaxis.values,
         onSelect: (values) => form.prophylaxis.dirty(values),
         onRemove: (value) {
@@ -544,7 +546,7 @@ class _AntibioticsField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<AntibioticsAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Antibióticos',
+        labelText: 'Antibióticos', // TODO
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -574,7 +576,7 @@ class _TreatmentsReceivedField extends StatelessWidget {
     return InputBlocBuilder<List<Treatment>?>(
       bloc: form.treatmentsReceived,
       builder: (context, state) => MultiSelectDropDown<Treatment>(
-        labelText: 'Tratamientos',
+        labelText: 'Tratamientos', // TODO
         items: Treatment.values,
         onSelect: (values) => form.treatmentsReceived.dirty(values),
         onRemove: (value) {
@@ -599,7 +601,7 @@ class _ContactsThirdLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: 'Cantidad', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -622,7 +624,7 @@ class _ContactsThirdLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Tercero',
+        labelText: 'Tercero', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -645,7 +647,7 @@ class _ContactsSecondLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: 'Cantidad', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -668,7 +670,7 @@ class _ContactsSecondLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Segundo',
+        labelText: 'Segundo', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -691,7 +693,7 @@ class _ContactsFirstLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: 'Cantidad', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -714,7 +716,7 @@ class _ContactsFirstLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Primero',
+        labelText: 'Primero', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -737,7 +739,7 @@ class _IncomesField extends StatelessWidget {
     return InputBlocBuilder<List<IncomeEntity>?>(
       bloc: form.incomes,
       builder: (context, state) => IncomesInputWidget(
-        headerText: 'Detalles de Ingreso',
+        headerText: 'Detalles de Ingreso', // TODO
         errorText: state.error,
         incomes: state.value ?? [],
         addIncomeEntity: (value) {
@@ -769,7 +771,7 @@ class _HospitalizationTimeField extends StatelessWidget {
     return InputBlocBuilder<String?>(
       bloc: form.hospitalizationTime,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Forma Compacta',
+        labelText: 'Forma Compacta', // TODO
         errorText: state.error,
         controller: TextEditing.fromValue(state.value ?? ''),
         onChanged: (value) => form.hospitalizationTime.dirty(
@@ -787,7 +789,7 @@ class _DidHeWorkInTheAttentionToPositiveCasesField extends StatelessWidget {
     return InputBlocBuilder<bool?>(
       bloc: form.didHeWorkInTheAttentionToPositiveCases,
       builder: (context, state) => BoolInputWidget(
-        labelText: '¿Trabajó en la atención de casos positivos?',
+        labelText: '¿Trabajó en la atención de casos positivos?', // TODO
         initialValue: state.value,
         onChanged: (value) =>
             form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
@@ -803,7 +805,7 @@ class _WasHePartOfAnEventField extends StatelessWidget {
     return InputBlocBuilder<bool?>(
       bloc: form.didHeWorkInTheAttentionToPositiveCases,
       builder: (context, state) => BoolInputWidget(
-        labelText: '¿Fué parte de un evento de transmición?',
+        labelText: '¿Fué parte de un evento de transmición?', // TODO
         initialValue: state.value,
         onChanged: (value) =>
             form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
@@ -819,7 +821,7 @@ class _FormOfContagionField extends StatelessWidget {
     return InputBlocBuilder<Contagion?>(
       bloc: form.formOfContagion,
       builder: (context, state) => ContagionInputWidget(
-        labelText: 'Forma de Contagio',
+        labelText: 'Forma de Contagio', // TODO
         errorText: state.error,
         onChanged: (value) => form.formOfContagion.dirty(value),
         value: state.value,
@@ -838,7 +840,7 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico',
+            'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico', // TODO
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.subtitle2,
           ),
@@ -846,7 +848,7 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
             height: 4,
           ),
           TextInputWidget(
-            labelText: 'Cant. de días',
+            labelText: 'Cant. de días', // TODO
             keyboardType: TextInputType.number,
             errorText: state.error,
             controller: TextEditing.fromValue(
@@ -872,7 +874,7 @@ class _NumberPcrPerformedField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.numberPcrPerformed,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Número de Tests/Pcr realizados',
+        labelText: 'Número de Tests/Pcr realizados', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -895,7 +897,7 @@ class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.daysFromSymptomsToDiagnosis,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Días con síntomas hasta diagnóstico',
+        labelText: 'Días con síntomas hasta diagnóstico', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -918,7 +920,7 @@ class _TestUsedInDiagnosisField extends StatelessWidget {
     return InputBlocBuilder<TestDiagnosis?>(
       bloc: form.testUsedInDiagnosis,
       builder: (context, state) => TestDiagnosisInputWidget(
-        labelText: 'Test usado en el Diagnóstico',
+        labelText: 'Test usado en el Diagnóstico', // TODO
         errorText: state.error,
         onChanged: (value) => form.testUsedInDiagnosis.dirty(value),
         value: state.value,
@@ -934,7 +936,7 @@ class _DiagnosisWayField extends StatelessWidget {
     return InputBlocBuilder<DiagnosisWay?>(
       bloc: form.diagnosisWay,
       builder: (context, state) => DiagnosisWayInputWidget(
-        labelText: 'Forma de diagnóstico',
+        labelText: 'Forma de diagnóstico', // TODO
         errorText: state.error,
         onChanged: (value) => form.diagnosisWay.dirty(value),
         value: state.value,
@@ -950,7 +952,7 @@ class _DurationOfSymptomsField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.durationOfSymptoms,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Duración de los síntomas (en días)',
+        labelText: 'Duración de los síntomas (en días)', // TODO
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -975,7 +977,7 @@ class _SymptomsField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<SymptompsAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Síntoma',
+        labelText: 'Síntoma', // TODO
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -1005,7 +1007,7 @@ class _DetectionDateField extends StatelessWidget {
     return InputBlocBuilder<DateTime?>(
       bloc: form.detectionDate,
       builder: (context, state) => DateTimeInputWidget(
-        hintText: 'Fecha de detección',
+        hintText: 'Fecha de detección', // TODO
         initialDate: state.value,
         errorText: state.error,
         onChanged: (value) => form.detectionDate.dirty(value),

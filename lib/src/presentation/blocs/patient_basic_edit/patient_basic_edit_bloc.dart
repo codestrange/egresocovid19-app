@@ -49,7 +49,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
                   const PatientBasicEditState.failure(
                     error: ErrorEntity(
                       errorCode: '',
-                      message: 'Provincia inválida',
+                      message: 'Provincia inválida', // TODO
                     ),
                   ),
                 );
@@ -66,7 +66,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
                   const PatientBasicEditState.failure(
                     error: ErrorEntity(
                       errorCode: '',
-                      message: 'Municipio inválido',
+                      message: 'Municipio inválido', // TODO
                     ),
                   ),
                 );

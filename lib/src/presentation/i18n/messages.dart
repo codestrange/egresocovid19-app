@@ -194,6 +194,132 @@ abstract class Messages {
   /// **'Ir a la página inicial'**
   String get notFoundButtonText;
 
+  /// No description provided for @patientCreatePageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Nuevo'**
+  String get patientCreatePageTitle;
+
+  /// No description provided for @patientCreateAppBarTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Nuevo Paciente'**
+  String get patientCreateAppBarTitle;
+
+  /// No description provided for @patientCreateSubmitText.
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir Paciente'**
+  String get patientCreateSubmitText;
+
+  /// No description provided for @patientCreateFieldFirstname.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre(s)'**
+  String get patientCreateFieldFirstname;
+
+  /// No description provided for @patientCreateFieldLastname.
+  ///
+  /// In es, this message translates to:
+  /// **'Apellido(s)'**
+  String get patientCreateFieldLastname;
+
+  /// No description provided for @patientCreateFieldCI.
+  ///
+  /// In es, this message translates to:
+  /// **'Carnet de identidad'**
+  String get patientCreateFieldCI;
+
+  /// No description provided for @patientCreateFieldSex.
+  ///
+  /// In es, this message translates to:
+  /// **'Sexo'**
+  String get patientCreateFieldSex;
+
+  /// No description provided for @patientCreateFieldAge.
+  ///
+  /// In es, this message translates to:
+  /// **'Edad'**
+  String get patientCreateFieldAge;
+
+  /// No description provided for @patientCreateFieldSkinColor.
+  ///
+  /// In es, this message translates to:
+  /// **'Color de Piel'**
+  String get patientCreateFieldSkinColor;
+
+  /// No description provided for @patientCreateFieldBloodType.
+  ///
+  /// In es, this message translates to:
+  /// **'Tipo de Sangre'**
+  String get patientCreateFieldBloodType;
+
+  /// No description provided for @patientCreateFieldBloodTypeUnknow.
+  ///
+  /// In es, this message translates to:
+  /// **'Desconocido'**
+  String get patientCreateFieldBloodTypeUnknow;
+
+  /// No description provided for @patientCreateFieldProvince.
+  ///
+  /// In es, this message translates to:
+  /// **'Provincia'**
+  String get patientCreateFieldProvince;
+
+  /// No description provided for @patientCreateFieldMunicipality.
+  ///
+  /// In es, this message translates to:
+  /// **'Municipio'**
+  String get patientCreateFieldMunicipality;
+
+  /// No description provided for @patientCreateFieldAddress.
+  ///
+  /// In es, this message translates to:
+  /// **'Dirección'**
+  String get patientCreateFieldAddress;
+
+  /// No description provided for @patientCreateFieldPolyclinic.
+  ///
+  /// In es, this message translates to:
+  /// **'Policlinico'**
+  String get patientCreateFieldPolyclinic;
+
+  /// No description provided for @patientCreateFieldSurgery.
+  ///
+  /// In es, this message translates to:
+  /// **'Consultorio'**
+  String get patientCreateFieldSurgery;
+
+  /// No description provided for @patientCreateFieldPopularCouncil.
+  ///
+  /// In es, this message translates to:
+  /// **'Consejo Popular'**
+  String get patientCreateFieldPopularCouncil;
+
+  /// No description provided for @patientCreateFieldNeighborhood.
+  ///
+  /// In es, this message translates to:
+  /// **'Reparto'**
+  String get patientCreateFieldNeighborhood;
+
+  /// No description provided for @patientCreateFieldBlockNumber.
+  ///
+  /// In es, this message translates to:
+  /// **'No. Manzana'**
+  String get patientCreateFieldBlockNumber;
+
+  /// No description provided for @patientCreateFieldPersonalPathologicalHistory.
+  ///
+  /// In es, this message translates to:
+  /// **'Patologías Personales'**
+  String get patientCreateFieldPersonalPathologicalHistory;
+
+  /// No description provided for @patientCreateFieldFamilyPathologicalHistory.
+  ///
+  /// In es, this message translates to:
+  /// **'Patologías Familiares'**
+  String get patientCreateFieldFamilyPathologicalHistory;
+
   /// No description provided for @patientViewPageTitle.
   ///
   /// In es, this message translates to:
@@ -287,7 +413,7 @@ abstract class Messages {
   /// No description provided for @patientViewFieldNeighborhood.
   ///
   /// In es, this message translates to:
-  /// **'Barrio'**
+  /// **'Reparto'**
   String get patientViewFieldNeighborhood;
 
   /// No description provided for @patientViewFieldBlockNumber.
