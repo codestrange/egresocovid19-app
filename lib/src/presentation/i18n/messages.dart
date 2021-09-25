@@ -170,6 +170,12 @@ abstract class Messages {
   /// **'Correo o contraseña incorrectos'**
   String get loginError;
 
+  /// No description provided for @checkingPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Comprobando'**
+  String get checkingPageTitle;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:

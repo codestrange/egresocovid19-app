@@ -47,6 +47,9 @@ class MessagesEs extends Messages {
   String get loginError => 'Correo o contraseña incorrectos';
 
   @override
+  String get checkingPageTitle => 'Comprobando';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override
