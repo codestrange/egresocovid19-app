@@ -1,6 +1,6 @@
 # Egreso COVID-19 Aplicación
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![deploy](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/codestrange/egresocovid19-app/actions/workflows/deploy.yml)
@@ -20,6 +20,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/lagcleaner"><img src="https://avatars.githubusercontent.com/u/45600122?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Leonel Alejandro García López</b></sub></a><br /><a href="#maintenance-lagcleaner" title="Maintenance">🚧</a> <a href="https://github.com/codestrange/egresocovid19-app/commits?author=lagcleaner" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cbermudez97"><img src="https://avatars.githubusercontent.com/u/43155355?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carlos Bermudez Porto</b></sub></a><br /><a href="#maintenance-cbermudez97" title="Maintenance">🚧</a> <a href="https://github.com/codestrange/egresocovid19-app/commits?author=cbermudez97" title="Code">💻</a></td>
+    <td align="center"><a href="http://leynier.github.io"><img src="https://avatars.githubusercontent.com/u/36774373?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Leynier Gutiérrez González</b></sub></a><br /><a href="#maintenance-leynier" title="Maintenance">🚧</a> <a href="https://github.com/codestrange/egresocovid19-app/commits?author=leynier" title="Code">💻</a></td>
   </tr>
 </table>
 
