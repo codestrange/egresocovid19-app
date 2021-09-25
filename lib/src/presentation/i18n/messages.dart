@@ -194,6 +194,312 @@ abstract class Messages {
   /// **'Ir a la página inicial'**
   String get notFoundButtonText;
 
+  /// No description provided for @patientViewPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Detalles'**
+  String get patientViewPageTitle;
+
+  /// No description provided for @patientViewAppBarTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Detalles del Paciente'**
+  String get patientViewAppBarTitle;
+
+  /// No description provided for @patientViewFieldFirstnameAndLastname.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre(s) y Apellido(s)'**
+  String get patientViewFieldFirstnameAndLastname;
+
+  /// No description provided for @patientViewFieldCI.
+  ///
+  /// In es, this message translates to:
+  /// **'Carnet de identidad'**
+  String get patientViewFieldCI;
+
+  /// No description provided for @patientViewFieldSex.
+  ///
+  /// In es, this message translates to:
+  /// **'Sexo'**
+  String get patientViewFieldSex;
+
+  /// No description provided for @patientViewFieldAge.
+  ///
+  /// In es, this message translates to:
+  /// **'Edad'**
+  String get patientViewFieldAge;
+
+  /// No description provided for @patientViewFieldSkinColor.
+  ///
+  /// In es, this message translates to:
+  /// **'Color de Piel'**
+  String get patientViewFieldSkinColor;
+
+  /// No description provided for @patientViewFieldBloodType.
+  ///
+  /// In es, this message translates to:
+  /// **'Tipo de Sangre'**
+  String get patientViewFieldBloodType;
+
+  /// No description provided for @patientViewFieldBloodTypeUnknow.
+  ///
+  /// In es, this message translates to:
+  /// **'Desconocido'**
+  String get patientViewFieldBloodTypeUnknow;
+
+  /// No description provided for @patientViewFieldProvince.
+  ///
+  /// In es, this message translates to:
+  /// **'Provincia'**
+  String get patientViewFieldProvince;
+
+  /// No description provided for @patientViewFieldMunicipality.
+  ///
+  /// In es, this message translates to:
+  /// **'Municipio'**
+  String get patientViewFieldMunicipality;
+
+  /// No description provided for @patientViewFieldAddress.
+  ///
+  /// In es, this message translates to:
+  /// **'Dirección'**
+  String get patientViewFieldAddress;
+
+  /// No description provided for @patientViewFieldPolyclinic.
+  ///
+  /// In es, this message translates to:
+  /// **'Policlinico'**
+  String get patientViewFieldPolyclinic;
+
+  /// No description provided for @patientViewFieldSurgery.
+  ///
+  /// In es, this message translates to:
+  /// **'Consultorio'**
+  String get patientViewFieldSurgery;
+
+  /// No description provided for @patientViewFieldPopularCouncil.
+  ///
+  /// In es, this message translates to:
+  /// **'Consejo Popular'**
+  String get patientViewFieldPopularCouncil;
+
+  /// No description provided for @patientViewFieldNeighborhood.
+  ///
+  /// In es, this message translates to:
+  /// **'Barrio'**
+  String get patientViewFieldNeighborhood;
+
+  /// No description provided for @patientViewFieldBlockNumber.
+  ///
+  /// In es, this message translates to:
+  /// **'No. Manzana'**
+  String get patientViewFieldBlockNumber;
+
+  /// No description provided for @patientViewFieldPersonalPathologicalHistory.
+  ///
+  /// In es, this message translates to:
+  /// **'Patologías Personales'**
+  String get patientViewFieldPersonalPathologicalHistory;
+
+  /// No description provided for @patientViewFieldFamilyPathologicalHistory.
+  ///
+  /// In es, this message translates to:
+  /// **'Patologías Familiares'**
+  String get patientViewFieldFamilyPathologicalHistory;
+
+  /// No description provided for @patientViewFieldPathologicalTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Patología'**
+  String get patientViewFieldPathologicalTitle;
+
+  /// No description provided for @patientViewFieldPathologicalSubtitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamientos'**
+  String get patientViewFieldPathologicalSubtitle;
+
+  /// No description provided for @patientViewFieldPersonalPathologicalHistoryEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin patologias personales'**
+  String get patientViewFieldPersonalPathologicalHistoryEmpty;
+
+  /// No description provided for @patientViewFieldFamilyPathologicalHistoryEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin patologias familiares'**
+  String get patientViewFieldFamilyPathologicalHistoryEmpty;
+
+  /// No description provided for @patientViewFieldEgresoTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Información de Egreso'**
+  String get patientViewFieldEgresoTitle;
+
+  /// No description provided for @patientViewFieldEgresoDetectionDate.
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha de detección'**
+  String get patientViewFieldEgresoDetectionDate;
+
+  /// No description provided for @patientViewFieldEgresoSymptoms.
+  ///
+  /// In es, this message translates to:
+  /// **'Sintomas'**
+  String get patientViewFieldEgresoSymptoms;
+
+  /// No description provided for @patientViewFieldEgresoDurationOfSymptoms.
+  ///
+  /// In es, this message translates to:
+  /// **'Duración de los sintomas desde el 1ro'**
+  String get patientViewFieldEgresoDurationOfSymptoms;
+
+  /// No description provided for @patientViewFieldEgresoDiagnosisWay.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma de diagnóstico'**
+  String get patientViewFieldEgresoDiagnosisWay;
+
+  /// No description provided for @patientViewFieldEgresoTestUsedInDiagnosis.
+  ///
+  /// In es, this message translates to:
+  /// **'Test usado en el diagnóstico'**
+  String get patientViewFieldEgresoTestUsedInDiagnosis;
+
+  /// No description provided for @patientViewFieldEgresoDaysFromSymptomsToDiagnosis.
+  ///
+  /// In es, this message translates to:
+  /// **'Cantidad de días entre el inicio de los síntomas y el diagnóstico'**
+  String get patientViewFieldEgresoDaysFromSymptomsToDiagnosis;
+
+  /// No description provided for @patientViewFieldEgresoNumberPcrPerformed.
+  ///
+  /// In es, this message translates to:
+  /// **'Número de Test/PCR realizados'**
+  String get patientViewFieldEgresoNumberPcrPerformed;
+
+  /// No description provided for @patientViewFieldEgresoTimeFromDiagnosisToNegativeOrDischarge.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico'**
+  String get patientViewFieldEgresoTimeFromDiagnosisToNegativeOrDischarge;
+
+  /// No description provided for @patientViewFieldEgresoFormOfContagion.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma de contagio'**
+  String get patientViewFieldEgresoFormOfContagion;
+
+  /// No description provided for @patientViewFieldEgresoWasHePartOfAnEvent.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Formó parte de un Evento?'**
+  String get patientViewFieldEgresoWasHePartOfAnEvent;
+
+  /// No description provided for @patientViewFieldEgresoDidHeWorkInTheAttentionToPositiveCases.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Trabajaba en la atención a casos positivos?'**
+  String get patientViewFieldEgresoDidHeWorkInTheAttentionToPositiveCases;
+
+  /// No description provided for @patientViewFieldEgresoHospitalizationTime.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo de hospitalización'**
+  String get patientViewFieldEgresoHospitalizationTime;
+
+  /// No description provided for @patientViewFieldEgresoIncomes.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresos'**
+  String get patientViewFieldEgresoIncomes;
+
+  /// No description provided for @patientViewFieldEgresoContactsFirstLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 1er anillo'**
+  String get patientViewFieldEgresoContactsFirstLevel;
+
+  /// No description provided for @patientViewFieldEgresoContactsFirstLevelPositives.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 1er anillo positivos'**
+  String get patientViewFieldEgresoContactsFirstLevelPositives;
+
+  /// No description provided for @patientViewFieldEgresoContactsSecondLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 2do anillo'**
+  String get patientViewFieldEgresoContactsSecondLevel;
+
+  /// No description provided for @patientViewFieldEgresoContactsSecondLevelPositives.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 2do anillo positivos'**
+  String get patientViewFieldEgresoContactsSecondLevelPositives;
+
+  /// No description provided for @patientViewFieldEgresoContactsThirdLevel.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 3er anillo'**
+  String get patientViewFieldEgresoContactsThirdLevel;
+
+  /// No description provided for @patientViewFieldEgresoContactsThirdLevelPositives.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos de 3er anillo positivos'**
+  String get patientViewFieldEgresoContactsThirdLevelPositives;
+
+  /// No description provided for @patientViewFieldEgresoTreatmentsReceived.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamiento recibido'**
+  String get patientViewFieldEgresoTreatmentsReceived;
+
+  /// No description provided for @patientViewFieldEgresoAntibiotics.
+  ///
+  /// In es, this message translates to:
+  /// **'Antibióticos'**
+  String get patientViewFieldEgresoAntibiotics;
+
+  /// No description provided for @patientViewFieldEgresoProphylaxis.
+  ///
+  /// In es, this message translates to:
+  /// **'Realizó profilaxis con'**
+  String get patientViewFieldEgresoProphylaxis;
+
+  /// No description provided for @patientViewFieldEgresoAnotherVaccineAgainstCovid.
+  ///
+  /// In es, this message translates to:
+  /// **'Otra vacuna anti COVID-19'**
+  String get patientViewFieldEgresoAnotherVaccineAgainstCovid;
+
+  /// No description provided for @patientViewFieldEgresoAftermath.
+  ///
+  /// In es, this message translates to:
+  /// **'Secuelas'**
+  String get patientViewFieldEgresoAftermath;
+
+  /// No description provided for @patientViewFieldEgresoOthersAftermath.
+  ///
+  /// In es, this message translates to:
+  /// **'Otras secuelas'**
+  String get patientViewFieldEgresoOthersAftermath;
+
+  /// No description provided for @patientViewErrorMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Ha ocurrido un error durante la obtención de la información del paciente.'**
+  String get patientViewErrorMessage;
+
+  /// No description provided for @patientViewErrorRetry.
+  ///
+  /// In es, this message translates to:
+  /// **'Reintentar'**
+  String get patientViewErrorRetry;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:
