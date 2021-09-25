@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 
 class SubmmitButton<T extends FormBloc> extends StatelessWidget {
-  const SubmmitButton(this.label) : super();
+  const SubmmitButton({required this.label}) : super();
 
   final String label;
 

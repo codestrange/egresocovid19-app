@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 String textFamily = 'Poppins';
 
-Color primaryColor = Colors.amber;
-Color accentColor = const Color(0xffb83c33);
+Color primaryColor = Colors.blue;
+Color accentColor = Colors.blue;
 
 // Create cached textThemes for diferent contrast
 TextTheme lightTextTheme = getTextTheme(textFamily, Colors.black);

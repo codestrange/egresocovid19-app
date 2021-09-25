@@ -34,7 +34,7 @@ class MunicipalitySelector extends StatelessWidget {
       value: selectedMunicipality,
       onChanged: (value) => onMunicipalitySelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
-        labelText: municipalityLabel ?? 'Municipio',
+        labelText: municipalityLabel ?? 'Municipio', // TODO
         errorText: errorText,
       ),
     );
@@ -73,7 +73,7 @@ class ProvinceSelector extends StatelessWidget {
       value: selectedProvince,
       onChanged: (value) => onProvinceSelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
-        labelText: provinceLabel ?? 'Provincia',
+        labelText: provinceLabel ?? 'Provincia', // TODO
         errorText: errorText,
       ),
     );

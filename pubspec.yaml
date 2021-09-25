@@ -13,7 +13,7 @@ dependencies:
     git:
       url: https://github.com/slovnicki/beamer.git
       path: package
-      ref: 29b928866692ddc8d5a19feefe313fefa9b48c72
+      ref: 2015b04c79bf139d2df32ea62cba9f5d489433b2
   dartz: ^0.10.0-nullsafety.2
   dio: ^4.0.0
   email_validator: ^2.0.1
@@ -33,6 +33,7 @@ dependencies:
   injectable: ^1.5.0
   intl: ^0.17.0
   json_annotation: ^4.0.1
+  multi_select_flutter: ^4.0.0
   oauth_dio: ^0.2.6
   path_provider: ^2.0.5
   pretty_dio_logger: ^1.2.0-beta-1

@@ -151,7 +151,7 @@ class _PathologyTreatmentInputWidget extends StatelessWidget {
       onChanged: onChanged,
       hintText: hintText,
       errorText: errorText,
-      labelText: labelText ?? 'Tratamiento Realizado',
+      labelText: labelText ?? 'Tratamiento Realizado', // TODO
     );
   }
 }

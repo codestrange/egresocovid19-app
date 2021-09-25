@@ -27,7 +27,7 @@ class EmailInputWidget extends StatelessWidget {
       onSubmitted: onSubmitted,
       decoration: TextFieldDecorations.decoration(
         prefixIcon: Icons.email_rounded,
-        hintText: hintText ?? 'Correo',
+        hintText: hintText ?? 'Correo', // TODO
         errorText: errorText,
       ),
     );

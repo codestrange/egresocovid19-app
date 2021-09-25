@@ -271,7 +271,7 @@ class _PatientWidget extends StatelessWidget {
                 color: Theme.of(context).colorScheme.secondary,
               ),
               onPressed: () {
-                context.beamToNamed('/patients/${patient.id}/view');
+                context.beamToNamed('/patients/${patient.id}');
               },
             ),
           ),

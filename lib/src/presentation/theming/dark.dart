@@ -2,8 +2,8 @@ import 'package:egresocovid19/src/presentation/theming/texts.dart';
 import 'package:egresocovid19/src/presentation/theming/theming.dart';
 import 'package:flutter/material.dart';
 
-Color canvasColor = const Color(0xFF0e1621);
-Color cardColor = const Color(0xFF17202b); // Colors.grey[900]!;
+Color canvasColor = Colors.grey[850]!;
+Color cardColor = Colors.grey[900]!; // Colors.grey[900]!;
 
 final ThemeData darkTheme = ThemeData.dark().copyWith(
   primaryColor: primaryColor,

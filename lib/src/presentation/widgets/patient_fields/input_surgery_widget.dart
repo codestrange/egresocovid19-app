@@ -45,7 +45,7 @@ class SurgeryInputWidget extends StatelessWidget {
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,
-        labelText: labelText ?? 'Consultorio',
+        labelText: labelText ?? 'Consultorio', // TODO
       ),
     );
   }

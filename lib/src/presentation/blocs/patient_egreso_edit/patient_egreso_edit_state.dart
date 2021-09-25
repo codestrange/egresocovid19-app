@@ -10,19 +10,19 @@ class PatientEgresoEditState with _$PatientEgresoEditState {
       _FetchFailure;
 
   const factory PatientEgresoEditState.fetchSuccess(
-    DischargeOfPositiveCasesOfCovid19Entity actualDischargeData,
+    DischargeDataEntity actualDischargeData,
   ) = _FetchSuccess;
 
   const factory PatientEgresoEditState.updateInProgress(
-    DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
+    DischargeDataEntity newDischargeData,
   ) = _UpdateInProgress;
 
   const factory PatientEgresoEditState.updateFailure(
     String errorMessage,
-    DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
+    DischargeDataEntity newDischargeData,
   ) = _UpdateFailure;
 
   const factory PatientEgresoEditState.updateSuccess(
-    DischargeOfPositiveCasesOfCovid19Entity newDischargeData,
+    DischargeDataEntity newDischargeData,
   ) = _UpdateSuccess;
 }

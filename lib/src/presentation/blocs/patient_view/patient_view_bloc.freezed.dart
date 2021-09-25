@@ -205,8 +205,20 @@ abstract class _Fetch implements PatientViewEvent {
 class _$PatientViewStateTearOff {
   const _$PatientViewStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  _FetchInProgress fetchInProgress() {
+    return const _FetchInProgress();
+  }
+
+  _FetchSuccess fetchSuccess({required PatientGetDetailEntity patient}) {
+    return _FetchSuccess(
+      patient: patient,
+    );
+  }
+
+  _FetchFailure fetchFailure({required String error}) {
+    return _FetchFailure(
+      error: error,
+    );
   }
 }
 
@@ -217,23 +229,31 @@ const $PatientViewState = _$PatientViewStateTearOff();
 mixin _$PatientViewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(PatientGetDetailEntity patient) fetchSuccess,
+    required TResult Function(String error) fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_FetchFailure value) fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -257,34 +277,37 @@ class _$PatientViewStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$FetchInProgressCopyWith<$Res> {
+  factory _$FetchInProgressCopyWith(
+          _FetchInProgress value, $Res Function(_FetchInProgress) then) =
+      __$FetchInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$PatientViewStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$FetchInProgressCopyWithImpl<$Res>
+    extends _$PatientViewStateCopyWithImpl<$Res>
+    implements _$FetchInProgressCopyWith<$Res> {
+  __$FetchInProgressCopyWithImpl(
+      _FetchInProgress _value, $Res Function(_FetchInProgress) _then)
+      : super(_value, (v) => _then(v as _FetchInProgress));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _FetchInProgress get _value => super._value as _FetchInProgress;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_FetchInProgress implements _FetchInProgress {
+  const _$_FetchInProgress();
 
   @override
   String toString() {
-    return 'PatientViewState.initial()';
+    return 'PatientViewState.fetchInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) || (other is _FetchInProgress);
   }
 
   @override
@@ -293,19 +316,23 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() fetchInProgress,
+    required TResult Function(PatientGetDetailEntity patient) fetchSuccess,
+    required TResult Function(String error) fetchFailure,
   }) {
-    return initial();
+    return fetchInProgress();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (fetchInProgress != null) {
+      return fetchInProgress();
     }
     return orElse();
   }
@@ -313,24 +340,269 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_FetchFailure value) fetchFailure,
   }) {
-    return initial(this);
+    return fetchInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (fetchInProgress != null) {
+      return fetchInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements PatientViewState {
-  const factory _Initial() = _$_Initial;
+abstract class _FetchInProgress implements PatientViewState {
+  const factory _FetchInProgress() = _$_FetchInProgress;
+}
+
+/// @nodoc
+abstract class _$FetchSuccessCopyWith<$Res> {
+  factory _$FetchSuccessCopyWith(
+          _FetchSuccess value, $Res Function(_FetchSuccess) then) =
+      __$FetchSuccessCopyWithImpl<$Res>;
+  $Res call({PatientGetDetailEntity patient});
+}
+
+/// @nodoc
+class __$FetchSuccessCopyWithImpl<$Res>
+    extends _$PatientViewStateCopyWithImpl<$Res>
+    implements _$FetchSuccessCopyWith<$Res> {
+  __$FetchSuccessCopyWithImpl(
+      _FetchSuccess _value, $Res Function(_FetchSuccess) _then)
+      : super(_value, (v) => _then(v as _FetchSuccess));
+
+  @override
+  _FetchSuccess get _value => super._value as _FetchSuccess;
+
+  @override
+  $Res call({
+    Object? patient = freezed,
+  }) {
+    return _then(_FetchSuccess(
+      patient: patient == freezed
+          ? _value.patient
+          : patient // ignore: cast_nullable_to_non_nullable
+              as PatientGetDetailEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FetchSuccess implements _FetchSuccess {
+  const _$_FetchSuccess({required this.patient});
+
+  @override
+  final PatientGetDetailEntity patient;
+
+  @override
+  String toString() {
+    return 'PatientViewState.fetchSuccess(patient: $patient)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FetchSuccess &&
+            (identical(other.patient, patient) ||
+                const DeepCollectionEquality().equals(other.patient, patient)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patient);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+      __$FetchSuccessCopyWithImpl<_FetchSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchInProgress,
+    required TResult Function(PatientGetDetailEntity patient) fetchSuccess,
+    required TResult Function(String error) fetchFailure,
+  }) {
+    return fetchSuccess(patient);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+    required TResult orElse(),
+  }) {
+    if (fetchSuccess != null) {
+      return fetchSuccess(patient);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_FetchFailure value) fetchFailure,
+  }) {
+    return fetchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    required TResult orElse(),
+  }) {
+    if (fetchSuccess != null) {
+      return fetchSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchSuccess implements PatientViewState {
+  const factory _FetchSuccess({required PatientGetDetailEntity patient}) =
+      _$_FetchSuccess;
+
+  PatientGetDetailEntity get patient => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$FetchFailureCopyWith<$Res> {
+  factory _$FetchFailureCopyWith(
+          _FetchFailure value, $Res Function(_FetchFailure) then) =
+      __$FetchFailureCopyWithImpl<$Res>;
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$FetchFailureCopyWithImpl<$Res>
+    extends _$PatientViewStateCopyWithImpl<$Res>
+    implements _$FetchFailureCopyWith<$Res> {
+  __$FetchFailureCopyWithImpl(
+      _FetchFailure _value, $Res Function(_FetchFailure) _then)
+      : super(_value, (v) => _then(v as _FetchFailure));
+
+  @override
+  _FetchFailure get _value => super._value as _FetchFailure;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_FetchFailure(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FetchFailure implements _FetchFailure {
+  const _$_FetchFailure({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'PatientViewState.fetchFailure(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FetchFailure &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+      __$FetchFailureCopyWithImpl<_FetchFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchInProgress,
+    required TResult Function(PatientGetDetailEntity patient) fetchSuccess,
+    required TResult Function(String error) fetchFailure,
+  }) {
+    return fetchFailure(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+    required TResult orElse(),
+  }) {
+    if (fetchFailure != null) {
+      return fetchFailure(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchInProgress value) fetchInProgress,
+    required TResult Function(_FetchSuccess value) fetchSuccess,
+    required TResult Function(_FetchFailure value) fetchFailure,
+  }) {
+    return fetchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    required TResult orElse(),
+  }) {
+    if (fetchFailure != null) {
+      return fetchFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchFailure implements PatientViewState {
+  const factory _FetchFailure({required String error}) = _$_FetchFailure;
+
+  String get error => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

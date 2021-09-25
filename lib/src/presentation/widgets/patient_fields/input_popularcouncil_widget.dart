@@ -45,7 +45,7 @@ class PopularCouncilInputWidget extends StatelessWidget {
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,
-        labelText: labelText ?? 'Consejo Popular',
+        labelText: labelText ?? 'Consejo Popular', // TODO
       ),
     );
   }
