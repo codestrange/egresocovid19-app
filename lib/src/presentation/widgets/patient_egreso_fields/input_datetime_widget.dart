@@ -1,7 +1,6 @@
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 
 class DateTimeInputWidget extends StatefulWidget {
@@ -43,20 +42,22 @@ class _DateTimeInputWidgetState extends State<DateTimeInputWidget> {
             Icons.edit,
             color: isWrong ? Colors.red : null,
           ),
-          onPressed: () {
-            DatePicker.showDatePicker(
-              context,
-              locale: LocaleType.values.firstWhere(
-                (localeType) =>
-                    localeType.code ==
-                    Localizations.localeOf(context).scriptCode,
-                orElse: () => LocaleType.es,
+          onPressed: () async {
+            final selectedDate = await showDatePicker(
+              context: context,
+              initialDate: DateTime.now(),
+              firstDate: DateTime(2000),
+              lastDate: DateTime(
+                DateTime.now().year,
+                12,
+                31,
               ),
-              onConfirm: (time) {
-                widget.controller?.text = DateFormat('dd/MM/yyyy').format(time);
-                widget.onChanged?.call(time);
-              },
             );
+            if (selectedDate != null) {
+              widget.controller?.text =
+                  DateFormat('dd/MM/yyyy').format(selectedDate);
+              widget.onChanged?.call(selectedDate);
+            }
           },
         ),
         prefixIcon: Icons.calendar_today,
@@ -64,11 +65,5 @@ class _DateTimeInputWidgetState extends State<DateTimeInputWidget> {
         errorText: widget.errorText,
       ),
     );
-  }
-}
-
-extension LocaleTypeCodeExtension on LocaleType {
-  String get code {
-    return toString().split('').last;
   }
 }
