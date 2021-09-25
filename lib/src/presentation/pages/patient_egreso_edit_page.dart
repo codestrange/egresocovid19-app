@@ -476,6 +476,7 @@ class _AftermathField extends StatelessWidget {
           form.aftermath.dirty(newList);
         },
         itemToString: (item) => item.visualName(),
+        initialValues: state.value,
       ),
     );
   }
@@ -528,6 +529,7 @@ class _ProphylaxisField extends StatelessWidget {
           form.prophylaxis.dirty(newList);
         },
         itemToString: (item) => item.visualName(),
+        initialValues: state.value,
       ),
     );
   }
@@ -584,6 +586,7 @@ class _TreatmentsReceivedField extends StatelessWidget {
           form.treatmentsReceived.dirty(newList);
         },
         itemToString: (item) => item.visualName(),
+        initialValues: state.value,
       ),
     );
   }
@@ -813,12 +816,13 @@ class _FormOfContagionField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
-    return InputBlocBuilder(
+    return InputBlocBuilder<Contagion?>(
       bloc: form.formOfContagion,
       builder: (context, state) => ContagionInputWidget(
         labelText: 'Forma de Contagio',
         errorText: state.error,
         onChanged: (value) => form.formOfContagion.dirty(value),
+        value: state.value,
       ),
     );
   }
@@ -837,6 +841,9 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
             'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.subtitle2,
+          ),
+          const SizedBox(
+            height: 4,
           ),
           TextInputWidget(
             labelText: 'Cant. de días',
@@ -908,12 +915,13 @@ class _TestUsedInDiagnosisField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
-    return InputBlocBuilder(
+    return InputBlocBuilder<TestDiagnosis?>(
       bloc: form.testUsedInDiagnosis,
       builder: (context, state) => TestDiagnosisInputWidget(
         labelText: 'Test usado en el Diagnóstico',
         errorText: state.error,
         onChanged: (value) => form.testUsedInDiagnosis.dirty(value),
+        value: state.value,
       ),
     );
   }
@@ -929,6 +937,7 @@ class _DiagnosisWayField extends StatelessWidget {
         labelText: 'Forma de diagnóstico',
         errorText: state.error,
         onChanged: (value) => form.diagnosisWay.dirty(value),
+        value: state.value,
       ),
     );
   }

@@ -12,6 +12,7 @@ class ContagionInputWidget extends StatelessWidget {
     this.errorText,
     this.hintText,
     this.labelText,
+    this.value,
   }) : super(key: key);
 
   final ValueChanged<Contagion?>? onChanged;
@@ -19,6 +20,7 @@ class ContagionInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final Contagion? value;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class ContagionInputWidget extends StatelessWidget {
           ),
         );
       }).toList(),
+      value: value,
       onChanged: onChanged,
       onSaved: onSubmitted,
       decoration: TextFieldDecorations.decoration(

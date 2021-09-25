@@ -12,6 +12,7 @@ class TestDiagnosisInputWidget extends StatelessWidget {
     this.errorText,
     this.hintText,
     this.labelText,
+    this.value,
   }) : super(key: key);
 
   final ValueChanged<TestDiagnosis?>? onChanged;
@@ -19,6 +20,7 @@ class TestDiagnosisInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final TestDiagnosis? value;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class TestDiagnosisInputWidget extends StatelessWidget {
         errorText: errorText,
         labelText: labelText,
       ),
+      value: value,
     );
   }
 }
