@@ -252,4 +252,160 @@ class MessagesEs extends Messages {
 
   @override
   String get enumSkinColorOther => 'Otro';
+
+  @override
+  String get enumContagionTraveler => 'Viajero';
+
+  @override
+  String get enumContagionContact => 'Contacto';
+
+  @override
+  String get enumContagionInderterminate => 'Indeterminada';
+
+  @override
+  String get enumDiagnosisWayGuardCorps => 'Cuerpo de Guardia';
+
+  @override
+  String get enumDiagnosisWayFocusControl => 'Control de Foco';
+
+  @override
+  String get enumIncomeHome => 'Hogar';
+
+  @override
+  String get enumIncomeIsolationCenter => 'Centro de Aislamiento';
+
+  @override
+  String get enumIncomeHospitalRoom => 'Sale del Hospital';
+
+  @override
+  String get enumIncomeIntermediateTherapy => 'Terapia Intermedia';
+
+  @override
+  String get enumIncomeIntensiveTherapy => 'Terapia Intensiva';
+
+  @override
+  String get enumTestDiagnosisAntigenTest => 'Test de Antígenos';
+
+  @override
+  String get enumTestDiagnosisBiosensor => 'Biosensor';
+
+  @override
+  String get enumTestDiagnosisPCR => 'PCR-RT';
+
+  @override
+  String get enumTestDiagnosisIgMIgGAntibodyTest => 'Test de anticuerpo IgM/IgG';
+
+  @override
+  String get enumAftermathFatigue => 'Fatiga';
+
+  @override
+  String get enumAftermathHeadache => 'Dolor de Cabeza';
+
+  @override
+  String get enumAftermathAlopecia => 'Alopecia';
+
+  @override
+  String get enumAftermathRespiratorySymptoms => 'Síntomas Respiratorios';
+
+  @override
+  String get enumAftermathMuscleBoneNeuropathicPain => 'Dolores musculares y óseos';
+
+  @override
+  String get enumAftermathPsychologicalPsychiatricDisorders => 'Desorden Psicológico-Psiquiátrico';
+
+  @override
+  String get enumAftermathSexualDisorders => 'Desorden Sexual';
+
+  @override
+  String get enumAftermathSleepDisorder => 'Desorden del Sueño';
+
+  @override
+  String get enumAftermathPersistenceOfLossOfSmell => 'Perdida del Olfato';
+
+  @override
+  String get enumAftermathPersistenceOfLossOfAppetite => 'Perdida del Apetito';
+
+  @override
+  String get enumAftermathGastrointestinalSymptoms => 'Síntomas Gastrointestinales';
+
+  @override
+  String get enumAftermathDizziness => 'Mareos';
+
+  @override
+  String get enumAftermathDesiresToVomit => 'Vómitos';
+
+  @override
+  String get enumAftermathOthers => 'Otros';
+
+  @override
+  String get enumTreatmentHerferon => 'Herferón';
+
+  @override
+  String get enumTreatmentInterferonGeneric => 'Interferón (genérico)';
+
+  @override
+  String get enumTreatmentJusvinza => 'Jusvinza';
+
+  @override
+  String get enumTreatmentHeberferon => 'Heberferón';
+
+  @override
+  String get enumTreatmentFraxiparinLowMolecularWeightHeparins => 'Fraxiparina/Heparinas de bajo peso molecular';
+
+  @override
+  String get enumTreatmentNasalferon => 'Nasalferón';
+
+  @override
+  String get enumTreatmentPrednisone => 'Prednisona';
+
+  @override
+  String get enumTreatmentPrevengovir => 'Prevengovir';
+
+  @override
+  String get enumTreatmentBetamethasone => 'Betametasona';
+
+  @override
+  String get enumTreatmentItalizumab => 'Italizumab';
+
+  @override
+  String get enumProphylaxisPrevengovir => 'Prevengovir';
+
+  @override
+  String get enumProphylaxisVimang => 'Vimang';
+
+  @override
+  String get enumProphylaxisMoringa => 'Moringa';
+
+  @override
+  String get enumProphylaxisBiomodulinT => 'Biomodulina T';
+
+  @override
+  String get enumProphylaxisVitaminC => 'Vitamina C';
+
+  @override
+  String get enumProphylaxisPolivit => 'Polivit';
+
+  @override
+  String get enumProphylaxisTurmeric => 'Cúrcuma';
+
+  @override
+  String get enumProphylaxisSoverana2AndPlus => 'Soberana 02 + Soberana PLus';
+
+  @override
+  String get enumProphylaxisHoney => 'Miel';
+
+  @override
+  String get enumProphylaxisVitaminA => 'Vitamina A';
+
+  @override
+  String get enumProphylaxisGinger => 'Géngibre';
+
+  @override
+  String get enumProphylaxisSoveranaPlus => 'Soberana Plus';
+
+  @override
+  String get enumProphylaxisAbdala => 'Abdala';
+
+  @override
+  String get enumProphylaxisCovid19Previously => 'Ya tuvo COVID-19 previamente';
 }

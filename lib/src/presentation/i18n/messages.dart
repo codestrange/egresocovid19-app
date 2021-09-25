@@ -583,6 +583,318 @@ abstract class Messages {
   /// In es, this message translates to:
   /// **'Otro'**
   String get enumSkinColorOther;
+
+  /// No description provided for @enumContagionTraveler.
+  ///
+  /// In es, this message translates to:
+  /// **'Viajero'**
+  String get enumContagionTraveler;
+
+  /// No description provided for @enumContagionContact.
+  ///
+  /// In es, this message translates to:
+  /// **'Contacto'**
+  String get enumContagionContact;
+
+  /// No description provided for @enumContagionInderterminate.
+  ///
+  /// In es, this message translates to:
+  /// **'Indeterminada'**
+  String get enumContagionInderterminate;
+
+  /// No description provided for @enumDiagnosisWayGuardCorps.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuerpo de Guardia'**
+  String get enumDiagnosisWayGuardCorps;
+
+  /// No description provided for @enumDiagnosisWayFocusControl.
+  ///
+  /// In es, this message translates to:
+  /// **'Control de Foco'**
+  String get enumDiagnosisWayFocusControl;
+
+  /// No description provided for @enumIncomeHome.
+  ///
+  /// In es, this message translates to:
+  /// **'Hogar'**
+  String get enumIncomeHome;
+
+  /// No description provided for @enumIncomeIsolationCenter.
+  ///
+  /// In es, this message translates to:
+  /// **'Centro de Aislamiento'**
+  String get enumIncomeIsolationCenter;
+
+  /// No description provided for @enumIncomeHospitalRoom.
+  ///
+  /// In es, this message translates to:
+  /// **'Sale del Hospital'**
+  String get enumIncomeHospitalRoom;
+
+  /// No description provided for @enumIncomeIntermediateTherapy.
+  ///
+  /// In es, this message translates to:
+  /// **'Terapia Intermedia'**
+  String get enumIncomeIntermediateTherapy;
+
+  /// No description provided for @enumIncomeIntensiveTherapy.
+  ///
+  /// In es, this message translates to:
+  /// **'Terapia Intensiva'**
+  String get enumIncomeIntensiveTherapy;
+
+  /// No description provided for @enumTestDiagnosisAntigenTest.
+  ///
+  /// In es, this message translates to:
+  /// **'Test de Antígenos'**
+  String get enumTestDiagnosisAntigenTest;
+
+  /// No description provided for @enumTestDiagnosisBiosensor.
+  ///
+  /// In es, this message translates to:
+  /// **'Biosensor'**
+  String get enumTestDiagnosisBiosensor;
+
+  /// No description provided for @enumTestDiagnosisPCR.
+  ///
+  /// In es, this message translates to:
+  /// **'PCR-RT'**
+  String get enumTestDiagnosisPCR;
+
+  /// No description provided for @enumTestDiagnosisIgMIgGAntibodyTest.
+  ///
+  /// In es, this message translates to:
+  /// **'Test de anticuerpo IgM/IgG'**
+  String get enumTestDiagnosisIgMIgGAntibodyTest;
+
+  /// No description provided for @enumAftermathFatigue.
+  ///
+  /// In es, this message translates to:
+  /// **'Fatiga'**
+  String get enumAftermathFatigue;
+
+  /// No description provided for @enumAftermathHeadache.
+  ///
+  /// In es, this message translates to:
+  /// **'Dolor de Cabeza'**
+  String get enumAftermathHeadache;
+
+  /// No description provided for @enumAftermathAlopecia.
+  ///
+  /// In es, this message translates to:
+  /// **'Alopecia'**
+  String get enumAftermathAlopecia;
+
+  /// No description provided for @enumAftermathRespiratorySymptoms.
+  ///
+  /// In es, this message translates to:
+  /// **'Síntomas Respiratorios'**
+  String get enumAftermathRespiratorySymptoms;
+
+  /// No description provided for @enumAftermathMuscleBoneNeuropathicPain.
+  ///
+  /// In es, this message translates to:
+  /// **'Dolores musculares y óseos'**
+  String get enumAftermathMuscleBoneNeuropathicPain;
+
+  /// No description provided for @enumAftermathPsychologicalPsychiatricDisorders.
+  ///
+  /// In es, this message translates to:
+  /// **'Desorden Psicológico-Psiquiátrico'**
+  String get enumAftermathPsychologicalPsychiatricDisorders;
+
+  /// No description provided for @enumAftermathSexualDisorders.
+  ///
+  /// In es, this message translates to:
+  /// **'Desorden Sexual'**
+  String get enumAftermathSexualDisorders;
+
+  /// No description provided for @enumAftermathSleepDisorder.
+  ///
+  /// In es, this message translates to:
+  /// **'Desorden del Sueño'**
+  String get enumAftermathSleepDisorder;
+
+  /// No description provided for @enumAftermathPersistenceOfLossOfSmell.
+  ///
+  /// In es, this message translates to:
+  /// **'Perdida del Olfato'**
+  String get enumAftermathPersistenceOfLossOfSmell;
+
+  /// No description provided for @enumAftermathPersistenceOfLossOfAppetite.
+  ///
+  /// In es, this message translates to:
+  /// **'Perdida del Apetito'**
+  String get enumAftermathPersistenceOfLossOfAppetite;
+
+  /// No description provided for @enumAftermathGastrointestinalSymptoms.
+  ///
+  /// In es, this message translates to:
+  /// **'Síntomas Gastrointestinales'**
+  String get enumAftermathGastrointestinalSymptoms;
+
+  /// No description provided for @enumAftermathDizziness.
+  ///
+  /// In es, this message translates to:
+  /// **'Mareos'**
+  String get enumAftermathDizziness;
+
+  /// No description provided for @enumAftermathDesiresToVomit.
+  ///
+  /// In es, this message translates to:
+  /// **'Vómitos'**
+  String get enumAftermathDesiresToVomit;
+
+  /// No description provided for @enumAftermathOthers.
+  ///
+  /// In es, this message translates to:
+  /// **'Otros'**
+  String get enumAftermathOthers;
+
+  /// No description provided for @enumTreatmentHerferon.
+  ///
+  /// In es, this message translates to:
+  /// **'Herferón'**
+  String get enumTreatmentHerferon;
+
+  /// No description provided for @enumTreatmentInterferonGeneric.
+  ///
+  /// In es, this message translates to:
+  /// **'Interferón (genérico)'**
+  String get enumTreatmentInterferonGeneric;
+
+  /// No description provided for @enumTreatmentJusvinza.
+  ///
+  /// In es, this message translates to:
+  /// **'Jusvinza'**
+  String get enumTreatmentJusvinza;
+
+  /// No description provided for @enumTreatmentHeberferon.
+  ///
+  /// In es, this message translates to:
+  /// **'Heberferón'**
+  String get enumTreatmentHeberferon;
+
+  /// No description provided for @enumTreatmentFraxiparinLowMolecularWeightHeparins.
+  ///
+  /// In es, this message translates to:
+  /// **'Fraxiparina/Heparinas de bajo peso molecular'**
+  String get enumTreatmentFraxiparinLowMolecularWeightHeparins;
+
+  /// No description provided for @enumTreatmentNasalferon.
+  ///
+  /// In es, this message translates to:
+  /// **'Nasalferón'**
+  String get enumTreatmentNasalferon;
+
+  /// No description provided for @enumTreatmentPrednisone.
+  ///
+  /// In es, this message translates to:
+  /// **'Prednisona'**
+  String get enumTreatmentPrednisone;
+
+  /// No description provided for @enumTreatmentPrevengovir.
+  ///
+  /// In es, this message translates to:
+  /// **'Prevengovir'**
+  String get enumTreatmentPrevengovir;
+
+  /// No description provided for @enumTreatmentBetamethasone.
+  ///
+  /// In es, this message translates to:
+  /// **'Betametasona'**
+  String get enumTreatmentBetamethasone;
+
+  /// No description provided for @enumTreatmentItalizumab.
+  ///
+  /// In es, this message translates to:
+  /// **'Italizumab'**
+  String get enumTreatmentItalizumab;
+
+  /// No description provided for @enumProphylaxisPrevengovir.
+  ///
+  /// In es, this message translates to:
+  /// **'Prevengovir'**
+  String get enumProphylaxisPrevengovir;
+
+  /// No description provided for @enumProphylaxisVimang.
+  ///
+  /// In es, this message translates to:
+  /// **'Vimang'**
+  String get enumProphylaxisVimang;
+
+  /// No description provided for @enumProphylaxisMoringa.
+  ///
+  /// In es, this message translates to:
+  /// **'Moringa'**
+  String get enumProphylaxisMoringa;
+
+  /// No description provided for @enumProphylaxisBiomodulinT.
+  ///
+  /// In es, this message translates to:
+  /// **'Biomodulina T'**
+  String get enumProphylaxisBiomodulinT;
+
+  /// No description provided for @enumProphylaxisVitaminC.
+  ///
+  /// In es, this message translates to:
+  /// **'Vitamina C'**
+  String get enumProphylaxisVitaminC;
+
+  /// No description provided for @enumProphylaxisPolivit.
+  ///
+  /// In es, this message translates to:
+  /// **'Polivit'**
+  String get enumProphylaxisPolivit;
+
+  /// No description provided for @enumProphylaxisTurmeric.
+  ///
+  /// In es, this message translates to:
+  /// **'Cúrcuma'**
+  String get enumProphylaxisTurmeric;
+
+  /// No description provided for @enumProphylaxisSoverana2AndPlus.
+  ///
+  /// In es, this message translates to:
+  /// **'Soberana 02 + Soberana PLus'**
+  String get enumProphylaxisSoverana2AndPlus;
+
+  /// No description provided for @enumProphylaxisHoney.
+  ///
+  /// In es, this message translates to:
+  /// **'Miel'**
+  String get enumProphylaxisHoney;
+
+  /// No description provided for @enumProphylaxisVitaminA.
+  ///
+  /// In es, this message translates to:
+  /// **'Vitamina A'**
+  String get enumProphylaxisVitaminA;
+
+  /// No description provided for @enumProphylaxisGinger.
+  ///
+  /// In es, this message translates to:
+  /// **'Géngibre'**
+  String get enumProphylaxisGinger;
+
+  /// No description provided for @enumProphylaxisSoveranaPlus.
+  ///
+  /// In es, this message translates to:
+  /// **'Soberana Plus'**
+  String get enumProphylaxisSoveranaPlus;
+
+  /// No description provided for @enumProphylaxisAbdala.
+  ///
+  /// In es, this message translates to:
+  /// **'Abdala'**
+  String get enumProphylaxisAbdala;
+
+  /// No description provided for @enumProphylaxisCovid19Previously.
+  ///
+  /// In es, this message translates to:
+  /// **'Ya tuvo COVID-19 previamente'**
+  String get enumProphylaxisCovid19Previously;
 }
 
 class _MessagesDelegate extends LocalizationsDelegate<Messages> {
