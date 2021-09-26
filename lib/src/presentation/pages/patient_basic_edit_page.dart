@@ -89,10 +89,20 @@ class _PatientBasicForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBlocListener<IPatientBasicEditFormBloc, void, ErrorEntity>(
       bloc: context.read(),
-      onSuccess: (_) => context.beamBack(),
+      onSuccess: (_) => ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.green.shade900,
+            content: Text(Messages.of(context)!.patientEditBasicSuccessMessage),
+          ),
+        ),
       onError: (error) => ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
-        ..showSnackBar(SnackBar(content: Text(error.message))),
+        ..showSnackBar(SnackBar(
+          backgroundColor: Colors.red.shade900,
+          content: Text(error.message),
+        )),
       child: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(10.0),
@@ -189,25 +199,10 @@ class _PatientEditForm extends StatelessWidget {
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
-        const _CancelButton(),
-        const SizedBox(height: 16),
         SubmmitButton<IPatientBasicEditFormBloc>(
           label: Messages.of(context)!.patientEditBasicSubmmitButtonText,
         ),
       ],
-    );
-  }
-}
-
-class _CancelButton extends StatelessWidget {
-  const _CancelButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MainButton(
-      onPressed: () => context.beamBack(),
-      color: Colors.red.withOpacity(0.2),
-      text: 'Cancelar',
     );
   }
 }

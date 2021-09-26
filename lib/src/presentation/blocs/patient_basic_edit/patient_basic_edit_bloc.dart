@@ -21,6 +21,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
     required this.provinceService,
   }) : super(const PatientBasicEditState.initial()) {
     on<PatientBasicEditEvent>((event, emit) async {
+      emit(const PatientBasicEditState.initial());
       await event.when(
         fetch: (patientId) async {
           final eitherPatient = await patientService.getPatient(

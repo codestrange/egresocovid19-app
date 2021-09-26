@@ -56,10 +56,25 @@ class _PatientCreatePageInternal extends StatelessWidget {
         ),
         body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
           bloc: context.read(),
-          onSuccess: (_) => context.beamToNamed('/patients'),
+          onSuccess: (_) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.green.shade900,
+                  content: Text(
+                    Messages.of(context)!.patientCreateSuccessMessage,
+                  ),
+                ),
+              );
+            context.beamToNamed('/patients');
+          },
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(content: Text(error.message))),
+            ..showSnackBar(SnackBar(
+              backgroundColor: Colors.red.shade900,
+              content: Text(error.message),
+            )),
           child: const SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.all(10.0),

@@ -32,6 +32,7 @@ class LoginPage extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
+                backgroundColor: Colors.red.shade900,
                 content: Text(
                   Messages.of(context)!.loginError,
                 ),

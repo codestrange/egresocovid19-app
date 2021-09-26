@@ -72,14 +72,20 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
             final message =
                 Messages.of(context)!.patientEditEgresoErrorSaveMessage;
             return ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(message)),
+              SnackBar(
+                backgroundColor: Colors.red.shade900,
+                content: Text(message),
+              ),
             );
           },
           updateSuccess: (newDischargeData) {
             final message =
                 Messages.of(context)!.patientEditEgresoSuccessMessage;
             return ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(message)),
+              SnackBar(
+                backgroundColor: Colors.green.shade900,
+                content: Text(message),
+              ),
             );
           },
         ),
