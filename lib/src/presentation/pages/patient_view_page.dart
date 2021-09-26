@@ -55,6 +55,14 @@ class _PatientViewPageInternal extends StatelessWidget {
         ),
         iconTheme: Theme.of(context).iconTheme,
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () => context
+                .read<IPatientViewBloc>()
+                .add(PatientViewEvent.fetch(patientId)),
+          ),
+        ],
       ),
       body: _PatientViewBody(patientId: patientId),
     );

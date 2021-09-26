@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,8 @@ class PopularCouncilInputWidget extends StatelessWidget {
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,
-        labelText: labelText ?? 'Consejo Popular', // TODO
+        labelText: labelText ??
+            Messages.of(context)!.popularCouncilInputWidgetDefaultLabelText,
       ),
     );
   }

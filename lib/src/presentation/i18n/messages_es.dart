@@ -275,6 +275,252 @@ class MessagesEs extends Messages {
   String get patientViewErrorRetry => 'Reintentar';
 
   @override
+  String get patientEditEgresoPageTitle => 'Editar';
+
+  @override
+  String get patientEditEgresoAppBarTitle => 'Editar Información de Egreso';
+
+  @override
+  String get patientEditEgresoErrorSaveMessage => 'Ocurrio un error al guardar los datos.';
+
+  @override
+  String get patientEditEgresoErrorFetchMessage => 'Ha ocurrido un error al cargar los datos.';
+
+  @override
+  String get patientEditEgresoSuccessMessage => 'Datos guardados satisfactoriamente.';
+
+  @override
+  String get patientEditEgresoRetry => 'Reintentar';
+
+  @override
+  String get patientEditEgresoSymptons => 'Síntomas';
+
+  @override
+  String get patientEditEgresoDiagnosis => 'Diagnóstico';
+
+  @override
+  String get patientEditEgresoFormOfContagion => 'Forma de Contagio';
+
+  @override
+  String get patientEditEgresoHospitalizationTime => 'Tiempo de Hospitalización';
+
+  @override
+  String get patientEditEgresoHospitalizationTimeDesc => 'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, y falleció - 2C3G1CrF.';
+
+  @override
+  String get patientEditEgresoIncomes => 'Ingreso';
+
+  @override
+  String get patientEditEgresoContacts => 'Contactos';
+
+  @override
+  String get patientEditEgresoRing => 'Anillo';
+
+  @override
+  String get patientEditEgresoRingPositives => '¿Cuántos enfermaron?';
+
+  @override
+  String get patientEditEgresoTreatmentsReceived => 'Tratamiento Recibido';
+
+  @override
+  String get patientEditEgresoProphylaxis => 'Profilaxis';
+
+  @override
+  String get patientEditEgresoAftermath => 'Secuelas';
+
+  @override
+  String get patientEditEgresoEdit => 'Editar';
+
+  @override
+  String get patientEditEgresoOtherAftermath => 'Otras secuelas';
+
+  @override
+  String get patientEditEgresoAnotherVaccines => 'Otras vacunas usadas';
+
+  @override
+  String get patientEditEgresoProphylaxisWith => 'Realizó profilaxis con';
+
+  @override
+  String get patientEditEgresoAntibiotics => 'Antibióticos';
+
+  @override
+  String get patientEditEgresoTreatments => 'Tratamientos';
+
+  @override
+  String get patientEditEgresoCount => 'Cantidad';
+
+  @override
+  String get patientEditEgresoThirdLevel => 'Tercero';
+
+  @override
+  String get patientEditEgresoSecondLevel => 'Segundo';
+
+  @override
+  String get patientEditEgresoFirstLevel => 'Primero';
+
+  @override
+  String get patientEditEgresoIncomesDetails => 'Detalles de Ingreso';
+
+  @override
+  String get patientEditEgresoCompactForm => 'Forma Compacta';
+
+  @override
+  String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases => '¿Trabajó en la atención de casos positivos?';
+
+  @override
+  String get patientEditEgresoWasHePartOfAnEvent => '¿Fué parte de un evento de transmición?';
+
+  @override
+  String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge => 'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
+
+  @override
+  String get patientEditEgresoDaysCount => 'Cant. de días';
+
+  @override
+  String get patientEditEgresoNumberPcrPerformed => 'Número de Tests/Pcr realizados';
+
+  @override
+  String get patientEditEgresoDaysFromSymptomsToDiagnosis => 'Días con síntomas hasta diagnóstico';
+
+  @override
+  String get patientEditEgresoTestUsedInDiagnosis => 'Test usado en el Diagnóstico';
+
+  @override
+  String get patientEditEgresoDiagnosisWay => 'Forma de diagnóstico';
+
+  @override
+  String get patientEditEgresoDurationOfSymptoms => 'Duración de los síntomas (en días)';
+
+  @override
+  String get patientEditEgresoSymptomp => 'Síntoma';
+
+  @override
+  String get patientEditEgresoDetectionDate => 'Fecha de detección';
+
+  @override
+  String get patientEditBasicPageTitle => 'Editar';
+
+  @override
+  String get patientEditBasicAppBarTitle => 'Editar Paciente';
+
+  @override
+  String get patientEditBasicError => 'Error';
+
+  @override
+  String get patientEditBasicErrorMessage => 'Ha ocurrido un error :v';
+
+  @override
+  String get patientEditBasicErrorButtonText => 'Recargar página';
+
+  @override
+  String get patientEditBasicSubmmitButtonText => 'Aplicar Cambios';
+
+  @override
+  String get patientEditBasicNameInputLabelText => 'Nombres(s)*';
+
+  @override
+  String get patientEditBasicLastNameInputLabelText => 'Apellido(s)*';
+
+  @override
+  String get patientEditBasicIDInputLabelText => 'CI*';
+
+  @override
+  String get patientEditBasicAgeInputLabelText => 'Edad*';
+
+  @override
+  String get patientEditBasicSexInputLabelText => 'Sexo*';
+
+  @override
+  String get patientEditBasicSkinColorInputLabelText => 'Color de Piel*';
+
+  @override
+  String get patientEditBasicBloodTypeInputLabelText => 'Sangre';
+
+  @override
+  String get patientEditBasicProvinceInputLabelText => 'Provincia*';
+
+  @override
+  String get patientEditBasicMunicipalityInputLabelText => 'Municipio*';
+
+  @override
+  String get patientEditBasicAddressInputLabelText => 'Dirección Particular*';
+
+  @override
+  String get patientEditBasicPolyclinicInputLabelText => 'Policlínico*';
+
+  @override
+  String get patientEditBasicSurgeryInputLabelText => 'Consultorio*';
+
+  @override
+  String get patientEditBasicPopularCouncilInputLabelText => 'Consejo Popular*';
+
+  @override
+  String get patientEditBasicNeighborhoodInputLabelText => 'Reparto*';
+
+  @override
+  String get patientEditBasicBlockInputLabelText => 'No. de Manzana*';
+
+  @override
+  String get patientEditBasicPathologicalHistoryInputLabelText => 'Antecedentes Patológicos';
+
+  @override
+  String get patientEditBasicFamilyPathologicalHistoryInputLabelText => 'Antecedentes Patológicos Familiares*';
+
+  @override
+  String get multiselectDropDownWidgetTitle => 'Seleccione una o varias opciones';
+
+  @override
+  String get multiselectDropDownWidgetCancel => 'Cancelar';
+
+  @override
+  String get multiselectDropDownWidgetAccept => 'Aceptar';
+
+  @override
+  String get neighborhoodInputWidgetDefaultLabelText => 'Reparto';
+
+  @override
+  String get polyclinicInputWidgetDefaultLabelText => 'Policlínico';
+
+  @override
+  String get municipalityInputWidgetDefaultLabelText => 'Municipio';
+
+  @override
+  String get provinceInputWidgetDefaultLabelText => 'Provincia';
+
+  @override
+  String get pathologicalHistoryInputWidgetDefaultLabelText => 'Tratamiento Realizado';
+
+  @override
+  String get incomeDaysInputWidgetDefaultLabelText => 'Cant. de días';
+
+  @override
+  String get incomeInputWidgetNumberError => 'La cantidad de días debe ser un número';
+
+  @override
+  String get incomeInputWidgetNegativeError => 'La cantidad de días debe ser mayor que 0';
+
+  @override
+  String get incomeInputWidgetDays => 'días';
+
+  @override
+  String get incomeInputWidgetDefaultLabelText => 'Ingreso en';
+
+  @override
+  String get pathologicalInputWidgetDefaultLabelText => 'Patología';
+
+  @override
+  String get popularCouncilInputWidgetDefaultLabelText => 'Consejo Popular';
+
+  @override
+  String get surgeryInputWidgetDefaultLabelText => 'Consultorio';
+
+  @override
+  String get emailInputWidgetDefaultHintText => 'Correo';
+
+  @override
+  String get passwordInputWidgetDefaultLabelText => 'Contraseña';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override

@@ -1,3 +1,4 @@
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
@@ -60,17 +61,22 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
             onConfirm: selectAll,
             buttonText: Text(
               widget.labelText,
-              // style: Theme.of(context).textTheme.subtitle1!.copyWith(
-              //       color: Colors.grey[600],
-              //     ),
             ),
             buttonIcon: const Icon(
               Icons.arrow_drop_down,
               size: 24,
             ),
-            // selectedColor: Colors.black,
             chipDisplay: MultiSelectChipDisplay.none(),
             decoration: const BoxDecoration(),
+            title: Text(Messages.of(context)!.multiselectDropDownWidgetTitle),
+            cancelText:
+                Text(Messages.of(context)!.multiselectDropDownWidgetCancel),
+            confirmText:
+                Text(Messages.of(context)!.multiselectDropDownWidgetAccept),
+            itemsTextStyle: Theme.of(context).textTheme.bodyText2,
+            selectedItemsTextStyle: Theme.of(context).textTheme.bodyText2,
+            unselectedColor: Theme.of(context).colorScheme.secondary,
+            selectedColor: Theme.of(context).colorScheme.secondary,
           ),
         ),
         const SizedBox(

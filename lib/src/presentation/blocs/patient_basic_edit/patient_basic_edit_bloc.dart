@@ -38,36 +38,26 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
               if (provincesEither.isLeft()) {
                 return;
               }
-              //Extracting province entity
+              // Extracting province entity
               final provEnt = provinces!
-                      .any((element) => element.name == patient.province)
-                  ? provinces!
-                      .firstWhere((element) => element.name == patient.province)
-                  : null;
+                  .where((p) => p.name == patient.province)
+                  .firstOrNull;
               if (provEnt == null) {
                 emit(
                   const PatientBasicEditState.failure(
-                    error: ErrorEntity(
-                      errorCode: '',
-                      message: 'Provincia inválida', // TODO
-                    ),
+                    error: ErrorEntity(errorCode: '', message: ''),
                   ),
                 );
                 return;
               }
-              //Extracting municipality entity
+              // Extracting municipality entity
               final muncEnt = provEnt.municipalities
-                      .any((e) => e.name == patient.municipality)
-                  ? provEnt.municipalities
-                      .firstWhere((e) => e.name == patient.municipality)
-                  : null;
+                  .where((element) => element.name == patient.municipality)
+                  .firstOrNull;
               if (muncEnt == null) {
                 emit(
                   const PatientBasicEditState.failure(
-                    error: ErrorEntity(
-                      errorCode: '',
-                      message: 'Municipio inválido', // TODO
-                    ),
+                    error: ErrorEntity(errorCode: '', message: ''),
                   ),
                 );
                 return;

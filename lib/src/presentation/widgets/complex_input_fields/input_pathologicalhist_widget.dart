@@ -1,5 +1,6 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +45,7 @@ class _PathologicalHistoryInputWidgetState
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(widget.headerText),
-        const SizedBox(
-          height: 10,
-        ),
-
+        const SizedBox(height: 10),
         // new Pathology Input
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
@@ -68,9 +66,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
-        const SizedBox(
-          height: 4,
-        ),
+        const SizedBox(height: 10),
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
           builder: (context, state) {
@@ -81,7 +77,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
-
+        const SizedBox(height: 10),
         // Add Button
         BlocBuilder<PathologyBloc, PathologyState>(
           bloc: pathologyInputBloc,
@@ -108,6 +104,7 @@ class _PathologicalHistoryInputWidgetState
             );
           },
         ),
+        const SizedBox(height: 10),
         Wrap(
           spacing: 3,
           children: widget.pathologicalHist
@@ -151,7 +148,8 @@ class _PathologyTreatmentInputWidget extends StatelessWidget {
       onChanged: onChanged,
       hintText: hintText,
       errorText: errorText,
-      labelText: labelText ?? 'Tratamiento Realizado', // TODO
+      labelText: labelText ??
+          Messages.of(context)!.pathologicalHistoryInputWidgetDefaultLabelText,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,8 @@ class _PasswordInputWidgetState extends State<PasswordInputWidget> {
           },
         ),
         prefixIcon: Icons.lock_rounded,
-        hintText: widget.hintText ?? 'Contraseña', // TODO
+        hintText: widget.hintText ??
+            Messages.of(context)!.passwordInputWidgetDefaultLabelText,
         errorText: widget.errorText,
       ),
     );

@@ -62,6 +62,7 @@ class _StringListInputState extends State<StringListInputWidget> {
           labelText: widget.labelText,
           errorText: widget.errorText,
         ),
+        const SizedBox(height: 10),
         Wrap(
           spacing: 3,
           children: widget.stringList

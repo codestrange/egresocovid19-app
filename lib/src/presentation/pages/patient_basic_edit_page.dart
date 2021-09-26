@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class PatientBasicEditPage extends StatelessWidget {
   static BeamPage getPage(BuildContext context, String patientId) {
     return BeamPage(
       key: ValueKey('patient-basic-edit-$patientId'),
-      title: getTitle(context, 'Editar'), // TODO
+      title: getTitle(context, Messages.of(context)!.patientEditBasicPageTitle),
       child: PatientBasicEditPage(patientId: patientId),
     );
   }
@@ -47,7 +48,7 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
         backgroundColor: Theme.of(context).canvasColor,
         appBar: AppBar(
           title: Text(
-            'Editar Paciente', // TODO
+            Messages.of(context)!.patientEditBasicAppBarTitle,
             style: Theme.of(context).textTheme.headline6,
           ),
           iconTheme: Theme.of(context).iconTheme,
@@ -66,7 +67,7 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
               child: const _PatientBasicForm(),
             ),
             failure: (state) => _ReloadBasicEditPage(
-              errorText: state.error.message,
+              errorText: Messages.of(context)!.patientEditBasicError,
               onPressed: () => context.currentBeamLocation.update(),
             ),
             orElse: () => const Center(
@@ -120,11 +121,11 @@ class _ReloadBasicEditPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 16),
-          const Text('Ha ocurrido un error :('), // TODO
+          Text(Messages.of(context)!.patientEditBasicErrorMessage),
           Text(errorText),
           const SizedBox(height: 16),
           MainButton(
-            text: 'Recargar página', // TODO
+            text: Messages.of(context)!.patientEditBasicErrorButtonText,
             onPressed: onPressed,
           ),
         ],
@@ -189,9 +190,9 @@ class _PatientEditForm extends StatelessWidget {
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
         const _CancelButton(),
-        const SizedBox(height: 4),
-        const SubmmitButton<IPatientBasicEditFormBloc>(
-          label: 'Aplicar Cambios', // TODO
+        const SizedBox(height: 16),
+        SubmmitButton<IPatientBasicEditFormBloc>(
+          label: Messages.of(context)!.patientEditBasicSubmmitButtonText,
         ),
       ],
     );
@@ -222,7 +223,7 @@ class _FirstNameInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'Nombre(s)*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicNameInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.firstName.dirty(
           value.trim(),
@@ -243,7 +244,7 @@ class _LastNameInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'Apellido(s)*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicLastNameInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.lastName.dirty(
           value.trim(),
@@ -264,7 +265,7 @@ class _IdentityNumberInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'CI*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicIDInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.ci.dirty(
           value.trim(),
@@ -285,7 +286,7 @@ class _AgeInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'Edad*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicAgeInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.age.dirty(
           value.trim(),
@@ -304,7 +305,7 @@ class _SexInput extends StatelessWidget {
     return InputBlocBuilder<Sex?>(
       bloc: form.sex,
       builder: (context, state) => SexInputWidget(
-        labelText: 'Sexo*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicSexInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.sex.dirty(value),
         initialValue: form.sex.state.value,
@@ -322,7 +323,8 @@ class _SkinColorInput extends StatelessWidget {
     return InputBlocBuilder<SkinColor?>(
       bloc: form.skinColor,
       builder: (context, state) => SkinColorInputWidget(
-        labelText: 'Color de Piel*', // TODO
+        labelText:
+            Messages.of(context)!.patientEditBasicSkinColorInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.skinColor.dirty(value),
         initialValue: form.skinColor.state.value,
@@ -340,7 +342,8 @@ class _BloodTypeInput extends StatelessWidget {
     return InputBlocBuilder<BloodType?>(
       bloc: form.bloodType,
       builder: (context, state) => BloodTypeInputWidget(
-        labelText: 'Sangre', // TODO
+        labelText:
+            Messages.of(context)!.patientEditBasicBloodTypeInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.bloodType.dirty(value),
         initialValue: form.bloodType.state.value,
@@ -370,7 +373,8 @@ class _ProvinceInput extends StatelessWidget {
               }
               form.province.dirty(prv);
             },
-            provinceLabel: 'Provincia*', // TODO
+            provinceLabel:
+                Messages.of(context)!.patientEditBasicProvinceInputLabelText,
             selectedProvince: state.value,
             errorText: state.error,
           ),
@@ -394,7 +398,8 @@ class _MunicipalityInput extends StatelessWidget {
         onMunicipalitySelected: (MunicipalityEntity mun) {
           form.municipality.dirty(mun);
         },
-        municipalityLabel: 'Municipio*', // TODO
+        municipalityLabel:
+            Messages.of(context)!.patientEditBasicMunicipalityInputLabelText,
         selectedMunicipality: state.value,
         errorText: state.error,
       ),
@@ -413,7 +418,7 @@ class _AddressInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'Dirección Particular*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicAddressInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.address.dirty(value.trim()),
       ),
@@ -432,7 +437,8 @@ class _PolyclinicInput extends StatelessWidget {
       bloc: form.polyclinic,
       builder: (context, state) => PolyclinicInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Policlínico*', // TODO
+        labelText:
+            Messages.of(context)!.patientEditBasicPolyclinicInputLabelText,
         errorText: state.error,
         onChanged: (value) {
           autocompleter.changed(value);
@@ -459,7 +465,7 @@ class _SurgeryInput extends StatelessWidget {
       bloc: form.surgery,
       builder: (context, state) => SurgeryInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Consultorio*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicSurgeryInputLabelText,
         errorText: state.error,
         onChanged: (value) {
           autocompleter.changed(value);
@@ -486,7 +492,8 @@ class _PopularCouncilInput extends StatelessWidget {
       bloc: form.popularCouncil,
       builder: (context, state) => PopularCouncilInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Consejo Popular*', // TODO
+        labelText:
+            Messages.of(context)!.patientEditBasicPopularCouncilInputLabelText,
         errorText: state.error,
         onChanged: (value) {
           autocompleter.changed(value.trim());
@@ -513,7 +520,8 @@ class _NeighborhoodInput extends StatelessWidget {
       bloc: form.neighborhood,
       builder: (context, state) => NeighborhoodInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
-        labelText: 'Reparto*', // TODO
+        labelText:
+            Messages.of(context)!.patientEditBasicNeighborhoodInputLabelText,
         errorText: state.error,
         onChanged: (value) {
           autocompleter.changed(value);
@@ -540,7 +548,7 @@ class _BlockNumberInput extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         controller:
             state.value != null ? TextEditing.fromValue(state.value!) : null,
-        labelText: 'No. de Manzana*', // TODO
+        labelText: Messages.of(context)!.patientEditBasicBlockInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.blockNumber.dirty(
           value.trim(),
@@ -568,7 +576,8 @@ class _PersonalPathologicalHistoryInput extends StatelessWidget {
         bloc: bloc,
         builder: (context, _state) {
           return PathologicalHistoryInputWidget(
-            headerText: 'Antecedentes Patológicos*', // TODO
+            headerText: Messages.of(context)!
+                .patientEditBasicPathologicalHistoryInputLabelText,
             errorText: state.error,
             pathologicalHist: _state.pathologicalHistory,
             addPathologicalEntity: (ph) =>
@@ -602,7 +611,8 @@ class _FamilyPathologicalHistoryInput extends StatelessWidget {
         bloc: bloc,
         builder: (context, _state) {
           return PathologicalHistoryInputWidget(
-            headerText: 'Antecedentes Patológicos Familiares*', // TODO
+            headerText: Messages.of(context)!
+                .patientEditBasicFamilyPathologicalHistoryInputLabelText,
             errorText: state.error,
             pathologicalHist: _state.pathologicalHistory,
             addPathologicalEntity: (ph) =>

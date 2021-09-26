@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SexInputWidget extends StatelessWidget {
-  const SexInputWidget(
-      {Key? key,
-      this.onChanged,
-      this.onSubmitted,
-      this.errorText,
-      this.hintText,
-      this.labelText,
-      this.initialValue})
-      : super(key: key);
+  const SexInputWidget({
+    Key? key,
+    this.onChanged,
+    this.onSubmitted,
+    this.errorText,
+    this.hintText,
+    this.labelText,
+    this.initialValue,
+  }) : super(key: key);
 
   final ValueChanged<Sex?>? onChanged;
   final ValueChanged<Sex?>? onSubmitted;
