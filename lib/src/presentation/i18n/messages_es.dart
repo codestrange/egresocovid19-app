@@ -404,13 +404,13 @@ class MessagesEs extends Messages {
   String get patientEditBasicPageTitle => 'Editar';
 
   @override
-  String get patientEditBasicAppBarTitle => 'Editar Paciente';
+  String get patientEditBasicAppBarTitle => 'Editar Información Básica';
 
   @override
   String get patientEditBasicError => 'Error';
 
   @override
-  String get patientEditBasicErrorMessage => 'Ha ocurrido un error :v';
+  String get patientEditBasicErrorMessage => 'Ha ocurrido un error';
 
   @override
   String get patientEditBasicSuccessMessage => 'Información de paciente actualizada.';
@@ -428,7 +428,7 @@ class MessagesEs extends Messages {
   String get patientEditBasicLastNameInputLabelText => 'Apellido(s)*';
 
   @override
-  String get patientEditBasicIDInputLabelText => 'CI*';
+  String get patientEditBasicIDInputLabelText => 'Carnet de identidad*';
 
   @override
   String get patientEditBasicAgeInputLabelText => 'Edad*';
@@ -449,7 +449,7 @@ class MessagesEs extends Messages {
   String get patientEditBasicMunicipalityInputLabelText => 'Municipio*';
 
   @override
-  String get patientEditBasicAddressInputLabelText => 'Dirección Particular*';
+  String get patientEditBasicAddressInputLabelText => 'Dirección*';
 
   @override
   String get patientEditBasicPolyclinicInputLabelText => 'Policlínico*';
@@ -467,10 +467,10 @@ class MessagesEs extends Messages {
   String get patientEditBasicBlockInputLabelText => 'No. de Manzana*';
 
   @override
-  String get patientEditBasicPathologicalHistoryInputLabelText => 'Antecedentes Patológicos';
+  String get patientEditBasicPathologicalHistoryInputLabelText => 'Patologías Personales';
 
   @override
-  String get patientEditBasicFamilyPathologicalHistoryInputLabelText => 'Antecedentes Patológicos Familiares*';
+  String get patientEditBasicFamilyPathologicalHistoryInputLabelText => 'Patologías Familiares*';
 
   @override
   String get multiselectDropDownWidgetTitle => 'Seleccione una o varias opciones';

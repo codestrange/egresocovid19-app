@@ -52,6 +52,7 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
           iconTheme: Theme.of(context).iconTheme,
+          centerTitle: true,
         ),
         body: BlocConsumer<IPatientBasicEditBloc, PatientBasicEditState>(
           bloc: context.read(),

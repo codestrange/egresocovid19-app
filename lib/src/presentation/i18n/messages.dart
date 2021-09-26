@@ -887,7 +887,7 @@ abstract class Messages {
   /// No description provided for @patientEditBasicAppBarTitle.
   ///
   /// In es, this message translates to:
-  /// **'Editar Paciente'**
+  /// **'Editar Información Básica'**
   String get patientEditBasicAppBarTitle;
 
   /// No description provided for @patientEditBasicError.
@@ -899,7 +899,7 @@ abstract class Messages {
   /// No description provided for @patientEditBasicErrorMessage.
   ///
   /// In es, this message translates to:
-  /// **'Ha ocurrido un error :v'**
+  /// **'Ha ocurrido un error'**
   String get patientEditBasicErrorMessage;
 
   /// No description provided for @patientEditBasicSuccessMessage.
@@ -935,7 +935,7 @@ abstract class Messages {
   /// No description provided for @patientEditBasicIDInputLabelText.
   ///
   /// In es, this message translates to:
-  /// **'CI*'**
+  /// **'Carnet de identidad*'**
   String get patientEditBasicIDInputLabelText;
 
   /// No description provided for @patientEditBasicAgeInputLabelText.
@@ -977,7 +977,7 @@ abstract class Messages {
   /// No description provided for @patientEditBasicAddressInputLabelText.
   ///
   /// In es, this message translates to:
-  /// **'Dirección Particular*'**
+  /// **'Dirección*'**
   String get patientEditBasicAddressInputLabelText;
 
   /// No description provided for @patientEditBasicPolyclinicInputLabelText.
@@ -1013,13 +1013,13 @@ abstract class Messages {
   /// No description provided for @patientEditBasicPathologicalHistoryInputLabelText.
   ///
   /// In es, this message translates to:
-  /// **'Antecedentes Patológicos'**
+  /// **'Patologías Personales'**
   String get patientEditBasicPathologicalHistoryInputLabelText;
 
   /// No description provided for @patientEditBasicFamilyPathologicalHistoryInputLabelText.
   ///
   /// In es, this message translates to:
-  /// **'Antecedentes Patológicos Familiares*'**
+  /// **'Patologías Familiares*'**
   String get patientEditBasicFamilyPathologicalHistoryInputLabelText;
 
   /// No description provided for @multiselectDropDownWidgetTitle.
