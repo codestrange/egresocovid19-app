@@ -122,7 +122,7 @@ class MessagesEs extends Messages {
   String get patientCreateFieldFamilyPathologicalHistory => 'Patologías Familiares';
 
   @override
-  String get patientCreateSuccessMessage => 'Paciente creado satisfactoriamente';
+  String get patientCreateSuccessMessage => 'Información de paciente añadida.';
 
   @override
   String get patientViewPageTitle => 'Detalles';
@@ -290,7 +290,7 @@ class MessagesEs extends Messages {
   String get patientEditEgresoErrorFetchMessage => 'Ha ocurrido un error al cargar los datos.';
 
   @override
-  String get patientEditEgresoSuccessMessage => 'Datos guardados satisfactoriamente.';
+  String get patientEditEgresoSuccessMessage => 'Información de egreso actualizada.';
 
   @override
   String get patientEditEgresoRetry => 'Reintentar';
@@ -413,7 +413,7 @@ class MessagesEs extends Messages {
   String get patientEditBasicErrorMessage => 'Ha ocurrido un error :v';
 
   @override
-  String get patientEditBasicSuccessMessage => 'Paciente editado satisfactoriamente';
+  String get patientEditBasicSuccessMessage => 'Información de paciente actualizada.';
 
   @override
   String get patientEditBasicErrorButtonText => 'Recargar página';

@@ -323,7 +323,13 @@ class _MunicipalityInput extends StatelessWidget {
     return InputBlocBuilder<MunicipalityEntity?>(
       bloc: form.municipality,
       builder: (context, state) => MunicipalitySelector(
-        municipalities: form.province.state.value?.municipalities ?? [],
+        municipalities: context
+                .watch<IPatientCreateBloc>()
+                .province
+                .state
+                .value
+                ?.municipalities ??
+            [],
         onMunicipalitySelected: (MunicipalityEntity mun) {
           form.municipality.dirty(mun);
         },

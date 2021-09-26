@@ -16,11 +16,6 @@ class SubmmitButton<T extends FormBloc> extends StatelessWidget {
         text: label,
       ),
       onLoading: () => const MainButton.loading(),
-      // onInvalid: () => MainButton(
-      //   onPressed: context.read<T>().submit,
-      //   text: label,
-      //   side: BorderSide(width: 1.5, color: Colors.red.withOpacity(6)),
-      // ),
       orElse: () => MainButton(
         onPressed: null,
         text: label,

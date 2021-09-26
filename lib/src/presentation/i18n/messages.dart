@@ -323,7 +323,7 @@ abstract class Messages {
   /// No description provided for @patientCreateSuccessMessage.
   ///
   /// In es, this message translates to:
-  /// **'Paciente creado satisfactoriamente'**
+  /// **'Información de paciente añadida.'**
   String get patientCreateSuccessMessage;
 
   /// No description provided for @patientViewPageTitle.
@@ -659,7 +659,7 @@ abstract class Messages {
   /// No description provided for @patientEditEgresoSuccessMessage.
   ///
   /// In es, this message translates to:
-  /// **'Datos guardados satisfactoriamente.'**
+  /// **'Información de egreso actualizada.'**
   String get patientEditEgresoSuccessMessage;
 
   /// No description provided for @patientEditEgresoRetry.
@@ -905,7 +905,7 @@ abstract class Messages {
   /// No description provided for @patientEditBasicSuccessMessage.
   ///
   /// In es, this message translates to:
-  /// **'Paciente editado satisfactoriamente'**
+  /// **'Información de paciente actualizada.'**
   String get patientEditBasicSuccessMessage;
 
   /// No description provided for @patientEditBasicErrorButtonText.
