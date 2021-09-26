@@ -5,38 +5,40 @@
 // **************************************************************************
 
 import 'package:dio/dio.dart' as _i8;
-import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i35;
+import 'package:egresocovid19/src/data/data_sources/client_api.dart' as _i36;
 import 'package:egresocovid19/src/data/repositories/auth_repository.dart'
-    as _i44;
+    as _i45;
 import 'package:egresocovid19/src/data/repositories/autocomplete_repository.dart'
-    as _i36;
+    as _i37;
 import 'package:egresocovid19/src/data/repositories/locale_repository.dart'
     as _i12;
 import 'package:egresocovid19/src/data/repositories/patient_repository.dart'
-    as _i38;
+    as _i39;
 import 'package:egresocovid19/src/data/repositories/province_repository.dart'
-    as _i41;
+    as _i42;
 import 'package:egresocovid19/src/data/repositories/theme_repository.dart'
     as _i23;
 import 'package:egresocovid19/src/data/utils/hive_oauth_storage.dart' as _i28;
-import 'package:egresocovid19/src/dependencies.dart' as _i47;
+import 'package:egresocovid19/src/dependencies.dart' as _i48;
 import 'package:egresocovid19/src/domain/entities/entities.dart' as _i21;
+import 'package:egresocovid19/src/domain/entities/pathological_entity.dart'
+    as _i30;
 import 'package:egresocovid19/src/domain/repositories/repositories.dart'
     as _i11;
-import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i45;
+import 'package:egresocovid19/src/domain/services/auth_service.dart' as _i46;
 import 'package:egresocovid19/src/domain/services/autocomplete_service.dart'
-    as _i37;
+    as _i38;
 import 'package:egresocovid19/src/domain/services/locale_service.dart' as _i13;
-import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i39;
+import 'package:egresocovid19/src/domain/services/patient_service.dart' as _i40;
 import 'package:egresocovid19/src/domain/services/province_service.dart'
-    as _i42;
+    as _i43;
 import 'package:egresocovid19/src/domain/services/services.dart' as _i4;
 import 'package:egresocovid19/src/domain/services/theme_service.dart' as _i24;
 import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart'
     as _i9;
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart' as _i17;
 import 'package:egresocovid19/src/presentation/blocs/home/home_bloc.dart'
-    as _i46;
+    as _i47;
 import 'package:egresocovid19/src/presentation/blocs/income/income_bloc.dart'
     as _i25;
 import 'package:egresocovid19/src/presentation/blocs/locale/locale_bloc.dart'
@@ -44,15 +46,15 @@ import 'package:egresocovid19/src/presentation/blocs/locale/locale_bloc.dart'
 import 'package:egresocovid19/src/presentation/blocs/login/login_bloc.dart'
     as _i14;
 import 'package:egresocovid19/src/presentation/blocs/municipality/municipality_bloc.dart'
-    as _i43;
+    as _i44;
 import 'package:egresocovid19/src/presentation/blocs/neighborhood/neighborhood_autocomplete_bloc.dart'
     as _i26;
 import 'package:egresocovid19/src/presentation/blocs/pathological_hist/pathologicalhistory_bloc.dart'
     as _i29;
 import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_autocomplete_bloc.dart'
-    as _i30;
-import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart'
     as _i31;
+import 'package:egresocovid19/src/presentation/blocs/pathology/pathology_bloc.dart'
+    as _i32;
 import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit/patient_basic_edit_bloc.dart'
     as _i15;
 import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit_form/patient_basic_edit_formbloc.dart'
@@ -66,13 +68,13 @@ import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/pa
 import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart'
     as _i20;
 import 'package:egresocovid19/src/presentation/blocs/patient_view/patient_view_bloc.dart'
-    as _i40;
+    as _i41;
 import 'package:egresocovid19/src/presentation/blocs/polyclinic/polyclinic_autocomplete_bloc.dart'
-    as _i32;
-import 'package:egresocovid19/src/presentation/blocs/popularcouncil/popularcouncil_autocomplete_bloc.dart'
     as _i33;
-import 'package:egresocovid19/src/presentation/blocs/surgery/surgery_autocomplete_bloc.dart'
+import 'package:egresocovid19/src/presentation/blocs/popularcouncil/popularcouncil_autocomplete_bloc.dart'
     as _i34;
+import 'package:egresocovid19/src/presentation/blocs/surgery/surgery_autocomplete_bloc.dart'
+    as _i35;
 import 'package:egresocovid19/src/presentation/blocs/theme/theme_bloc.dart'
     as _i22;
 import 'package:egresocovid19/src/presentation/utils/app_bloc_observer.dart'
@@ -140,48 +142,50 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i28.HiveOauthStorage(get<_i7.Box<String>>(instanceName: 'oauth')));
   gh.factory<_i3.OtherAftermathAutoCompleteBloc>(() =>
       _i3.OtherAftermathAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
-  gh.factory<_i29.PathologicalhistoryBloc>(
-      () => _i29.PathologicalhistoryBloc());
-  gh.factory<_i30.PathologyAutoCompleteBloc>(
-      () => _i30.PathologyAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
-  gh.factory<_i31.PathologyBloc>(() => _i31.PathologyBloc());
-  gh.factory<_i32.PolyclinicAutoCompleteBloc>(
-      () => _i32.PolyclinicAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
-  gh.factory<_i33.PopularCouncilAutoCompleteBloc>(() =>
-      _i33.PopularCouncilAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
+  gh.factoryParam<_i29.PathologicalhistoryBloc, List<_i30.PathologicalEntity>?,
+          dynamic>(
+      (initialValue, _) =>
+          _i29.PathologicalhistoryBloc(initialValue: initialValue));
+  gh.factory<_i31.PathologyAutoCompleteBloc>(
+      () => _i31.PathologyAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
+  gh.factory<_i32.PathologyBloc>(() => _i32.PathologyBloc());
+  gh.factory<_i33.PolyclinicAutoCompleteBloc>(
+      () => _i33.PolyclinicAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
+  gh.factory<_i34.PopularCouncilAutoCompleteBloc>(() =>
+      _i34.PopularCouncilAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
   gh.factory<String>(() => registerModule.baseUrl, instanceName: 'baseUrl');
-  gh.factory<_i34.SurgeryAutoCompleteBloc>(
-      () => _i34.SurgeryAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
+  gh.factory<_i35.SurgeryAutoCompleteBloc>(
+      () => _i35.SurgeryAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
   gh.factory<_i3.SymptompsAutoCompleteBloc>(
       () => _i3.SymptompsAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
-  gh.lazySingleton<_i35.ClientApi>(() => _i35.ClientApi(get<_i8.Dio>(),
+  gh.lazySingleton<_i36.ClientApi>(() => _i36.ClientApi(get<_i8.Dio>(),
       baseUrl: get<String>(instanceName: 'baseUrl')));
   gh.lazySingleton<_i11.IAutoCompleteRepository>(
-      () => _i36.AutoCompleteRepository(get<_i35.ClientApi>()));
-  gh.factory<_i37.IAutoCompleteService>(
-      () => _i37.AutoCompleteService(get<_i11.IAutoCompleteRepository>()));
+      () => _i37.AutoCompleteRepository(get<_i36.ClientApi>()));
+  gh.factory<_i38.IAutoCompleteService>(
+      () => _i38.AutoCompleteService(get<_i11.IAutoCompleteRepository>()));
   gh.lazySingleton<_i11.IPatientRepository>(
-      () => _i38.PatientRepository(get<_i35.ClientApi>()));
-  gh.factory<_i39.IPatientService>(
-      () => _i39.PatientService(get<_i11.IPatientRepository>()));
-  gh.factory<_i40.IPatientViewBloc>(
-      () => _i40.PatientViewBloc(get<_i39.IPatientService>()));
+      () => _i39.PatientRepository(get<_i36.ClientApi>()));
+  gh.factory<_i40.IPatientService>(
+      () => _i40.PatientService(get<_i11.IPatientRepository>()));
+  gh.factory<_i41.IPatientViewBloc>(
+      () => _i41.PatientViewBloc(get<_i40.IPatientService>()));
   gh.lazySingleton<_i11.IProvinceRepository>(
-      () => _i41.ProvinceRepository(get<_i35.ClientApi>()));
-  gh.factory<_i42.IProvinceService>(
-      () => _i42.ProvinceService(get<_i11.IProvinceRepository>()));
-  gh.factory<_i43.MunicipalityBloc>(() =>
-      _i43.MunicipalityBloc(provinceService: get<_i42.IProvinceService>()));
+      () => _i42.ProvinceRepository(get<_i36.ClientApi>()));
+  gh.factory<_i43.IProvinceService>(
+      () => _i43.ProvinceService(get<_i11.IProvinceRepository>()));
+  gh.factory<_i44.MunicipalityBloc>(() =>
+      _i44.MunicipalityBloc(provinceService: get<_i43.IProvinceService>()));
   gh.lazySingleton<_i27.OAuth>(() => registerModule.oauth(
       get<String>(instanceName: 'baseUrl'),
       get<_i8.Dio>(),
       get<_i27.OAuthStorage>()));
   gh.lazySingleton<_i11.IAuthRepository>(
-      () => _i44.AuthRepository(get<_i27.OAuth>()));
-  gh.lazySingleton<_i45.IAuthService>(
-      () => _i45.AuthService(authRepository: get<_i11.IAuthRepository>()));
-  gh.factory<_i46.IHomeBloc>(() => _i46.HomeBloc(get<_i39.IPatientService>()));
+      () => _i45.AuthRepository(get<_i27.OAuth>()));
+  gh.lazySingleton<_i46.IAuthService>(
+      () => _i46.AuthService(authRepository: get<_i11.IAuthRepository>()));
+  gh.factory<_i47.IHomeBloc>(() => _i47.HomeBloc(get<_i40.IPatientService>()));
   return get;
 }
 
-class _$RegisterModule extends _i47.RegisterModule {}
+class _$RegisterModule extends _i48.RegisterModule {}
