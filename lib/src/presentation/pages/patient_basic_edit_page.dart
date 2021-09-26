@@ -70,7 +70,11 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
               errorText: Messages.of(context)!.patientEditBasicError,
               onPressed: () => context.currentBeamLocation.update(),
             ),
-            orElse: () => const SizedBox(),
+            orElse: () => const Center(
+              child: CircularProgressIndicator(
+                strokeWidth: 2.5,
+              ),
+            ),
           ),
         ),
       ),
@@ -182,10 +186,25 @@ class _PatientEditForm extends StatelessWidget {
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
+        const _CancelButton(),
+        const SizedBox(height: 16),
         SubmmitButton<IPatientBasicEditFormBloc>(
           label: Messages.of(context)!.patientEditBasicSubmmitButtonText,
         ),
       ],
+    );
+  }
+}
+
+class _CancelButton extends StatelessWidget {
+  const _CancelButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MainButton(
+      onPressed: () => context.beamBack(),
+      color: Colors.red.withOpacity(0.2),
+      text: 'Cancelar',
     );
   }
 }
