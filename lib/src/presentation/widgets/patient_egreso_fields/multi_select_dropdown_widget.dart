@@ -1,3 +1,4 @@
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
@@ -67,9 +68,11 @@ class _MultiSelectDropDownState<T> extends State<MultiSelectDropDown<T>> {
             ),
             chipDisplay: MultiSelectChipDisplay.none(),
             decoration: const BoxDecoration(),
-            title: const Text('Seleccione una o varias opciones'), // TODO
-            cancelText: const Text('Cancelar'), // TODO
-            confirmText: const Text('Aceptar'), // TODO
+            title: Text(Messages.of(context)!.multiselectDropDownWidgetTitle),
+            cancelText:
+                Text(Messages.of(context)!.multiselectDropDownWidgetCancel),
+            confirmText:
+                Text(Messages.of(context)!.multiselectDropDownWidgetAccept),
             itemsTextStyle: Theme.of(context).textTheme.bodyText2,
             selectedItemsTextStyle: Theme.of(context).textTheme.bodyText2,
             unselectedColor: Theme.of(context).colorScheme.secondary,

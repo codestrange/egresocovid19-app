@@ -1,6 +1,7 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,8 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
               },
               decoration: TextFieldDecorations.decoration(
                 errorText: widget.errorText,
-                labelText: 'Ingreso en', // TODO
+                labelText:
+                    Messages.of(context)!.incomeInputWidgetDefaultLabelText,
               ),
             );
           },
@@ -123,7 +125,8 @@ class _IncomeInputWidgetState extends State<IncomesInputWidget> {
                 (e) => Chip(
                   padding: const EdgeInsets.all(3),
                   label: Text(
-                    '${e.income.visualName(context)} - ${e.days} días', // TODO
+                    '${e.income.visualName(context)} - ${e.days} '
+                    '${Messages.of(context)!.incomeInputWidgetDays}',
                   ),
                   onDeleted: () {
                     if (!widget.incomes.any((o) => o.income == e.income)) {
@@ -173,11 +176,11 @@ class _IncomeDaysInputWidgetState extends State<_IncomeDaysInputWidget> {
         final int? number = int.tryParse(value);
         if (number == null) {
           setState(() {
-            errorText = 'La cantidad de días debe ser un número'; // TODO
+            errorText = Messages.of(context)!.incomeInputWidgetNumberError;
           });
         } else if (number <= 0) {
           setState(() {
-            errorText = 'La cantidad de días debe ser mayor que 0'; // TODO
+            errorText = Messages.of(context)!.incomeInputWidgetNegativeError;
           });
         } else {
           widget.onChanged?.call(number);
@@ -185,7 +188,8 @@ class _IncomeDaysInputWidgetState extends State<_IncomeDaysInputWidget> {
       },
       hintText: widget.hintText,
       errorText: errorText,
-      labelText: widget.labelText ?? 'Cant. de días', // TODO
+      labelText: widget.labelText ??
+          Messages.of(context)!.incomeDaysInputWidgetDefaultLabelText,
     );
   }
 }
