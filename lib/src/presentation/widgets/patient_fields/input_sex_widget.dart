@@ -6,20 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SexInputWidget extends StatelessWidget {
-  const SexInputWidget({
-    Key? key,
-    this.onChanged,
-    this.onSubmitted,
-    this.errorText,
-    this.hintText,
-    this.labelText,
-  }) : super(key: key);
+  const SexInputWidget(
+      {Key? key,
+      this.onChanged,
+      this.onSubmitted,
+      this.errorText,
+      this.hintText,
+      this.labelText,
+      this.initialValue})
+      : super(key: key);
 
   final ValueChanged<Sex?>? onChanged;
   final ValueChanged<Sex?>? onSubmitted;
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final Sex? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class SexInputWidget extends StatelessWidget {
       }).toList(),
       onChanged: onChanged,
       onSaved: onSubmitted,
+      value: initialValue,
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class SurgeryInputWidget extends StatelessWidget {
     this.labelText,
     this.hintText,
     this.errorText,
+    this.initialValue,
   }) : super(key: key);
 
   final Stream<List<String>> suggestionsStream;
@@ -31,6 +33,8 @@ class SurgeryInputWidget extends StatelessWidget {
 
   final String? errorText;
 
+  final String? initialValue;
+
   @override
   Widget build(BuildContext context) {
     return SimpleAutoCompleteTextField(
@@ -38,6 +42,8 @@ class SurgeryInputWidget extends StatelessWidget {
       onTextChanged: onChanged,
       onTextSubmitted: onSubmitted,
       onItemSelected: onSelected ?? id,
+      controller:
+          initialValue != null ? TextEditing.fromValue(initialValue!) : null,
       itemBuilder: (context, suggestion) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: Text(suggestion.toString()),

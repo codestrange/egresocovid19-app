@@ -31,17 +31,17 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
             (patient) async {
               final provincesEither = await provinceService.getProvinces();
               List<ProvinceEntity>? provinces;
+              provincesEither.fold(
+                (error) => emit(PatientBasicEditState.failure(error: error)),
+                (r) => provinces = r,
+              );
               if (provincesEither.isLeft()) {
-                provincesEither.fold(
-                  (error) => emit(PatientBasicEditState.failure(error: error)),
-                  (r) => provinces = r,
-                );
                 return;
               }
               //Extracting province entity
               final provEnt = provinces!
                       .any((element) => element.name == patient.province)
-                  ? provinces
+                  ? provinces!
                       .firstWhere((element) => element.name == patient.province)
                   : null;
               if (provEnt == null) {
@@ -57,9 +57,9 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
               }
               //Extracting municipality entity
               final muncEnt = provEnt.municipalities
-                      .any((element) => element.name == patient.province)
+                      .any((e) => e.name == patient.municipality)
                   ? provEnt.municipalities
-                      .firstWhere((element) => element.name == patient.province)
+                      .firstWhere((e) => e.name == patient.municipality)
                   : null;
               if (muncEnt == null) {
                 emit(
