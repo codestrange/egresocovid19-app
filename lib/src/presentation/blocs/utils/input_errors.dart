@@ -30,14 +30,14 @@ class StringValidator {
           ? 'error_invalid_number_input'
           : null;
 
-  static InputValidator<String> lengthGreaterThan(int len) =>
+  static InputValidator<String?> lengthGreaterThan(int len) =>
       (String? value) => value == null
           ? null
           : value.length > len
               ? null
               : 'error_too_short_input';
 
-  static InputValidator<String> lengthLowerThan(int len) =>
+  static InputValidator<String?> lengthLowerThan(int len) =>
       (String? value) => value == null
           ? null
           : value.length < len

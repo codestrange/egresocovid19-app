@@ -89,10 +89,20 @@ class _PatientBasicForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBlocListener<IPatientBasicEditFormBloc, void, ErrorEntity>(
       bloc: context.read(),
-      onSuccess: (_) => context.beamBack(),
+      onSuccess: (_) => ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.green.shade900,
+            content: Text(Messages.of(context)!.patientEditBasicSuccessMessage),
+          ),
+        ),
       onError: (error) => ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
-        ..showSnackBar(SnackBar(content: Text(error.message))),
+        ..showSnackBar(SnackBar(
+          backgroundColor: Colors.red.shade900,
+          content: Text(error.message),
+        )),
       child: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(10.0),
@@ -115,12 +125,15 @@ class _ReloadBasicEditPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      padding: const EdgeInsets.all(8),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 16),
           Text(Messages.of(context)!.patientEditBasicErrorMessage),
           Text(errorText),
+          const SizedBox(height: 16),
           MainButton(
             text: Messages.of(context)!.patientEditBasicErrorButtonText,
             onPressed: onPressed,
@@ -186,25 +199,10 @@ class _PatientEditForm extends StatelessWidget {
         const SizedBox(height: 12),
         const Flexible(child: _FamilyPathologicalHistoryInput()),
         const SizedBox(height: 16),
-        const _CancelButton(),
-        const SizedBox(height: 16),
         SubmmitButton<IPatientBasicEditFormBloc>(
           label: Messages.of(context)!.patientEditBasicSubmmitButtonText,
         ),
       ],
-    );
-  }
-}
-
-class _CancelButton extends StatelessWidget {
-  const _CancelButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MainButton(
-      onPressed: () => context.beamBack(),
-      color: Colors.red.withOpacity(0.2),
-      text: 'Cancelar',
     );
   }
 }
@@ -305,6 +303,7 @@ class _SexInput extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditBasicSexInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.sex.dirty(value),
+        initialValue: form.sex.state.value,
       ),
     );
   }
@@ -323,6 +322,7 @@ class _SkinColorInput extends StatelessWidget {
             Messages.of(context)!.patientEditBasicSkinColorInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.skinColor.dirty(value),
+        initialValue: form.skinColor.state.value,
       ),
     );
   }
@@ -341,6 +341,7 @@ class _BloodTypeInput extends StatelessWidget {
             Messages.of(context)!.patientEditBasicBloodTypeInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.bloodType.dirty(value),
+        initialValue: form.bloodType.state.value,
       ),
     );
   }
@@ -410,6 +411,8 @@ class _AddressInput extends StatelessWidget {
     return InputBlocBuilder<String?>(
       bloc: form.address,
       builder: (context, state) => TextInputWidget(
+        controller:
+            state.value != null ? TextEditing.fromValue(state.value!) : null,
         labelText: Messages.of(context)!.patientEditBasicAddressInputLabelText,
         errorText: state.error,
         onChanged: (value) => form.address.dirty(value.trim()),
@@ -440,6 +443,7 @@ class _PolyclinicInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.polyclinic.dirty(value.trim());
         },
+        initialValue: form.polyclinic.isPure ? state.value ?? '' : null,
       ),
     );
   }
@@ -466,6 +470,7 @@ class _SurgeryInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.surgery.dirty(value.trim());
         },
+        initialValue: form.surgery.isPure ? state.value ?? '' : null,
       ),
     );
   }
@@ -493,6 +498,7 @@ class _PopularCouncilInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.popularCouncil.dirty(value.trim());
         },
+        initialValue: form.popularCouncil.isPure ? state.value ?? '' : null,
       ),
     );
   }
@@ -520,6 +526,7 @@ class _NeighborhoodInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.neighborhood.dirty(value.trim());
         },
+        initialValue: form.neighborhood.isPure ? state.value ?? '' : null,
       ),
     );
   }
@@ -552,8 +559,9 @@ class _PersonalPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientBasicEditFormBloc>();
-    final bloc = GetIt.I<PathologicalhistoryBloc>()
-      ..stream.listen((state) {
+    final bloc = GetIt.I<PathologicalhistoryBloc>(
+      param1: form.personalPathologicalHistory.state.value,
+    )..stream.listen((state) {
         form.personalPathologicalHistory.dirty(state.pathologicalHistory);
       });
     return InputBlocBuilder<List<PathologicalEntity>>(
@@ -586,8 +594,9 @@ class _FamilyPathologicalHistoryInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientBasicEditFormBloc>();
-    final bloc = GetIt.I<PathologicalhistoryBloc>()
-      ..stream.listen((state) {
+    final bloc = GetIt.I<PathologicalhistoryBloc>(
+      param1: form.familyPathologicalHistory.state.value,
+    )..stream.listen((state) {
         form.familyPathologicalHistory.dirty(state.pathologicalHistory);
       });
     return InputBlocBuilder<List<PathologicalEntity>>(

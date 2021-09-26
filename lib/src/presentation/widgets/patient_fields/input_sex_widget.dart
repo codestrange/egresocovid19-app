@@ -13,6 +13,7 @@ class SexInputWidget extends StatelessWidget {
     this.errorText,
     this.hintText,
     this.labelText,
+    this.initialValue,
   }) : super(key: key);
 
   final ValueChanged<Sex?>? onChanged;
@@ -20,6 +21,7 @@ class SexInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final Sex? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class SexInputWidget extends StatelessWidget {
       }).toList(),
       onChanged: onChanged,
       onSaved: onSubmitted,
+      value: initialValue,
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,

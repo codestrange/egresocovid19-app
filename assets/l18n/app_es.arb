@@ -42,6 +42,7 @@
     "patientCreateFieldBlockNumber": "No. Manzana",
     "patientCreateFieldPersonalPathologicalHistory": "Patologías Personales",
     "patientCreateFieldFamilyPathologicalHistory": "Patologías Familiares",
+    "patientCreateSuccessMessage": "Paciente creado satisfactoriamente",
 
     "patientViewPageTitle": "Detalles",
     "patientViewAppBarTitle": "Detalles del Paciente",
@@ -141,6 +142,7 @@
     "patientEditBasicAppBarTitle": "Editar Paciente",
     "patientEditBasicError": "Error",
     "patientEditBasicErrorMessage": "Ha ocurrido un error :v",
+    "patientEditBasicSuccessMessage": "Paciente editado satisfactoriamente",
     "patientEditBasicErrorButtonText": "Recargar página",
     "patientEditBasicSubmmitButtonText": "Aplicar Cambios",
     "patientEditBasicNameInputLabelText": "Nombres(s)*",

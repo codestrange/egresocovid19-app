@@ -12,6 +12,7 @@ class BloodTypeInputWidget extends StatelessWidget {
     this.errorText,
     this.hintText,
     this.labelText,
+    this.initialValue,
   }) : super(key: key);
 
   final ValueChanged<BloodType?>? onChanged;
@@ -19,6 +20,7 @@ class BloodTypeInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final BloodType? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class BloodTypeInputWidget extends StatelessWidget {
           ),
         );
       }).toList(),
+      value: initialValue,
       onChanged: onChanged,
       onSaved: onSubmitted,
       decoration: TextFieldDecorations.decoration(

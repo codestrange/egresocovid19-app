@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class PolyclinicInputWidget extends StatelessWidget {
     this.labelText,
     this.hintText,
     this.errorText,
+    this.initialValue,
   }) : super(key: key);
 
   final Stream<List<String>> suggestionsStream;
@@ -32,9 +34,13 @@ class PolyclinicInputWidget extends StatelessWidget {
 
   final String? errorText;
 
+  final String? initialValue;
+
   @override
   Widget build(BuildContext context) {
     return SimpleAutoCompleteTextField(
+      controller:
+          initialValue != null ? TextEditing.fromValue(initialValue!) : null,
       suggestionsStream: suggestionsStream,
       onTextChanged: onChanged,
       onTextSubmitted: onSubmitted,

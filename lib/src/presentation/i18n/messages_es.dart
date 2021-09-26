@@ -122,6 +122,9 @@ class MessagesEs extends Messages {
   String get patientCreateFieldFamilyPathologicalHistory => 'Patologías Familiares';
 
   @override
+  String get patientCreateSuccessMessage => 'Paciente creado satisfactoriamente';
+
+  @override
   String get patientViewPageTitle => 'Detalles';
 
   @override
@@ -408,6 +411,9 @@ class MessagesEs extends Messages {
 
   @override
   String get patientEditBasicErrorMessage => 'Ha ocurrido un error :v';
+
+  @override
+  String get patientEditBasicSuccessMessage => 'Paciente editado satisfactoriamente';
 
   @override
   String get patientEditBasicErrorButtonText => 'Recargar página';

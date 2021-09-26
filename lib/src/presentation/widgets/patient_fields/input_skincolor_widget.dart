@@ -12,6 +12,7 @@ class SkinColorInputWidget extends StatelessWidget {
     this.errorText,
     this.hintText,
     this.labelText,
+    this.initialValue,
   }) : super(key: key);
 
   final ValueChanged<SkinColor?>? onChanged;
@@ -19,6 +20,7 @@ class SkinColorInputWidget extends StatelessWidget {
   final String? errorText;
   final String? hintText;
   final String? labelText;
+  final SkinColor? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class SkinColorInputWidget extends StatelessWidget {
           ),
         );
       }).toList(),
+      value: initialValue,
       onChanged: onChanged,
       onSaved: onSubmitted,
       decoration: TextFieldDecorations.decoration(

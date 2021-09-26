@@ -320,6 +320,12 @@ abstract class Messages {
   /// **'Patologías Familiares'**
   String get patientCreateFieldFamilyPathologicalHistory;
 
+  /// No description provided for @patientCreateSuccessMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Paciente creado satisfactoriamente'**
+  String get patientCreateSuccessMessage;
+
   /// No description provided for @patientViewPageTitle.
   ///
   /// In es, this message translates to:
@@ -895,6 +901,12 @@ abstract class Messages {
   /// In es, this message translates to:
   /// **'Ha ocurrido un error :v'**
   String get patientEditBasicErrorMessage;
+
+  /// No description provided for @patientEditBasicSuccessMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Paciente editado satisfactoriamente'**
+  String get patientEditBasicSuccessMessage;
 
   /// No description provided for @patientEditBasicErrorButtonText.
   ///

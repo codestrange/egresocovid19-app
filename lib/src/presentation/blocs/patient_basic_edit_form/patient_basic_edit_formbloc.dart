@@ -85,7 +85,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> blockNumber = InputBloc<String>(
+  late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
     validators: [
@@ -99,13 +99,13 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> ci = InputBloc<String>(
+  late final InputBloc<String?> ci = InputBloc<String?>(
     pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
     validators: [
       StringValidator.integer,
-      StringValidator.lengthGreaterThan(11),
-      StringValidator.lengthLowerThan(11)
+      StringValidator.lengthGreaterThan(10),
+      StringValidator.lengthLowerThan(12)
     ],
   );
 
@@ -127,7 +127,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> neighborhood = InputBloc<String>(
+  late final InputBloc<String?> neighborhood = InputBloc<String?>(
     pureValue: patientEntity.neighborhood,
   );
 
@@ -138,12 +138,12 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> polyclinic = InputBloc<String>(
+  late final InputBloc<String?> polyclinic = InputBloc<String?>(
     pureValue: patientEntity.polyclinic,
   );
 
   @override
-  late final InputBloc<String?> popularCouncil = InputBloc<String>(
+  late final InputBloc<String?> popularCouncil = InputBloc<String?>(
     pureValue: patientEntity.popularCouncil,
   );
 
@@ -158,17 +158,17 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> surgery = InputBloc<String>(
+  late final InputBloc<String?> surgery = InputBloc<String?>(
     pureValue: patientEntity.surgery,
   );
 
   @override
-  late final InputBloc<String?> firstName = InputBloc<String>(
+  late final InputBloc<String?> firstName = InputBloc<String?>(
     pureValue: patientEntity.firstname,
   );
 
   @override
-  late final InputBloc<String?> lastName = InputBloc<String>(
+  late final InputBloc<String?> lastName = InputBloc<String?>(
     pureValue: patientEntity.lastname,
   );
 

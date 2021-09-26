@@ -21,6 +21,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
     required this.provinceService,
   }) : super(const PatientBasicEditState.initial()) {
     on<PatientBasicEditEvent>((event, emit) async {
+      emit(const PatientBasicEditState.initial());
       await event.when(
         fetch: (patientId) async {
           final eitherPatient = await patientService.getPatient(
@@ -31,11 +32,11 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
             (patient) async {
               final provincesEither = await provinceService.getProvinces();
               List<ProvinceEntity>? provinces;
+              provincesEither.fold(
+                (error) => emit(PatientBasicEditState.failure(error: error)),
+                (r) => provinces = r,
+              );
               if (provincesEither.isLeft()) {
-                provincesEither.fold(
-                  (error) => emit(PatientBasicEditState.failure(error: error)),
-                  (r) => provinces = r,
-                );
                 return;
               }
               // Extracting province entity
@@ -52,7 +53,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
               }
               // Extracting municipality entity
               final muncEnt = provEnt.municipalities
-                  .where((element) => element.name == patient.province)
+                  .where((element) => element.name == patient.municipality)
                   .firstOrNull;
               if (muncEnt == null) {
                 emit(
