@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:egresocovid19/src/data/utils/utils.dart';
 import 'package:egresocovid19/src/dependencies.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
@@ -22,7 +23,8 @@ abstract class RegisterModule {
         compact: false,
         logPrint: (e) => log(e.toString()),
       ),
-    );
+    )
+    ..transformer = FlutterTransformer();
 
   @lazySingleton
   OAuth oauth(
