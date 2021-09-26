@@ -1,5 +1,6 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -147,7 +148,8 @@ class _PathologyTreatmentInputWidget extends StatelessWidget {
       onChanged: onChanged,
       hintText: hintText,
       errorText: errorText,
-      labelText: labelText ?? 'Tratamiento Realizado', // TODO
+      labelText: labelText ??
+          Messages.of(context)!.pathologicalHistoryInputWidgetDefaultLabelText,
     );
   }
 }

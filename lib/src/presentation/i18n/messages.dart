@@ -872,6 +872,252 @@ abstract class Messages {
   /// **'Fecha de detección'**
   String get patientEditEgresoDetectionDate;
 
+  /// No description provided for @patientEditBasicPageTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar'**
+  String get patientEditBasicPageTitle;
+
+  /// No description provided for @patientEditBasicAppBarTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Paciente'**
+  String get patientEditBasicAppBarTitle;
+
+  /// No description provided for @patientEditBasicError.
+  ///
+  /// In es, this message translates to:
+  /// **'Error'**
+  String get patientEditBasicError;
+
+  /// No description provided for @patientEditBasicErrorMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Ha ocurrido un error :v'**
+  String get patientEditBasicErrorMessage;
+
+  /// No description provided for @patientEditBasicErrorButtonText.
+  ///
+  /// In es, this message translates to:
+  /// **'Recargar página'**
+  String get patientEditBasicErrorButtonText;
+
+  /// No description provided for @patientEditBasicSubmmitButtonText.
+  ///
+  /// In es, this message translates to:
+  /// **'Aplicar Cambios'**
+  String get patientEditBasicSubmmitButtonText;
+
+  /// No description provided for @patientEditBasicNameInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombres(s)*'**
+  String get patientEditBasicNameInputLabelText;
+
+  /// No description provided for @patientEditBasicLastNameInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Apellido(s)*'**
+  String get patientEditBasicLastNameInputLabelText;
+
+  /// No description provided for @patientEditBasicIDInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'CI*'**
+  String get patientEditBasicIDInputLabelText;
+
+  /// No description provided for @patientEditBasicAgeInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Edad*'**
+  String get patientEditBasicAgeInputLabelText;
+
+  /// No description provided for @patientEditBasicSexInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Sexo*'**
+  String get patientEditBasicSexInputLabelText;
+
+  /// No description provided for @patientEditBasicSkinColorInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Color de Piel*'**
+  String get patientEditBasicSkinColorInputLabelText;
+
+  /// No description provided for @patientEditBasicBloodTypeInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Sangre'**
+  String get patientEditBasicBloodTypeInputLabelText;
+
+  /// No description provided for @patientEditBasicProvinceInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Provincia*'**
+  String get patientEditBasicProvinceInputLabelText;
+
+  /// No description provided for @patientEditBasicMunicipalityInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Municipio*'**
+  String get patientEditBasicMunicipalityInputLabelText;
+
+  /// No description provided for @patientEditBasicAddressInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Dirección Particular*'**
+  String get patientEditBasicAddressInputLabelText;
+
+  /// No description provided for @patientEditBasicPolyclinicInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Policlínico*'**
+  String get patientEditBasicPolyclinicInputLabelText;
+
+  /// No description provided for @patientEditBasicSurgeryInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Consultorio*'**
+  String get patientEditBasicSurgeryInputLabelText;
+
+  /// No description provided for @patientEditBasicPopularCouncilInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Consejo Popular*'**
+  String get patientEditBasicPopularCouncilInputLabelText;
+
+  /// No description provided for @patientEditBasicNeighborhoodInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Reparto*'**
+  String get patientEditBasicNeighborhoodInputLabelText;
+
+  /// No description provided for @patientEditBasicBlockInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'No. de Manzana*'**
+  String get patientEditBasicBlockInputLabelText;
+
+  /// No description provided for @patientEditBasicPathologicalHistoryInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Antecedentes Patológicos'**
+  String get patientEditBasicPathologicalHistoryInputLabelText;
+
+  /// No description provided for @patientEditBasicFamilyPathologicalHistoryInputLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Antecedentes Patológicos Familiares*'**
+  String get patientEditBasicFamilyPathologicalHistoryInputLabelText;
+
+  /// No description provided for @multiselectDropDownWidgetTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Seleccione una o varias opciones'**
+  String get multiselectDropDownWidgetTitle;
+
+  /// No description provided for @multiselectDropDownWidgetCancel.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get multiselectDropDownWidgetCancel;
+
+  /// No description provided for @multiselectDropDownWidgetAccept.
+  ///
+  /// In es, this message translates to:
+  /// **'Aceptar'**
+  String get multiselectDropDownWidgetAccept;
+
+  /// No description provided for @neighborhoodInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Reparto'**
+  String get neighborhoodInputWidgetDefaultLabelText;
+
+  /// No description provided for @polyclinicInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Policlínico'**
+  String get polyclinicInputWidgetDefaultLabelText;
+
+  /// No description provided for @municipalityInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Municipio'**
+  String get municipalityInputWidgetDefaultLabelText;
+
+  /// No description provided for @provinceInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Provincia'**
+  String get provinceInputWidgetDefaultLabelText;
+
+  /// No description provided for @pathologicalHistoryInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamiento Realizado'**
+  String get pathologicalHistoryInputWidgetDefaultLabelText;
+
+  /// No description provided for @incomeDaysInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Cant. de días'**
+  String get incomeDaysInputWidgetDefaultLabelText;
+
+  /// No description provided for @incomeInputWidgetNumberError.
+  ///
+  /// In es, this message translates to:
+  /// **'La cantidad de días debe ser un número'**
+  String get incomeInputWidgetNumberError;
+
+  /// No description provided for @incomeInputWidgetNegativeError.
+  ///
+  /// In es, this message translates to:
+  /// **'La cantidad de días debe ser mayor que 0'**
+  String get incomeInputWidgetNegativeError;
+
+  /// No description provided for @incomeInputWidgetDays.
+  ///
+  /// In es, this message translates to:
+  /// **'días'**
+  String get incomeInputWidgetDays;
+
+  /// No description provided for @incomeInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingreso en'**
+  String get incomeInputWidgetDefaultLabelText;
+
+  /// No description provided for @pathologicalInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Patología'**
+  String get pathologicalInputWidgetDefaultLabelText;
+
+  /// No description provided for @popularCouncilInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Consejo Popular'**
+  String get popularCouncilInputWidgetDefaultLabelText;
+
+  /// No description provided for @surgeryInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Consultorio'**
+  String get surgeryInputWidgetDefaultLabelText;
+
+  /// No description provided for @emailInputWidgetDefaultHintText.
+  ///
+  /// In es, this message translates to:
+  /// **'Correo'**
+  String get emailInputWidgetDefaultHintText;
+
+  /// No description provided for @passwordInputWidgetDefaultLabelText.
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña'**
+  String get passwordInputWidgetDefaultLabelText;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:

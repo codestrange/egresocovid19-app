@@ -398,6 +398,129 @@ class MessagesEs extends Messages {
   String get patientEditEgresoDetectionDate => 'Fecha de detección';
 
   @override
+  String get patientEditBasicPageTitle => 'Editar';
+
+  @override
+  String get patientEditBasicAppBarTitle => 'Editar Paciente';
+
+  @override
+  String get patientEditBasicError => 'Error';
+
+  @override
+  String get patientEditBasicErrorMessage => 'Ha ocurrido un error :v';
+
+  @override
+  String get patientEditBasicErrorButtonText => 'Recargar página';
+
+  @override
+  String get patientEditBasicSubmmitButtonText => 'Aplicar Cambios';
+
+  @override
+  String get patientEditBasicNameInputLabelText => 'Nombres(s)*';
+
+  @override
+  String get patientEditBasicLastNameInputLabelText => 'Apellido(s)*';
+
+  @override
+  String get patientEditBasicIDInputLabelText => 'CI*';
+
+  @override
+  String get patientEditBasicAgeInputLabelText => 'Edad*';
+
+  @override
+  String get patientEditBasicSexInputLabelText => 'Sexo*';
+
+  @override
+  String get patientEditBasicSkinColorInputLabelText => 'Color de Piel*';
+
+  @override
+  String get patientEditBasicBloodTypeInputLabelText => 'Sangre';
+
+  @override
+  String get patientEditBasicProvinceInputLabelText => 'Provincia*';
+
+  @override
+  String get patientEditBasicMunicipalityInputLabelText => 'Municipio*';
+
+  @override
+  String get patientEditBasicAddressInputLabelText => 'Dirección Particular*';
+
+  @override
+  String get patientEditBasicPolyclinicInputLabelText => 'Policlínico*';
+
+  @override
+  String get patientEditBasicSurgeryInputLabelText => 'Consultorio*';
+
+  @override
+  String get patientEditBasicPopularCouncilInputLabelText => 'Consejo Popular*';
+
+  @override
+  String get patientEditBasicNeighborhoodInputLabelText => 'Reparto*';
+
+  @override
+  String get patientEditBasicBlockInputLabelText => 'No. de Manzana*';
+
+  @override
+  String get patientEditBasicPathologicalHistoryInputLabelText => 'Antecedentes Patológicos';
+
+  @override
+  String get patientEditBasicFamilyPathologicalHistoryInputLabelText => 'Antecedentes Patológicos Familiares*';
+
+  @override
+  String get multiselectDropDownWidgetTitle => 'Seleccione una o varias opciones';
+
+  @override
+  String get multiselectDropDownWidgetCancel => 'Cancelar';
+
+  @override
+  String get multiselectDropDownWidgetAccept => 'Aceptar';
+
+  @override
+  String get neighborhoodInputWidgetDefaultLabelText => 'Reparto';
+
+  @override
+  String get polyclinicInputWidgetDefaultLabelText => 'Policlínico';
+
+  @override
+  String get municipalityInputWidgetDefaultLabelText => 'Municipio';
+
+  @override
+  String get provinceInputWidgetDefaultLabelText => 'Provincia';
+
+  @override
+  String get pathologicalHistoryInputWidgetDefaultLabelText => 'Tratamiento Realizado';
+
+  @override
+  String get incomeDaysInputWidgetDefaultLabelText => 'Cant. de días';
+
+  @override
+  String get incomeInputWidgetNumberError => 'La cantidad de días debe ser un número';
+
+  @override
+  String get incomeInputWidgetNegativeError => 'La cantidad de días debe ser mayor que 0';
+
+  @override
+  String get incomeInputWidgetDays => 'días';
+
+  @override
+  String get incomeInputWidgetDefaultLabelText => 'Ingreso en';
+
+  @override
+  String get pathologicalInputWidgetDefaultLabelText => 'Patología';
+
+  @override
+  String get popularCouncilInputWidgetDefaultLabelText => 'Consejo Popular';
+
+  @override
+  String get surgeryInputWidgetDefaultLabelText => 'Consultorio';
+
+  @override
+  String get emailInputWidgetDefaultHintText => 'Correo';
+
+  @override
+  String get passwordInputWidgetDefaultLabelText => 'Contraseña';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override
