@@ -5,6 +5,9 @@ import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lyform_validators/lyform_validators.dart';
+
+export 'patient_create_bloc_texts.dart';
 
 abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get firstName;
@@ -49,36 +52,51 @@ abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
 
 @Injectable(as: IPatientCreateBloc)
 class PatientCreateBloc extends IPatientCreateBloc {
-  PatientCreateBloc({
-    required this.patientService,
-  }) : super();
+  PatientCreateBloc(
+    this.patientService,
+    @factoryParam PatientCreateBlocTexts? texts,
+  )   : assert(texts != null),
+        texts = texts!,
+        super();
+
+  final PatientCreateBlocTexts texts;
 
   @override
-  InputBloc<String> address = InputBloc<String>(
+  late final address = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
   @override
-  InputBloc<String> age = InputBloc<String>(
+  late final age = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
-      StringValidator.number,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
+      StringValidator.isNumeric(
+        errorMessage: texts.validatorNumber,
+      ),
     ],
   );
 
   @override
-  InputBloc<String> blockNumber = InputBloc<String>(
+  late final blockNumber = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
-      StringValidator.integer,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
+      StringValidator.isInt(
+        errorMessage: texts.validatorInteger,
+      ),
     ],
   );
 
@@ -88,14 +106,24 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  InputBloc<String> ci = InputBloc<String>(
+  late final ci = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
-      StringValidator.integer,
-      StringValidator.lengthGreaterThan(10),
-      StringValidator.lengthLowerThan(12)
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
+      StringValidator.isInt(
+        errorMessage: texts.validatorInteger,
+      ),
+      StringValidator.lengthGreaterThan(
+        len: 10,
+        errorMessage: texts.validatorLength,
+      ),
+      StringValidator.lengthLowerThan(
+        len: 12,
+        errorMessage: texts.validatorLength,
+      ),
     ],
   );
 
@@ -106,29 +134,31 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  InputBloc<ProvinceEntity?> province = InputBloc<ProvinceEntity?>(
+  late final province = InputBloc<ProvinceEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
     validators: [
-      Validator.required,
+      Validator.required(errorMessage: texts.validatorRequired),
     ],
   );
 
   @override
-  InputBloc<MunicipalityEntity?> municipality = InputBloc<MunicipalityEntity?>(
+  late final municipality = InputBloc<MunicipalityEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
     validators: [
-      Validator.required,
+      Validator.required(errorMessage: texts.validatorRequired),
     ],
   );
 
   @override
-  InputBloc<String> neighborhood = InputBloc<String>(
+  late final neighborhood = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
@@ -139,61 +169,75 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  InputBloc<String> polyclinic = InputBloc<String>(
+  late final polyclinic = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
   @override
-  InputBloc<String> popularCouncil = InputBloc<String>(
+  late final popularCouncil = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
   @override
-  InputBloc<Sex?> sex = InputBloc(
+  late final sex = InputBloc<Sex?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [Validator.required],
+    validators: [
+      Validator.required(errorMessage: texts.validatorRequired),
+    ],
   );
 
   @override
-  InputBloc<SkinColor?> skinColor = InputBloc(
+  late final skinColor = InputBloc<SkinColor?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [Validator.required],
-  );
-
-  @override
-  InputBloc<String> surgery = InputBloc<String>(
-    pureValue: '',
-    validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      Validator.required(errorMessage: texts.validatorRequired),
     ],
   );
 
   @override
-  InputBloc<String> firstName = InputBloc<String>(
+  late final surgery = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
   @override
-  InputBloc<String> lastName = InputBloc<String>(
+  late final firstName = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
+    ],
+  );
+
+  @override
+  late final lastName = InputBloc<String>(
+    pureValue: '',
+    validationType: ValidationType.explicit,
+    validators: [
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 

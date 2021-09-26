@@ -28,8 +28,14 @@ class PatientCreatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final messages = Messages.of(context)!;
     return BlocProvider<IPatientCreateBloc>(
-      create: (_) => GetIt.I(),
+      create: (_) {
+        return GetIt.I(
+          param1:
+              GetIt.I<PatientCreateBlocTextsMapper>().fromMessages(messages),
+        );
+      },
       child: const _PatientCreatePageInternal(),
     );
   }

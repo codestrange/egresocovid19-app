@@ -3,9 +3,12 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
-import 'package:egresocovid19/src/presentation/blocs/utils/input_errors.dart';
+import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lyform_validators/lyform_validators.dart';
+
+export 'login_bloc_texts.dart';
 
 abstract class ILoginBloc extends FormBloc<void, ErrorEntity> {
   InputBloc<String> get email;
@@ -17,27 +20,35 @@ abstract class ILoginBloc extends FormBloc<void, ErrorEntity> {
 
 @Injectable(as: ILoginBloc)
 class LoginBloc extends ILoginBloc {
-  LoginBloc({
-    required this.authService,
-  }) : super();
+  LoginBloc(
+    this.authService,
+    @factoryParam LoginBlocTexts? texts,
+  )   : assert(texts != null),
+        texts = texts!,
+        super();
 
   final IAuthService authService;
+  final LoginBlocTexts texts;
 
   @override
-  final email = InputBloc<String>(
+  late final email = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
-      StringValidator.email,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
+      StringValidator.isEmail(errorMessage: texts.validatorEmail),
     ],
   );
 
   @override
-  final password = InputBloc<String>(
+  late final password = InputBloc<String>(
     pureValue: '',
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 

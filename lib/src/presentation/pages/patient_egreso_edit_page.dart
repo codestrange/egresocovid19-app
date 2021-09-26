@@ -158,11 +158,16 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
     DischargeDataEntity actualDischargeData, {
     bool loading = false,
   }) {
+    final messages = Messages.of(context)!;
     return SingleChildScrollView(
       child: BlocProvider<IPatientEgresoEditFormBloc>(
-        create: (context) => GetIt.I.get(
-          param1: actualDischargeData,
-        ),
+        create: (context) {
+          return GetIt.I.get(
+            param1: actualDischargeData,
+            param2: GetIt.I<PatientEgresoEditFormBlocTextsMapper>()
+                .fromMessages(messages),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: _PatientEgresoEditForm(
