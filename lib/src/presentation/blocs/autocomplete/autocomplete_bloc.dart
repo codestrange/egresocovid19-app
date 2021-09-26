@@ -10,8 +10,11 @@ part 'autocomplete_state.dart';
 
 abstract class AutoCompleteBloc<T>
     extends Bloc<AutocompleteEvent, AutocompleteState> {
-  AutoCompleteBloc(T? initialValue, {String initialInput = ''})
-      : super(
+  AutoCompleteBloc(
+    T? initialValue, {
+    String initialInput = '',
+    this.suggestionsAmount = 5,
+  }) : super(
           AutocompleteState<T>(
             input: initialInput,
             value: initialValue,
@@ -25,7 +28,7 @@ abstract class AutoCompleteBloc<T>
           state.copyWith(
             value: event.value,
             input: event.value.toString(),
-            suggestions: suggestions,
+            suggestions: suggestions.take(suggestionsAmount).toList(),
           ),
         );
       },
@@ -37,7 +40,7 @@ abstract class AutoCompleteBloc<T>
           state.copyWith(
             value: null,
             input: event.input,
-            suggestions: suggestions,
+            suggestions: suggestions.take(suggestionsAmount).toList(),
           ),
         );
       },
@@ -48,6 +51,7 @@ abstract class AutoCompleteBloc<T>
       },
     );
   }
+  final int suggestionsAmount;
 
   Stream<List<T>> get suggestionsStream =>
       stream.map((state) => state.suggestions as List<T>);
