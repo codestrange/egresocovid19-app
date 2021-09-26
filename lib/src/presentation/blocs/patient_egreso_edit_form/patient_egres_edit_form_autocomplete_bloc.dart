@@ -17,7 +17,7 @@ class SymptompsAutoCompleteBloc extends AutoCompleteBloc<String> {
     final either = changedValue.isEmpty
         ? await autoCompleteService.getDefaultSymptoms()
         : await autoCompleteService.getSymptoms(changedValue);
-    final defaults = either.getOrElse(() => []);
+    final defaults = either.getOrElse((_) => []);
     return defaults
         .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
         .toList();
@@ -35,7 +35,7 @@ class AntibioticsAutoCompleteBloc extends AutoCompleteBloc<String> {
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
     final either = await autoCompleteService.getAntibiotics(changedValue);
-    final defaults = either.getOrElse(() => []);
+    final defaults = either.getOrElse((_) => []);
     return defaults
         .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
         .toList();
@@ -54,7 +54,7 @@ class AnotherVaccinesAutoCompleteBloc extends AutoCompleteBloc<String> {
   Future<List<String>> getSuggestions(String changedValue) async {
     final either =
         await autoCompleteService.getAnotherVaccinesAgainstCovid(changedValue);
-    final defaults = either.getOrElse(() => []);
+    final defaults = either.getOrElse((_) => []);
     return defaults
         .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
         .toList();
@@ -72,7 +72,7 @@ class OtherAftermathAutoCompleteBloc extends AutoCompleteBloc<String> {
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
     final either = await autoCompleteService.getOthersAftermaths(changedValue);
-    final defaults = either.getOrElse(() => []);
+    final defaults = either.getOrElse((_) => []);
     return defaults
         .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
         .toList();

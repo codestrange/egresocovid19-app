@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:fpdart/fpdart.dart';
 
 abstract class IPatientRepository {
   Future<Either<ErrorEntity, List<PatientGetEntity>>> getPatients({

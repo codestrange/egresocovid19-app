@@ -14,7 +14,6 @@ dependencies:
       url: https://github.com/slovnicki/beamer.git
       path: package
       ref: 2015b04c79bf139d2df32ea62cba9f5d489433b2
-  dartz: ^0.10.0
   dio: ^4.0.0
   email_validator: ^2.0.1
   flutter:
@@ -25,6 +24,7 @@ dependencies:
   flutter_lyform: ^0.1.2+2
   flutter_web_plugins:
     sdk: flutter
+  fpdart: ^0.0.11
   freezed_annotation: ^0.14.3
   get_it: ^7.2.0
   google_fonts: ^2.1.0

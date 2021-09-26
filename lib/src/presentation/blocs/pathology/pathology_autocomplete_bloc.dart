@@ -15,7 +15,7 @@ class PathologyAutoCompleteBloc extends AutoCompleteBloc<String> {
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
     final either = await autoCompleteService.getDefaultPathologicals();
-    final defaults = either.getOrElse(() => []);
+    final defaults = either.getOrElse((_) => []);
     return defaults
         .where((e) => e.toLowerCase().contains(changedValue.toLowerCase()))
         .toList();

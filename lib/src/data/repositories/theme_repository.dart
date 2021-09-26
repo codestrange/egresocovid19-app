@@ -1,7 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/repositories/repositories.dart';
 import 'package:flutter/material.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
