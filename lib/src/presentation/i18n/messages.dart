@@ -1130,6 +1130,42 @@ abstract class Messages {
   /// **'Contraseña'**
   String get passwordInputWidgetDefaultLabelText;
 
+  /// No description provided for @validatorRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Campo requerido'**
+  String get validatorRequired;
+
+  /// No description provided for @validatorEmail.
+  ///
+  /// In es, this message translates to:
+  /// **'Email invalido'**
+  String get validatorEmail;
+
+  /// No description provided for @validatorLength.
+  ///
+  /// In es, this message translates to:
+  /// **'Longitud invalida'**
+  String get validatorLength;
+
+  /// No description provided for @validatorInteger.
+  ///
+  /// In es, this message translates to:
+  /// **'Debe ser un número entero'**
+  String get validatorInteger;
+
+  /// No description provided for @validatorNumber.
+  ///
+  /// In es, this message translates to:
+  /// **'Debe ser un número'**
+  String get validatorNumber;
+
+  /// No description provided for @validatorIntegerNonNegative.
+  ///
+  /// In es, this message translates to:
+  /// **'Debe ser un entero no negativo'**
+  String get validatorIntegerNonNegative;
+
   /// No description provided for @enumSexMale.
   ///
   /// In es, this message translates to:

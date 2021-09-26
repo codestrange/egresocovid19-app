@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'municipality_bloc.dart';
 
@@ -37,6 +38,12 @@ mixin _$MunicipalityEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? provincesRequested,
+    TResult Function()? rebuild,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? provincesRequested,
     TResult Function()? rebuild,
@@ -47,6 +54,12 @@ mixin _$MunicipalityEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ProvincesRequested value) provincesRequested,
     required TResult Function(MunicipalityRebuild value) rebuild,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ProvincesRequested value)? provincesRequested,
+    TResult Function(MunicipalityRebuild value)? rebuild,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,6 +146,15 @@ class _$ProvincesRequested
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? provincesRequested,
+    TResult Function()? rebuild,
+  }) {
+    return provincesRequested?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? provincesRequested,
     TResult Function()? rebuild,
@@ -151,6 +173,15 @@ class _$ProvincesRequested
     required TResult Function(MunicipalityRebuild value) rebuild,
   }) {
     return provincesRequested(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ProvincesRequested value)? provincesRequested,
+    TResult Function(MunicipalityRebuild value)? rebuild,
+  }) {
+    return provincesRequested?.call(this);
   }
 
   @override
@@ -227,6 +258,15 @@ class _$MunicipalityRebuild
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? provincesRequested,
+    TResult Function()? rebuild,
+  }) {
+    return rebuild?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? provincesRequested,
     TResult Function()? rebuild,
@@ -245,6 +285,15 @@ class _$MunicipalityRebuild
     required TResult Function(MunicipalityRebuild value) rebuild,
   }) {
     return rebuild(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ProvincesRequested value)? provincesRequested,
+    TResult Function(MunicipalityRebuild value)? rebuild,
+  }) {
+    return rebuild?.call(this);
   }
 
   @override
@@ -294,6 +343,12 @@ mixin _$MunicipalityState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<ProvinceEntity>? provinces, bool rebuildTrueOrFalse)?
+        municipalityState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<ProvinceEntity>? provinces, bool rebuildTrueOrFalse)?
         municipalityState,
@@ -303,6 +358,11 @@ mixin _$MunicipalityState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MunicipalityCurrentState value) municipalityState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MunicipalityCurrentState value)? municipalityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -456,6 +516,15 @@ class _$MunicipalityCurrentState
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<ProvinceEntity>? provinces, bool rebuildTrueOrFalse)?
+        municipalityState,
+  }) {
+    return municipalityState?.call(provinces, rebuildTrueOrFalse);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<ProvinceEntity>? provinces, bool rebuildTrueOrFalse)?
         municipalityState,
@@ -473,6 +542,14 @@ class _$MunicipalityCurrentState
     required TResult Function(MunicipalityCurrentState value) municipalityState,
   }) {
     return municipalityState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MunicipalityCurrentState value)? municipalityState,
+  }) {
+    return municipalityState?.call(this);
   }
 
   @override

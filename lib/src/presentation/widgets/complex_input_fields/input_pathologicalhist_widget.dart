@@ -28,7 +28,6 @@ class PathologicalHistoryInputWidget extends StatefulWidget {
   final String headerText;
 
   final String? errorText;
-  //TODO: SHOW THIS ERROR TEXT SOME WHERE
 
   @override
   State<PathologicalHistoryInputWidget> createState() =>
@@ -105,6 +104,15 @@ class _PathologicalHistoryInputWidgetState
           },
         ),
         const SizedBox(height: 10),
+        if (widget.errorText?.isNotEmpty ?? false) ...[
+          Text(
+            widget.errorText!,
+            style: TextStyle(
+              color: Theme.of(context).errorColor,
+            ),
+          ),
+          const SizedBox(height: 10),
+        ],
         Wrap(
           spacing: 3,
           children: widget.pathologicalHist

@@ -192,6 +192,13 @@
 
     "passwordInputWidgetDefaultLabelText": "Contraseña",
 
+    "validatorRequired": "Campo requerido",
+    "validatorEmail": "Email invalido",
+    "validatorLength": "Longitud invalida",
+    "validatorInteger": "Debe ser un número entero",
+    "validatorNumber": "Debe ser un número",
+    "validatorIntegerNonNegative": "Debe ser un entero no negativo",
+
     "enumSexMale": "Masculino",
     "enumSexFemale": "Femenino",
     "enumSexOther": "Otro",

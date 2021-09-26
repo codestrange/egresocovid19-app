@@ -20,4 +20,3 @@ export 'polyclinic/polyclinic_autocomplete_bloc.dart';
 export 'popularcouncil/popularcouncil_autocomplete_bloc.dart';
 export 'surgery/surgery_autocomplete_bloc.dart';
 export 'theme/theme_bloc.dart';
-export 'utils/input_errors.dart';

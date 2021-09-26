@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'income_bloc.dart';
 
@@ -46,6 +47,13 @@ mixin _$IncomeEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int days)? daysChanged,
+    TResult Function(Income income)? incomeChanged,
+    TResult Function()? cleared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int days)? daysChanged,
     TResult Function(Income income)? incomeChanged,
@@ -58,6 +66,13 @@ mixin _$IncomeEvent {
     required TResult Function(DaysChanged value) daysChanged,
     required TResult Function(IncomeChanged value) incomeChanged,
     required TResult Function(IncomeCleared value) cleared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DaysChanged value)? daysChanged,
+    TResult Function(IncomeChanged value)? incomeChanged,
+    TResult Function(IncomeCleared value)? cleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -159,6 +174,16 @@ class _$DaysChanged implements DaysChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int days)? daysChanged,
+    TResult Function(Income income)? incomeChanged,
+    TResult Function()? cleared,
+  }) {
+    return daysChanged?.call(days);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int days)? daysChanged,
     TResult Function(Income income)? incomeChanged,
@@ -179,6 +204,16 @@ class _$DaysChanged implements DaysChanged {
     required TResult Function(IncomeCleared value) cleared,
   }) {
     return daysChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DaysChanged value)? daysChanged,
+    TResult Function(IncomeChanged value)? incomeChanged,
+    TResult Function(IncomeCleared value)? cleared,
+  }) {
+    return daysChanged?.call(this);
   }
 
   @override
@@ -278,6 +313,16 @@ class _$IncomeChanged implements IncomeChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int days)? daysChanged,
+    TResult Function(Income income)? incomeChanged,
+    TResult Function()? cleared,
+  }) {
+    return incomeChanged?.call(income);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int days)? daysChanged,
     TResult Function(Income income)? incomeChanged,
@@ -298,6 +343,16 @@ class _$IncomeChanged implements IncomeChanged {
     required TResult Function(IncomeCleared value) cleared,
   }) {
     return incomeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DaysChanged value)? daysChanged,
+    TResult Function(IncomeChanged value)? incomeChanged,
+    TResult Function(IncomeCleared value)? cleared,
+  }) {
+    return incomeChanged?.call(this);
   }
 
   @override
@@ -372,6 +427,16 @@ class _$IncomeCleared implements IncomeCleared {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int days)? daysChanged,
+    TResult Function(Income income)? incomeChanged,
+    TResult Function()? cleared,
+  }) {
+    return cleared?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int days)? daysChanged,
     TResult Function(Income income)? incomeChanged,
@@ -392,6 +457,16 @@ class _$IncomeCleared implements IncomeCleared {
     required TResult Function(IncomeCleared value) cleared,
   }) {
     return cleared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DaysChanged value)? daysChanged,
+    TResult Function(IncomeChanged value)? incomeChanged,
+    TResult Function(IncomeCleared value)? cleared,
+  }) {
+    return cleared?.call(this);
   }
 
   @override
@@ -439,6 +514,11 @@ mixin _$IncomeState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Income? income, int days)? state,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Income? income, int days)? state,
     required TResult orElse(),
@@ -447,6 +527,11 @@ mixin _$IncomeState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(IncomeInputState value) state,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(IncomeInputState value)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -582,6 +667,14 @@ class _$IncomeInputState implements IncomeInputState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Income? income, int days)? state,
+  }) {
+    return state?.call(income, days);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Income? income, int days)? state,
     required TResult orElse(),
@@ -598,6 +691,14 @@ class _$IncomeInputState implements IncomeInputState {
     required TResult Function(IncomeInputState value) state,
   }) {
     return state(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(IncomeInputState value)? state,
+  }) {
+    return state?.call(this);
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit_form/patient_basic_edit_formbloc_texts.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
@@ -42,6 +43,7 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final messages = Messages.of(context)!;
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
@@ -62,8 +64,10 @@ class _PatientBasicEditPageInternal extends StatelessWidget {
           ),
           builder: (context, state) => state.maybeMap(
             patientEdit: (state) => BlocProvider<IPatientBasicEditFormBloc>(
-              create: (context) => GetIt.I<IPatientBasicEditFormBloc>(
+              create: (context) => GetIt.I(
                 param1: state.patientEditFetchData,
+                param2: GetIt.I<PatientBasicEditFormBlocTextsMapper>()
+                    .fromMessages(messages),
               ),
               child: const _PatientBasicForm(),
             ),

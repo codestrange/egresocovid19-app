@@ -1,6 +1,6 @@
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
+import 'package:fpdart/fpdart.dart';
 
 extension CacheBehaviorExtension on CacheBehavior {
   Future<Either<ErrorEntity, T>> when<T>({

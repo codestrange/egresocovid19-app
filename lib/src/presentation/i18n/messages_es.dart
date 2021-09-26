@@ -527,6 +527,24 @@ class MessagesEs extends Messages {
   String get passwordInputWidgetDefaultLabelText => 'Contraseña';
 
   @override
+  String get validatorRequired => 'Campo requerido';
+
+  @override
+  String get validatorEmail => 'Email invalido';
+
+  @override
+  String get validatorLength => 'Longitud invalida';
+
+  @override
+  String get validatorInteger => 'Debe ser un número entero';
+
+  @override
+  String get validatorNumber => 'Debe ser un número';
+
+  @override
+  String get validatorIntegerNonNegative => 'Debe ser un entero no negativo';
+
+  @override
   String get enumSexMale => 'Masculino';
 
   @override

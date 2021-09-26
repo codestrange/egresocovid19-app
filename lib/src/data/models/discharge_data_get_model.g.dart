@@ -7,55 +7,56 @@ part of 'discharge_data_get_model.dart';
 // **************************************************************************
 
 DischargeDataGetModel _$DischargeDataGetModelFromJson(
-    Map<String, dynamic> json) {
-  return DischargeDataGetModel(
-    detectionDate: json['detectionDate'] == null
-        ? null
-        : DateTime.parse(json['detectionDate'] as String),
-    symptoms:
-        (json['symptoms'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    durationOfSymptoms: json['durationOfSymptoms'] as int?,
-    diagnosisWay:
-        _$enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosisWay']),
-    testUsedInDiagnosis: _$enumDecodeNullable(
-        _$TestDiagnosisEnumMap, json['testUsedInDiagnosis']),
-    daysFromSymptomsToDiagnosis: json['daysFromSymptomsToDiagnosis'] as int?,
-    numberPcrPerformed: json['numberPcrPerformed'] as int?,
-    timeFromDiagnosisToNegativeOrDischarge:
-        json['timeFromDiagnosisToNegativeOrDischarge'] as int?,
-    formOfContagion:
-        _$enumDecodeNullable(_$ContagionEnumMap, json['formOfContagion']),
-    wasHePartOfAnEvent: json['wasHePartOfAnEvent'] as bool?,
-    didHeWorkInTheAttentionToPositiveCases:
-        json['didHeWorkInTheAttentionToPositiveCases'] as bool?,
-    hospitalizationTime: json['hospitalizationTime'] as String?,
-    incomes: (json['incomes'] as List<dynamic>?)
-        ?.map((e) => IncomeModel.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    contactsFirstLevel: json['contactsFirstLevel'] as int?,
-    contactsFirstLevelPositives: json['contactsFirstLevelPositives'] as int?,
-    contactsSecondLevel: json['contactsSecondLevel'] as int?,
-    contactsSecondLevelPositives: json['contactsSecondLevelPositives'] as int?,
-    contactsThirdLevel: json['contactsThirdLevel'] as int?,
-    contactsThirdLevelPositives: json['contactsThirdLevelPositives'] as int?,
-    treatmentsReceived: (json['treatmentsReceived'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$TreatmentEnumMap, e))
-        .toList(),
-    antibiotics: (json['antibiotics'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
-    prophylaxis: (json['prophylaxis'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$ProphylaxisEnumMap, e))
-        .toList(),
-    anotherVaccineAgainstCovid: json['anotherVaccineAgainstCovid'] as String?,
-    aftermath: (json['aftermath'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$AftermathEnumMap, e))
-        .toList(),
-    othersAftermath: (json['othersAftermath'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
-  );
-}
+        Map<String, dynamic> json) =>
+    DischargeDataGetModel(
+      detectionDate: json['detectionDate'] == null
+          ? null
+          : DateTime.parse(json['detectionDate'] as String),
+      symptoms: (json['symptoms'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      durationOfSymptoms: json['durationOfSymptoms'] as int?,
+      diagnosisWay:
+          _$enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosisWay']),
+      testUsedInDiagnosis: _$enumDecodeNullable(
+          _$TestDiagnosisEnumMap, json['testUsedInDiagnosis']),
+      daysFromSymptomsToDiagnosis: json['daysFromSymptomsToDiagnosis'] as int?,
+      numberPcrPerformed: json['numberPcrPerformed'] as int?,
+      timeFromDiagnosisToNegativeOrDischarge:
+          json['timeFromDiagnosisToNegativeOrDischarge'] as int?,
+      formOfContagion:
+          _$enumDecodeNullable(_$ContagionEnumMap, json['formOfContagion']),
+      wasHePartOfAnEvent: json['wasHePartOfAnEvent'] as bool?,
+      didHeWorkInTheAttentionToPositiveCases:
+          json['didHeWorkInTheAttentionToPositiveCases'] as bool?,
+      hospitalizationTime: json['hospitalizationTime'] as String?,
+      incomes: (json['incomes'] as List<dynamic>?)
+          ?.map((e) => IncomeModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      contactsFirstLevel: json['contactsFirstLevel'] as int?,
+      contactsFirstLevelPositives: json['contactsFirstLevelPositives'] as int?,
+      contactsSecondLevel: json['contactsSecondLevel'] as int?,
+      contactsSecondLevelPositives:
+          json['contactsSecondLevelPositives'] as int?,
+      contactsThirdLevel: json['contactsThirdLevel'] as int?,
+      contactsThirdLevelPositives: json['contactsThirdLevelPositives'] as int?,
+      treatmentsReceived: (json['treatmentsReceived'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$TreatmentEnumMap, e))
+          .toList(),
+      antibiotics: (json['antibiotics'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      prophylaxis: (json['prophylaxis'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$ProphylaxisEnumMap, e))
+          .toList(),
+      anotherVaccineAgainstCovid: json['anotherVaccineAgainstCovid'] as String?,
+      aftermath: (json['aftermath'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$AftermathEnumMap, e))
+          .toList(),
+      othersAftermath: (json['othersAftermath'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
 
 Map<String, dynamic> _$DischargeDataGetModelToJson(
         DischargeDataGetModel instance) =>

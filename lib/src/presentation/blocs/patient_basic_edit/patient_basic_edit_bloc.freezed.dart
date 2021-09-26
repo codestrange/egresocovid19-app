@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_basic_edit_bloc.dart';
 
@@ -36,6 +37,11 @@ mixin _$PatientBasicEditEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     required TResult orElse(),
@@ -44,6 +50,11 @@ mixin _$PatientBasicEditEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -161,6 +172,14 @@ class _$_Fetch implements _Fetch {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+  }) {
+    return fetch?.call(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     required TResult orElse(),
@@ -177,6 +196,14 @@ class _$_Fetch implements _Fetch {
     required TResult Function(_Fetch value) fetch,
   }) {
     return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+  }) {
+    return fetch?.call(this);
   }
 
   @override
@@ -238,6 +265,13 @@ mixin _$PatientBasicEditState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
@@ -250,6 +284,13 @@ mixin _$PatientBasicEditState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PatientEditingState value) patientEdit,
     required TResult Function(_PatientErrorState value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -327,6 +368,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
@@ -347,6 +398,16 @@ class _$_Initial implements _Initial {
     required TResult Function(_PatientErrorState value) failure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -446,6 +507,16 @@ class _$_PatientEditingState implements _PatientEditingState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+  }) {
+    return patientEdit?.call(patientEditFetchData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
@@ -466,6 +537,16 @@ class _$_PatientEditingState implements _PatientEditingState {
     required TResult Function(_PatientErrorState value) failure,
   }) {
     return patientEdit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
+  }) {
+    return patientEdit?.call(this);
   }
 
   @override
@@ -579,6 +660,16 @@ class _$_PatientErrorState implements _PatientErrorState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
+    TResult Function(ErrorEntity error)? failure,
+  }) {
+    return failure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(PatientEditFetchData patientEditFetchData)? patientEdit,
@@ -599,6 +690,16 @@ class _$_PatientErrorState implements _PatientErrorState {
     required TResult Function(_PatientErrorState value) failure,
   }) {
     return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PatientEditingState value)? patientEdit,
+    TResult Function(_PatientErrorState value)? failure,
+  }) {
+    return failure?.call(this);
   }
 
   @override

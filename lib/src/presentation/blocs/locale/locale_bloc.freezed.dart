@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'locale_bloc.dart';
 
@@ -36,6 +37,11 @@ mixin _$LocaleEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String locale)? change,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String locale)? change,
     required TResult orElse(),
@@ -44,6 +50,11 @@ mixin _$LocaleEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LocaleEventChange value) change,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LocaleEventChange value)? change,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -161,6 +172,14 @@ class _$_LocaleEventChange implements _LocaleEventChange {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String locale)? change,
+  }) {
+    return change?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String locale)? change,
     required TResult orElse(),
@@ -177,6 +196,14 @@ class _$_LocaleEventChange implements _LocaleEventChange {
     required TResult Function(_LocaleEventChange value) change,
   }) {
     return change(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LocaleEventChange value)? change,
+  }) {
+    return change?.call(this);
   }
 
   @override
@@ -228,6 +255,11 @@ mixin _$LocaleState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Locale locale)? changed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Locale locale)? changed,
     required TResult orElse(),
@@ -236,6 +268,11 @@ mixin _$LocaleState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LocaleStateChanged value) changed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LocaleStateChanged value)? changed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -353,6 +390,14 @@ class _$_LocaleStateChanged implements _LocaleStateChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Locale locale)? changed,
+  }) {
+    return changed?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Locale locale)? changed,
     required TResult orElse(),
@@ -369,6 +414,14 @@ class _$_LocaleStateChanged implements _LocaleStateChanged {
     required TResult Function(_LocaleStateChanged value) changed,
   }) {
     return changed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LocaleStateChanged value)? changed,
+  }) {
+    return changed?.call(this);
   }
 
   @override

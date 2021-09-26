@@ -6,12 +6,10 @@ part of 'income_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-IncomeModel _$IncomeModelFromJson(Map<String, dynamic> json) {
-  return IncomeModel(
-    income: _$enumDecode(_$IncomeEnumMap, json['income']),
-    days: json['days'] as int,
-  );
-}
+IncomeModel _$IncomeModelFromJson(Map<String, dynamic> json) => IncomeModel(
+      income: _$enumDecode(_$IncomeEnumMap, json['income']),
+      days: json['days'] as int,
+    );
 
 Map<String, dynamic> _$IncomeModelToJson(IncomeModel instance) =>
     <String, dynamic>{
