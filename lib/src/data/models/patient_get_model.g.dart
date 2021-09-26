@@ -6,34 +6,33 @@ part of 'patient_get_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatientGetModel _$PatientGetModelFromJson(Map<String, dynamic> json) {
-  return PatientGetModel(
-    id: json['id'] as String,
-    firstname: json['firstname'] as String,
-    lastname: json['lastname'] as String,
-    ci: json['ci'] as String,
-    province: json['province'] as String,
-    municipality: json['municipality'] as String,
-    sex: _$enumDecode(_$SexEnumMap, json['sex']),
-    age: json['age'] as int,
-    skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
-    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
-    address: json['address'] as String,
-    polyclinic: json['polyclinic'] as String,
-    surgery: json['surgery'] as String,
-    popularCouncil: json['popularCouncil'] as String,
-    neighborhood: json['neighborhood'] as String,
-    blockNumber: json['blockNumber'] as int,
-    personalPathologicalHistory:
-        (json['personalPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-    familyPathologicalHistory:
-        (json['familyPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-  );
-}
+PatientGetModel _$PatientGetModelFromJson(Map<String, dynamic> json) =>
+    PatientGetModel(
+      id: json['id'] as String,
+      firstname: json['firstname'] as String,
+      lastname: json['lastname'] as String,
+      ci: json['ci'] as String,
+      province: json['province'] as String,
+      municipality: json['municipality'] as String,
+      sex: _$enumDecode(_$SexEnumMap, json['sex']),
+      age: json['age'] as int,
+      skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
+      bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
+      address: json['address'] as String,
+      polyclinic: json['polyclinic'] as String,
+      surgery: json['surgery'] as String,
+      popularCouncil: json['popularCouncil'] as String,
+      neighborhood: json['neighborhood'] as String,
+      blockNumber: json['blockNumber'] as int,
+      personalPathologicalHistory:
+          (json['personalPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      familyPathologicalHistory:
+          (json['familyPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+    );
 
 Map<String, dynamic> _$PatientGetModelToJson(PatientGetModel instance) =>
     <String, dynamic>{

@@ -7,36 +7,35 @@ part of 'patient_get_detail_model.dart';
 // **************************************************************************
 
 PatientGetDetailModel _$PatientGetDetailModelFromJson(
-    Map<String, dynamic> json) {
-  return PatientGetDetailModel(
-    id: json['id'] as String,
-    firstname: json['firstname'] as String,
-    lastname: json['lastname'] as String,
-    ci: json['ci'] as String,
-    province: json['province'] as String,
-    municipality: json['municipality'] as String,
-    sex: _$enumDecode(_$SexEnumMap, json['sex']),
-    age: json['age'] as int,
-    skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
-    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
-    address: json['address'] as String,
-    polyclinic: json['polyclinic'] as String,
-    surgery: json['surgery'] as String,
-    popularCouncil: json['popularCouncil'] as String,
-    neighborhood: json['neighborhood'] as String,
-    blockNumber: json['blockNumber'] as int,
-    personalPathologicalHistory:
-        (json['personalPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-    familyPathologicalHistory:
-        (json['familyPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-    dischargeOfPositiveCasesOfCovid19: DischargeDataGetModel.fromJson(
-        json['dischargeOfPositiveCasesOfCovid19'] as Map<String, dynamic>),
-  );
-}
+        Map<String, dynamic> json) =>
+    PatientGetDetailModel(
+      id: json['id'] as String,
+      firstname: json['firstname'] as String,
+      lastname: json['lastname'] as String,
+      ci: json['ci'] as String,
+      province: json['province'] as String,
+      municipality: json['municipality'] as String,
+      sex: _$enumDecode(_$SexEnumMap, json['sex']),
+      age: json['age'] as int,
+      skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
+      bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
+      address: json['address'] as String,
+      polyclinic: json['polyclinic'] as String,
+      surgery: json['surgery'] as String,
+      popularCouncil: json['popularCouncil'] as String,
+      neighborhood: json['neighborhood'] as String,
+      blockNumber: json['blockNumber'] as int,
+      personalPathologicalHistory:
+          (json['personalPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      familyPathologicalHistory:
+          (json['familyPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      dischargeOfPositiveCasesOfCovid19: DischargeDataGetModel.fromJson(
+          json['dischargeOfPositiveCasesOfCovid19'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$PatientGetDetailModelToJson(
         PatientGetDetailModel instance) =>

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_entity.dart';
 
@@ -267,6 +268,88 @@ mixin _$PatientEntity {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            int? age,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -355,6 +438,14 @@ mixin _$PatientEntity {
     required TResult Function(PatientGetDetailEntity value) getDetail,
     required TResult Function(PatientPostEntity value) post,
     required TResult Function(PatientPutEntity value) put,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -796,6 +887,109 @@ class _$PatientGetEntity implements PatientGetEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            int? age,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+  }) {
+    return get?.call(
+        id,
+        firstname,
+        lastname,
+        ci,
+        province,
+        municipality,
+        sex,
+        age,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -910,6 +1104,17 @@ class _$PatientGetEntity implements PatientGetEntity {
     required TResult Function(PatientPutEntity value) put,
   }) {
     return get(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
+  }) {
+    return get?.call(this);
   }
 
   @override
@@ -1397,6 +1602,110 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            int? age,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+  }) {
+    return getDetail?.call(
+        id,
+        firstname,
+        lastname,
+        ci,
+        province,
+        municipality,
+        sex,
+        age,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory,
+        dischargeOfPositiveCasesOfCovid19);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -1512,6 +1821,17 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
     required TResult Function(PatientPutEntity value) put,
   }) {
     return getDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
+  }) {
+    return getDetail?.call(this);
   }
 
   @override
@@ -1949,6 +2269,107 @@ class _$PatientPostEntity implements PatientPostEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            int? age,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+  }) {
+    return post?.call(
+        firstname,
+        lastname,
+        ci,
+        municipalityCode,
+        sex,
+        age,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -2061,6 +2482,17 @@ class _$PatientPostEntity implements PatientPostEntity {
     required TResult Function(PatientPutEntity value) put,
   }) {
     return post(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
+  }) {
+    return post?.call(this);
   }
 
   @override
@@ -2504,6 +2936,108 @@ class _$PatientPutEntity implements PatientPutEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        get,
+    TResult Function(
+            String id,
+            String firstname,
+            String lastname,
+            String ci,
+            String province,
+            String municipality,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory,
+            DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
+        getDetail,
+    TResult Function(
+            String firstname,
+            String lastname,
+            String ci,
+            String municipalityCode,
+            Sex sex,
+            int age,
+            SkinColor skinColor,
+            BloodType? bloodType,
+            String address,
+            String polyclinic,
+            String surgery,
+            String popularCouncil,
+            String neighborhood,
+            int blockNumber,
+            List<PathologicalEntity> personalPathologicalHistory,
+            List<PathologicalEntity> familyPathologicalHistory)?
+        post,
+    TResult Function(
+            String id,
+            String? firstname,
+            String? lastname,
+            String? ci,
+            String? municipalityCode,
+            Sex? sex,
+            int? age,
+            SkinColor? skinColor,
+            BloodType? bloodType,
+            String? address,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
+            int? blockNumber,
+            List<PathologicalEntity>? personalPathologicalHistory,
+            List<PathologicalEntity>? familyPathologicalHistory)?
+        put,
+  }) {
+    return put?.call(
+        id,
+        firstname,
+        lastname,
+        ci,
+        municipalityCode,
+        sex,
+        age,
+        skinColor,
+        bloodType,
+        address,
+        polyclinic,
+        surgery,
+        popularCouncil,
+        neighborhood,
+        blockNumber,
+        personalPathologicalHistory,
+        familyPathologicalHistory);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -2617,6 +3151,17 @@ class _$PatientPutEntity implements PatientPutEntity {
     required TResult Function(PatientPutEntity value) put,
   }) {
     return put(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PatientGetEntity value)? get,
+    TResult Function(PatientGetDetailEntity value)? getDetail,
+    TResult Function(PatientPostEntity value)? post,
+    TResult Function(PatientPutEntity value)? put,
+  }) {
+    return put?.call(this);
   }
 
   @override

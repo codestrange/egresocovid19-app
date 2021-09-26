@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'pathologicalhistory_bloc.dart';
 
@@ -46,6 +47,13 @@ mixin _$PathologicalHistoryEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PathologicalEntity pathological)? added,
+    TResult Function(String pathologicalName)? removed,
+    TResult Function()? cleared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PathologicalEntity pathological)? added,
     TResult Function(String pathologicalName)? removed,
@@ -58,6 +66,13 @@ mixin _$PathologicalHistoryEvent {
     required TResult Function(PathologyInfoAdded value) added,
     required TResult Function(PathologyInfoRemoved value) removed,
     required TResult Function(PathologyInfoCleared value) cleared,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologyInfoAdded value)? added,
+    TResult Function(PathologyInfoRemoved value)? removed,
+    TResult Function(PathologyInfoCleared value)? cleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -171,6 +186,16 @@ class _$PathologyInfoAdded implements PathologyInfoAdded {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PathologicalEntity pathological)? added,
+    TResult Function(String pathologicalName)? removed,
+    TResult Function()? cleared,
+  }) {
+    return added?.call(pathological);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PathologicalEntity pathological)? added,
     TResult Function(String pathologicalName)? removed,
@@ -191,6 +216,16 @@ class _$PathologyInfoAdded implements PathologyInfoAdded {
     required TResult Function(PathologyInfoCleared value) cleared,
   }) {
     return added(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologyInfoAdded value)? added,
+    TResult Function(PathologyInfoRemoved value)? removed,
+    TResult Function(PathologyInfoCleared value)? cleared,
+  }) {
+    return added?.call(this);
   }
 
   @override
@@ -295,6 +330,16 @@ class _$PathologyInfoRemoved implements PathologyInfoRemoved {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PathologicalEntity pathological)? added,
+    TResult Function(String pathologicalName)? removed,
+    TResult Function()? cleared,
+  }) {
+    return removed?.call(pathologicalName);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PathologicalEntity pathological)? added,
     TResult Function(String pathologicalName)? removed,
@@ -315,6 +360,16 @@ class _$PathologyInfoRemoved implements PathologyInfoRemoved {
     required TResult Function(PathologyInfoCleared value) cleared,
   }) {
     return removed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologyInfoAdded value)? added,
+    TResult Function(PathologyInfoRemoved value)? removed,
+    TResult Function(PathologyInfoCleared value)? cleared,
+  }) {
+    return removed?.call(this);
   }
 
   @override
@@ -391,6 +446,16 @@ class _$PathologyInfoCleared implements PathologyInfoCleared {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PathologicalEntity pathological)? added,
+    TResult Function(String pathologicalName)? removed,
+    TResult Function()? cleared,
+  }) {
+    return cleared?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(PathologicalEntity pathological)? added,
     TResult Function(String pathologicalName)? removed,
@@ -411,6 +476,16 @@ class _$PathologyInfoCleared implements PathologyInfoCleared {
     required TResult Function(PathologyInfoCleared value) cleared,
   }) {
     return cleared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologyInfoAdded value)? added,
+    TResult Function(PathologyInfoRemoved value)? removed,
+    TResult Function(PathologyInfoCleared value)? cleared,
+  }) {
+    return cleared?.call(this);
   }
 
   @override
@@ -459,6 +534,11 @@ mixin _$PathologicalHistoryState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<PathologicalEntity> pathologicalHistory)? state,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<PathologicalEntity> pathologicalHistory)? state,
     required TResult orElse(),
@@ -467,6 +547,11 @@ mixin _$PathologicalHistoryState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PathologicalHistoryCurrentState value) state,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologicalHistoryCurrentState value)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -593,6 +678,14 @@ class _$PathologicalHistoryCurrentState
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<PathologicalEntity> pathologicalHistory)? state,
+  }) {
+    return state?.call(pathologicalHistory);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<PathologicalEntity> pathologicalHistory)? state,
     required TResult orElse(),
@@ -609,6 +702,14 @@ class _$PathologicalHistoryCurrentState
     required TResult Function(PathologicalHistoryCurrentState value) state,
   }) {
     return state(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PathologicalHistoryCurrentState value)? state,
+  }) {
+    return state?.call(this);
   }
 
   @override

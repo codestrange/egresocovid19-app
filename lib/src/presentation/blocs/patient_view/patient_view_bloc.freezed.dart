@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_view_bloc.dart';
 
@@ -36,6 +37,11 @@ mixin _$PatientViewEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     required TResult orElse(),
@@ -44,6 +50,11 @@ mixin _$PatientViewEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -160,6 +171,14 @@ class _$_Fetch implements _Fetch {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+  }) {
+    return fetch?.call(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     required TResult orElse(),
@@ -176,6 +195,14 @@ class _$_Fetch implements _Fetch {
     required TResult Function(_Fetch value) fetch,
   }) {
     return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+  }) {
+    return fetch?.call(this);
   }
 
   @override
@@ -235,6 +262,13 @@ mixin _$PatientViewState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchInProgress,
     TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
@@ -247,6 +281,13 @@ mixin _$PatientViewState {
     required TResult Function(_FetchInProgress value) fetchInProgress,
     required TResult Function(_FetchSuccess value) fetchSuccess,
     required TResult Function(_FetchFailure value) fetchFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -325,6 +366,16 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+  }) {
+    return fetchInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchInProgress,
     TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
@@ -345,6 +396,16 @@ class _$_FetchInProgress implements _FetchInProgress {
     required TResult Function(_FetchFailure value) fetchFailure,
   }) {
     return fetchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
+  }) {
+    return fetchInProgress?.call(this);
   }
 
   @override
@@ -440,6 +501,16 @@ class _$_FetchSuccess implements _FetchSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+  }) {
+    return fetchSuccess?.call(patient);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchInProgress,
     TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
@@ -460,6 +531,16 @@ class _$_FetchSuccess implements _FetchSuccess {
     required TResult Function(_FetchFailure value) fetchFailure,
   }) {
     return fetchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
+  }) {
+    return fetchSuccess?.call(this);
   }
 
   @override
@@ -561,6 +642,16 @@ class _$_FetchFailure implements _FetchFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? fetchInProgress,
+    TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
+    TResult Function(String error)? fetchFailure,
+  }) {
+    return fetchFailure?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchInProgress,
     TResult Function(PatientGetDetailEntity patient)? fetchSuccess,
@@ -581,6 +672,16 @@ class _$_FetchFailure implements _FetchFailure {
     required TResult Function(_FetchFailure value) fetchFailure,
   }) {
     return fetchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_FetchFailure value)? fetchFailure,
+  }) {
+    return fetchFailure?.call(this);
   }
 
   @override
