@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <!--
@@ -11,12 +11,31 @@
 
     For more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description"
+    content="Aplicación para la gestión de la información de las personas que han sufrido la pandemia del COVID-19.">
+  <meta name="keywords" content="app, cuba, egreso, covid19, matcom, uh, minsap, flutter">
+
+  <meta property="og:title" content="Egreso COVID-19">
+  <!-- <meta property="og:url" content="https://egresocovid19.uh.cu"> -->
+  <meta property="og:description"
+    content="Aplicación para la gestión de la información de las personas que han sufrido la pandemia del COVID-19.">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- <meta name="twitter:site" content="@egresocovid19"> -->
+  <!-- <meta name="twitter:creator" content="@egresocovid19"> -->
+  <meta name="twitter:title" content="Egreso COVID-19">
+  <meta name="twitter:description"
+    content="Aplicación para la gestión de la información de las personas que han sufrido la pandemia del COVID-19.">
+  <meta name="twitter:image" content="icons/Icon-512.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,14 +43,89 @@
   <meta name="apple-mobile-web-app-title" content="Egreso COVID-19">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style type="text/css">
+    .loading-custom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader-custom {
+      border: 1px solid #000000;
+      border-radius: 50%;
+      border-left: 1px solid white;
+      width: 40px;
+      height: 40px;
+      -webkit-animation: spin 1s linear infinite;
+      animation: spin 1s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
   <title>Egreso COVID-19</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" type="text/css" href="splash/style.css">
 </head>
 
-<body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
+<body
+  style="position: fixed; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; font: 14px sans-serif; color: red;">
+  <div class="loading-custom">
+    <div class="loader-custom">
+      <div></div>
+    </div>
+  </div>
+  <picture id="splash">
+    <source
+      srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x"
+      media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
+    <source
+      srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x"
+      media="(prefers-color-scheme: dark)">
+    <img class="center" src="splash/img/light-1x.png" />
+  </picture>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var loadingCustomList = document.getElementsByClassName('loading-custom');
+      if (loadingCustomList.length > 0) {
+        var loadingCustom = loadingCustomList[0];
+        loadingCustom.remove();
+      }
+      var splash = document.getElementById('splash');
+      if (splash !== undefined && splash !== null) {
+        splash.remove();
+      }
+    });
+  </script>
+
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
@@ -61,12 +155,13 @@
                   console.log('Installed new service worker.');
                   loadMainDartJs();
                 }
+                removeLoadingAndSplash();
               });
             }
             if (!reg.active && (reg.installing || reg.waiting)) {
               // No active web worker and we have installed or are installing
               // one for the first time. Simply wait for it to activate.
-              waitForActivation(reg.installing ?? reg.waiting);
+              waitForActivation(reg.installing || reg.waiting);
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
               // When the app updates the serviceWorkerVersion changes, so we
               // need to ask the service worker to update.
