@@ -455,13 +455,13 @@ abstract class Messages {
   /// No description provided for @patientViewFieldPersonalPathologicalHistoryEmpty.
   ///
   /// In es, this message translates to:
-  /// **'Sin patologias personales'**
+  /// **'Sin patologías personales'**
   String get patientViewFieldPersonalPathologicalHistoryEmpty;
 
   /// No description provided for @patientViewFieldFamilyPathologicalHistoryEmpty.
   ///
   /// In es, this message translates to:
-  /// **'Sin patologias familiares'**
+  /// **'Sin patologías familiares'**
   String get patientViewFieldFamilyPathologicalHistoryEmpty;
 
   /// No description provided for @patientViewFieldEgresoTitle.
@@ -485,7 +485,7 @@ abstract class Messages {
   /// No description provided for @patientViewFieldEgresoDurationOfSymptoms.
   ///
   /// In es, this message translates to:
-  /// **'Duración de los sintomas desde el 1ro'**
+  /// **'Duración de los síntomas desde el 1ro'**
   String get patientViewFieldEgresoDurationOfSymptoms;
 
   /// No description provided for @patientViewFieldEgresoDiagnosisWay.
@@ -695,7 +695,7 @@ abstract class Messages {
   /// No description provided for @patientEditEgresoHospitalizationTimeDesc.
   ///
   /// In es, this message translates to:
-  /// **'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, y falleció - 2C3G1CrF.'**
+  /// **'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, y falleció - 2C3G1CrF.'**
   String get patientEditEgresoHospitalizationTimeDesc;
 
   /// No description provided for @patientEditEgresoIncomes.
@@ -821,7 +821,7 @@ abstract class Messages {
   /// No description provided for @patientEditEgresoWasHePartOfAnEvent.
   ///
   /// In es, this message translates to:
-  /// **'¿Fué parte de un evento de transmición?'**
+  /// **'¿Fué parte de un evento de transmisión?'**
   String get patientEditEgresoWasHePartOfAnEvent;
 
   /// No description provided for @patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge.
@@ -1145,7 +1145,7 @@ abstract class Messages {
   /// No description provided for @validatorLength.
   ///
   /// In es, this message translates to:
-  /// **'Longitud invalida'**
+  /// **'Longitud inválida'**
   String get validatorLength;
 
   /// No description provided for @validatorInteger.
@@ -1385,13 +1385,13 @@ abstract class Messages {
   /// No description provided for @enumAftermathPersistenceOfLossOfSmell.
   ///
   /// In es, this message translates to:
-  /// **'Perdida del Olfato'**
+  /// **'Pérdida del Olfato'**
   String get enumAftermathPersistenceOfLossOfSmell;
 
   /// No description provided for @enumAftermathPersistenceOfLossOfAppetite.
   ///
   /// In es, this message translates to:
-  /// **'Perdida del Apetito'**
+  /// **'Pérdida del Apetito'**
   String get enumAftermathPersistenceOfLossOfAppetite;
 
   /// No description provided for @enumAftermathGastrointestinalSymptoms.
@@ -1541,7 +1541,7 @@ abstract class Messages {
   /// No description provided for @enumProphylaxisGinger.
   ///
   /// In es, this message translates to:
-  /// **'Géngibre'**
+  /// **'Jengibre'**
   String get enumProphylaxisGinger;
 
   /// No description provided for @enumProphylaxisSoveranaPlus.

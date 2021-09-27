@@ -188,10 +188,10 @@ class MessagesEs extends Messages {
   String get patientViewFieldPathologicalSubtitle => 'Tratamientos';
 
   @override
-  String get patientViewFieldPersonalPathologicalHistoryEmpty => 'Sin patologias personales';
+  String get patientViewFieldPersonalPathologicalHistoryEmpty => 'Sin patologías personales';
 
   @override
-  String get patientViewFieldFamilyPathologicalHistoryEmpty => 'Sin patologias familiares';
+  String get patientViewFieldFamilyPathologicalHistoryEmpty => 'Sin patologías familiares';
 
   @override
   String get patientViewFieldEgresoTitle => 'Información de Egreso';
@@ -203,7 +203,7 @@ class MessagesEs extends Messages {
   String get patientViewFieldEgresoSymptoms => 'Sintomas';
 
   @override
-  String get patientViewFieldEgresoDurationOfSymptoms => 'Duración de los sintomas desde el 1ro';
+  String get patientViewFieldEgresoDurationOfSymptoms => 'Duración de los síntomas desde el 1ro';
 
   @override
   String get patientViewFieldEgresoDiagnosisWay => 'Forma de diagnóstico';
@@ -308,7 +308,7 @@ class MessagesEs extends Messages {
   String get patientEditEgresoHospitalizationTime => 'Tiempo de Hospitalización';
 
   @override
-  String get patientEditEgresoHospitalizationTimeDesc => 'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno critico, y falleció - 2C3G1CrF.';
+  String get patientEditEgresoHospitalizationTimeDesc => 'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, y falleció - 2C3G1CrF.';
 
   @override
   String get patientEditEgresoIncomes => 'Ingreso';
@@ -371,7 +371,7 @@ class MessagesEs extends Messages {
   String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases => '¿Trabajó en la atención de casos positivos?';
 
   @override
-  String get patientEditEgresoWasHePartOfAnEvent => '¿Fué parte de un evento de transmición?';
+  String get patientEditEgresoWasHePartOfAnEvent => '¿Fué parte de un evento de transmisión?';
 
   @override
   String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge => 'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
@@ -533,7 +533,7 @@ class MessagesEs extends Messages {
   String get validatorEmail => 'Email invalido';
 
   @override
-  String get validatorLength => 'Longitud invalida';
+  String get validatorLength => 'Longitud inválida';
 
   @override
   String get validatorInteger => 'Debe ser un número entero';
@@ -653,10 +653,10 @@ class MessagesEs extends Messages {
   String get enumAftermathSleepDisorder => 'Desorden del Sueño';
 
   @override
-  String get enumAftermathPersistenceOfLossOfSmell => 'Perdida del Olfato';
+  String get enumAftermathPersistenceOfLossOfSmell => 'Pérdida del Olfato';
 
   @override
-  String get enumAftermathPersistenceOfLossOfAppetite => 'Perdida del Apetito';
+  String get enumAftermathPersistenceOfLossOfAppetite => 'Pérdida del Apetito';
 
   @override
   String get enumAftermathGastrointestinalSymptoms => 'Síntomas Gastrointestinales';
@@ -731,7 +731,7 @@ class MessagesEs extends Messages {
   String get enumProphylaxisVitaminA => 'Vitamina A';
 
   @override
-  String get enumProphylaxisGinger => 'Géngibre';
+  String get enumProphylaxisGinger => 'Jengibre';
 
   @override
   String get enumProphylaxisSoveranaPlus => 'Soberana Plus';
