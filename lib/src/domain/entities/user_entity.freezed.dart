@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_entity.dart';
 
@@ -44,6 +45,12 @@ mixin _$UserEntity {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? get,
+    TResult Function(String email, String password)? post,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? get,
     TResult Function(String email, String password)? post,
@@ -54,6 +61,12 @@ mixin _$UserEntity {
   TResult map<TResult extends Object?>({
     required TResult Function(UserGetEntity value) get,
     required TResult Function(UserPostEntity value) post,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserGetEntity value)? get,
+    TResult Function(UserPostEntity value)? post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -172,6 +185,15 @@ class _$UserGetEntity implements UserGetEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? get,
+    TResult Function(String email, String password)? post,
+  }) {
+    return get?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? get,
     TResult Function(String email, String password)? post,
@@ -190,6 +212,15 @@ class _$UserGetEntity implements UserGetEntity {
     required TResult Function(UserPostEntity value) post,
   }) {
     return get(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserGetEntity value)? get,
+    TResult Function(UserPostEntity value)? post,
+  }) {
+    return get?.call(this);
   }
 
   @override
@@ -303,6 +334,15 @@ class _$UserPostEntity implements UserPostEntity {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? get,
+    TResult Function(String email, String password)? post,
+  }) {
+    return post?.call(email, password);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? get,
     TResult Function(String email, String password)? post,
@@ -321,6 +361,15 @@ class _$UserPostEntity implements UserPostEntity {
     required TResult Function(UserPostEntity value) post,
   }) {
     return post(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UserGetEntity value)? get,
+    TResult Function(UserPostEntity value)? post,
+  }) {
+    return post?.call(this);
   }
 
   @override

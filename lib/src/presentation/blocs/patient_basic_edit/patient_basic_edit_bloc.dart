@@ -21,6 +21,7 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
     required this.provinceService,
   }) : super(const PatientBasicEditState.initial()) {
     on<PatientBasicEditEvent>((event, emit) async {
+      emit(const PatientBasicEditState.initial());
       await event.when(
         fetch: (patientId) async {
           final eitherPatient = await patientService.getPatient(
@@ -31,43 +32,33 @@ class PatientBasicEditBloc extends IPatientBasicEditBloc {
             (patient) async {
               final provincesEither = await provinceService.getProvinces();
               List<ProvinceEntity>? provinces;
+              provincesEither.fold(
+                (error) => emit(PatientBasicEditState.failure(error: error)),
+                (r) => provinces = r,
+              );
               if (provincesEither.isLeft()) {
-                provincesEither.fold(
-                  (error) => emit(PatientBasicEditState.failure(error: error)),
-                  (r) => provinces = r,
-                );
                 return;
               }
-              //Extracting province entity
+              // Extracting province entity
               final provEnt = provinces!
-                      .any((element) => element.name == patient.province)
-                  ? provinces
-                      .firstWhere((element) => element.name == patient.province)
-                  : null;
+                  .where((p) => p.name == patient.province)
+                  .firstOrNull;
               if (provEnt == null) {
                 emit(
                   const PatientBasicEditState.failure(
-                    error: ErrorEntity(
-                      errorCode: '',
-                      message: 'Provincia inválida',
-                    ),
+                    error: ErrorEntity(errorCode: '', message: ''),
                   ),
                 );
                 return;
               }
-              //Extracting municipality entity
+              // Extracting municipality entity
               final muncEnt = provEnt.municipalities
-                      .any((element) => element.name == patient.province)
-                  ? provEnt.municipalities
-                      .firstWhere((element) => element.name == patient.province)
-                  : null;
+                  .where((element) => element.name == patient.municipality)
+                  .firstOrNull;
               if (muncEnt == null) {
                 emit(
                   const PatientBasicEditState.failure(
-                    error: ErrorEntity(
-                      errorCode: '',
-                      message: 'Municipio inválido',
-                    ),
+                    error: ErrorEntity(errorCode: '', message: ''),
                   ),
                 );
                 return;

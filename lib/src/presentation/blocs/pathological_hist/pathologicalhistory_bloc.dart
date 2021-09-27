@@ -10,7 +10,9 @@ part 'pathologicalhistory_state.dart';
 @injectable
 class PathologicalhistoryBloc
     extends Bloc<PathologicalHistoryEvent, PathologicalHistoryState> {
-  PathologicalhistoryBloc() : super(const PathologicalHistoryCurrentState([])) {
+  PathologicalhistoryBloc({
+    @factoryParam List<PathologicalEntity>? initialValue,
+  }) : super(PathologicalHistoryCurrentState(initialValue ?? const [])) {
     on<PathologyInfoAdded>((event, emit) {
       final newHistory = state.pathologicalHistory.toList()
         ..removeWhere((element) => element.name == event.pathological.name)

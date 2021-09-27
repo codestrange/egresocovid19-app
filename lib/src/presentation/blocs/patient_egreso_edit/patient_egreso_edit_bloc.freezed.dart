@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_egreso_edit_bloc.dart';
 
@@ -46,6 +47,13 @@ mixin _$PatientEgresoEditEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
+        update,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     TResult Function(String patientId, DischargeDataEntity newDischargeData)?
@@ -57,6 +65,12 @@ mixin _$PatientEgresoEditEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
     required TResult Function(_Update value) update,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +192,16 @@ class _$_Fetch implements _Fetch {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
+        update,
+  }) {
+    return fetch?.call(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     TResult Function(String patientId, DischargeDataEntity newDischargeData)?
@@ -197,6 +221,15 @@ class _$_Fetch implements _Fetch {
     required TResult Function(_Update value) update,
   }) {
     return fetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
+  }) {
+    return fetch?.call(this);
   }
 
   @override
@@ -320,6 +353,16 @@ class _$_Update implements _Update {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String patientId)? fetch,
+    TResult Function(String patientId, DischargeDataEntity newDischargeData)?
+        update,
+  }) {
+    return update?.call(patientId, newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String patientId)? fetch,
     TResult Function(String patientId, DischargeDataEntity newDischargeData)?
@@ -339,6 +382,15 @@ class _$_Update implements _Update {
     required TResult Function(_Update value) update,
   }) {
     return update(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Fetch value)? fetch,
+    TResult Function(_Update value)? update,
+  }) {
+    return update?.call(this);
   }
 
   @override
@@ -435,6 +487,18 @@ mixin _$PatientEgresoEditState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -456,6 +520,17 @@ mixin _$PatientEgresoEditState {
     required TResult Function(_UpdateInProgress value) updateInProgress,
     required TResult Function(_UpdateFailure value) updateFailure,
     required TResult Function(_UpdateSuccess value) updateSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -545,6 +620,21 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -574,6 +664,20 @@ class _$_Initial implements _Initial {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -657,6 +761,21 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return fetchInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -686,6 +805,20 @@ class _$_FetchInProgress implements _FetchInProgress {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return fetchInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return fetchInProgress?.call(this);
   }
 
   @override
@@ -795,6 +928,21 @@ class _$_FetchFailure implements _FetchFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return fetchFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -824,6 +972,20 @@ class _$_FetchFailure implements _FetchFailure {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return fetchFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return fetchFailure?.call(this);
   }
 
   @override
@@ -949,6 +1111,21 @@ class _$_FetchSuccess implements _FetchSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return fetchSuccess?.call(actualDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -978,6 +1155,20 @@ class _$_FetchSuccess implements _FetchSuccess {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return fetchSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return fetchSuccess?.call(this);
   }
 
   @override
@@ -1104,6 +1295,21 @@ class _$_UpdateInProgress implements _UpdateInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return updateInProgress?.call(newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -1133,6 +1339,20 @@ class _$_UpdateInProgress implements _UpdateInProgress {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return updateInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return updateInProgress?.call(this);
   }
 
   @override
@@ -1270,6 +1490,21 @@ class _$_UpdateFailure implements _UpdateFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return updateFailure?.call(errorMessage, newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -1299,6 +1534,20 @@ class _$_UpdateFailure implements _UpdateFailure {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return updateFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return updateFailure?.call(this);
   }
 
   @override
@@ -1427,6 +1676,21 @@ class _$_UpdateSuccess implements _UpdateSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? fetchInProgress,
+    TResult Function(String errorMessage)? fetchFailure,
+    TResult Function(DischargeDataEntity actualDischargeData)? fetchSuccess,
+    TResult Function(DischargeDataEntity newDischargeData)? updateInProgress,
+    TResult Function(String errorMessage, DischargeDataEntity newDischargeData)?
+        updateFailure,
+    TResult Function(DischargeDataEntity newDischargeData)? updateSuccess,
+  }) {
+    return updateSuccess?.call(newDischargeData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? fetchInProgress,
@@ -1456,6 +1720,20 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     required TResult Function(_UpdateSuccess value) updateSuccess,
   }) {
     return updateSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FetchInProgress value)? fetchInProgress,
+    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult Function(_FetchSuccess value)? fetchSuccess,
+    TResult Function(_UpdateInProgress value)? updateInProgress,
+    TResult Function(_UpdateFailure value)? updateFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+  }) {
+    return updateSuccess?.call(this);
   }
 
   @override

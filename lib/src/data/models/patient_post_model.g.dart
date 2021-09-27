@@ -6,32 +6,31 @@ part of 'patient_post_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatientPostModel _$PatientPostModelFromJson(Map<String, dynamic> json) {
-  return PatientPostModel(
-    firstname: json['firstname'] as String,
-    lastname: json['lastname'] as String,
-    ci: json['ci'] as String,
-    municipalityCode: json['municipalityCode'] as String,
-    sex: _$enumDecode(_$SexEnumMap, json['sex']),
-    age: json['age'] as int,
-    skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
-    bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
-    address: json['address'] as String,
-    polyclinic: json['polyclinic'] as String,
-    surgery: json['surgery'] as String,
-    popularCouncil: json['popularCouncil'] as String,
-    neighborhood: json['neighborhood'] as String,
-    blockNumber: json['blockNumber'] as int,
-    personalPathologicalHistory:
-        (json['personalPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-    familyPathologicalHistory:
-        (json['familyPathologicalHistory'] as List<dynamic>)
-            .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
-            .toList(),
-  );
-}
+PatientPostModel _$PatientPostModelFromJson(Map<String, dynamic> json) =>
+    PatientPostModel(
+      firstname: json['firstname'] as String,
+      lastname: json['lastname'] as String,
+      ci: json['ci'] as String,
+      municipalityCode: json['municipalityCode'] as String,
+      sex: _$enumDecode(_$SexEnumMap, json['sex']),
+      age: json['age'] as int,
+      skinColor: _$enumDecode(_$SkinColorEnumMap, json['skinColor']),
+      bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
+      address: json['address'] as String,
+      polyclinic: json['polyclinic'] as String,
+      surgery: json['surgery'] as String,
+      popularCouncil: json['popularCouncil'] as String,
+      neighborhood: json['neighborhood'] as String,
+      blockNumber: json['blockNumber'] as int,
+      personalPathologicalHistory:
+          (json['personalPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      familyPathologicalHistory:
+          (json['familyPathologicalHistory'] as List<dynamic>)
+              .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
+              .toList(),
+    );
 
 Map<String, dynamic> _$PatientPostModelToJson(PatientPostModel instance) =>
     <String, dynamic>{

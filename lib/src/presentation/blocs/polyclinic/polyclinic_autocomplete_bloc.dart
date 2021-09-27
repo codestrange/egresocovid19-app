@@ -15,6 +15,6 @@ class PolyclinicAutoCompleteBloc extends AutoCompleteBloc<String> {
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
     final either = await autoCompleteService.getPolyclinics(changedValue);
-    return either.getOrElse(() => []);
+    return either.getOrElse((_) => []);
   }
 }

@@ -16,7 +16,10 @@ class SubmmitButton<T extends FormBloc> extends StatelessWidget {
         text: label,
       ),
       onLoading: () => const MainButton.loading(),
-      orElse: () => MainButton(onPressed: null, text: label),
+      orElse: () => MainButton(
+        onPressed: null,
+        text: label,
+      ),
     );
   }
 }

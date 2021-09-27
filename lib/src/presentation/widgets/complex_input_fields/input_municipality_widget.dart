@@ -1,4 +1,5 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,8 @@ class MunicipalitySelector extends StatelessWidget {
       value: selectedMunicipality,
       onChanged: (value) => onMunicipalitySelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
-        labelText: municipalityLabel ?? 'Municipio',
+        labelText: municipalityLabel ??
+            Messages.of(context)!.municipalityInputWidgetDefaultLabelText,
         errorText: errorText,
       ),
     );
@@ -73,7 +75,8 @@ class ProvinceSelector extends StatelessWidget {
       value: selectedProvince,
       onChanged: (value) => onProvinceSelected?.call(value!),
       decoration: TextFieldDecorations.decoration(
-        labelText: provinceLabel ?? 'Provincia',
+        labelText: provinceLabel ??
+            Messages.of(context)!.provinceInputWidgetDefaultLabelText,
         errorText: errorText,
       ),
     );

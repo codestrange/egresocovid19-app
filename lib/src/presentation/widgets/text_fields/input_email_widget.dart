@@ -1,3 +1,4 @@
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/widgets/text_fields/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,8 @@ class EmailInputWidget extends StatelessWidget {
       onSubmitted: onSubmitted,
       decoration: TextFieldDecorations.decoration(
         prefixIcon: Icons.email_rounded,
-        hintText: hintText ?? 'Correo',
+        hintText:
+            hintText ?? Messages.of(context)!.emailInputWidgetDefaultHintText,
         errorText: errorText,
       ),
     );

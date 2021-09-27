@@ -1,10 +1,14 @@
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/blocs/patient_basic_edit_form/patient_basic_edit_formbloc_texts.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lyform_validators/lyform_validators.dart';
+
+export 'patient_basic_edit_formbloc_texts.dart';
 
 abstract class IPatientBasicEditFormBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get id;
@@ -54,10 +58,16 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   PatientBasicEditFormBloc({
     required this.patientService,
     @factoryParam PatientEditFetchData? patientEditFetchData,
-  })  : patientFetchData = patientEditFetchData!,
+    @factoryParam PatientBasicEditFormBlocTexts? texts,
+  })  : assert(patientEditFetchData != null),
+        assert(texts != null),
+        patientFetchData = patientEditFetchData!,
+        texts = texts!,
         super();
 
   final PatientEditFetchData patientFetchData;
+  final PatientBasicEditFormBlocTexts texts;
+
   PatientGetDetailEntity get patientEntity =>
       patientFetchData.patientGetDetailEntity;
 
@@ -66,7 +76,9 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
     pureValue: patientEntity.id,
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.required,
+      StringValidator.required(
+        errorMessage: texts.validatorRequired,
+      ),
     ],
   );
 
@@ -80,16 +92,20 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
     pureValue: patientEntity.age.toString(),
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.number,
+      StringValidator.isNumeric(
+        errorMessage: texts.validatorNumber,
+      ),
     ],
   );
 
   @override
-  late final InputBloc<String?> blockNumber = InputBloc<String>(
+  late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.integer,
+      StringValidator.isInt(
+        errorMessage: texts.validatorInteger,
+      ),
     ],
   );
 
@@ -99,13 +115,21 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> ci = InputBloc<String>(
+  late final InputBloc<String?> ci = InputBloc<String?>(
     pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
     validators: [
-      StringValidator.integer,
-      StringValidator.lengthGreaterThan(11),
-      StringValidator.lengthLowerThan(11)
+      StringValidator.isInt(
+        errorMessage: texts.validatorInteger,
+      ),
+      StringValidator.lengthGreaterThan(
+        len: 10,
+        errorMessage: texts.validatorLength,
+      ),
+      StringValidator.lengthLowerThan(
+        len: 12,
+        errorMessage: texts.validatorLength,
+      ),
     ],
   );
 
@@ -127,7 +151,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> neighborhood = InputBloc<String>(
+  late final InputBloc<String?> neighborhood = InputBloc<String?>(
     pureValue: patientEntity.neighborhood,
   );
 
@@ -138,12 +162,12 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> polyclinic = InputBloc<String>(
+  late final InputBloc<String?> polyclinic = InputBloc<String?>(
     pureValue: patientEntity.polyclinic,
   );
 
   @override
-  late final InputBloc<String?> popularCouncil = InputBloc<String>(
+  late final InputBloc<String?> popularCouncil = InputBloc<String?>(
     pureValue: patientEntity.popularCouncil,
   );
 
@@ -158,17 +182,17 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   );
 
   @override
-  late final InputBloc<String?> surgery = InputBloc<String>(
+  late final InputBloc<String?> surgery = InputBloc<String?>(
     pureValue: patientEntity.surgery,
   );
 
   @override
-  late final InputBloc<String?> firstName = InputBloc<String>(
+  late final InputBloc<String?> firstName = InputBloc<String?>(
     pureValue: patientEntity.firstname,
   );
 
   @override
-  late final InputBloc<String?> lastName = InputBloc<String>(
+  late final InputBloc<String?> lastName = InputBloc<String?>(
     pureValue: patientEntity.lastname,
   );
 

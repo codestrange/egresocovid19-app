@@ -6,12 +6,11 @@ part of 'municipality_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MunicipalityModel _$MunicipalityModelFromJson(Map<String, dynamic> json) {
-  return MunicipalityModel(
-    name: json['name'] as String,
-    code: json['code'] as String,
-  );
-}
+MunicipalityModel _$MunicipalityModelFromJson(Map<String, dynamic> json) =>
+    MunicipalityModel(
+      name: json['name'] as String,
+      code: json['code'] as String,
+    );
 
 Map<String, dynamic> _$MunicipalityModelToJson(MunicipalityModel instance) =>
     <String, dynamic>{

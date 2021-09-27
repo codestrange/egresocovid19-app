@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
+import 'package:fpdart/fpdart.dart';
 
 Left<ErrorEntity, T> catchMethod<T>(Object e) {
   var error = ErrorEntity(

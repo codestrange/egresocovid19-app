@@ -1,7 +1,7 @@
-import 'package:dartz/dartz.dart' show id;
 import 'package:egresocovid19/src/presentation/utils/extensions.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:fpdart/fpdart.dart' show id;
 
 class AutoCompleteInputWidget extends StatefulWidget {
   const AutoCompleteInputWidget({

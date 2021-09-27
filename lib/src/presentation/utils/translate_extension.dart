@@ -2,8 +2,6 @@ import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:flutter/material.dart';
 
-// TODO: use localization
-
 extension EnumExtension on Enum {
   String get name => toString().split('.').last;
 }
@@ -12,11 +10,11 @@ extension ContagionExtension on Contagion {
   String visualName(BuildContext context) {
     switch (this) {
       case Contagion.Traveler:
-        return 'Viajero';
+        return Messages.of(context)!.enumContagionTraveler;
       case Contagion.Contact:
-        return 'Contacto';
+        return Messages.of(context)!.enumContagionContact;
       case Contagion.Inderterminate:
-        return 'Indeterminada';
+        return Messages.of(context)!.enumContagionInderterminate;
       default:
         return name;
     }
@@ -27,9 +25,9 @@ extension DiagnosisWayExtension on DiagnosisWay {
   String visualName(BuildContext context) {
     switch (this) {
       case DiagnosisWay.GuardCorps:
-        return 'Cuerpo de Guardia';
+        return Messages.of(context)!.enumDiagnosisWayGuardCorps;
       case DiagnosisWay.FocusControl:
-        return 'Control de Foco';
+        return Messages.of(context)!.enumDiagnosisWayFocusControl;
       default:
         return name;
     }
@@ -40,15 +38,15 @@ extension IncomeExtension on Income {
   String visualName(BuildContext context) {
     switch (this) {
       case Income.Home:
-        return 'Hogar';
+        return Messages.of(context)!.enumIncomeHome;
       case Income.IsolationCenter:
-        return 'Centro de Aislamiento';
+        return Messages.of(context)!.enumIncomeIsolationCenter;
       case Income.HospitalRoom:
-        return 'Sale del Hospital';
+        return Messages.of(context)!.enumIncomeHospitalRoom;
       case Income.IntermediateTherapy:
-        return 'Terapia Intermedia';
+        return Messages.of(context)!.enumIncomeIntermediateTherapy;
       case Income.IntensiveTherapy:
-        return 'Terapia Intensiva';
+        return Messages.of(context)!.enumIncomeIntensiveTherapy;
       default:
         return name;
     }
@@ -59,13 +57,13 @@ extension TestDiagnosisExtension on TestDiagnosis {
   String visualName(BuildContext context) {
     switch (this) {
       case TestDiagnosis.AntigenTest:
-        return 'Test de Antígenos';
+        return Messages.of(context)!.enumTestDiagnosisAntigenTest;
       case TestDiagnosis.Biosensor:
-        return 'Biosensor';
+        return Messages.of(context)!.enumTestDiagnosisBiosensor;
       case TestDiagnosis.PCR:
-        return 'PCR-RT';
+        return Messages.of(context)!.enumTestDiagnosisPCR;
       case TestDiagnosis.IgMIgGAntibodyTest:
-        return 'Test de anticuerpo IgM/IgG';
+        return Messages.of(context)!.enumTestDiagnosisIgMIgGAntibodyTest;
       default:
         return name;
     }
@@ -76,33 +74,34 @@ extension AftermathExtension on Aftermath {
   String visualName(BuildContext context) {
     switch (this) {
       case Aftermath.Fatigue:
-        return 'Fatiga';
+        return Messages.of(context)!.enumAftermathFatigue;
       case Aftermath.Headache:
-        return 'Dolor de Cabeza';
+        return Messages.of(context)!.enumAftermathHeadache;
       case Aftermath.Alopecia:
-        return 'Alopecia';
+        return Messages.of(context)!.enumAftermathAlopecia;
       case Aftermath.RespiratorySymptoms:
-        return 'Síntomas Respiratorios';
+        return Messages.of(context)!.enumAftermathRespiratorySymptoms;
       case Aftermath.MuscleBoneNeuropathicPain:
-        return 'Dolores musculares y óseos';
+        return Messages.of(context)!.enumAftermathMuscleBoneNeuropathicPain;
       case Aftermath.PsychologicalPsychiatricDisorders:
-        return 'Desorden Psicológico-Psiquiátrico';
+        return Messages.of(context)!
+            .enumAftermathPsychologicalPsychiatricDisorders;
       case Aftermath.SexualDisorders:
-        return 'Desorden Sexual';
+        return Messages.of(context)!.enumAftermathSexualDisorders;
       case Aftermath.SleepDisorder:
-        return 'Desorden del Sueño';
+        return Messages.of(context)!.enumAftermathSleepDisorder;
       case Aftermath.PersistenceOfLossOfSmell:
-        return 'Perdida del Olfato';
+        return Messages.of(context)!.enumAftermathPersistenceOfLossOfSmell;
       case Aftermath.PersistenceOfLossOfAppetite:
-        return 'Perdida del Apetito';
+        return Messages.of(context)!.enumAftermathPersistenceOfLossOfAppetite;
       case Aftermath.GastrointestinalSymptoms:
-        return 'Síntomas Gastrointestinales';
+        return Messages.of(context)!.enumAftermathGastrointestinalSymptoms;
       case Aftermath.Dizziness:
-        return 'Mareos';
+        return Messages.of(context)!.enumAftermathDizziness;
       case Aftermath.DesiresToVomit:
-        return 'Vómitos';
+        return Messages.of(context)!.enumAftermathDesiresToVomit;
       case Aftermath.Others:
-        return 'Otros';
+        return Messages.of(context)!.enumAftermathOthers;
       default:
         return name;
     }
@@ -113,25 +112,26 @@ extension TreatmentExtension on Treatment {
   String visualName(BuildContext context) {
     switch (this) {
       case Treatment.Herferon:
-        return 'Herferón';
+        return Messages.of(context)!.enumTreatmentHerferon;
       case Treatment.InterferonGeneric:
-        return 'Interferón (genérico)';
+        return Messages.of(context)!.enumTreatmentInterferonGeneric;
       case Treatment.Jusvinza:
-        return 'Jusvinza';
+        return Messages.of(context)!.enumTreatmentJusvinza;
       case Treatment.Heberferon:
-        return 'Heberferón';
+        return Messages.of(context)!.enumTreatmentHeberferon;
       case Treatment.FraxiparinLowMolecularWeightHeparins:
-        return 'Fraxiparina/Heparinas de bajo peso molecular';
+        return Messages.of(context)!
+            .enumTreatmentFraxiparinLowMolecularWeightHeparins;
       case Treatment.Nasalferon:
-        return 'Nasalferón';
+        return Messages.of(context)!.enumTreatmentNasalferon;
       case Treatment.Prednisone:
-        return 'Prednisona';
+        return Messages.of(context)!.enumTreatmentPrednisone;
       case Treatment.Prevengovir:
-        return 'Prevengovir';
+        return Messages.of(context)!.enumTreatmentPrevengovir;
       case Treatment.Betamethasone:
-        return 'Betametasona';
+        return Messages.of(context)!.enumTreatmentBetamethasone;
       case Treatment.Italizumab:
-        return 'Italizumab';
+        return Messages.of(context)!.enumTreatmentItalizumab;
       default:
         return name;
     }
@@ -142,33 +142,33 @@ extension ProphylaxisExtension on Prophylaxis {
   String visualName(BuildContext context) {
     switch (this) {
       case Prophylaxis.Prevengovir:
-        return 'Prevengovir';
+        return Messages.of(context)!.enumProphylaxisPrevengovir;
       case Prophylaxis.Vimang:
-        return 'Vimang';
+        return Messages.of(context)!.enumProphylaxisVimang;
       case Prophylaxis.Moringa:
-        return 'Moringa';
+        return Messages.of(context)!.enumProphylaxisMoringa;
       case Prophylaxis.BiomodulinT:
-        return 'Biomodulina T';
+        return Messages.of(context)!.enumProphylaxisBiomodulinT;
       case Prophylaxis.VitaminC:
-        return 'Vitamina C';
+        return Messages.of(context)!.enumProphylaxisVitaminC;
       case Prophylaxis.Polivit:
-        return 'Polivit';
+        return Messages.of(context)!.enumProphylaxisPolivit;
       case Prophylaxis.Turmeric:
-        return 'Cúrcuma';
+        return Messages.of(context)!.enumProphylaxisTurmeric;
       case Prophylaxis.Soverana2AndPlus:
-        return 'Soberana 02 + Soberana PLus';
+        return Messages.of(context)!.enumProphylaxisSoverana2AndPlus;
       case Prophylaxis.Honey:
-        return 'Miel';
+        return Messages.of(context)!.enumProphylaxisHoney;
       case Prophylaxis.VitaminA:
-        return 'Vitamina A';
+        return Messages.of(context)!.enumProphylaxisVitaminA;
       case Prophylaxis.Ginger:
-        return 'Géngibre';
+        return Messages.of(context)!.enumProphylaxisGinger;
       case Prophylaxis.SoveranaPlus:
-        return 'Soberana Plus';
+        return Messages.of(context)!.enumProphylaxisSoveranaPlus;
       case Prophylaxis.Abdala:
-        return 'Abdala';
+        return Messages.of(context)!.enumProphylaxisAbdala;
       case Prophylaxis.Covid19Previously:
-        return 'Ya tuvo COVID-19 previamente';
+        return Messages.of(context)!.enumProphylaxisCovid19Previously;
       default:
         return name;
     }

@@ -1,6 +1,6 @@
-import 'package:dartz/dartz.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/repositories/repositories.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IPatientService {

@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart' show id;
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:fpdart/fpdart.dart' show id;
 
 class PathologyNameInputWidget extends StatefulWidget {
   const PathologyNameInputWidget({
@@ -70,7 +71,8 @@ class _PathologyNameInputWidgetState extends State<PathologyNameInputWidget> {
       decoration: TextFieldDecorations.decoration(
         hintText: widget.hintText,
         errorText: widget.errorText,
-        labelText: widget.labelText ?? 'Patología',
+        labelText: widget.labelText ??
+            Messages.of(context)!.pathologicalInputWidgetDefaultLabelText,
       ),
     );
   }

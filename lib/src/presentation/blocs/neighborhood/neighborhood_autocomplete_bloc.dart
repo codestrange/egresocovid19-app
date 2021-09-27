@@ -15,6 +15,6 @@ class NeighborhoodAutoCompleteBloc extends AutoCompleteBloc<String> {
   @override
   Future<List<String>> getSuggestions(String changedValue) async {
     final either = await autoCompleteService.getNeighborhoods(changedValue);
-    return either.getOrElse(() => []);
+    return either.getOrElse((_) => []);
   }
 }

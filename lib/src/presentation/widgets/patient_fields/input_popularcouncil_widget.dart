@@ -1,6 +1,8 @@
-import 'package:dartz/dartz.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:fpdart/fpdart.dart';
 
 class PopularCouncilInputWidget extends StatelessWidget {
   const PopularCouncilInputWidget({
@@ -12,6 +14,7 @@ class PopularCouncilInputWidget extends StatelessWidget {
     this.labelText,
     this.hintText,
     this.errorText,
+    this.initialValue,
   }) : super(key: key);
 
   final Stream<List<String>> suggestionsStream;
@@ -31,6 +34,8 @@ class PopularCouncilInputWidget extends StatelessWidget {
 
   final String? errorText;
 
+  final String? initialValue;
+
   @override
   Widget build(BuildContext context) {
     return SimpleAutoCompleteTextField(
@@ -38,6 +43,8 @@ class PopularCouncilInputWidget extends StatelessWidget {
       onTextChanged: onChanged,
       onTextSubmitted: onSubmitted,
       onItemSelected: onSelected ?? id,
+      controller:
+          initialValue != null ? TextEditing.fromValue(initialValue!) : null,
       itemBuilder: (context, suggestion) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: Text(suggestion.toString()),
@@ -45,7 +52,8 @@ class PopularCouncilInputWidget extends StatelessWidget {
       decoration: TextFieldDecorations.decoration(
         hintText: hintText,
         errorText: errorText,
-        labelText: labelText ?? 'Consejo Popular',
+        labelText: labelText ??
+            Messages.of(context)!.popularCouncilInputWidgetDefaultLabelText,
       ),
     );
   }

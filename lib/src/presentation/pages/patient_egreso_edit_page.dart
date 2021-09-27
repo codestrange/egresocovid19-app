@@ -4,6 +4,7 @@ import 'package:egresocovid19/src/domain/enums/diagnosis_way_enum.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart';
+import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,10 @@ class PatientEgresoEditPage extends StatelessWidget {
   static BeamPage getPage(BuildContext context, String patientId) {
     return BeamPage(
       key: ValueKey('patient-egreso-edit-$patientId'),
-      title: getTitle(context, 'Editar'),
+      title: getTitle(
+        context,
+        Messages.of(context)!.patientEditEgresoPageTitle,
+      ),
       child: PatientEgresoEditPage(patientId: patientId),
     );
   }
@@ -51,10 +55,11 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Información de Egreso',
+          Messages.of(context)!.patientEditEgresoAppBarTitle,
           style: Theme.of(context).textTheme.headline6,
         ),
         iconTheme: Theme.of(context).iconTheme,
+        centerTitle: true,
       ),
       body: BlocConsumer<IPatientEgresoEditBloc, PatientEgresoEditState>(
         listener: (context, state) => state.when(
@@ -63,20 +68,26 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
           fetchFailure: (errorMessage) => null,
           fetchSuccess: (actualDischargeData) => null,
           updateInProgress: (newDischargeData) => null,
-          updateFailure: (errorMessage, _) =>
-              ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Ocurrio un error al guardar los datos. Error: $errorMessage',
+          updateFailure: (errorMessage, _) {
+            final message =
+                Messages.of(context)!.patientEditEgresoErrorSaveMessage;
+            return ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: Colors.red.shade900,
+                content: Text(message),
               ),
-            ),
-          ),
-          updateSuccess: (newDischargeData) =>
-              ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Datos guardados satisfactoriamente.'),
-            ),
-          ),
+            );
+          },
+          updateSuccess: (newDischargeData) {
+            final message =
+                Messages.of(context)!.patientEditEgresoSuccessMessage;
+            return ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: Colors.green.shade900,
+                content: Text(message),
+              ),
+            );
+          },
         ),
         builder: (context, state) => state.when(
           initial: () => buildLoading(context),
@@ -121,7 +132,9 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Ha ocurrido un error al cargar los datos: $errorMessage'),
+          Text(
+            Messages.of(context)!.patientEditEgresoErrorFetchMessage,
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -131,7 +144,9 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
                     patientId,
                   ),
                 ),
-            child: const Text('Reintentar'),
+            child: Text(
+              Messages.of(context)!.patientEditEgresoRetry,
+            ),
           ),
         ],
       ),
@@ -143,11 +158,16 @@ class _PatientEgresoEditPageInternal extends StatelessWidget {
     DischargeDataEntity actualDischargeData, {
     bool loading = false,
   }) {
+    final messages = Messages.of(context)!;
     return SingleChildScrollView(
       child: BlocProvider<IPatientEgresoEditFormBloc>(
-        create: (context) => GetIt.I.get(
-          param1: actualDischargeData,
-        ),
+        create: (context) {
+          return GetIt.I.get(
+            param1: actualDischargeData,
+            param2: GetIt.I<PatientEgresoEditFormBlocTextsMapper>()
+                .fromMessages(messages),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: _PatientEgresoEditForm(
@@ -184,71 +204,67 @@ class _PatientEgresoEditForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Section(
-            sectionTitle: 'Síntomas',
+            sectionTitle: Messages.of(context)!.patientEditEgresoSymptons,
             children: [
               Flexible(
                 child: _SymptomsField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _DurationOfSymptomsField(),
               ),
             ],
           ),
           Section(
-            sectionTitle: 'Diagnóstico',
+            sectionTitle: Messages.of(context)!.patientEditEgresoDiagnosis,
             children: [
               Flexible(
                 child: _DetectionDateField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _DiagnosisWayField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _TestUsedInDiagnosisField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _DaysFromSymptomsToDiagnosisField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _NumberPcrPerformedField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _TimeFromDiagnosisToNegativeOrDischargeField(),
               ),
             ],
           ),
           Section(
-            sectionTitle: 'Forma de Contagio',
+            sectionTitle:
+                Messages.of(context)!.patientEditEgresoFormOfContagion,
             children: [
               Flexible(
                 child: _FormOfContagionField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _WasHePartOfAnEventField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _DidHeWorkInTheAttentionToPositiveCasesField(),
               ),
             ],
           ),
           Section(
-            sectionTitle: 'Tiempo de Hospitalización',
+            sectionTitle:
+                Messages.of(context)!.patientEditEgresoHospitalizationTime,
             sectionDescription:
-                'Para el tiempo de hospitalización se recomienda la forma '
-                'compacta número inicial del servicio. '
-                'Ejemplo:\n'
-                'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
-                'critico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\n'
-                'Un paciente que estuvo 2 días en cuidado, 3 grave uno '
-                'critico, y falleció - 2C3G1CrF.',
+                Messages.of(context)!.patientEditEgresoHospitalizationTimeDesc,
             children: [
               Flexible(
                 child: _HospitalizationTimeField(),
@@ -256,7 +272,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Ingreso',
+            sectionTitle: Messages.of(context)!.patientEditEgresoIncomes,
             children: [
               Flexible(
                 child: _IncomesField(),
@@ -264,19 +280,23 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Contactos',
+            sectionTitle: Messages.of(context)!.patientEditEgresoContacts,
             children: [
               Row(
-                children: const [
-                  SizedBox(width: 10),
+                children: [
+                  const SizedBox(width: 10),
                   Expanded(
                     flex: 35,
-                    child: Text('Anillo'),
+                    child: Text(
+                      Messages.of(context)!.patientEditEgresoRing,
+                    ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Expanded(
                     flex: 65,
-                    child: Text('¿Cuántos enfermaron?'),
+                    child: Text(
+                      Messages.of(context)!.patientEditEgresoRingPositives,
+                    ),
                   ),
                 ],
               ),
@@ -296,7 +316,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Row(
                 children: [
                   Flexible(
@@ -310,7 +330,7 @@ class _PatientEgresoEditForm extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Row(
                 children: [
                   Flexible(
@@ -327,37 +347,38 @@ class _PatientEgresoEditForm extends StatelessWidget {
             ],
           ),
           Section(
-            sectionTitle: 'Tratamiento Recibido',
+            sectionTitle:
+                Messages.of(context)!.patientEditEgresoTreatmentsReceived,
             children: [
               Flexible(
                 child: _TreatmentsReceivedField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _AntibioticsField(),
               ),
             ],
           ),
           Section(
-            sectionTitle: 'Profilaxis',
+            sectionTitle: Messages.of(context)!.patientEditEgresoProphylaxis,
             children: [
               Flexible(
                 child: _ProphylaxisField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _AnotherVaccineAgainstCovidField(),
               ),
             ],
           ),
           Section(
-            sectionTitle: 'Secuelas',
+            sectionTitle: Messages.of(context)!.patientEditEgresoAftermath,
             children: [
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _AftermathField(),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 15),
               Flexible(
                 child: _OthersAftermathField(),
               ),
@@ -366,8 +387,8 @@ class _PatientEgresoEditForm extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const SubmmitButton<IPatientEgresoEditFormBloc>(
-            label: 'Editar',
+          SubmmitButton<IPatientEgresoEditFormBloc>(
+            label: Messages.of(context)!.patientEditEgresoEdit,
           ),
         ],
       ),
@@ -434,7 +455,7 @@ class _OthersAftermathField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<OtherAftermathAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Otras secuelas',
+        labelText: Messages.of(context)!.patientEditEgresoOtherAftermath,
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -464,7 +485,7 @@ class _AftermathField extends StatelessWidget {
     return InputBlocBuilder<List<Aftermath>?>(
       bloc: form.aftermath,
       builder: (context, state) => MultiSelectDropDown<Aftermath>(
-        labelText: 'Secuelas',
+        labelText: Messages.of(context)!.patientEditEgresoAftermath,
         items: Aftermath.values,
         onSelect: (values) => form.aftermath.dirty(values),
         onRemove: (value) {
@@ -491,7 +512,7 @@ class _AnotherVaccineAgainstCovidField extends StatelessWidget {
       bloc: form.anotherVaccineAgainstCovid,
       builder: (context, state) => AutoCompleteInputWidget(
         suggestionsStream: autocomplete.suggestionsStream,
-        labelText: 'Otras vacunas usadas',
+        labelText: Messages.of(context)!.patientEditEgresoAnotherVaccines,
         errorText: state.error,
         initialInput: state.value ?? '',
         onChanged: (value) {
@@ -517,7 +538,7 @@ class _ProphylaxisField extends StatelessWidget {
     return InputBlocBuilder<List<Prophylaxis>?>(
       bloc: form.prophylaxis,
       builder: (context, state) => MultiSelectDropDown<Prophylaxis>(
-        labelText: 'Realizó profilaxis con',
+        labelText: Messages.of(context)!.patientEditEgresoProphylaxisWith,
         items: Prophylaxis.values,
         onSelect: (values) => form.prophylaxis.dirty(values),
         onRemove: (value) {
@@ -544,7 +565,7 @@ class _AntibioticsField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<AntibioticsAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Antibióticos',
+        labelText: Messages.of(context)!.patientEditEgresoAntibiotics,
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -574,7 +595,7 @@ class _TreatmentsReceivedField extends StatelessWidget {
     return InputBlocBuilder<List<Treatment>?>(
       bloc: form.treatmentsReceived,
       builder: (context, state) => MultiSelectDropDown<Treatment>(
-        labelText: 'Tratamientos',
+        labelText: Messages.of(context)!.patientEditEgresoTreatments,
         items: Treatment.values,
         onSelect: (values) => form.treatmentsReceived.dirty(values),
         onRemove: (value) {
@@ -599,7 +620,7 @@ class _ContactsThirdLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -622,7 +643,7 @@ class _ContactsThirdLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsThirdLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Tercero',
+        labelText: Messages.of(context)!.patientEditEgresoThirdLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -645,7 +666,7 @@ class _ContactsSecondLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -668,7 +689,7 @@ class _ContactsSecondLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsSecondLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Segundo',
+        labelText: Messages.of(context)!.patientEditEgresoSecondLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -691,7 +712,7 @@ class _ContactsFirstLevelPositivesField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevelPositives,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Cantidad',
+        labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -714,7 +735,7 @@ class _ContactsFirstLevelField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.contactsFirstLevel,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Primero',
+        labelText: Messages.of(context)!.patientEditEgresoFirstLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -737,7 +758,7 @@ class _IncomesField extends StatelessWidget {
     return InputBlocBuilder<List<IncomeEntity>?>(
       bloc: form.incomes,
       builder: (context, state) => IncomesInputWidget(
-        headerText: 'Detalles de Ingreso',
+        headerText: Messages.of(context)!.patientEditEgresoIncomesDetails,
         errorText: state.error,
         incomes: state.value ?? [],
         addIncomeEntity: (value) {
@@ -769,7 +790,7 @@ class _HospitalizationTimeField extends StatelessWidget {
     return InputBlocBuilder<String?>(
       bloc: form.hospitalizationTime,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Forma Compacta',
+        labelText: Messages.of(context)!.patientEditEgresoCompactForm,
         errorText: state.error,
         controller: TextEditing.fromValue(state.value ?? ''),
         onChanged: (value) => form.hospitalizationTime.dirty(
@@ -787,7 +808,8 @@ class _DidHeWorkInTheAttentionToPositiveCasesField extends StatelessWidget {
     return InputBlocBuilder<bool?>(
       bloc: form.didHeWorkInTheAttentionToPositiveCases,
       builder: (context, state) => BoolInputWidget(
-        labelText: '¿Trabajó en la atención de casos positivos?',
+        labelText: Messages.of(context)!
+            .patientEditEgresoDidHeWorkInTheAttentionToPositiveCases,
         initialValue: state.value,
         onChanged: (value) =>
             form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
@@ -803,7 +825,7 @@ class _WasHePartOfAnEventField extends StatelessWidget {
     return InputBlocBuilder<bool?>(
       bloc: form.didHeWorkInTheAttentionToPositiveCases,
       builder: (context, state) => BoolInputWidget(
-        labelText: '¿Fué parte de un evento de transmición?',
+        labelText: Messages.of(context)!.patientEditEgresoWasHePartOfAnEvent,
         initialValue: state.value,
         onChanged: (value) =>
             form.didHeWorkInTheAttentionToPositiveCases.dirty(value),
@@ -819,7 +841,7 @@ class _FormOfContagionField extends StatelessWidget {
     return InputBlocBuilder<Contagion?>(
       bloc: form.formOfContagion,
       builder: (context, state) => ContagionInputWidget(
-        labelText: 'Forma de Contagio',
+        labelText: Messages.of(context)!.patientEditEgresoFormOfContagion,
         errorText: state.error,
         onChanged: (value) => form.formOfContagion.dirty(value),
         value: state.value,
@@ -838,7 +860,8 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico',
+            Messages.of(context)!
+                .patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.subtitle2,
           ),
@@ -846,7 +869,7 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
             height: 4,
           ),
           TextInputWidget(
-            labelText: 'Cant. de días',
+            labelText: Messages.of(context)!.patientEditEgresoDaysCount,
             keyboardType: TextInputType.number,
             errorText: state.error,
             controller: TextEditing.fromValue(
@@ -872,7 +895,7 @@ class _NumberPcrPerformedField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.numberPcrPerformed,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Número de Tests/Pcr realizados',
+        labelText: Messages.of(context)!.patientEditEgresoNumberPcrPerformed,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -895,7 +918,8 @@ class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.daysFromSymptomsToDiagnosis,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Días con síntomas hasta diagnóstico',
+        labelText:
+            Messages.of(context)!.patientEditEgresoDaysFromSymptomsToDiagnosis,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -918,7 +942,7 @@ class _TestUsedInDiagnosisField extends StatelessWidget {
     return InputBlocBuilder<TestDiagnosis?>(
       bloc: form.testUsedInDiagnosis,
       builder: (context, state) => TestDiagnosisInputWidget(
-        labelText: 'Test usado en el Diagnóstico',
+        labelText: Messages.of(context)!.patientEditEgresoTestUsedInDiagnosis,
         errorText: state.error,
         onChanged: (value) => form.testUsedInDiagnosis.dirty(value),
         value: state.value,
@@ -934,7 +958,7 @@ class _DiagnosisWayField extends StatelessWidget {
     return InputBlocBuilder<DiagnosisWay?>(
       bloc: form.diagnosisWay,
       builder: (context, state) => DiagnosisWayInputWidget(
-        labelText: 'Forma de diagnóstico',
+        labelText: Messages.of(context)!.patientEditEgresoDiagnosisWay,
         errorText: state.error,
         onChanged: (value) => form.diagnosisWay.dirty(value),
         value: state.value,
@@ -950,7 +974,7 @@ class _DurationOfSymptomsField extends StatelessWidget {
     return InputBlocBuilder<int?>(
       bloc: form.durationOfSymptoms,
       builder: (context, state) => TextInputWidget(
-        labelText: 'Duración de los síntomas (en días)',
+        labelText: Messages.of(context)!.patientEditEgresoDurationOfSymptoms,
         keyboardType: TextInputType.number,
         errorText: state.error,
         controller: TextEditing.fromValue(
@@ -975,7 +999,7 @@ class _SymptomsField extends StatelessWidget {
       builder: (context, state) => StringListInputWidget(
         autoCompleteBloc: GetIt.I.get<SymptompsAutoCompleteBloc>(),
         stringList: state.value ?? [],
-        labelText: 'Síntoma',
+        labelText: Messages.of(context)!.patientEditEgresoSymptomp,
         addString: (value) {
           var newList = [value];
           if (state.value != null) {
@@ -1005,7 +1029,7 @@ class _DetectionDateField extends StatelessWidget {
     return InputBlocBuilder<DateTime?>(
       bloc: form.detectionDate,
       builder: (context, state) => DateTimeInputWidget(
-        hintText: 'Fecha de detección',
+        hintText: Messages.of(context)!.patientEditEgresoDetectionDate,
         initialDate: state.value,
         errorText: state.error,
         onChanged: (value) => form.detectionDate.dirty(value),

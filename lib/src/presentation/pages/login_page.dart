@@ -23,8 +23,11 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final messages = Messages.of(context)!;
     return BlocProvider<ILoginBloc>(
-      create: (context) => GetIt.I(),
+      create: (context) => GetIt.I(
+        param1: GetIt.I<LoginBlocTextsMapper>().fromMessages(messages),
+      ),
       child: Scaffold(
         body: FormBlocListener<ILoginBloc, void, ErrorEntity>(
           onSuccess: (user) => context.beamToNamed('/patients'),
@@ -32,6 +35,7 @@ class LoginPage extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
+                backgroundColor: Colors.red.shade900,
                 content: Text(
                   Messages.of(context)!.loginError,
                 ),
