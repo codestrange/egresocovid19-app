@@ -75,11 +75,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String> id = InputBloc<String>(
     pureValue: patientEntity.id,
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -91,22 +87,14 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> age = InputBloc<String?>(
     pureValue: patientEntity.age.toString(),
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.isNumeric(
-        errorMessage: texts.validatorNumber,
-      ),
-    ],
+    validator: StringIsNumeric(texts.validatorNumber),
   );
 
   @override
   late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.isInt(
-        errorMessage: texts.validatorInteger,
-      ),
-    ],
+    validator: StringIsInt(texts.validatorInteger),
   );
 
   @override
@@ -118,19 +106,9 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> ci = InputBloc<String?>(
     pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.isInt(
-        errorMessage: texts.validatorInteger,
-      ),
-      StringValidator.lengthGreaterThan(
-        len: 10,
-        errorMessage: texts.validatorLength,
-      ),
-      StringValidator.lengthLowerThan(
-        len: 12,
-        errorMessage: texts.validatorLength,
-      ),
-    ],
+    validator: StringIsInt(texts.validatorInteger) &
+        StringLengthGreaterThan(texts.validatorLength, 10) &
+        StringLengthLowerThan(texts.validatorLength, 12),
   );
 
   @override

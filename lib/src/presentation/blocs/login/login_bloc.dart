@@ -34,22 +34,14 @@ class LoginBloc extends ILoginBloc {
   late final email = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-      StringValidator.isEmail(errorMessage: texts.validatorEmail),
-    ],
+    validator: StringRequired(texts.validatorRequired) &
+        StringIsEmail(texts.validatorEmail),
   );
 
   @override
   late final password = InputBloc<String>(
     pureValue: '',
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override

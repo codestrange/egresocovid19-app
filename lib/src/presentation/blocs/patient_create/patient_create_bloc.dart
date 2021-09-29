@@ -65,39 +65,23 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final address = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
   late final age = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-      StringValidator.isNumeric(
-        errorMessage: texts.validatorNumber,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired) &
+        StringIsNumeric(texts.validatorNumber),
   );
 
   @override
   late final blockNumber = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-      StringValidator.isInt(
-        errorMessage: texts.validatorInteger,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired) &
+        StringIsInt(texts.validatorInteger),
   );
 
   @override
@@ -109,22 +93,10 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final ci = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-      StringValidator.isInt(
-        errorMessage: texts.validatorInteger,
-      ),
-      StringValidator.lengthGreaterThan(
-        len: 10,
-        errorMessage: texts.validatorLength,
-      ),
-      StringValidator.lengthLowerThan(
-        len: 12,
-        errorMessage: texts.validatorLength,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired) &
+        StringIsInt(texts.validatorInteger) &
+        StringLengthGreaterThan(texts.validatorLength, 10) &
+        StringLengthLowerThan(texts.validatorLength, 121),
   );
 
   @override
@@ -137,29 +109,21 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final province = InputBloc<ProvinceEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [
-      Validator.required(errorMessage: texts.validatorRequired),
-    ],
+    validator: GeneralRequired(texts.validatorRequired),
   );
 
   @override
   late final municipality = InputBloc<MunicipalityEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [
-      Validator.required(errorMessage: texts.validatorRequired),
-    ],
+    validator: GeneralRequired(texts.validatorRequired),
   );
 
   @override
   late final neighborhood = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -172,73 +136,49 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final polyclinic = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
   late final popularCouncil = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
   late final sex = InputBloc<Sex?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [
-      Validator.required(errorMessage: texts.validatorRequired),
-    ],
+    validator: GeneralRequired(texts.validatorRequired),
   );
 
   @override
   late final skinColor = InputBloc<SkinColor?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validators: [
-      Validator.required(errorMessage: texts.validatorRequired),
-    ],
+    validator: GeneralRequired(texts.validatorRequired),
   );
 
   @override
   late final surgery = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
   late final firstName = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
   late final lastName = InputBloc<String>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validators: [
-      StringValidator.required(
-        errorMessage: texts.validatorRequired,
-      ),
-    ],
+    validator: StringRequired(texts.validatorRequired),
   );
 
   final IPatientService patientService;
