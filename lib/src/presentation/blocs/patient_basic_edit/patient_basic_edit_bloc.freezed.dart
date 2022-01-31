@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_basic_edit_bloc.dart';
@@ -147,15 +148,14 @@ class _$_Fetch implements _Fetch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Fetch &&
-            (identical(other.patientId, patientId) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientId, patientId)));
+        (other.runtimeType == runtimeType &&
+            other is _Fetch &&
+            const DeepCollectionEquality().equals(other.patientId, patientId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patientId);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(patientId));
 
   @JsonKey(ignore: true)
   @override
@@ -223,7 +223,7 @@ abstract class _Fetch implements PatientBasicEditEvent {
   const factory _Fetch(String patientId) = _$_Fetch;
 
   @override
-  String get patientId => throw _privateConstructorUsedError;
+  String get patientId;
   @override
   @JsonKey(ignore: true)
   _$FetchCopyWith<_Fetch> get copyWith => throw _privateConstructorUsedError;
@@ -349,7 +349,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -477,16 +478,15 @@ class _$_PatientEditingState implements _PatientEditingState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientEditingState &&
-            (identical(other.patientEditFetchData, patientEditFetchData) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientEditFetchData, patientEditFetchData)));
+        (other.runtimeType == runtimeType &&
+            other is _PatientEditingState &&
+            const DeepCollectionEquality()
+                .equals(other.patientEditFetchData, patientEditFetchData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(patientEditFetchData);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(patientEditFetchData));
 
   @JsonKey(ignore: true)
   @override
@@ -569,8 +569,7 @@ abstract class _PatientEditingState implements PatientBasicEditState {
           {required PatientEditFetchData patientEditFetchData}) =
       _$_PatientEditingState;
 
-  PatientEditFetchData get patientEditFetchData =>
-      throw _privateConstructorUsedError;
+  PatientEditFetchData get patientEditFetchData;
   @JsonKey(ignore: true)
   _$PatientEditingStateCopyWith<_PatientEditingState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -633,14 +632,14 @@ class _$_PatientErrorState implements _PatientErrorState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PatientErrorState &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _PatientErrorState &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -721,7 +720,7 @@ abstract class _PatientErrorState implements PatientBasicEditState {
   const factory _PatientErrorState({required ErrorEntity error}) =
       _$_PatientErrorState;
 
-  ErrorEntity get error => throw _privateConstructorUsedError;
+  ErrorEntity get error;
   @JsonKey(ignore: true)
   _$PatientErrorStateCopyWith<_PatientErrorState> get copyWith =>
       throw _privateConstructorUsedError;

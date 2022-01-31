@@ -17,15 +17,15 @@ DischargeDataPutModel _$DischargeDataPutModelFromJson(
           .toList(),
       durationOfSymptoms: json['durationOfSymptoms'] as int?,
       diagnosisWay:
-          _$enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosisWay']),
-      testUsedInDiagnosis: _$enumDecodeNullable(
+          $enumDecodeNullable(_$DiagnosisWayEnumMap, json['diagnosisWay']),
+      testUsedInDiagnosis: $enumDecodeNullable(
           _$TestDiagnosisEnumMap, json['testUsedInDiagnosis']),
       daysFromSymptomsToDiagnosis: json['daysFromSymptomsToDiagnosis'] as int?,
       numberPcrPerformed: json['numberPcrPerformed'] as int?,
       timeFromDiagnosisToNegativeOrDischarge:
           json['timeFromDiagnosisToNegativeOrDischarge'] as int?,
       formOfContagion:
-          _$enumDecodeNullable(_$ContagionEnumMap, json['formOfContagion']),
+          $enumDecodeNullable(_$ContagionEnumMap, json['formOfContagion']),
       wasHePartOfAnEvent: json['wasHePartOfAnEvent'] as bool?,
       didHeWorkInTheAttentionToPositiveCases:
           json['didHeWorkInTheAttentionToPositiveCases'] as bool?,
@@ -41,17 +41,17 @@ DischargeDataPutModel _$DischargeDataPutModelFromJson(
       contactsThirdLevel: json['contactsThirdLevel'] as int?,
       contactsThirdLevelPositives: json['contactsThirdLevelPositives'] as int?,
       treatmentsReceived: (json['treatmentsReceived'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$TreatmentEnumMap, e))
+          ?.map((e) => $enumDecode(_$TreatmentEnumMap, e))
           .toList(),
       antibiotics: (json['antibiotics'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       prophylaxis: (json['prophylaxis'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$ProphylaxisEnumMap, e))
+          ?.map((e) => $enumDecode(_$ProphylaxisEnumMap, e))
           .toList(),
       anotherVaccineAgainstCovid: json['anotherVaccineAgainstCovid'] as String?,
       aftermath: (json['aftermath'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$AftermathEnumMap, e))
+          ?.map((e) => $enumDecode(_$AftermathEnumMap, e))
           .toList(),
       othersAftermath: (json['othersAftermath'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -94,43 +94,6 @@ Map<String, dynamic> _$DischargeDataPutModelToJson(
           instance.aftermath?.map((e) => _$AftermathEnumMap[e]).toList(),
       'othersAftermath': instance.othersAftermath,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$DiagnosisWayEnumMap = {
   DiagnosisWay.GuardCorps: 0,

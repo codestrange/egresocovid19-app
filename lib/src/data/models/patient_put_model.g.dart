@@ -12,10 +12,10 @@ PatientPutModel _$PatientPutModelFromJson(Map<String, dynamic> json) =>
       lastname: json['lastname'] as String?,
       ci: json['ci'] as String?,
       municipalityCode: json['municipalityCode'] as String?,
-      sex: _$enumDecodeNullable(_$SexEnumMap, json['sex']),
+      sex: $enumDecodeNullable(_$SexEnumMap, json['sex']),
       age: json['age'] as int?,
-      skinColor: _$enumDecodeNullable(_$SkinColorEnumMap, json['skinColor']),
-      bloodType: _$enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
+      skinColor: $enumDecodeNullable(_$SkinColorEnumMap, json['skinColor']),
+      bloodType: $enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
       address: json['address'] as String?,
       polyclinic: json['polyclinic'] as String?,
       surgery: json['surgery'] as String?,
@@ -53,43 +53,6 @@ Map<String, dynamic> _$PatientPutModelToJson(PatientPutModel instance) =>
       'familyPathologicalHistory':
           instance.familyPathologicalHistory?.map((e) => e.toJson()).toList(),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$SexEnumMap = {
   Sex.Female: 0,

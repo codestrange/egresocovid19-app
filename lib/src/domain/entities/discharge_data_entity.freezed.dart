@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'discharge_data_entity.dart';
@@ -560,96 +561,94 @@ class _$_DischargeDataEntity implements _DischargeDataEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DischargeDataEntity &&
-            (identical(other.detectionDate, detectionDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.detectionDate, detectionDate)) &&
-            (identical(other.symptoms, symptoms) ||
-                const DeepCollectionEquality()
-                    .equals(other.symptoms, symptoms)) &&
-            (identical(other.durationOfSymptoms, durationOfSymptoms) ||
-                const DeepCollectionEquality()
-                    .equals(other.durationOfSymptoms, durationOfSymptoms)) &&
-            (identical(other.diagnosisWay, diagnosisWay) ||
-                const DeepCollectionEquality()
-                    .equals(other.diagnosisWay, diagnosisWay)) &&
-            (identical(other.testUsedInDiagnosis, testUsedInDiagnosis) ||
-                const DeepCollectionEquality()
-                    .equals(other.testUsedInDiagnosis, testUsedInDiagnosis)) &&
-            (identical(other.daysFromSymptomsToDiagnosis, daysFromSymptomsToDiagnosis) ||
-                const DeepCollectionEquality().equals(
-                    other.daysFromSymptomsToDiagnosis,
-                    daysFromSymptomsToDiagnosis)) &&
-            (identical(other.numberPcrPerformed, numberPcrPerformed) ||
-                const DeepCollectionEquality()
-                    .equals(other.numberPcrPerformed, numberPcrPerformed)) &&
-            (identical(other.timeFromDiagnosisToNegativeOrDischarge, timeFromDiagnosisToNegativeOrDischarge) ||
-                const DeepCollectionEquality().equals(
-                    other.timeFromDiagnosisToNegativeOrDischarge,
-                    timeFromDiagnosisToNegativeOrDischarge)) &&
-            (identical(other.formOfContagion, formOfContagion) ||
-                const DeepCollectionEquality()
-                    .equals(other.formOfContagion, formOfContagion)) &&
-            (identical(other.wasHePartOfAnEvent, wasHePartOfAnEvent) ||
-                const DeepCollectionEquality()
-                    .equals(other.wasHePartOfAnEvent, wasHePartOfAnEvent)) &&
-            (identical(other.didHeWorkInTheAttentionToPositiveCases, didHeWorkInTheAttentionToPositiveCases) ||
-                const DeepCollectionEquality().equals(
-                    other.didHeWorkInTheAttentionToPositiveCases,
-                    didHeWorkInTheAttentionToPositiveCases)) &&
-            (identical(other.hospitalizationTime, hospitalizationTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.hospitalizationTime, hospitalizationTime)) &&
-            (identical(other.incomes, incomes) ||
-                const DeepCollectionEquality()
-                    .equals(other.incomes, incomes)) &&
-            (identical(other.contactsFirstLevel, contactsFirstLevel) ||
-                const DeepCollectionEquality()
-                    .equals(other.contactsFirstLevel, contactsFirstLevel)) &&
-            (identical(other.contactsFirstLevelPositives, contactsFirstLevelPositives) ||
-                const DeepCollectionEquality().equals(other.contactsFirstLevelPositives, contactsFirstLevelPositives)) &&
-            (identical(other.contactsSecondLevel, contactsSecondLevel) || const DeepCollectionEquality().equals(other.contactsSecondLevel, contactsSecondLevel)) &&
-            (identical(other.contactsSecondLevelPositives, contactsSecondLevelPositives) || const DeepCollectionEquality().equals(other.contactsSecondLevelPositives, contactsSecondLevelPositives)) &&
-            (identical(other.contactsThirdLevel, contactsThirdLevel) || const DeepCollectionEquality().equals(other.contactsThirdLevel, contactsThirdLevel)) &&
-            (identical(other.contactsThirdLevelPositives, contactsThirdLevelPositives) || const DeepCollectionEquality().equals(other.contactsThirdLevelPositives, contactsThirdLevelPositives)) &&
-            (identical(other.treatmentsReceived, treatmentsReceived) || const DeepCollectionEquality().equals(other.treatmentsReceived, treatmentsReceived)) &&
-            (identical(other.antibiotics, antibiotics) || const DeepCollectionEquality().equals(other.antibiotics, antibiotics)) &&
-            (identical(other.prophylaxis, prophylaxis) || const DeepCollectionEquality().equals(other.prophylaxis, prophylaxis)) &&
-            (identical(other.anotherVaccineAgainstCovid, anotherVaccineAgainstCovid) || const DeepCollectionEquality().equals(other.anotherVaccineAgainstCovid, anotherVaccineAgainstCovid)) &&
-            (identical(other.aftermath, aftermath) || const DeepCollectionEquality().equals(other.aftermath, aftermath)) &&
-            (identical(other.othersAftermath, othersAftermath) || const DeepCollectionEquality().equals(other.othersAftermath, othersAftermath)));
+        (other.runtimeType == runtimeType &&
+            other is _DischargeDataEntity &&
+            const DeepCollectionEquality()
+                .equals(other.detectionDate, detectionDate) &&
+            const DeepCollectionEquality().equals(other.symptoms, symptoms) &&
+            const DeepCollectionEquality()
+                .equals(other.durationOfSymptoms, durationOfSymptoms) &&
+            const DeepCollectionEquality()
+                .equals(other.diagnosisWay, diagnosisWay) &&
+            const DeepCollectionEquality()
+                .equals(other.testUsedInDiagnosis, testUsedInDiagnosis) &&
+            const DeepCollectionEquality().equals(
+                other.daysFromSymptomsToDiagnosis,
+                daysFromSymptomsToDiagnosis) &&
+            const DeepCollectionEquality()
+                .equals(other.numberPcrPerformed, numberPcrPerformed) &&
+            const DeepCollectionEquality().equals(
+                other.timeFromDiagnosisToNegativeOrDischarge,
+                timeFromDiagnosisToNegativeOrDischarge) &&
+            const DeepCollectionEquality()
+                .equals(other.formOfContagion, formOfContagion) &&
+            const DeepCollectionEquality()
+                .equals(other.wasHePartOfAnEvent, wasHePartOfAnEvent) &&
+            const DeepCollectionEquality().equals(
+                other.didHeWorkInTheAttentionToPositiveCases,
+                didHeWorkInTheAttentionToPositiveCases) &&
+            const DeepCollectionEquality()
+                .equals(other.hospitalizationTime, hospitalizationTime) &&
+            const DeepCollectionEquality().equals(other.incomes, incomes) &&
+            const DeepCollectionEquality()
+                .equals(other.contactsFirstLevel, contactsFirstLevel) &&
+            const DeepCollectionEquality().equals(
+                other.contactsFirstLevelPositives,
+                contactsFirstLevelPositives) &&
+            const DeepCollectionEquality()
+                .equals(other.contactsSecondLevel, contactsSecondLevel) &&
+            const DeepCollectionEquality().equals(
+                other.contactsSecondLevelPositives,
+                contactsSecondLevelPositives) &&
+            const DeepCollectionEquality()
+                .equals(other.contactsThirdLevel, contactsThirdLevel) &&
+            const DeepCollectionEquality().equals(
+                other.contactsThirdLevelPositives,
+                contactsThirdLevelPositives) &&
+            const DeepCollectionEquality()
+                .equals(other.treatmentsReceived, treatmentsReceived) &&
+            const DeepCollectionEquality()
+                .equals(other.antibiotics, antibiotics) &&
+            const DeepCollectionEquality()
+                .equals(other.prophylaxis, prophylaxis) &&
+            const DeepCollectionEquality().equals(
+                other.anotherVaccineAgainstCovid, anotherVaccineAgainstCovid) &&
+            const DeepCollectionEquality().equals(other.aftermath, aftermath) &&
+            const DeepCollectionEquality()
+                .equals(other.othersAftermath, othersAftermath));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(detectionDate) ^
-      const DeepCollectionEquality().hash(symptoms) ^
-      const DeepCollectionEquality().hash(durationOfSymptoms) ^
-      const DeepCollectionEquality().hash(diagnosisWay) ^
-      const DeepCollectionEquality().hash(testUsedInDiagnosis) ^
-      const DeepCollectionEquality().hash(daysFromSymptomsToDiagnosis) ^
-      const DeepCollectionEquality().hash(numberPcrPerformed) ^
-      const DeepCollectionEquality()
-          .hash(timeFromDiagnosisToNegativeOrDischarge) ^
-      const DeepCollectionEquality().hash(formOfContagion) ^
-      const DeepCollectionEquality().hash(wasHePartOfAnEvent) ^
-      const DeepCollectionEquality()
-          .hash(didHeWorkInTheAttentionToPositiveCases) ^
-      const DeepCollectionEquality().hash(hospitalizationTime) ^
-      const DeepCollectionEquality().hash(incomes) ^
-      const DeepCollectionEquality().hash(contactsFirstLevel) ^
-      const DeepCollectionEquality().hash(contactsFirstLevelPositives) ^
-      const DeepCollectionEquality().hash(contactsSecondLevel) ^
-      const DeepCollectionEquality().hash(contactsSecondLevelPositives) ^
-      const DeepCollectionEquality().hash(contactsThirdLevel) ^
-      const DeepCollectionEquality().hash(contactsThirdLevelPositives) ^
-      const DeepCollectionEquality().hash(treatmentsReceived) ^
-      const DeepCollectionEquality().hash(antibiotics) ^
-      const DeepCollectionEquality().hash(prophylaxis) ^
-      const DeepCollectionEquality().hash(anotherVaccineAgainstCovid) ^
-      const DeepCollectionEquality().hash(aftermath) ^
-      const DeepCollectionEquality().hash(othersAftermath);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(detectionDate),
+        const DeepCollectionEquality().hash(symptoms),
+        const DeepCollectionEquality().hash(durationOfSymptoms),
+        const DeepCollectionEquality().hash(diagnosisWay),
+        const DeepCollectionEquality().hash(testUsedInDiagnosis),
+        const DeepCollectionEquality().hash(daysFromSymptomsToDiagnosis),
+        const DeepCollectionEquality().hash(numberPcrPerformed),
+        const DeepCollectionEquality()
+            .hash(timeFromDiagnosisToNegativeOrDischarge),
+        const DeepCollectionEquality().hash(formOfContagion),
+        const DeepCollectionEquality().hash(wasHePartOfAnEvent),
+        const DeepCollectionEquality()
+            .hash(didHeWorkInTheAttentionToPositiveCases),
+        const DeepCollectionEquality().hash(hospitalizationTime),
+        const DeepCollectionEquality().hash(incomes),
+        const DeepCollectionEquality().hash(contactsFirstLevel),
+        const DeepCollectionEquality().hash(contactsFirstLevelPositives),
+        const DeepCollectionEquality().hash(contactsSecondLevel),
+        const DeepCollectionEquality().hash(contactsSecondLevelPositives),
+        const DeepCollectionEquality().hash(contactsThirdLevel),
+        const DeepCollectionEquality().hash(contactsThirdLevelPositives),
+        const DeepCollectionEquality().hash(treatmentsReceived),
+        const DeepCollectionEquality().hash(antibiotics),
+        const DeepCollectionEquality().hash(prophylaxis),
+        const DeepCollectionEquality().hash(anotherVaccineAgainstCovid),
+        const DeepCollectionEquality().hash(aftermath),
+        const DeepCollectionEquality().hash(othersAftermath)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -687,57 +686,55 @@ abstract class _DischargeDataEntity implements DischargeDataEntity {
       required List<String>? othersAftermath}) = _$_DischargeDataEntity;
 
   @override
-  DateTime? get detectionDate => throw _privateConstructorUsedError;
+  DateTime? get detectionDate;
   @override
-  List<String>? get symptoms => throw _privateConstructorUsedError;
+  List<String>? get symptoms;
   @override
-  int? get durationOfSymptoms => throw _privateConstructorUsedError;
+  int? get durationOfSymptoms;
   @override
-  DiagnosisWay? get diagnosisWay => throw _privateConstructorUsedError;
+  DiagnosisWay? get diagnosisWay;
   @override
-  TestDiagnosis? get testUsedInDiagnosis => throw _privateConstructorUsedError;
+  TestDiagnosis? get testUsedInDiagnosis;
   @override
-  int? get daysFromSymptomsToDiagnosis => throw _privateConstructorUsedError;
+  int? get daysFromSymptomsToDiagnosis;
   @override
-  int? get numberPcrPerformed => throw _privateConstructorUsedError;
+  int? get numberPcrPerformed;
   @override
-  int? get timeFromDiagnosisToNegativeOrDischarge =>
-      throw _privateConstructorUsedError;
+  int? get timeFromDiagnosisToNegativeOrDischarge;
   @override
-  Contagion? get formOfContagion => throw _privateConstructorUsedError;
+  Contagion? get formOfContagion;
   @override
-  bool? get wasHePartOfAnEvent => throw _privateConstructorUsedError;
+  bool? get wasHePartOfAnEvent;
   @override
-  bool? get didHeWorkInTheAttentionToPositiveCases =>
-      throw _privateConstructorUsedError;
+  bool? get didHeWorkInTheAttentionToPositiveCases;
   @override
-  String? get hospitalizationTime => throw _privateConstructorUsedError;
+  String? get hospitalizationTime;
   @override
-  List<IncomeEntity>? get incomes => throw _privateConstructorUsedError;
+  List<IncomeEntity>? get incomes;
   @override
-  int? get contactsFirstLevel => throw _privateConstructorUsedError;
+  int? get contactsFirstLevel;
   @override
-  int? get contactsFirstLevelPositives => throw _privateConstructorUsedError;
+  int? get contactsFirstLevelPositives;
   @override
-  int? get contactsSecondLevel => throw _privateConstructorUsedError;
+  int? get contactsSecondLevel;
   @override
-  int? get contactsSecondLevelPositives => throw _privateConstructorUsedError;
+  int? get contactsSecondLevelPositives;
   @override
-  int? get contactsThirdLevel => throw _privateConstructorUsedError;
+  int? get contactsThirdLevel;
   @override
-  int? get contactsThirdLevelPositives => throw _privateConstructorUsedError;
+  int? get contactsThirdLevelPositives;
   @override
-  List<Treatment>? get treatmentsReceived => throw _privateConstructorUsedError;
+  List<Treatment>? get treatmentsReceived;
   @override
-  List<String>? get antibiotics => throw _privateConstructorUsedError;
+  List<String>? get antibiotics;
   @override
-  List<Prophylaxis>? get prophylaxis => throw _privateConstructorUsedError;
+  List<Prophylaxis>? get prophylaxis;
   @override
-  String? get anotherVaccineAgainstCovid => throw _privateConstructorUsedError;
+  String? get anotherVaccineAgainstCovid;
   @override
-  List<Aftermath>? get aftermath => throw _privateConstructorUsedError;
+  List<Aftermath>? get aftermath;
   @override
-  List<String>? get othersAftermath => throw _privateConstructorUsedError;
+  List<String>? get othersAftermath;
   @override
   @JsonKey(ignore: true)
   _$DischargeDataEntityCopyWith<_DischargeDataEntity> get copyWith =>

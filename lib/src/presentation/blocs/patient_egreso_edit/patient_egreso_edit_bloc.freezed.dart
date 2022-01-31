@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_egreso_edit_bloc.dart';
@@ -164,15 +165,14 @@ class _$_Fetch implements _Fetch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Fetch &&
-            (identical(other.patientId, patientId) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientId, patientId)));
+        (other.runtimeType == runtimeType &&
+            other is _Fetch &&
+            const DeepCollectionEquality().equals(other.patientId, patientId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patientId);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(patientId));
 
   @JsonKey(ignore: true)
   @override
@@ -250,7 +250,7 @@ abstract class _Fetch implements PatientEgresoEditEvent {
   const factory _Fetch(String patientId) = _$_Fetch;
 
   @override
-  String get patientId => throw _privateConstructorUsedError;
+  String get patientId;
   @override
   @JsonKey(ignore: true)
   _$FetchCopyWith<_Fetch> get copyWith => throw _privateConstructorUsedError;
@@ -320,20 +320,18 @@ class _$_Update implements _Update {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Update &&
-            (identical(other.patientId, patientId) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientId, patientId)) &&
-            (identical(other.newDischargeData, newDischargeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.newDischargeData, newDischargeData)));
+        (other.runtimeType == runtimeType &&
+            other is _Update &&
+            const DeepCollectionEquality().equals(other.patientId, patientId) &&
+            const DeepCollectionEquality()
+                .equals(other.newDischargeData, newDischargeData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(patientId) ^
-      const DeepCollectionEquality().hash(newDischargeData);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(patientId),
+      const DeepCollectionEquality().hash(newDischargeData));
 
   @JsonKey(ignore: true)
   @override
@@ -412,9 +410,8 @@ abstract class _Update implements PatientEgresoEditEvent {
       String patientId, DischargeDataEntity newDischargeData) = _$_Update;
 
   @override
-  String get patientId => throw _privateConstructorUsedError;
-  DischargeDataEntity get newDischargeData =>
-      throw _privateConstructorUsedError;
+  String get patientId;
+  DischargeDataEntity get newDischargeData;
   @override
   @JsonKey(ignore: true)
   _$UpdateCopyWith<_Update> get copyWith => throw _privateConstructorUsedError;
@@ -593,7 +590,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -734,7 +732,8 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FetchInProgress);
   }
 
   @override
@@ -892,15 +891,15 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchFailure &&
-            (identical(other.errorMessage, errorMessage) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorMessage, errorMessage)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchFailure &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
   @override
@@ -1010,7 +1009,7 @@ class _$_FetchFailure implements _FetchFailure {
 abstract class _FetchFailure implements PatientEgresoEditState {
   const factory _FetchFailure(String errorMessage) = _$_FetchFailure;
 
-  String get errorMessage => throw _privateConstructorUsedError;
+  String get errorMessage;
   @JsonKey(ignore: true)
   _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1074,16 +1073,15 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchSuccess &&
-            (identical(other.actualDischargeData, actualDischargeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.actualDischargeData, actualDischargeData)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.actualDischargeData, actualDischargeData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(actualDischargeData);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(actualDischargeData));
 
   @JsonKey(ignore: true)
   @override
@@ -1194,8 +1192,7 @@ abstract class _FetchSuccess implements PatientEgresoEditState {
   const factory _FetchSuccess(DischargeDataEntity actualDischargeData) =
       _$_FetchSuccess;
 
-  DischargeDataEntity get actualDischargeData =>
-      throw _privateConstructorUsedError;
+  DischargeDataEntity get actualDischargeData;
   @JsonKey(ignore: true)
   _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1258,16 +1255,15 @@ class _$_UpdateInProgress implements _UpdateInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UpdateInProgress &&
-            (identical(other.newDischargeData, newDischargeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.newDischargeData, newDischargeData)));
+        (other.runtimeType == runtimeType &&
+            other is _UpdateInProgress &&
+            const DeepCollectionEquality()
+                .equals(other.newDischargeData, newDischargeData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(newDischargeData);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newDischargeData));
 
   @JsonKey(ignore: true)
   @override
@@ -1378,8 +1374,7 @@ abstract class _UpdateInProgress implements PatientEgresoEditState {
   const factory _UpdateInProgress(DischargeDataEntity newDischargeData) =
       _$_UpdateInProgress;
 
-  DischargeDataEntity get newDischargeData =>
-      throw _privateConstructorUsedError;
+  DischargeDataEntity get newDischargeData;
   @JsonKey(ignore: true)
   _$UpdateInProgressCopyWith<_UpdateInProgress> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1449,20 +1444,19 @@ class _$_UpdateFailure implements _UpdateFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UpdateFailure &&
-            (identical(other.errorMessage, errorMessage) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorMessage, errorMessage)) &&
-            (identical(other.newDischargeData, newDischargeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.newDischargeData, newDischargeData)));
+        (other.runtimeType == runtimeType &&
+            other is _UpdateFailure &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage) &&
+            const DeepCollectionEquality()
+                .equals(other.newDischargeData, newDischargeData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(errorMessage) ^
-      const DeepCollectionEquality().hash(newDischargeData);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(errorMessage),
+      const DeepCollectionEquality().hash(newDischargeData));
 
   @JsonKey(ignore: true)
   @override
@@ -1574,9 +1568,8 @@ abstract class _UpdateFailure implements PatientEgresoEditState {
           String errorMessage, DischargeDataEntity newDischargeData) =
       _$_UpdateFailure;
 
-  String get errorMessage => throw _privateConstructorUsedError;
-  DischargeDataEntity get newDischargeData =>
-      throw _privateConstructorUsedError;
+  String get errorMessage;
+  DischargeDataEntity get newDischargeData;
   @JsonKey(ignore: true)
   _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1639,16 +1632,15 @@ class _$_UpdateSuccess implements _UpdateSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UpdateSuccess &&
-            (identical(other.newDischargeData, newDischargeData) ||
-                const DeepCollectionEquality()
-                    .equals(other.newDischargeData, newDischargeData)));
+        (other.runtimeType == runtimeType &&
+            other is _UpdateSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.newDischargeData, newDischargeData));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(newDischargeData);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newDischargeData));
 
   @JsonKey(ignore: true)
   @override
@@ -1759,8 +1751,7 @@ abstract class _UpdateSuccess implements PatientEgresoEditState {
   const factory _UpdateSuccess(DischargeDataEntity newDischargeData) =
       _$_UpdateSuccess;
 
-  DischargeDataEntity get newDischargeData =>
-      throw _privateConstructorUsedError;
+  DischargeDataEntity get newDischargeData;
   @JsonKey(ignore: true)
   _$UpdateSuccessCopyWith<_UpdateSuccess> get copyWith =>
       throw _privateConstructorUsedError;

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_bloc.dart';
@@ -126,7 +127,8 @@ class _$_Start implements _Start {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Start);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Start);
   }
 
   @override
@@ -261,14 +263,14 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StatusChanged &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)));
+        (other.runtimeType == runtimeType &&
+            other is _StatusChanged &&
+            const DeepCollectionEquality().equals(other.status, status));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(status);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
   @override
@@ -348,7 +350,7 @@ abstract class _StatusChanged implements AuthEvent {
   const factory _StatusChanged({required AuthStatusEntity status}) =
       _$_StatusChanged;
 
-  AuthStatusEntity get status => throw _privateConstructorUsedError;
+  AuthStatusEntity get status;
   @JsonKey(ignore: true)
   _$StatusChangedCopyWith<_StatusChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -382,7 +384,8 @@ class _$_SignOut implements _SignOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignOut);
   }
 
   @override
@@ -572,7 +575,8 @@ class _$_Checking implements _Checking {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Checking);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Checking);
   }
 
   @override
@@ -681,7 +685,8 @@ class _$_Authenticated implements _Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Authenticated);
   }
 
   @override
@@ -790,7 +795,8 @@ class _$_Unauthenticated implements _Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unauthenticated);
   }
 
   @override

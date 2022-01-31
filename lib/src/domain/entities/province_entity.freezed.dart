@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'province_entity.dart';
@@ -151,22 +152,20 @@ class _$_ProvinceEntity implements _ProvinceEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProvinceEntity &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.municipalities, municipalities) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalities, municipalities)));
+        (other.runtimeType == runtimeType &&
+            other is _ProvinceEntity &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality()
+                .equals(other.municipalities, municipalities));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(municipalities);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(municipalities));
 
   @JsonKey(ignore: true)
   @override
@@ -181,12 +180,11 @@ abstract class _ProvinceEntity implements ProvinceEntity {
       required List<MunicipalityEntity> municipalities}) = _$_ProvinceEntity;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get code => throw _privateConstructorUsedError;
+  String get code;
   @override
-  List<MunicipalityEntity> get municipalities =>
-      throw _privateConstructorUsedError;
+  List<MunicipalityEntity> get municipalities;
   @override
   @JsonKey(ignore: true)
   _$ProvinceEntityCopyWith<_ProvinceEntity> get copyWith =>

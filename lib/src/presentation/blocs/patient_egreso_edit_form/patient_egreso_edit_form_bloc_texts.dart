@@ -1,8 +1,5 @@
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:injectable/injectable.dart';
-import 'package:smartstruct/smartstruct.dart';
-
-part 'patient_egreso_edit_form_bloc_texts.mapper.g.dart';
 
 class PatientEgresoEditFormBlocTexts {
   PatientEgresoEditFormBlocTexts({
@@ -22,7 +19,16 @@ class PatientEgresoEditFormBlocTexts {
   final String validatorIntegerNonNegative;
 }
 
-@Mapper(useInjection: true)
-abstract class PatientEgresoEditFormBlocTextsMapper {
-  PatientEgresoEditFormBlocTexts fromMessages(Messages messages);
+@lazySingleton
+class PatientEgresoEditFormBlocTextsMapper {
+  PatientEgresoEditFormBlocTexts fromMessages(Messages messages) {
+    return PatientEgresoEditFormBlocTexts(
+      validatorRequired: messages.validatorRequired,
+      validatorEmail: messages.validatorEmail,
+      validatorLength: messages.validatorLength,
+      validatorInteger: messages.validatorInteger,
+      validatorNumber: messages.validatorNumber,
+      validatorIntegerNonNegative: messages.validatorIntegerNonNegative,
+    );
+  }
 }

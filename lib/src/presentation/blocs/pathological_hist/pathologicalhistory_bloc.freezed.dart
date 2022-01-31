@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'pathologicalhistory_bloc.dart';
@@ -159,15 +160,15 @@ class _$PathologyInfoAdded implements PathologyInfoAdded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PathologyInfoAdded &&
-            (identical(other.pathological, pathological) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathological, pathological)));
+        (other.runtimeType == runtimeType &&
+            other is PathologyInfoAdded &&
+            const DeepCollectionEquality()
+                .equals(other.pathological, pathological));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(pathological);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(pathological));
 
   @JsonKey(ignore: true)
   @override
@@ -247,7 +248,7 @@ abstract class PathologyInfoAdded implements PathologicalHistoryEvent {
   const factory PathologyInfoAdded(PathologicalEntity pathological) =
       _$PathologyInfoAdded;
 
-  PathologicalEntity get pathological => throw _privateConstructorUsedError;
+  PathologicalEntity get pathological;
   @JsonKey(ignore: true)
   $PathologyInfoAddedCopyWith<PathologyInfoAdded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -301,16 +302,15 @@ class _$PathologyInfoRemoved implements PathologyInfoRemoved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PathologyInfoRemoved &&
-            (identical(other.pathologicalName, pathologicalName) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathologicalName, pathologicalName)));
+        (other.runtimeType == runtimeType &&
+            other is PathologyInfoRemoved &&
+            const DeepCollectionEquality()
+                .equals(other.pathologicalName, pathologicalName));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(pathologicalName);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(pathologicalName));
 
   @JsonKey(ignore: true)
   @override
@@ -391,7 +391,7 @@ abstract class PathologyInfoRemoved implements PathologicalHistoryEvent {
   const factory PathologyInfoRemoved(String pathologicalName) =
       _$PathologyInfoRemoved;
 
-  String get pathologicalName => throw _privateConstructorUsedError;
+  String get pathologicalName;
   @JsonKey(ignore: true)
   $PathologyInfoRemovedCopyWith<PathologyInfoRemoved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -428,7 +428,8 @@ class _$PathologyInfoCleared implements PathologyInfoCleared {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PathologyInfoCleared);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PathologyInfoCleared);
   }
 
   @override
@@ -650,16 +651,15 @@ class _$PathologicalHistoryCurrentState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PathologicalHistoryCurrentState &&
-            (identical(other.pathologicalHistory, pathologicalHistory) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathologicalHistory, pathologicalHistory)));
+        (other.runtimeType == runtimeType &&
+            other is PathologicalHistoryCurrentState &&
+            const DeepCollectionEquality()
+                .equals(other.pathologicalHistory, pathologicalHistory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(pathologicalHistory);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(pathologicalHistory));
 
   @JsonKey(ignore: true)
   @override
@@ -732,8 +732,7 @@ abstract class PathologicalHistoryCurrentState
       _$PathologicalHistoryCurrentState;
 
   @override
-  List<PathologicalEntity> get pathologicalHistory =>
-      throw _privateConstructorUsedError;
+  List<PathologicalEntity> get pathologicalHistory;
   @override
   @JsonKey(ignore: true)
   $PathologicalHistoryCurrentStateCopyWith<PathologicalHistoryCurrentState>

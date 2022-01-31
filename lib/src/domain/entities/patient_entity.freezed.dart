@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_entity.dart';
@@ -698,84 +699,57 @@ class _$PatientGetEntity implements PatientGetEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PatientGetEntity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.firstname, firstname) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstname, firstname)) &&
-            (identical(other.lastname, lastname) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastname, lastname)) &&
-            (identical(other.ci, ci) ||
-                const DeepCollectionEquality().equals(other.ci, ci)) &&
-            (identical(other.province, province) ||
-                const DeepCollectionEquality()
-                    .equals(other.province, province)) &&
-            (identical(other.municipality, municipality) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipality, municipality)) &&
-            (identical(other.sex, sex) ||
-                const DeepCollectionEquality().equals(other.sex, sex)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
-            (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)) &&
-            (identical(other.bloodType, bloodType) ||
-                const DeepCollectionEquality()
-                    .equals(other.bloodType, bloodType)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.polyclinic, polyclinic) ||
-                const DeepCollectionEquality()
-                    .equals(other.polyclinic, polyclinic)) &&
-            (identical(other.surgery, surgery) ||
-                const DeepCollectionEquality()
-                    .equals(other.surgery, surgery)) &&
-            (identical(other.popularCouncil, popularCouncil) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularCouncil, popularCouncil)) &&
-            (identical(other.neighborhood, neighborhood) ||
-                const DeepCollectionEquality()
-                    .equals(other.neighborhood, neighborhood)) &&
-            (identical(other.blockNumber, blockNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockNumber, blockNumber)) &&
-            (identical(other.personalPathologicalHistory,
-                    personalPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.personalPathologicalHistory,
-                    personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory,
-                    familyPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.familyPathologicalHistory,
-                    familyPathologicalHistory)));
+        (other.runtimeType == runtimeType &&
+            other is PatientGetEntity &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.firstname, firstname) &&
+            const DeepCollectionEquality().equals(other.lastname, lastname) &&
+            const DeepCollectionEquality().equals(other.ci, ci) &&
+            const DeepCollectionEquality().equals(other.province, province) &&
+            const DeepCollectionEquality()
+                .equals(other.municipality, municipality) &&
+            const DeepCollectionEquality().equals(other.sex, sex) &&
+            const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.skinColor, skinColor) &&
+            const DeepCollectionEquality().equals(other.bloodType, bloodType) &&
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality()
+                .equals(other.polyclinic, polyclinic) &&
+            const DeepCollectionEquality().equals(other.surgery, surgery) &&
+            const DeepCollectionEquality()
+                .equals(other.popularCouncil, popularCouncil) &&
+            const DeepCollectionEquality()
+                .equals(other.neighborhood, neighborhood) &&
+            const DeepCollectionEquality()
+                .equals(other.blockNumber, blockNumber) &&
+            const DeepCollectionEquality().equals(
+                other.personalPathologicalHistory,
+                personalPathologicalHistory) &&
+            const DeepCollectionEquality().equals(
+                other.familyPathologicalHistory, familyPathologicalHistory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(firstname) ^
-      const DeepCollectionEquality().hash(lastname) ^
-      const DeepCollectionEquality().hash(ci) ^
-      const DeepCollectionEquality().hash(province) ^
-      const DeepCollectionEquality().hash(municipality) ^
-      const DeepCollectionEquality().hash(sex) ^
-      const DeepCollectionEquality().hash(age) ^
-      const DeepCollectionEquality().hash(skinColor) ^
-      const DeepCollectionEquality().hash(bloodType) ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(polyclinic) ^
-      const DeepCollectionEquality().hash(surgery) ^
-      const DeepCollectionEquality().hash(popularCouncil) ^
-      const DeepCollectionEquality().hash(neighborhood) ^
-      const DeepCollectionEquality().hash(blockNumber) ^
-      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(firstname),
+      const DeepCollectionEquality().hash(lastname),
+      const DeepCollectionEquality().hash(ci),
+      const DeepCollectionEquality().hash(province),
+      const DeepCollectionEquality().hash(municipality),
+      const DeepCollectionEquality().hash(sex),
+      const DeepCollectionEquality().hash(age),
+      const DeepCollectionEquality().hash(skinColor),
+      const DeepCollectionEquality().hash(bloodType),
+      const DeepCollectionEquality().hash(address),
+      const DeepCollectionEquality().hash(polyclinic),
+      const DeepCollectionEquality().hash(surgery),
+      const DeepCollectionEquality().hash(popularCouncil),
+      const DeepCollectionEquality().hash(neighborhood),
+      const DeepCollectionEquality().hash(blockNumber),
+      const DeepCollectionEquality().hash(personalPathologicalHistory),
+      const DeepCollectionEquality().hash(familyPathologicalHistory));
 
   @JsonKey(ignore: true)
   @override
@@ -1155,27 +1129,25 @@ abstract class PatientGetEntity implements PatientEntity {
           required List<PathologicalEntity> familyPathologicalHistory}) =
       _$PatientGetEntity;
 
-  String get id => throw _privateConstructorUsedError;
-  String get firstname => throw _privateConstructorUsedError;
-  String get lastname => throw _privateConstructorUsedError;
-  String get ci => throw _privateConstructorUsedError;
-  String get province => throw _privateConstructorUsedError;
-  String get municipality => throw _privateConstructorUsedError;
-  Sex get sex => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
-  SkinColor get skinColor => throw _privateConstructorUsedError;
+  String get id;
+  String get firstname;
+  String get lastname;
+  String get ci;
+  String get province;
+  String get municipality;
+  Sex get sex;
+  int get age;
+  SkinColor get skinColor;
   @override
-  BloodType? get bloodType => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get polyclinic => throw _privateConstructorUsedError;
-  String get surgery => throw _privateConstructorUsedError;
-  String get popularCouncil => throw _privateConstructorUsedError;
-  String get neighborhood => throw _privateConstructorUsedError;
-  int get blockNumber => throw _privateConstructorUsedError;
-  List<PathologicalEntity> get personalPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  List<PathologicalEntity> get familyPathologicalHistory =>
-      throw _privateConstructorUsedError;
+  BloodType? get bloodType;
+  String get address;
+  String get polyclinic;
+  String get surgery;
+  String get popularCouncil;
+  String get neighborhood;
+  int get blockNumber;
+  List<PathologicalEntity> get personalPathologicalHistory;
+  List<PathologicalEntity> get familyPathologicalHistory;
   @override
   @JsonKey(ignore: true)
   $PatientGetEntityCopyWith<PatientGetEntity> get copyWith =>
@@ -1407,88 +1379,62 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PatientGetDetailEntity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.firstname, firstname) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstname, firstname)) &&
-            (identical(other.lastname, lastname) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastname, lastname)) &&
-            (identical(other.ci, ci) ||
-                const DeepCollectionEquality().equals(other.ci, ci)) &&
-            (identical(other.province, province) ||
-                const DeepCollectionEquality()
-                    .equals(other.province, province)) &&
-            (identical(other.municipality, municipality) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipality, municipality)) &&
-            (identical(other.sex, sex) ||
-                const DeepCollectionEquality().equals(other.sex, sex)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
-            (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)) &&
-            (identical(other.bloodType, bloodType) ||
-                const DeepCollectionEquality()
-                    .equals(other.bloodType, bloodType)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.polyclinic, polyclinic) ||
-                const DeepCollectionEquality()
-                    .equals(other.polyclinic, polyclinic)) &&
-            (identical(other.surgery, surgery) ||
-                const DeepCollectionEquality()
-                    .equals(other.surgery, surgery)) &&
-            (identical(other.popularCouncil, popularCouncil) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularCouncil, popularCouncil)) &&
-            (identical(other.neighborhood, neighborhood) ||
-                const DeepCollectionEquality()
-                    .equals(other.neighborhood, neighborhood)) &&
-            (identical(other.blockNumber, blockNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockNumber, blockNumber)) &&
-            (identical(other.personalPathologicalHistory, personalPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.personalPathologicalHistory,
-                    personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory, familyPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.familyPathologicalHistory,
-                    familyPathologicalHistory)) &&
-            (identical(other.dischargeOfPositiveCasesOfCovid19,
-                    dischargeOfPositiveCasesOfCovid19) ||
-                const DeepCollectionEquality().equals(
-                    other.dischargeOfPositiveCasesOfCovid19,
-                    dischargeOfPositiveCasesOfCovid19)));
+        (other.runtimeType == runtimeType &&
+            other is PatientGetDetailEntity &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.firstname, firstname) &&
+            const DeepCollectionEquality().equals(other.lastname, lastname) &&
+            const DeepCollectionEquality().equals(other.ci, ci) &&
+            const DeepCollectionEquality().equals(other.province, province) &&
+            const DeepCollectionEquality()
+                .equals(other.municipality, municipality) &&
+            const DeepCollectionEquality().equals(other.sex, sex) &&
+            const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.skinColor, skinColor) &&
+            const DeepCollectionEquality().equals(other.bloodType, bloodType) &&
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality()
+                .equals(other.polyclinic, polyclinic) &&
+            const DeepCollectionEquality().equals(other.surgery, surgery) &&
+            const DeepCollectionEquality()
+                .equals(other.popularCouncil, popularCouncil) &&
+            const DeepCollectionEquality()
+                .equals(other.neighborhood, neighborhood) &&
+            const DeepCollectionEquality()
+                .equals(other.blockNumber, blockNumber) &&
+            const DeepCollectionEquality().equals(
+                other.personalPathologicalHistory,
+                personalPathologicalHistory) &&
+            const DeepCollectionEquality().equals(
+                other.familyPathologicalHistory, familyPathologicalHistory) &&
+            const DeepCollectionEquality().equals(
+                other.dischargeOfPositiveCasesOfCovid19,
+                dischargeOfPositiveCasesOfCovid19));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(firstname) ^
-      const DeepCollectionEquality().hash(lastname) ^
-      const DeepCollectionEquality().hash(ci) ^
-      const DeepCollectionEquality().hash(province) ^
-      const DeepCollectionEquality().hash(municipality) ^
-      const DeepCollectionEquality().hash(sex) ^
-      const DeepCollectionEquality().hash(age) ^
-      const DeepCollectionEquality().hash(skinColor) ^
-      const DeepCollectionEquality().hash(bloodType) ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(polyclinic) ^
-      const DeepCollectionEquality().hash(surgery) ^
-      const DeepCollectionEquality().hash(popularCouncil) ^
-      const DeepCollectionEquality().hash(neighborhood) ^
-      const DeepCollectionEquality().hash(blockNumber) ^
-      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory) ^
-      const DeepCollectionEquality().hash(dischargeOfPositiveCasesOfCovid19);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(firstname),
+        const DeepCollectionEquality().hash(lastname),
+        const DeepCollectionEquality().hash(ci),
+        const DeepCollectionEquality().hash(province),
+        const DeepCollectionEquality().hash(municipality),
+        const DeepCollectionEquality().hash(sex),
+        const DeepCollectionEquality().hash(age),
+        const DeepCollectionEquality().hash(skinColor),
+        const DeepCollectionEquality().hash(bloodType),
+        const DeepCollectionEquality().hash(address),
+        const DeepCollectionEquality().hash(polyclinic),
+        const DeepCollectionEquality().hash(surgery),
+        const DeepCollectionEquality().hash(popularCouncil),
+        const DeepCollectionEquality().hash(neighborhood),
+        const DeepCollectionEquality().hash(blockNumber),
+        const DeepCollectionEquality().hash(personalPathologicalHistory),
+        const DeepCollectionEquality().hash(familyPathologicalHistory),
+        const DeepCollectionEquality().hash(dischargeOfPositiveCasesOfCovid19)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -1873,29 +1819,26 @@ abstract class PatientGetDetailEntity implements PatientEntity {
           required DischargeDataEntity dischargeOfPositiveCasesOfCovid19}) =
       _$PatientGetDetailEntity;
 
-  String get id => throw _privateConstructorUsedError;
-  String get firstname => throw _privateConstructorUsedError;
-  String get lastname => throw _privateConstructorUsedError;
-  String get ci => throw _privateConstructorUsedError;
-  String get province => throw _privateConstructorUsedError;
-  String get municipality => throw _privateConstructorUsedError;
-  Sex get sex => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
-  SkinColor get skinColor => throw _privateConstructorUsedError;
+  String get id;
+  String get firstname;
+  String get lastname;
+  String get ci;
+  String get province;
+  String get municipality;
+  Sex get sex;
+  int get age;
+  SkinColor get skinColor;
   @override
-  BloodType? get bloodType => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get polyclinic => throw _privateConstructorUsedError;
-  String get surgery => throw _privateConstructorUsedError;
-  String get popularCouncil => throw _privateConstructorUsedError;
-  String get neighborhood => throw _privateConstructorUsedError;
-  int get blockNumber => throw _privateConstructorUsedError;
-  List<PathologicalEntity> get personalPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  List<PathologicalEntity> get familyPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  DischargeDataEntity get dischargeOfPositiveCasesOfCovid19 =>
-      throw _privateConstructorUsedError;
+  BloodType? get bloodType;
+  String get address;
+  String get polyclinic;
+  String get surgery;
+  String get popularCouncil;
+  String get neighborhood;
+  int get blockNumber;
+  List<PathologicalEntity> get personalPathologicalHistory;
+  List<PathologicalEntity> get familyPathologicalHistory;
+  DischargeDataEntity get dischargeOfPositiveCasesOfCovid19;
   @override
   @JsonKey(ignore: true)
   $PatientGetDetailEntityCopyWith<PatientGetDetailEntity> get copyWith =>
@@ -2089,77 +2032,53 @@ class _$PatientPostEntity implements PatientPostEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PatientPostEntity &&
-            (identical(other.firstname, firstname) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstname, firstname)) &&
-            (identical(other.lastname, lastname) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastname, lastname)) &&
-            (identical(other.ci, ci) ||
-                const DeepCollectionEquality().equals(other.ci, ci)) &&
-            (identical(other.municipalityCode, municipalityCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalityCode, municipalityCode)) &&
-            (identical(other.sex, sex) ||
-                const DeepCollectionEquality().equals(other.sex, sex)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
-            (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)) &&
-            (identical(other.bloodType, bloodType) ||
-                const DeepCollectionEquality()
-                    .equals(other.bloodType, bloodType)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.polyclinic, polyclinic) ||
-                const DeepCollectionEquality()
-                    .equals(other.polyclinic, polyclinic)) &&
-            (identical(other.surgery, surgery) ||
-                const DeepCollectionEquality()
-                    .equals(other.surgery, surgery)) &&
-            (identical(other.popularCouncil, popularCouncil) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularCouncil, popularCouncil)) &&
-            (identical(other.neighborhood, neighborhood) ||
-                const DeepCollectionEquality()
-                    .equals(other.neighborhood, neighborhood)) &&
-            (identical(other.blockNumber, blockNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockNumber, blockNumber)) &&
-            (identical(other.personalPathologicalHistory,
-                    personalPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.personalPathologicalHistory,
-                    personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory,
-                    familyPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.familyPathologicalHistory,
-                    familyPathologicalHistory)));
+        (other.runtimeType == runtimeType &&
+            other is PatientPostEntity &&
+            const DeepCollectionEquality().equals(other.firstname, firstname) &&
+            const DeepCollectionEquality().equals(other.lastname, lastname) &&
+            const DeepCollectionEquality().equals(other.ci, ci) &&
+            const DeepCollectionEquality()
+                .equals(other.municipalityCode, municipalityCode) &&
+            const DeepCollectionEquality().equals(other.sex, sex) &&
+            const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.skinColor, skinColor) &&
+            const DeepCollectionEquality().equals(other.bloodType, bloodType) &&
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality()
+                .equals(other.polyclinic, polyclinic) &&
+            const DeepCollectionEquality().equals(other.surgery, surgery) &&
+            const DeepCollectionEquality()
+                .equals(other.popularCouncil, popularCouncil) &&
+            const DeepCollectionEquality()
+                .equals(other.neighborhood, neighborhood) &&
+            const DeepCollectionEquality()
+                .equals(other.blockNumber, blockNumber) &&
+            const DeepCollectionEquality().equals(
+                other.personalPathologicalHistory,
+                personalPathologicalHistory) &&
+            const DeepCollectionEquality().equals(
+                other.familyPathologicalHistory, familyPathologicalHistory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(firstname) ^
-      const DeepCollectionEquality().hash(lastname) ^
-      const DeepCollectionEquality().hash(ci) ^
-      const DeepCollectionEquality().hash(municipalityCode) ^
-      const DeepCollectionEquality().hash(sex) ^
-      const DeepCollectionEquality().hash(age) ^
-      const DeepCollectionEquality().hash(skinColor) ^
-      const DeepCollectionEquality().hash(bloodType) ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(polyclinic) ^
-      const DeepCollectionEquality().hash(surgery) ^
-      const DeepCollectionEquality().hash(popularCouncil) ^
-      const DeepCollectionEquality().hash(neighborhood) ^
-      const DeepCollectionEquality().hash(blockNumber) ^
-      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(firstname),
+      const DeepCollectionEquality().hash(lastname),
+      const DeepCollectionEquality().hash(ci),
+      const DeepCollectionEquality().hash(municipalityCode),
+      const DeepCollectionEquality().hash(sex),
+      const DeepCollectionEquality().hash(age),
+      const DeepCollectionEquality().hash(skinColor),
+      const DeepCollectionEquality().hash(bloodType),
+      const DeepCollectionEquality().hash(address),
+      const DeepCollectionEquality().hash(polyclinic),
+      const DeepCollectionEquality().hash(surgery),
+      const DeepCollectionEquality().hash(popularCouncil),
+      const DeepCollectionEquality().hash(neighborhood),
+      const DeepCollectionEquality().hash(blockNumber),
+      const DeepCollectionEquality().hash(personalPathologicalHistory),
+      const DeepCollectionEquality().hash(familyPathologicalHistory));
 
   @JsonKey(ignore: true)
   @override
@@ -2531,25 +2450,23 @@ abstract class PatientPostEntity implements PatientEntity {
           required List<PathologicalEntity> familyPathologicalHistory}) =
       _$PatientPostEntity;
 
-  String get firstname => throw _privateConstructorUsedError;
-  String get lastname => throw _privateConstructorUsedError;
-  String get ci => throw _privateConstructorUsedError;
-  String get municipalityCode => throw _privateConstructorUsedError;
-  Sex get sex => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
-  SkinColor get skinColor => throw _privateConstructorUsedError;
+  String get firstname;
+  String get lastname;
+  String get ci;
+  String get municipalityCode;
+  Sex get sex;
+  int get age;
+  SkinColor get skinColor;
   @override
-  BloodType? get bloodType => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get polyclinic => throw _privateConstructorUsedError;
-  String get surgery => throw _privateConstructorUsedError;
-  String get popularCouncil => throw _privateConstructorUsedError;
-  String get neighborhood => throw _privateConstructorUsedError;
-  int get blockNumber => throw _privateConstructorUsedError;
-  List<PathologicalEntity> get personalPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  List<PathologicalEntity> get familyPathologicalHistory =>
-      throw _privateConstructorUsedError;
+  BloodType? get bloodType;
+  String get address;
+  String get polyclinic;
+  String get surgery;
+  String get popularCouncil;
+  String get neighborhood;
+  int get blockNumber;
+  List<PathologicalEntity> get personalPathologicalHistory;
+  List<PathologicalEntity> get familyPathologicalHistory;
   @override
   @JsonKey(ignore: true)
   $PatientPostEntityCopyWith<PatientPostEntity> get copyWith =>
@@ -2752,80 +2669,55 @@ class _$PatientPutEntity implements PatientPutEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PatientPutEntity &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.firstname, firstname) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstname, firstname)) &&
-            (identical(other.lastname, lastname) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastname, lastname)) &&
-            (identical(other.ci, ci) ||
-                const DeepCollectionEquality().equals(other.ci, ci)) &&
-            (identical(other.municipalityCode, municipalityCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.municipalityCode, municipalityCode)) &&
-            (identical(other.sex, sex) ||
-                const DeepCollectionEquality().equals(other.sex, sex)) &&
-            (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)) &&
-            (identical(other.skinColor, skinColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.skinColor, skinColor)) &&
-            (identical(other.bloodType, bloodType) ||
-                const DeepCollectionEquality()
-                    .equals(other.bloodType, bloodType)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.polyclinic, polyclinic) ||
-                const DeepCollectionEquality()
-                    .equals(other.polyclinic, polyclinic)) &&
-            (identical(other.surgery, surgery) ||
-                const DeepCollectionEquality()
-                    .equals(other.surgery, surgery)) &&
-            (identical(other.popularCouncil, popularCouncil) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularCouncil, popularCouncil)) &&
-            (identical(other.neighborhood, neighborhood) ||
-                const DeepCollectionEquality()
-                    .equals(other.neighborhood, neighborhood)) &&
-            (identical(other.blockNumber, blockNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockNumber, blockNumber)) &&
-            (identical(other.personalPathologicalHistory,
-                    personalPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.personalPathologicalHistory,
-                    personalPathologicalHistory)) &&
-            (identical(other.familyPathologicalHistory,
-                    familyPathologicalHistory) ||
-                const DeepCollectionEquality().equals(
-                    other.familyPathologicalHistory,
-                    familyPathologicalHistory)));
+        (other.runtimeType == runtimeType &&
+            other is PatientPutEntity &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.firstname, firstname) &&
+            const DeepCollectionEquality().equals(other.lastname, lastname) &&
+            const DeepCollectionEquality().equals(other.ci, ci) &&
+            const DeepCollectionEquality()
+                .equals(other.municipalityCode, municipalityCode) &&
+            const DeepCollectionEquality().equals(other.sex, sex) &&
+            const DeepCollectionEquality().equals(other.age, age) &&
+            const DeepCollectionEquality().equals(other.skinColor, skinColor) &&
+            const DeepCollectionEquality().equals(other.bloodType, bloodType) &&
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality()
+                .equals(other.polyclinic, polyclinic) &&
+            const DeepCollectionEquality().equals(other.surgery, surgery) &&
+            const DeepCollectionEquality()
+                .equals(other.popularCouncil, popularCouncil) &&
+            const DeepCollectionEquality()
+                .equals(other.neighborhood, neighborhood) &&
+            const DeepCollectionEquality()
+                .equals(other.blockNumber, blockNumber) &&
+            const DeepCollectionEquality().equals(
+                other.personalPathologicalHistory,
+                personalPathologicalHistory) &&
+            const DeepCollectionEquality().equals(
+                other.familyPathologicalHistory, familyPathologicalHistory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(firstname) ^
-      const DeepCollectionEquality().hash(lastname) ^
-      const DeepCollectionEquality().hash(ci) ^
-      const DeepCollectionEquality().hash(municipalityCode) ^
-      const DeepCollectionEquality().hash(sex) ^
-      const DeepCollectionEquality().hash(age) ^
-      const DeepCollectionEquality().hash(skinColor) ^
-      const DeepCollectionEquality().hash(bloodType) ^
-      const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(polyclinic) ^
-      const DeepCollectionEquality().hash(surgery) ^
-      const DeepCollectionEquality().hash(popularCouncil) ^
-      const DeepCollectionEquality().hash(neighborhood) ^
-      const DeepCollectionEquality().hash(blockNumber) ^
-      const DeepCollectionEquality().hash(personalPathologicalHistory) ^
-      const DeepCollectionEquality().hash(familyPathologicalHistory);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(firstname),
+      const DeepCollectionEquality().hash(lastname),
+      const DeepCollectionEquality().hash(ci),
+      const DeepCollectionEquality().hash(municipalityCode),
+      const DeepCollectionEquality().hash(sex),
+      const DeepCollectionEquality().hash(age),
+      const DeepCollectionEquality().hash(skinColor),
+      const DeepCollectionEquality().hash(bloodType),
+      const DeepCollectionEquality().hash(address),
+      const DeepCollectionEquality().hash(polyclinic),
+      const DeepCollectionEquality().hash(surgery),
+      const DeepCollectionEquality().hash(popularCouncil),
+      const DeepCollectionEquality().hash(neighborhood),
+      const DeepCollectionEquality().hash(blockNumber),
+      const DeepCollectionEquality().hash(personalPathologicalHistory),
+      const DeepCollectionEquality().hash(familyPathologicalHistory));
 
   @JsonKey(ignore: true)
   @override
@@ -3201,26 +3093,24 @@ abstract class PatientPutEntity implements PatientEntity {
           required List<PathologicalEntity>? familyPathologicalHistory}) =
       _$PatientPutEntity;
 
-  String get id => throw _privateConstructorUsedError;
-  String? get firstname => throw _privateConstructorUsedError;
-  String? get lastname => throw _privateConstructorUsedError;
-  String? get ci => throw _privateConstructorUsedError;
-  String? get municipalityCode => throw _privateConstructorUsedError;
-  Sex? get sex => throw _privateConstructorUsedError;
-  int? get age => throw _privateConstructorUsedError;
-  SkinColor? get skinColor => throw _privateConstructorUsedError;
+  String get id;
+  String? get firstname;
+  String? get lastname;
+  String? get ci;
+  String? get municipalityCode;
+  Sex? get sex;
+  int? get age;
+  SkinColor? get skinColor;
   @override
-  BloodType? get bloodType => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  String? get polyclinic => throw _privateConstructorUsedError;
-  String? get surgery => throw _privateConstructorUsedError;
-  String? get popularCouncil => throw _privateConstructorUsedError;
-  String? get neighborhood => throw _privateConstructorUsedError;
-  int? get blockNumber => throw _privateConstructorUsedError;
-  List<PathologicalEntity>? get personalPathologicalHistory =>
-      throw _privateConstructorUsedError;
-  List<PathologicalEntity>? get familyPathologicalHistory =>
-      throw _privateConstructorUsedError;
+  BloodType? get bloodType;
+  String? get address;
+  String? get polyclinic;
+  String? get surgery;
+  String? get popularCouncil;
+  String? get neighborhood;
+  int? get blockNumber;
+  List<PathologicalEntity>? get personalPathologicalHistory;
+  List<PathologicalEntity>? get familyPathologicalHistory;
   @override
   @JsonKey(ignore: true)
   $PatientPutEntityCopyWith<PatientPutEntity> get copyWith =>

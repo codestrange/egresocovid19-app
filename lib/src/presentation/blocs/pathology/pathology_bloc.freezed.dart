@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'pathology_bloc.dart';
@@ -151,15 +152,14 @@ class _$TreatmentPathologyChanged implements TreatmentPathologyChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TreatmentPathologyChanged &&
-            (identical(other.treatment, treatment) ||
-                const DeepCollectionEquality()
-                    .equals(other.treatment, treatment)));
+        (other.runtimeType == runtimeType &&
+            other is TreatmentPathologyChanged &&
+            const DeepCollectionEquality().equals(other.treatment, treatment));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(treatment);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(treatment));
 
   @JsonKey(ignore: true)
   @override
@@ -240,7 +240,7 @@ abstract class TreatmentPathologyChanged implements PathologyEvent {
   const factory TreatmentPathologyChanged(String treatment) =
       _$TreatmentPathologyChanged;
 
-  String get treatment => throw _privateConstructorUsedError;
+  String get treatment;
   @JsonKey(ignore: true)
   $TreatmentPathologyChangedCopyWith<TreatmentPathologyChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -294,15 +294,14 @@ class _$PathologyNameChanged implements PathologyNameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PathologyNameChanged &&
-            (identical(other.pathology, pathology) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathology, pathology)));
+        (other.runtimeType == runtimeType &&
+            other is PathologyNameChanged &&
+            const DeepCollectionEquality().equals(other.pathology, pathology));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(pathology);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pathology));
 
   @JsonKey(ignore: true)
   @override
@@ -382,7 +381,7 @@ class _$PathologyNameChanged implements PathologyNameChanged {
 abstract class PathologyNameChanged implements PathologyEvent {
   const factory PathologyNameChanged(String pathology) = _$PathologyNameChanged;
 
-  String get pathology => throw _privateConstructorUsedError;
+  String get pathology;
   @JsonKey(ignore: true)
   $PathologyNameChangedCopyWith<PathologyNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -419,7 +418,8 @@ class _$PathologyCleared implements PathologyCleared {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PathologyCleared);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PathologyCleared);
   }
 
   @override
@@ -635,10 +635,10 @@ class _$PathologyInputStateCopyWithImpl<$Res>
 class _$PathologyInputState implements PathologyInputState {
   const _$PathologyInputState({this.pathology = '', this.treatment = ''});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String pathology;
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String treatment;
 
@@ -650,20 +650,17 @@ class _$PathologyInputState implements PathologyInputState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PathologyInputState &&
-            (identical(other.pathology, pathology) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathology, pathology)) &&
-            (identical(other.treatment, treatment) ||
-                const DeepCollectionEquality()
-                    .equals(other.treatment, treatment)));
+        (other.runtimeType == runtimeType &&
+            other is PathologyInputState &&
+            const DeepCollectionEquality().equals(other.pathology, pathology) &&
+            const DeepCollectionEquality().equals(other.treatment, treatment));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(pathology) ^
-      const DeepCollectionEquality().hash(treatment);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(pathology),
+      const DeepCollectionEquality().hash(treatment));
 
   @JsonKey(ignore: true)
   @override
@@ -732,9 +729,9 @@ abstract class PathologyInputState implements PathologyState {
       _$PathologyInputState;
 
   @override
-  String get pathology => throw _privateConstructorUsedError;
+  String get pathology;
   @override
-  String get treatment => throw _privateConstructorUsedError;
+  String get treatment;
   @override
   @JsonKey(ignore: true)
   $PathologyInputStateCopyWith<PathologyInputState> get copyWith =>
