@@ -106,18 +106,18 @@ class _PatientCreateForm extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const SizedBox(height: 10),
-        const Flexible(child: _FirstNameInput()),
+        Flexible(child: _FirstNameInput()),
         const SizedBox(height: 15),
-        const Flexible(child: _LastNameInput()),
+        Flexible(child: _LastNameInput()),
         const SizedBox(height: 15),
-        const Flexible(child: _IdentityNumberInput()),
+        Flexible(child: _IdentityNumberInput()),
         const SizedBox(height: 15),
         Row(
-          children: const [
+          children: [
             Flexible(child: _AgeInput()),
-            SizedBox(width: 8),
-            Flexible(child: _SexInput()),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
+            const Flexible(child: _SexInput()),
+            const SizedBox(width: 8),
           ],
         ),
         const SizedBox(height: 15),
@@ -144,7 +144,7 @@ class _PatientCreateForm extends StatelessWidget {
         const SizedBox(height: 15),
         const Flexible(child: _NeighborhoodInput()),
         const SizedBox(height: 15),
-        const Flexible(child: _BlockNumberInput()),
+        Flexible(child: _BlockNumberInput()),
         const Divider(height: 16),
         const Flexible(child: _PersonalPathologicalHistoryInput()),
         const SizedBox(height: 12),
@@ -159,7 +159,9 @@ class _PatientCreateForm extends StatelessWidget {
 }
 
 class _FirstNameInput extends StatelessWidget {
-  const _FirstNameInput({Key? key}) : super(key: key);
+  _FirstNameInput({Key? key}) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +169,7 @@ class _FirstNameInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.firstName,
       builder: (context, state) => TextInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         labelText: '${Messages.of(context)!.patientCreateFieldFirstname}*',
         errorText: state.error,
         onChanged: (value) => form.firstName.dirty(
@@ -179,7 +181,9 @@ class _FirstNameInput extends StatelessWidget {
 }
 
 class _LastNameInput extends StatelessWidget {
-  const _LastNameInput({Key? key}) : super(key: key);
+  _LastNameInput({Key? key}) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +191,7 @@ class _LastNameInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.lastName,
       builder: (context, state) => TextInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         labelText: '${Messages.of(context)!.patientCreateFieldLastname}*',
         errorText: state.error,
         onChanged: (value) => form.lastName.dirty(
@@ -199,7 +203,9 @@ class _LastNameInput extends StatelessWidget {
 }
 
 class _IdentityNumberInput extends StatelessWidget {
-  const _IdentityNumberInput({Key? key}) : super(key: key);
+  _IdentityNumberInput({Key? key}) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -207,7 +213,7 @@ class _IdentityNumberInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.ci,
       builder: (context, state) => TextInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         labelText: '${Messages.of(context)!.patientCreateFieldCI}*',
         errorText: state.error,
         onChanged: (value) => form.ci.dirty(
@@ -219,7 +225,9 @@ class _IdentityNumberInput extends StatelessWidget {
 }
 
 class _AgeInput extends StatelessWidget {
-  const _AgeInput({Key? key}) : super(key: key);
+  _AgeInput({Key? key}) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -227,7 +235,7 @@ class _AgeInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.age,
       builder: (context, state) => TextInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         labelText: '${Messages.of(context)!.patientCreateFieldAge}*',
         errorText: state.error,
         onChanged: (value) => form.age.dirty(
@@ -472,7 +480,9 @@ class _NeighborhoodInput extends StatelessWidget {
 }
 
 class _BlockNumberInput extends StatelessWidget {
-  const _BlockNumberInput({Key? key}) : super(key: key);
+  _BlockNumberInput({Key? key}) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -480,7 +490,7 @@ class _BlockNumberInput extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.blockNumber,
       builder: (context, state) => TextInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         labelText: '${Messages.of(context)!.patientCreateFieldBlockNumber}*',
         errorText: state.error,
         onChanged: (value) => form.blockNumber.dirty(

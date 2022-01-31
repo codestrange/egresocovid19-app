@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'income_bloc.dart';
@@ -148,14 +149,14 @@ class _$DaysChanged implements DaysChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DaysChanged &&
-            (identical(other.days, days) ||
-                const DeepCollectionEquality().equals(other.days, days)));
+        (other.runtimeType == runtimeType &&
+            other is DaysChanged &&
+            const DeepCollectionEquality().equals(other.days, days));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(days);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(days));
 
   @JsonKey(ignore: true)
   @override
@@ -234,7 +235,7 @@ class _$DaysChanged implements DaysChanged {
 abstract class DaysChanged implements IncomeEvent {
   const factory DaysChanged(int days) = _$DaysChanged;
 
-  int get days => throw _privateConstructorUsedError;
+  int get days;
   @JsonKey(ignore: true)
   $DaysChangedCopyWith<DaysChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -287,14 +288,14 @@ class _$IncomeChanged implements IncomeChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is IncomeChanged &&
-            (identical(other.income, income) ||
-                const DeepCollectionEquality().equals(other.income, income)));
+        (other.runtimeType == runtimeType &&
+            other is IncomeChanged &&
+            const DeepCollectionEquality().equals(other.income, income));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(income);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(income));
 
   @JsonKey(ignore: true)
   @override
@@ -373,7 +374,7 @@ class _$IncomeChanged implements IncomeChanged {
 abstract class IncomeChanged implements IncomeEvent {
   const factory IncomeChanged(Income income) = _$IncomeChanged;
 
-  Income get income => throw _privateConstructorUsedError;
+  Income get income;
   @JsonKey(ignore: true)
   $IncomeChangedCopyWith<IncomeChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -409,7 +410,8 @@ class _$IncomeCleared implements IncomeCleared {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is IncomeCleared);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is IncomeCleared);
   }
 
   @override
@@ -624,10 +626,10 @@ class _$IncomeInputStateCopyWithImpl<$Res>
 class _$IncomeInputState implements IncomeInputState {
   const _$IncomeInputState({this.income = null, this.days = 0});
 
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final Income? income;
-  @JsonKey(defaultValue: 0)
+  @JsonKey()
   @override
   final int days;
 
@@ -639,18 +641,17 @@ class _$IncomeInputState implements IncomeInputState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is IncomeInputState &&
-            (identical(other.income, income) ||
-                const DeepCollectionEquality().equals(other.income, income)) &&
-            (identical(other.days, days) ||
-                const DeepCollectionEquality().equals(other.days, days)));
+        (other.runtimeType == runtimeType &&
+            other is IncomeInputState &&
+            const DeepCollectionEquality().equals(other.income, income) &&
+            const DeepCollectionEquality().equals(other.days, days));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(income) ^
-      const DeepCollectionEquality().hash(days);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(income),
+      const DeepCollectionEquality().hash(days));
 
   @JsonKey(ignore: true)
   @override
@@ -719,9 +720,9 @@ abstract class IncomeInputState implements IncomeState {
       _$IncomeInputState;
 
   @override
-  Income? get income => throw _privateConstructorUsedError;
+  Income? get income;
   @override
-  int get days => throw _privateConstructorUsedError;
+  int get days;
   @override
   @JsonKey(ignore: true)
   $IncomeInputStateCopyWith<IncomeInputState> get copyWith =>

@@ -7,7 +7,7 @@ part of 'income_model.dart';
 // **************************************************************************
 
 IncomeModel _$IncomeModelFromJson(Map<String, dynamic> json) => IncomeModel(
-      income: _$enumDecode(_$IncomeEnumMap, json['income']),
+      income: $enumDecode(_$IncomeEnumMap, json['income']),
       days: json['days'] as int,
     );
 
@@ -16,32 +16,6 @@ Map<String, dynamic> _$IncomeModelToJson(IncomeModel instance) =>
       'income': _$IncomeEnumMap[instance.income],
       'days': instance.days,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$IncomeEnumMap = {
   Income.Home: 0,

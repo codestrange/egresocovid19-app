@@ -147,7 +147,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i24.ThemeService(get<_i11.IThemeRepository>()));
   gh.factory<_i25.IncomeBloc>(() => _i25.IncomeBloc());
   gh.lazySingleton<_i26.LoginBlocTextsMapper>(
-      () => _i26.LoginBlocTextsMapperImpl());
+      () => _i26.LoginBlocTextsMapper());
   gh.factory<_i27.NeighborhoodAutoCompleteBloc>(
       () => _i27.NeighborhoodAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
   gh.lazySingleton<_i28.OAuthStorage>(
@@ -162,11 +162,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i32.PathologyAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
   gh.factory<_i33.PathologyBloc>(() => _i33.PathologyBloc());
   gh.lazySingleton<_i34.PatientBasicEditFormBlocTextsMapper>(
-      () => _i34.PatientBasicEditFormBlocTextsMapperImpl());
+      () => _i34.PatientBasicEditFormBlocTextsMapper());
   gh.lazySingleton<_i35.PatientCreateBlocTextsMapper>(
-      () => _i35.PatientCreateBlocTextsMapperImpl());
+      () => _i35.PatientCreateBlocTextsMapper());
   gh.lazySingleton<_i36.PatientEgresoEditFormBlocTextsMapper>(
-      () => _i36.PatientEgresoEditFormBlocTextsMapperImpl());
+      () => _i36.PatientEgresoEditFormBlocTextsMapper());
   gh.factory<_i37.PolyclinicAutoCompleteBloc>(
       () => _i37.PolyclinicAutoCompleteBloc(get<_i4.IAutoCompleteService>()));
   gh.factory<_i38.PopularCouncilAutoCompleteBloc>(() =>

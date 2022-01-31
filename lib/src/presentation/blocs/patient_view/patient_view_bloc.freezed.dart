@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'patient_view_bloc.dart';
@@ -146,15 +147,14 @@ class _$_Fetch implements _Fetch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Fetch &&
-            (identical(other.patientId, patientId) ||
-                const DeepCollectionEquality()
-                    .equals(other.patientId, patientId)));
+        (other.runtimeType == runtimeType &&
+            other is _Fetch &&
+            const DeepCollectionEquality().equals(other.patientId, patientId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patientId);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(patientId));
 
   @JsonKey(ignore: true)
   @override
@@ -222,7 +222,7 @@ abstract class _Fetch implements PatientViewEvent {
   const factory _Fetch(String patientId) = _$_Fetch;
 
   @override
-  String get patientId => throw _privateConstructorUsedError;
+  String get patientId;
   @override
   @JsonKey(ignore: true)
   _$FetchCopyWith<_Fetch> get copyWith => throw _privateConstructorUsedError;
@@ -348,7 +348,8 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FetchInProgress);
   }
 
   @override
@@ -475,14 +476,14 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchSuccess &&
-            (identical(other.patient, patient) ||
-                const DeepCollectionEquality().equals(other.patient, patient)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchSuccess &&
+            const DeepCollectionEquality().equals(other.patient, patient));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(patient);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(patient));
 
   @JsonKey(ignore: true)
   @override
@@ -562,7 +563,7 @@ abstract class _FetchSuccess implements PatientViewState {
   const factory _FetchSuccess({required PatientGetDetailEntity patient}) =
       _$_FetchSuccess;
 
-  PatientGetDetailEntity get patient => throw _privateConstructorUsedError;
+  PatientGetDetailEntity get patient;
   @JsonKey(ignore: true)
   _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -616,14 +617,14 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchFailure &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchFailure &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -702,7 +703,7 @@ class _$_FetchFailure implements _FetchFailure {
 abstract class _FetchFailure implements PatientViewState {
   const factory _FetchFailure({required String error}) = _$_FetchFailure;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

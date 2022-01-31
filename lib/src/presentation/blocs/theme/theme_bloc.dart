@@ -23,18 +23,18 @@ class ThemeBloc extends IThemeBloc {
             light: lightTheme,
             dark: darkTheme,
           ),
-        );
+        ) {
+    on<ThemeEvent>((event, emit) {
+      themeService.setThemeMode(event.mode);
+      emit(
+        ThemeState.changed(
+          mode: event.mode,
+          light: lightTheme,
+          dark: darkTheme,
+        ),
+      );
+    });
+  }
 
   final IThemeService themeService;
-
-  @override
-  Stream<ThemeState> mapEventToState(ThemeEvent event) async* {
-    // ignore: unawaited_futures
-    themeService.setThemeMode(event.mode);
-    yield ThemeState.changed(
-      mode: event.mode,
-      light: lightTheme,
-      dark: darkTheme,
-    );
-  }
 }

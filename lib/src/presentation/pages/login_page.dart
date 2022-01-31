@@ -89,11 +89,11 @@ class _LoginForm extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Flexible(
+              Flexible(
                 child: _EmailField(),
               ),
               const SizedBox(height: 10),
-              const Flexible(
+              Flexible(
                 child: _PasswordField(),
               ),
               const SizedBox(height: 10),
@@ -110,9 +110,11 @@ class _LoginForm extends StatelessWidget {
 }
 
 class _EmailField extends StatelessWidget {
-  const _EmailField({
+  _EmailField({
     Key? key,
   }) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +122,7 @@ class _EmailField extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.email,
       builder: (context, state) => EmailInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         errorText: state.error,
         onChanged: (value) => form.email.dirty(
           value.trim(),
@@ -131,9 +133,11 @@ class _EmailField extends StatelessWidget {
 }
 
 class _PasswordField extends StatelessWidget {
-  const _PasswordField({
+  _PasswordField({
     Key? key,
   }) : super(key: key);
+
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +145,7 @@ class _PasswordField extends StatelessWidget {
     return InputBlocBuilder<String>(
       bloc: form.password,
       builder: (context, state) => PasswordInputWidget(
-        controller: TextEditing.fromValue(state.value),
+        controller: _controller..setValue(state.value),
         errorText: state.error,
         onChanged: (value) => form.password.dirty(
           value.trim(),

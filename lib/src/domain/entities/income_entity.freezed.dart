@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'income_entity.dart';
@@ -129,18 +130,17 @@ class _$_BaseIncomeEntity implements _BaseIncomeEntity {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BaseIncomeEntity &&
-            (identical(other.income, income) ||
-                const DeepCollectionEquality().equals(other.income, income)) &&
-            (identical(other.days, days) ||
-                const DeepCollectionEquality().equals(other.days, days)));
+        (other.runtimeType == runtimeType &&
+            other is _BaseIncomeEntity &&
+            const DeepCollectionEquality().equals(other.income, income) &&
+            const DeepCollectionEquality().equals(other.days, days));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(income) ^
-      const DeepCollectionEquality().hash(days);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(income),
+      const DeepCollectionEquality().hash(days));
 
   @JsonKey(ignore: true)
   @override
@@ -153,9 +153,9 @@ abstract class _BaseIncomeEntity implements IncomeEntity {
       _$_BaseIncomeEntity;
 
   @override
-  Income get income => throw _privateConstructorUsedError;
+  Income get income;
   @override
-  int get days => throw _privateConstructorUsedError;
+  int get days;
   @override
   @JsonKey(ignore: true)
   _$BaseIncomeEntityCopyWith<_BaseIncomeEntity> get copyWith =>

@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/routes/locations.dart';
-import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 class Routes {
@@ -12,16 +11,18 @@ class Routes {
       BeamGuard(
         pathPatterns: ['/login', '/checking'],
         check: (_, __) => GetIt.I<IAuthService>().isLoggedIn,
-        beamToNamed: '/login',
+        beamToNamed: (origin, target) => '/login',
         guardNonMatching: true,
       ),
       BeamGuard(
         pathPatterns: ['/login', '/checking'],
         check: (_, __) => !GetIt.I<IAuthService>().isLoggedIn,
-        beamToNamed: '/patients',
+        beamToNamed: (origin, target) => '/patients',
       ),
     ],
-    routeListener: _listener,
+    routeListener: (routeInformation, delegate) {
+      log('BeamTo: ${routeInformation.location}');
+    },
     locationBuilder: BeamerLocationBuilder(
       beamLocations: [
         HomeLocation(),
@@ -32,13 +33,6 @@ class Routes {
     ),
     initialPath: '/patients',
   );
-
-  static void _listener(
-    RouteInformation routeInformation,
-    BeamLocation<RouteInformationSerializable> location,
-  ) {
-    log('BeamTo: ${routeInformation.location}');
-  }
 
   static final routeInformationParser = BeamerParser();
 

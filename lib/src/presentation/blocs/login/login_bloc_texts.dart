@@ -1,8 +1,5 @@
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:injectable/injectable.dart';
-import 'package:smartstruct/smartstruct.dart';
-
-part 'login_bloc_texts.mapper.g.dart';
 
 class LoginBlocTexts {
   LoginBlocTexts({
@@ -14,7 +11,12 @@ class LoginBlocTexts {
   final String validatorEmail;
 }
 
-@Mapper(useInjection: true)
-abstract class LoginBlocTextsMapper {
-  LoginBlocTexts fromMessages(Messages messages);
+@lazySingleton
+class LoginBlocTextsMapper {
+  LoginBlocTexts fromMessages(Messages messages) {
+    return LoginBlocTexts(
+      validatorRequired: messages.validatorRequired,
+      validatorEmail: messages.validatorEmail,
+    );
+  }
 }

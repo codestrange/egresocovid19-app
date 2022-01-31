@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'locale_bloc.dart';
@@ -148,14 +149,14 @@ class _$_LocaleEventChange implements _LocaleEventChange {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocaleEventChange &&
-            (identical(other.locale, locale) ||
-                const DeepCollectionEquality().equals(other.locale, locale)));
+        (other.runtimeType == runtimeType &&
+            other is _LocaleEventChange &&
+            const DeepCollectionEquality().equals(other.locale, locale));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locale);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
 
   @JsonKey(ignore: true)
   @override
@@ -224,7 +225,7 @@ abstract class _LocaleEventChange implements LocaleEvent {
       _$_LocaleEventChange;
 
   @override
-  String get locale => throw _privateConstructorUsedError;
+  String get locale;
   @override
   @JsonKey(ignore: true)
   _$LocaleEventChangeCopyWith<_LocaleEventChange> get copyWith =>
@@ -366,14 +367,14 @@ class _$_LocaleStateChanged implements _LocaleStateChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocaleStateChanged &&
-            (identical(other.locale, locale) ||
-                const DeepCollectionEquality().equals(other.locale, locale)));
+        (other.runtimeType == runtimeType &&
+            other is _LocaleStateChanged &&
+            const DeepCollectionEquality().equals(other.locale, locale));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locale);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
 
   @JsonKey(ignore: true)
   @override
@@ -442,7 +443,7 @@ abstract class _LocaleStateChanged implements LocaleState {
       _$_LocaleStateChanged;
 
   @override
-  Locale get locale => throw _privateConstructorUsedError;
+  Locale get locale;
   @override
   @JsonKey(ignore: true)
   _$LocaleStateChangedCopyWith<_LocaleStateChanged> get copyWith =>
