@@ -21,8 +21,10 @@ Future<void> main() async {
       await Hive.initFlutter();
       await configureDependencies();
       await GetIt.I<IAuthService>().recoverSession();
-      Bloc.observer = GetIt.I();
-      runApp(App());
+      BlocOverrides.runZoned(
+        () => runApp(App()),
+        blocObserver: GetIt.I(),
+      );
     },
     (error, stackTrace) {
       log(error.toString(), stackTrace: stackTrace);

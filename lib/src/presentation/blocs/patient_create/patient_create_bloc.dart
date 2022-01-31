@@ -109,14 +109,14 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final province = InputBloc<ProvinceEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validator: GeneralRequired(texts.validatorRequired),
+    validator: Required(texts.validatorRequired),
   );
 
   @override
   late final municipality = InputBloc<MunicipalityEntity?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validator: GeneralRequired(texts.validatorRequired),
+    validator: Required(texts.validatorRequired),
   );
 
   @override
@@ -150,14 +150,14 @@ class PatientCreateBloc extends IPatientCreateBloc {
   late final sex = InputBloc<Sex?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validator: GeneralRequired(texts.validatorRequired),
+    validator: Required(texts.validatorRequired),
   );
 
   @override
   late final skinColor = InputBloc<SkinColor?>(
     pureValue: null,
     validationType: ValidationType.explicit,
-    validator: GeneralRequired(texts.validatorRequired),
+    validator: Required(texts.validatorRequired),
   );
 
   @override

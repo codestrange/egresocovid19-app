@@ -27,19 +27,19 @@ class LocaleBloc extends ILocaleBloc {
                       Messages.supportedLocales.first,
                 ),
           ),
-        );
+        ) {
+    on<LocaleEvent>((event, emit) {
+      localeService.setLocale(event.locale);
+      emit(
+        LocaleState.changed(
+          locale: Messages.supportedLocales
+                  .where((e) => e.languageCode == event.locale)
+                  .firstOrNull ??
+              Messages.supportedLocales.first,
+        ),
+      );
+    });
+  }
 
   final ILocaleService localeService;
-
-  @override
-  Stream<LocaleState> mapEventToState(LocaleEvent event) async* {
-    // ignore: unawaited_futures
-    localeService.setLocale(event.locale);
-    yield LocaleState.changed(
-      locale: Messages.supportedLocales
-              .where((e) => e.languageCode == event.locale)
-              .firstOrNull ??
-          Messages.supportedLocales.first,
-    );
-  }
 }

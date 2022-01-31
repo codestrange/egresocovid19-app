@@ -612,6 +612,8 @@ class _TreatmentsReceivedField extends StatelessWidget {
 }
 
 class _ContactsThirdLevelPositivesField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -621,9 +623,7 @@ class _ContactsThirdLevelPositivesField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsThirdLevelPositives.dirty(
           int.tryParse(
             value.trim(),
@@ -635,6 +635,8 @@ class _ContactsThirdLevelPositivesField extends StatelessWidget {
 }
 
 class _ContactsThirdLevelField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -644,9 +646,7 @@ class _ContactsThirdLevelField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoThirdLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsThirdLevel.dirty(
           int.tryParse(
             value.trim(),
@@ -658,6 +658,8 @@ class _ContactsThirdLevelField extends StatelessWidget {
 }
 
 class _ContactsSecondLevelPositivesField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -667,9 +669,7 @@ class _ContactsSecondLevelPositivesField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsSecondLevelPositives.dirty(
           int.tryParse(
             value.trim(),
@@ -681,6 +681,8 @@ class _ContactsSecondLevelPositivesField extends StatelessWidget {
 }
 
 class _ContactsSecondLevelField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -690,9 +692,7 @@ class _ContactsSecondLevelField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoSecondLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsSecondLevel.dirty(
           int.tryParse(
             value.trim(),
@@ -704,6 +704,8 @@ class _ContactsSecondLevelField extends StatelessWidget {
 }
 
 class _ContactsFirstLevelPositivesField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -713,9 +715,7 @@ class _ContactsFirstLevelPositivesField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoCount,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsFirstLevelPositives.dirty(
           int.tryParse(
             value.trim(),
@@ -727,6 +727,8 @@ class _ContactsFirstLevelPositivesField extends StatelessWidget {
 }
 
 class _ContactsFirstLevelField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -736,9 +738,7 @@ class _ContactsFirstLevelField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoFirstLevel,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.contactsFirstLevel.dirty(
           int.tryParse(
             value.trim(),
@@ -782,6 +782,8 @@ class _IncomesField extends StatelessWidget {
 }
 
 class _HospitalizationTimeField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -790,7 +792,7 @@ class _HospitalizationTimeField extends StatelessWidget {
       builder: (context, state) => TextInputWidget(
         labelText: Messages.of(context)!.patientEditEgresoCompactForm,
         errorText: state.error,
-        controller: TextEditing.fromValue(state.value ?? ''),
+        controller: _controller..setValue(state.value ?? ''),
         onChanged: (value) => form.hospitalizationTime.dirty(
           value.trim(),
         ),
@@ -849,6 +851,8 @@ class _FormOfContagionField extends StatelessWidget {
 }
 
 class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -870,9 +874,7 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
             labelText: Messages.of(context)!.patientEditEgresoDaysCount,
             keyboardType: TextInputType.number,
             errorText: state.error,
-            controller: TextEditing.fromValue(
-              state.value == null ? '' : state.value.toString(),
-            ),
+            controller: _controller..setValue(state.value?.toString() ?? ''),
             onChanged: (value) =>
                 form.timeFromDiagnosisToNegativeOrDischarge.dirty(
               int.tryParse(
@@ -887,6 +889,8 @@ class _TimeFromDiagnosisToNegativeOrDischargeField extends StatelessWidget {
 }
 
 class _NumberPcrPerformedField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -896,9 +900,7 @@ class _NumberPcrPerformedField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoNumberPcrPerformed,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.numberPcrPerformed.dirty(
           int.tryParse(
             value.trim(),
@@ -910,6 +912,8 @@ class _NumberPcrPerformedField extends StatelessWidget {
 }
 
 class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -920,9 +924,7 @@ class _DaysFromSymptomsToDiagnosisField extends StatelessWidget {
             Messages.of(context)!.patientEditEgresoDaysFromSymptomsToDiagnosis,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.daysFromSymptomsToDiagnosis.dirty(
           int.tryParse(
             value.trim(),
@@ -966,6 +968,8 @@ class _DiagnosisWayField extends StatelessWidget {
 }
 
 class _DurationOfSymptomsField extends StatelessWidget {
+  final _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientEgresoEditFormBloc>();
@@ -975,9 +979,7 @@ class _DurationOfSymptomsField extends StatelessWidget {
         labelText: Messages.of(context)!.patientEditEgresoDurationOfSymptoms,
         keyboardType: TextInputType.number,
         errorText: state.error,
-        controller: TextEditing.fromValue(
-          state.value == null ? '' : state.value.toString(),
-        ),
+        controller: _controller..setValue(state.value?.toString() ?? ''),
         onChanged: (value) => form.durationOfSymptoms.dirty(
           int.tryParse(
             value.trim(),
