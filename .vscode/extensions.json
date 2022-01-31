@@ -5,9 +5,7 @@
         "dart-code.dart-code",
         "dart-code.flutter",
         "felixangelov.bloc",
-        "kaiqun.build-runner",
         "usernamehw.errorlens",
-        "aksharpatel47.vscode-flutter-helper",
-        "jeroen-meijer.pubspec-assist"
+        "aksharpatel47.vscode-flutter-helper"
     ]
 }

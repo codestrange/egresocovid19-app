@@ -1,5 +1,4 @@
 import 'package:beamer/beamer.dart';
-import 'package:egresocovid19/src/presentation/blocs/auth/auth_bloc.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/routes/routes.dart';

@@ -1,6 +1,5 @@
 import 'package:egresocovid19/src/presentation/blocs/autocomplete/autocomplete_bloc.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class StringListInputWidget extends StatefulWidget {

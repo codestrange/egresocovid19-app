@@ -1,9 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/domain/entities/entities.dart';
-import 'package:egresocovid19/src/domain/enums/diagnosis_way_enum.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
-import 'package:egresocovid19/src/presentation/blocs/patient_egreso_edit_form/patient_egreso_edit_form_bloc.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:egresocovid19/src/presentation/widgets/widgets.dart';

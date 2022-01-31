@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 typedef AutoCompleteOverlayItemBuilder = Widget Function(
   BuildContext context,
@@ -46,7 +44,7 @@ class AutoCompleteTextField<T> extends StatefulWidget {
   final Stream<List<T>> suggestionsStream;
   final StringCallback? onTextChanged;
   final StringCallback? onTextSubmitted;
-  final Function? onTextFieldTapped;
+  final void Function()? onTextFieldTapped;
   final String Function(T)? textFromSuggestion;
   // final T Function(String) suggestionFromName;
   final ValueSetter<bool>? onFocusChanged;
@@ -235,7 +233,7 @@ class SimpleAutoCompleteTextField extends StatelessWidget {
   final Stream<List<String>> suggestionsStream;
   final StringCallback? onTextChanged;
   final StringCallback? onTextSubmitted;
-  final Function? onTextFieldTapped;
+  final void Function()? onTextFieldTapped;
   final ValueSetter<bool>? onFocusChanged;
   final Function(dynamic) onItemSelected;
   final AutoCompleteOverlayItemBuilder itemBuilder;
