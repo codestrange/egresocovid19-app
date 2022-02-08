@@ -1,3 +1,6 @@
+
+
+
 import 'messages.dart';
 
 /// The translations for Spanish Castilian (`es`).
@@ -14,8 +17,7 @@ class MessagesEs extends Messages {
   String get homeDrawerTitle => 'Egreso\nCOVID-19';
 
   @override
-  String get homeWelcomeMessage =>
-      'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.';
+  String get homeWelcomeMessage => 'Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.';
 
   @override
   String get homeNotFoundMessage => 'No se encontraron pacientes';
@@ -51,8 +53,7 @@ class MessagesEs extends Messages {
   String get notFoundPageTitle => 'Página desconocida';
 
   @override
-  String get notFoundMessage =>
-      'Página desconocida, si considera que es un error contacte con el equipo de soporte.';
+  String get notFoundMessage => 'Página desconocida, si considera que es un error contacte con el equipo de soporte.';
 
   @override
   String get notFoundButtonText => 'Ir a la página inicial';
@@ -115,12 +116,10 @@ class MessagesEs extends Messages {
   String get patientCreateFieldBlockNumber => 'No. Manzana';
 
   @override
-  String get patientCreateFieldPersonalPathologicalHistory =>
-      'Patologías Personales';
+  String get patientCreateFieldPersonalPathologicalHistory => 'Patologías Personales';
 
   @override
-  String get patientCreateFieldFamilyPathologicalHistory =>
-      'Patologías Familiares';
+  String get patientCreateFieldFamilyPathologicalHistory => 'Patologías Familiares';
 
   @override
   String get patientCreateSuccessMessage => 'Información de paciente añadida.';
@@ -177,12 +176,10 @@ class MessagesEs extends Messages {
   String get patientViewFieldBlockNumber => 'No. Manzana';
 
   @override
-  String get patientViewFieldPersonalPathologicalHistory =>
-      'Patologías Personales';
+  String get patientViewFieldPersonalPathologicalHistory => 'Patologías Personales';
 
   @override
-  String get patientViewFieldFamilyPathologicalHistory =>
-      'Patologías Familiares';
+  String get patientViewFieldFamilyPathologicalHistory => 'Patologías Familiares';
 
   @override
   String get patientViewFieldPathologicalTitle => 'Patología';
@@ -191,12 +188,10 @@ class MessagesEs extends Messages {
   String get patientViewFieldPathologicalSubtitle => 'Tratamientos';
 
   @override
-  String get patientViewFieldPersonalPathologicalHistoryEmpty =>
-      'Sin patologías personales';
+  String get patientViewFieldPersonalPathologicalHistoryEmpty => 'Sin patologías personales';
 
   @override
-  String get patientViewFieldFamilyPathologicalHistoryEmpty =>
-      'Sin patologías familiares';
+  String get patientViewFieldFamilyPathologicalHistoryEmpty => 'Sin patologías familiares';
 
   @override
   String get patientViewFieldEgresoTitle => 'Información de Egreso';
@@ -208,69 +203,55 @@ class MessagesEs extends Messages {
   String get patientViewFieldEgresoSymptoms => 'Sintomas';
 
   @override
-  String get patientViewFieldEgresoDurationOfSymptoms =>
-      'Duración de los síntomas desde el 1ro';
+  String get patientViewFieldEgresoDurationOfSymptoms => 'Duración de los síntomas desde el 1ro';
 
   @override
   String get patientViewFieldEgresoDiagnosisWay => 'Forma de diagnóstico';
 
   @override
-  String get patientViewFieldEgresoTestUsedInDiagnosis =>
-      'Test usado en el diagnóstico';
+  String get patientViewFieldEgresoTestUsedInDiagnosis => 'Test usado en el diagnóstico';
 
   @override
-  String get patientViewFieldEgresoDaysFromSymptomsToDiagnosis =>
-      'Cantidad de días entre el inicio de los síntomas y el diagnóstico';
+  String get patientViewFieldEgresoDaysFromSymptomsToDiagnosis => 'Cantidad de días entre el inicio de los síntomas y el diagnóstico';
 
   @override
-  String get patientViewFieldEgresoNumberPcrPerformed =>
-      'Número de Test/PCR realizados';
+  String get patientViewFieldEgresoNumberPcrPerformed => 'Número de Test/PCR realizados';
 
   @override
-  String get patientViewFieldEgresoTimeFromDiagnosisToNegativeOrDischarge =>
-      'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
+  String get patientViewFieldEgresoTimeFromDiagnosisToNegativeOrDischarge => 'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
 
   @override
   String get patientViewFieldEgresoFormOfContagion => 'Forma de contagio';
 
   @override
-  String get patientViewFieldEgresoWasHePartOfAnEvent =>
-      '¿Formó parte de un Evento?';
+  String get patientViewFieldEgresoWasHePartOfAnEvent => '¿Formó parte de un Evento?';
 
   @override
-  String get patientViewFieldEgresoDidHeWorkInTheAttentionToPositiveCases =>
-      '¿Trabajaba en la atención a casos positivos?';
+  String get patientViewFieldEgresoDidHeWorkInTheAttentionToPositiveCases => '¿Trabajaba en la atención a casos positivos?';
 
   @override
-  String get patientViewFieldEgresoHospitalizationTime =>
-      'Tiempo de hospitalización';
+  String get patientViewFieldEgresoHospitalizationTime => 'Tiempo de hospitalización';
 
   @override
   String get patientViewFieldEgresoIncomes => 'Ingresos';
 
   @override
-  String get patientViewFieldEgresoContactsFirstLevel =>
-      'Contactos de 1er anillo';
+  String get patientViewFieldEgresoContactsFirstLevel => 'Contactos de 1er anillo';
 
   @override
-  String get patientViewFieldEgresoContactsFirstLevelPositives =>
-      'Contactos de 1er anillo positivos';
+  String get patientViewFieldEgresoContactsFirstLevelPositives => 'Contactos de 1er anillo positivos';
 
   @override
-  String get patientViewFieldEgresoContactsSecondLevel =>
-      'Contactos de 2do anillo';
+  String get patientViewFieldEgresoContactsSecondLevel => 'Contactos de 2do anillo';
 
   @override
-  String get patientViewFieldEgresoContactsSecondLevelPositives =>
-      'Contactos de 2do anillo positivos';
+  String get patientViewFieldEgresoContactsSecondLevelPositives => 'Contactos de 2do anillo positivos';
 
   @override
-  String get patientViewFieldEgresoContactsThirdLevel =>
-      'Contactos de 3er anillo';
+  String get patientViewFieldEgresoContactsThirdLevel => 'Contactos de 3er anillo';
 
   @override
-  String get patientViewFieldEgresoContactsThirdLevelPositives =>
-      'Contactos de 3er anillo positivos';
+  String get patientViewFieldEgresoContactsThirdLevelPositives => 'Contactos de 3er anillo positivos';
 
   @override
   String get patientViewFieldEgresoTreatmentsReceived => 'Tratamiento recibido';
@@ -282,8 +263,7 @@ class MessagesEs extends Messages {
   String get patientViewFieldEgresoProphylaxis => 'Realizó profilaxis con';
 
   @override
-  String get patientViewFieldEgresoAnotherVaccineAgainstCovid =>
-      'Otra vacuna anti COVID-19';
+  String get patientViewFieldEgresoAnotherVaccineAgainstCovid => 'Otra vacuna anti COVID-19';
 
   @override
   String get patientViewFieldEgresoAftermath => 'Secuelas';
@@ -292,8 +272,7 @@ class MessagesEs extends Messages {
   String get patientViewFieldEgresoOthersAftermath => 'Otras secuelas';
 
   @override
-  String get patientViewErrorMessage =>
-      'Ha ocurrido un error durante la obtención de la información del paciente.';
+  String get patientViewErrorMessage => 'Ha ocurrido un error durante la obtención de la información del paciente.';
 
   @override
   String get patientViewErrorRetry => 'Reintentar';
@@ -305,16 +284,13 @@ class MessagesEs extends Messages {
   String get patientEditEgresoAppBarTitle => 'Editar Información de Egreso';
 
   @override
-  String get patientEditEgresoErrorSaveMessage =>
-      'Ocurrio un error al guardar los datos.';
+  String get patientEditEgresoErrorSaveMessage => 'Ocurrio un error al guardar los datos.';
 
   @override
-  String get patientEditEgresoErrorFetchMessage =>
-      'Ha ocurrido un error al cargar los datos.';
+  String get patientEditEgresoErrorFetchMessage => 'Ha ocurrido un error al cargar los datos.';
 
   @override
-  String get patientEditEgresoSuccessMessage =>
-      'Información de egreso actualizada.';
+  String get patientEditEgresoSuccessMessage => 'Información de egreso actualizada.';
 
   @override
   String get patientEditEgresoRetry => 'Reintentar';
@@ -329,12 +305,10 @@ class MessagesEs extends Messages {
   String get patientEditEgresoFormOfContagion => 'Forma de Contagio';
 
   @override
-  String get patientEditEgresoHospitalizationTime =>
-      'Tiempo de Hospitalización';
+  String get patientEditEgresoHospitalizationTime => 'Tiempo de Hospitalización';
 
   @override
-  String get patientEditEgresoHospitalizationTimeDesc =>
-      'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, y falleció - 2C3G1CrF.';
+  String get patientEditEgresoHospitalizationTimeDesc => 'Para el tiempo de hospitalización se recomienda la forma compacta número inicial del servicio. Ejemplo:\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, 2 grave, 3 cuidado, alta - 2C3G1Cr2G3C.\nUn paciente que estuvo 2 días en cuidado, 3 grave uno crítico, y falleció - 2C3G1CrF.';
 
   @override
   String get patientEditEgresoIncomes => 'Ingreso';
@@ -394,38 +368,31 @@ class MessagesEs extends Messages {
   String get patientEditEgresoCompactForm => 'Forma Compacta';
 
   @override
-  String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases =>
-      '¿Trabajó en la atención de casos positivos?';
+  String get patientEditEgresoDidHeWorkInTheAttentionToPositiveCases => '¿Trabajó en la atención de casos positivos?';
 
   @override
-  String get patientEditEgresoWasHePartOfAnEvent =>
-      '¿Fué parte de un evento de transmisión?';
+  String get patientEditEgresoWasHePartOfAnEvent => '¿Fué parte de un evento de transmisión?';
 
   @override
-  String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge =>
-      'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
+  String get patientEditEgresoTimeFromDiagnosisToNegativeOrDischarge => 'Tiempo tardado en negativizar o en recibir el alta clínica a partir del diagnóstico';
 
   @override
   String get patientEditEgresoDaysCount => 'Cant. de días';
 
   @override
-  String get patientEditEgresoNumberPcrPerformed =>
-      'Número de Tests/Pcr realizados';
+  String get patientEditEgresoNumberPcrPerformed => 'Número de Tests/Pcr realizados';
 
   @override
-  String get patientEditEgresoDaysFromSymptomsToDiagnosis =>
-      'Días con síntomas hasta diagnóstico';
+  String get patientEditEgresoDaysFromSymptomsToDiagnosis => 'Días con síntomas hasta diagnóstico';
 
   @override
-  String get patientEditEgresoTestUsedInDiagnosis =>
-      'Test usado en el Diagnóstico';
+  String get patientEditEgresoTestUsedInDiagnosis => 'Test usado en el Diagnóstico';
 
   @override
   String get patientEditEgresoDiagnosisWay => 'Forma de diagnóstico';
 
   @override
-  String get patientEditEgresoDurationOfSymptoms =>
-      'Duración de los síntomas (en días)';
+  String get patientEditEgresoDurationOfSymptoms => 'Duración de los síntomas (en días)';
 
   @override
   String get patientEditEgresoSymptomp => 'Síntoma';
@@ -446,8 +413,7 @@ class MessagesEs extends Messages {
   String get patientEditBasicErrorMessage => 'Ha ocurrido un error';
 
   @override
-  String get patientEditBasicSuccessMessage =>
-      'Información de paciente actualizada.';
+  String get patientEditBasicSuccessMessage => 'Información de paciente actualizada.';
 
   @override
   String get patientEditBasicErrorButtonText => 'Recargar página';
@@ -501,16 +467,13 @@ class MessagesEs extends Messages {
   String get patientEditBasicBlockInputLabelText => 'No. de Manzana*';
 
   @override
-  String get patientEditBasicPathologicalHistoryInputLabelText =>
-      'Patologías Personales';
+  String get patientEditBasicPathologicalHistoryInputLabelText => 'Patologías Personales';
 
   @override
-  String get patientEditBasicFamilyPathologicalHistoryInputLabelText =>
-      'Patologías Familiares*';
+  String get patientEditBasicFamilyPathologicalHistoryInputLabelText => 'Patologías Familiares*';
 
   @override
-  String get multiselectDropDownWidgetTitle =>
-      'Seleccione una o varias opciones';
+  String get multiselectDropDownWidgetTitle => 'Seleccione una o varias opciones';
 
   @override
   String get multiselectDropDownWidgetCancel => 'Cancelar';
@@ -531,19 +494,16 @@ class MessagesEs extends Messages {
   String get provinceInputWidgetDefaultLabelText => 'Provincia';
 
   @override
-  String get pathologicalHistoryInputWidgetDefaultLabelText =>
-      'Tratamiento Realizado';
+  String get pathologicalHistoryInputWidgetDefaultLabelText => 'Tratamiento Realizado';
 
   @override
   String get incomeDaysInputWidgetDefaultLabelText => 'Cant. de días';
 
   @override
-  String get incomeInputWidgetNumberError =>
-      'La cantidad de días debe ser un número';
+  String get incomeInputWidgetNumberError => 'La cantidad de días debe ser un número';
 
   @override
-  String get incomeInputWidgetNegativeError =>
-      'La cantidad de días debe ser mayor que 0';
+  String get incomeInputWidgetNegativeError => 'La cantidad de días debe ser mayor que 0';
 
   @override
   String get incomeInputWidgetDays => 'días';
@@ -592,6 +552,9 @@ class MessagesEs extends Messages {
 
   @override
   String get enumSexOther => 'Otro';
+
+  @override
+  String get enumBloodTypeUnknown => 'Desconocido';
 
   @override
   String get enumBloodTypeABminus => 'AB-';
@@ -666,8 +629,7 @@ class MessagesEs extends Messages {
   String get enumTestDiagnosisPCR => 'PCR-RT';
 
   @override
-  String get enumTestDiagnosisIgMIgGAntibodyTest =>
-      'Test de anticuerpo IgM/IgG';
+  String get enumTestDiagnosisIgMIgGAntibodyTest => 'Test de anticuerpo IgM/IgG';
 
   @override
   String get enumAftermathFatigue => 'Fatiga';
@@ -682,12 +644,10 @@ class MessagesEs extends Messages {
   String get enumAftermathRespiratorySymptoms => 'Síntomas Respiratorios';
 
   @override
-  String get enumAftermathMuscleBoneNeuropathicPain =>
-      'Dolores musculares y óseos';
+  String get enumAftermathMuscleBoneNeuropathicPain => 'Dolores musculares y óseos';
 
   @override
-  String get enumAftermathPsychologicalPsychiatricDisorders =>
-      'Desorden Psicológico-Psiquiátrico';
+  String get enumAftermathPsychologicalPsychiatricDisorders => 'Desorden Psicológico-Psiquiátrico';
 
   @override
   String get enumAftermathSexualDisorders => 'Desorden Sexual';
@@ -702,8 +662,7 @@ class MessagesEs extends Messages {
   String get enumAftermathPersistenceOfLossOfAppetite => 'Pérdida del Apetito';
 
   @override
-  String get enumAftermathGastrointestinalSymptoms =>
-      'Síntomas Gastrointestinales';
+  String get enumAftermathGastrointestinalSymptoms => 'Síntomas Gastrointestinales';
 
   @override
   String get enumAftermathDizziness => 'Mareos';
@@ -727,8 +686,7 @@ class MessagesEs extends Messages {
   String get enumTreatmentHeberferon => 'Heberferón';
 
   @override
-  String get enumTreatmentFraxiparinLowMolecularWeightHeparins =>
-      'Fraxiparina/Heparinas de bajo peso molecular';
+  String get enumTreatmentFraxiparinLowMolecularWeightHeparins => 'Fraxiparina/Heparinas de bajo peso molecular';
 
   @override
   String get enumTreatmentNasalferon => 'Nasalferón';

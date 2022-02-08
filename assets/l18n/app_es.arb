@@ -203,6 +203,7 @@
     "enumSexFemale": "Femenino",
     "enumSexOther": "Otro",
 
+    "enumBloodTypeUnknown": "Desconocido",
     "enumBloodTypeABminus": "AB-",
     "enumBloodTypeABplus": "AB+",
     "enumBloodTypeAminus": "A-",

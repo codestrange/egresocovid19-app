@@ -22,7 +22,7 @@ class PatientEntity with _$PatientEntity {
     required String surgery,
     required String popularCouncil,
     required String neighborhood,
-    required int blockNumber,
+    required int? blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
   }) = PatientGetEntity;
@@ -42,7 +42,7 @@ class PatientEntity with _$PatientEntity {
     required String surgery,
     required String popularCouncil,
     required String neighborhood,
-    required int blockNumber,
+    required int? blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
     required DischargeDataEntity dischargeOfPositiveCasesOfCovid19,
@@ -61,7 +61,7 @@ class PatientEntity with _$PatientEntity {
     required String surgery,
     required String popularCouncil,
     required String neighborhood,
-    required int blockNumber,
+    required int? blockNumber,
     required List<PathologicalEntity> personalPathologicalHistory,
     required List<PathologicalEntity> familyPathologicalHistory,
   }) = PatientPostEntity;

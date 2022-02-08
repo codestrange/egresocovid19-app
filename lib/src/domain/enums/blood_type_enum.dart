@@ -2,19 +2,21 @@ import 'package:json_annotation/json_annotation.dart';
 
 enum BloodType {
   @JsonValue(0)
-  Aplus,
+  Unknown,
   @JsonValue(1)
-  Bplus,
+  Aplus,
   @JsonValue(2)
-  ABplus,
+  Bplus,
   @JsonValue(3)
-  Oplus,
+  ABplus,
   @JsonValue(4)
-  Aminus,
+  Oplus,
   @JsonValue(5)
-  Bminus,
+  Aminus,
   @JsonValue(6)
-  ABminus,
+  Bminus,
   @JsonValue(7)
+  ABminus,
+  @JsonValue(8)
   Ominus,
 }

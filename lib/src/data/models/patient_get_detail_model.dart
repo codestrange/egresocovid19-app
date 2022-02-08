@@ -43,7 +43,7 @@ class PatientGetDetailModel {
   final String surgery;
   final String popularCouncil;
   final String neighborhood;
-  final int blockNumber;
+  final int? blockNumber;
   final List<PathologicalModel> personalPathologicalHistory;
   final List<PathologicalModel> familyPathologicalHistory;
   final DischargeDataGetModel dischargeOfPositiveCasesOfCovid19;

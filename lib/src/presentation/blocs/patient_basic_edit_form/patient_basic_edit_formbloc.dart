@@ -93,7 +93,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
-    validator: StringIsInt(texts.validatorInteger),
+    validator: StringEquals('', '') | StringIsInt(texts.validatorInteger),
   );
 
   @override

@@ -208,6 +208,8 @@ extension SkinColorExtension on SkinColor {
 extension BloodTypeExtention on BloodType {
   String visualName(BuildContext context) {
     switch (this) {
+      case BloodType.Unknown:
+        return Messages.of(context)!.enumBloodTypeUnknown;
       case BloodType.ABminus:
         return Messages.of(context)!.enumBloodTypeABminus;
       case BloodType.ABplus:

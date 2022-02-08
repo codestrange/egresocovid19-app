@@ -34,7 +34,7 @@ class _$PatientEntityTearOff {
       required String surgery,
       required String popularCouncil,
       required String neighborhood,
-      required int blockNumber,
+      required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
     return PatientGetEntity(
@@ -75,7 +75,7 @@ class _$PatientEntityTearOff {
       required String surgery,
       required String popularCouncil,
       required String neighborhood,
-      required int blockNumber,
+      required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
       required DischargeDataEntity dischargeOfPositiveCasesOfCovid19}) {
@@ -116,7 +116,7 @@ class _$PatientEntityTearOff {
       required String surgery,
       required String popularCouncil,
       required String neighborhood,
-      required int blockNumber,
+      required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
     return PatientPostEntity(
@@ -185,6 +185,7 @@ const $PatientEntity = _$PatientEntityTearOff();
 /// @nodoc
 mixin _$PatientEntity {
   BloodType? get bloodType => throw _privateConstructorUsedError;
+  int? get blockNumber => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -204,7 +205,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         get,
@@ -224,7 +225,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
@@ -243,7 +244,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         post,
@@ -286,7 +287,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -306,7 +307,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -325,7 +326,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -368,7 +369,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -388,7 +389,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -407,7 +408,7 @@ mixin _$PatientEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -469,7 +470,7 @@ abstract class $PatientEntityCopyWith<$Res> {
   factory $PatientEntityCopyWith(
           PatientEntity value, $Res Function(PatientEntity) then) =
       _$PatientEntityCopyWithImpl<$Res>;
-  $Res call({BloodType? bloodType});
+  $Res call({BloodType? bloodType, int? blockNumber});
 }
 
 /// @nodoc
@@ -484,12 +485,17 @@ class _$PatientEntityCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bloodType = freezed,
+    Object? blockNumber = freezed,
   }) {
     return _then(_value.copyWith(
       bloodType: bloodType == freezed
           ? _value.bloodType
           : bloodType // ignore: cast_nullable_to_non_nullable
               as BloodType?,
+      blockNumber: blockNumber == freezed
+          ? _value.blockNumber
+          : blockNumber // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -517,7 +523,7 @@ abstract class $PatientGetEntityCopyWith<$Res>
       String surgery,
       String popularCouncil,
       String neighborhood,
-      int blockNumber,
+      int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory});
 }
@@ -618,7 +624,7 @@ class _$PatientGetEntityCopyWithImpl<$Res>
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       personalPathologicalHistory: personalPathologicalHistory == freezed
           ? _value.personalPathologicalHistory
           : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
@@ -685,7 +691,7 @@ class _$PatientGetEntity implements PatientGetEntity {
   @override
   final String neighborhood;
   @override
-  final int blockNumber;
+  final int? blockNumber;
   @override
   final List<PathologicalEntity> personalPathologicalHistory;
   @override
@@ -775,7 +781,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         get,
@@ -795,7 +801,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
@@ -814,7 +820,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         post,
@@ -878,7 +884,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -898,7 +904,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -917,7 +923,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -981,7 +987,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -1001,7 +1007,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -1020,7 +1026,7 @@ class _$PatientGetEntity implements PatientGetEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -1124,7 +1130,7 @@ abstract class PatientGetEntity implements PatientEntity {
           required String surgery,
           required String popularCouncil,
           required String neighborhood,
-          required int blockNumber,
+          required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
       _$PatientGetEntity;
@@ -1145,7 +1151,8 @@ abstract class PatientGetEntity implements PatientEntity {
   String get surgery;
   String get popularCouncil;
   String get neighborhood;
-  int get blockNumber;
+  @override
+  int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
   List<PathologicalEntity> get familyPathologicalHistory;
   @override
@@ -1177,7 +1184,7 @@ abstract class $PatientGetDetailEntityCopyWith<$Res>
       String surgery,
       String popularCouncil,
       String neighborhood,
-      int blockNumber,
+      int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory,
       DischargeDataEntity dischargeOfPositiveCasesOfCovid19});
@@ -1282,7 +1289,7 @@ class _$PatientGetDetailEntityCopyWithImpl<$Res>
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       personalPathologicalHistory: personalPathologicalHistory == freezed
           ? _value.personalPathologicalHistory
           : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
@@ -1363,7 +1370,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
   @override
   final String neighborhood;
   @override
-  final int blockNumber;
+  final int? blockNumber;
   @override
   final List<PathologicalEntity> personalPathologicalHistory;
   @override
@@ -1461,7 +1468,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         get,
@@ -1481,7 +1488,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
@@ -1500,7 +1507,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         post,
@@ -1565,7 +1572,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -1585,7 +1592,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -1604,7 +1611,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -1669,7 +1676,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -1689,7 +1696,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -1708,7 +1715,7 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -1813,7 +1820,7 @@ abstract class PatientGetDetailEntity implements PatientEntity {
           required String surgery,
           required String popularCouncil,
           required String neighborhood,
-          required int blockNumber,
+          required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory,
           required DischargeDataEntity dischargeOfPositiveCasesOfCovid19}) =
@@ -1835,7 +1842,8 @@ abstract class PatientGetDetailEntity implements PatientEntity {
   String get surgery;
   String get popularCouncil;
   String get neighborhood;
-  int get blockNumber;
+  @override
+  int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
   List<PathologicalEntity> get familyPathologicalHistory;
   DischargeDataEntity get dischargeOfPositiveCasesOfCovid19;
@@ -1866,7 +1874,7 @@ abstract class $PatientPostEntityCopyWith<$Res>
       String surgery,
       String popularCouncil,
       String neighborhood,
-      int blockNumber,
+      int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory});
 }
@@ -1957,7 +1965,7 @@ class _$PatientPostEntityCopyWithImpl<$Res>
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       personalPathologicalHistory: personalPathologicalHistory == freezed
           ? _value.personalPathologicalHistory
           : personalPathologicalHistory // ignore: cast_nullable_to_non_nullable
@@ -2018,7 +2026,7 @@ class _$PatientPostEntity implements PatientPostEntity {
   @override
   final String neighborhood;
   @override
-  final int blockNumber;
+  final int? blockNumber;
   @override
   final List<PathologicalEntity> personalPathologicalHistory;
   @override
@@ -2104,7 +2112,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         get,
@@ -2124,7 +2132,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
@@ -2143,7 +2151,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         post,
@@ -2205,7 +2213,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -2225,7 +2233,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -2244,7 +2252,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -2306,7 +2314,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -2326,7 +2334,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -2345,7 +2353,7 @@ class _$PatientPostEntity implements PatientPostEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -2445,7 +2453,7 @@ abstract class PatientPostEntity implements PatientEntity {
           required String surgery,
           required String popularCouncil,
           required String neighborhood,
-          required int blockNumber,
+          required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
       _$PatientPostEntity;
@@ -2464,7 +2472,8 @@ abstract class PatientPostEntity implements PatientEntity {
   String get surgery;
   String get popularCouncil;
   String get neighborhood;
-  int get blockNumber;
+  @override
+  int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
   List<PathologicalEntity> get familyPathologicalHistory;
   @override
@@ -2743,7 +2752,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         get,
@@ -2763,7 +2772,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)
@@ -2782,7 +2791,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
         post,
@@ -2845,7 +2854,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -2865,7 +2874,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -2884,7 +2893,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -2947,7 +2956,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         get,
@@ -2967,7 +2976,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
             DischargeDataEntity dischargeOfPositiveCasesOfCovid19)?
@@ -2986,7 +2995,7 @@ class _$PatientPutEntity implements PatientPutEntity {
             String surgery,
             String popularCouncil,
             String neighborhood,
-            int blockNumber,
+            int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
         post,
@@ -3108,6 +3117,7 @@ abstract class PatientPutEntity implements PatientEntity {
   String? get surgery;
   String? get popularCouncil;
   String? get neighborhood;
+  @override
   int? get blockNumber;
   List<PathologicalEntity>? get personalPathologicalHistory;
   List<PathologicalEntity>? get familyPathologicalHistory;
