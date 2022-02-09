@@ -1,6 +1,7 @@
 import 'package:egresocovid19/src/domain/entities/entities.dart';
 import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/utils/utils.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lyform_validators/lyform_validators.dart';
@@ -81,118 +82,119 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
   @override
   late final InputBloc<List<Aftermath>?> aftermath = InputBloc(
     pureValue: initialDischargeData.aftermath,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<String?> anotherVaccineAgainstCovid = InputBloc(
     pureValue: initialDischargeData.anotherVaccineAgainstCovid,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<List<String>?> antibiotics = InputBloc(
     pureValue: initialDischargeData.antibiotics,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<int?> contactsFirstLevel = InputBloc(
     pureValue: initialDischargeData.contactsFirstLevel,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> contactsFirstLevelPositives = InputBloc(
     pureValue: initialDischargeData.contactsFirstLevelPositives,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> contactsSecondLevel = InputBloc(
     pureValue: initialDischargeData.contactsSecondLevel,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> contactsSecondLevelPositives = InputBloc(
     pureValue: initialDischargeData.contactsSecondLevelPositives,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> contactsThirdLevel = InputBloc(
     pureValue: initialDischargeData.contactsThirdLevel,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> contactsThirdLevelPositives = InputBloc(
     pureValue: initialDischargeData.contactsThirdLevelPositives,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<int?> daysFromSymptomsToDiagnosis = InputBloc(
     pureValue: initialDischargeData.daysFromSymptomsToDiagnosis,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<DateTime?> detectionDate = InputBloc(
     pureValue: initialDischargeData.detectionDate,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<DiagnosisWay?> diagnosisWay = InputBloc(
     pureValue: initialDischargeData.diagnosisWay,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<bool?> didHeWorkInTheAttentionToPositiveCases =
       InputBloc(
     pureValue: initialDischargeData.didHeWorkInTheAttentionToPositiveCases,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<int?> durationOfSymptoms = InputBloc(
     pureValue: initialDischargeData.durationOfSymptoms,
     validationType: ValidationType.explicit,
-    validator: IntNonNegative(texts.validatorIntegerNonNegative),
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
   late final InputBloc<Contagion?> formOfContagion = InputBloc(
     pureValue: initialDischargeData.formOfContagion,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<String?> hospitalizationTime = InputBloc(
     pureValue: initialDischargeData.hospitalizationTime,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<List<IncomeEntity>?> incomes = InputBloc(
     pureValue: initialDischargeData.incomes,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<int?> numberPcrPerformed = InputBloc(
     pureValue: initialDischargeData.numberPcrPerformed,
     validationType: ValidationType.explicit,
+    validator: NotValidator(Required<int?>(texts.validatorIntegerNonNegative)) |
+        IntNonNegative(texts.validatorIntegerNonNegative),
   );
 
   @override
@@ -233,25 +235,21 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
   @override
   late final InputBloc<List<String>?> othersAftermath = InputBloc(
     pureValue: initialDischargeData.othersAftermath,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<List<Prophylaxis>?> prophylaxis = InputBloc(
     pureValue: initialDischargeData.prophylaxis,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<List<String>?> symptoms = InputBloc(
     pureValue: initialDischargeData.symptoms,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<TestDiagnosis?> testUsedInDiagnosis = InputBloc(
     pureValue: initialDischargeData.testUsedInDiagnosis,
-    validationType: ValidationType.explicit,
   );
 
   @override
@@ -264,12 +262,10 @@ class PatientEgresoEditFormBloc extends IPatientEgresoEditFormBloc {
   @override
   late final InputBloc<List<Treatment>?> treatmentsReceived = InputBloc(
     pureValue: initialDischargeData.treatmentsReceived,
-    validationType: ValidationType.explicit,
   );
 
   @override
   late final InputBloc<bool?> wasHePartOfAnEvent = InputBloc(
     pureValue: initialDischargeData.wasHePartOfAnEvent,
-    validationType: ValidationType.explicit,
   );
 }
