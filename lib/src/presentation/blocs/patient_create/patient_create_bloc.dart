@@ -3,13 +3,13 @@ import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lyform_validators/lyform_validators.dart';
 
 export 'patient_create_bloc_texts.dart';
 
-abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
+abstract class IPatientCreateBloc
+    extends FormBloc<PatientGetEntity, ErrorEntity> {
   InputBloc<String> get firstName;
   InputBloc<String> get lastName;
   InputBloc<String> get ci;
@@ -184,7 +184,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
   final IPatientService patientService;
 
   @override
-  Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
+  Future<FormBlocState<PatientGetEntity, ErrorEntity>> onSubmmit() async {
     final response = await patientService.postPatient(
       patient: PatientPostEntity(
         firstname: firstName.state.value,
@@ -207,7 +207,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
     );
     return response.fold(
       (error) => FormErrorState(error),
-      (_) => const FormSuccessState(unit),
+      (patient) => FormSuccessState(patient),
     );
   }
 }

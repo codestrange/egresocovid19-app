@@ -60,9 +60,10 @@ class _PatientCreatePageInternal extends StatelessWidget {
           iconTheme: Theme.of(context).iconTheme,
           centerTitle: true,
         ),
-        body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
+        body:
+            FormBlocListener<IPatientCreateBloc, PatientGetEntity, ErrorEntity>(
           bloc: context.read(),
-          onSuccess: (_) {
+          onSuccess: (patient) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -73,7 +74,7 @@ class _PatientCreatePageInternal extends StatelessWidget {
                   ),
                 ),
               );
-            context.beamToNamed('/patients');
+            context.beamToNamed('/patients/${patient.id}');
           },
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
