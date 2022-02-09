@@ -1,5 +1,0 @@
-arb-dir: assets/l18n
-template-arb-file: app_es.arb
-output-localization-file: messages.dart
-output-class: Messages
-preferred-supported-locales: ['es']
