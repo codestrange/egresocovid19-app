@@ -34,10 +34,10 @@ class PatientPostModel {
   final SkinColor skinColor;
   final BloodType? bloodType;
   final String address;
-  final String polyclinic;
-  final String surgery;
-  final String popularCouncil;
-  final String neighborhood;
+  final String? polyclinic;
+  final String? surgery;
+  final String? popularCouncil;
+  final String? neighborhood;
   final int? blockNumber;
   final List<PathologicalModel> personalPathologicalHistory;
   final List<PathologicalModel> familyPathologicalHistory;

@@ -383,7 +383,7 @@ class _PolyclinicInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<PolyclinicAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.polyclinic,
       builder: (context, state) => PolyclinicInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -409,7 +409,7 @@ class _SurgeryInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<SurgeryAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.surgery,
       builder: (context, state) => SurgeryInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -435,7 +435,7 @@ class _PopularCouncilInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<PopularCouncilAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.popularCouncil,
       builder: (context, state) => PopularCouncilInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -461,7 +461,7 @@ class _NeighborhoodInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<NeighborhoodAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.neighborhood,
       builder: (context, state) => NeighborhoodInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,

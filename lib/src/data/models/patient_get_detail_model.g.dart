@@ -20,10 +20,10 @@ PatientGetDetailModel _$PatientGetDetailModelFromJson(
       skinColor: $enumDecode(_$SkinColorEnumMap, json['skinColor']),
       bloodType: $enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
       address: json['address'] as String,
-      polyclinic: json['polyclinic'] as String,
-      surgery: json['surgery'] as String,
-      popularCouncil: json['popularCouncil'] as String,
-      neighborhood: json['neighborhood'] as String,
+      polyclinic: json['polyclinic'] as String?,
+      surgery: json['surgery'] as String?,
+      popularCouncil: json['popularCouncil'] as String?,
+      neighborhood: json['neighborhood'] as String?,
       blockNumber: json['blockNumber'] as int?,
       personalPathologicalHistory:
           (json['personalPathologicalHistory'] as List<dynamic>)

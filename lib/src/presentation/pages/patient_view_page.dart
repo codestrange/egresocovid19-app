@@ -662,28 +662,28 @@ class _PatientViewBasicInfo extends StatelessWidget {
         ),
         ListTile(
           dense: true,
-          title: Text(patient.polyclinic),
+          title: Text(patient.polyclinic ?? Messages.of(context)!.unknown),
           subtitle: Text(
             Messages.of(context)!.patientViewFieldPolyclinic,
           ),
         ),
         ListTile(
           dense: true,
-          title: Text(patient.surgery),
+          title: Text(patient.surgery ?? Messages.of(context)!.unknown),
           subtitle: Text(
             Messages.of(context)!.patientViewFieldSurgery,
           ),
         ),
         ListTile(
           dense: true,
-          title: Text(patient.popularCouncil),
+          title: Text(patient.popularCouncil ?? Messages.of(context)!.unknown),
           subtitle: Text(
             Messages.of(context)!.patientViewFieldPopularCouncil,
           ),
         ),
         ListTile(
           dense: true,
-          title: Text(patient.neighborhood),
+          title: Text(patient.neighborhood ?? Messages.of(context)!.unknown),
           subtitle: Text(
             Messages.of(context)!.patientViewFieldNeighborhood,
           ),

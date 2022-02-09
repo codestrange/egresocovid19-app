@@ -1,6 +1,8 @@
 {
     "appName": "Egreso COVID-19",
 
+    "unknown": "Desconocido",
+
     "homePageTitle": "Inicio",
     "homeDrawerTitle": "Egreso\nCOVID-19",
     "homeWelcomeMessage": "Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.",

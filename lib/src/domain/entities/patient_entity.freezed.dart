@@ -30,10 +30,10 @@ class _$PatientEntityTearOff {
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
+      required String? polyclinic,
+      required String? surgery,
+      required String? popularCouncil,
+      required String? neighborhood,
       required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
@@ -71,10 +71,10 @@ class _$PatientEntityTearOff {
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
+      required String? polyclinic,
+      required String? surgery,
+      required String? popularCouncil,
+      required String? neighborhood,
       required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory,
@@ -112,10 +112,10 @@ class _$PatientEntityTearOff {
       required SkinColor skinColor,
       required BloodType? bloodType,
       required String address,
-      required String polyclinic,
-      required String surgery,
-      required String popularCouncil,
-      required String neighborhood,
+      required String? polyclinic,
+      required String? surgery,
+      required String? popularCouncil,
+      required String? neighborhood,
       required int? blockNumber,
       required List<PathologicalEntity> personalPathologicalHistory,
       required List<PathologicalEntity> familyPathologicalHistory}) {
@@ -185,6 +185,10 @@ const $PatientEntity = _$PatientEntityTearOff();
 /// @nodoc
 mixin _$PatientEntity {
   BloodType? get bloodType => throw _privateConstructorUsedError;
+  String? get polyclinic => throw _privateConstructorUsedError;
+  String? get surgery => throw _privateConstructorUsedError;
+  String? get popularCouncil => throw _privateConstructorUsedError;
+  String? get neighborhood => throw _privateConstructorUsedError;
   int? get blockNumber => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -201,10 +205,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -221,10 +225,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -240,10 +244,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -283,10 +287,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -303,10 +307,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -322,10 +326,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -365,10 +369,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -385,10 +389,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -404,10 +408,10 @@ mixin _$PatientEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -470,7 +474,13 @@ abstract class $PatientEntityCopyWith<$Res> {
   factory $PatientEntityCopyWith(
           PatientEntity value, $Res Function(PatientEntity) then) =
       _$PatientEntityCopyWithImpl<$Res>;
-  $Res call({BloodType? bloodType, int? blockNumber});
+  $Res call(
+      {BloodType? bloodType,
+      String? polyclinic,
+      String? surgery,
+      String? popularCouncil,
+      String? neighborhood,
+      int? blockNumber});
 }
 
 /// @nodoc
@@ -485,6 +495,10 @@ class _$PatientEntityCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bloodType = freezed,
+    Object? polyclinic = freezed,
+    Object? surgery = freezed,
+    Object? popularCouncil = freezed,
+    Object? neighborhood = freezed,
     Object? blockNumber = freezed,
   }) {
     return _then(_value.copyWith(
@@ -492,6 +506,22 @@ class _$PatientEntityCopyWithImpl<$Res>
           ? _value.bloodType
           : bloodType // ignore: cast_nullable_to_non_nullable
               as BloodType?,
+      polyclinic: polyclinic == freezed
+          ? _value.polyclinic
+          : polyclinic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      surgery: surgery == freezed
+          ? _value.surgery
+          : surgery // ignore: cast_nullable_to_non_nullable
+              as String?,
+      popularCouncil: popularCouncil == freezed
+          ? _value.popularCouncil
+          : popularCouncil // ignore: cast_nullable_to_non_nullable
+              as String?,
+      neighborhood: neighborhood == freezed
+          ? _value.neighborhood
+          : neighborhood // ignore: cast_nullable_to_non_nullable
+              as String?,
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
@@ -519,10 +549,10 @@ abstract class $PatientGetEntityCopyWith<$Res>
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
-      String polyclinic,
-      String surgery,
-      String popularCouncil,
-      String neighborhood,
+      String? polyclinic,
+      String? surgery,
+      String? popularCouncil,
+      String? neighborhood,
       int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory});
@@ -608,19 +638,19 @@ class _$PatientGetEntityCopyWithImpl<$Res>
       polyclinic: polyclinic == freezed
           ? _value.polyclinic
           : polyclinic // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       surgery: surgery == freezed
           ? _value.surgery
           : surgery // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       popularCouncil: popularCouncil == freezed
           ? _value.popularCouncil
           : popularCouncil // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       neighborhood: neighborhood == freezed
           ? _value.neighborhood
           : neighborhood // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
@@ -683,13 +713,13 @@ class _$PatientGetEntity implements PatientGetEntity {
   @override
   final String address;
   @override
-  final String polyclinic;
+  final String? polyclinic;
   @override
-  final String surgery;
+  final String? surgery;
   @override
-  final String popularCouncil;
+  final String? popularCouncil;
   @override
-  final String neighborhood;
+  final String? neighborhood;
   @override
   final int? blockNumber;
   @override
@@ -777,10 +807,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -797,10 +827,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -816,10 +846,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -880,10 +910,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -900,10 +930,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -919,10 +949,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -983,10 +1013,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1003,10 +1033,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -1022,10 +1052,10 @@ class _$PatientGetEntity implements PatientGetEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1126,10 +1156,10 @@ abstract class PatientGetEntity implements PatientEntity {
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
-          required String polyclinic,
-          required String surgery,
-          required String popularCouncil,
-          required String neighborhood,
+          required String? polyclinic,
+          required String? surgery,
+          required String? popularCouncil,
+          required String? neighborhood,
           required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
@@ -1147,10 +1177,14 @@ abstract class PatientGetEntity implements PatientEntity {
   @override
   BloodType? get bloodType;
   String get address;
-  String get polyclinic;
-  String get surgery;
-  String get popularCouncil;
-  String get neighborhood;
+  @override
+  String? get polyclinic;
+  @override
+  String? get surgery;
+  @override
+  String? get popularCouncil;
+  @override
+  String? get neighborhood;
   @override
   int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
@@ -1180,10 +1214,10 @@ abstract class $PatientGetDetailEntityCopyWith<$Res>
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
-      String polyclinic,
-      String surgery,
-      String popularCouncil,
-      String neighborhood,
+      String? polyclinic,
+      String? surgery,
+      String? popularCouncil,
+      String? neighborhood,
       int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory,
@@ -1273,19 +1307,19 @@ class _$PatientGetDetailEntityCopyWithImpl<$Res>
       polyclinic: polyclinic == freezed
           ? _value.polyclinic
           : polyclinic // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       surgery: surgery == freezed
           ? _value.surgery
           : surgery // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       popularCouncil: popularCouncil == freezed
           ? _value.popularCouncil
           : popularCouncil // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       neighborhood: neighborhood == freezed
           ? _value.neighborhood
           : neighborhood // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
@@ -1362,13 +1396,13 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
   @override
   final String address;
   @override
-  final String polyclinic;
+  final String? polyclinic;
   @override
-  final String surgery;
+  final String? surgery;
   @override
-  final String popularCouncil;
+  final String? popularCouncil;
   @override
-  final String neighborhood;
+  final String? neighborhood;
   @override
   final int? blockNumber;
   @override
@@ -1464,10 +1498,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -1484,10 +1518,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -1503,10 +1537,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -1568,10 +1602,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1588,10 +1622,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -1607,10 +1641,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1672,10 +1706,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1692,10 +1726,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -1711,10 +1745,10 @@ class _$PatientGetDetailEntity implements PatientGetDetailEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -1816,10 +1850,10 @@ abstract class PatientGetDetailEntity implements PatientEntity {
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
-          required String polyclinic,
-          required String surgery,
-          required String popularCouncil,
-          required String neighborhood,
+          required String? polyclinic,
+          required String? surgery,
+          required String? popularCouncil,
+          required String? neighborhood,
           required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory,
@@ -1838,10 +1872,14 @@ abstract class PatientGetDetailEntity implements PatientEntity {
   @override
   BloodType? get bloodType;
   String get address;
-  String get polyclinic;
-  String get surgery;
-  String get popularCouncil;
-  String get neighborhood;
+  @override
+  String? get polyclinic;
+  @override
+  String? get surgery;
+  @override
+  String? get popularCouncil;
+  @override
+  String? get neighborhood;
   @override
   int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
@@ -1870,10 +1908,10 @@ abstract class $PatientPostEntityCopyWith<$Res>
       SkinColor skinColor,
       BloodType? bloodType,
       String address,
-      String polyclinic,
-      String surgery,
-      String popularCouncil,
-      String neighborhood,
+      String? polyclinic,
+      String? surgery,
+      String? popularCouncil,
+      String? neighborhood,
       int? blockNumber,
       List<PathologicalEntity> personalPathologicalHistory,
       List<PathologicalEntity> familyPathologicalHistory});
@@ -1949,19 +1987,19 @@ class _$PatientPostEntityCopyWithImpl<$Res>
       polyclinic: polyclinic == freezed
           ? _value.polyclinic
           : polyclinic // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       surgery: surgery == freezed
           ? _value.surgery
           : surgery // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       popularCouncil: popularCouncil == freezed
           ? _value.popularCouncil
           : popularCouncil // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       neighborhood: neighborhood == freezed
           ? _value.neighborhood
           : neighborhood // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       blockNumber: blockNumber == freezed
           ? _value.blockNumber
           : blockNumber // ignore: cast_nullable_to_non_nullable
@@ -2018,13 +2056,13 @@ class _$PatientPostEntity implements PatientPostEntity {
   @override
   final String address;
   @override
-  final String polyclinic;
+  final String? polyclinic;
   @override
-  final String surgery;
+  final String? surgery;
   @override
-  final String popularCouncil;
+  final String? popularCouncil;
   @override
-  final String neighborhood;
+  final String? neighborhood;
   @override
   final int? blockNumber;
   @override
@@ -2108,10 +2146,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -2128,10 +2166,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2147,10 +2185,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -2209,10 +2247,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2229,10 +2267,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2248,10 +2286,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2310,10 +2348,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2330,10 +2368,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2349,10 +2387,10 @@ class _$PatientPostEntity implements PatientPostEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2449,10 +2487,10 @@ abstract class PatientPostEntity implements PatientEntity {
           required SkinColor skinColor,
           required BloodType? bloodType,
           required String address,
-          required String polyclinic,
-          required String surgery,
-          required String popularCouncil,
-          required String neighborhood,
+          required String? polyclinic,
+          required String? surgery,
+          required String? popularCouncil,
+          required String? neighborhood,
           required int? blockNumber,
           required List<PathologicalEntity> personalPathologicalHistory,
           required List<PathologicalEntity> familyPathologicalHistory}) =
@@ -2468,10 +2506,14 @@ abstract class PatientPostEntity implements PatientEntity {
   @override
   BloodType? get bloodType;
   String get address;
-  String get polyclinic;
-  String get surgery;
-  String get popularCouncil;
-  String get neighborhood;
+  @override
+  String? get polyclinic;
+  @override
+  String? get surgery;
+  @override
+  String? get popularCouncil;
+  @override
+  String? get neighborhood;
   @override
   int? get blockNumber;
   List<PathologicalEntity> get personalPathologicalHistory;
@@ -2748,10 +2790,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -2768,10 +2810,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2787,10 +2829,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)
@@ -2850,10 +2892,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2870,10 +2912,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2889,10 +2931,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2952,10 +2994,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -2972,10 +3014,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory,
@@ -2991,10 +3033,10 @@ class _$PatientPutEntity implements PatientPutEntity {
             SkinColor skinColor,
             BloodType? bloodType,
             String address,
-            String polyclinic,
-            String surgery,
-            String popularCouncil,
-            String neighborhood,
+            String? polyclinic,
+            String? surgery,
+            String? popularCouncil,
+            String? neighborhood,
             int? blockNumber,
             List<PathologicalEntity> personalPathologicalHistory,
             List<PathologicalEntity> familyPathologicalHistory)?
@@ -3113,9 +3155,13 @@ abstract class PatientPutEntity implements PatientEntity {
   @override
   BloodType? get bloodType;
   String? get address;
+  @override
   String? get polyclinic;
+  @override
   String? get surgery;
+  @override
   String? get popularCouncil;
+  @override
   String? get neighborhood;
   @override
   int? get blockNumber;

@@ -20,10 +20,10 @@ abstract class IPatientCreateBloc
   InputBloc<String> get address;
   InputBloc<ProvinceEntity?> get province;
   InputBloc<MunicipalityEntity?> get municipality;
-  InputBloc<String> get polyclinic;
-  InputBloc<String> get surgery;
-  InputBloc<String> get popularCouncil;
-  InputBloc<String> get neighborhood;
+  InputBloc<String?> get polyclinic;
+  InputBloc<String?> get surgery;
+  InputBloc<String?> get popularCouncil;
+  InputBloc<String?> get neighborhood;
   InputBloc<String?> get blockNumber;
   InputBloc<List<PathologicalEntity>> get personalPathologicalHistory;
   InputBloc<List<PathologicalEntity>> get familyPathologicalHistory;
@@ -119,10 +119,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final neighborhood = InputBloc<String>(
+  late final neighborhood = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -132,17 +130,13 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final polyclinic = InputBloc<String>(
+  late final polyclinic = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
-  late final popularCouncil = InputBloc<String>(
+  late final popularCouncil = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -160,10 +154,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final surgery = InputBloc<String>(
+  late final surgery = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -195,10 +187,14 @@ class PatientCreateBloc extends IPatientCreateBloc {
         skinColor: skinColor.state.value!,
         bloodType: bloodType.state.value,
         address: address.state.value,
-        polyclinic: polyclinic.state.value,
-        surgery: surgery.state.value,
-        popularCouncil: popularCouncil.state.value,
-        neighborhood: neighborhood.state.value,
+        polyclinic:
+            polyclinic.state.value == '' ? null : polyclinic.state.value,
+        surgery: surgery.state.value == '' ? null : surgery.state.value,
+        popularCouncil: popularCouncil.state.value == ''
+            ? null
+            : popularCouncil.state.value,
+        neighborhood:
+            neighborhood.state.value == '' ? null : neighborhood.state.value,
         blockNumber: blockNumber.state.value == null
             ? null
             : int.tryParse(blockNumber.state.value!),
