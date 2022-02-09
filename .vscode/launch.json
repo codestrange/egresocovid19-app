@@ -9,6 +9,8 @@
             "request": "launch",
             "type": "dart",
             "args": [
+                "--target",
+                "lib/main_debug.dart",
                 "--dart-define",
                 "ApiUrl=http://localhost:8000/api/v1/",
             ]
