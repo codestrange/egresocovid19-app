@@ -105,7 +105,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> ci = InputBloc<String?>(
     pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
-    validator: StringIsInt(texts.validatorInteger) &
+    validator: StringIsNumeric(texts.validatorInteger) &
         StringLengthGreaterThan(texts.validatorLength, 10) &
         StringLengthLowerThan(texts.validatorLength, 12),
   );

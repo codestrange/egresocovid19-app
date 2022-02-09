@@ -93,7 +93,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
     pureValue: '',
     validationType: ValidationType.explicit,
     validator: StringRequired(texts.validatorRequired) &
-        StringIsInt(texts.validatorInteger) &
+        StringIsNumeric(texts.validatorInteger) &
         StringLengthGreaterThan(texts.validatorLength, 10) &
         StringLengthLowerThan(texts.validatorLength, 121),
   );
