@@ -6,6 +6,7 @@ Color canvasColor = Colors.grey[850]!;
 Color cardColor = Colors.grey[900]!; // Colors.grey[900]!;
 
 final ThemeData darkTheme = ThemeData.dark().copyWith(
+  useMaterial3: true,
   primaryColor: primaryColor,
   textTheme: selectByBrightness(
     canvasColor,

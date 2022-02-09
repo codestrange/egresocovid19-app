@@ -6,6 +6,7 @@ Color canvasColor = Colors.grey[50]!;
 Color cardColor = Colors.white;
 
 final ThemeData lightTheme = ThemeData(
+  useMaterial3: true,
   primaryColor: primaryColor,
   textTheme: selectByBrightness(
     canvasColor,
