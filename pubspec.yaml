@@ -3,7 +3,7 @@ description: Aplicación para la gestión de la información de las personas que
 
 publish_to: 'none'
 
-version: 0.1.2+3
+version: 0.1.3+4
 
 environment:
   sdk: '>=2.16.0 <3.0.0'
