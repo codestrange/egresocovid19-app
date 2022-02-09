@@ -488,10 +488,10 @@ class _BlockNumberInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.blockNumber,
       builder: (context, state) => TextInputWidget(
-        controller: _controller..setValue(state.value),
+        controller: _controller..setValue(state.value ?? ''),
         labelText: '${Messages.of(context)!.patientCreateFieldBlockNumber}*',
         errorText: state.error,
         onChanged: (value) => form.blockNumber.dirty(

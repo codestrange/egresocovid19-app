@@ -61,6 +61,7 @@
     "patientViewFieldPopularCouncil": "Consejo Popular",
     "patientViewFieldNeighborhood": "Reparto",
     "patientViewFieldBlockNumber": "No. Manzana",
+    "patientViewFieldBlockNumberUnknow": "Desconocida",
     "patientViewFieldPersonalPathologicalHistory": "Patologías Personales",
     "patientViewFieldFamilyPathologicalHistory": "Patologías Familiares",
     "patientViewFieldPathologicalTitle": "Patología",

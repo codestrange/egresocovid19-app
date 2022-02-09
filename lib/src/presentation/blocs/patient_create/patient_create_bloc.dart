@@ -24,7 +24,7 @@ abstract class IPatientCreateBloc
   InputBloc<String> get surgery;
   InputBloc<String> get popularCouncil;
   InputBloc<String> get neighborhood;
-  InputBloc<String> get blockNumber;
+  InputBloc<String?> get blockNumber;
   InputBloc<List<PathologicalEntity>> get personalPathologicalHistory;
   InputBloc<List<PathologicalEntity>> get familyPathologicalHistory;
 
@@ -77,11 +77,10 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final blockNumber = InputBloc<String>(
+  late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired) &
-        StringIsInt(texts.validatorInteger),
+    validator: StringEquals('', '') | StringIsInt(texts.validatorInteger),
   );
 
   @override
@@ -200,7 +199,9 @@ class PatientCreateBloc extends IPatientCreateBloc {
         surgery: surgery.state.value,
         popularCouncil: popularCouncil.state.value,
         neighborhood: neighborhood.state.value,
-        blockNumber: int.parse(blockNumber.state.value),
+        blockNumber: blockNumber.state.value == null
+            ? null
+            : int.tryParse(blockNumber.state.value!),
         personalPathologicalHistory: personalPathologicalHistory.state.value,
         familyPathologicalHistory: familyPathologicalHistory.state.value,
       ),

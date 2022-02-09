@@ -690,7 +690,10 @@ class _PatientViewBasicInfo extends StatelessWidget {
         ),
         ListTile(
           dense: true,
-          title: Text(patient.blockNumber?.toString() ?? ''),
+          title: Text(
+            patient.blockNumber?.toString() ??
+                Messages.of(context)!.patientViewFieldBlockNumberUnknow,
+          ),
           subtitle: Text(
             Messages.of(context)!.patientViewFieldBlockNumber,
           ),
