@@ -1,6 +1,8 @@
 {
     "appName": "Egreso COVID-19",
 
+    "unknown": "Desconocido",
+
     "homePageTitle": "Inicio",
     "homeDrawerTitle": "Egreso\nCOVID-19",
     "homeWelcomeMessage": "Bienvenido a Egreso COVID-19\nEn la caja de texto de arriba puede buscar pacientes por nombre o carnet de identidad.",
@@ -61,6 +63,7 @@
     "patientViewFieldPopularCouncil": "Consejo Popular",
     "patientViewFieldNeighborhood": "Reparto",
     "patientViewFieldBlockNumber": "No. Manzana",
+    "patientViewFieldBlockNumberUnknow": "Desconocida",
     "patientViewFieldPersonalPathologicalHistory": "Patologías Personales",
     "patientViewFieldFamilyPathologicalHistory": "Patologías Familiares",
     "patientViewFieldPathologicalTitle": "Patología",
@@ -203,6 +206,7 @@
     "enumSexFemale": "Femenino",
     "enumSexOther": "Otro",
 
+    "enumBloodTypeUnknown": "Desconocido",
     "enumBloodTypeABminus": "AB-",
     "enumBloodTypeABplus": "AB+",
     "enumBloodTypeAminus": "A-",
@@ -214,6 +218,7 @@
 
     "enumSkinColorWhite": "Blanco",
     "enumSkinColorBlack": "Negro",
+    "enumSkinColorHalfBlood": "Mestizo",
     "enumSkinColorOther": "Otro",
 
     "enumContagionTraveler": "Viajero",

@@ -20,11 +20,11 @@ PatientGetDetailModel _$PatientGetDetailModelFromJson(
       skinColor: $enumDecode(_$SkinColorEnumMap, json['skinColor']),
       bloodType: $enumDecodeNullable(_$BloodTypeEnumMap, json['bloodType']),
       address: json['address'] as String,
-      polyclinic: json['polyclinic'] as String,
-      surgery: json['surgery'] as String,
-      popularCouncil: json['popularCouncil'] as String,
-      neighborhood: json['neighborhood'] as String,
-      blockNumber: json['blockNumber'] as int,
+      polyclinic: json['polyclinic'] as String?,
+      surgery: json['surgery'] as String?,
+      popularCouncil: json['popularCouncil'] as String?,
+      neighborhood: json['neighborhood'] as String?,
+      blockNumber: json['blockNumber'] as int?,
       personalPathologicalHistory:
           (json['personalPathologicalHistory'] as List<dynamic>)
               .map((e) => PathologicalModel.fromJson(e as Map<String, dynamic>))
@@ -73,16 +73,18 @@ const _$SexEnumMap = {
 const _$SkinColorEnumMap = {
   SkinColor.White: 0,
   SkinColor.Black: 1,
-  SkinColor.Other: 2,
+  SkinColor.HalfBlood: 2,
+  SkinColor.Other: 3,
 };
 
 const _$BloodTypeEnumMap = {
-  BloodType.Aplus: 0,
-  BloodType.Bplus: 1,
-  BloodType.ABplus: 2,
-  BloodType.Oplus: 3,
-  BloodType.Aminus: 4,
-  BloodType.Bminus: 5,
-  BloodType.ABminus: 6,
-  BloodType.Ominus: 7,
+  BloodType.Unknown: 0,
+  BloodType.Aplus: 1,
+  BloodType.Bplus: 2,
+  BloodType.ABplus: 3,
+  BloodType.Oplus: 4,
+  BloodType.Aminus: 5,
+  BloodType.Bminus: 6,
+  BloodType.ABminus: 7,
+  BloodType.Ominus: 8,
 };

@@ -6,6 +6,7 @@ Color canvasColor = Colors.grey[850]!;
 Color cardColor = Colors.grey[900]!; // Colors.grey[900]!;
 
 final ThemeData darkTheme = ThemeData.dark().copyWith(
+  useMaterial3: true,
   primaryColor: primaryColor,
   textTheme: selectByBrightness(
     canvasColor,
@@ -33,8 +34,8 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
     backgroundColor: canvasColor,
     brightness: Brightness.dark,
     disabledColor: Colors.white,
-    labelStyle: lightTextTheme.bodyText2!,
-    secondaryLabelStyle: darkTextTheme.bodyText2!,
+    labelStyle: lightTextTheme.bodyText2,
+    secondaryLabelStyle: darkTextTheme.bodyText2,
     padding: const EdgeInsets.all(12),
     shape: RoundedRectangleBorder(
       side: const BorderSide(),

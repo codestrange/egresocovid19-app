@@ -3,13 +3,13 @@ import 'package:egresocovid19/src/domain/enums/enums.dart';
 import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:flutter_lyform/flutter_lyform.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lyform_validators/lyform_validators.dart';
 
 export 'patient_create_bloc_texts.dart';
 
-abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
+abstract class IPatientCreateBloc
+    extends FormBloc<PatientGetEntity, ErrorEntity> {
   InputBloc<String> get firstName;
   InputBloc<String> get lastName;
   InputBloc<String> get ci;
@@ -20,11 +20,11 @@ abstract class IPatientCreateBloc extends FormBloc<Unit, ErrorEntity> {
   InputBloc<String> get address;
   InputBloc<ProvinceEntity?> get province;
   InputBloc<MunicipalityEntity?> get municipality;
-  InputBloc<String> get polyclinic;
-  InputBloc<String> get surgery;
-  InputBloc<String> get popularCouncil;
-  InputBloc<String> get neighborhood;
-  InputBloc<String> get blockNumber;
+  InputBloc<String?> get polyclinic;
+  InputBloc<String?> get surgery;
+  InputBloc<String?> get popularCouncil;
+  InputBloc<String?> get neighborhood;
+  InputBloc<String?> get blockNumber;
   InputBloc<List<PathologicalEntity>> get personalPathologicalHistory;
   InputBloc<List<PathologicalEntity>> get familyPathologicalHistory;
 
@@ -77,11 +77,10 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final blockNumber = InputBloc<String>(
+  late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: '',
     validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired) &
-        StringIsInt(texts.validatorInteger),
+    validator: StringEquals('', '') | StringIsInt(texts.validatorInteger),
   );
 
   @override
@@ -94,7 +93,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
     pureValue: '',
     validationType: ValidationType.explicit,
     validator: StringRequired(texts.validatorRequired) &
-        StringIsInt(texts.validatorInteger) &
+        StringIsNumeric(texts.validatorInteger) &
         StringLengthGreaterThan(texts.validatorLength, 10) &
         StringLengthLowerThan(texts.validatorLength, 121),
   );
@@ -120,10 +119,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final neighborhood = InputBloc<String>(
+  late final neighborhood = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -133,17 +130,13 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final polyclinic = InputBloc<String>(
+  late final polyclinic = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
-  late final popularCouncil = InputBloc<String>(
+  late final popularCouncil = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -161,10 +154,8 @@ class PatientCreateBloc extends IPatientCreateBloc {
   );
 
   @override
-  late final surgery = InputBloc<String>(
+  late final surgery = InputBloc<String?>(
     pureValue: '',
-    validationType: ValidationType.explicit,
-    validator: StringRequired(texts.validatorRequired),
   );
 
   @override
@@ -184,7 +175,7 @@ class PatientCreateBloc extends IPatientCreateBloc {
   final IPatientService patientService;
 
   @override
-  Future<FormBlocState<Unit, ErrorEntity>> onSubmmit() async {
+  Future<FormBlocState<PatientGetEntity, ErrorEntity>> onSubmmit() async {
     final response = await patientService.postPatient(
       patient: PatientPostEntity(
         firstname: firstName.state.value,
@@ -196,18 +187,24 @@ class PatientCreateBloc extends IPatientCreateBloc {
         skinColor: skinColor.state.value!,
         bloodType: bloodType.state.value,
         address: address.state.value,
-        polyclinic: polyclinic.state.value,
-        surgery: surgery.state.value,
-        popularCouncil: popularCouncil.state.value,
-        neighborhood: neighborhood.state.value,
-        blockNumber: int.parse(blockNumber.state.value),
+        polyclinic:
+            polyclinic.state.value == '' ? null : polyclinic.state.value,
+        surgery: surgery.state.value == '' ? null : surgery.state.value,
+        popularCouncil: popularCouncil.state.value == ''
+            ? null
+            : popularCouncil.state.value,
+        neighborhood:
+            neighborhood.state.value == '' ? null : neighborhood.state.value,
+        blockNumber: blockNumber.state.value == null
+            ? null
+            : int.tryParse(blockNumber.state.value!),
         personalPathologicalHistory: personalPathologicalHistory.state.value,
         familyPathologicalHistory: familyPathologicalHistory.state.value,
       ),
     );
     return response.fold(
       (error) => FormErrorState(error),
-      (_) => const FormSuccessState(unit),
+      (patient) => FormSuccessState(patient),
     );
   }
 }

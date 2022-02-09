@@ -2,21 +2,9 @@ import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
 import 'package:egresocovid19/src/presentation/i18n/i18n.dart';
 import 'package:egresocovid19/src/presentation/routes/routes.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
-class CustomScrollBehavior extends MaterialScrollBehavior {
-  @override
-  Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.stylus,
-        PointerDeviceKind.invertedStylus,
-        PointerDeviceKind.mouse,
-        PointerDeviceKind.unknown,
-      };
-}
 
 class App extends StatelessWidget {
   @override
@@ -28,7 +16,7 @@ class App extends StatelessWidget {
         BlocProvider<IThemeBloc>(create: (_) => GetIt.I()),
       ],
       child: BeamerProvider(
-        routerDelegate: Routes.routerDelegate,
+        routerDelegate: GetIt.I<Routes>().routerDelegate,
         child: BlocBuilder<IThemeBloc, ThemeState>(
           builder: (context, state) {
             return state.when(
@@ -44,32 +32,12 @@ class App extends StatelessWidget {
                       localizationsDelegates: Messages.localizationsDelegates,
                       supportedLocales: Messages.supportedLocales,
                       locale: state.locale,
-                      scrollBehavior: CustomScrollBehavior(),
-                      backButtonDispatcher: Routes.backButtonDispatcher,
-                      routerDelegate: Routes.routerDelegate,
-                      routeInformationParser: Routes.routeInformationParser,
-                      builder: (context, child) {
-                        return BlocListener<IAuthBloc, AuthState>(
-                          listener: (context, state) {
-                            final url = context.currentBeamLocation.state
-                                .routeInformation.location;
-                            state.when(
-                              checking: () {
-                                if (url != '/checking') {
-                                  context.beamToNamed('/checking');
-                                }
-                              },
-                              authenticated: () {},
-                              unauthenticated: () {
-                                if (url != '/login') {
-                                  context.beamToNamed('/login');
-                                }
-                              },
-                            );
-                          },
-                          child: child,
-                        );
-                      },
+                      scrollBehavior: GetIt.I(),
+                      backButtonDispatcher:
+                          GetIt.I<Routes>().backButtonDispatcher,
+                      routerDelegate: GetIt.I<Routes>().routerDelegate,
+                      routeInformationParser:
+                          GetIt.I<Routes>().routeInformationParser,
                     );
                   },
                 );

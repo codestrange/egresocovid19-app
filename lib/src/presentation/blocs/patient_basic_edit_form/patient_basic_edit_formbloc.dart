@@ -93,7 +93,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> blockNumber = InputBloc<String?>(
     pureValue: patientEntity.blockNumber.toString(),
     validationType: ValidationType.explicit,
-    validator: StringIsInt(texts.validatorInteger),
+    validator: StringEquals('', '') | StringIsInt(texts.validatorInteger),
   );
 
   @override
@@ -105,7 +105,7 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
   late final InputBloc<String?> ci = InputBloc<String?>(
     pureValue: patientEntity.ci,
     validationType: ValidationType.explicit,
-    validator: StringIsInt(texts.validatorInteger) &
+    validator: StringIsNumeric(texts.validatorInteger) &
         StringLengthGreaterThan(texts.validatorLength, 10) &
         StringLengthLowerThan(texts.validatorLength, 12),
   );
@@ -189,10 +189,14 @@ class PatientBasicEditFormBloc extends IPatientBasicEditFormBloc {
         skinColor: skinColor.state.value,
         bloodType: bloodType.state.value,
         address: address.state.value,
-        polyclinic: polyclinic.state.value,
-        surgery: surgery.state.value,
-        popularCouncil: popularCouncil.state.value,
-        neighborhood: neighborhood.state.value,
+        polyclinic:
+            polyclinic.state.value == '' ? null : polyclinic.state.value,
+        surgery: surgery.state.value == '' ? null : surgery.state.value,
+        popularCouncil: popularCouncil.state.value == ''
+            ? null
+            : popularCouncil.state.value,
+        neighborhood:
+            neighborhood.state.value == '' ? null : neighborhood.state.value,
         blockNumber: blockNumber.state.value == null
             ? null
             : int.tryParse(blockNumber.state.value!),

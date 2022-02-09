@@ -60,9 +60,10 @@ class _PatientCreatePageInternal extends StatelessWidget {
           iconTheme: Theme.of(context).iconTheme,
           centerTitle: true,
         ),
-        body: FormBlocListener<IPatientCreateBloc, void, ErrorEntity>(
+        body:
+            FormBlocListener<IPatientCreateBloc, PatientGetEntity, ErrorEntity>(
           bloc: context.read(),
-          onSuccess: (_) {
+          onSuccess: (patient) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -73,7 +74,7 @@ class _PatientCreatePageInternal extends StatelessWidget {
                   ),
                 ),
               );
-            context.beamToNamed('/patients');
+            context.beamToNamed('/patients/${patient.id}');
           },
           onError: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
@@ -382,7 +383,7 @@ class _PolyclinicInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<PolyclinicAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.polyclinic,
       builder: (context, state) => PolyclinicInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -408,7 +409,7 @@ class _SurgeryInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<SurgeryAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.surgery,
       builder: (context, state) => SurgeryInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -434,7 +435,7 @@ class _PopularCouncilInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<PopularCouncilAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.popularCouncil,
       builder: (context, state) => PopularCouncilInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -460,7 +461,7 @@ class _NeighborhoodInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
     final autocompleter = GetIt.I<NeighborhoodAutoCompleteBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.neighborhood,
       builder: (context, state) => NeighborhoodInputWidget(
         suggestionsStream: autocompleter.suggestionsStream,
@@ -487,10 +488,10 @@ class _BlockNumberInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = context.read<IPatientCreateBloc>();
-    return InputBlocBuilder<String>(
+    return InputBlocBuilder<String?>(
       bloc: form.blockNumber,
       builder: (context, state) => TextInputWidget(
-        controller: _controller..setValue(state.value),
+        controller: _controller..setValue(state.value ?? ''),
         labelText: '${Messages.of(context)!.patientCreateFieldBlockNumber}*',
         errorText: state.error,
         onChanged: (value) => form.blockNumber.dirty(

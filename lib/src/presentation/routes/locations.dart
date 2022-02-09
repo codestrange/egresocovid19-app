@@ -31,21 +31,6 @@ class AuthLocation extends BeamLocation {
   }
 }
 
-class CheckingLocation extends BeamLocation {
-  @override
-  List<String> get pathPatterns => ['/checking'];
-
-  @override
-  List<BeamPage> buildPages(
-    BuildContext context,
-    RouteInformationSerializable state,
-  ) {
-    return [
-      CheckingPage.getPage(context),
-    ];
-  }
-}
-
 class HomeLocation extends BeamLocation<BeamState> {
   @override
   List<String> get pathPatterns => [

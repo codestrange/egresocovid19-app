@@ -6,6 +6,7 @@ Color canvasColor = Colors.grey[50]!;
 Color cardColor = Colors.white;
 
 final ThemeData lightTheme = ThemeData(
+  useMaterial3: true,
   primaryColor: primaryColor,
   textTheme: selectByBrightness(
     canvasColor,
@@ -40,8 +41,8 @@ final ThemeData lightTheme = ThemeData(
     backgroundColor: canvasColor,
     brightness: Brightness.light,
     disabledColor: Colors.white,
-    labelStyle: darkTextTheme.bodyText2!,
-    secondaryLabelStyle: lightTextTheme.bodyText2!,
+    labelStyle: darkTextTheme.bodyText2,
+    secondaryLabelStyle: lightTextTheme.bodyText2,
     padding: const EdgeInsets.all(12),
     shape: RoundedRectangleBorder(
       side: const BorderSide(),

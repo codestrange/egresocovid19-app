@@ -6,5 +6,7 @@ enum SkinColor {
   @JsonValue(1)
   Black,
   @JsonValue(2)
+  HalfBlood,
+  @JsonValue(3)
   Other,
 }

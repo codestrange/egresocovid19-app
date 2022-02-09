@@ -19,7 +19,9 @@ abstract class RegisterModule {
   Dio get dio => Dio()
     ..interceptors.add(
       PrettyDioLogger(
-        responseBody: false,
+        responseHeader: true,
+        requestBody: true,
+        requestHeader: true,
         compact: false,
         logPrint: (e) => log(e.toString()),
       ),

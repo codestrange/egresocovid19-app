@@ -3,7 +3,6 @@ import 'dart:developer';
 
 import 'package:beamer/beamer.dart';
 import 'package:egresocovid19/src/dependencies.dart';
-import 'package:egresocovid19/src/domain/services/services.dart';
 import 'package:egresocovid19/src/presentation/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +19,6 @@ Future<void> main() async {
       Beamer.setPathUrlStrategy();
       await Hive.initFlutter();
       await configureDependencies();
-      await GetIt.I<IAuthService>().recoverSession();
       BlocOverrides.runZoned(
         () => runApp(App()),
         blocObserver: GetIt.I(),

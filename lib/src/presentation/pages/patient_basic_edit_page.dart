@@ -454,7 +454,7 @@ class _PolyclinicInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.polyclinic.dirty(value.trim());
         },
-        initialValue: form.polyclinic.isPure ? state.value ?? '' : null,
+        initialValue: form.polyclinic.isPure ? state.value ?? '' : '',
       ),
     );
   }
@@ -481,7 +481,7 @@ class _SurgeryInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.surgery.dirty(value.trim());
         },
-        initialValue: form.surgery.isPure ? state.value ?? '' : null,
+        initialValue: form.surgery.isPure ? state.value ?? '' : '',
       ),
     );
   }
@@ -509,7 +509,7 @@ class _PopularCouncilInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.popularCouncil.dirty(value.trim());
         },
-        initialValue: form.popularCouncil.isPure ? state.value ?? '' : null,
+        initialValue: form.popularCouncil.isPure ? state.value ?? '' : '',
       ),
     );
   }
@@ -537,7 +537,7 @@ class _NeighborhoodInput extends StatelessWidget {
           autocompleter.changed((value as String).trim());
           form.neighborhood.dirty(value.trim());
         },
-        initialValue: form.neighborhood.isPure ? state.value ?? '' : null,
+        initialValue: form.neighborhood.isPure ? state.value ?? '' : '',
       ),
     );
   }

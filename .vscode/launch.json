@@ -5,21 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run Debug",
+            "name": "Run with Local Server",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--target",
+                "lib/main_debug.dart",
+                "--dart-define",
+                "ApiUrl=http://localhost:8000/api/v1/",
+            ]
+        },
+        {
+            "name": "Run with Remote Server",
             "request": "launch",
             "type": "dart"
-        },
-        {
-            "name": "Run Profile",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "Run Release",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
         }
     ]
 }
