@@ -215,6 +215,7 @@
 
     "enumSkinColorWhite": "Blanco",
     "enumSkinColorBlack": "Negro",
+    "enumSkinColorHalfBlood": "Mestizo",
     "enumSkinColorOther": "Otro",
 
     "enumContagionTraveler": "Viajero",

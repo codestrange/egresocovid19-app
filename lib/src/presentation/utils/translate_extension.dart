@@ -15,8 +15,6 @@ extension ContagionExtension on Contagion {
         return Messages.of(context)!.enumContagionContact;
       case Contagion.Inderterminate:
         return Messages.of(context)!.enumContagionInderterminate;
-      default:
-        return name;
     }
   }
 }
@@ -28,8 +26,6 @@ extension DiagnosisWayExtension on DiagnosisWay {
         return Messages.of(context)!.enumDiagnosisWayGuardCorps;
       case DiagnosisWay.FocusControl:
         return Messages.of(context)!.enumDiagnosisWayFocusControl;
-      default:
-        return name;
     }
   }
 }
@@ -47,8 +43,6 @@ extension IncomeExtension on Income {
         return Messages.of(context)!.enumIncomeIntermediateTherapy;
       case Income.IntensiveTherapy:
         return Messages.of(context)!.enumIncomeIntensiveTherapy;
-      default:
-        return name;
     }
   }
 }
@@ -64,8 +58,6 @@ extension TestDiagnosisExtension on TestDiagnosis {
         return Messages.of(context)!.enumTestDiagnosisPCR;
       case TestDiagnosis.IgMIgGAntibodyTest:
         return Messages.of(context)!.enumTestDiagnosisIgMIgGAntibodyTest;
-      default:
-        return name;
     }
   }
 }
@@ -102,8 +94,6 @@ extension AftermathExtension on Aftermath {
         return Messages.of(context)!.enumAftermathDesiresToVomit;
       case Aftermath.Others:
         return Messages.of(context)!.enumAftermathOthers;
-      default:
-        return name;
     }
   }
 }
@@ -132,8 +122,6 @@ extension TreatmentExtension on Treatment {
         return Messages.of(context)!.enumTreatmentBetamethasone;
       case Treatment.Italizumab:
         return Messages.of(context)!.enumTreatmentItalizumab;
-      default:
-        return name;
     }
   }
 }
@@ -169,8 +157,6 @@ extension ProphylaxisExtension on Prophylaxis {
         return Messages.of(context)!.enumProphylaxisAbdala;
       case Prophylaxis.Covid19Previously:
         return Messages.of(context)!.enumProphylaxisCovid19Previously;
-      default:
-        return name;
     }
   }
 }
@@ -184,8 +170,6 @@ extension SexExtention on Sex {
         return Messages.of(context)!.enumSexMale;
       case Sex.Other:
         return Messages.of(context)!.enumSexOther;
-      default:
-        return name;
     }
   }
 }
@@ -199,8 +183,8 @@ extension SkinColorExtension on SkinColor {
         return Messages.of(context)!.enumSkinColorWhite;
       case SkinColor.Other:
         return Messages.of(context)!.enumSkinColorOther;
-      default:
-        return name;
+      case SkinColor.HalfBlood:
+        return Messages.of(context)!.enumSkinColorHalfBlood;
     }
   }
 }
@@ -226,8 +210,6 @@ extension BloodTypeExtention on BloodType {
         return Messages.of(context)!.enumBloodTypeOplus;
       case BloodType.Ominus:
         return Messages.of(context)!.enumBloodTypeOminus;
-      default:
-        return name;
     }
   }
 }

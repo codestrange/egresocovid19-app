@@ -63,7 +63,8 @@ const _$SexEnumMap = {
 const _$SkinColorEnumMap = {
   SkinColor.White: 0,
   SkinColor.Black: 1,
-  SkinColor.Other: 2,
+  SkinColor.HalfBlood: 2,
+  SkinColor.Other: 3,
 };
 
 const _$BloodTypeEnumMap = {
