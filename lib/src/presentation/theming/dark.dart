@@ -33,8 +33,8 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
     backgroundColor: canvasColor,
     brightness: Brightness.dark,
     disabledColor: Colors.white,
-    labelStyle: lightTextTheme.bodyText2!,
-    secondaryLabelStyle: darkTextTheme.bodyText2!,
+    labelStyle: lightTextTheme.bodyText2,
+    secondaryLabelStyle: darkTextTheme.bodyText2,
     padding: const EdgeInsets.all(12),
     shape: RoundedRectangleBorder(
       side: const BorderSide(),

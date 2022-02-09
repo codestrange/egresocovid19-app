@@ -40,8 +40,8 @@ final ThemeData lightTheme = ThemeData(
     backgroundColor: canvasColor,
     brightness: Brightness.light,
     disabledColor: Colors.white,
-    labelStyle: darkTextTheme.bodyText2!,
-    secondaryLabelStyle: lightTextTheme.bodyText2!,
+    labelStyle: darkTextTheme.bodyText2,
+    secondaryLabelStyle: lightTextTheme.bodyText2,
     padding: const EdgeInsets.all(12),
     shape: RoundedRectangleBorder(
       side: const BorderSide(),

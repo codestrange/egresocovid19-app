@@ -16,7 +16,6 @@ class AuthRepository implements IAuthRepository {
         ForbiddenInterceptor(
           action: () async {
             _controller.add(const AuthStatusEntity.unauthenticated());
-            _isLoggedIn = false;
           },
         ),
       )
@@ -25,10 +24,6 @@ class AuthRepository implements IAuthRepository {
 
   final OAuth oauth;
   final _controller = StreamController<AuthStatusEntity>();
-  var _isLoggedIn = false;
-
-  @override
-  bool get isLoggedIn => _isLoggedIn;
 
   @override
   Future<Either<ErrorEntity, Unit>> logIn({
@@ -42,17 +37,16 @@ class AuthRepository implements IAuthRepository {
         ),
       );
       _controller.add(const AuthStatusEntity.authenticated());
-      _isLoggedIn = true;
       return const Right(unit);
     } catch (e) {
-      _isLoggedIn = false;
+      _controller.add(const AuthStatusEntity.unauthenticated());
       return catchMethod(e);
     }
   }
 
   @override
   Future<bool> logOut() async {
-    _isLoggedIn = false;
+    _controller.add(const AuthStatusEntity.unauthenticated());
     try {
       await oauth.storage.clear();
       return true;
@@ -72,10 +66,14 @@ class AuthRepository implements IAuthRepository {
   Future<bool> recoverSession() async {
     try {
       final token = await oauth.storage.fetch();
-      return _isLoggedIn = token != null;
+      if (token != null) {
+        _controller.add(const AuthStatusEntity.authenticated());
+        return true;
+      }
     } catch (e) {
       log(e.toString());
-      return false;
     }
+    _controller.add(const AuthStatusEntity.unauthenticated());
+    return false;
   }
 }

@@ -7,7 +7,6 @@ abstract class IAuthService {
   Future<Either<ErrorEntity, Unit>> logIn({
     required UserPostEntity user,
   });
-  bool get isLoggedIn;
   Future<bool> logOut();
   Future<bool> recoverSession();
   Stream<AuthStatusEntity> get status;
@@ -28,9 +27,6 @@ class AuthService implements IAuthService {
 
   @override
   Future<bool> logOut() => authRepository.logOut();
-
-  @override
-  bool get isLoggedIn => authRepository.isLoggedIn;
 
   @override
   Stream<AuthStatusEntity> get status => authRepository.status;

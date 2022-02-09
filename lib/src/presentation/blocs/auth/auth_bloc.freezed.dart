@@ -468,10 +468,6 @@ abstract class _SignOut implements AuthEvent {
 class _$AuthStateTearOff {
   const _$AuthStateTearOff();
 
-  _Checking checking() {
-    return const _Checking();
-  }
-
   _Authenticated authenticated() {
     return const _Authenticated();
   }
@@ -488,21 +484,18 @@ const $AuthState = _$AuthStateTearOff();
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() checking,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -510,21 +503,18 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Checking value) checking,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -545,114 +535,6 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
   final AuthState _value;
   // ignore: unused_field
   final $Res Function(AuthState) _then;
-}
-
-/// @nodoc
-abstract class _$CheckingCopyWith<$Res> {
-  factory _$CheckingCopyWith(_Checking value, $Res Function(_Checking) then) =
-      __$CheckingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CheckingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$CheckingCopyWith<$Res> {
-  __$CheckingCopyWithImpl(_Checking _value, $Res Function(_Checking) _then)
-      : super(_value, (v) => _then(v as _Checking));
-
-  @override
-  _Checking get _value => super._value as _Checking;
-}
-
-/// @nodoc
-
-class _$_Checking implements _Checking {
-  const _$_Checking();
-
-  @override
-  String toString() {
-    return 'AuthState.checking()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Checking);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() checking,
-    required TResult Function() authenticated,
-    required TResult Function() unauthenticated,
-  }) {
-    return checking();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checking,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-  }) {
-    return checking?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? checking,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (checking != null) {
-      return checking();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Checking value) checking,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-  }) {
-    return checking(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-  }) {
-    return checking?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (checking != null) {
-      return checking(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Checking implements AuthState {
-  const factory _Checking() = _$_Checking;
 }
 
 /// @nodoc
@@ -695,7 +577,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() checking,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) {
@@ -705,7 +586,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
   }) {
@@ -715,7 +595,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -729,7 +608,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Checking value) checking,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -739,7 +617,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -749,7 +626,6 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -805,7 +681,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() checking,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) {
@@ -815,7 +690,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
   }) {
@@ -825,7 +699,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? checking,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -839,7 +712,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Checking value) checking,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -849,7 +721,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -859,7 +730,6 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Checking value)? checking,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),

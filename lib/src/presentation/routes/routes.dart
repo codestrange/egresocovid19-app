@@ -1,22 +1,35 @@
 import 'dart:developer';
 
 import 'package:beamer/beamer.dart';
-import 'package:egresocovid19/src/domain/services/services.dart';
+import 'package:egresocovid19/src/presentation/blocs/blocs.dart';
+import 'package:egresocovid19/src/presentation/routes/listenable.dart';
 import 'package:egresocovid19/src/presentation/routes/locations.dart';
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 class Routes {
-  static final routerDelegate = BeamerDelegate(
+  Routes(this.listenable);
+
+  final RoutesListenable listenable;
+
+  static const privatePathPatterns = ['/login'];
+
+  late final routerDelegate = BeamerDelegate(
     guards: [
       BeamGuard(
-        pathPatterns: ['/login', '/checking'],
-        check: (_, __) => GetIt.I<IAuthService>().isLoggedIn,
+        pathPatterns: privatePathPatterns,
+        check: (_, __) => GetIt.I<IAuthBloc>()
+            .state
+            .maybeWhen(unauthenticated: () => false, orElse: () => true),
         beamToNamed: (origin, target) => '/login',
         guardNonMatching: true,
       ),
       BeamGuard(
-        pathPatterns: ['/login', '/checking'],
-        check: (_, __) => !GetIt.I<IAuthService>().isLoggedIn,
+        pathPatterns: privatePathPatterns,
+        check: (_, __) => !GetIt.I<IAuthBloc>()
+            .state
+            .maybeWhen(unauthenticated: () => false, orElse: () => true),
         beamToNamed: (origin, target) => '/patients',
       ),
     ],
@@ -25,18 +38,18 @@ class Routes {
     },
     locationBuilder: BeamerLocationBuilder(
       beamLocations: [
-        HomeLocation(),
-        CheckingLocation(),
         AuthLocation(),
+        HomeLocation(),
         NotFoundLocation(),
       ],
     ),
     initialPath: '/patients',
+    updateListenable: listenable,
   );
 
-  static final routeInformationParser = BeamerParser();
+  final routeInformationParser = BeamerParser();
 
-  static final backButtonDispatcher = BeamerBackButtonDispatcher(
+  late final backButtonDispatcher = BeamerBackButtonDispatcher(
     delegate: routerDelegate,
     fallbackToBeamBack: false,
   );

@@ -18,18 +18,14 @@ abstract class IAuthBloc extends Bloc<AuthEvent, AuthState> {
 class AuthBloc extends IAuthBloc {
   AuthBloc({
     required this.authService,
-  }) : super(const AuthState.checking()) {
+  }) : super(const AuthState.authenticated()) {
     _controller = authService.status.listen(
       (status) => add(AuthEvent.statusChanged(status: status)),
     );
     on<AuthEvent>((event, emit) {
       event.when(
         start: () {
-          emit(
-            authService.isLoggedIn
-                ? const AuthState.authenticated()
-                : const AuthState.unauthenticated(),
-          );
+          authService.recoverSession();
         },
         statusChanged: (status) {
           emit(
@@ -39,8 +35,8 @@ class AuthBloc extends IAuthBloc {
             ),
           );
         },
-        signOut: () async* {
-          await authService.logOut();
+        signOut: () {
+          authService.logOut();
         },
       );
     });
