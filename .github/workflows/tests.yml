@@ -14,6 +14,6 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
       - run: flutter pub get
-      - run: find . -name "*.dart" ! -name "*.g.dart" ! -name "*.config.dart" ! -name "*.freezed.dart" ! -name "generated_plugin_registrant.dart" ! -path "*/i18n/*" ! -path "*/generated/*" ! -path "./proto/*" | tr "\n" " " | xargs flutter format --set-exit-if-changed
+      - run: flutter format .
       - run: flutter analyze --fatal-infos
       - run: flutter test
